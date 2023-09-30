@@ -43,7 +43,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 <img src="images/maj0-0.png" width="200px">
 
 [[github](https://github.com/maj0-0)]
-[[portfolio](team/maj0-0.md)]
+[[portfolio](team/johndoe.md)]
 
 * Role: Developer
 * Responsibilities: Deliverables & Deadlines + Scheduling & Tracking
