@@ -9,8 +9,8 @@ public class ExitCommand extends Command {
 
     public static final String COMMAND_WORD = "exit";
 
-    public static final String MESSAGE_EXIT_ACKNOWLEDGEMENT = "Thank you for using StudentConnect!\n" +
-            "Exiting the application now…";
+    public static final String MESSAGE_EXIT_ACKNOWLEDGEMENT = "Thank you for using StudentConnect!\n"
+            + "Exiting the application now…";
 
     @Override
     public CommandResult execute(Model model) {
