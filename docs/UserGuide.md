@@ -109,23 +109,29 @@ Examples:
 *  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
 *  `edit 2 n/Betsy Crower t/` Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.
 
-### Locating persons by name: `find`
+### Finding a student by name: `find`
 
-Finds persons whose names contain any of the given keywords.
+Finds student(s) whose name(s) contain any of the given keywords.
 
 Format: `find KEYWORD [MORE_KEYWORDS]`
 
-* The search is case-insensitive. e.g `hans` will match `Hans`
-* The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
+* The search is case-insensitive. e.g `john` will match `John`
+* The order of the keywords does not matter. e.g. `John Doe` will match `Doe John`
 * Only the name is searched.
-* Only full words will be matched e.g. `Han` will not match `Hans`
+* Partial words can be matched. e.g. `John` will match `Johnny`
 * Persons matching at least one keyword will be returned (i.e. `OR` search).
-  e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
+  e.g. `John Crowe` will return `John Doe`, `Betsy Crowe`
 
 Examples:
-* `find John` returns `john` and `John Doe`
-* `find alex david` returns `Alex Yeoh`, `David Li`<br>
-  ![result for 'find alex david'](images/findAlexDavidResult.png)
+* `find John` returns `john`, `John Doe` and `Johnny Wee`
+* `find john betsy` returns `John Doe`, `Betsy Crowe`<br>
+
+Expected Output (Success):
+* GUI: List of all student entries whose name(s) match the keyword(s) in the system
+
+Expected Output (Failure):
+* Message: “Unable to find students with the given keyword(s).”
+  ![result for 'find alex'](images/findAlexResult.png)
 
 ### Deleting a person : `delete`
 
