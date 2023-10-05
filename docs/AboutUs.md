@@ -9,6 +9,16 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 ## Project team
 
+
+### Pearlynn Toh
+
+<img src="images/pearlynnt.png" width="200px">
+
+[[github](https://github.com/PearlynnT)]
+[[portfolio](team/pearlynnt.md)]
+
+* Role: Team Lead, Developer
+
 ### Yik Leong Loo
 
 <img src="images/bearypop.png" width="200px">
@@ -19,15 +29,16 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 * Role: Developer
 * Responsibilities: Testing + Integration
 
-### Jane Doe
 
-<img src="images/johndoe.png" width="200px">
+### Chan Wei Ning
 
-[[github](http://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+<img src="images/wnchan.png" width="200px">
 
-* Role: Team Lead
-* Responsibilities: UI
+[[github](https://github.com/wnchan)]
+[[portfolio](team/wnchan.md)]
+
+* Role: Developer
+* Responsibilities: Documentation
 
 ### Johnny Doe
 
