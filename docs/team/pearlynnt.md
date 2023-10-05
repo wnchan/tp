@@ -9,8 +9,8 @@ StudentConnect is a desktop application that stores and organises students’ co
 
 Given below are my contributions to the project.
 
-* **Find Feature**: Added the ability to find command to that allows the user to find a student by name.
-  * What it does:
+* **Find Feature**: Added the ability to find student(s) by name
+  * What it does: allows the user to find a student by name with a partial keyword.
   * Justification:
   * Highlights:
 
