@@ -5,6 +5,7 @@ import java.nio.file.Paths;
 import java.util.Map;
 import java.util.Objects;
 import java.util.logging.Logger;
+
 import javafx.application.Application;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.util.FileUtil;
@@ -17,6 +18,14 @@ public class AppParameters {
     private static final Logger logger = LogsCenter.getLogger(AppParameters.class);
 
     private Path configPath;
+
+    public Path getConfigPath() {
+        return configPath;
+    }
+
+    public void setConfigPath(Path configPath) {
+        this.configPath = configPath;
+    }
 
     /**
      * Parses the application command-line parameters.
@@ -33,14 +42,6 @@ public class AppParameters {
         appParameters.setConfigPath(configPathParameter != null ? Paths.get(configPathParameter) : null);
 
         return appParameters;
-    }
-
-    public Path getConfigPath() {
-        return configPath;
-    }
-
-    public void setConfigPath(Path configPath) {
-        this.configPath = configPath;
     }
 
     @Override
@@ -66,7 +67,7 @@ public class AppParameters {
     @Override
     public String toString() {
         return new ToStringBuilder(this)
-            .add("configPath", configPath)
-            .toString();
+                .add("configPath", configPath)
+                .toString();
     }
 }
