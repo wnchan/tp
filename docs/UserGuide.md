@@ -29,7 +29,7 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 
     * `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I’m a Frontend Developer sm/https://www.linkedin.com/in/john-doe-123456789` : Adds a student named `John Doe` to the StudentConnect system.
 
-    * `delete 3` : Deletes the 3rd student shown in the current list.
+    * `delete [email]` : Deletes the student with the corresponding email.
 
     * `clear` : Deletes all students.
 
@@ -159,17 +159,27 @@ Expected Output (Failure):
 
 ### Deleting a person : `delete`
 
-Deletes the specified student from the system.
+Deletes a specific student and all personal details based on email.
 
-Format: `delete INDEX`
+Format: `delete [EMAIL]`
 
-* Deletes the person at the specified `INDEX`.
-* The index refers to the index number shown in the displayed person list.
-* The index **must be a positive integer** 1, 2, 3, …​
+* Deletes the person with the specified `EMAIL`.
+* The index refers to the email number shown in the displayed person list.
+* The email must be registered in the system.
 
 Examples:
-* `list` followed by `delete 2` deletes the 2nd student in the system.
-* `find Betsy` followed by `delete 1` deletes the 1st person in the results of the `find` command.
+* `list` followed by `delete alexy@u.nus.edu` deletes Alex Yeo from the system.
+
+Acceptable Values:
+* Email: a previously registered email address ending in `u.nus.edu`
+
+Expected Output(Success):
+* GUI: Student details removed from student list.
+* Message: `[Name] deleted successfully!`
+  ![Delete feature](images/delete.png)
+
+Expected Output (Failure):
+* Message: `Error! Email not found!`
 
 ### Clearing all entries : `clear`
 
