@@ -9,6 +9,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 ## Project team
 
+
 ### Pearlynn Toh
 
 <img src="images/pearlynnt.png" width="200px">
@@ -17,6 +18,16 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 [[portfolio](team/pearlynnt.md)]
 
 * Role: Team Lead, Developer
+
+### Yik Leong Loo
+
+<img src="images/bearypop.png" width="200px">
+
+[[github](https://github.com/Bearypop)]
+[[portfolio](team/bearypop.md)]
+
+* Role: Developer
+* Responsibilities: Testing + Integration
 
 ### Jane Doe
 
