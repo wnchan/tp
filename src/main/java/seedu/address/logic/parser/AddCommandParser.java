@@ -1,122 +1,63 @@
-package seedu.address.model.person;
+package seedu.address.logic.parser;
 
-import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
+import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_MAJOR;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_YEAR;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_SOCIAL_MEDIA_LINK;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.stream.Stream;
 
-import seedu.address.commons.util.ToStringBuilder;
-import seedu.address.model.tag.Tag;
+import seedu.address.logic.commands.AddCommand;
+import seedu.address.logic.parser.exceptions.ParseException;
+import seedu.address.model.person.Person;
+import seedu.address.model.person.Name;
+import seedu.address.model.person.Major;
+import seedu.address.model.person.Year;
+import seedu.address.model.person.Email;
+import seedu.address.model.person.Description;
+import seedu.address.model.person.SocialMediaLink;
 
 /**
- * Represents a Person in the address book.
- * Guarantees: details are present and not null, field values are validated, immutable.
+ * Parses input arguments and creates a new AddCommand object
  */
-public class Person {
-
-    // Identity fields
-    private final Name name;
-
-    private final Email email;
-
-    // Data fields
-
-    private final Major major;
-    private final Year year;
-    private final Description description;
-    private final SocialMediaLink socialMedia;
+public class AddCommandParser implements Parser<AddCommand> {
 
     /**
-     * Every field must be present and not null.
+     * Parses the given {@code String} of arguments in the context of the AddCommand
+     * and returns an AddCommand object for execution.
+     * @throws ParseException if the user input does not conform the expected format
      */
-    public Person(Name name, Major major, Year year, Email email, Description description, SocialMediaLink socialMedia) {
-        requireAllNonNull(name, major, year, email, description, socialMedia);
-        this.name = name;
-        this.major = major;
-        this.year = year;
-        this.email = email;
-        this.description = description;
-        this.socialMedia = socialMedia;
-    }
+    public AddCommand parse(String args) throws ParseException {
+        ArgumentMultimap argMultimap =
+                ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_MAJOR, PREFIX_YEAR, PREFIX_EMAIL, PREFIX_DESCRIPTION, PREFIX_SOCIAL_MEDIA_LINK);
 
-    public Name getName() {
-        return name;
-    }
+        if (!arePrefixesPresent(argMultimap, PREFIX_NAME, PREFIX_EMAIL)
+                || !argMultimap.getPreamble().isEmpty()) {
+            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE));
+        }
 
-    public Major getMajor() {
-        return major;
-    }
+        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_NAME, PREFIX_MAJOR, PREFIX_YEAR, PREFIX_EMAIL);
+        Name name = ParserUtil.parseName(argMultimap.getValue(PREFIX_NAME).get());
+        Major major = ParserUtil.parseMajor(argMultimap.getValue(PREFIX_MAJOR).get());
+        Year year = ParserUtil.parseYear(argMultimap.getValue(PREFIX_YEAR).get());
+        Email email = ParserUtil.parseEmail(argMultimap.getValue(PREFIX_EMAIL).get());
+        Description description = ParserUtil.parseDescription(argMultimap.getValue(PREFIX_DESCRIPTION).get());
+        SocialMediaLink socialMedia = ParserUtil.parseSocialMedia(argMultimap.getValue(PREFIX_SOCIAL_MEDIA_LINK).get());
 
-    public Major getYear() {
-        return year;
-    }
+        Person person = new Person(name, major, year, email, description, socialMedia);
 
-    public Email getEmail() {
-        return email;
-    }
-
-    public Description getDescription() {
-        return address;
-    }
-
-    public SocialMediaLink getSocialMedia() {
-        return socialMedia;
+        return new AddCommand(person);
     }
 
     /**
-     * Returns true if both persons have the same name.
-     * This defines a weaker notion of equality between two persons.
+     * Returns true if none of the prefixes contains empty {@code Optional} values in the given
+     * {@code ArgumentMultimap}.
      */
-    public boolean isSamePerson(Person otherPerson) {
-        if (otherPerson == this) {
-            return true;
-        }
-
-        return otherPerson != null
-                && otherPerson.getName().equals(getName());
+    private static boolean arePrefixesPresent(ArgumentMultimap argumentMultimap, Prefix... prefixes) {
+        return Stream.of(prefixes).allMatch(prefix -> argumentMultimap.getValue(prefix).isPresent());
     }
 
-    /**
-     * Returns true if both persons have the same identity and data fields.
-     * This defines a stronger notion of equality between two persons.
-     */
-    @Override
-    public boolean equals(Object other) {
-        if (other == this) {
-            return true;
-        }
-
-        // instanceof handles nulls
-        if (!(other instanceof Person)) {
-            return false;
-        }
-
-        Person otherPerson = (Person) other;
-        return name.equals(otherPerson.name)
-                && major.equals(otherPerson.major)
-                && year.equals(otherPerson.year)
-                && email.equals(otherPerson.email)
-                && description.equals(otherPerson.description)
-                && socialMedia.equals(otherPerson.socialMedia);
-    }
-
-    @Override
-    public int hashCode() {
-        // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, major, year, email, description, socialMedia);
-    }
-
-    @Override
-    public String toString() {
-        return new ToStringBuilder(this)
-                .add("name", name)
-                .add("major", major)
-                .add("year", year)
-                .add("email", email)
-                .add("description", description)
-                .add("socialMedia", socialMedia)
-                .toString();
-    }
 }
