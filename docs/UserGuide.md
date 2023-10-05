@@ -116,6 +116,8 @@ Format: `list`
 #### Expected Output (Failure):
 * Message: “Error: Unable to retrieve student entries. Please try again.”
 
+![sample result for 'list'](images/list.png)
+
 ### Editing a person : `edit`
 
 Edits an existing person in the address book.
