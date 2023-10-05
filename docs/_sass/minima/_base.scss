@@ -14,6 +14,7 @@ dl, dd, ol, ul, figure {
 }
 
 
+
 /**
  * Basic styling
  */
@@ -23,15 +24,16 @@ body {
   background-color: $background-color;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
-  -moz-font-feature-settings: "kern" 1;
-  -o-font-feature-settings: "kern" 1;
-  font-feature-settings: "kern" 1;
+     -moz-font-feature-settings: "kern" 1;
+       -o-font-feature-settings: "kern" 1;
+          font-feature-settings: "kern" 1;
   font-kerning: normal;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
   overflow-wrap: break-word;
 }
+
 
 
 /**
@@ -57,6 +59,7 @@ main {
 }
 
 
+
 /**
  * Images
  */
@@ -64,6 +67,7 @@ img {
   max-width: 100%;
   vertical-align: middle;
 }
+
 
 
 /**
@@ -76,6 +80,7 @@ figure > img {
 figcaption {
   font-size: $small-font-size;
 }
+
 
 
 /**
@@ -93,12 +98,14 @@ li {
 }
 
 
+
 /**
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
   font-weight: $base-font-weight;
 }
+
 
 
 /**
@@ -147,6 +154,7 @@ blockquote {
 }
 
 
+
 /**
  * Code formatting
  */
@@ -185,6 +193,7 @@ pre {
 }
 
 
+
 /**
  * Wrapper
  */
@@ -204,6 +213,7 @@ pre {
 }
 
 
+
 /**
  * Clearfix
  */
@@ -212,6 +222,7 @@ pre {
   display: table;
   clear: both;
 }
+
 
 
 /**
@@ -236,22 +247,18 @@ table {
   color: $table-text-color;
   border-collapse: collapse;
   border: 1px solid $table-border-color;
-
   tr {
     &:nth-child(even) {
       background-color: $table-zebra-color;
     }
   }
-
   th, td {
     padding: ($spacing-unit / 3) ($spacing-unit / 2);
   }
-
   th {
     background-color: $table-header-bg-color;
     border: 1px solid $table-header-border;
   }
-
   td {
     border: 1px solid $table-border-color;
   }
@@ -260,7 +267,7 @@ table {
     display: block;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
   }
 }
 
@@ -285,3 +292,4 @@ table {
     font-size: 32px;
   }
 }
+

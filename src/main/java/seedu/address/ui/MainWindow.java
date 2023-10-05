@@ -161,7 +161,7 @@ public class MainWindow extends UiPart<Stage> {
         PauseTransition pause = new PauseTransition(Duration.seconds(2));
         pause.setOnFinished(event -> {
             GuiSettings guiSettings = new GuiSettings(primaryStage.getWidth(), primaryStage.getHeight(),
-                (int) primaryStage.getX(), (int) primaryStage.getY());
+                    (int) primaryStage.getX(), (int) primaryStage.getY());
             logic.setGuiSettings(guiSettings);
             helpWindow.hide();
             primaryStage.hide();
