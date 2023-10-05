@@ -2,7 +2,6 @@ package seedu.address.ui;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Region;
@@ -24,5 +23,4 @@ public class StatusBarFooter extends UiPart<Region> {
         super(FXML);
         saveLocationStatus.setText(Paths.get(".").resolve(saveLocation).toString());
     }
-
 }
