@@ -77,7 +77,7 @@ Adds a student to the system.
 
 Format: `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION sm/SOCIALMEDIA`
 
-<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+<div markdown="span" class="alert alert-primary">:bulb: Tip:
 A person can have any number of social media links (including 0)
 </div>
 
@@ -100,8 +100,8 @@ Expected Output (Success):
 Expected Output (Failure):
 * Message: “Error: Invalid [PARAMETER]. Please check your input.”
 
-Mockup of add feature:
-![Add feature](docs/images/add.png)
+Mockup of add feature: <br>
+![Add feature](images/add.png)
 
 ### Listing all persons : `list`
 
