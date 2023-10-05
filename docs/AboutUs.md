@@ -29,24 +29,26 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 * Role: Developer
 * Responsibilities: Testing + Integration
 
-### Jane Doe
 
-<img src="images/johndoe.png" width="200px">
+### Chan Wei Ning
 
-[[github](http://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+<img src="images/wnchan.png" width="200px">
 
-* Role: Team Lead
-* Responsibilities: UI
-
-### Johnny Doe
-
-<img src="images/johndoe.png" width="200px">
-
-[[github](http://github.com/johndoe)] [[portfolio](team/johndoe.md)]
+[[github](https://github.com/wnchan)]
+[[portfolio](team/wnchan.md)]
 
 * Role: Developer
-* Responsibilities: Data
+* Responsibilities: Documentation
+
+### Alnaseri, Majedah Talal M
+
+<img src="images/maj0-0.png" width="200px">
+
+[[github](https://github.com/maj0-0)]
+[[portfolio](team/maj0-0.md)]
+
+* Role: Developer
+* Responsibilities: Deliverables & Deadlines + Scheduling & Tracking
 
 ### Jean Doe
 
