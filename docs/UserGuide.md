@@ -100,7 +100,7 @@ Expected Output (Success):
 Expected Output (Failure):
 * Message: “Error: Invalid [PARAMETER]. Please check your input.”
 
-Mockup of add feature: <br>
+Mockup of add feature (Success): <br>
 ![Add feature](images/add.png)
 
 ### Listing all persons : `list`
