@@ -79,20 +79,41 @@ Shows a message explaning how to access the help page.
 
 Format: `help`
 
-### Adding a person: `add`
 
-Adds a person to the address book.
+### Adding a student: add
 
-Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`
+Adds a student to the system.
+
+
+Format: `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION sm/SOCIALMEDIA`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-A person can have any number of tags (including 0)
+A person can have any number of social media links (including 0)
 </div>
 
 Examples:
 
-* `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01`
-* `add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal`
+* `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I’m a Frontend Developer sm/https://www.linkedin.com/in/john-doe-123456789`
+* `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu  d/I’m adept at Backend technologies`
+
+Acceptable Values:
+* Name: Full names with alphabetical characters
+* Major: Valid major names at NUS 
+* Year: Numeric year level 
+* Email: Valid email address ending in “@u.nus.edu” 
+* Description: Maximum 150 characters 
+* Social Media Link: Valid URL format to social media account (optional to include)
+
+Expected Output (Success):
+* GUI: New student entry added in the main student list 
+* Message: “Details added successfully!”
+
+Expected Output (Failure):
+* Message: “Error: Invalid [PARAMETER]. Please check your input.”
+
+Mockup of add feature:
+![Add feature](docs/images/add.png)
+
 
 ### Listing all persons : `list`
 
