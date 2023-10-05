@@ -71,20 +71,37 @@ Shows a message explaning how to access the help page.
 
 Format: `help`
 
+### Adding a student: add
 
-### Adding a person: `add`
+Adds a student to the system.
 
-Adds a person to the address book.
-
-Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`
+Format: `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION sm/SOCIALMEDIA`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-A person can have any number of tags (including 0)
+A person can have any number of social media links (including 0)
 </div>
 
 Examples:
-* `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01`
-* `add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal`
+* `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I’m a Frontend Developer sm/https://www.linkedin.com/in/john-doe-123456789`
+* `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu  d/I’m adept at Backend technologies`
+
+Acceptable Values:
+* Name: Full names with alphabetical characters
+* Major: Valid major names at NUS
+* Year: Numeric year level
+* Email: Valid email address ending in “@u.nus.edu”
+* Description: Maximum 150 characters
+* Social Media Link: Valid URL format to social media account (optional to include)
+
+Expected Output (Success):
+* GUI: New student entry added in the main student list
+* Message: “Details added successfully!”
+
+Expected Output (Failure):
+* Message: “Error: Invalid [PARAMETER]. Please check your input.”
+
+Mockup of add feature (Success): <br>
+![Add feature](images/add.png)
 
 ### Listing all students : `list`
 
@@ -116,23 +133,29 @@ Examples:
 *  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
 *  `edit 2 n/Betsy Crower t/` Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.
 
-### Locating persons by name: `find`
+### Finding a student by name: `find`
 
-Finds persons whose names contain any of the given keywords.
+Finds student(s) whose name(s) contain any of the given keywords.
 
 Format: `find KEYWORD [MORE_KEYWORDS]`
 
-* The search is case-insensitive. e.g `hans` will match `Hans`
-* The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
+* The search is case-insensitive. e.g `john` will match `John`
+* The order of the keywords does not matter. e.g. `John Doe` will match `Doe John`
 * Only the name is searched.
-* Only full words will be matched e.g. `Han` will not match `Hans`
+* Partial words can be matched. e.g. `John` will match `Johnny`
 * Persons matching at least one keyword will be returned (i.e. `OR` search).
-  e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
+  e.g. `John Crowe` will return `John Doe`, `Betsy Crowe`
 
 Examples:
-* `find John` returns `john` and `John Doe`
-* `find alex david` returns `Alex Yeoh`, `David Li`<br>
-  ![result for 'find alex david'](images/findAlexDavidResult.png)
+* `find John` returns `john`, `John Doe` and `Johnny Wee`
+* `find john betsy` returns `John Doe`, `Betsy Crowe`<br>
+
+Expected Output (Success):
+* GUI: List of all student entries whose name(s) match the keyword(s) in the system
+
+Expected Output (Failure):
+* Message: “Unable to find students with the given keyword(s).”
+  ![result for 'find alex'](images/findAlexResult.png)
 
 ### Deleting a person : `delete`
 
