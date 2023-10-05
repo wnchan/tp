@@ -49,15 +49,15 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 * Role: Developer
 * Responsibilities: Data
 
-### Majedah (Alnaseri, Majedah Talal M)
+### Jean Doe
 
-<img src="images/maj0-0.png" width="200px">
+<img src="images/johndoe.png" width="200px">
 
-[[github](https://github.com/maj0-0)]
-[[portfolio](team/maj0-0.md)]
+[[github](http://github.com/johndoe)]
+[[portfolio](team/johndoe.md)]
 
 * Role: Developer
-* Responsibilities: Deliverables & Deadlines + Scheduling & Tracking
+* Responsibilities: Dev Ops + Threading
 
 ### James Doe
 
