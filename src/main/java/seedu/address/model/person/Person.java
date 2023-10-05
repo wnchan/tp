@@ -2,13 +2,9 @@ package seedu.address.model.person;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
 
 import seedu.address.commons.util.ToStringBuilder;
-import seedu.address.model.tag.Tag;
 
 /**
  * Represents a Person in the address book.
@@ -23,7 +19,7 @@ public class Person {
 
     // Data fields
 
-    private final Major major;
+    private final Year major;
     private final Year year;
     private final Description description;
     private final SocialMediaLink socialMedia;
@@ -31,7 +27,7 @@ public class Person {
     /**
      * Every field must be present and not null.
      */
-    public Person(Name name, Major major, Year year, Email email, Description description, SocialMediaLink socialMedia) {
+    public Person(Name name, Year major, Year year, Email email, Description description, SocialMediaLink socialMedia) {
         requireAllNonNull(name, major, year, email, description, socialMedia);
         this.name = name;
         this.major = major;
@@ -45,11 +41,11 @@ public class Person {
         return name;
     }
 
-    public Major getMajor() {
+    public Year getMajor() {
         return major;
     }
 
-    public Major getYear() {
+    public Year getYear() {
         return year;
     }
 
@@ -58,7 +54,7 @@ public class Person {
     }
 
     public Description getDescription() {
-        return address;
+        return description;
     }
 
     public SocialMediaLink getSocialMedia() {
