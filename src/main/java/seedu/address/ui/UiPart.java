@@ -1,10 +1,8 @@
 package seedu.address.ui;
 
 import static java.util.Objects.requireNonNull;
-
 import java.io.IOException;
 import java.net.URL;
-
 import javafx.fxml.FXMLLoader;
 import seedu.address.MainApp;
 
@@ -14,7 +12,9 @@ import seedu.address.MainApp;
  */
 public abstract class UiPart<T> {
 
-    /** Resource folder where FXML files are stored. */
+    /**
+     * Resource folder where FXML files are stored.
+     */
     public static final String FXML_FILE_FOLDER = "/view/";
 
     private final FXMLLoader fxmlLoader = new FXMLLoader();
@@ -29,6 +29,7 @@ public abstract class UiPart<T> {
 
     /**
      * Constructs a UiPart using the specified FXML file within {@link #FXML_FILE_FOLDER}.
+     *
      * @see #UiPart(URL)
      */
     public UiPart(String fxmlFileName) {
@@ -45,34 +46,11 @@ public abstract class UiPart<T> {
 
     /**
      * Constructs a UiPart with the specified FXML file within {@link #FXML_FILE_FOLDER} and root object.
+     *
      * @see #UiPart(URL, T)
      */
     public UiPart(String fxmlFileName, T root) {
         this(getFxmlFileUrl(fxmlFileName), root);
-    }
-
-    /**
-     * Returns the root object of the scene graph of this UiPart.
-     */
-    public T getRoot() {
-        return fxmlLoader.getRoot();
-    }
-
-    /**
-     * Loads the object hierarchy from a FXML document.
-     * @param location Location of the FXML document.
-     * @param root Specifies the root of the object hierarchy.
-     */
-    private void loadFxmlFile(URL location, T root) {
-        requireNonNull(location);
-        fxmlLoader.setLocation(location);
-        fxmlLoader.setController(this);
-        fxmlLoader.setRoot(root);
-        try {
-            fxmlLoader.load();
-        } catch (IOException e) {
-            throw new AssertionError(e);
-        }
     }
 
     /**
@@ -85,4 +63,28 @@ public abstract class UiPart<T> {
         return requireNonNull(fxmlFileUrl);
     }
 
+    /**
+     * Returns the root object of the scene graph of this UiPart.
+     */
+    public T getRoot() {
+        return fxmlLoader.getRoot();
+    }
+
+    /**
+     * Loads the object hierarchy from a FXML document.
+     *
+     * @param location Location of the FXML document.
+     * @param root     Specifies the root of the object hierarchy.
+     */
+    private void loadFxmlFile(URL location, T root) {
+        requireNonNull(location);
+        fxmlLoader.setLocation(location);
+        fxmlLoader.setController(this);
+        fxmlLoader.setRoot(root);
+        try {
+            fxmlLoader.load();
+        } catch (IOException e) {
+            throw new AssertionError(e);
+        }
+    }
 }
