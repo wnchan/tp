@@ -16,16 +16,16 @@ management tasks done faster than traditional GUI apps.
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
-1. Download the latest `addressbook.jar` from [here](https://github.com/se-edu/addressbook-level3/releases).
+2. Download the latest `addressbook.jar` from [here](https://github.com/se-edu/addressbook-level3/releases).
 
-1. Copy the file to the folder you want to use as the _home folder_ for your AddressBook.
+3. Copy the file to the folder you want to use as the _home folder_ for your AddressBook.
 
-1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar addressbook.jar`
+4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar addressbook.jar`
    command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/Ui.png)
 
-1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will
+5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will
    open the help window.<br>
    Some example commands you can try:
 
@@ -40,7 +40,7 @@ management tasks done faster than traditional GUI apps.
 
     * `exit` : Exits the app.
 
-1. Refer to the [Features](#features) below for details of each command.
+6. Refer to the [Features](#features) below for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -101,10 +101,12 @@ Shows a list of all students in the system.
 Format: `list`
 
 #### Expected Output(Success):
+
 * GUI: List of all student entries in the system
 * Message: “Viewing all students”
 
 #### Expected Output(Failure):
+
 * Message: “Error: Unable to retrieve student entries. Please try again.”
 
 ### Editing a person : `edit`
@@ -127,24 +129,32 @@ Examples:
   and `johndoe@example.com` respectively.
 * `edit 2 n/Betsy Crower t/` Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.
 
-### Locating persons by name: `find`
+### Finding a student by name: `find`
 
-Finds persons whose names contain any of the given keywords.
+Finds student(s) whose name(s) contain any of the given keywords.
 
 Format: `find KEYWORD [MORE_KEYWORDS]`
 
-* The search is case-insensitive. e.g `hans` will match `Hans`
-* The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
+* The search is case-insensitive. e.g `john` will match `John`
+* The order of the keywords does not matter. e.g. `John Doe` will match `Doe John`
 * Only the name is searched.
-* Only full words will be matched e.g. `Han` will not match `Hans`
+* Partial words can be matched. e.g. `John` will match `Johnny`
 * Persons matching at least one keyword will be returned (i.e. `OR` search).
-  e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
+  e.g. `John Crowe` will return `John Doe`, `Betsy Crowe`
 
 Examples:
 
-* `find John` returns `john` and `John Doe`
-* `find alex david` returns `Alex Yeoh`, `David Li`<br>
-  ![result for 'find alex david'](images/findAlexDavidResult.png)
+* `find John` returns `john`, `John Doe` and `Johnny Wee`
+* `find john betsy` returns `John Doe`, `Betsy Crowe`<br>
+
+Expected Output (Success):
+
+* GUI: List of all student entries whose name(s) match the keyword(s) in the system
+
+Expected Output (Failure):
+
+* Message: “Unable to find students with the given keyword(s).”
+  ![result for 'find alex'](images/findAlexResult.png)
 
 ### Deleting a person : `delete`
 
@@ -174,10 +184,12 @@ Exits the program.
 Format: `exit`
 
 #### Expected Output(Success):
+
 * GUI: Application window closes.
 * Message (before closing): “Thank you for using StudentConnect!”
 
 #### Expected Output(Failure):
+
 * Message: “Error: Exiting the program failed.”
 
 ![Exit](images/exit.png)
