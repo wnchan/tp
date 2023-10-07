@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import seedu.address.commons.exceptions.IllegalValueException;
-
 import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Major;
@@ -44,7 +43,7 @@ class JsonAdaptedPerson {
         this.description = description;
         this.socialMediaLink = socialMediaLink;
     }
-    
+
     /**
      * Converts a given {@code Person} into this class for Jackson use.
      */
@@ -93,15 +92,18 @@ class JsonAdaptedPerson {
         final Email modelEmail = new Email(email);
 
         if (description == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Description.class.getSimpleName()));
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
+                    Description.class.getSimpleName()));
         }
         final Description modelDescription = new Description(description);
 
         if (socialMediaLink == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, SocialMediaLink.class.getSimpleName()));
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
+                    SocialMediaLink.class.getSimpleName()));
         }
         final SocialMediaLink modelSocialMediaLink = new SocialMediaLink(socialMediaLink);
 
         return new Person(modelName, modelMajor, modelYear, modelEmail, modelDescription, modelSocialMediaLink);
     }
 }
+
