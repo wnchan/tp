@@ -5,12 +5,12 @@ import static java.util.Objects.requireNonNull;
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.StringUtil;
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.person.Name;
-import seedu.address.model.person.Major;
-import seedu.address.model.person.Year;
-import seedu.address.model.person.Email;
 import seedu.address.model.person.Description;
+import seedu.address.model.person.Email;
+import seedu.address.model.person.Major;
+import seedu.address.model.person.Name;
 import seedu.address.model.person.SocialMediaLink;
+import seedu.address.model.person.Year;
 
 /**
  * Contains utility methods used for parsing strings in the various *Parser classes.

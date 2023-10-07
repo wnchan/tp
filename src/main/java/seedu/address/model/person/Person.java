@@ -27,7 +27,8 @@ public class Person {
     /**
      * Every field must be present and not null.
      */
-    public Person(Name name, Major major, Year year, Email email, Description description, SocialMediaLink socialMedia) {
+    public Person(Name name, Major major, Year year, Email email, Description description,
+                  SocialMediaLink socialMedia) {
         requireAllNonNull(name, major, year, email, description, socialMedia);
         this.name = name;
         this.major = major;

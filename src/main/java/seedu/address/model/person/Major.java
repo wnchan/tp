@@ -10,6 +10,11 @@ public class Major {
 
     public final String value;
 
+    /**
+     * Constructs a {@code Major} with the specified major value.
+     *
+     * @param major The major value. Must not be null.
+     */
     public Major(String major) {
         requireNonNull(major);
         value = major;
@@ -32,3 +37,4 @@ public class Major {
         return value.hashCode();
     }
 }
+

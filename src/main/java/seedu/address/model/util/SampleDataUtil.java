@@ -2,18 +2,19 @@ package seedu.address.model.util;
 
 import seedu.address.model.AddressBook;
 import seedu.address.model.ReadOnlyAddressBook;
+import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
+import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
-import seedu.address.model.person.Major;
-import seedu.address.model.person.Year;
-import seedu.address.model.person.Description;
 import seedu.address.model.person.SocialMediaLink;
+import seedu.address.model.person.Year;
 
 /**
  * Contains utility methods for populating {@code AddressBook} with sample data.
  */
 public class SampleDataUtil {
+    
     public static Person[] getSamplePersons() {
         return new Person[] {
                 new Person(new Name("Alex Yeoh"), new Major("Computer Science"), new Year("2"),
@@ -45,4 +46,3 @@ public class SampleDataUtil {
         return sampleAb;
     }
 }
-

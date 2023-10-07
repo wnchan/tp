@@ -2,13 +2,15 @@ package seedu.address.storage;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import seedu.address.commons.exceptions.IllegalValueException;
+
+import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
+import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
-import seedu.address.model.person.Description;
 import seedu.address.model.person.SocialMediaLink;
-import seedu.address.model.person.Major;
 import seedu.address.model.person.Year;
 
 /**
@@ -29,8 +31,10 @@ class JsonAdaptedPerson {
      * Constructs a {@code JsonAdaptedPerson} with the given person details.
      */
     @JsonCreator
-    public JsonAdaptedPerson(@JsonProperty("name") String name, @JsonProperty("major") String major,
-                             @JsonProperty("year") String year, @JsonProperty("email") String email,
+    public JsonAdaptedPerson(@JsonProperty("name") String name,
+                             @JsonProperty("major") String major,
+                             @JsonProperty("year") String year,
+                             @JsonProperty("email") String email,
                              @JsonProperty("description") String description,
                              @JsonProperty("socialMediaLink") String socialMediaLink) {
         this.name = name;
@@ -40,7 +44,7 @@ class JsonAdaptedPerson {
         this.description = description;
         this.socialMediaLink = socialMediaLink;
     }
-
+    
     /**
      * Converts a given {@code Person} into this class for Jackson use.
      */

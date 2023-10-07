@@ -10,6 +10,12 @@ public class Description {
 
     public final String value;
 
+
+    /**
+     * Constructs a {@code Description} with the specified description value.
+     *
+     * @param description The description value. Must not be null.
+     */
     public Description(String description) {
         requireNonNull(description);
         value = description;
