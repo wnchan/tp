@@ -8,15 +8,14 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
  * Guarantees: immutable; is valid as declared in {@link #isValidSocialMediaLink(String)}
  */
 public class SocialMediaLink {
-
-    private static final String SPECIAL_CHARACTERS = "+_.-";
+    private static final String SPECIAL_CHARACTERS = "+_.-:/";
     public static final String MESSAGE_CONSTRAINTS = "Social media links should adhere to the following constraints:\n"
             + "1. It should only contain alphanumeric characters and these special characters: "
             + SPECIAL_CHARACTERS + ".\n"
             + "2. It may not start or end with any special characters.\n"
             + "3. It should be a valid URL or handle for a social media platform.";
     // alphanumeric and special characters
-    private static final String ALPHANUMERIC = "[a-zA-Z0-9" + SPECIAL_CHARACTERS + "]+";
+    private static final String ALPHANUMERIC = "[a-zA-Z0-9-:/" + SPECIAL_CHARACTERS + "]+";
     public static final String VALIDATION_REGEX = "^" + ALPHANUMERIC + "$";
 
     public final String value;
@@ -65,3 +64,4 @@ public class SocialMediaLink {
     }
 
 }
+
