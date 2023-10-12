@@ -46,6 +46,7 @@ public class DeleteCommandTest {
 
         assertCommandFailure(deleteCommand, model, "Person with the provided email not found.");
     }
+    
     @Test
     public void equals() {
         Person person = model.getFilteredPersonList().get(0); // Assuming the first person in the list is used
