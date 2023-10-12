@@ -9,52 +9,52 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
  */
 public class Major {
 
-    public static final String MESSAGE_CONSTRAINTS = "Majors should not be blank and must be a valid " +
-            "major offered at NUS.";
+    private static final String[] VALID_NUS_MAJORS = {
+        "Accounting", 
+        "Actuarial Studies",
+        "Architecture",
+        "Biological Sciences",
+        "Biomedical Engineering",
+        "Business Administration",
+        "Business Analytics",
+        "Chemical Engineering",
+        "Chemistry",
+        "Civil Engineering",
+        "Computer Engineering",
+        "Computer Science",
+        "Data Science and Analytics",
+        "Dentistry",
+        "Economics",
+        "Electrical Engineering",
+        "Environmental Studies",
+        "Food Science and Technology",
+        "Geography",
+        "Information Systems",
+        "Information Security",
+        "Law",
+        "Life Sciences",
+        "Management",
+        "Marketing",
+        "Materials Science and Engineering",
+        "Mathematics",
+        "Mechanical Engineering",
+        "Medicine",
+        "Pharmacy",
+        "Physics",
+        "Political Science",
+        "Psychology",
+        "Real Estate",
+        "Sociology",
+        "Statistics",
+        "Theatre Studies",
+        "Urban Studies",
+        "Visual Communications",        
+    };
+
+    public static final String MESSAGE_CONSTRAINTS = "Majors should not be blank and must be a valid "
+	    + "major offered at NUS.";
 
     public final String value;
-
-    private static final String[] VALID_NUS_MAJORS = {
-            "Accounting",
-            "Actuarial Studies",
-            "Architecture",
-            "Biological Sciences",
-            "Biomedical Engineering",
-            "Business Administration",
-            "Business Analytics",
-            "Chemical Engineering",
-            "Chemistry",
-            "Civil Engineering",
-            "Computer Engineering",
-            "Computer Science",
-            "Data Science and Analytics",
-            "Dentistry",
-            "Economics",
-            "Electrical Engineering",
-            "Environmental Studies",
-            "Food Science and Technology",
-            "Geography",
-            "Information Systems",
-            "Information Security",
-            "Law",
-            "Life Sciences",
-            "Management",
-            "Marketing",
-            "Materials Science and Engineering",
-            "Mathematics",
-            "Mechanical Engineering",
-            "Medicine",
-            "Pharmacy",
-            "Physics",
-            "Political Science",
-            "Psychology",
-            "Real Estate",
-            "Sociology",
-            "Statistics",
-            "Theatre Studies",
-            "Urban Studies",
-            "Visual Communications",
-    };
 
     /**
      * Constructs a {@code Major} with the specified major value.
