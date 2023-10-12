@@ -9,8 +9,7 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
  */
 public class Description {
 
-    public static final String MESSAGE_CONSTRAINTS = "Descriptions should not be left blank or" 
-            + " exceed 150 characters.";
+    public static final String MESSAGE_CONSTRAINTS = "Descriptions should not be left blank or exceed 150 characters.";
 
     public final String value;
 
