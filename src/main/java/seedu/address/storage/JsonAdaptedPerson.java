@@ -1,21 +1,17 @@
 package seedu.address.storage;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
-
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import seedu.address.commons.exceptions.IllegalValueException;
-import seedu.address.model.person.Address;
+import seedu.address.logic.parser.exceptions.ParseException;
+import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
+import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
-import seedu.address.model.person.Phone;
-import seedu.address.model.tag.Tag;
+import seedu.address.model.person.SocialMediaLink;
+import seedu.address.model.person.Year;
 
 /**
  * Jackson-friendly version of {@link Person}.
@@ -25,25 +21,28 @@ class JsonAdaptedPerson {
     public static final String MISSING_FIELD_MESSAGE_FORMAT = "Person's %s field is missing!";
 
     private final String name;
-    private final String phone;
+    private final String major;
+    private final String year;
     private final String email;
-    private final String address;
-    private final List<JsonAdaptedTag> tags = new ArrayList<>();
+    private final String description;
+    private final String socialMediaLink;
 
     /**
      * Constructs a {@code JsonAdaptedPerson} with the given person details.
      */
     @JsonCreator
-    public JsonAdaptedPerson(@JsonProperty("name") String name, @JsonProperty("phone") String phone,
-            @JsonProperty("email") String email, @JsonProperty("address") String address,
-            @JsonProperty("tags") List<JsonAdaptedTag> tags) {
+    public JsonAdaptedPerson(@JsonProperty("name") String name,
+                             @JsonProperty("major") String major,
+                             @JsonProperty("year") String year,
+                             @JsonProperty("email") String email,
+                             @JsonProperty("description") String description,
+                             @JsonProperty("socialMediaLink") String socialMediaLink) {
         this.name = name;
-        this.phone = phone;
+        this.major = major;
+        this.year = year;
         this.email = email;
-        this.address = address;
-        if (tags != null) {
-            this.tags.addAll(tags);
-        }
+        this.description = description;
+        this.socialMediaLink = socialMediaLink;
     }
 
     /**
@@ -51,12 +50,11 @@ class JsonAdaptedPerson {
      */
     public JsonAdaptedPerson(Person source) {
         name = source.getName().fullName;
-        phone = source.getPhone().value;
+        major = source.getMajor().value;
+        year = source.getYear().value;
         email = source.getEmail().value;
-        address = source.getAddress().value;
-        tags.addAll(source.getTags().stream()
-                .map(JsonAdaptedTag::new)
-                .collect(Collectors.toList()));
+        description = source.getDescription().value;
+        socialMediaLink = source.getSocialMedia().value;
     }
 
     /**
@@ -65,11 +63,6 @@ class JsonAdaptedPerson {
      * @throws IllegalValueException if there were any data constraints violated in the adapted person.
      */
     public Person toModelType() throws IllegalValueException {
-        final List<Tag> personTags = new ArrayList<>();
-        for (JsonAdaptedTag tag : tags) {
-            personTags.add(tag.toModelType());
-        }
-
         if (name == null) {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Name.class.getSimpleName()));
         }
@@ -78,13 +71,21 @@ class JsonAdaptedPerson {
         }
         final Name modelName = new Name(name);
 
-        if (phone == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Phone.class.getSimpleName()));
+        if (major == null) {
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Major.class.getSimpleName()));
         }
-        if (!Phone.isValidPhone(phone)) {
-            throw new IllegalValueException(Phone.MESSAGE_CONSTRAINTS);
+        if (!Major.isValidMajor(major)) {
+            throw new ParseException(Major.MESSAGE_CONSTRAINTS);
         }
-        final Phone modelPhone = new Phone(phone);
+        final Major modelMajor = new Major(major);
+
+        if (year == null) {
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Year.class.getSimpleName()));
+        }
+        if (!Year.isValidYear(year)) {
+            throw new IllegalValueException(Year.MESSAGE_CONSTRAINTS);
+        }
+        final Year modelYear = new Year(year);
 
         if (email == null) {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Email.class.getSimpleName()));
@@ -94,16 +95,25 @@ class JsonAdaptedPerson {
         }
         final Email modelEmail = new Email(email);
 
-        if (address == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Address.class.getSimpleName()));
+        if (description == null) {
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
+                    Description.class.getSimpleName()));
         }
-        if (!Address.isValidAddress(address)) {
-            throw new IllegalValueException(Address.MESSAGE_CONSTRAINTS);
+        if (!Description.isValidDescription(description)) {
+            throw new ParseException(Description.MESSAGE_CONSTRAINTS);
         }
-        final Address modelAddress = new Address(address);
+        final Description modelDescription = new Description(description);
 
-        final Set<Tag> modelTags = new HashSet<>(personTags);
-        return new Person(modelName, modelPhone, modelEmail, modelAddress, modelTags);
+        if (socialMediaLink == null) {
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
+                    SocialMediaLink.class.getSimpleName()));
+        }
+        if (!SocialMediaLink.isValidSocialMediaLink(socialMediaLink)) {
+            throw new ParseException(SocialMediaLink.MESSAGE_CONSTRAINTS);
+        }
+        final SocialMediaLink modelSocialMediaLink = new SocialMediaLink(socialMediaLink);
+
+        return new Person(modelName, modelMajor, modelYear, modelEmail, modelDescription, modelSocialMediaLink);
     }
-
 }
+

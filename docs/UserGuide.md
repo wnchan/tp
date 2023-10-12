@@ -83,7 +83,7 @@ A person can have any number of social media links (including 0)
 
 Examples:
 * `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I’m a Frontend Developer sm/https://www.linkedin.com/in/john-doe-123456789`
-* `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu  d/I’m adept at Backend technologies`
+* `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu  d/I’m adept at Backend technologies sm/`
 
 Acceptable Values:
 * Name: Full names with alphabetical characters
@@ -95,10 +95,13 @@ Acceptable Values:
 
 Expected Output (Success):
 * GUI: New student entry added in the main student list
-* Message: “Details added successfully!”
+* Message: “Details added successfully! New student added: (details of new student)”
 
 Expected Output (Failure):
-* Message: “Error: Invalid [PARAMETER]. Please check your input.”
+* Message:  "Invalid command format! add: Adds a person to StudentConnect. <br>
+Parameters: n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION sm/SOCIAL_MEDIA_LINK <br>
+Example: add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time <br>
+sm/https://www.linkedin.com/in/john-doe-123456789";
 
 Mockup of add feature (Success): <br>
 ![Add feature](images/add.png)
