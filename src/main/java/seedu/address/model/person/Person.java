@@ -2,13 +2,9 @@ package seedu.address.model.person;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
 
 import seedu.address.commons.util.ToStringBuilder;
-import seedu.address.model.tag.Tag;
 
 /**
  * Represents a Person in the address book.
@@ -18,47 +14,52 @@ public class Person {
 
     // Identity fields
     private final Name name;
-    private final Phone phone;
+
     private final Email email;
 
     // Data fields
-    private final Address address;
-    private final Set<Tag> tags = new HashSet<>();
+
+    private final Major major;
+    private final Year year;
+    private final Description description;
+    private final SocialMediaLink socialMedia;
 
     /**
      * Every field must be present and not null.
      */
-    public Person(Name name, Phone phone, Email email, Address address, Set<Tag> tags) {
-        requireAllNonNull(name, phone, email, address, tags);
+    public Person(Name name, Major major, Year year, Email email, Description description,
+                  SocialMediaLink socialMedia) {
+        requireAllNonNull(name, major, year, email, description, socialMedia);
         this.name = name;
-        this.phone = phone;
+        this.major = major;
+        this.year = year;
         this.email = email;
-        this.address = address;
-        this.tags.addAll(tags);
+        this.description = description;
+        this.socialMedia = socialMedia;
     }
 
     public Name getName() {
         return name;
     }
 
-    public Phone getPhone() {
-        return phone;
+    public Major getMajor() {
+        return major;
+    }
+
+    public Year getYear() {
+        return year;
     }
 
     public Email getEmail() {
         return email;
     }
 
-    public Address getAddress() {
-        return address;
+    public Description getDescription() {
+        return description;
     }
 
-    /**
-     * Returns an immutable tag set, which throws {@code UnsupportedOperationException}
-     * if modification is attempted.
-     */
-    public Set<Tag> getTags() {
-        return Collections.unmodifiableSet(tags);
+    public SocialMediaLink getSocialMedia() {
+        return socialMedia;
     }
 
     /**
@@ -91,27 +92,29 @@ public class Person {
 
         Person otherPerson = (Person) other;
         return name.equals(otherPerson.name)
-                && phone.equals(otherPerson.phone)
+                && major.equals(otherPerson.major)
+                && year.equals(otherPerson.year)
                 && email.equals(otherPerson.email)
-                && address.equals(otherPerson.address)
-                && tags.equals(otherPerson.tags);
+                && description.equals(otherPerson.description)
+                && socialMedia.equals(otherPerson.socialMedia);
     }
 
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, phone, email, address, tags);
+        return Objects.hash(name, major, year, email, description, socialMedia);
     }
 
     @Override
     public String toString() {
         return new ToStringBuilder(this)
                 .add("name", name)
-                .add("phone", phone)
+                .add("major", major)
+                .add("year", year)
                 .add("email", email)
-                .add("address", address)
-                .add("tags", tags)
+                .add("description", description)
+                .add("socialMedia", socialMedia)
                 .toString();
     }
-
 }
+
