@@ -278,13 +278,14 @@ CS2103T students.
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                                    | I want to …​                                        | So that I can…​                            |
-|----------|--------------------------------------------|-----------------------------------------------------|--------------------------------------------|
-| `* * *`  | student                                    | add my personal details to the system               | get other students to learn more about me. |
-| `* * *`  | student                                    | view the rest of the students in the course         | see my options for choosing teammates      |
-| `* * *`  | student                                    | see the other student’s name, major, basic info etc | make informed decisions                    |
-| `* * *`  | student                                    | remove my personal details from the system          | stop using the application                 |
-| `* * *`  | user                                       | exit the app                        | close the app                              |
+| Priority | As a …​   | I want to …​                                        | So that I can…​                           |
+|----------|-----------|-----------------------------------------------------|-------------------------------------------|
+| `* * *`  | student   | add my personal details to the system               | get other students to learn more about me |
+| `* * *`  | student   | view the rest of the students in the course         | see my options for choosing teammates     |
+| `* * *`  | student   | see the other student’s name, major, basic info etc | make informed decisions                   |
+| `* * * ` | student   | customise and update my profile details             | ensure that my profile is up to date      |
+| `* * *`  | student   | remove my personal details from the system          | stop using the application                |
+| `* * *`  | user      | exit the app                                        | close the app                             |
 
 
 *{More to be added}*
@@ -354,6 +355,22 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 1a1. StudentConnect shows an error message.
 
   Use case ends
+
+**Use Case: Edit a student**
+
+**MSS**
+
+1. Student requests to update a specific student’s details on the list by email.
+2. StudentConnect shows a list of students containing the student with the updated details.
+
+   Use case ends.
+
+**Extensions:**
+
+* 1a. The given email is invalid
+    * 1a1. StudentConnect shows an error message.
+
+   Use case ends.  
 
 **Use Case: Exit the app**
 
