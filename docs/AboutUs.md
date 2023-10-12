@@ -40,24 +40,25 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 * Role: Developer
 * Responsibilities: Documentation
 
-### Johnny Doe
+### Alnaseri, Majedah Talal M
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/maj0-0.png" width="200px">
 
-[[github](http://github.com/johndoe)] [[portfolio](team/johndoe.md)]
-
-* Role: Developer
-* Responsibilities: Data
-
-### Jean Doe
-
-<img src="images/johndoe.png" width="200px">
-
-[[github](http://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+[[github](https://github.com/maj0-0)]
+[[portfolio](team/maj0-0.md)]
 
 * Role: Developer
-* Responsibilities: Dev Ops + Threading
+* Responsibilities: Deliverables & Deadlines + Scheduling & Tracking
+
+### Dewangan Neya Praveen
+
+<img src="images/neyapraveen.png" width="200px">
+
+[[github](http://github.com/neyapraveen)]
+[[portfolio](team/neyapraveen.md)]
+
+* Role: Developer
+* Responsibilities: Code Quality
 
 ### James Doe
 
