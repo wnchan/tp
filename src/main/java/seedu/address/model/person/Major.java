@@ -1,6 +1,7 @@
 package seedu.address.model.person;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.commons.util.AppUtil.checkArgument;
 
 /**
  * Represents a Student's major in StudentConnect.
@@ -8,7 +9,52 @@ import static java.util.Objects.requireNonNull;
  */
 public class Major {
 
+    public static final String MESSAGE_CONSTRAINTS = "Majors should not be blank and must be a valid " +
+            "major offered at NUS.";
+
     public final String value;
+
+    private static final String[] VALID_NUS_MAJORS = {
+            "Accounting",
+            "Actuarial Studies",
+            "Architecture",
+            "Biological Sciences",
+            "Biomedical Engineering",
+            "Business Administration",
+            "Business Analytics",
+            "Chemical Engineering",
+            "Chemistry",
+            "Civil Engineering",
+            "Computer Engineering",
+            "Computer Science",
+            "Data Science and Analytics",
+            "Dentistry",
+            "Economics",
+            "Electrical Engineering",
+            "Environmental Studies",
+            "Food Science and Technology",
+            "Geography",
+            "Information Systems",
+            "Information Security",
+            "Law",
+            "Life Sciences",
+            "Management",
+            "Marketing",
+            "Materials Science and Engineering",
+            "Mathematics",
+            "Mechanical Engineering",
+            "Medicine",
+            "Pharmacy",
+            "Physics",
+            "Political Science",
+            "Psychology",
+            "Real Estate",
+            "Sociology",
+            "Statistics",
+            "Theatre Studies",
+            "Urban Studies",
+            "Visual Communications",
+    };
 
     /**
      * Constructs a {@code Major} with the specified major value.
@@ -17,7 +63,36 @@ public class Major {
      */
     public Major(String major) {
         requireNonNull(major);
-        value = major;
+        checkArgument(isValidMajor(major), MESSAGE_CONSTRAINTS);
+        value = capitalizeFirstLetterOfEachWord(major);
+    }
+
+    private String capitalizeFirstLetterOfEachWord(String text) {
+        String[] words = text.split("\\s");
+        StringBuilder result = new StringBuilder();
+
+        for (String word : words) {
+            if (!word.isEmpty()) {
+                result.append(Character.toUpperCase(word.charAt(0))).append(word.substring(1).toLowerCase());
+                result.append(" "); // Add a space between words
+            }
+        }
+        if (result.length() > 0) {
+            result.setLength(result.length() - 1);
+        }
+        return result.toString();
+    }
+
+    /**
+     * Returns if a given string is a valid major offered at NUS.
+     */
+    public static boolean isValidMajor(String major) {
+        for (String validMajor : VALID_NUS_MAJORS) {
+            if (major.equalsIgnoreCase(validMajor)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override

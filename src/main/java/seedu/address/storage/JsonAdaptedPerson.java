@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import seedu.address.commons.exceptions.IllegalValueException;
+import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Major;
@@ -73,6 +74,9 @@ class JsonAdaptedPerson {
         if (major == null) {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Major.class.getSimpleName()));
         }
+        if (!Major.isValidMajor(major)) {
+            throw new ParseException(Major.MESSAGE_CONSTRAINTS);
+        }
         final Major modelMajor = new Major(major);
 
         if (year == null) {
@@ -95,11 +99,17 @@ class JsonAdaptedPerson {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
                     Description.class.getSimpleName()));
         }
+        if (!Description.isValidDescription(description)) {
+            throw new ParseException(Description.MESSAGE_CONSTRAINTS);
+        }
         final Description modelDescription = new Description(description);
 
         if (socialMediaLink == null) {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
                     SocialMediaLink.class.getSimpleName()));
+        }
+        if (!SocialMediaLink.isValidSocialMediaLink(socialMediaLink)) {
+            throw new ParseException(SocialMediaLink.MESSAGE_CONSTRAINTS);
         }
         final SocialMediaLink modelSocialMediaLink = new SocialMediaLink(socialMediaLink);
 

@@ -24,7 +24,7 @@ public class SampleDataUtil {
                     new Email("berniceyu@u.nus.edu"), new Description("Colleague from work"),
                     new SocialMediaLink("https://example.com/bernice")),
             new Person(new Name("Charlotte Oliveiro"), new Major("Computer Science"), new Year("2"),
-                    new Email("charlotte@u.nus.edu"), new Description("Neighbor"),
+                    new Email("charlotte@u.nus.edu"), new Description("Neighbour"),
                     new SocialMediaLink("https://example.com/charlotte")),
             new Person(new Name("David Li"), new Major("Computer Science"), new Year("2"),
                     new Email("lidavid@u.nus.edu"), new Description("Family member"),

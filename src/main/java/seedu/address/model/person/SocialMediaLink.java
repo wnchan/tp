@@ -27,15 +27,19 @@ public class SocialMediaLink {
      */
     public SocialMediaLink(String socialMediaLink) {
         requireNonNull(socialMediaLink);
-        checkArgument(isValidSocialMediaLink(socialMediaLink), MESSAGE_CONSTRAINTS);
-        value = socialMediaLink;
+        if (socialMediaLink.isEmpty()) {
+            value = "No social media link has been added";
+        } else {
+            checkArgument(isValidSocialMediaLink(socialMediaLink), MESSAGE_CONSTRAINTS);
+            value = socialMediaLink;
+        }
     }
 
     /**
      * Returns if a given string is a valid social media link.
      */
     public static boolean isValidSocialMediaLink(String test) {
-        return test.matches(VALIDATION_REGEX);
+        return test.isEmpty() || "No social media link has been added".equals(test) || test.matches(VALIDATION_REGEX);
     }
 
     @Override

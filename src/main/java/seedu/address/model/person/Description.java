@@ -1,12 +1,16 @@
 package seedu.address.model.person;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.commons.util.AppUtil.checkArgument;
 
 /**
  * Represents a Student's description in StudentConnect.
  * Guarantees: immutable;
  */
 public class Description {
+
+    public static final String MESSAGE_CONSTRAINTS = "Descriptions should not be left blank or " +
+            "exceed 150 characters.";
 
     public final String value;
 
@@ -18,7 +22,15 @@ public class Description {
      */
     public Description(String description) {
         requireNonNull(description);
+        checkArgument(isValidDescription(description), MESSAGE_CONSTRAINTS);
         value = description;
+    }
+
+    /**
+     * Returns if a given string is a valid description.
+     */
+    public static boolean isValidDescription(String value) {
+        return value != null && !value.isBlank() && value.length() <= 150;
     }
 
     @Override

@@ -32,11 +32,12 @@ public class AddCommand extends Command {
             + "Example: " + COMMAND_WORD + " "
             + PREFIX_NAME + "John Doe "
             + PREFIX_MAJOR + "Computer Science "
+            + PREFIX_YEAR + "2 "
             + PREFIX_EMAIL + "johnd@u.nus.edu "
             + PREFIX_DESCRIPTION + "I love programming in my free time "
             + PREFIX_SOCIAL_MEDIA_LINK + "https://www.linkedin.com/in/john-doe-123456789 ";
 
-    public static final String MESSAGE_SUCCESS = "New person added: %1$s";
+    public static final String MESSAGE_SUCCESS = "Details added successfully! New person added: %1$s";
     public static final String MESSAGE_DUPLICATE_PERSON = "This person already exists in StudentConnect";
 
     private final Person toAdd;
