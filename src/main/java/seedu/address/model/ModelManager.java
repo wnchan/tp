@@ -4,6 +4,7 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
 import java.nio.file.Path;
+import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.logging.Logger;
 
@@ -11,6 +12,7 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
+import seedu.address.model.person.Email;
 import seedu.address.model.person.Person;
 
 /**
@@ -144,5 +146,19 @@ public class ModelManager implements Model {
                 && userPrefs.equals(otherModelManager.userPrefs)
                 && filteredPersons.equals(otherModelManager.filteredPersons);
     }
+
+    public Optional<Person> getPersonWithEmail(Email email) {
+        requireNonNull(email);
+
+        // Iterate through the filtered list of persons
+        for (Person person : filteredPersons) {
+            if (person.getEmail().equals(email)) {
+                return Optional.of(person);
+            }
+        }
+
+        return Optional.empty();
+    }
+
 
 }
