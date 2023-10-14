@@ -257,42 +257,49 @@ _{Explain here how the data archiving feature will be implemented}_
 
 **Target user profile**:
 
-* has a need to manage a significant number of contacts
-* prefer desktop apps over other types
-* can type fast
-* prefers typing to mouse interactions
-* is reasonably comfortable using CLI apps
+* CS2103T student
+* Face challenges in finding like-minded students for group projects
+* Busy academic schedule
+* Need assistance in keeping track of project deadlines, tasks, and progress
+* Can type fast
+* Prefer desktop apps over other types
+* Prefers typing to mouse interactions
 
-**Value proposition**: manage contacts faster than a typical mouse/GUI driven app
+
+**Value proposition**: StudentConnect stores and organises students’ contact details, and project group. 
+Students can easily search for the profiles of other students and connect with potential teammates. 
+This streamlines the process of forming project teams. It also offers tools for tracking project 
+progress/deadlines, ensuring that the group stays on task. There is no other application quite like StudentConnect for 
+CS2103T students.
+
 
 
 ### User stories
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                                    | I want to …​                     | So that I can…​                                                        |
-| -------- | ------------------------------------------ | ------------------------------ | ---------------------------------------------------------------------- |
-| `* * *`  | new user                                   | see usage instructions         | refer to instructions when I forget how to use the App                 |
-| `* * *`  | user                                       | add a new person               |                                                                        |
-| `* * *`  | user                                       | delete a person                | remove entries that I no longer need                                   |
-| `* * *`  | user                                       | find a person by name          | locate details of persons without having to go through the entire list |
-| `* *`    | user                                       | hide private contact details   | minimize chance of someone else seeing them by accident                |
-| `*`      | user with many persons in the address book | sort persons by name           | locate a person easily                                                 |
+| Priority | As a …​   | I want to …​                                        | So that I can…​                           |
+|----------|-----------|-----------------------------------------------------|-------------------------------------------|
+| `* * *`  | student   | add my personal details to the system               | get other students to learn more about me |
+| `* * *`  | student   | view the rest of the students in the course         | see my options for choosing teammates     |
+| `* * *`  | student   | see the other student’s name, major, basic info etc | make informed decisions                   |
+| `* * * ` | student   | customise and update my profile details             | ensure that my profile is up to date      |
+| `* * *`  | student   | remove my personal details from the system          | stop using the application                |
+| `* * *`  | user      | exit the app                                        | close the app                             |
+
 
 *{More to be added}*
 
 ### Use cases
 
-(For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
+(For all use cases below, the System is `StudentConnect` and the Actor is the `student`, unless specified otherwise)
 
-**Use case: Delete a person**
+**Use case: List students**
 
 **MSS**
 
-1.  User requests to list persons
-2.  AddressBook shows a list of persons
-3.  User requests to delete a specific person in the list
-4.  AddressBook deletes the person
+1.  Student requests to list students
+2.  StudentConnect shows a list of students
 
     Use case ends.
 
@@ -302,26 +309,96 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
   Use case ends.
 
-* 3a. The given index is invalid.
+**Use case: Adding a student**
 
-    * 3a1. AddressBook shows an error message.
+**MSS**
 
-      Use case resumes at step 2.
+1. Student requests to add their personal information
+2. StudentConnect adds the student’s information into the list
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. Invalid input
+    * StudentConnect displays error message
+  
+  Use case ends.
+
+**Use Case: Find a student**
+
+**MSS**
+
+1. Student requests to find students with a keyword
+2. StudentConnect shows a list of students whose name(s) contain the keyword 
+
+    Use case ends.
+   
+**Extensions:**
+
+* 2a. The given keyword does not match any of the students’ names.
+   
+    Use case ends.
+
+**Use Case: Delete a student**
+
+**MSS**
+
+1. Student requests to delete a specific student on the list by email
+2. StudentConnect deletes the student. 
+
+   Use case ends
+
+**Extensions:**
+
+* 1a. The given email is invalid
+    * 1a1. StudentConnect shows an error message.
+
+  Use case ends
+
+**Use Case: Edit a student**
+
+**MSS**
+
+1. Student requests to update a specific student’s details on the list by email.
+2. StudentConnect shows a list of students containing the student with the updated details.
+
+   Use case ends.
+
+**Extensions:**
+
+* 1a. The given email is invalid
+    * 1a1. StudentConnect shows an error message.
+
+   Use case ends.  
+
+**Use Case: Exit the app**
+
+**MSS**
+
+1. Student requests to delete the app by typing “exit”. 
+2. StudentConnect displays the goodbye message. 
+3. StudentConnect closes.
+
+   Use case ends.
+
+
+
 
 *{More to be added}*
 
 ### Non-Functional Requirements
 
-1.  Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
-2.  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
-3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+1. Should work on any mainstream OS as long as it has Java `11` or above installed. 
+2. Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage. 
+3. A student with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
 
 *{More to be added}*
 
 ### Glossary
 
 * **Mainstream OS**: Windows, Linux, Unix, OS-X
-* **Private contact detail**: A contact detail that is not meant to be shared with others
+* **CS2103T**: NUS Software Engineering Course
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -357,13 +434,13 @@ testers are expected to do more *exploratory* testing.
 
    1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
 
-   1. Test case: `delete 1`<br>
-      Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
+   1. Test case: `delete alexy@u.nus.edu`<br>
+      Expected: Contact with above email deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
 
    1. Test case: `delete 0`<br>
       Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.
 
-   1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
+   1. Other incorrect delete commands to try: `delete`, `delete abc@gmail.com`, `delete 1`<br>
       Expected: Similar to previous.
 
 1. _{ more test cases …​ }_
