@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
@@ -26,11 +27,11 @@
         </Label>
         <Label fx:id="name" text="\$first" styleClass="cell_big_label" />
       </HBox>
-      <Label fx:id="major" styleClass="cell_small_label" />
-      <Label fx:id="year" styleClass="cell_small_label" />
-      <Label fx:id="email" styleClass="cell_small_label" />
-      <Label fx:id="description" styleClass="cell_small_label" />
-      <Label fx:id="socialMediaLink" styleClass="cell_small_label" />
+      <Label fx:id="major" styleClass="cell_small_label" text="\$major" />
+      <Label fx:id="year" styleClass="cell_small_label" text="\$year" />
+      <Label fx:id="email" styleClass="cell_small_label" text="\$email" />
+      <Label fx:id="description" styleClass="cell_small_label" text="\$description" />
+      <FlowPane fx:id="socialMediaLinks" />
     </VBox>
   </GridPane>
 </HBox>

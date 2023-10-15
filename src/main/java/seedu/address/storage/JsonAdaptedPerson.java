@@ -1,5 +1,11 @@
 package seedu.address.storage;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -10,8 +16,8 @@ import seedu.address.model.person.Email;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
-import seedu.address.model.person.SocialMediaLink;
 import seedu.address.model.person.Year;
+import seedu.address.model.socialmedialink.SocialMediaLink;
 
 /**
  * Jackson-friendly version of {@link Person}.
@@ -25,7 +31,7 @@ class JsonAdaptedPerson {
     private final String year;
     private final String email;
     private final String description;
-    private final String socialMediaLink;
+    private final List<JsonAdaptedSocialMedia> socialMediaLinks = new ArrayList<>();
 
     /**
      * Constructs a {@code JsonAdaptedPerson} with the given person details.
@@ -36,13 +42,15 @@ class JsonAdaptedPerson {
                              @JsonProperty("year") String year,
                              @JsonProperty("email") String email,
                              @JsonProperty("description") String description,
-                             @JsonProperty("socialMediaLink") String socialMediaLink) {
+                             @JsonProperty("socialMediaLinks") List<JsonAdaptedSocialMedia> socialMediaLinks) {
         this.name = name;
         this.major = major;
         this.year = year;
         this.email = email;
         this.description = description;
-        this.socialMediaLink = socialMediaLink;
+        if (socialMediaLinks != null) {
+            this.socialMediaLinks.addAll(socialMediaLinks);
+        }
     }
 
     /**
@@ -54,7 +62,9 @@ class JsonAdaptedPerson {
         year = source.getYear().value;
         email = source.getEmail().value;
         description = source.getDescription().value;
-        socialMediaLink = source.getSocialMedia().value;
+        socialMediaLinks.addAll(source.getSocialMediaLinks().stream()
+                .map(JsonAdaptedSocialMedia::new)
+                .collect(Collectors.toList()));
     }
 
     /**
@@ -63,6 +73,11 @@ class JsonAdaptedPerson {
      * @throws IllegalValueException if there were any data constraints violated in the adapted person.
      */
     public Person toModelType() throws IllegalValueException {
+        final List<SocialMediaLink> personSocialMediaLinks = new ArrayList<>();
+        for (JsonAdaptedSocialMedia socialMediaLink : socialMediaLinks) {
+            personSocialMediaLinks.add(socialMediaLink.toModelType());
+        }
+
         if (name == null) {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Name.class.getSimpleName()));
         }
@@ -104,16 +119,9 @@ class JsonAdaptedPerson {
         }
         final Description modelDescription = new Description(description);
 
-        if (socialMediaLink == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
-                    SocialMediaLink.class.getSimpleName()));
-        }
-        if (!SocialMediaLink.isValidSocialMediaLink(socialMediaLink)) {
-            throw new ParseException(SocialMediaLink.MESSAGE_CONSTRAINTS);
-        }
-        final SocialMediaLink modelSocialMediaLink = new SocialMediaLink(socialMediaLink);
+        final Set<SocialMediaLink> modelSocialMediaLinks = new HashSet<>(personSocialMediaLinks);
 
-        return new Person(modelName, modelMajor, modelYear, modelEmail, modelDescription, modelSocialMediaLink);
+        return new Person(modelName, modelMajor, modelYear, modelEmail, modelDescription, modelSocialMediaLinks);
     }
 }
 
