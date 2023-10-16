@@ -14,7 +14,7 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
-2. Download the latest `studentconnect.jar` from [here](). 
+2. Download the latest `studentconnect.jar` from [here]().
 
 3. Copy the file to the folder you want to use as the _home folder_ for your StudentConnect.
 

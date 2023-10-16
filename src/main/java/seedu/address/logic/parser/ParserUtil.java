@@ -2,6 +2,10 @@ package seedu.address.logic.parser;
 
 import static java.util.Objects.requireNonNull;
 
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
+
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.StringUtil;
 import seedu.address.logic.parser.exceptions.ParseException;
@@ -9,8 +13,8 @@ import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
-import seedu.address.model.person.SocialMediaLink;
 import seedu.address.model.person.Year;
+import seedu.address.model.socialmedialink.SocialMediaLink;
 
 /**
  * Contains utility methods used for parsing strings in the various *Parser classes.
@@ -113,13 +117,26 @@ public class ParserUtil {
      *
      * @throws ParseException if the given {@code socialMediaLink} is invalid.
      */
-    public static SocialMediaLink parseSocialMedia(String socialMediaLink) throws ParseException {
+    public static SocialMediaLink parseSocialMediaLink(String socialMediaLink) throws ParseException {
         requireNonNull(socialMediaLink);
         String trimmedSocialMediaLink = socialMediaLink.trim();
         if (!SocialMediaLink.isValidSocialMediaLink(trimmedSocialMediaLink)) {
             throw new ParseException(SocialMediaLink.MESSAGE_CONSTRAINTS);
         }
         return new SocialMediaLink(trimmedSocialMediaLink);
+    }
+
+    /**
+     * Parses {@code Collection<String> socialMediaLinks} into a {@code Set<SocialMediaLink>}.
+     */
+    public static Set<SocialMediaLink> parseSocialMediaLinks(Collection<String> socialMediaLinks)
+            throws ParseException {
+        requireNonNull(socialMediaLinks);
+        final Set<SocialMediaLink> socialMediaLinkSet = new HashSet<>();
+        for (String socialMedia : socialMediaLinks) {
+            socialMediaLinkSet.add(parseSocialMediaLink(socialMedia));
+        }
+        return socialMediaLinkSet;
     }
 }
 

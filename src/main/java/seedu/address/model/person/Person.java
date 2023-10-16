@@ -2,19 +2,22 @@ package seedu.address.model.person;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 import seedu.address.commons.util.ToStringBuilder;
+import seedu.address.model.socialmedialink.SocialMediaLink;
 
 /**
- * Represents a Person in the address book.
+ * Represents a Person in StudentConnect.
  * Guarantees: details are present and not null, field values are validated, immutable.
  */
 public class Person {
 
     // Identity fields
     private final Name name;
-
     private final Email email;
 
     // Data fields
@@ -22,20 +25,20 @@ public class Person {
     private final Major major;
     private final Year year;
     private final Description description;
-    private final SocialMediaLink socialMedia;
+    private final Set<SocialMediaLink> socialMediaLinks = new HashSet<>();
 
     /**
      * Every field must be present and not null.
      */
     public Person(Name name, Major major, Year year, Email email, Description description,
-                  SocialMediaLink socialMedia) {
-        requireAllNonNull(name, major, year, email, description, socialMedia);
+                  Set<SocialMediaLink> socialMediaLinks) {
+        requireAllNonNull(name, major, year, email, description, socialMediaLinks);
         this.name = name;
         this.major = major;
         this.year = year;
         this.email = email;
         this.description = description;
-        this.socialMedia = socialMedia;
+        this.socialMediaLinks.addAll(socialMediaLinks);
     }
 
     public Name getName() {
@@ -58,8 +61,8 @@ public class Person {
         return description;
     }
 
-    public SocialMediaLink getSocialMedia() {
-        return socialMedia;
+    public Set<SocialMediaLink> getSocialMediaLinks() {
+        return Collections.unmodifiableSet(socialMediaLinks);
     }
 
     /**
@@ -96,13 +99,13 @@ public class Person {
                 && year.equals(otherPerson.year)
                 && email.equals(otherPerson.email)
                 && description.equals(otherPerson.description)
-                && socialMedia.equals(otherPerson.socialMedia);
+                && socialMediaLinks.equals(otherPerson.socialMediaLinks);
     }
 
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, major, year, email, description, socialMedia);
+        return Objects.hash(name, major, year, email, description, socialMediaLinks);
     }
 
     @Override
@@ -113,8 +116,7 @@ public class Person {
                 .add("year", year)
                 .add("email", email)
                 .add("description", description)
-                .add("socialMedia", socialMedia)
+                .add("socialMediaLinks", socialMediaLinks)
                 .toString();
     }
 }
-
