@@ -53,7 +53,7 @@ public class Major {
         "Urban Studies",
         "Visual Communications",
     };
-    
+
     public final String value;
 
     /**
