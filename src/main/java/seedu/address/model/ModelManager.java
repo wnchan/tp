@@ -147,6 +147,7 @@ public class ModelManager implements Model {
                 && filteredPersons.equals(otherModelManager.filteredPersons);
     }
 
+    @Override
     public Optional<Person> getPersonWithEmail(Email email) {
         requireNonNull(email);
 
@@ -159,6 +160,4 @@ public class ModelManager implements Model {
 
         return Optional.empty();
     }
-
-
 }

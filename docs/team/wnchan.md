@@ -11,7 +11,7 @@ Given below are my contributions to the project.
 ## Enhancements implemented
 * **New Feature**: Added the ability to add the student's personal details into the system.
     * What it does: allows the user to add their personal details into the system.
-    * Highlights: This enhancement affects existing commands and commands to be added in the future. 
+    * Highlights: This enhancement affects existing commands and commands to be added in the future.
   The implementation too was challenging as it required changes to existing commands.
 
 ## Contributions to the UG
