@@ -53,7 +53,8 @@ public class DeleteCommandTest {
         Email email = person.getEmail();
         DeleteCommand deleteFirstCommand = new DeleteCommand(email);
 
-        Email email2 = model.getFilteredPersonList().get(1).getEmail(); // Assuming the second person in the list is used
+        Email email2 = model.getFilteredPersonList().get(1)
+                .getEmail(); // Assuming the second person in the list is used
         DeleteCommand deleteSecondCommand = new DeleteCommand(email2);
 
         // same object -> returns true
