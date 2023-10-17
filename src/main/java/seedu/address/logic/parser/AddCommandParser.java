@@ -42,7 +42,8 @@ public class AddCommandParser implements Parser<AddCommand> {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE));
         }
 
-        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_NAME, PREFIX_MAJOR, PREFIX_YEAR, PREFIX_EMAIL, PREFIX_DESCRIPTION);
+        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_NAME, PREFIX_MAJOR, PREFIX_YEAR,
+                PREFIX_EMAIL, PREFIX_DESCRIPTION);
         Name name = ParserUtil.parseName(argMultimap.getValue(PREFIX_NAME).get());
         Major major = ParserUtil.parseMajor(argMultimap.getValue(PREFIX_MAJOR).get());
         Year year = ParserUtil.parseYear(argMultimap.getValue(PREFIX_YEAR).get());
