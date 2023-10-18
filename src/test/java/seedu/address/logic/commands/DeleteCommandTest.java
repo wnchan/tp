@@ -41,7 +41,7 @@ public class DeleteCommandTest {
 
     @Test
     public void execute_invalidEmailUnfilteredList_throwsCommandException() {
-        Email invalidEmail = new Email("invalid@example.com"); // Use an email that doesn't exist in the test data
+        Email invalidEmail = new Email("invalid@u.nus.edu"); // Use an email that doesn't exist in the test data
         DeleteCommand deleteCommand = new DeleteCommand(invalidEmail);
 
         assertCommandFailure(deleteCommand, model, "Person with the provided email not found.");

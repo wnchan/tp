@@ -52,6 +52,7 @@ public class EditCommand extends Command {
     public static final String MESSAGE_EDIT_PERSON_SUCCESS = "Details edited successfully! Edited Person: %1$s";
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";
     public static final String MESSAGE_DUPLICATE_PERSON = "This person already exists in StudentConnect.";
+    public static final String MESSAGE_EMAIL_NOT_FOUND = "Person with the provided email not found.";
 
     private final Email email;
     private final EditPersonDescriptor editPersonDescriptor;
@@ -76,7 +77,7 @@ public class EditCommand extends Command {
         Optional<Person> personToEdit = model.getPersonWithEmail(email);
 
         if (personToEdit.isEmpty()) {
-            throw new CommandException("Person with the provided email not found.");
+            throw new CommandException(MESSAGE_EMAIL_NOT_FOUND);
         }
 
         Person editedPerson = createEditedPerson(personToEdit.get(), editPersonDescriptor);
