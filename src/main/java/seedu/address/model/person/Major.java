@@ -64,10 +64,10 @@ public class Major {
     public Major(String major) {
         requireNonNull(major);
         checkArgument(isValidMajor(major), MESSAGE_CONSTRAINTS);
-        value = capitalizeFirstLetterOfEachWord(major);
+        value = capitaliseFirstLetterOfEachWord(major);
     }
 
-    private String capitalizeFirstLetterOfEachWord(String text) {
+    private String capitaliseFirstLetterOfEachWord(String text) {
         String[] words = text.split("\\s");
         StringBuilder result = new StringBuilder();
 

@@ -3,13 +3,7 @@ package seedu.address.model.person;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_DESCRIPTION_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_MAJOR_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_SM_GITHUB_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_SM_LINKEDIN_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_YEAR_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.*;
 import static seedu.address.testutil.Assert.assertThrows;
 import static seedu.address.testutil.TypicalPersons.ALICE;
 import static seedu.address.testutil.TypicalPersons.BOB;
@@ -34,23 +28,19 @@ public class PersonTest {
         // null -> returns false
         assertFalse(ALICE.isSamePerson(null));
 
-        // same name, all other attributes different -> returns true
-        Person editedAlice = new PersonBuilder(ALICE).withMajor(VALID_MAJOR_BOB).withYear(VALID_YEAR_BOB)
-                .withEmail(VALID_EMAIL_BOB).withDescription(VALID_DESCRIPTION_BOB)
+        // same email, all other attributes different -> returns true
+        Person editedAlice = new PersonBuilder(ALICE).withName(VALID_NAME_BOB)
+                .withMajor(VALID_MAJOR_BOB).withYear(VALID_YEAR_BOB)
+                .withDescription(VALID_DESCRIPTION_BOB)
                 .withSocialMediaLinks(VALID_SM_LINKEDIN_BOB, VALID_SM_GITHUB_BOB).build();
         assertTrue(ALICE.isSamePerson(editedAlice));
 
-        // different name, all other attributes same -> returns false
-        editedAlice = new PersonBuilder(ALICE).withName(VALID_NAME_BOB).build();
+        // different email, all other attributes same -> returns false
+        editedAlice = new PersonBuilder(ALICE).withEmail(VALID_EMAIL_BOB).build();
         assertFalse(ALICE.isSamePerson(editedAlice));
 
-        // name differs in case, all other attributes same -> returns false
-        Person editedBob = new PersonBuilder(BOB).withName(VALID_NAME_BOB.toLowerCase()).build();
-        assertFalse(BOB.isSamePerson(editedBob));
-
-        // name has trailing spaces, all other attributes same -> returns false
-        String nameWithTrailingSpaces = VALID_NAME_BOB + " ";
-        editedBob = new PersonBuilder(BOB).withName(nameWithTrailingSpaces).build();
+        // email differs in case, all other attributes same -> returns false
+        Person editedBob = new PersonBuilder(BOB).withEmail(VALID_EMAIL_AMY).build();
         assertFalse(BOB.isSamePerson(editedBob));
     }
 
@@ -101,7 +91,7 @@ public class PersonTest {
     public void toStringMethod() {
         String expected = Person.class.getCanonicalName() + "{name=" + ALICE.getName() + ", major=" + ALICE.getMajor()
                 + ", year=" + ALICE.getYear() + ", email=" + ALICE.getEmail() + ", description="
-                + ALICE.getDescription() + ", social media links=" + ALICE.getSocialMediaLinks() + "}";
+                + ALICE.getDescription() + ", socialMediaLinks=" + ALICE.getSocialMediaLinks() + "}";
         assertEquals(expected, ALICE.toString());
     }
 }
