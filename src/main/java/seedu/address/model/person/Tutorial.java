@@ -9,8 +9,8 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
  */
 public class Tutorial {
 
-    public static final String MESSAGE_CONSTRAINTS = "Tutorials should be integers between 01 and 22, " +
-                                                        "separated by a comma.";
+    public static final String MESSAGE_CONSTRAINTS = "Tutorials should be integers between 01 and 22, "
+                                                        + "separated by a comma.";
 
     public final String value;
 
@@ -45,7 +45,9 @@ public class Tutorial {
         }
     }
 
-    public String getValue() { return value; }
+    public String getValue() {
+        return value;
+    }
 
     @Override
     public String toString() {

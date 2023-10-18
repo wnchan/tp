@@ -109,7 +109,8 @@ public class EditCommand extends Command {
         Email updatedEmail = editPersonDescriptor.getEmail().orElse(personToEdit.getEmail());
         Description updatedDescription = editPersonDescriptor.getDescription().orElse(personToEdit.getDescription());
         List<Tutorial> updatedTutorials = editPersonDescriptor.getTutorials()
-            .orElse(personToEdit.getTutorials());        Set<SocialMediaLink> updatedSocialMediaLinks = editPersonDescriptor.getSocialMediaLinks()
+            .orElse(personToEdit.getTutorials());
+        Set<SocialMediaLink> updatedSocialMediaLinks = editPersonDescriptor.getSocialMediaLinks()
                 .orElse(personToEdit.getSocialMediaLinks());
 
         return new Person(updatedName, updatedMajor, updatedYear, updatedEmail, updatedDescription, updatedTutorials,

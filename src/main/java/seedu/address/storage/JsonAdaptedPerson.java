@@ -135,6 +135,7 @@ class JsonAdaptedPerson {
 
         final Set<SocialMediaLink> modelSocialMediaLinks = new HashSet<>(personSocialMediaLinks);
 
-        return new Person(modelName, modelMajor, modelYear, modelEmail, modelDescription, modelTutorials, modelSocialMediaLinks);
+        return new Person(modelName, modelMajor, modelYear, modelEmail, modelDescription,
+                            modelTutorials, modelSocialMediaLinks);
     }
 }
