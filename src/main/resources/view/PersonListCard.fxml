@@ -25,13 +25,13 @@
             <Region fx:constant="USE_PREF_SIZE" />
           </minWidth>
         </Label>
-        <Label fx:id="name" text="\$first" styleClass="cell_big_label" />
+        <Label fx:id="name" id="name-label" text="\$first" styleClass="cell_big_label" />
       </HBox>
       <Label fx:id="major" styleClass="cell_small_label" text="\$major" />
       <Label fx:id="year" styleClass="cell_small_label" text="\$year" />
       <Label fx:id="email" styleClass="cell_small_label" text="\$email" />
       <Label fx:id="description" styleClass="cell_small_label" text="\$description" />
-      <FlowPane fx:id="socialMediaLinks" />
+      <FlowPane fx:id="socialMediaLinks" style="-fx-font-size: 11px; -fx-text-fill: #010504;" />
     </VBox>
   </GridPane>
 </HBox>

@@ -55,9 +55,15 @@ public class PersonCard extends UiPart<Region> {
         year.setText(person.getYear().value);
         email.setText(person.getEmail().value);
         description.setText(person.getDescription().value);
+
         person.getSocialMediaLinks().stream()
                 .sorted(Comparator.comparing(sm -> sm.socialMediaLink))
-                .forEach(sm -> socialMediaLinks.getChildren().add(new Label(sm.socialMediaLink)));
+                .forEach(sm -> {
+                    Label label = new Label(sm.socialMediaLink);
+                    label.setStyle("-fx-font-size: 13px; -fx-text-fill: white; -fx-font-family: 'Segoe UI Semibold';");
+                    socialMediaLinks.getChildren().add(label);
+                });
     }
 }
+
 
