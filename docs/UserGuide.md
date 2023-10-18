@@ -212,7 +212,7 @@ Format: `exit`
 
 Expected Output(Success):
 * GUI: Application window closes.
-* Message (before closing): “Thank you for using StudentConnect!”
+* Message (before closing): “Thank you for using StudentConnect! Exiting the application now…”
 
 Expected Output(Failure):
 * Message: “Error: Exiting the program failed.”
@@ -260,4 +260,5 @@ _Details coming soon ..._
 | **Edit**   | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                        |
 | **Find**   | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                                         |
 | **List**   | `list`                                                                                                                                                                             |
+| **Exit**   | `exit`                                                                                                                                                                             |
 | **Help**   | `help`                                                                                                                                                                             |
