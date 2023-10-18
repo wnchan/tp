@@ -25,7 +25,7 @@ Given below are my contributions to the project.
     
 ### Documentation:
 * User Guide:
-    * Added documentation for the features `exit` [\#15](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/15)
+    * Added documentation for the features `exit` [\#15](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/15), [\#61](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/61)
     * to be added soon
 * Developer Guide:
     * to be added soon
