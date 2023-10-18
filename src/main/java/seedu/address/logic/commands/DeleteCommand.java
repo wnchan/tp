@@ -5,6 +5,7 @@ import static java.util.Objects.requireNonNull;
 import java.util.Optional;
 
 import seedu.address.commons.util.ToStringBuilder;
+import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.person.Email;
@@ -23,6 +24,7 @@ public class DeleteCommand extends Command {
             + "Example: " + COMMAND_WORD + " alexyeoh@u.nus.edu";
 
     public static final String MESSAGE_DELETE_PERSON_SUCCESS = "Person deleted Successfully! Deleted Person: %1$s";
+    public static final String MESSAGE_DELETE_EMAIL_NOT_FOUND = "Person with the provided email not found.";
     private final Email targetEmail;
 
     public DeleteCommand(Email targetEmail) {
@@ -37,13 +39,13 @@ public class DeleteCommand extends Command {
         Optional<Person> personToDelete = model.getPersonWithEmail(targetEmail);
 
         if (personToDelete.isEmpty()) {
-            throw new CommandException("Person with the provided email not found.");
+            throw new CommandException(MESSAGE_DELETE_EMAIL_NOT_FOUND);
         }
 
         // Delete the person from the model
         model.deletePerson(personToDelete.get());
 
-        return new CommandResult(String.format(MESSAGE_DELETE_PERSON_SUCCESS, personToDelete.get()));
+        return new CommandResult(String.format(MESSAGE_DELETE_PERSON_SUCCESS, Messages.format(personToDelete.get())));
     }
 
     @Override

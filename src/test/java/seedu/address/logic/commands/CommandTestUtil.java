@@ -55,7 +55,7 @@ public class CommandTestUtil {
     public static final String SM_DESC_AMY = " " + PREFIX_SOCIAL_MEDIA_LINK + VALID_SM_LINKEDIN_AMY + " "
             + VALID_SM_GITHUB_AMY;
     public static final String SM_DESC_BOB = " " + PREFIX_SOCIAL_MEDIA_LINK + VALID_SM_LINKEDIN_BOB + " "
-            + VALID_SM_GITHUB_BOB;
+            + PREFIX_SOCIAL_MEDIA_LINK + VALID_SM_GITHUB_BOB;
 
     public static final String INVALID_NAME_DESC = " " + PREFIX_NAME + "James&"; // '&' not allowed in names
     public static final String INVALID_MAJOR_DESC = " " + PREFIX_MAJOR + "Computer Games"; // not in list of majors

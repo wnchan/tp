@@ -12,6 +12,7 @@ import static seedu.address.logic.commands.CommandTestUtil.VALID_YEAR_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
 //import static seedu.address.logic.commands.CommandTestUtil.showPersonAtIndex;
+import static seedu.address.logic.commands.EditCommand.MESSAGE_EMAIL_NOT_FOUND;
 import static seedu.address.testutil.TypicalEmails.EMAIL_FIRST_PERSON;
 import static seedu.address.testutil.TypicalEmails.EMAIL_SECOND_PERSON;
 import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
@@ -41,7 +42,8 @@ public class EditCommandTest {
     public void execute_allFieldsSpecifiedUnfilteredList_success() {
         Person editedPerson = new PersonBuilder().build();
         EditPersonDescriptor descriptor = new EditPersonDescriptorBuilder(editedPerson).build();
-        EditCommand editCommand = new EditCommand(EMAIL_FIRST_PERSON, descriptor);
+        Email firstPersonEmail = model.getFilteredPersonList().get(0).getEmail();
+        EditCommand editCommand = new EditCommand(firstPersonEmail, descriptor);
 
         String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_PERSON_SUCCESS, Messages.format(editedPerson));
 
@@ -63,7 +65,9 @@ public class EditCommandTest {
         EditPersonDescriptor descriptor = new EditPersonDescriptorBuilder().withName(VALID_NAME_BOB)
                 .withYear(VALID_YEAR_BOB)
                 .withSocialMediaLinks(VALID_SM_LINKEDIN_BOB, VALID_SM_GITHUB_BOB).build();
-        EditCommand editCommand = new EditCommand(EMAIL_FIRST_PERSON, descriptor);
+
+        Email firstPersonEmail = model.getFilteredPersonList().get(0).getEmail();
+        EditCommand editCommand = new EditCommand(firstPersonEmail, descriptor);
 
         String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_PERSON_SUCCESS, Messages.format(editedPerson));
 
@@ -75,7 +79,8 @@ public class EditCommandTest {
 
     @Test
     public void execute_noFieldSpecifiedUnfilteredList_success() {
-        EditCommand editCommand = new EditCommand(EMAIL_FIRST_PERSON, new EditPersonDescriptor());
+        Email firstPersonEmail = model.getFilteredPersonList().get(0).getEmail();
+        EditCommand editCommand = new EditCommand(firstPersonEmail, new EditPersonDescriptor());
         Person editedPerson = model.getFilteredPersonList().get(0);
 
         String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_PERSON_SUCCESS, Messages.format(editedPerson));
@@ -108,7 +113,8 @@ public class EditCommandTest {
     public void execute_duplicatePersonUnfilteredList_failure() {
         Person firstPerson = model.getFilteredPersonList().get(0);
         EditPersonDescriptor descriptor = new EditPersonDescriptorBuilder(firstPerson).build();
-        EditCommand editCommand = new EditCommand(EMAIL_SECOND_PERSON, descriptor);
+        Email secondPersonEmail = model.getFilteredPersonList().get(1).getEmail();
+        EditCommand editCommand = new EditCommand(secondPersonEmail, descriptor);
 
         assertCommandFailure(editCommand, model, EditCommand.MESSAGE_DUPLICATE_PERSON);
     }
@@ -129,11 +135,11 @@ public class EditCommandTest {
 
     @Test
     public void execute_invalidPersonEmailUnfilteredList_failure() {
-        Email invalidEmail = new Email("invalid@example.com");
+        Email invalidEmail = new Email("invalid@u.nus.edu");
         EditPersonDescriptor descriptor = new EditPersonDescriptorBuilder().withName(VALID_NAME_BOB).build();
         EditCommand editCommand = new EditCommand(invalidEmail, descriptor);
 
-        assertCommandFailure(editCommand, model, Messages.MESSAGE_INVALID_PERSON_DISPLAYED_EMAIL);
+        assertCommandFailure(editCommand, model, MESSAGE_EMAIL_NOT_FOUND);
     }
 
     /**
