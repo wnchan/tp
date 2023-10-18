@@ -1,7 +1,10 @@
 package seedu.address.ui;
 
+import java.util.Comparator;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import seedu.address.model.person.Person;
@@ -38,7 +41,7 @@ public class PersonCard extends UiPart<Region> {
     @FXML
     private Label description;
     @FXML
-    private Label socialMediaLink;
+    private FlowPane socialMediaLinks;
 
     /**
      * Creates a {@code PersonCode} with the given {@code Person} and index to display.
@@ -52,7 +55,9 @@ public class PersonCard extends UiPart<Region> {
         year.setText(person.getYear().value);
         email.setText(person.getEmail().value);
         description.setText(person.getDescription().value);
-        socialMediaLink.setText(person.getSocialMedia().value);
+        person.getSocialMediaLinks().stream()
+                .sorted(Comparator.comparing(sm -> sm.socialMediaLink))
+                .forEach(sm -> socialMediaLinks.getChildren().add(new Label(sm.socialMediaLink)));
     }
 }
 

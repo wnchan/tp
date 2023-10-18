@@ -266,10 +266,10 @@ _{Explain here how the data archiving feature will be implemented}_
 * Prefers typing to mouse interactions
 
 
-**Value proposition**: StudentConnect stores and organises students’ contact details, and project group. 
-Students can easily search for the profiles of other students and connect with potential teammates. 
-This streamlines the process of forming project teams. It also offers tools for tracking project 
-progress/deadlines, ensuring that the group stays on task. There is no other application quite like StudentConnect for 
+**Value proposition**: StudentConnect stores and organises students’ contact details, and project group.
+Students can easily search for the profiles of other students and connect with potential teammates.
+This streamlines the process of forming project teams. It also offers tools for tracking project
+progress/deadlines, ensuring that the group stays on task. There is no other application quite like StudentConnect for
 CS2103T students.
 
 
@@ -322,7 +322,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 2a. Invalid input
     * StudentConnect displays error message
-  
+
   Use case ends.
 
 **Use Case: Find a student**
@@ -330,14 +330,14 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1. Student requests to find students with a keyword
-2. StudentConnect shows a list of students whose name(s) contain the keyword 
+2. StudentConnect shows a list of students whose name(s) contain the keyword
 
     Use case ends.
-   
+
 **Extensions:**
 
 * 2a. The given keyword does not match any of the students’ names.
-   
+
     Use case ends.
 
 **Use Case: Delete a student**
@@ -345,7 +345,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1. Student requests to delete a specific student on the list by email
-2. StudentConnect deletes the student. 
+2. StudentConnect deletes the student.
 
    Use case ends
 
@@ -370,14 +370,14 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * 1a. The given email is invalid
     * 1a1. StudentConnect shows an error message.
 
-   Use case ends.  
+   Use case ends.
 
 **Use Case: Exit the app**
 
 **MSS**
 
-1. Student requests to delete the app by typing “exit”. 
-2. StudentConnect displays the goodbye message. 
+1. Student requests to delete the app by typing “exit”.
+2. StudentConnect displays the goodbye message.
 3. StudentConnect closes.
 
    Use case ends.
@@ -389,8 +389,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Non-Functional Requirements
 
-1. Should work on any mainstream OS as long as it has Java `11` or above installed. 
-2. Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage. 
+1. Should work on any mainstream OS as long as it has Java `11` or above installed.
+2. Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
 3. A student with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
 
 *{More to be added}*
@@ -440,7 +440,7 @@ testers are expected to do more *exploratory* testing.
    1. Test case: `delete 0`<br>
       Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.
 
-   1. Other incorrect delete commands to try: `delete`, `delete abc@gmail.com`, `...` (where x is larger than the list size)<br>
+   1. Other incorrect delete commands to try: `delete`, `delete abc@gmail.com`, `delete 1`<br>
       Expected: Similar to previous.
 
 1. _{ more test cases …​ }_

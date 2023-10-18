@@ -8,6 +8,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_SOCIAL_MEDIA_LINK;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_YEAR;
 
+import java.util.Set;
 import java.util.stream.Stream;
 
 import seedu.address.logic.commands.AddCommand;
@@ -17,8 +18,8 @@ import seedu.address.model.person.Email;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
-import seedu.address.model.person.SocialMediaLink;
 import seedu.address.model.person.Year;
+import seedu.address.model.socialmedialink.SocialMediaLink;
 
 /**
  * Parses input arguments and creates a new AddCommand object
@@ -36,20 +37,22 @@ public class AddCommandParser implements Parser<AddCommand> {
                         PREFIX_DESCRIPTION, PREFIX_SOCIAL_MEDIA_LINK);
 
         if (!arePrefixesPresent(argMultimap, PREFIX_NAME, PREFIX_MAJOR, PREFIX_YEAR, PREFIX_EMAIL,
-                PREFIX_DESCRIPTION, PREFIX_SOCIAL_MEDIA_LINK)
+                PREFIX_DESCRIPTION)
                 || !argMultimap.getPreamble().isEmpty()) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE));
         }
 
-        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_NAME, PREFIX_MAJOR, PREFIX_YEAR, PREFIX_EMAIL);
+        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_NAME, PREFIX_MAJOR, PREFIX_YEAR,
+                PREFIX_EMAIL, PREFIX_DESCRIPTION);
         Name name = ParserUtil.parseName(argMultimap.getValue(PREFIX_NAME).get());
         Major major = ParserUtil.parseMajor(argMultimap.getValue(PREFIX_MAJOR).get());
         Year year = ParserUtil.parseYear(argMultimap.getValue(PREFIX_YEAR).get());
         Email email = ParserUtil.parseEmail(argMultimap.getValue(PREFIX_EMAIL).get());
         Description description = ParserUtil.parseDescription(argMultimap.getValue(PREFIX_DESCRIPTION).get());
-        SocialMediaLink socialMedia = ParserUtil.parseSocialMedia(argMultimap.getValue(PREFIX_SOCIAL_MEDIA_LINK).get());
+        Set<SocialMediaLink> socialMediaLinkList = ParserUtil.parseSocialMediaLinks(
+                argMultimap.getAllValues(PREFIX_SOCIAL_MEDIA_LINK));
 
-        Person person = new Person(name, major, year, email, description, socialMedia);
+        Person person = new Person(name, major, year, email, description, socialMediaLinkList);
 
         return new AddCommand(person);
     }

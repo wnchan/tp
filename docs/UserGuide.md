@@ -14,7 +14,7 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
-2. Download the latest `studentconnect.jar` from [here](). 
+2. Download the latest `studentconnect.jar` from [here]().
 
 3. Copy the file to the folder you want to use as the _home folder_ for your StudentConnect.
 
@@ -112,11 +112,11 @@ Shows a list of all students in the system.
 
 Format: `list`
 
-#### Expected Output (Success):
+Expected Output (Success):
 * GUI: List of all student entries in the system
 * Message: “Viewing all students”
 
-#### Expected Output (Failure):
+Expected Output (Failure):
 * Message: “Error: Unable to retrieve student entries. Please try again.”
 
 ![sample result for 'list'](images/list.png)
@@ -125,18 +125,29 @@ Format: `list`
 
 Edits an existing student in the system.
 
-Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`
+Format: `edit EMAIL [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [sm/SOCIALMEDIA]…​`
 
-* Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **must be a positive integer** 1, 2, 3, …​
+* Edits the student with the specified EMAIL.
 * At least one of the optional fields must be provided.
 * Existing values will be updated to the input values.
-* When editing tags, the existing tags of the person will be removed i.e. adding of tags is not cumulative.
-* You can remove all the person’s tags by typing `t/` without
-  specifying any tags after it.
+* When editing social media, the existing social media of the student will be removed i.e. adding of social media is not cumulative.
+* You can remove all the student's social media by typing `sm/` without
+  specifying any social media after it.
 
 Examples:
-*  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
-*  `edit 2 n/Betsy Crower t/` Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.
+*  `edit johnd@u.nus.edu y/3 e/johndoe@u.nus.edu` Edits the year and email address of the student with the email `johnd@u.nus.edu` to be `3` and `johndoe@u.nus.edu` respectively.
+*  `edit betsycrowe@u.nus.edu n/Betsy Crower sm/` Edits the name of the student with the email `betsycrowe@u.nus.edu` to be `Betsy Crower` and clears all existing social media.
+
+Acceptable Values:
+* EMAIL: a previously registered email address ending in “@u.nus.edu”
+
+Expected Output (Success):
+* GUI: Student details updated in the student list.
+* Message: “Details updated successfully!”
+
+Expected Output (Failure):
+* Message: “Error: Email not found.”
+* Message: “Error: None of the optional fields provided. Give at least one.”
 
 ### Finding a student by name: `find`
 
@@ -159,14 +170,15 @@ Expected Output (Success):
 * GUI: List of all student entries whose name(s) match the keyword(s) in the system
 
 Expected Output (Failure):
-* Message: “Unable to find students with the given keyword(s).”
+* Message: “Error: No keyword(s) provided.”
+* Message: “Error: Unable to find students with the given keyword(s).”
   ![result for 'find alex'](images/findAlexResult.png)
 
 ### Deleting a person : `delete`
 
 Deletes a specific student and all personal details based on email.
 
-Format: `delete [EMAIL]`
+Format: `delete EMAIL`
 
 * Deletes the person with the specified `EMAIL`.
 * The index refers to the email number shown in the displayed person list.
@@ -176,11 +188,11 @@ Examples:
 * `list` followed by `delete alexy@u.nus.edu` deletes Alex Yeo from the system.
 
 Acceptable Values:
-* Email: a previously registered email address ending in `u.nus.edu`
+* EMAIL: a previously registered email address ending in `u.nus.edu`
 
 Expected Output(Success):
 * GUI: Student details removed from student list.
-* Message: `[Name] deleted successfully!`
+* Message: `Person deleted successfully!`
   ![Delete feature](images/delete.png)
 
 Expected Output (Failure):
@@ -198,11 +210,11 @@ Exits the program.
 
 Format: `exit`
 
-#### Expected Output(Success):
+Expected Output(Success):
 * GUI: Application window closes.
 * Message (before closing): “Thank you for using StudentConnect!”
 
-#### Expected Output(Failure):
+Expected Output(Failure):
 * Message: “Error: Exiting the program failed.”
 
 ![Exit](images/exit.png)
