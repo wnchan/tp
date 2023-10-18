@@ -55,7 +55,7 @@ public class PersonCard extends UiPart<Region> {
         id.setText(displayedIndex + ". ");
         name.setText(person.getName().fullName);
         major.setText(person.getMajor().value);
-        year.setText(person.getYear().value);
+        year.setText("Y" + person.getYear().value);
         email.setText(person.getEmail().value);
         description.setText(person.getDescription().value);
         String tutorialsText = person.getTutorials().stream()
