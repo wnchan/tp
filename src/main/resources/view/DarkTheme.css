@@ -355,10 +355,6 @@
     -fx-text-fill: #FFDB58 /* Mustard text color for the "name" label */
 }
 
-#socialMediaLinks .label {
-    -fx-font-size: 11px; /* font size */
-    -fx-text-fill: #010504; /* Your desired text color */
-}
 
 
 
