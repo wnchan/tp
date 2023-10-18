@@ -16,6 +16,7 @@ import seedu.address.model.person.Email;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
+import seedu.address.model.person.Tutorial;
 import seedu.address.model.person.Year;
 import seedu.address.model.socialmedialink.SocialMediaLink;
 
@@ -31,6 +32,8 @@ class JsonAdaptedPerson {
     private final String year;
     private final String email;
     private final String description;
+
+    private final List<String> tutorials = new ArrayList<>();
     private final List<JsonAdaptedSocialMedia> socialMediaLinks = new ArrayList<>();
 
     /**
@@ -42,12 +45,16 @@ class JsonAdaptedPerson {
                              @JsonProperty("year") String year,
                              @JsonProperty("email") String email,
                              @JsonProperty("description") String description,
+                             @JsonProperty("tutorials") List<String> tutorials,
                              @JsonProperty("socialMediaLinks") List<JsonAdaptedSocialMedia> socialMediaLinks) {
         this.name = name;
         this.major = major;
         this.year = year;
         this.email = email;
         this.description = description;
+        if (tutorials != null) {
+            this.tutorials.addAll(tutorials);
+        }
         if (socialMediaLinks != null) {
             this.socialMediaLinks.addAll(socialMediaLinks);
         }
@@ -62,6 +69,9 @@ class JsonAdaptedPerson {
         year = source.getYear().value;
         email = source.getEmail().value;
         description = source.getDescription().value;
+        tutorials.addAll(source.getTutorials().stream()
+                .map(Tutorial::getValue)
+                .collect(Collectors.toList()));
         socialMediaLinks.addAll(source.getSocialMediaLinks().stream()
                 .map(JsonAdaptedSocialMedia::new)
                 .collect(Collectors.toList()));
@@ -119,9 +129,12 @@ class JsonAdaptedPerson {
         }
         final Description modelDescription = new Description(description);
 
+        final List<Tutorial> modelTutorials = tutorials.stream()
+            .map(Tutorial::new)
+            .collect(Collectors.toList());
+
         final Set<SocialMediaLink> modelSocialMediaLinks = new HashSet<>(personSocialMediaLinks);
 
-        return new Person(modelName, modelMajor, modelYear, modelEmail, modelDescription, modelSocialMediaLinks);
+        return new Person(modelName, modelMajor, modelYear, modelEmail, modelDescription, modelTutorials, modelSocialMediaLinks);
     }
 }
-
