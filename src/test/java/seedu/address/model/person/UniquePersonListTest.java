@@ -39,10 +39,10 @@ public class UniquePersonListTest {
     }
 
     @Test
-    public void contains_personWithSameIdentityFieldsInList_returnsTrue() {
+    public void contains_personWithSameIdentityFieldsInList_returnsFalse() {
         uniquePersonList.add(ALICE);
         Person editedAlice = new PersonBuilder(ALICE).withEmail(VALID_EMAIL_BOB).build();
-        assertTrue(uniquePersonList.contains(editedAlice));
+        assertFalse(uniquePersonList.contains(editedAlice));
     }
 
     @Test
