@@ -28,7 +28,23 @@ public class Name {
     public Name(String name) {
         requireNonNull(name);
         checkArgument(isValidName(name), MESSAGE_CONSTRAINTS);
-        fullName = name;
+        fullName = capitaliseFirstLetterOfEachWord(name);
+    }
+
+    private String capitaliseFirstLetterOfEachWord(String text) {
+        String[] words = text.split("\\s");
+        StringBuilder result = new StringBuilder();
+
+        for (String word : words) {
+            if (!word.isEmpty()) {
+                result.append(Character.toUpperCase(word.charAt(0))).append(word.substring(1).toLowerCase());
+                result.append(" "); // Add a space between words
+            }
+        }
+        if (result.length() > 0) {
+            result.setLength(result.length() - 1);
+        }
+        return result.toString();
     }
 
     /**
