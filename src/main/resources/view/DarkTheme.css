@@ -1,6 +1,6 @@
 .background {
-    -fx-background-color: #000080; /* Darker navy blue background */
-    background-color: #000080; /* Used in the default.html file */
+    -fx-background-color: #0e365c; /* Darker navy blue background */
+    background-color: #0e365c; /* Used in the default.html file */
 }
 
 .label {
@@ -9,6 +9,14 @@
     -fx-text-fill: #757575; /* Light gray text */
     -fx-opacity: 0.9;
 }
+
+.label-bold {
+    -fx-font-weight: bold;
+    -fx-font-family: "Arial";
+    -fx-text-fill: #FFDB58; /* Mustard color */
+
+}
+
 
 .label-bright {
     -fx-font-size: 11pt;
@@ -40,9 +48,9 @@
 }
 
 .table-view {
-    -fx-base: #000080; /* Darker navy blue background */
-    -fx-control-inner-background: #000080; /* Darker navy blue background */
-    -fx-background-color: #000080; /* Darker navy blue background */
+    -fx-base: #0e365c; /* Darker navy blue background */
+    -fx-control-inner-background: #0e365c; /* Darker navy blue background */
+    -fx-background-color: #0e365c; /* Darker navy blue background */
     -fx-table-cell-border-color: #FFDB58; /* Mustard yellow border color */
     -fx-table-header-border-color: #FFDB58; /* Mustard yellow border color */
     -fx-table-cell-border-width: 1; /* Decrease border thickness */
@@ -78,7 +86,7 @@
 }
 
 .split-pane:horizontal .split-pane-divider {
-    -fx-background-color: #000080; /* Darker navy blue background */
+    -fx-background-color: #0e365c; /* Darker navy blue background */
     -fx-border-color: transparent transparent transparent #FFDB58; /* Mustard yellow border color */
     -fx-border-width: 1; /* Decrease border thickness */
 }
@@ -86,13 +94,13 @@
 .split-pane {
     -fx-border-radius: 1;
     -fx-border-width: 1;
-    -fx-background-color: #000080; /* Darker navy blue background */
+    -fx-background-color: #0e365c; /* Darker navy blue background */
 }
 
 .list-view {
     -fx-background-insets: 0;
     -fx-padding: 0;
-    -fx-background-color: #000080; /* Darker navy blue background */
+    -fx-background-color: #0e365c; /* Darker navy blue background */
 }
 
 .list-cell {
@@ -102,15 +110,15 @@
 }
 
 .list-cell:filled:even {
-    -fx-background-color: #3F51B5; /* Slightly brighter blue */
+    -fx-background-color: #396987; /* Slightly brighter blue */
 }
 
 .list-cell:filled:odd {
-    -fx-background-color: #3949AB; /* Another shade of blue */
+    -fx-background-color: #4781a5; /* Another shade of blue */
 }
 
 .list-cell:filled:selected {
-    -fx-background-color: derive(#536DFE, -5%); /* A brighter blue color */
+    -fx-background-color: #6b9ebf; /* A brighter blue color */
 }
 
 .list-cell:filled:selected #cardPane {
@@ -137,23 +145,23 @@
 }
 
 .stack-pane {
-    -fx-background-color: #000080; /* Darker navy blue background */
+    -fx-background-color: #0e365c; /* Darker navy blue background */
 }
 
 .pane-with-border {
-    -fx-background-color: #000080; /* Darker navy blue background */
+    -fx-background-color: #0e365c; /* Darker navy blue background */
     -fx-border-color: #FFDB58; /* Mustard yellow border color */
     -fx-border-top-width: 1px;
 }
 
 .status-bar {
-    -fx-background-color: #3F51B5; /* Slightly brighter blue background */
+    -fx-background-color: #0e365c; /* Slightly brighter blue background */
 }
 
 .result-display {
     -fx-background-color: transparent;
-    -fx-font-family: "Segoe UI Light";
-    -fx-font-size: 13pt;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 11pt;
     -fx-text-fill: white; /* White text */
 }
 
@@ -197,7 +205,7 @@
 }
 
 .menu-bar {
-    -fx-background-color: #000080; /* Darker navy blue background */
+    -fx-background-color: #0e365c; /* Darker navy blue background */
 }
 
 .menu-bar .label {
@@ -256,11 +264,11 @@
 }
 
 .dialog-pane {
-    -fx-background-color: #000080; /* Darker navy blue background */
+    -fx-background-color: #0e365c; /* Darker navy blue background */
 }
 
 .dialog-pane > *.button-bar > *.container {
-    -fx-background-color: #000080; /* Darker navy blue background */
+    -fx-background-color: #0e365c; /* Darker navy blue background */
 }
 
 .dialog-pane > *.label.content {
@@ -281,7 +289,7 @@
 }
 
 .scroll-bar {
-    -fx-background-color: #000080; /* Darker navy blue background */
+    -fx-background-color: #0e365c; /* Darker navy blue background */
 }
 
 .scroll-bar .thumb {
@@ -317,9 +325,9 @@
 }
 
 #commandTextField {
-    -fx-background-color: transparent #000080 transparent #000080;
+    -fx-background-color: transparent #000080 transparent #0e365c;
     -fx-background-insets: 0;
-    -fx-border-color: #000080 #000080 white #000080;
+    -fx-border-color: #0e365c #0e365c #0e365c #0e365c;
     -fx-border-insets: 0;
     -fx-border-width: 1;
     -fx-font-family: "Courier New";
@@ -333,7 +341,7 @@
 }
 
 #resultDisplay .content {
-    -fx-background-color: transparent, #000080, transparent, #000080;
+    -fx-background-color: transparent, #0e365c, transparent, #0e365c;
     -fx-background-radius: 0;
 }
 

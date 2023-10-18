@@ -44,15 +44,15 @@ public class PersonCard extends UiPart<Region> {
         id.setText(displayedIndex + ". ");
         id.setStyle("-fx-font-size: 17px; -fx-text-fill: #FFDB58; -fx-font-family: 'Arial';"); // styling like name
         name.setText(person.getName().fullName);
-        major.setText("Major: " + person.getMajor().value);
-        year.setText("Year: " + person.getYear().value);
-        email.setText("Email: " + person.getEmail().value);
-        description.setText("Description: " + person.getDescription().value);
+        major.setText(person.getMajor().value);
+        year.setText(person.getYear().value);
+        email.setText(person.getEmail().value);
+        description.setText(person.getDescription().value);
 
         person.getSocialMediaLinks().stream()
                 .sorted(Comparator.comparing(sm -> sm.socialMediaLink))
                 .forEach(sm -> {
-                    Label label = new Label("Social Media: " + sm.socialMediaLink);
+                    Label label = new Label(sm.socialMediaLink);
                     label.setStyle("-fx-font-size: 13px; -fx-text-fill: white; -fx-font-family: 'Segoe UI Semibold';");
                     socialMediaLinks.getChildren().add(label);
                 });
