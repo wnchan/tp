@@ -22,7 +22,7 @@ public class JsonAdaptedPersonTest {
     private static final String INVALID_NAME = "R@chel";
     private static final String INVALID_MAJOR = "Computer Games";
     private static final String INVALID_YEAR = "1.5";
-    private static final String INVALID_DESCRIPTION = " ";
+    private static final String INVALID_DESCRIPTION = "";
     private static final String INVALID_EMAIL = "example.com";
     private static final String INVALID_SM = "#www.invalid.com";
 
