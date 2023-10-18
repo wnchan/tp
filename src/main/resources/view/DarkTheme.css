@@ -126,7 +126,6 @@
 .cell_big_label {
     -fx-font-family: "Arial";
     -fx-font-size: 17px;
-    -fx-font-weight: bold;
     -fx-text-fill: FFDB58;;
     -fx-font-weight: bold
 }
