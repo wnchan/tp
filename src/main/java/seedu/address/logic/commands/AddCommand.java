@@ -38,7 +38,8 @@ public class AddCommand extends Command {
             + PREFIX_SOCIAL_MEDIA_LINK + "https://www.linkedin.com/in/john-doe-123456789 ";
 
     public static final String MESSAGE_SUCCESS = "Details added successfully! New person added: %1$s";
-    public static final String MESSAGE_DUPLICATE_PERSON = "This person already exists in StudentConnect";
+    public static final String MESSAGE_DUPLICATE_PERSON = "This student is already on StudentConnect as this "
+            + "email has already been used.";
 
     private final Person toAdd;
 
