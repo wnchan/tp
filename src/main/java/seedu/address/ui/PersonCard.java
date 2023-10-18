@@ -42,7 +42,7 @@ public class PersonCard extends UiPart<Region> {
         super(FXML);
         this.person = person;
         id.setText(displayedIndex + ". ");
-        id.setStyle("-fx-font-size: 17px; -fx-text-fill: #FFDB58; -fx-font-family: 'Arial';"); // styling like name
+        id.setStyle("-fx-font-size: 17px; -fx-text-fill: #E7BE34; -fx-font-family: 'Arial';"); // styling like name
         name.setText(person.getName().fullName);
         major.setText(person.getMajor().value);
         year.setText(person.getYear().value);
