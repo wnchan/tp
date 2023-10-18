@@ -22,7 +22,7 @@ public class DeleteCommandParserTest {
 
     @Test
     public void parse_validArgs_returnsDeleteCommand() {
-        assertParseSuccess(parser, "1", new DeleteCommand(TypicalEmails.EMAIL_FIRST_PERSON));
+        assertParseSuccess(parser, "first@u.nus.edu", new DeleteCommand(TypicalEmails.EMAIL_FIRST_PERSON));
     }
 
     @Test
