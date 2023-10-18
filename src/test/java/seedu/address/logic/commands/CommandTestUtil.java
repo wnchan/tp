@@ -53,7 +53,7 @@ public class CommandTestUtil {
     public static final String DESCRIPTION_DESC_AMY = " " + PREFIX_DESCRIPTION + VALID_DESCRIPTION_AMY;
     public static final String DESCRIPTION_DESC_BOB = " " + PREFIX_DESCRIPTION + VALID_DESCRIPTION_BOB;
     public static final String SM_DESC_AMY = " " + PREFIX_SOCIAL_MEDIA_LINK + VALID_SM_LINKEDIN_AMY + " "
-            + VALID_SM_GITHUB_AMY;
+            + PREFIX_SOCIAL_MEDIA_LINK + VALID_SM_GITHUB_AMY;
     public static final String SM_DESC_BOB = " " + PREFIX_SOCIAL_MEDIA_LINK + VALID_SM_LINKEDIN_BOB + " "
             + PREFIX_SOCIAL_MEDIA_LINK + VALID_SM_GITHUB_BOB;
 
