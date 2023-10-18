@@ -10,8 +10,10 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 public class Year {
 
     public static final String MESSAGE_CONSTRAINTS =
-            "Year should only contain numbers, and it should be 1 digit long";
-    public static final String VALIDATION_REGEX = "\\d{1,}";
+            "Year should only contain numbers, and it should be 1 digit long between 1 and 6.";
+
+    public static final String VALIDATION_REGEX = "^[1-6]$";
+
     public final String value;
 
     /**

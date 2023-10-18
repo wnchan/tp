@@ -26,7 +26,7 @@ public class EmailTest {
 
         // blank email
         assertFalse(Email.isValidEmail("")); // empty string
-        assertFalse(Email.isValidEmail(" ")); // spaces only
+        assertFalse(Email.isValidEmail(" ")); // empty string
 
         // missing parts
         assertFalse(Email.isValidEmail("@example.com")); // missing local part
