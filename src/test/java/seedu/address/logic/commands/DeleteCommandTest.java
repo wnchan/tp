@@ -41,7 +41,7 @@ public class DeleteCommandTest {
 
     @Test
     public void execute_invalidEmailUnfilteredList_throwsCommandException() {
-        Email invalidEmail = new Email("invalid@example.com"); // Use an email that doesn't exist in the test data
+        Email invalidEmail = new Email("invalid@u.nus.edu"); // Use an email that doesn't exist in the test data
         DeleteCommand deleteCommand = new DeleteCommand(invalidEmail);
 
         assertCommandFailure(deleteCommand, model, "Person with the provided email not found.");
@@ -53,7 +53,8 @@ public class DeleteCommandTest {
         Email email = person.getEmail();
         DeleteCommand deleteFirstCommand = new DeleteCommand(email);
 
-        Email email2 = model.getFilteredPersonList().get(1).getEmail(); // Assuming the second person in the list is used
+        Email email2 = model.getFilteredPersonList().get(1)
+                .getEmail(); // Assuming the second person in the list is used
         DeleteCommand deleteSecondCommand = new DeleteCommand(email2);
 
         // same object -> returns true
