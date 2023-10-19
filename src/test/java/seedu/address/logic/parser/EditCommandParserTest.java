@@ -1,5 +1,6 @@
 package seedu.address.logic.parser;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.commands.CommandTestUtil.DESCRIPTION_DESC_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.DESCRIPTION_DESC_BOB;
@@ -30,6 +31,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_MAJOR;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_SOCIAL_MEDIA_LINK;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_YEAR;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseFailure;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseSuccess;
@@ -37,6 +39,7 @@ import static seedu.address.testutil.TypicalEmails.EMAIL_FIRST_PERSON;
 import static seedu.address.testutil.TypicalEmails.EMAIL_SECOND_PERSON;
 import static seedu.address.testutil.TypicalEmails.EMAIL_THIRD_PERSON;
 
+import java.util.List;
 import org.junit.jupiter.api.Test;
 
 import seedu.address.logic.Messages;
@@ -46,6 +49,7 @@ import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
+import seedu.address.model.person.Tutorial;
 import seedu.address.model.person.Year;
 import seedu.address.model.socialmedialink.SocialMediaLink;
 import seedu.address.testutil.EditPersonDescriptorBuilder;
@@ -219,5 +223,26 @@ public class EditCommandParserTest {
         EditCommand expectedCommand = new EditCommand(EMAIL_THIRD_PERSON, descriptor);
 
         assertParseSuccess(parser, userInput, expectedCommand);
+    }
+
+    @Test
+    public void parseTutorials_validInput_success() throws Exception {
+        String userInput = " " + PREFIX_TUTORIAL + "01 02 03";
+        ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(userInput, PREFIX_TUTORIAL);
+
+        EditPersonDescriptorBuilder descriptorBuilder = new EditPersonDescriptorBuilder();
+        List<String> tutorialsStrings = argMultimap.getAllValues(PREFIX_TUTORIAL);
+
+        if (!tutorialsStrings.isEmpty()) {
+            List<Tutorial> tutorialList = ParserUtil.parseTutorials(tutorialsStrings);
+            descriptorBuilder.withTutorials(tutorialList);
+        }
+
+        // Replace the following with actual expected values if needed
+        EditPersonDescriptor expectedDescriptor = new EditPersonDescriptorBuilder()
+            .withTutorials(List.of(new Tutorial("01"), new Tutorial("02"), new Tutorial("03")))
+            .build();
+
+        assertEquals(expectedDescriptor, descriptorBuilder.build());
     }
 }

@@ -110,4 +110,19 @@ public class PersonTest {
                 + ", socialMediaLinks=" + ALICE.getSocialMediaLinks() + "}";
         assertEquals(expected, ALICE.toString());
     }
+
+    @Test
+    public void equals_sameTutorials_returnsTrue() {
+        // Create two persons with the same tutorials
+        Person aliceWithTutorials = new PersonBuilder(ALICE)
+            .withTutorials("01", "02")
+            .build();
+        Person aliceCopyWithTutorials = new PersonBuilder(ALICE)
+            .withTutorials("01", "02")
+            .build();
+
+        // They should be considered equal even if other fields are different
+        assertTrue(aliceWithTutorials.equals(aliceCopyWithTutorials));
+    }
+
 }
