@@ -6,11 +6,13 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_MAJOR;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_SOCIAL_MEDIA_LINK;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_YEAR;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
@@ -25,6 +27,7 @@ import seedu.address.model.person.Email;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
+import seedu.address.model.person.Tutorial;
 import seedu.address.model.person.Year;
 import seedu.address.model.socialmedialink.SocialMediaLink;
 
@@ -44,6 +47,7 @@ public class EditCommand extends Command {
             + "[" + PREFIX_YEAR + "YEAR] "
             + "[" + PREFIX_EMAIL + "EMAIL] "
             + "[" + PREFIX_DESCRIPTION + "DESCRIPTION] "
+            + "[" + PREFIX_TUTORIAL + "TUTORIAL]...\n"
             + "[" + PREFIX_SOCIAL_MEDIA_LINK + "SOCIAL_MEDIA_LINK]...\n"
             + "Example: " + COMMAND_WORD + " johnd@u.nus.edu "
             + PREFIX_YEAR + "3 "
@@ -104,11 +108,13 @@ public class EditCommand extends Command {
         Year updatedYear = editPersonDescriptor.getYear().orElse(personToEdit.getYear());
         Email updatedEmail = editPersonDescriptor.getEmail().orElse(personToEdit.getEmail());
         Description updatedDescription = editPersonDescriptor.getDescription().orElse(personToEdit.getDescription());
+        List<Tutorial> updatedTutorials = editPersonDescriptor.getTutorials()
+            .orElse(personToEdit.getTutorials());
         Set<SocialMediaLink> updatedSocialMediaLinks = editPersonDescriptor.getSocialMediaLinks()
-                .orElse(personToEdit.getSocialMediaLinks());
+            .orElse(personToEdit.getSocialMediaLinks());
 
-        return new Person(updatedName, updatedMajor, updatedYear, updatedEmail, updatedDescription,
-                updatedSocialMediaLinks);
+        return new Person(updatedName, updatedMajor, updatedYear, updatedEmail,
+                            updatedDescription, updatedTutorials, updatedSocialMediaLinks);
     }
 
     @Override
@@ -145,6 +151,7 @@ public class EditCommand extends Command {
         private Year year;
         private Email email;
         private Description description;
+        private List<Tutorial> tutorials;
         private Set<SocialMediaLink> socialMediaLinks;
 
         public EditPersonDescriptor() {}
@@ -159,6 +166,7 @@ public class EditCommand extends Command {
             setYear(toCopy.year);
             setEmail(toCopy.email);
             setDescription(toCopy.description);
+            setTutorials(toCopy.tutorials);
             setSocialMediaLinks(toCopy.socialMediaLinks);
         }
 
@@ -166,7 +174,7 @@ public class EditCommand extends Command {
          * Returns true if at least one field is edited.
          */
         public boolean isAnyFieldEdited() {
-            return CollectionUtil.isAnyNonNull(name, major, year, email, description, socialMediaLinks);
+            return CollectionUtil.isAnyNonNull(name, major, year, email, description, tutorials, socialMediaLinks);
         }
 
         public void setName(Name name) {
@@ -209,6 +217,14 @@ public class EditCommand extends Command {
             return Optional.ofNullable(description);
         }
 
+        public void setTutorials(List<Tutorial> tutorials) {
+            this.tutorials = tutorials;
+        }
+
+        public Optional<List<Tutorial>> getTutorials() {
+            return Optional.ofNullable(tutorials);
+        }
+
         /**
          * Sets {@code tags} to this object's {@code tags}.
          * A defensive copy of {@code tags} is used internally.
@@ -244,6 +260,7 @@ public class EditCommand extends Command {
                     && Objects.equals(year, otherEditPersonDescriptor.year)
                     && Objects.equals(email, otherEditPersonDescriptor.email)
                     && Objects.equals(description, otherEditPersonDescriptor.description)
+                    && Objects.equals(tutorials, otherEditPersonDescriptor.tutorials)
                     && Objects.equals(socialMediaLinks, otherEditPersonDescriptor.socialMediaLinks);
         }
 
@@ -255,6 +272,7 @@ public class EditCommand extends Command {
                     .add("year", year)
                     .add("email", email)
                     .add("description", description)
+                    .add("tutorials", tutorials)
                     .add("social media links", socialMediaLinks)
                     .toString();
         }

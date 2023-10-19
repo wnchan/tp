@@ -6,8 +6,10 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_MAJOR;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_SOCIAL_MEDIA_LINK;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_YEAR;
 
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Stream;
 
@@ -18,6 +20,7 @@ import seedu.address.model.person.Email;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
+import seedu.address.model.person.Tutorial;
 import seedu.address.model.person.Year;
 import seedu.address.model.socialmedialink.SocialMediaLink;
 
@@ -34,7 +37,7 @@ public class AddCommandParser implements Parser<AddCommand> {
     public AddCommand parse(String args) throws ParseException {
         ArgumentMultimap argMultimap =
                 ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_MAJOR, PREFIX_YEAR, PREFIX_EMAIL,
-                        PREFIX_DESCRIPTION, PREFIX_SOCIAL_MEDIA_LINK);
+                        PREFIX_DESCRIPTION, PREFIX_TUTORIAL, PREFIX_SOCIAL_MEDIA_LINK);
 
         if (!arePrefixesPresent(argMultimap, PREFIX_NAME, PREFIX_MAJOR, PREFIX_YEAR, PREFIX_EMAIL,
                 PREFIX_DESCRIPTION)
@@ -43,16 +46,17 @@ public class AddCommandParser implements Parser<AddCommand> {
         }
 
         argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_NAME, PREFIX_MAJOR, PREFIX_YEAR,
-                PREFIX_EMAIL, PREFIX_DESCRIPTION);
+                PREFIX_EMAIL, PREFIX_TUTORIAL, PREFIX_DESCRIPTION);
         Name name = ParserUtil.parseName(argMultimap.getValue(PREFIX_NAME).get());
         Major major = ParserUtil.parseMajor(argMultimap.getValue(PREFIX_MAJOR).get());
         Year year = ParserUtil.parseYear(argMultimap.getValue(PREFIX_YEAR).get());
         Email email = ParserUtil.parseEmail(argMultimap.getValue(PREFIX_EMAIL).get());
         Description description = ParserUtil.parseDescription(argMultimap.getValue(PREFIX_DESCRIPTION).get());
+        List<Tutorial> tutorialList = ParserUtil.parseTutorials(argMultimap.getAllValues(PREFIX_TUTORIAL));
         Set<SocialMediaLink> socialMediaLinkList = ParserUtil.parseSocialMediaLinks(
                 argMultimap.getAllValues(PREFIX_SOCIAL_MEDIA_LINK));
 
-        Person person = new Person(name, major, year, email, description, socialMediaLinkList);
+        Person person = new Person(name, major, year, email, description, tutorialList, socialMediaLinkList);
 
         return new AddCommand(person);
     }
@@ -66,4 +70,3 @@ public class AddCommandParser implements Parser<AddCommand> {
     }
 
 }
-

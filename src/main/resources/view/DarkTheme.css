@@ -330,7 +330,7 @@
     -fx-border-insets: 0;
     -fx-border-width: 1;
     -fx-font-family: "Courier New";
-    -fx-font-weight: bold
+    -fx-font-weight: bold;
     -fx-font-size: 13pt;
     -fx-text-fill: white; /* White text */
 }
@@ -361,9 +361,3 @@
 #name-label {
     -fx-text-fill: #E7BE34 /* Mustard text color for the "name" label */
 }
-
-
-
-
-
-

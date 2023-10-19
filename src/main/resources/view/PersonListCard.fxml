@@ -43,14 +43,13 @@
         <Label fx:id="description" styleClass="cell_small_label" text="\$description" />
       </HBox>
       <HBox spacing="5" alignment="CENTER_LEFT">
+        <Label styleClass="label-bold">Tutorials:</Label>
+        <Label fx:id="tutorials" styleClass="cell_small_label" text="\$tutorials" />
+      </HBox>
+      <HBox spacing="5" alignment="CENTER_LEFT">
         <Label styleClass="label-bold">Social Media:</Label>
         <FlowPane fx:id="socialMediaLinks" style="-fx-font-size: 10px; -fx-text-fill: #FFDB58;" />
       </HBox>
     </VBox>
   </GridPane>
 </HBox>
-
-
-
-
-
