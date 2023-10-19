@@ -43,26 +43,13 @@
         <Label fx:id="description" styleClass="cell_small_label" text="\$description" />
       </HBox>
       <HBox spacing="5" alignment="CENTER_LEFT">
+        <Label styleClass="label-bold">Tutorials:</Label>
+        <Label fx:id="tutorials" styleClass="cell_small_label" text="\$tutorials" />
+      </HBox>
+      <HBox spacing="5" alignment="CENTER_LEFT">
         <Label styleClass="label-bold">Social Media:</Label>
         <FlowPane fx:id="socialMediaLinks" style="-fx-font-size: 10px; -fx-text-fill: #FFDB58;" />
       </HBox>
-<<<<<<< HEAD
-      <Label fx:id="major" styleClass="cell_small_label" text="\$major" />
-      <Label fx:id="year" styleClass="cell_small_label" text="\$year" />
-      <Label fx:id="email" styleClass="cell_small_label" text="\$email" />
-      <Label fx:id="description" styleClass="cell_small_label" text="\$description" />
-      <Label fx:id="tutorials" styleClass="cell_small_label" text="\$tutorials" />
-      <FlowPane fx:id="socialMediaLinks" />
     </VBox>
   </GridPane>
 </HBox>
-=======
-    </VBox>
-  </GridPane>
-</HBox>
-
-
-
-
-
->>>>>>> bc6eed9082106de0a4d88b990175e07e869c4208
