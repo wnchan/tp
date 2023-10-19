@@ -212,6 +212,11 @@ Clears all entries from the system.
 
 Format: `clear`
 
+Expected Output(Success):
+* GUI: All students' details are removed from student list.
+* Message: `All student data has been cleared`
+  ![Clear feature](images/clear.png)
+
 ### Exiting the program : `exit`
 
 Exits the program.
@@ -220,10 +225,10 @@ Format: `exit`
 
 Expected Output(Success):
 * GUI: Application window closes.
-* Message (before closing): “Thank you for using StudentConnect! Exiting the application now…”
+* Message (before closing): `Thank you for using StudentConnect! Exiting the application now…`
 
 Expected Output(Failure):
-* Message: “Error: Exiting the program failed.”
+* Message: `Error: Exiting the program failed.`
 
 ![Exit](images/exit.png)
 
