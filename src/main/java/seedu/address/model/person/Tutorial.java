@@ -5,12 +5,15 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 
 /**
  * Represents a Student's tutorial in StudentConnect.
- * Guarantees: immutable;
+ * Guarantees: immutable;  is valid as declared in {@link #isValidTutorial(String)}
  */
 public class Tutorial {
 
     public static final String MESSAGE_CONSTRAINTS = "Tutorials should be integers between 01 and 22, "
-                                                        + "separated by a comma.";
+                                                        + "separated by a space.\n"
+                                                        + "Constraint: Tutorial should only contain numbers, "
+                                                        + "and it should be 2 digit long between 01 and 22";
+    public static final String VALIDATION_REGEX = "^(0[1-9]|1\\d|2[0-2])$";
 
     public final String value;
 
@@ -22,27 +25,14 @@ public class Tutorial {
     public Tutorial(String tutorial) {
         requireNonNull(tutorial);
         checkArgument(isValidTutorial(tutorial), MESSAGE_CONSTRAINTS);
-        value = formatTutorial(tutorial);
-    }
-
-    /**
-     * Formats the tutorial to have leading zeros for numbers between 1 and 9 for consistency.
-     */
-    private String formatTutorial(String tutorial) {
-        int tutorialNumber = Integer.parseInt(tutorial);
-        return String.format("%02d", tutorialNumber);
+        value = tutorial;
     }
 
     /**
      * Returns if a given string is a valid tutorial number between 01 and 22.
      */
     public static boolean isValidTutorial(String tutorial) {
-        try {
-            int tutorialNumber = Integer.parseInt(tutorial);
-            return tutorialNumber >= 1 && tutorialNumber <= 22;
-        } catch (NumberFormatException e) {
-            return false;
-        }
+        return tutorial.matches(VALIDATION_REGEX);
     }
 
     public String getValue() {
@@ -51,7 +41,7 @@ public class Tutorial {
 
     @Override
     public String toString() {
-        return "T" + formatTutorial(value);
+        return "T" + value;
     }
 
     @Override
