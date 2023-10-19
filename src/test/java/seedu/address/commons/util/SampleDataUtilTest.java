@@ -1,11 +1,11 @@
 package seedu.address.commons.util;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Test;
 
 import seedu.address.model.person.Person;
 import seedu.address.model.util.SampleDataUtil;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SampleDataUtilTest {
 
