@@ -18,6 +18,12 @@ jobs:
         with:
           ref: master
 
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+      
       - name: Merge to master
         run: git checkout --progress --force ${{ github.sha }}
 
