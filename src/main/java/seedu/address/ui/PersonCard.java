@@ -16,14 +16,6 @@ public class PersonCard extends UiPart<Region> {
 
     private static final String FXML = "PersonListCard.fxml";
 
-    /**
-     * Note: Certain keywords such as "location" and "resources" are reserved keywords in JavaFX.
-     * As a consequence, UI elements' variable names cannot be set to such keywords
-     * or an exception will be thrown by JavaFX during runtime.
-     *
-     * @see <a href="https://github.com/se-edu/addressbook-level4/issues/336">The issue on AddressBook level 4</a>
-     */
-
     public final Person person;
 
     @FXML
@@ -50,14 +42,22 @@ public class PersonCard extends UiPart<Region> {
         super(FXML);
         this.person = person;
         id.setText(displayedIndex + ". ");
+        id.setStyle("-fx-font-size: 17px; -fx-text-fill: #E7BE34; -fx-font-family: 'Arial';"); // styling like name
         name.setText(person.getName().fullName);
         major.setText(person.getMajor().value);
         year.setText(person.getYear().value);
         email.setText(person.getEmail().value);
         description.setText(person.getDescription().value);
+
         person.getSocialMediaLinks().stream()
                 .sorted(Comparator.comparing(sm -> sm.socialMediaLink))
-                .forEach(sm -> socialMediaLinks.getChildren().add(new Label(sm.socialMediaLink)));
+                .forEach(sm -> {
+                    Label label = new Label(sm.socialMediaLink);
+                    label.setStyle("-fx-font-size: 13px; -fx-text-fill: white; -fx-font-family: 'Segoe UI Semibold';");
+                    socialMediaLinks.getChildren().add(label);
+                });
     }
 }
+
+
 
