@@ -70,4 +70,12 @@ public class TutorialTest {
         // different values -> returns false
         assertFalse(tutorial1.equals(tutorial3));
     }
+
+    @Test
+    public void hashCode_returnsExpectedHashCode() {
+        Tutorial tutorial = new Tutorial("05");
+        int expectedHashCode = "05".hashCode();
+        int actualHashCode = tutorial.hashCode();
+        assertEquals(expectedHashCode, actualHashCode);
+    }
 }
