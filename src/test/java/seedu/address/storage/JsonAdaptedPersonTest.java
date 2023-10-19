@@ -16,6 +16,7 @@ import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
+import seedu.address.model.person.Tutorial;
 import seedu.address.model.person.Year;
 
 public class JsonAdaptedPersonTest {
@@ -32,8 +33,8 @@ public class JsonAdaptedPersonTest {
     private static final String VALID_YEAR = BENSON.getYear().toString();
     private static final String VALID_EMAIL = BENSON.getEmail().toString();
     private static final String VALID_DESCRIPTION = BENSON.getDescription().toString();
-    private static final List<JsonAdaptedTutorial> VALID_TUTORIAL = BENSON.getTutorials().stream()
-            .map(JsonAdaptedTutorial::new)
+    private static final List<String> VALID_TUTORIAL = BENSON.getTutorials().stream()
+            .map(Tutorial::getValue)
             .collect(Collectors.toList());
     private static final List<JsonAdaptedSocialMedia> VALID_SM = BENSON.getSocialMediaLinks().stream()
             .map(JsonAdaptedSocialMedia::new)
