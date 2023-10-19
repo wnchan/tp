@@ -1,5 +1,6 @@
 package seedu.address.model.person;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.testutil.Assert.assertThrows;
@@ -56,5 +57,13 @@ public class NameTest {
 
         // different values -> returns false
         assertFalse(name.equals(new Name("Other Valid Name")));
+    }
+
+    @Test
+    public void hashCode_returnsExpectedHashCode() {
+        Name name = new Name("Valid Name");
+        int expectedHashCode = "Valid Name".hashCode();
+        int actualHashCode = name.hashCode();
+        assertEquals(expectedHashCode, actualHashCode);
     }
 }

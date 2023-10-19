@@ -1,5 +1,6 @@
 package seedu.address.model.person;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.testutil.Assert.assertThrows;
@@ -60,5 +61,13 @@ public class YearTest {
 
         // different values -> returns false
         assertFalse(year.equals(new Year("3")));
+    }
+
+    @Test
+    public void hashCode_returnsExpectedHashCode() {
+        Year year = new Year("2");
+        int expectedHashCode = "2".hashCode();
+        int actualHashCode = year.hashCode();
+        assertEquals(expectedHashCode, actualHashCode);
     }
 }

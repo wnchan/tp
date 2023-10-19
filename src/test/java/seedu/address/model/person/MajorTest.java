@@ -1,5 +1,6 @@
 package seedu.address.model.person;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.testutil.Assert.assertThrows;
@@ -59,5 +60,13 @@ public class MajorTest {
 
         // different values -> returns false
         assertFalse(major.equals(new Name("Information Systems")));
+    }
+
+    @Test
+    public void hashCode_returnsExpectedHashCode() {
+        Major major = new Major("Computer Science");
+        int expectedHashCode = "Computer Science".hashCode();
+        int actualHashCode = major.hashCode();
+        assertEquals(expectedHashCode, actualHashCode);
     }
 }
