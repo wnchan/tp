@@ -70,6 +70,7 @@ public class EditPersonDescriptorTest {
                 + editPersonDescriptor.getMajor().orElse(null) + ", year="
                 + editPersonDescriptor.getYear().orElse(null) + ", email="
                 + editPersonDescriptor.getEmail().orElse(null) + ", description="
+                + editPersonDescriptor.getTutorials().orElse(null) + ", tutorials="
                 + editPersonDescriptor.getDescription().orElse(null) + ", social media links="
                 + editPersonDescriptor.getSocialMediaLinks().orElse(null) + "}";
         assertEquals(expected, editPersonDescriptor.toString());

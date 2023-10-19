@@ -124,8 +124,8 @@ public class Person {
             .add("year", year)
             .add("email", email)
             .add("description", description)
-            .add("socialMediaLinks", socialMediaLinks)
             .add("tutorials", tutorials)
+            .add("socialMediaLinks", socialMediaLinks)
             .toString();
     }
 }

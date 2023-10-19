@@ -1,6 +1,8 @@
 package seedu.address.testutil;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import seedu.address.model.person.Description;
@@ -8,6 +10,7 @@ import seedu.address.model.person.Email;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
+import seedu.address.model.person.Tutorial;
 import seedu.address.model.person.Year;
 import seedu.address.model.socialmedialink.SocialMediaLink;
 import seedu.address.model.util.SampleDataUtil;
@@ -28,6 +31,7 @@ public class PersonBuilder {
     private Year year;
     private Email email;
     private Description description;
+    private List<Tutorial> tutorials;
     private Set<SocialMediaLink> socialMediaLinks;
 
     /**
@@ -39,6 +43,7 @@ public class PersonBuilder {
         year = new Year(DEFAULT_YEAR);
         email = new Email(DEFAULT_EMAIL);
         description = new Description(DEFAULT_DESCRIPTION);
+        tutorials = new ArrayList<>();
         socialMediaLinks = new HashSet<>();
     }
 
@@ -51,6 +56,7 @@ public class PersonBuilder {
         year = personToCopy.getYear();
         email = personToCopy.getEmail();
         description = personToCopy.getDescription();
+        tutorials = new ArrayList<>(personToCopy.getTutorials());
         socialMediaLinks = new HashSet<>(personToCopy.getSocialMediaLinks());
     }
 
@@ -104,7 +110,7 @@ public class PersonBuilder {
     }
 
     public Person build() {
-        return new Person(name, major, year, email, description, socialMediaLinks);
+        return new Person(name, major, year, email, description, tutorials, socialMediaLinks);
     }
 
 }

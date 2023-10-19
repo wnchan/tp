@@ -32,8 +32,7 @@ class JsonAdaptedPerson {
     private final String year;
     private final String email;
     private final String description;
-
-    private final List<String> tutorials = new ArrayList<>();
+    private final List<JsonAdaptedTutorial> tutorials = new ArrayList<>();
     private final List<JsonAdaptedSocialMedia> socialMediaLinks = new ArrayList<>();
 
     /**
@@ -45,7 +44,7 @@ class JsonAdaptedPerson {
                              @JsonProperty("year") String year,
                              @JsonProperty("email") String email,
                              @JsonProperty("description") String description,
-                             @JsonProperty("tutorials") List<String> tutorials,
+                             @JsonProperty("tutorials") List<JsonAdaptedTutorial> tutorials,
                              @JsonProperty("socialMediaLinks") List<JsonAdaptedSocialMedia> socialMediaLinks) {
         this.name = name;
         this.major = major;
@@ -70,7 +69,7 @@ class JsonAdaptedPerson {
         email = source.getEmail().value;
         description = source.getDescription().value;
         tutorials.addAll(source.getTutorials().stream()
-                .map(Tutorial::getValue)
+                .map(JsonAdaptedTutorial::new)
                 .collect(Collectors.toList()));
         socialMediaLinks.addAll(source.getSocialMediaLinks().stream()
                 .map(JsonAdaptedSocialMedia::new)
@@ -84,6 +83,8 @@ class JsonAdaptedPerson {
      */
     public Person toModelType() throws IllegalValueException {
         final List<SocialMediaLink> personSocialMediaLinks = new ArrayList<>();
+        final List<Tutorial> personTutorials = new ArrayList<>();
+
         for (JsonAdaptedSocialMedia socialMediaLink : socialMediaLinks) {
             personSocialMediaLinks.add(socialMediaLink.toModelType());
         }
@@ -129,9 +130,7 @@ class JsonAdaptedPerson {
         }
         final Description modelDescription = new Description(description);
 
-        final List<Tutorial> modelTutorials = tutorials.stream()
-            .map(Tutorial::new)
-            .collect(Collectors.toList());
+        final List<Tutorial> modelTutorials = new ArrayList<>(personTutorials);
 
         final Set<SocialMediaLink> modelSocialMediaLinks = new HashSet<>(personSocialMediaLinks);
 

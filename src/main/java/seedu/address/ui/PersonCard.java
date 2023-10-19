@@ -62,7 +62,6 @@ public class PersonCard extends UiPart<Region> {
                     Label label = new Label(sm.socialMediaLink);
                     label.setStyle("-fx-font-size: 13px; -fx-text-fill: white; -fx-font-family: 'Segoe UI Semibold';");
                     socialMediaLinks.getChildren().add(label);
-                }
-                );
+                });
     }
 }
