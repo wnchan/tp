@@ -111,10 +111,10 @@ public class EditCommand extends Command {
         List<Tutorial> updatedTutorials = editPersonDescriptor.getTutorials()
             .orElse(personToEdit.getTutorials());
         Set<SocialMediaLink> updatedSocialMediaLinks = editPersonDescriptor.getSocialMediaLinks()
-                .orElse(personToEdit.getSocialMediaLinks());
+            .orElse(personToEdit.getSocialMediaLinks());
 
-        return new Person(updatedName, updatedMajor, updatedYear, updatedEmail, updatedDescription, updatedTutorials,
-                updatedSocialMediaLinks);
+        return new Person(updatedName, updatedMajor, updatedYear, updatedEmail,
+                            updatedDescription, updatedTutorials, updatedSocialMediaLinks);
     }
 
     @Override

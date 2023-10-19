@@ -5,14 +5,13 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 
 /**
  * Represents a Student's tutorial in StudentConnect.
- * Guarantees: immutable;  is valid as declared in {@link #isValidTutorial(String)}
+ * Guarantees: immutable; is valid as declared in {@link #isValidTutorial(String)}
  */
 public class Tutorial {
 
-    public static final String MESSAGE_CONSTRAINTS = "Tutorials should be integers between 01 and 22, "
-                                                        + "separated by a space.\n"
-                                                        + "Constraint: Tutorial should only contain numbers, "
-                                                        + "and it should be 2 digit long between 01 and 22";
+    public static final String MESSAGE_CONSTRAINTS = "Tutorials should be 2-digit numbers between 01 and 22, "
+                                                        + "separated by spaces.";
+
     public static final String VALIDATION_REGEX = "^(0[1-9]|1\\d|2[0-2])$";
 
     public final String value;

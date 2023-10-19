@@ -52,7 +52,7 @@ public class PersonCard extends UiPart<Region> {
         email.setText(person.getEmail().value);
         description.setText(person.getDescription().value);
         String tutorialsText = person.getTutorials().stream()
-            .map(tutorial -> "T" + tutorial.getValue())
+            .map(t -> "T" + t.getValue())
             .sorted()
             .collect(Collectors.joining(", "));
         tutorials.setText(tutorialsText);

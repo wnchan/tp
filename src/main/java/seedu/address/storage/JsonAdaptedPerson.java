@@ -32,7 +32,7 @@ class JsonAdaptedPerson {
     private final String year;
     private final String email;
     private final String description;
-    private final List<JsonAdaptedTutorial> tutorials = new ArrayList<>();
+    private final List<String> tutorials = new ArrayList<>();
     private final List<JsonAdaptedSocialMedia> socialMediaLinks = new ArrayList<>();
 
     /**
@@ -44,7 +44,7 @@ class JsonAdaptedPerson {
                              @JsonProperty("year") String year,
                              @JsonProperty("email") String email,
                              @JsonProperty("description") String description,
-                             @JsonProperty("tutorials") List<JsonAdaptedTutorial> tutorials,
+                             @JsonProperty("tutorials") List<String> tutorials,
                              @JsonProperty("socialMediaLinks") List<JsonAdaptedSocialMedia> socialMediaLinks) {
         this.name = name;
         this.major = major;
@@ -69,7 +69,7 @@ class JsonAdaptedPerson {
         email = source.getEmail().value;
         description = source.getDescription().value;
         tutorials.addAll(source.getTutorials().stream()
-                .map(JsonAdaptedTutorial::new)
+                .map(Tutorial::getValue)
                 .collect(Collectors.toList()));
         socialMediaLinks.addAll(source.getSocialMediaLinks().stream()
                 .map(JsonAdaptedSocialMedia::new)
@@ -130,7 +130,9 @@ class JsonAdaptedPerson {
         }
         final Description modelDescription = new Description(description);
 
-        final List<Tutorial> modelTutorials = new ArrayList<>(personTutorials);
+        final List<Tutorial> modelTutorials = tutorials.stream()
+                                                .map(Tutorial::new)
+                                                .collect(Collectors.toList());
 
         final Set<SocialMediaLink> modelSocialMediaLinks = new HashSet<>(personSocialMediaLinks);
 
