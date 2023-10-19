@@ -1,5 +1,6 @@
 package seedu.address.model.person;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.testutil.Assert.assertThrows;
@@ -26,7 +27,7 @@ public class EmailTest {
 
         // blank email
         assertFalse(Email.isValidEmail("")); // empty string
-        assertFalse(Email.isValidEmail(" ")); // spaces only
+        assertFalse(Email.isValidEmail(" ")); // empty string
 
         // missing parts
         assertFalse(Email.isValidEmail("@example.com")); // missing local part
@@ -80,5 +81,13 @@ public class EmailTest {
 
         // different values -> returns false
         assertFalse(email.equals(new Email("other.valid@u.nus.edu")));
+    }
+
+    @Test
+    public void hashCode_returnsExpectedHashCode() {
+        Email email = new Email("valid@u.nus.edu");
+        int expectedHashCode = "valid@u.nus.edu".hashCode();
+        int actualHashCode = email.hashCode();
+        assertEquals(expectedHashCode, actualHashCode);
     }
 }
