@@ -78,6 +78,19 @@ public class PersonBuilder {
     }
 
     /**
+     * Parses the {@code tutorials} into a {@code List<Tutorial>}
+     * and sets it to the {@code Person} that we are building.
+     *
+     * @param tutorials A varargs of tutorial strings. Tutorial strings should be a 2-digit number between 01 and 22.
+     * @return The updated {@code PersonBuilder} with the tutorials set.
+     */
+    public PersonBuilder withTutorials(String... tutorials) {
+        this.tutorials = SampleDataUtil.getTutorialList(tutorials);
+        return this;
+    }
+
+
+    /**
      * Sets the {@code Description} of the {@code Person} that we are building.
      */
     public PersonBuilder withDescription(String description) {

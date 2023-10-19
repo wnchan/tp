@@ -8,6 +8,7 @@ import static seedu.address.testutil.TypicalEmails.EMAIL_FIRST_PERSON;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.junit.jupiter.api.Test;
@@ -17,6 +18,7 @@ import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
+import seedu.address.model.person.Tutorial;
 import seedu.address.model.person.Year;
 import seedu.address.model.socialmedialink.SocialMediaLink;
 
@@ -215,4 +217,25 @@ public class ParserUtilTest {
 
         assertEquals(expectedSocialMediaLinkSet, actualSocialMediaLinkSet);
     }
+
+    @Test
+    public void parseTutorials_validInput_success() throws Exception {
+        List<String> validTutorials = Arrays.asList("02", "05");
+        List<Tutorial> expectedTutorialList = Arrays.asList(new Tutorial("02"), new Tutorial("05"));
+
+        List<Tutorial> actualTutorialList = ParserUtil.parseTutorials(validTutorials);
+
+        assertEquals(expectedTutorialList, actualTutorialList);
+    }
+
+    @Test
+    public void parseTutorials_invalidInput_throwsParseException() {
+        List<String> invalidTutorials = Arrays.asList("25", "T02");
+        for (String invalidTutorial : invalidTutorials) {
+            assertThrows(ParseException.class, () ->
+                ParserUtil.parseTutorials(Collections.singletonList(invalidTutorial)));
+        }
+    }
+
+
 }
