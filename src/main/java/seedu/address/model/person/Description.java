@@ -5,11 +5,13 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 
 /**
  * Represents a Student's description in StudentConnect.
- * Guarantees: immutable;
+ * Guarantees: immutable; is valid as declared in {@link #isValidDescription(String)}
  */
 public class Description {
 
     public static final String MESSAGE_CONSTRAINTS = "Descriptions should not be left blank or exceed 150 characters.";
+
+    public static final String VALIDATION_REGEX = "^.{1,150}$";
 
     public final String value;
 
@@ -26,10 +28,10 @@ public class Description {
     }
 
     /**
-     * Returns if a given string is a valid description.
+     * Returns true if a given string is a valid description.
      */
-    public static boolean isValidDescription(String value) {
-        return value != null && !value.isBlank() && value.length() <= 150;
+    public static boolean isValidDescription(String test) {
+        return test.matches(VALIDATION_REGEX);
     }
 
     @Override

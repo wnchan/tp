@@ -22,7 +22,7 @@ public class AddCommand extends Command {
 
     public static final String COMMAND_WORD = "add";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a person to StudentConnect. "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a student to StudentConnect. "
             + "Parameters: "
             + PREFIX_NAME + "NAME "
             + PREFIX_MAJOR + "MAJOR "
@@ -40,7 +40,7 @@ public class AddCommand extends Command {
             + PREFIX_TUTORIAL + "02 17 20 "
             + PREFIX_SOCIAL_MEDIA_LINK + "https://www.linkedin.com/in/john-doe-123456789 ";
 
-    public static final String MESSAGE_SUCCESS = "Details added successfully! New person added: %1$s";
+    public static final String MESSAGE_SUCCESS = "Details added successfully! New student added: %1$s";
     public static final String MESSAGE_DUPLICATE_PERSON = "This student is already on StudentConnect as this "
             + "email has already been used.";
 

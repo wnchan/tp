@@ -38,7 +38,7 @@ public class EditCommand extends Command {
 
     public static final String COMMAND_WORD = "edit";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the details of the person identified "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the details of the student identified "
             + "by the email used in the displayed person list. "
             + "Existing values will be overwritten by the input values.\n"
             + "Parameters: EMAIL (must end with u.nus.edu) "
@@ -53,11 +53,11 @@ public class EditCommand extends Command {
             + PREFIX_YEAR + "3 "
             + PREFIX_EMAIL + "johndoe@u.nus.edu";
 
-    public static final String MESSAGE_EDIT_PERSON_SUCCESS = "Details edited successfully! Edited Person: %1$s";
+    public static final String MESSAGE_EDIT_PERSON_SUCCESS = "Details edited successfully! Edited Student: %1$s";
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";
     public static final String MESSAGE_DUPLICATE_PERSON = "This student is already on StudentConnect as this "
             + "email has already been used.";
-    public static final String MESSAGE_EMAIL_NOT_FOUND = "Person with the provided email not found.";
+    public static final String MESSAGE_EMAIL_NOT_FOUND = "Student with the provided email not found.";
 
     private final Email email;
     private final EditPersonDescriptor editPersonDescriptor;

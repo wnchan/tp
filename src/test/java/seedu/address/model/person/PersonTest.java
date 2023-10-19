@@ -95,6 +95,14 @@ public class PersonTest {
     }
 
     @Test
+    public void hashCode_returnsExpectedHashCode() {
+        Person aliceCopy = new PersonBuilder(ALICE).build();
+        int expectedHashCode = ALICE.hashCode();
+        int actualHashCode = aliceCopy.hashCode();
+        assertEquals(expectedHashCode, actualHashCode);
+    }
+
+    @Test
     public void toStringMethod() {
         String expected = Person.class.getCanonicalName() + "{name=" + ALICE.getName() + ", major=" + ALICE.getMajor()
                 + ", year=" + ALICE.getYear() + ", email=" + ALICE.getEmail() + ", description="

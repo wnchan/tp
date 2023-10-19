@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -25,8 +24,29 @@
             <Region fx:constant="USE_PREF_SIZE" />
           </minWidth>
         </Label>
-        <Label fx:id="name" text="\$first" styleClass="cell_big_label" />
+        <Label fx:id="name" id="name-label" text="\$first" styleClass="cell_big_label" />
       </HBox>
+      <HBox spacing="5" alignment="CENTER_LEFT">
+        <Label styleClass="label-bold">Major:</Label>
+        <Label fx:id="major" styleClass="cell_small_label" text="\$major" />
+      </HBox>
+      <HBox spacing="5" alignment="CENTER_LEFT">
+        <Label styleClass="label-bold">Year:</Label>
+        <Label fx:id="year" styleClass="cell_small_label" text="\$year" />
+      </HBox>
+      <HBox spacing="5" alignment="CENTER_LEFT">
+        <Label styleClass="label-bold">Email:</Label>
+        <Label fx:id="email" styleClass="cell_small_label" text="\$email" />
+      </HBox>
+      <HBox spacing="5" alignment="CENTER_LEFT">
+        <Label styleClass="label-bold">Description:</Label>
+        <Label fx:id="description" styleClass="cell_small_label" text="\$description" />
+      </HBox>
+      <HBox spacing="5" alignment="CENTER_LEFT">
+        <Label styleClass="label-bold">Social Media:</Label>
+        <FlowPane fx:id="socialMediaLinks" style="-fx-font-size: 10px; -fx-text-fill: #FFDB58;" />
+      </HBox>
+<<<<<<< HEAD
       <Label fx:id="major" styleClass="cell_small_label" text="\$major" />
       <Label fx:id="year" styleClass="cell_small_label" text="\$year" />
       <Label fx:id="email" styleClass="cell_small_label" text="\$email" />
@@ -36,3 +56,13 @@
     </VBox>
   </GridPane>
 </HBox>
+=======
+    </VBox>
+  </GridPane>
+</HBox>
+
+
+
+
+
+>>>>>>> bc6eed9082106de0a4d88b990175e07e869c4208
