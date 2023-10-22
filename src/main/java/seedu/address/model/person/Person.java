@@ -2,10 +2,8 @@ package seedu.address.model.person;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -23,17 +21,16 @@ public class Person {
     private final Email email;
 
     // Data fields
-
     private final Major major;
     private final Year year;
     private final Description description;
     private final Set<SocialMediaLink> socialMediaLinks = new HashSet<>();
-    private final List<Tutorial> tutorials = new ArrayList<>();
+    private final Set<Tutorial> tutorials = new HashSet<>();
 
     /**
      * Every field must be present and not null.
      */
-    public Person(Name name, Major major, Year year, Email email, Description description, List<Tutorial> tutorials,
+    public Person(Name name, Major major, Year year, Email email, Description description, Set<Tutorial> tutorials,
                   Set<SocialMediaLink> socialMediaLinks) {
         requireAllNonNull(name, major, year, email, description, tutorials, socialMediaLinks);
         this.name = name;
@@ -65,8 +62,8 @@ public class Person {
         return description;
     }
 
-    public List<Tutorial> getTutorials() {
-        return tutorials;
+    public Set<Tutorial> getTutorials() {
+        return Collections.unmodifiableSet(tutorials);
     }
 
     public Set<SocialMediaLink> getSocialMediaLinks() {
@@ -83,7 +80,7 @@ public class Person {
         }
 
         return otherPerson != null
-                && otherPerson.getEmail().equals(getEmail());
+            && otherPerson.getEmail().equals(getEmail());
     }
 
     /**

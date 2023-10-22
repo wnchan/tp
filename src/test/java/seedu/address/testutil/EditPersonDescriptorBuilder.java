@@ -1,6 +1,5 @@
 package seedu.address.testutil;
 
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -94,16 +93,17 @@ public class EditPersonDescriptorBuilder {
     }
 
     /**
-     * Parses the {@code tutorials} into a {@code Set<Tutorial>} and set it to the {@code EditPersonDescriptor}
+     * Parses the {@code tutorials} into a {@code Set<Tutorial>} and sets it to the {@code EditPersonDescriptor}
      * that we are building.
      */
-    public EditPersonDescriptorBuilder withTutorials(List<Tutorial> tutorials) {
-        List<Tutorial> tutorialSet = tutorials.stream()
+    public EditPersonDescriptorBuilder withTutorials(Set<Tutorial> tutorials) {
+        Set<Tutorial> tutorialSet = tutorials.stream()
             .map((Tutorial tutorial) -> new Tutorial(tutorial.getValue()))
-            .collect(Collectors.toList());
+            .collect(Collectors.toSet());
         descriptor.setTutorials(tutorialSet);
         return this;
     }
+
 
     public EditPersonDescriptor build() {
         return descriptor;

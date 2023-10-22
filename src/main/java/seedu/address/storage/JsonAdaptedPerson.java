@@ -130,9 +130,7 @@ class JsonAdaptedPerson {
         }
         final Description modelDescription = new Description(description);
 
-        final List<Tutorial> modelTutorials = tutorials.stream()
-                                                .map(Tutorial::new)
-                                                .collect(Collectors.toList());
+        final Set<Tutorial> modelTutorials = new HashSet<>(personTutorials);
 
         final Set<SocialMediaLink> modelSocialMediaLinks = new HashSet<>(personSocialMediaLinks);
 

@@ -16,7 +16,8 @@ import static seedu.address.testutil.TypicalEmails.EMAIL_FIRST_PERSON;
 import static seedu.address.testutil.TypicalEmails.EMAIL_SECOND_PERSON;
 import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
 
-import java.util.List;
+import java.util.Arrays;
+import java.util.HashSet;
 
 import org.junit.jupiter.api.Test;
 
@@ -176,13 +177,12 @@ public class EditCommandTest {
     public void equals_sameTutorials_returnsTrue() {
         // Create two edit descriptors with the same tutorials
         EditPersonDescriptor descriptorWithTutorials = new EditPersonDescriptorBuilder()
-            .withTutorials(List.of(new Tutorial("01"), new Tutorial("02"))).build();
+            .withTutorials(new HashSet<>(Arrays.asList(new Tutorial("01"), new Tutorial("02")))).build();
         EditPersonDescriptor descriptorCopyWithTutorials = new EditPersonDescriptorBuilder()
-            .withTutorials(List.of(new Tutorial("01"), new Tutorial("02"))).build();
+            .withTutorials(new HashSet<>(Arrays.asList(new Tutorial("01"), new Tutorial("02")))).build();
 
         // They should be considered equal even if other fields are different
         assertTrue(descriptorWithTutorials.equals(descriptorCopyWithTutorials));
     }
-
 
 }

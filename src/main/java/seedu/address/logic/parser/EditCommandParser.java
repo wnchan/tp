@@ -70,7 +70,7 @@ public class EditCommandParser implements Parser<EditCommand> {
         }
         List<String> tutorialsStrings = argMultimap.getAllValues(PREFIX_TUTORIAL);
         if (!tutorialsStrings.isEmpty()) {
-            List<Tutorial> tutorialList = ParserUtil.parseTutorials(tutorialsStrings);
+            Set<Tutorial> tutorialList = ParserUtil.parseTutorials(tutorialsStrings);
             editPersonDescriptor.setTutorials(tutorialList);
         }
 

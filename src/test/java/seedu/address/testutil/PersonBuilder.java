@@ -1,8 +1,6 @@
 package seedu.address.testutil;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import seedu.address.model.person.Description;
@@ -31,7 +29,7 @@ public class PersonBuilder {
     private Year year;
     private Email email;
     private Description description;
-    private List<Tutorial> tutorials;
+    private Set<Tutorial> tutorials;
     private Set<SocialMediaLink> socialMediaLinks;
 
     /**
@@ -43,7 +41,7 @@ public class PersonBuilder {
         year = new Year(DEFAULT_YEAR);
         email = new Email(DEFAULT_EMAIL);
         description = new Description(DEFAULT_DESCRIPTION);
-        tutorials = new ArrayList<>();
+        tutorials = new HashSet<>();
         socialMediaLinks = new HashSet<>();
     }
 
@@ -56,7 +54,7 @@ public class PersonBuilder {
         year = personToCopy.getYear();
         email = personToCopy.getEmail();
         description = personToCopy.getDescription();
-        tutorials = new ArrayList<>(personToCopy.getTutorials());
+        tutorials = new HashSet<>(personToCopy.getTutorials());
         socialMediaLinks = new HashSet<>(personToCopy.getSocialMediaLinks());
     }
 
@@ -85,7 +83,7 @@ public class PersonBuilder {
      * @return The updated {@code PersonBuilder} with the tutorials set.
      */
     public PersonBuilder withTutorials(String... tutorials) {
-        this.tutorials = SampleDataUtil.getTutorialList(tutorials);
+        this.tutorials = SampleDataUtil.getTutorialSet(tutorials);
         return this;
     }
 

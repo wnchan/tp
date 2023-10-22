@@ -9,7 +9,6 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_SOCIAL_MEDIA_LINK;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_YEAR;
 
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Stream;
 
@@ -52,11 +51,11 @@ public class AddCommandParser implements Parser<AddCommand> {
         Year year = ParserUtil.parseYear(argMultimap.getValue(PREFIX_YEAR).get());
         Email email = ParserUtil.parseEmail(argMultimap.getValue(PREFIX_EMAIL).get());
         Description description = ParserUtil.parseDescription(argMultimap.getValue(PREFIX_DESCRIPTION).get());
-        List<Tutorial> tutorialList = ParserUtil.parseTutorials(argMultimap.getAllValues(PREFIX_TUTORIAL));
+        Set<Tutorial> tutorialSet = ParserUtil.parseTutorials(argMultimap.getAllValues(PREFIX_TUTORIAL));
         Set<SocialMediaLink> socialMediaLinkList = ParserUtil.parseSocialMediaLinks(
                 argMultimap.getAllValues(PREFIX_SOCIAL_MEDIA_LINK));
 
-        Person person = new Person(name, major, year, email, description, tutorialList, socialMediaLinkList);
+        Person person = new Person(name, major, year, email, description, tutorialSet, socialMediaLinkList);
 
         return new AddCommand(person);
     }

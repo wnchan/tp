@@ -220,12 +220,12 @@ public class ParserUtilTest {
 
     @Test
     public void parseTutorials_validInput_success() throws Exception {
-        List<String> validTutorials = Arrays.asList("02", "05");
-        List<Tutorial> expectedTutorialList = Arrays.asList(new Tutorial("02"), new Tutorial("05"));
+        Set<String> validTutorials = new HashSet<>(Arrays.asList("02", "05"));
+        Set<Tutorial> expectedTutorialSet = new HashSet<>(Arrays.asList(new Tutorial("02"), new Tutorial("05")));
 
-        List<Tutorial> actualTutorialList = ParserUtil.parseTutorials(validTutorials);
+        Set<Tutorial> actualTutorialSet = ParserUtil.parseTutorials(validTutorials);
 
-        assertEquals(expectedTutorialList, actualTutorialList);
+        assertEquals(expectedTutorialSet, actualTutorialSet);
     }
 
     @Test
@@ -237,5 +237,14 @@ public class ParserUtilTest {
         }
     }
 
+    @Test
+    public void parseTutorials_duplicateInput_singleInstanceStored() throws Exception {
+        List<String> duplicateTutorials = Arrays.asList("01", "01", "02", "02");
+        Set<Tutorial> expectedTutorials = new HashSet<>(Arrays.asList(new Tutorial("01"), new Tutorial("02")));
+
+        Set<Tutorial> actualTutorials = ParserUtil.parseTutorials(duplicateTutorials);
+
+        assertEquals(expectedTutorials, actualTutorials);
+    }
 
 }
