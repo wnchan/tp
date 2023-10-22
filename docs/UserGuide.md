@@ -27,7 +27,7 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 
     * `list` : Lists all students.
 
-    * `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I’m a Frontend Developer sm/https://www.linkedin.com/in/john-doe-123456789` : Adds a student named `John Doe` to the StudentConnect system.
+    * `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time t/02 17 20 sm/https://www.linkedin.com/in/john-doe-123456789` : Adds a student named `John Doe` to the StudentConnect system.
 
     * `delete [email]` : Deletes the student with the corresponding email.
 
@@ -75,15 +75,19 @@ Format: `help`
 
 Adds a student to the system.
 
-Format: `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION sm/SOCIALMEDIA`
+Format: `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION t/TUTORIALS sm/SOCIALMEDIA`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-A person can have any number of social media links (including 0)
+A student can include multiple tutorial groups they are interested in
+</div>
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+A student can have any number of social media links (including 0)
 </div>
 
 Examples:
-* `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I’m a Frontend Developer sm/https://www.linkedin.com/in/john-doe-123456789`
-* `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu  d/I’m adept at Backend technologies sm/`
+* `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I’m a Frontend Developer t/6 19 sm/https://www.linkedin.com/in/john-doe-123456789`
+* `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu  d/I’m adept at Backend technologies t/5 sm/`
 
 Acceptable Values:
 * Name: Full names with alphabetical characters
@@ -91,6 +95,7 @@ Acceptable Values:
 * Year: Numeric year level
 * Email: Valid email address ending in “@u.nus.edu”
 * Description: Maximum 150 characters
+* Tutorials: Integers between 1 and 22 inclusive, each seperated by a space
 * Social Media Link: Valid URL format to social media account (optional to include)
 
 Expected Output (Success):
@@ -99,9 +104,9 @@ Expected Output (Success):
 
 Expected Output (Failure):
 * Message:  "Invalid command format! add: Adds a person to StudentConnect. <br>
-Parameters: n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION sm/SOCIAL_MEDIA_LINK <br>
-Example: add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time <br>
-sm/https://www.linkedin.com/in/john-doe-123456789";
+Parameters: n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION t/TUTORIALS sm/SOCIAL_MEDIA_LINK <br>
+Example: add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time<br>
+t/02 17 20 sm/https://www.linkedin.com/in/john-doe-123456789";
 
 Mockup of add feature (Success): <br>
 ![Add feature](images/add.png)
@@ -125,11 +130,12 @@ Expected Output (Failure):
 
 Edits an existing student in the system.
 
-Format: `edit EMAIL [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [sm/SOCIALMEDIA]…​`
+Format: `edit EMAIL [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS] [sm/SOCIALMEDIA]…​`
 
 * Edits the student with the specified EMAIL.
 * At least one of the optional fields must be provided.
 * Existing values will be updated to the input values.
+* When editing tutorials, the existing tutorials of the student will be removed i.e. adding of tutorials is not cumulative.
 * When editing social media, the existing social media of the student will be removed i.e. adding of social media is not cumulative.
 * You can remove all the student's social media by typing `sm/` without
   specifying any social media after it.
@@ -148,6 +154,8 @@ Expected Output (Success):
 Expected Output (Failure):
 * Message: “Error: Email not found.”
 * Message: “Error: None of the optional fields provided. Give at least one.”
+
+![sample result for 'edit'](images/edit.png)
 
 ### Finding a student by name: `find`
 
@@ -204,6 +212,11 @@ Clears all entries from the system.
 
 Format: `clear`
 
+Expected Output(Success):
+* GUI: All students' details are removed from student list.
+* Message: `All student data has been cleared`
+  ![Clear feature](images/clear.png)
+
 ### Exiting the program : `exit`
 
 Exits the program.
@@ -212,10 +225,10 @@ Format: `exit`
 
 Expected Output(Success):
 * GUI: Application window closes.
-* Message (before closing): “Thank you for using StudentConnect! Exiting the application now…”
+* Message (before closing): `Thank you for using StudentConnect! Exiting the application now…`
 
 Expected Output(Failure):
-* Message: “Error: Exiting the program failed.”
+* Message: `Error: Exiting the program failed.`
 
 ![Exit](images/exit.png)
 

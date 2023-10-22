@@ -2,8 +2,10 @@ package seedu.address.logic.parser;
 
 import static java.util.Objects.requireNonNull;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import seedu.address.logic.parser.exceptions.ParseException;
@@ -11,6 +13,7 @@ import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
+import seedu.address.model.person.Tutorial;
 import seedu.address.model.person.Year;
 import seedu.address.model.socialmedialink.SocialMediaLink;
 
@@ -95,6 +98,25 @@ public class ParserUtil {
     }
 
     /**
+     * Parses {@code Collection<String> tutorials} into a {@code List<Tutorial>}.
+     * @throws ParseException if any of the provided tutorials is invalid.
+     */
+    public static List<Tutorial> parseTutorials(Collection<String> tutorials) throws ParseException {
+        requireNonNull(tutorials);
+        List<Tutorial> tutorialList = new ArrayList<>();
+        for (String tutorialString : tutorials) {
+            String[] tutorialTokens = tutorialString.split(" ");
+            for (String token : tutorialTokens) {
+                if (!Tutorial.isValidTutorial(token)) {
+                    throw new ParseException(Tutorial.MESSAGE_CONSTRAINTS);
+                }
+                tutorialList.add(new Tutorial(token));
+            }
+        }
+        return tutorialList;
+    }
+
+    /**
      * Parses a {@code String socialMediaLink} into a {@code SocialMediaLink}.
      * Leading and trailing whitespaces will be trimmed.
      *
@@ -122,4 +144,3 @@ public class ParserUtil {
         return socialMediaLinkSet;
     }
 }
-

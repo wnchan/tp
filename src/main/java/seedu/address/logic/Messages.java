@@ -42,6 +42,7 @@ public class Messages {
                 .append("; Year: ").append(person.getYear())
                 .append("; Email: ").append(person.getEmail())
                 .append("; Description: ").append(person.getDescription())
+                .append("; Tutorial: ").append(person.getTutorials())
                 .append("; Social Media: ").append(person.getSocialMediaLinks());
         return builder.toString();
     }
