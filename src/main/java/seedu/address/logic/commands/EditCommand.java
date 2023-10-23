@@ -12,7 +12,6 @@ import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
@@ -27,9 +26,9 @@ import seedu.address.model.person.Email;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
-import seedu.address.model.person.Tutorial;
 import seedu.address.model.person.Year;
 import seedu.address.model.socialmedialink.SocialMediaLink;
+import seedu.address.model.tutorial.Tutorial;
 
 /**
  * Edits the details of an existing person in StudentConnect.
@@ -108,7 +107,7 @@ public class EditCommand extends Command {
         Year updatedYear = editPersonDescriptor.getYear().orElse(personToEdit.getYear());
         Email updatedEmail = editPersonDescriptor.getEmail().orElse(personToEdit.getEmail());
         Description updatedDescription = editPersonDescriptor.getDescription().orElse(personToEdit.getDescription());
-        List<Tutorial> updatedTutorials = editPersonDescriptor.getTutorials()
+        Set<Tutorial> updatedTutorials = editPersonDescriptor.getTutorials()
             .orElse(personToEdit.getTutorials());
         Set<SocialMediaLink> updatedSocialMediaLinks = editPersonDescriptor.getSocialMediaLinks()
             .orElse(personToEdit.getSocialMediaLinks());
@@ -151,7 +150,7 @@ public class EditCommand extends Command {
         private Year year;
         private Email email;
         private Description description;
-        private List<Tutorial> tutorials;
+        private Set<Tutorial> tutorials;
         private Set<SocialMediaLink> socialMediaLinks;
 
         public EditPersonDescriptor() {}
@@ -217,11 +216,11 @@ public class EditCommand extends Command {
             return Optional.ofNullable(description);
         }
 
-        public void setTutorials(List<Tutorial> tutorials) {
+        public void setTutorials(Set<Tutorial> tutorials) {
             this.tutorials = tutorials;
         }
 
-        public Optional<List<Tutorial>> getTutorials() {
+        public Optional<Set<Tutorial>> getTutorials() {
             return Optional.ofNullable(tutorials);
         }
 
