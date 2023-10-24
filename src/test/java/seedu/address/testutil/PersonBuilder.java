@@ -10,6 +10,7 @@ import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Year;
 import seedu.address.model.socialmedialink.SocialMediaLink;
+import seedu.address.model.tutorial.Tutorial;
 import seedu.address.model.util.SampleDataUtil;
 
 /**
@@ -28,6 +29,7 @@ public class PersonBuilder {
     private Year year;
     private Email email;
     private Description description;
+    private Set<Tutorial> tutorials;
     private Set<SocialMediaLink> socialMediaLinks;
 
     /**
@@ -39,6 +41,7 @@ public class PersonBuilder {
         year = new Year(DEFAULT_YEAR);
         email = new Email(DEFAULT_EMAIL);
         description = new Description(DEFAULT_DESCRIPTION);
+        tutorials = new HashSet<>();
         socialMediaLinks = new HashSet<>();
     }
 
@@ -51,6 +54,7 @@ public class PersonBuilder {
         year = personToCopy.getYear();
         email = personToCopy.getEmail();
         description = personToCopy.getDescription();
+        tutorials = new HashSet<>(personToCopy.getTutorials());
         socialMediaLinks = new HashSet<>(personToCopy.getSocialMediaLinks());
     }
 
@@ -70,6 +74,19 @@ public class PersonBuilder {
         this.socialMediaLinks = SampleDataUtil.getSocialMediaLinkSet(socialMediaLinks);
         return this;
     }
+
+    /**
+     * Parses the {@code tutorials} into a {@code List<Tutorial>}
+     * and sets it to the {@code Person} that we are building.
+     *
+     * @param tutorials A varargs of tutorial strings. Tutorial strings should be a 2-digit number between 01 and 22.
+     * @return The updated {@code PersonBuilder} with the tutorials set.
+     */
+    public PersonBuilder withTutorials(String... tutorials) {
+        this.tutorials = SampleDataUtil.getTutorialSet(tutorials);
+        return this;
+    }
+
 
     /**
      * Sets the {@code Description} of the {@code Person} that we are building.
@@ -104,7 +121,7 @@ public class PersonBuilder {
     }
 
     public Person build() {
-        return new Person(name, major, year, email, description, socialMediaLinks);
+        return new Person(name, major, year, email, description, tutorials, socialMediaLinks);
     }
 
 }

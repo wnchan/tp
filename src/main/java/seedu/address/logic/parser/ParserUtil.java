@@ -13,6 +13,7 @@ import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Year;
 import seedu.address.model.socialmedialink.SocialMediaLink;
+import seedu.address.model.tutorial.Tutorial;
 
 /**
  * Contains utility methods used for parsing strings in the various *Parser classes.
@@ -95,6 +96,25 @@ public class ParserUtil {
     }
 
     /**
+     * Parses {@code Collection<String> tutorials} into a {@code Set<Tutorial>}.
+     * @throws ParseException if any of the given {@code tutorials} is invalid.
+     */
+    public static Set<Tutorial> parseTutorials(Collection<String> tutorials) throws ParseException {
+        requireNonNull(tutorials);
+        Set<Tutorial> tutorialSet = new HashSet<>();
+        for (String tutorialString : tutorials) {
+            String[] tutorialTokens = tutorialString.split(" ");
+            for (String token : tutorialTokens) {
+                if (!Tutorial.isValidTutorial(token)) {
+                    throw new ParseException(Tutorial.MESSAGE_CONSTRAINTS);
+                }
+                tutorialSet.add(new Tutorial(token));
+            }
+        }
+        return tutorialSet;
+    }
+
+    /**
      * Parses a {@code String socialMediaLink} into a {@code SocialMediaLink}.
      * Leading and trailing whitespaces will be trimmed.
      *
@@ -122,4 +142,3 @@ public class ParserUtil {
         return socialMediaLinkSet;
     }
 }
-

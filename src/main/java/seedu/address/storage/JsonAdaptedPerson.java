@@ -18,6 +18,7 @@ import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Year;
 import seedu.address.model.socialmedialink.SocialMediaLink;
+import seedu.address.model.tutorial.Tutorial;
 
 /**
  * Jackson-friendly version of {@link Person}.
@@ -31,6 +32,7 @@ class JsonAdaptedPerson {
     private final String year;
     private final String email;
     private final String description;
+    private final List<String> tutorials = new ArrayList<>();
     private final List<JsonAdaptedSocialMedia> socialMediaLinks = new ArrayList<>();
 
     /**
@@ -42,12 +44,16 @@ class JsonAdaptedPerson {
                              @JsonProperty("year") String year,
                              @JsonProperty("email") String email,
                              @JsonProperty("description") String description,
+                             @JsonProperty("tutorials") List<String> tutorials,
                              @JsonProperty("socialMediaLinks") List<JsonAdaptedSocialMedia> socialMediaLinks) {
         this.name = name;
         this.major = major;
         this.year = year;
         this.email = email;
         this.description = description;
+        if (tutorials != null) {
+            this.tutorials.addAll(tutorials);
+        }
         if (socialMediaLinks != null) {
             this.socialMediaLinks.addAll(socialMediaLinks);
         }
@@ -62,6 +68,9 @@ class JsonAdaptedPerson {
         year = source.getYear().value;
         email = source.getEmail().value;
         description = source.getDescription().value;
+        tutorials.addAll(source.getTutorials().stream()
+                .map(Tutorial::getValue)
+                .collect(Collectors.toList()));
         socialMediaLinks.addAll(source.getSocialMediaLinks().stream()
                 .map(JsonAdaptedSocialMedia::new)
                 .collect(Collectors.toList()));
@@ -74,6 +83,8 @@ class JsonAdaptedPerson {
      */
     public Person toModelType() throws IllegalValueException {
         final List<SocialMediaLink> personSocialMediaLinks = new ArrayList<>();
+        final List<Tutorial> personTutorials = new ArrayList<>();
+
         for (JsonAdaptedSocialMedia socialMediaLink : socialMediaLinks) {
             personSocialMediaLinks.add(socialMediaLink.toModelType());
         }
@@ -119,9 +130,11 @@ class JsonAdaptedPerson {
         }
         final Description modelDescription = new Description(description);
 
+        final Set<Tutorial> modelTutorials = new HashSet<>(personTutorials);
+
         final Set<SocialMediaLink> modelSocialMediaLinks = new HashSet<>(personSocialMediaLinks);
 
-        return new Person(modelName, modelMajor, modelYear, modelEmail, modelDescription, modelSocialMediaLinks);
+        return new Person(modelName, modelMajor, modelYear, modelEmail, modelDescription,
+                            modelTutorials, modelSocialMediaLinks);
     }
 }
-

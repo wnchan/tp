@@ -12,6 +12,7 @@ import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Year;
 import seedu.address.model.socialmedialink.SocialMediaLink;
+import seedu.address.model.tutorial.Tutorial;
 
 /**
  * A utility class to help with building EditPersonDescriptor objects.
@@ -90,6 +91,19 @@ public class EditPersonDescriptorBuilder {
         descriptor.setSocialMediaLinks(tagSet);
         return this;
     }
+
+    /**
+     * Parses the {@code tutorials} into a {@code Set<Tutorial>} and sets it to the {@code EditPersonDescriptor}
+     * that we are building.
+     */
+    public EditPersonDescriptorBuilder withTutorials(Set<Tutorial> tutorials) {
+        Set<Tutorial> tutorialSet = tutorials.stream()
+            .map((Tutorial tutorial) -> new Tutorial(tutorial.getValue()))
+            .collect(Collectors.toSet());
+        descriptor.setTutorials(tutorialSet);
+        return this;
+    }
+
 
     public EditPersonDescriptor build() {
         return descriptor;

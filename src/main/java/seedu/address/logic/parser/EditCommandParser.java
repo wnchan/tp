@@ -7,10 +7,12 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_MAJOR;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_SOCIAL_MEDIA_LINK;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_YEAR;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -19,6 +21,7 @@ import seedu.address.logic.commands.EditCommand.EditPersonDescriptor;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.Email;
 import seedu.address.model.socialmedialink.SocialMediaLink;
+import seedu.address.model.tutorial.Tutorial;
 
 /**
  * Parses input arguments and creates a new EditCommand object
@@ -33,8 +36,8 @@ public class EditCommandParser implements Parser<EditCommand> {
     public EditCommand parse(String args) throws ParseException {
         requireNonNull(args);
         ArgumentMultimap argMultimap =
-                ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_MAJOR, PREFIX_YEAR, PREFIX_EMAIL,
-                        PREFIX_DESCRIPTION, PREFIX_SOCIAL_MEDIA_LINK);
+            ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_MAJOR, PREFIX_YEAR, PREFIX_EMAIL,
+                PREFIX_DESCRIPTION, PREFIX_TUTORIAL, PREFIX_SOCIAL_MEDIA_LINK);
 
         Email email;
 
@@ -65,6 +68,12 @@ public class EditCommandParser implements Parser<EditCommand> {
             editPersonDescriptor.setDescription(
                     ParserUtil.parseDescription(argMultimap.getValue(PREFIX_DESCRIPTION).get()));
         }
+        List<String> tutorialsStrings = argMultimap.getAllValues(PREFIX_TUTORIAL);
+        if (!tutorialsStrings.isEmpty()) {
+            Set<Tutorial> tutorialList = ParserUtil.parseTutorials(tutorialsStrings);
+            editPersonDescriptor.setTutorials(tutorialList);
+        }
+
         parseSocialMediaLinksForEdit(argMultimap.getAllValues(PREFIX_SOCIAL_MEDIA_LINK))
                 .ifPresent(editPersonDescriptor::setSocialMediaLinks);
 

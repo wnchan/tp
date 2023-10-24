@@ -8,6 +8,7 @@ import static seedu.address.testutil.TypicalEmails.EMAIL_FIRST_PERSON;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.junit.jupiter.api.Test;
@@ -19,6 +20,7 @@ import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Year;
 import seedu.address.model.socialmedialink.SocialMediaLink;
+import seedu.address.model.tutorial.Tutorial;
 
 public class ParserUtilTest {
     private static final String INVALID_NAME = "R@chel";
@@ -215,4 +217,34 @@ public class ParserUtilTest {
 
         assertEquals(expectedSocialMediaLinkSet, actualSocialMediaLinkSet);
     }
+
+    @Test
+    public void parseTutorials_validInput_success() throws Exception {
+        Set<String> validTutorials = new HashSet<>(Arrays.asList("02", "05"));
+        Set<Tutorial> expectedTutorialSet = new HashSet<>(Arrays.asList(new Tutorial("02"), new Tutorial("05")));
+
+        Set<Tutorial> actualTutorialSet = ParserUtil.parseTutorials(validTutorials);
+
+        assertEquals(expectedTutorialSet, actualTutorialSet);
+    }
+
+    @Test
+    public void parseTutorials_invalidInput_throwsParseException() {
+        List<String> invalidTutorials = Arrays.asList("25", "T02");
+        for (String invalidTutorial : invalidTutorials) {
+            assertThrows(ParseException.class, () ->
+                ParserUtil.parseTutorials(Collections.singletonList(invalidTutorial)));
+        }
+    }
+
+    @Test
+    public void parseTutorials_duplicateInput_singleInstanceStored() throws Exception {
+        List<String> duplicateTutorials = Arrays.asList("01", "01", "02", "02");
+        Set<Tutorial> expectedTutorials = new HashSet<>(Arrays.asList(new Tutorial("01"), new Tutorial("02")));
+
+        Set<Tutorial> actualTutorials = ParserUtil.parseTutorials(duplicateTutorials);
+
+        assertEquals(expectedTutorials, actualTutorials);
+    }
+
 }

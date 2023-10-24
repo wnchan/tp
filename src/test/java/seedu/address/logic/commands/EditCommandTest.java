@@ -16,6 +16,9 @@ import static seedu.address.testutil.TypicalEmails.EMAIL_FIRST_PERSON;
 import static seedu.address.testutil.TypicalEmails.EMAIL_SECOND_PERSON;
 import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
 
+import java.util.Arrays;
+import java.util.HashSet;
+
 import org.junit.jupiter.api.Test;
 
 import seedu.address.logic.Messages;
@@ -26,6 +29,7 @@ import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Person;
+import seedu.address.model.tutorial.Tutorial;
 import seedu.address.testutil.EditPersonDescriptorBuilder;
 import seedu.address.testutil.PersonBuilder;
 
@@ -167,6 +171,18 @@ public class EditCommandTest {
         String expected = EditCommand.class.getCanonicalName() + "{email=" + EMAIL_FIRST_PERSON
                 + ", editPersonDescriptor=" + editPersonDescriptor + "}";
         assertEquals(expected, editCommand.toString());
+    }
+
+    @Test
+    public void equals_sameTutorials_returnsTrue() {
+        // Create two edit descriptors with the same tutorials
+        EditPersonDescriptor descriptorWithTutorials = new EditPersonDescriptorBuilder()
+            .withTutorials(new HashSet<>(Arrays.asList(new Tutorial("01"), new Tutorial("02")))).build();
+        EditPersonDescriptor descriptorCopyWithTutorials = new EditPersonDescriptorBuilder()
+            .withTutorials(new HashSet<>(Arrays.asList(new Tutorial("01"), new Tutorial("02")))).build();
+
+        // They should be considered equal even if other fields are different
+        assertTrue(descriptorWithTutorials.equals(descriptorCopyWithTutorials));
     }
 
 }

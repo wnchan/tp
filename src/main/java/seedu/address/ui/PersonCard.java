@@ -1,6 +1,7 @@
 package seedu.address.ui;
 
 import java.util.Comparator;
+import java.util.stream.Collectors;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -33,6 +34,8 @@ public class PersonCard extends UiPart<Region> {
     @FXML
     private Label description;
     @FXML
+    private Label tutorials;
+    @FXML
     private FlowPane socialMediaLinks;
 
     /**
@@ -45,10 +48,14 @@ public class PersonCard extends UiPart<Region> {
         id.setStyle("-fx-font-size: 17px; -fx-text-fill: #E7BE34; -fx-font-family: 'Arial';"); // styling like name
         name.setText(person.getName().fullName);
         major.setText(person.getMajor().value);
-        year.setText(person.getYear().value);
+        year.setText("Y" + person.getYear().value);
         email.setText(person.getEmail().value);
         description.setText(person.getDescription().value);
-
+        String tutorialsText = person.getTutorials().stream()
+            .map(t -> "T" + t.getValue())
+            .sorted()
+            .collect(Collectors.joining(", "));
+        tutorials.setText(tutorialsText);
         person.getSocialMediaLinks().stream()
                 .sorted(Comparator.comparing(sm -> sm.socialMediaLink))
                 .forEach(sm -> {
@@ -58,6 +65,3 @@ public class PersonCard extends UiPart<Region> {
                 });
     }
 }
-
-
-
