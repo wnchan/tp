@@ -2,10 +2,8 @@ package seedu.address.logic.parser;
 
 import static java.util.Objects.requireNonNull;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import seedu.address.logic.parser.exceptions.ParseException;
@@ -13,9 +11,9 @@ import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
-import seedu.address.model.person.Tutorial;
 import seedu.address.model.person.Year;
 import seedu.address.model.socialmedialink.SocialMediaLink;
+import seedu.address.model.tutorial.Tutorial;
 
 /**
  * Contains utility methods used for parsing strings in the various *Parser classes.
@@ -98,22 +96,22 @@ public class ParserUtil {
     }
 
     /**
-     * Parses {@code Collection<String> tutorials} into a {@code List<Tutorial>}.
-     * @throws ParseException if any of the provided tutorials is invalid.
+     * Parses {@code Collection<String> tutorials} into a {@code Set<Tutorial>}.
+     * @throws ParseException if any of the given {@code tutorials} is invalid.
      */
-    public static List<Tutorial> parseTutorials(Collection<String> tutorials) throws ParseException {
+    public static Set<Tutorial> parseTutorials(Collection<String> tutorials) throws ParseException {
         requireNonNull(tutorials);
-        List<Tutorial> tutorialList = new ArrayList<>();
+        Set<Tutorial> tutorialSet = new HashSet<>();
         for (String tutorialString : tutorials) {
             String[] tutorialTokens = tutorialString.split(" ");
             for (String token : tutorialTokens) {
                 if (!Tutorial.isValidTutorial(token)) {
                     throw new ParseException(Tutorial.MESSAGE_CONSTRAINTS);
                 }
-                tutorialList.add(new Tutorial(token));
+                tutorialSet.add(new Tutorial(token));
             }
         }
-        return tutorialList;
+        return tutorialSet;
     }
 
     /**
