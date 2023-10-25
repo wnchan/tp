@@ -53,7 +53,7 @@ public class JavaFxInitializer {
         }
 
         /**
-         * Get the instance of the JavaFX initialization class.
+         * Gets the instance of the JavaFX initialization class.
          *
          * @return The instance of the JavaFX initialization class.
          */
