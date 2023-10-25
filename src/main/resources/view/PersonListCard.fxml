@@ -27,6 +27,14 @@
         <Label fx:id="name" id="name-label" text="\$first" styleClass="cell_big_label" />
       </HBox>
       <HBox spacing="5" alignment="CENTER_LEFT">
+        <HBox fx:id="nationalityBox" style="-fx-background-color: #E7BE34; -fx-background-radius: 15;">
+          <padding>
+            <Insets top="5" right="5" bottom="5" left="5" />
+          </padding>
+          <Label fx:id="nationality" styleClass="cell_nationality_label" text="\$nationality" />
+        </HBox>
+      </HBox>
+      <HBox spacing="5" alignment="CENTER_LEFT">
         <Label styleClass="label-bold">Major:</Label>
         <Label fx:id="major" styleClass="cell_small_label" text="\$major" />
       </HBox>
