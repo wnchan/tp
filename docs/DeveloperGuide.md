@@ -298,8 +298,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1.  Student requests to list students
-2.  StudentConnect shows a list of students
+1.  Student requests to list students.
+2.  StudentConnect shows a list of students.
 
     Use case ends.
 
@@ -313,15 +313,15 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1. Student requests to add their personal information
-2. StudentConnect adds the student’s information into the list
+1. Student requests to add their personal information.
+2. StudentConnect adds the student’s information into the list.
 
     Use case ends.
 
 **Extensions**
 
-* 2a. Invalid input
-    * StudentConnect displays error message
+* 2a. Input is invalid.
+    * StudentConnect displays error message.
 
   Use case ends.
 
@@ -329,8 +329,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1. Student requests to find students with a keyword
-2. StudentConnect shows a list of students whose name(s) contain the keyword
+1. Student requests to find students with a keyword.
+2. StudentConnect shows a list of students whose name(s) contain the keyword.
 
     Use case ends.
 
@@ -344,17 +344,17 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1. Student requests to delete a specific student on the list by email
+1. Student requests to delete a specific student on the list by email.
 2. StudentConnect deletes the student.
 
-   Use case ends
+   Use case ends.
 
 **Extensions:**
 
-* 1a. The given email is invalid
+* 1a. The given email is invalid.
     * 1a1. StudentConnect shows an error message.
 
-  Use case ends
+  Use case ends.
 
 **Use Case: Edit a student**
 
@@ -367,10 +367,35 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Extensions:**
 
-* 1a. The given email is invalid
+* 1a. The given email is invalid.
     * 1a1. StudentConnect shows an error message.
 
    Use case ends.
+
+
+**Use Case: Access social media**
+
+**MSS**
+
+1. Student requests to list students.
+2. Student clicks on social media link of a person.
+3. Student connect opens the social media link in the browser.
+
+   Use case ends.
+
+**Extensions:**
+
+* 1a. Student requests to find a student instead.
+    * Use case resumes from step 2.
+
+* 4a. The website linked does not exist.
+  * 4a1. Browser shows that corresponding link does not exist.
+
+* 4b. Hyperlink does not exist
+  * 4b1. StudentConnect does not redirect to the browser.
+    
+    Use case ends.
+
 
 **Use Case: Exit the app**
 
