@@ -28,8 +28,8 @@ public class Group {
     /**
      * Constructs a {@code Group}.
      *
-     * @param number
-     * @param members
+     * @param number A valid group number.
+     * @param members The members of the group.
      */
     public Group(int number, Set<Person> members) {
         this.number = number;
@@ -39,7 +39,7 @@ public class Group {
     /**
      * Adds a person to the group.
      *
-     * @param person
+     * @param person The person to be added as a member.
      */
     public void addMember(Person person) {
         this.members.add(person);

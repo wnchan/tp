@@ -36,7 +36,7 @@ public class JsonAdaptedGroup {
     }
 
     /**
-     * Converts a given {@code SocialMedia} into this class for Jackson use.
+     * Converts a given {@code Group} into this class for Jackson use.
      */
     public JsonAdaptedGroup(Group source) {
         number = source.getNumber();
@@ -46,9 +46,9 @@ public class JsonAdaptedGroup {
     }
 
     /**
-     * Converts this Jackson-friendly adapted social media object into the model's {@code SocialMedia} object.
+     * Converts this Jackson-friendly adapted social media object into the model's {@code Group} object.
      *
-     * @throws IllegalValueException if there were any data constraints violated in the adapted social media.
+     * @throws IllegalValueException if there were any data constraints violated in the adapted group.
      */
     public Group toModelType() throws IllegalValueException {
         final List<Person> groupMembers = new ArrayList<>();
