@@ -4,11 +4,13 @@ import java.util.Comparator;
 import java.util.stream.Collectors;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import seedu.address.model.person.Person;
+import seedu.address.model.socialmedialink.SocialMediaLink;
 
 /**
  * An UI component that displays information of a {@code Person}.
@@ -52,16 +54,28 @@ public class PersonCard extends UiPart<Region> {
         email.setText(person.getEmail().value);
         description.setText(person.getDescription().value);
         String tutorialsText = person.getTutorials().stream()
-            .map(t -> "T" + t.getValue())
-            .sorted()
-            .collect(Collectors.joining(", "));
+                .map(t -> "T" + t.getValue())
+                .sorted()
+                .collect(Collectors.joining(", "));
         tutorials.setText(tutorialsText);
         person.getSocialMediaLinks().stream()
                 .sorted(Comparator.comparing(sm -> sm.socialMediaLink))
                 .forEach(sm -> {
-                    Label label = new Label(sm.socialMediaLink);
-                    label.setStyle("-fx-font-size: 13px; -fx-text-fill: white; -fx-font-family: 'Segoe UI Semibold';");
-                    socialMediaLinks.getChildren().add(label);
+                    Hyperlink hyperlink = new Hyperlink(sm.socialMediaLink);
+                    hyperlink.setStyle("-fx-font-size: 13px; -fx-text-fill: white; -fx-font-family: 'Segoe UI Semibold';");
+                    hyperlink.setOnAction(event -> openWebBrowser(sm.socialMediaLink));
+                    socialMediaLinks.getChildren().add(hyperlink);
                 });
     }
+
+    // Open the web browser with the specified link
+    private void openWebBrowser(String link) {
+        try {
+            java.awt.Desktop.getDesktop().browse(new java.net.URI(link));
+        } catch (java.io.IOException | java.net.URISyntaxException e) {
+            // Handle exceptions as needed
+        }
+    }
 }
+
+
