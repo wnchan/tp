@@ -4,6 +4,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
+import seedu.address.model.group.exceptions.TaskException;
 
 public class DeadlineTest {
     void testToString() throws TaskException {

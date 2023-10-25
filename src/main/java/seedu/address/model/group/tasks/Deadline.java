@@ -3,6 +3,8 @@ package seedu.address.model.group.tasks;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import seedu.address.model.group.exceptions.TaskException;
+
 /**
  * The `Deadline` class represents a task with a specific deadline in the Duke program.
  * It is a subclass of the `Task` class and provides functionality to handle tasks with deadlines.
@@ -27,7 +29,7 @@ public class Deadline extends Task {
             this.byStr = by;
 
         } catch (Exception e) {
-            throw new TaskException( "Invalid date format :< Please use dd/MM/yyyy\n");
+            throw new TaskException("Invalid date format :< Please use dd/MM/yyyy\n");
         }
         if (isNotSaved) {
             saveToFile();
@@ -55,7 +57,7 @@ public class Deadline extends Task {
      */
     public String printStr() {
         return ("Got it. I've added this task:\n "
-                + this.toString()+ "\n" + "Now you have "
+                + this.toString() + "\n" + "Now you have "
                 + Task.getCounter() + " tasks in the list\n");
     }
 
@@ -69,15 +71,15 @@ public class Deadline extends Task {
                 + " | " + this.getTask() + " | " + byStr;
     }
 
-    /**
+    /*/**
      * Saves the `Deadline` task to a file if it has not been saved already.
      */
-//    @Override
-//    public void saveToFile() {
-//        if (isNotSaved) {
-//            Storage.saveTaskToFile(generateStr());
-//        }
-//    }
+    /*@Override
+    public void saveToFile() {
+        if (isNotSaved) {
+            Storage.saveTaskToFile(generateStr());
+        }
+    }*/
 
 }
 

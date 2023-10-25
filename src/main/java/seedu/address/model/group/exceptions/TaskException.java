@@ -1,4 +1,4 @@
-package seedu.address.model.group.tasks;
+package seedu.address.model.group.exceptions;
 
 /**
  * The `TaskException` class represents an exception specific to the Duke program.

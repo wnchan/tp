@@ -33,12 +33,12 @@ public class Todo extends Task {
      * Formats the task's information into a user-friendly string representation.
      *
      * @return A formatted string indicating that the task has been
-     * added successfully.
+     *     added successfully.
      */
     public String printStr() {
-        return ( "Got it. I've added this task:\n "
-                + this.toString()+ "\n" + "Now you have "
-                + Task.getCounter() + " tasks in the list\n");
+        return ("Got it. I've added this task:\n "
+            + this.toString() + "\n" + "Now you have "
+            + Task.getCounter() + " tasks in the list\n");
     }
 
     /**
@@ -51,13 +51,13 @@ public class Todo extends Task {
                 + " | " + this.getTask();
     }
 
-    /**
+    /*/**
      * Saves the to-do task to a file.
      */
-//    @Override
-//    public void saveToFile() {
-//        Storage.saveTaskToFile(generateStr());
-//    }
+    /*@Override
+    public void saveToFile() {
+        Storage.saveTaskToFile(generateStr());
+    }*/
 
 }
 

@@ -2,21 +2,24 @@ package seedu.address.model.group.tasks;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+
+import seedu.address.model.group.exceptions.TaskException;
+
 //i added this class in case we want to use tasks to help schedule meetings as well
 /**
  * The `Event` class represents a task with a specific start and end date/time.
  * It is a subclass of the `Task` class and includes information about
  * the event's timing.
  */
-public class Event extends Task{
-
+public class Event extends Task {
     private String fromStr;
     private String toStr;
     private LocalDateTime from;
     private LocalDateTime to;
 
     /**
-     * Initializes a new `Event` object with the given task description, save status, start date/time, and end date/time.
+     * Initializes a new `Event` object with the given task description,
+     * save status, start date/time, and end date/time.
      *
      * @param task The description of the event task.
      * @param isNotSaved A boolean indicating whether the task needs to be saved to a file.
@@ -32,7 +35,7 @@ public class Event extends Task{
             this.from = parseDateTime(from);
             this.to = parseDateTime(to);
         } catch (Exception e) {
-            throw new TaskException( "Invalid date format :< Please use dd/MM/yyyy\n");
+            throw new TaskException("Invalid date format :< Please use dd/MM/yyyy\n");
         }
 
         if (isNotSaved) {
@@ -64,7 +67,7 @@ public class Event extends Task{
      */
     public String printStr() {
         return ("Got it. I've added this task:\n "
-                + this.toString()+ "\n" + "Now you have "
+                + this.toString() + "\n" + "Now you have "
                 + Task.getCounter() + " tasks in the list\n");
     }
 
@@ -78,13 +81,13 @@ public class Event extends Task{
                 + " | " + this.getTask() + " | " + fromStr + " | " + toStr;
     }
 
-    /**
+    /*/**
      * Saves the `Event` task to a file.
      */
-//    @Override
-//    public void saveToFile() {
-//        Storage.saveTaskToFile(generateStr());
-//    }
+    /*@Override
+    public void saveToFile() {
+        Storage.saveTaskToFile(generateStr());
+    }*/
 
 }
 

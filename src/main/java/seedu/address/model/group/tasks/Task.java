@@ -1,20 +1,25 @@
 package seedu.address.model.group.tasks;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.ArrayList;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+
+import seedu.address.model.group.exceptions.TaskException;
+
+
 /**
  * The Task class represents a task in the Duke chatbot application.
  */
 public class Task {
+    private static ArrayList<Task> arr = new ArrayList<>();
+    private static int counter = 0;
     private String task;
     private TaskStatus status;
 
-    Boolean isNotSaved;
-    private static ArrayList<Task> arr = new ArrayList<>();
-    private static int counter = 0;
+    private Boolean isNotSaved;
+
 
     /**
      * Constructs a Task object with a task description and save status.
@@ -57,7 +62,7 @@ public class Task {
     public void addTask(String task) {
         if (!task.equals("")) {
             if (!task.isEmpty()) {
-//                Duke.taskList.addTask(this); //need to change according to how we implement the main class
+                //Duke.taskList.addTask(this); //need to change according to how we implement the main class
                 counter++;
             }
         }
@@ -142,15 +147,14 @@ public class Task {
         StringBuilder formattedList = new StringBuilder();
         formattedList.append("Here are the tasks in your list:\n");
 
-//        for (int i = 0; i < Duke.taskList.size(); i++) {
-//            Task task = Duke.taskList.getTasks().get(i);
-//            formattedList.append((i + 1)).append(". ").append(task.toString()).append("\n");
-//        }
+        /*for (int i = 0; i < Duke.taskList.size(); i++) {
+            Task task = Duke.taskList.getTasks().get(i);
+            formattedList.append((i + 1)).append(". ").append(task.toString()).append("\n");
+        }*/
 
         //formattedList.append(Ui.horizontalLine);
         return formattedList.toString();
     }
-
 
 
     /**
@@ -169,7 +173,7 @@ public class Task {
         }
     }
 
-    /**
+    /*/**
      * Marks a task as done in the task list and updates
      * the storage file accordingly.
      *
@@ -177,21 +181,20 @@ public class Task {
      * @return A message confirming the task's status change.
      * @throws TaskException If the provided index is invalid.
      */
-//    public String mark(int i) throws TaskException {
-//        if (i > Duke.taskList.getTasks().size() || i <= 0) {
-//            throw new TaskException(
-//                    "OOPS!!! Invalid number :(\n"
-//                    );
-//        }
-//        Task markTask = Duke.taskList.getTasks().get(i - 1);
-//        markTask.status = TaskStatus.DONE;
-//
-//        // Update the task description in the file
-//        Storage.updateLineInFile(i, markTask.generateStr());
-//
-//        return ( "Nice! I've marked this task as done:\n"
-//                + markTask.toString() + "\n" );
-//    }
+    /*public String mark(int i) throws TaskException {
+        if (i > Duke.taskList.getTasks().size() || i <= 0) {
+            throw new TaskException(
+                    "OOPS!!! Invalid number :(\n"
+                    );
+        }
+        Task markTask = Duke.taskList.getTasks().get(i - 1);
+        markTask.status = TaskStatus.DONE;
+
+        // Update the task description in the file
+        Storage.updateLineInFile(i, markTask.generateStr());
+        return ( "Nice! I've marked this task as done:\n"
+                + markTask.toString() + "\n" );
+    }*/
 
     /**
      * Marks the task as done.
@@ -205,31 +208,30 @@ public class Task {
      *
      * @param keyword The keyword to search for within the task.
      * @return {@code true} if the task contains the keyword,
-     * {@code false} otherwise.
+     *     {@code false} otherwise.
      */
     public boolean contains(String keyword) {
         return task.contains(keyword);
     }
-
-    /**
+    /*/**
      * Unmarks a task as done by changing its status to "not done."
      *
      * @param i The index of the task in the list to unmark.
      * @return A string confirming the task's status change.
      * @throws TaskException If the provided index is invalid.
      */
-//    public String unmark(int i) throws TaskException {
-//        if (i > Duke.taskList.getTasks().size() || i <= 0) {
-//            throw new TaskException( "OOPS!!! Invalid number :(\n" );
-//        }
-//        Task unmarkTask = Duke.taskList.getTasks().get(i - 1);
-//        unmarkTask.status = TaskStatus.NOT_DONE;
-//        Storage.updateLineInFile(i, unmarkTask.generateStr());
-//        return ("Ok, I've marked this task as not done yet:\n"
-//                + unmarkTask.toString() + "\n" );
-//    }
+    /*public String unmark(int i) throws TaskException {
+        if (i > Duke.taskList.getTasks().size() || i <= 0) {
+            throw new TaskException( "OOPS!!! Invalid number :(\n" );
+        }
+        Task unmarkTask = Duke.taskList.getTasks().get(i - 1);
+        unmarkTask.status = TaskStatus.NOT_DONE;
+        Storage.updateLineInFile(i, unmarkTask.generateStr());
+        return ("Ok, I've marked this task as not done yet:\n"
+                + unmarkTask.toString() + "\n" );
+    }*/
 
-    /**
+    /*/**
      * Deletes a task from the task list and updates the
      * storage file accordingly.
      *
@@ -238,19 +240,19 @@ public class Task {
      * the current task count.
      * @throws TaskException If the provided index is invalid.
      */
-//    public String delete(int i) throws TaskException {
-//        if (i > Duke.taskList.size() || i <= 0) {
-//            throw new TaskException(
-//                    "OOPS!!! Invalid number :(\n");
-//        }
-//        Task deleteTask = Duke.taskList.getTasks().get(i - 1);
-//        counter = counter - 1;
-//        Duke.taskList.deleteTask(i - 1);
-//        Storage.deleteLineFromFile(i);
-//        return ("Noted. I've removed this task:\n" + deleteTask.toString()
-//                + "\n" + String.format("Now you have %d tasks in the list\n", counter)
-//                );
-//    }
+    /*public String delete(int i) throws TaskException {
+        if (i > Duke.taskList.size() || i <= 0) {
+            throw new TaskException(
+                    "OOPS!!! Invalid number :(\n");
+        }
+        Task deleteTask = Duke.taskList.getTasks().get(i - 1);
+        counter = counter - 1;
+        Duke.taskList.deleteTask(i - 1);
+        Storage.deleteLineFromFile(i);
+        return ("Noted. I've removed this task:\n" + deleteTask.toString()
+                + "\n" + String.format("Now you have %d tasks in the list\n", counter)
+                );
+    }*/
 
     /**
      * Generates String representation to be saved in text file.
@@ -266,3 +268,4 @@ public class Task {
         return;
     }
 }
+
