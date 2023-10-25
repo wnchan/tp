@@ -108,6 +108,7 @@ public class Person {
             && tutorials.equals(otherPerson.tutorials)
             && socialMediaLinks.equals(otherPerson.socialMediaLinks);
     }
+
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
