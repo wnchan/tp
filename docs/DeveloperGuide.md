@@ -155,6 +155,28 @@ Classes used by multiple components are in the `seedu.addressbook.commons` packa
 
 This section describes some noteworthy details on how certain features are implemented.
 
+###  Create group feature
+
+#### Implementation
+
+The create group feature is implemented via the `CreateCommand` class and involves the following classes: `Group`, `UniqueGroupList`, `JsonAdaptedGroup`, `AddressBook`, `JsonSerializableAddressBook`.
+<br>
+`CreateCommand` implements the follwing operations:
+* `CreateCommand#execute()` — Creates a new empty group using the group number generated from `generateGroupNumber`.
+* `CreateCommand#generateGroupNumber()` — Generates the next available group number.
+
+Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.
+
+Step 1. The user types in "create". The string, "create", is parsed by `AddressBookParser`, which returns a new instance of `CreateCommand`.
+<br>
+Step 2. The command is then executed by `CreateCommand#execute()`. `CreateCommand#execute()` calls `CreateCommand#generateGroupNumber()`.
+<br>
+Step 3. `CreateCommand#generateGroupNumber()` generates the next available group number, which is the next largest number that has not been assigned to a group. It loads in the current state of the Address Book via `AddressBook#getAddressBook`. It then iterates over the `Group` list inside the Address Book and checks the numbers of the groups to determine the next available group number.
+<br>
+Step 4. `CreateCommand#execute()` creates a new `Group` using the generated group number and adds it to the Address Book via `AddressBook#addGroup`.
+<br>
+Step 5. The `CommandResult` containing the success message is shown to the user.
+
 ### \[Proposed\] Undo/redo feature
 
 #### Proposed Implementation
@@ -279,14 +301,16 @@ CS2103T students.
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​ | I want to …​                                                  | So that I can…​                             |
-|----------|---------|---------------------------------------------------------------|---------------------------------------------|
-| `* * *`  | student | add my personal details to the system                         | get other students to learn more about me   |
-| `* * *`  | student | view the rest of the students in the course                   | see my options for choosing teammates       |
-| `* * *`  | student | see the other student’s name, major, basic info etc           | make informed decisions                     |
-| `* * * ` | student | customise and update my profile details                       | ensure that my profile is up to date        |
-| `* * *`  | student | remove my personal details from the system                    | stop using the application                  |
-| `* * *`  | user    | exit the app                                                  | close the app                               |
+
+| Priority | As a …​ | I want to …​                                        | So that I can…​                           |
+|----------|---------|-----------------------------------------------------|-------------------------------------------|
+| `* * *`  | student | add my personal details to the system               | get other students to learn more about me |
+| `* * *`  | student | view the rest of the students in the course         | see my options for choosing teammates     |
+| `* * *`  | student | see the other student’s name, major, basic info etc | make informed decisions                   |
+| `* * * ` | student | customise and update my profile details             | ensure that my profile is up to date      |
+| `* * *`  | student | remove my personal details from the system          | stop using the application                |
+| `* * *`  | student | join a group on the app                             | form a group for the course               |
+| `* * *`  | user    | exit the app                                        | close the app                             |
 | `* *`    | student | seek help and check requirements for cs2101/cs2103t groupings | be more clear of the valid group formations |
 
 
@@ -374,6 +398,14 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
    Use case ends.
 
+**Use Case: Create a group**
+
+**MSS**
+
+1. Student requests to create a group by typing “create”.
+2. StudentConnect creates a new empty group.
+
+   Use case ends.
 
 **Use Case: Access social media**
 
@@ -397,7 +429,6 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
   * 4b1. StudentConnect does not redirect to the browser.
     
     Use case ends.
-
 
 **Use Case: Exit the app**
 
