@@ -5,8 +5,28 @@ title: StudentConnect User Guide
 
 StudentConnect is a solution for hassle-free team formation for students to browse profiles and connect with others for group projects.
 
-* Table of Contents
-  {to be added}
+## Table of Contents
+
+---
+<a id="table-of-contents"></a>
+1. [Quick start](#quick-start)
+2. [Features](#features)
+    1. [Viewing help : `help`](#viewing-help--help)
+    2. [Adding a student : `add`](#adding-a-student--add)
+    3. [Listing all students : `list`](#listing-all-students--list)
+    4. [Editing a person : `edit`](#editing-a-person--edit)
+    5. [Finding a student by name: `find`](#finding-a-student-by-name-find)
+    6. [Deleting a person : `delete`](#deleting-a-person--delete)
+    7. [Clearing all entries : `clear`](#clearing-all-entries--clear)
+    8. [Creating a new group : `create`](#creating-a-new-group--create)
+    9. [Exiting the program : `exit`](#exiting-the-program--exit)
+    10. [Saving the data](#saving-the-data)
+    11. [Editing the data file](#editing-the-data-file)
+    12. [Archiving data files [coming in v2.0]](#archiving-data-files-coming-in-v20)
+3. [FAQ](#faq)
+4. [Known issues](#known-issues)
+5. [Command summary](#command-summary)
+
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -27,7 +47,7 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 
     * `list` : Lists all students.
 
-    * `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time t/02 17 20 sm/https://www.linkedin.com/in/john-doe-123456789` : Adds a student named `John Doe` to the StudentConnect system.
+    * `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time t/02 17 20 sm/https://www.linkedin.com/in/john-doe-123456789 nt/local g/m` : Adds a student named `John Doe` to the StudentConnect system.
 
     * `delete [email]` : Deletes the student with the corresponding email.
 
@@ -51,16 +71,16 @@ StudentConnect is a solution for hassle-free team formation for students to brow
   e.g. in `add n/NAME`, `NAME` is a parameter which can be used as `add n/John Doe`.
 
 * Items in square brackets are optional.<br>
-  e.g. `n/NAME [t/TAG]` can be used as `n/John Doe t/friend` or as `n/John Doe`.
+  e.g. `n/NAME [t/TUTORIALS]` can be used as `n/John Doe t/02` or as `n/John Doe`.
 
 * Items with `…`​ after them can be used multiple times including zero times.<br>
   e.g. `[t/TAG]…​` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
 
 * Parameters can be in any order.<br>
-  e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
+  e.g. if the command specifies `n/NAME m/MAJOR`, `m/MAJOR n/NAME` is also acceptable.
 
 * Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
-  e.g. if the command specifies `help 123`, it will be interpreted as `help`.
+  e.g. if the command specifies `list 123`, it will be interpreted as `list`.
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </div>
@@ -84,7 +104,7 @@ Expected Output:
 
 Adds a student to the system.
 
-Format: `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION t/TUTORIALS sm/SOCIALMEDIA`
+#### Format: `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION t/TUTORIALS sm/SOCIALMEDIA nt/NATIONALITY g/GENDER`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 A student can include multiple tutorial groups they are interested in
@@ -94,43 +114,50 @@ A student can include multiple tutorial groups they are interested in
 A student can have any number of social media links (including 0)
 </div>
 
-Examples:
-* `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I’m a Frontend Developer t/6 19 sm/https://www.linkedin.com/in/john-doe-123456789`
-* `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu  d/I’m adept at Backend technologies t/5`
+#### Examples:
+* `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I’m a Frontend Developer t/06 19 sm/https://www.linkedin.com/in/john-doe-123456789 nt/local g/m`
+* `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu  d/I’m adept at Backend technologies t/05 sm/ nt/foreigner g/f`
 
-Acceptable Values:
+#### Acceptable Values:
 * Name: Full names with alphabetical characters
 * Major: Valid major names at NUS
 * Year: Numeric year level
 * Email: Valid email address ending in “@u.nus.edu”
 * Description: Maximum 150 characters
-* Tutorials: Integers between 1 and 22 inclusive, each separated by a space
+* Tutorials: Two digit integers between 01 and 22 inclusive, each seperated by a space
 * Social Media Link: Valid URL format to social media account (optional to include)
+* Nationality: Either 'local' or 'foreigner'
+* Gender: A single character, either 'm' or 'f'
 
-Expected Output (Success):
+#### Expected Output (Success):
 * GUI: New student entry added in the main student list
 * Message: “Details added successfully! New student added: (details of new student)”
+* Social Media Link can be clicked
+* The link will be opened on a browser upon clicking
 
-Expected Output (Failure):
+![social_media](images/socialMediaLinks.png)
+
+
+#### Expected Output (Failure):
 * Message:  "Invalid command format! add: Adds a person to StudentConnect. <br>
-Parameters: n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION t/TUTORIALS sm/SOCIAL_MEDIA_LINK <br>
+Parameters: n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION t/TUTORIALS sm/SOCIAL_MEDIA_LINK nt/NATIONALITY g/GENDER<br>
 Example: add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time<br>
-t/02 17 20 sm/https://www.linkedin.com/in/john-doe-123456789";
+t/02 17 20 sm/https://www.linkedin.com/in/john-doe-123456789 nt/local g/m";
 
-Add feature output (Success): <br>
+#### Add feature output (Success): <br>
 ![Add feature](images/add.png)
 
 ### Listing all students : `list`
 
 Shows a list of all students in the system.
 
-Format: `list`
+#### Format: `list`
 
-Expected Output (Success):
+#### Expected Output (Success):
 * GUI: List of all student entries in the system
 * Message: “Viewing all students”
 
-Expected Output (Failure):
+#### Expected Output (Failure):
 * Message: “Error: Unable to retrieve student entries. Please try again.”
 
 ![sample result for 'list'](images/list.png)
@@ -139,7 +166,7 @@ Expected Output (Failure):
 
 Edits an existing student in the system.
 
-Format: `edit EMAIL [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS] [sm/SOCIALMEDIA]…​`
+#### Format: `edit EMAIL [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS] [sm/SOCIALMEDIA] [nt/NATIONALITY] [g/GENDER]…​`
 
 * Edits the student with the specified EMAIL.
 * At least one of the optional fields must be provided.
@@ -149,18 +176,18 @@ Format: `edit EMAIL [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUT
 * You can remove all the student's social media by typing `sm/` without
   specifying any social media after it.
 
-Examples:
+#### Examples:
 *  `edit johnd@u.nus.edu y/3 e/johndoe@u.nus.edu` Edits the year and email address of the student with the email `johnd@u.nus.edu` to be `3` and `johndoe@u.nus.edu` respectively.
 *  `edit betsycrowe@u.nus.edu n/Betsy Crower sm/` Edits the name of the student with the email `betsycrowe@u.nus.edu` to be `Betsy Crower` and clears all existing social media.
 
-Acceptable Values:
+#### Acceptable Values:
 * EMAIL: a previously registered email address ending in “@u.nus.edu”
 
-Expected Output (Success):
+#### Expected Output (Success):
 * GUI: Student details updated in the student list.
 * Message: “Details updated successfully!”
 
-Expected Output (Failure):
+#### Expected Output (Failure):
 * Message: “Error: Email not found.”
 * Message: “Error: None of the optional fields provided. Give at least one.”
 
@@ -170,7 +197,7 @@ Expected Output (Failure):
 
 Finds student(s) whose name(s) contain any of the given keywords.
 
-Format: `find KEYWORD [MORE_KEYWORDS]`
+#### Format: `find KEYWORD [MORE_KEYWORDS]`
 
 * The search is case-insensitive. e.g. `john` will match `John`
 * The order of the keywords does not matter. e.g. `John Doe` will match `Doe John`
@@ -179,14 +206,14 @@ Format: `find KEYWORD [MORE_KEYWORDS]`
 * Persons matching at least one keyword will be returned (i.e. `OR` search).
   e.g. `John Crowe` will return `John Doe`, `Betsy Crowe`
 
-Examples:
+#### Examples:
 * `find John` returns `john`, `John Doe` and `Johnny Wee`
 * `find john betsy` returns `John Doe`, `Betsy Crowe`<br>
 
-Expected Output (Success):
+#### Expected Output (Success):
 * GUI: List of all student entries whose name(s) match the keyword(s) in the system
 
-Expected Output (Failure):
+#### Expected Output (Failure):
 * Message: “Error: No keyword(s) provided.”
 * Message: “Error: Unable to find students with the given keyword(s).”
   ![result for 'find alex'](images/findAlexResult.png)
@@ -195,33 +222,33 @@ Expected Output (Failure):
 
 Deletes a specific student and all personal details based on email.
 
-Format: `delete EMAIL`
+#### Format: `delete EMAIL`
 
 * Deletes the person with the specified `EMAIL`.
 * The index refers to the email number shown in the displayed person list.
 * The email must be registered in the system.
 
-Examples:
+#### Examples:
 * `list` followed by `delete alexy@u.nus.edu` deletes Alex Yeo from the system.
 
-Acceptable Values:
+#### Acceptable Values:
 * EMAIL: a previously registered email address ending in `u.nus.edu`
 
-Expected Output(Success):
+#### Expected Output(Success):
 * GUI: Student details removed from student list.
 * Message: `Person deleted successfully!`
   ![Delete feature](images/delete.png)
 
-Expected Output (Failure):
+#### Expected Output (Failure):
 * Message: `Error! Email not found!`
 
 ### Clearing all entries : `clear`
 
 Clears all entries from the system.
 
-Format: `clear`
+#### Format: `clear`
 
-Expected Output(Success):
+#### Expected Output(Success):
 * GUI: All students' details are removed from student list.
 * Message: `All student data has been cleared`
   ![Clear feature](images/clear.png)
@@ -245,13 +272,13 @@ Expected Output(Failure):
 
 Exits the program.
 
-Format: `exit`
+#### Format: `exit`
 
-Expected Output(Success):
+#### Expected Output(Success):
 * GUI: Application window closes.
 * Message (before closing): `Thank you for using StudentConnect! Exiting the application now…`
 
-Expected Output(Failure):
+#### Expected Output(Failure):
 * Message: `Error: Exiting the program failed.`
 
 ![Exit](images/exit.png)
@@ -285,18 +312,21 @@ _Details coming soon ..._
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 
+
+2. Hyperlinks not supported when you add **more than one social media account** (coming soon).
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## Command summary
 
-| Action           | Format, Examples                                                                                                                                                                   |
-|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Add**          | `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION sm/SOCIALMEDIA` <br> e.g., `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu  d/I’m adept at Backend technologies` |
-| **Clear**        | `clear`                                                                                                                                                                            |
-| **Delete**       | `delete EMAIL`<br> e.g., `delete betsycrowe@u.nus.edu`                                                                                                                             |
-| **Edit**         | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                        |
-| **Find**         | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                                         |
-| **List**         | `list`                                                                                                                                                                             |
-| **Create group** | `create`                                                                                                                                                                           |
-| **Exit**         | `exit`                                                                                                                                                                             |
-| **Help**         | `help`                                                                                                                                                                             |
+| Action           | Format, Examples                                                                                                                                                                                                                        |
+|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Add**          | `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION t/TUTORIALS sm/SOCIALMEDIA nt/NATIONALITY g/GENDER` <br> e.g., `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu t/05 d/I’m adept at Backend technologies nt/local g/f` |
+| **Clear**        | `clear`                                                                                                                                                                                                                                 |
+| **Delete**       | `delete EMAIL`<br> e.g., `delete betsycrowe@u.nus.edu`                                                                                                                                                                                  |
+| **Edit**         | `edit INDEX [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS] [sm/SOCIALMEDIA] [nt/NATIONALITY] [g/GENDER]` <br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                     |
+| **Find**         | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                                                                                              |
+| **List**         | `list`                                                                                                                                                                                                                                  |
+| **Create group** | `create`                                                                                                                                                                                                                                |
+| **Exit**         | `exit`                                                                                                                                                                                                                                  |
+| **Help**         | `help`                                                                                                                                                                                                                                  |
