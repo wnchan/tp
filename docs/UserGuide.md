@@ -110,6 +110,11 @@ Acceptable Values:
 Expected Output (Success):
 * GUI: New student entry added in the main student list
 * Message: “Details added successfully! New student added: (details of new student)”
+* Social Media Link can be clicked
+* The link will be opened on a browser upon clicking
+
+![social_media](images/socialMediaLinks.png)
+
 
 Expected Output (Failure):
 * Message:  "Invalid command format! add: Adds a person to StudentConnect. <br>
@@ -284,6 +289,7 @@ _Details coming soon ..._
 ## Known issues
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
+2. Hyperlinks not supported when you add more than one social media account. 
 
 --------------------------------------------------------------------------------------------------------------------
 
