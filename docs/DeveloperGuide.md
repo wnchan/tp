@@ -10,6 +10,7 @@ title: Developer Guide
 ## **Acknowledgements**
 
 * {list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
+* This project is based on the AddressBook-Level3 project created by the [SE-EDU initiative](https://se-education.org).
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -278,14 +279,15 @@ CS2103T students.
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​   | I want to …​                                        | So that I can…​                           |
-|----------|-----------|-----------------------------------------------------|-------------------------------------------|
-| `* * *`  | student   | add my personal details to the system               | get other students to learn more about me |
-| `* * *`  | student   | view the rest of the students in the course         | see my options for choosing teammates     |
-| `* * *`  | student   | see the other student’s name, major, basic info etc | make informed decisions                   |
-| `* * * ` | student   | customise and update my profile details             | ensure that my profile is up to date      |
-| `* * *`  | student   | remove my personal details from the system          | stop using the application                |
-| `* * *`  | user      | exit the app                                        | close the app                             |
+| Priority | As a …​ | I want to …​                                                  | So that I can…​                             |
+|----------|---------|---------------------------------------------------------------|---------------------------------------------|
+| `* * *`  | student | add my personal details to the system                         | get other students to learn more about me   |
+| `* * *`  | student | view the rest of the students in the course                   | see my options for choosing teammates       |
+| `* * *`  | student | see the other student’s name, major, basic info etc           | make informed decisions                     |
+| `* * * ` | student | customise and update my profile details                       | ensure that my profile is up to date        |
+| `* * *`  | student | remove my personal details from the system                    | stop using the application                  |
+| `* * *`  | user    | exit the app                                                  | close the app                               |
+| `* *`    | student | seek help and check requirements for cs2101/cs2103t groupings | be more clear of the valid group formations |
 
 
 *{More to be added}*
@@ -298,8 +300,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1.  Student requests to list students
-2.  StudentConnect shows a list of students
+1.  Student requests to list students.
+2.  StudentConnect shows a list of students.
 
     Use case ends.
 
@@ -313,15 +315,15 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1. Student requests to add their personal information
-2. StudentConnect adds the student’s information into the list
+1. Student requests to add their personal information.
+2. StudentConnect adds the student’s information into the list.
 
     Use case ends.
 
 **Extensions**
 
-* 2a. Invalid input
-    * StudentConnect displays error message
+* 2a. Input is invalid.
+    * StudentConnect displays error message.
 
   Use case ends.
 
@@ -329,8 +331,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1. Student requests to find students with a keyword
-2. StudentConnect shows a list of students whose name(s) contain the keyword
+1. Student requests to find students with a keyword.
+2. StudentConnect shows a list of students whose name(s) contain the keyword.
 
     Use case ends.
 
@@ -344,17 +346,17 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1. Student requests to delete a specific student on the list by email
+1. Student requests to delete a specific student on the list by email.
 2. StudentConnect deletes the student.
 
-   Use case ends
+   Use case ends.
 
 **Extensions:**
 
-* 1a. The given email is invalid
+* 1a. The given email is invalid.
     * 1a1. StudentConnect shows an error message.
 
-  Use case ends
+  Use case ends.
 
 **Use Case: Edit a student**
 
@@ -367,10 +369,35 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Extensions:**
 
-* 1a. The given email is invalid
+* 1a. The given email is invalid.
     * 1a1. StudentConnect shows an error message.
 
    Use case ends.
+
+
+**Use Case: Access social media**
+
+**MSS**
+
+1. Student requests to list students.
+2. Student clicks on social media link of a person.
+3. Student connect opens the social media link in the browser.
+
+   Use case ends.
+
+**Extensions:**
+
+* 1a. Student requests to find a student instead.
+    * Use case resumes from step 2.
+
+* 4a. The website linked does not exist.
+  * 4a1. Browser shows that corresponding link does not exist.
+
+* 4b. Hyperlink does not exist
+  * 4b1. StudentConnect does not redirect to the browser.
+    
+    Use case ends.
+
 
 **Use Case: Exit the app**
 
@@ -379,6 +406,15 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 1. Student requests to delete the app by typing “exit”.
 2. StudentConnect displays the goodbye message.
 3. StudentConnect closes.
+
+   Use case ends.
+
+**Use Case: Checking valid group formations**
+
+**MSS**
+
+1. Student requests to see requirement list by typing “help”.
+2. StudentConnect displays the help message, along with the requirement message.
 
    Use case ends.
 
