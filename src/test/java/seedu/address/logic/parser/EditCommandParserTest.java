@@ -39,7 +39,9 @@ import static seedu.address.testutil.TypicalEmails.EMAIL_FIRST_PERSON;
 import static seedu.address.testutil.TypicalEmails.EMAIL_SECOND_PERSON;
 import static seedu.address.testutil.TypicalEmails.EMAIL_THIRD_PERSON;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 
@@ -50,9 +52,9 @@ import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
-import seedu.address.model.person.Tutorial;
 import seedu.address.model.person.Year;
 import seedu.address.model.socialmedialink.SocialMediaLink;
+import seedu.address.model.tutorial.Tutorial;
 import seedu.address.testutil.EditPersonDescriptorBuilder;
 
 public class EditCommandParserTest {
@@ -235,15 +237,15 @@ public class EditCommandParserTest {
         List<String> tutorialsStrings = argMultimap.getAllValues(PREFIX_TUTORIAL);
 
         if (!tutorialsStrings.isEmpty()) {
-            List<Tutorial> tutorialList = ParserUtil.parseTutorials(tutorialsStrings);
-            descriptorBuilder.withTutorials(tutorialList);
+            Set<Tutorial> tutorialSet = ParserUtil.parseTutorials(tutorialsStrings);
+            descriptorBuilder.withTutorials(tutorialSet);
         }
 
-        // Replace the following with actual expected values if needed
         EditPersonDescriptor expectedDescriptor = new EditPersonDescriptorBuilder()
-            .withTutorials(List.of(new Tutorial("01"), new Tutorial("02"), new Tutorial("03")))
+            .withTutorials(new HashSet<>(List.of(new Tutorial("01"), new Tutorial("02"), new Tutorial("03"))))
             .build();
 
         assertEquals(expectedDescriptor, descriptorBuilder.build());
     }
+
 }

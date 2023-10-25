@@ -22,9 +22,9 @@ public class SampleDataUtilTest {
     }
 
     @Test
-    public void getTutorialList_validData_returnsListOfTutorials() {
+    public void getTutorialSet_validData_returnsSetOfTutorials() {
         String[] tutorialStrings = {"01", "02", "03"};
-        assertEquals(3, SampleDataUtil.getTutorialList(tutorialStrings).size());
+        assertEquals(3, SampleDataUtil.getTutorialSet(tutorialStrings).size());
         // Check if the correct number of tutorials is returned
     }
 
