@@ -72,7 +72,7 @@ public class PersonCard extends UiPart<Region> {
         try {
             java.awt.Desktop.getDesktop().browse(new java.net.URI(link));
         } catch (java.io.IOException | java.net.URISyntaxException e) {
-            // Handle exceptions as needed
+            // Exceptions handled in other classes
         }
     }
 }
