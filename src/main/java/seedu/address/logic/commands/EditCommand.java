@@ -5,6 +5,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_MAJOR;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_NATIONALITY;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_SOCIAL_MEDIA_LINK;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_YEAR;
@@ -25,6 +26,7 @@ import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
+import seedu.address.model.person.Nationality;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Year;
 import seedu.address.model.socialmedialink.SocialMediaLink;
@@ -48,6 +50,7 @@ public class EditCommand extends Command {
             + "[" + PREFIX_DESCRIPTION + "DESCRIPTION] "
             + "[" + PREFIX_TUTORIAL + "TUTORIAL]...\n"
             + "[" + PREFIX_SOCIAL_MEDIA_LINK + "SOCIAL_MEDIA_LINK]...\n"
+            + "[" + PREFIX_NATIONALITY + "NATIONALITY] "
             + "Example: " + COMMAND_WORD + " johnd@u.nus.edu "
             + PREFIX_YEAR + "3 "
             + PREFIX_EMAIL + "johndoe@u.nus.edu";
@@ -111,9 +114,10 @@ public class EditCommand extends Command {
             .orElse(personToEdit.getTutorials());
         Set<SocialMediaLink> updatedSocialMediaLinks = editPersonDescriptor.getSocialMediaLinks()
             .orElse(personToEdit.getSocialMediaLinks());
+        Nationality updatedNationality = editPersonDescriptor.getNationality().orElse(personToEdit.getNationality());
 
-        return new Person(updatedName, updatedMajor, updatedYear, updatedEmail,
-                            updatedDescription, updatedTutorials, updatedSocialMediaLinks);
+        return new Person(updatedName, updatedMajor, updatedYear, updatedEmail, updatedDescription,
+                updatedTutorials, updatedSocialMediaLinks, updatedNationality);
     }
 
     @Override
@@ -152,6 +156,7 @@ public class EditCommand extends Command {
         private Description description;
         private Set<Tutorial> tutorials;
         private Set<SocialMediaLink> socialMediaLinks;
+        private Nationality nationality;
 
         public EditPersonDescriptor() {}
 
@@ -167,13 +172,15 @@ public class EditCommand extends Command {
             setDescription(toCopy.description);
             setTutorials(toCopy.tutorials);
             setSocialMediaLinks(toCopy.socialMediaLinks);
+            setNationality(toCopy.nationality);
         }
 
         /**
          * Returns true if at least one field is edited.
          */
         public boolean isAnyFieldEdited() {
-            return CollectionUtil.isAnyNonNull(name, major, year, email, description, tutorials, socialMediaLinks);
+            return CollectionUtil.isAnyNonNull(name, major, year, email, description,
+                    tutorials, socialMediaLinks, nationality);
         }
 
         public void setName(Name name) {
@@ -222,6 +229,14 @@ public class EditCommand extends Command {
 
         public Optional<Set<Tutorial>> getTutorials() {
             return Optional.ofNullable(tutorials);
+        }
+
+        public Optional<Nationality> getNationality() {
+            return Optional.ofNullable(nationality);
+        }
+
+        public void setNationality(Nationality nationality) {
+            this.nationality = nationality;
         }
 
         /**

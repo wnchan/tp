@@ -44,6 +44,11 @@ public class PersonCard extends UiPart<Region> {
     private Label tutorials;
     @FXML
     private FlowPane socialMediaLinks;
+    @FXML
+    private Label nationality;
+
+    @FXML
+    private HBox nationalityBox;
 
     /**
      * Creates a {@code PersonCode} with the given {@code Person} and index to display.
@@ -52,8 +57,14 @@ public class PersonCard extends UiPart<Region> {
         super(FXML);
         this.person = person;
         id.setText(displayedIndex + ". ");
-        id.setStyle("-fx-font-size: 17px; -fx-text-fill: #E7BE34; -fx-font-family: 'Arial';"); // styling like name
+        id.setStyle("-fx-font-size: 17px; -fx-text-fill: #E7BE34; -fx-font-family: 'Arial';");
         name.setText(person.getName().fullName);
+        nationality.setText(person.getNationality().value);
+        if (person.getNationality().value.equals("local")) {
+            nationalityBox.setStyle("-fx-background-color: rgba(77,152,60,0.82); -fx-background-radius: 10;");
+        } else {
+            nationalityBox.setStyle("-fx-background-color: rgba(17,63,3,0.68); -fx-background-radius: 10;");
+        }
         major.setText(person.getMajor().value);
         year.setText("Y" + person.getYear().value);
         email.setText(person.getEmail().value);

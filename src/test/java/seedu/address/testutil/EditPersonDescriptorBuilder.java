@@ -9,6 +9,7 @@ import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
+import seedu.address.model.person.Nationality;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Year;
 import seedu.address.model.socialmedialink.SocialMediaLink;
@@ -40,6 +41,7 @@ public class EditPersonDescriptorBuilder {
         descriptor.setEmail(person.getEmail());
         descriptor.setDescription(person.getDescription());
         descriptor.setSocialMediaLinks(person.getSocialMediaLinks());
+        descriptor.setNationality(person.getNationality());
     }
 
     /**
@@ -101,6 +103,14 @@ public class EditPersonDescriptorBuilder {
             .map((Tutorial tutorial) -> new Tutorial(tutorial.getValue()))
             .collect(Collectors.toSet());
         descriptor.setTutorials(tutorialSet);
+        return this;
+    }
+
+    /**
+     * Sets the {@code Nationality} of the {@code EditPersonDescriptor} that we are building.
+     */
+    public EditPersonDescriptorBuilder withNationality(String nationality) {
+        descriptor.setNationality(new Nationality(nationality));
         return this;
     }
 
