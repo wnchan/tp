@@ -57,6 +57,8 @@ public class PersonCard extends UiPart<Region> {
                 .sorted()
                 .collect(Collectors.joining(", "));
         tutorials.setText(tutorialsText);
+        int initialHyperlinksCount = socialMediaLinks.getChildren().size(); // Get the initial count
+
         person.getSocialMediaLinks().stream()
                 .sorted(Comparator.comparing(sm -> sm.socialMediaLink))
                 .forEach(sm -> {
@@ -66,6 +68,11 @@ public class PersonCard extends UiPart<Region> {
                     hyperlink.setOnAction(event -> openWebBrowser(sm.socialMediaLink));
                     socialMediaLinks.getChildren().add(hyperlink);
                 });
+
+        int finalHyperlinksCount = socialMediaLinks.getChildren().size(); // Get the final count
+
+        // Use an assertion to check the condition
+        assert finalHyperlinksCount > initialHyperlinksCount : "No hyperlinks were added. Please check the code that adds hyperlinks.";
     }
 
     // Open the web browser with the specified link
