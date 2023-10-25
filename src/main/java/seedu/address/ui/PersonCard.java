@@ -3,6 +3,8 @@ package seedu.address.ui;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 import javafx.fxml.FXML;
@@ -21,7 +23,7 @@ import seedu.address.model.socialmedialink.SocialMediaLink;
 public class PersonCard extends UiPart<Region> {
 
     private static final String FXML = "PersonListCard.fxml";
-
+    private static final Logger logger = Logger.getLogger(PersonCard.class.getName());
     public final Person person;
 
     @FXML
@@ -91,8 +93,10 @@ public class PersonCard extends UiPart<Region> {
     public void openWebBrowser(String link) {
         try {
             java.awt.Desktop.getDesktop().browse(new java.net.URI(link));
+            logger.info("Opened web browser for link: " + link);
         } catch (java.io.IOException | java.net.URISyntaxException e) {
             // Exceptions handled in other classes
+            logger.log(Level.WARNING, "Failed to open the web browser with link: " + link, e);
         }
     }
 
