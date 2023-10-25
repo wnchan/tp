@@ -27,7 +27,7 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 
     * `list` : Lists all students.
 
-    * `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time t/02 17 20 sm/https://www.linkedin.com/in/john-doe-123456789` : Adds a student named `John Doe` to the StudentConnect system.
+    * `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time t/02 17 20 sm/https://www.linkedin.com/in/john-doe-123456789 nt/local g/m` : Adds a student named `John Doe` to the StudentConnect system.
 
     * `delete [email]` : Deletes the student with the corresponding email.
 
@@ -84,7 +84,7 @@ Expected Output:
 
 Adds a student to the system.
 
-#### Format: `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION t/TUTORIALS sm/SOCIALMEDIA`
+#### Format: `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION t/TUTORIALS sm/SOCIALMEDIA nt/NATIONALITY g/GENDER`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 A student can include multiple tutorial groups they are interested in
