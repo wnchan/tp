@@ -309,6 +309,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* * *`  | student | remove my personal details from the system          | stop using the application                |
 | `* * *`  | student | join a group on the app                             | form a group for the course               |
 | `* * *`  | user    | exit the app                                        | close the app                             |
+| `* *`    | student | seek help and check requirements for cs2101/cs2103t groupings | be more clear of the valid group formations |
 
 
 *{More to be added}*
