@@ -6,6 +6,8 @@ title: StudentConnect User Guide
 StudentConnect is a solution for hassle-free team formation for students to browse profiles and connect with others for group projects.
 
 ## Table of Contents
+
+---
 <a id="table-of-contents"></a>
 1. [Quick start](#quick-start)
 2. [Features](#features)
@@ -307,7 +309,9 @@ _Details coming soon ..._
 ## Known issues
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
-2. Hyperlinks not supported when you add more than one social media account. 
+
+
+2. Hyperlinks not supported when you add **more than one social media account** (coming soon).
 
 --------------------------------------------------------------------------------------------------------------------
 
