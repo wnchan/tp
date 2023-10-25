@@ -71,7 +71,7 @@ Provides the requirements for forming a group.
 Format: `help`
 
 Expected Output:
-* GUI: Help window opened with help message, copy button and requirement message
+* GUI: Help window opened with help message, copy button and requirement message.
 * Message: “Opened help window.”
 
 ![help message](images/helpMessage.png)
