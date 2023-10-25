@@ -61,7 +61,8 @@ public class PersonCard extends UiPart<Region> {
                 .sorted(Comparator.comparing(sm -> sm.socialMediaLink))
                 .forEach(sm -> {
                     Hyperlink hyperlink = new Hyperlink(sm.socialMediaLink);
-                    hyperlink.setStyle("-fx-font-size: 13px; -fx-text-fill: white; -fx-font-family: 'Segoe UI Semibold';");
+                    hyperlink.setStyle(
+                            "-fx-font-size: 13px; -fx-text-fill: white; -fx-font-family: 'Segoe UI Semibold';");
                     hyperlink.setOnAction(event -> openWebBrowser(sm.socialMediaLink));
                     socialMediaLinks.getChildren().add(hyperlink);
                 });
