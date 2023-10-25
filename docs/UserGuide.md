@@ -35,6 +35,8 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 
     * `exit` : Exits the app.
 
+    * `create` : Creates a new group.
+
 6. Refer to the [Features](#features) below for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
@@ -63,15 +65,20 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </div>
 
-
 ### Viewing help : `help`
 
-Shows a message explaining how to access the help page.
-
-![help message](images/helpMessage.png)
+Shows a message explaining how to access the help page in the user guide and a button to copy the link.<br>
+Provides the requirements for forming a group.
 
 Format: `help`
 
+Expected Output:
+* GUI: Help window opened with help message, copy button and requirement message.
+* Message: “Opened help window.”
+
+![help message](images/helpMessage.png)
+
+![help window](images/helpWindow.png)
 
 ### Adding a student : `add`
 
@@ -110,9 +117,8 @@ Parameters: n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION t/TUTORIALS sm/SOCIAL_ME
 Example: add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time<br>
 t/02 17 20 sm/https://www.linkedin.com/in/john-doe-123456789";
 
-#### Mockup of add feature (Success): <br>
+#### Add feature output (Success): <br>
 ![Add feature](images/add.png)
-
 
 ### Listing all students : `list`
 
@@ -128,7 +134,6 @@ Shows a list of all students in the system.
 * Message: “Error: Unable to retrieve student entries. Please try again.”
 
 ![sample result for 'list'](images/list.png)
-
 
 ### Editing a person : `edit`
 
@@ -161,7 +166,6 @@ Edits an existing student in the system.
 
 ![sample result for 'edit'](images/edit.png)
 
-
 ### Finding a student by name: `find`
 
 Finds student(s) whose name(s) contain any of the given keywords.
@@ -187,7 +191,6 @@ Finds student(s) whose name(s) contain any of the given keywords.
 * Message: “Error: Unable to find students with the given keyword(s).”
   ![result for 'find alex'](images/findAlexResult.png)
 
-
 ### Deleting a person : `delete`
 
 Deletes a specific student and all personal details based on email.
@@ -212,7 +215,6 @@ Deletes a specific student and all personal details based on email.
 #### Expected Output (Failure):
 * Message: `Error! Email not found!`
 
-
 ### Clearing all entries : `clear`
 
 Clears all entries from the system.
@@ -223,6 +225,21 @@ Clears all entries from the system.
 * GUI: All students' details are removed from student list.
 * Message: `All student data has been cleared`
   ![Clear feature](images/clear.png)
+
+### Creating a new group : `create`
+
+Creates a new empty group. The group number is automatically assigned and is used to uniquely identify the group.
+
+Format: `create`
+
+Expected Output(Success):
+* GUI: A new empty group, with a group number, is created.
+* Message: `Group created successfully! Group number is (number of newly created group)`
+
+Expected Output(Failure):
+* Message: `Error: Failed to create group.`
+
+![Exit](images/create.png)
 
 ### Exiting the program : `exit`
 
@@ -238,7 +255,6 @@ Exits the program.
 * Message: `Error: Exiting the program failed.`
 
 ![Exit](images/exit.png)
-
 
 ### Saving the data
 
@@ -283,3 +299,14 @@ _Details coming soon ..._
 | **List**   | `list`                                                                                                                                                                                         |
 | **Exit**   | `exit`                                                                                                                                                                                         |
 | **Help**   | `help`                                                                                                                                                                                         |
+| Action           | Format, Examples                                                                                                                                                                   |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Add**          | `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION sm/SOCIALMEDIA` <br> e.g., `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu  d/I’m adept at Backend technologies` |
+| **Clear**        | `clear`                                                                                                                                                                            |
+| **Delete**       | `delete EMAIL`<br> e.g., `delete betsycrowe@u.nus.edu`                                                                                                                             |
+| **Edit**         | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                        |
+| **Find**         | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                                         |
+| **List**         | `list`                                                                                                                                                                             |
+| **Create group** | `create`                                                                                                                                                                           |
+| **Exit**         | `exit`                                                                                                                                                                             |
+| **Help**         | `help`                                                                                                                                                                             |

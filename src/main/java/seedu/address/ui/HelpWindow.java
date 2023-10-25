@@ -15,8 +15,18 @@ import seedu.address.commons.core.LogsCenter;
  */
 public class HelpWindow extends UiPart<Stage> {
 
-    public static final String USERGUIDE_URL = "https://se-education.org/addressbook-level3/UserGuide.html";
-    public static final String HELP_MESSAGE = "Refer to the user guide: " + USERGUIDE_URL;
+    public static final String USERGUIDE_URL = "https://ay2324s1-cs2103t-f12-2.github.io/tp/UserGuide.html";
+
+    public static final String HELP_MESSAGE = "If you need help, please refer to StudentConnect User Guide: "
+            + USERGUIDE_URL;
+
+    public static final String REQUIREMENTS_MESSAGE = "Requirements for CS2101/CS2103T groupings:\n"
+            + "~ Default team size: 5\n"
+            + "~ All team members must be assigned to the same tutorial.\n"
+            + "~ Teams composed entirely of members from a single nationality are prohibited.\n"
+            + "☆ Exception: an all-Singaporean team that comprises students of different races.\n"
+            + "~ Each team may include no more than one exchange student.\n"
+            + "~ Same gender teams are allowed, but are discouraged.";
 
     private static final Logger logger = LogsCenter.getLogger(HelpWindow.class);
     private static final String FXML = "HelpWindow.fxml";
@@ -27,6 +37,9 @@ public class HelpWindow extends UiPart<Stage> {
     @FXML
     private Label helpMessage;
 
+    @FXML
+    private Label requirementsMessage;
+
     /**
      * Creates a new HelpWindow.
      *
@@ -35,6 +48,7 @@ public class HelpWindow extends UiPart<Stage> {
     public HelpWindow(Stage root) {
         super(FXML, root);
         helpMessage.setText(HELP_MESSAGE);
+        requirementsMessage.setText(REQUIREMENTS_MESSAGE);
     }
 
     /**
@@ -93,7 +107,8 @@ public class HelpWindow extends UiPart<Stage> {
      * Copies the URL to the user guide to the clipboard.
      */
     @FXML
-    private void copyUrl() {
+    void copyUrl() {
+        logger.info("Student copied the URL to the clipboard: " + USERGUIDE_URL);
         final Clipboard clipboard = Clipboard.getSystemClipboard();
         final ClipboardContent url = new ClipboardContent();
         url.putString(USERGUIDE_URL);
