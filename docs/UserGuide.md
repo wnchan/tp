@@ -35,6 +35,8 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 
     * `exit` : Exits the app.
 
+    * `create` : Creates a new group.
+
 6. Refer to the [Features](#features) below for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
@@ -217,6 +219,21 @@ Expected Output(Success):
 * Message: `All student data has been cleared`
   ![Clear feature](images/clear.png)
 
+### Creating a new group : `create`
+
+Creates a new empty group. The group number is automatically assigned and is used to uniquely identify the group.
+
+Format: `create`
+
+Expected Output(Success):
+* GUI: A new empty group, with a group number, is created.
+* Message: `Group created successfully! Group number is (number of newly created group)`
+
+Expected Output(Failure):
+* Message: `Error: Failed to create group.`
+
+![Exit](images/create.png)
+
 ### Exiting the program : `exit`
 
 Exits the program.
@@ -265,13 +282,14 @@ _Details coming soon ..._
 
 ## Command summary
 
-| Action     | Format, Examples                                                                                                                                                                   |
-|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Add**    | `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION sm/SOCIALMEDIA` <br> e.g., `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu  d/I’m adept at Backend technologies` |
-| **Clear**  | `clear`                                                                                                                                                                            |
-| **Delete** | `delete EMAIL`<br> e.g., `delete betsycrowe@u.nus.edu`                                                                                                                             |
-| **Edit**   | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                        |
-| **Find**   | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                                         |
-| **List**   | `list`                                                                                                                                                                             |
-| **Exit**   | `exit`                                                                                                                                                                             |
-| **Help**   | `help`                                                                                                                                                                             |
+| Action           | Format, Examples                                                                                                                                                                   |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Add**          | `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION sm/SOCIALMEDIA` <br> e.g., `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu  d/I’m adept at Backend technologies` |
+| **Clear**        | `clear`                                                                                                                                                                            |
+| **Delete**       | `delete EMAIL`<br> e.g., `delete betsycrowe@u.nus.edu`                                                                                                                             |
+| **Edit**         | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                        |
+| **Find**         | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                                         |
+| **List**         | `list`                                                                                                                                                                             |
+| **Create group** | `create`                                                                                                                                                                           |
+| **Exit**         | `exit`                                                                                                                                                                             |
+| **Help**         | `help`                                                                                                                                                                             |
