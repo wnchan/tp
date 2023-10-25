@@ -106,8 +106,8 @@ A student can have any number of social media links (including 0)
 * Description: Maximum 150 characters
 * Tutorials: Two digit integers between 01 and 22 inclusive, each seperated by a space
 * Social Media Link: Valid URL format to social media account (optional to include)
-* Nationality: Either local or foreigner
-* Gender: A single character, either m or f
+* Nationality: Either 'local' or 'foreigner'
+* Gender: A single character, either 'm' or 'f'
 
 #### Expected Output (Success):
 * GUI: New student entry added in the main student list
