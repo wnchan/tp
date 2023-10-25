@@ -10,6 +10,7 @@ title: Developer Guide
 ## **Acknowledgements**
 
 * {list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
+* This project is based on the AddressBook-Level3 project created by the [SE-EDU initiative](https://se-education.org).
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -278,14 +279,15 @@ CS2103T students.
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​   | I want to …​                                        | So that I can…​                           |
-|----------|-----------|-----------------------------------------------------|-------------------------------------------|
-| `* * *`  | student   | add my personal details to the system               | get other students to learn more about me |
-| `* * *`  | student   | view the rest of the students in the course         | see my options for choosing teammates     |
-| `* * *`  | student   | see the other student’s name, major, basic info etc | make informed decisions                   |
-| `* * * ` | student   | customise and update my profile details             | ensure that my profile is up to date      |
-| `* * *`  | student   | remove my personal details from the system          | stop using the application                |
-| `* * *`  | user      | exit the app                                        | close the app                             |
+| Priority | As a …​ | I want to …​                                                  | So that I can…​                             |
+|----------|---------|---------------------------------------------------------------|---------------------------------------------|
+| `* * *`  | student | add my personal details to the system                         | get other students to learn more about me   |
+| `* * *`  | student | view the rest of the students in the course                   | see my options for choosing teammates       |
+| `* * *`  | student | see the other student’s name, major, basic info etc           | make informed decisions                     |
+| `* * * ` | student | customise and update my profile details                       | ensure that my profile is up to date        |
+| `* * *`  | student | remove my personal details from the system                    | stop using the application                  |
+| `* * *`  | user    | exit the app                                                  | close the app                               |
+| `* *`    | student | seek help and check requirements for cs2101/cs2103t groupings | be more clear of the valid group formations |
 
 
 *{More to be added}*
@@ -379,6 +381,15 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 1. Student requests to delete the app by typing “exit”.
 2. StudentConnect displays the goodbye message.
 3. StudentConnect closes.
+
+   Use case ends.
+
+**Use Case: Checking valid group formations**
+
+**MSS**
+
+1. Student requests to see requirement list by typing “help”.
+2. StudentConnect displays the help message, along with the requirement message.
 
    Use case ends.
 
