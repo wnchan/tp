@@ -108,6 +108,7 @@ public class HelpWindow extends UiPart<Stage> {
      */
     @FXML
     void copyUrl() {
+        logger.info("Student copied the URL to the clipboard: " + USERGUIDE_URL);
         final Clipboard clipboard = Clipboard.getSystemClipboard();
         final ClipboardContent url = new ClipboardContent();
         url.putString(USERGUIDE_URL);
