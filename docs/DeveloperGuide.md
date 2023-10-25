@@ -155,6 +155,45 @@ Classes used by multiple components are in the `seedu.addressbook.commons` packa
 
 This section describes some noteworthy details on how certain features are implemented.
 
+
+### Tutorial Field
+
+#### Current Implementation
+
+In response to the evolving needs of StudentConnect, we have introduced several essential enhancements to user profiles. These enhancements include the addition of fields for Tutorial, Nationality, and Gender. While Nationality and Tutorial have been successfully implemented, work on the Gender field is ongoing.
+
+The Tutorial field is a crucial addition to the StudentConnect application, providing users with the capability to specify their tutorial groups, which are integral to their group formation needs. Here, we detail how the Tutorial field is implemented:
+
+- **Data Structure**: Tutorials are now stored as a Set of Tutorial objects within the Person model. The use of a Set ensures that no duplicate tutorials can be associated with a single user. The code snippet below demonstrates this implementation:
+
+  ```java
+  Set<Tutorial> tutorials = new HashSet<Tutorial>();
+  ```
+
+- **Tutorial Attributes**: Each Tutorial object possesses an attribute called "value," which is of type string. The "value" must adhere to a two-digit format, ranging from 01 to 22.
+
+
+- **Consistency**: The decision to enforce a two-digit format (e.g., T01, T02) was made for consistency, ensuring that all tutorials are consistently represented as "TXX," where XX corresponds to the tutorial group.
+
+
+- **Range**: The allowed range of values, spanning from 01 to 22, aligns with the number of available tutorial group options for AY2023/2024 SEM1.
+
+
+- **Set vs. List**: Initially, the tutorials field was implemented as a List of Tutorial objects (`List<Tutorial>`). However, we observed that this approach allowed for multiple duplicate tutorials to be input without triggering errors. To address this, we transitioned to using a Set of tutorials, which inherently disallows duplicate entries without the need for additional validation checks:
+
+  ```java
+  // Initial implementation as a List
+  List<Tutorial> tutorials = new ArrayList<Tutorial>();
+  ```
+
+#### UML Diagrams
+
+To provide a visual representation of the Tutorial field's implementation, we offer the following UML diagrams:
+
+- **Class Diagram for Person**: This diagram illustrates the structure of the Person class, highlighting its relationship with the Tutorial field.
+
+<img src="images/PersonClassDiagram.png" width="800" />
+
 ###  Create group feature
 
 #### Implementation
@@ -176,6 +215,7 @@ Step 3. `CreateCommand#generateGroupNumber()` generates the next available group
 Step 4. `CreateCommand#execute()` creates a new `Group` using the generated group number and adds it to the Address Book via `AddressBook#addGroup`.
 <br>
 Step 5. The `CommandResult` containing the success message is shown to the user.
+
 
 ### \[Proposed\] Undo/redo feature
 
