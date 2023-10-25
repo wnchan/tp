@@ -1,29 +1,33 @@
 package seedu.address.ui;
 
-import javafx.application.Platform;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import seedu.address.model.socialmedialink.SocialMediaLink;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static seedu.address.testutil.TypicalPersons.ALICE;
+import static seedu.address.testutil.TypicalPersons.AMY;
 
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static seedu.address.testutil.TypicalPersons.AMY;
-import static seedu.address.testutil.TypicalPersons.ALICE;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
+import javafx.application.Platform;
+import seedu.address.model.socialmedialink.SocialMediaLink;
+
 public class PersonCardTest {
 
     @BeforeAll
-    public static void initJavaFX() {
+    public static void initJavaFx() {
         Platform.startup(() -> {
             // Initialization code, if needed
         });
     }
 
     @AfterAll
-    public static void cleanupJavaFX() {
+    public static void cleanupJavaFx() {
         Platform.exit();
     }
 

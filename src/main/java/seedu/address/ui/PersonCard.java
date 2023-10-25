@@ -1,6 +1,8 @@
 package seedu.address.ui;
 
-import java.util.*;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import javafx.fxml.FXML;
@@ -78,7 +80,14 @@ public class PersonCard extends UiPart<Region> {
                 : "No hyperlinks were added. Please check the code that adds hyperlinks.";
     }
 
-    // Open the web browser with the specified link
+    /**
+     * Opens a web browser with the specified URL.
+     *
+     * @param link The URL to be opened in the web browser.
+     * @throws UnsupportedOperationException if the platform does not support the {@code Desktop} class.
+     * @throws java.io.IOException If the default browser is not found or it fails to be launched.
+     * @throws java.net.URISyntaxException If the specified link is not a valid URI.
+     */
     public void openWebBrowser(String link) {
         try {
             java.awt.Desktop.getDesktop().browse(new java.net.URI(link));
@@ -117,7 +126,7 @@ public class PersonCard extends UiPart<Region> {
         for (Node node : socialMediaLinks.getChildren()) {
             if (node instanceof Hyperlink) {
                 Hyperlink hyperlink = (Hyperlink) node;
-                SocialMediaLink socialMediaLink = new SocialMediaLink(hyperlink.getText()); // Assuming a constructor like this
+                SocialMediaLink socialMediaLink = new SocialMediaLink(hyperlink.getText());
                 links.add(socialMediaLink);
             }
         }
