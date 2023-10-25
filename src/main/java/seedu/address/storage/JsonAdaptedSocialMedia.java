@@ -14,7 +14,7 @@ public class JsonAdaptedSocialMedia {
     private final String socialMediaLink;
 
     /**
-     * Constructs a {@code JsonAdaptedSocial} with the given {@code socialMediaLink}.
+     * Constructs a {@code JsonAdaptedSocialMedia} with the given {@code socialMediaLink}.
      */
     @JsonCreator
     public JsonAdaptedSocialMedia(String socialMediaLink) {

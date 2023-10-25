@@ -28,10 +28,10 @@ public class Tutorial {
     }
 
     /**
-     * Returns if a given string is a valid tutorial number between 01 and 22.
+     * Returns true if a given string is a valid tutorial number between 01 and 22.
      */
-    public static boolean isValidTutorial(String tutorial) {
-        return tutorial.matches(VALIDATION_REGEX);
+    public static boolean isValidTutorial(String test) {
+        return test.matches(VALIDATION_REGEX);
     }
 
     public String getValue() {

@@ -68,11 +68,13 @@ public class EditCommandParser implements Parser<EditCommand> {
             editPersonDescriptor.setDescription(
                     ParserUtil.parseDescription(argMultimap.getValue(PREFIX_DESCRIPTION).get()));
         }
-        List<String> tutorialsStrings = argMultimap.getAllValues(PREFIX_TUTORIAL);
-        if (!tutorialsStrings.isEmpty()) {
-            Set<Tutorial> tutorialList = ParserUtil.parseTutorials(tutorialsStrings);
-            editPersonDescriptor.setTutorials(tutorialList);
-        }
+//        List<String> tutorialsStrings = argMultimap.getAllValues(PREFIX_TUTORIAL);
+//        if (!tutorialsStrings.isEmpty()) {
+//            Set<Tutorial> tutorialList = ParserUtil.parseTutorials(tutorialsStrings);
+//            editPersonDescriptor.setTutorials(tutorialList);
+//        }
+        parseTutorialsForEdit(argMultimap.getAllValues(PREFIX_TUTORIAL))
+                .ifPresent(editPersonDescriptor::setTutorials);
 
         parseSocialMediaLinksForEdit(argMultimap.getAllValues(PREFIX_SOCIAL_MEDIA_LINK))
                 .ifPresent(editPersonDescriptor::setSocialMediaLinks);
@@ -82,6 +84,17 @@ public class EditCommandParser implements Parser<EditCommand> {
         }
 
         return new EditCommand(email, editPersonDescriptor);
+    }
+
+    private Optional<Set<Tutorial>> parseTutorialsForEdit(Collection<String> tutorials) throws ParseException {
+        assert tutorials != null;
+
+//        if (tutorials.isEmpty()) {
+//            return Optional.empty();
+//        }
+        Collection<String> tutorialSet =
+                tutorials.size() == 1 && tutorials.contains("") ? Collections.emptySet() : tutorials;
+        return Optional.of(ParserUtil.parseTutorials(tutorialSet));
     }
 
     /**
