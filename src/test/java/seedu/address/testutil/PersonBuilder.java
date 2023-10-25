@@ -7,6 +7,7 @@ import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
+import seedu.address.model.person.Nationality;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Year;
 import seedu.address.model.socialmedialink.SocialMediaLink;
@@ -31,6 +32,7 @@ public class PersonBuilder {
     private Description description;
     private Set<Tutorial> tutorials;
     private Set<SocialMediaLink> socialMediaLinks;
+    private Nationality nationality;
 
     /**
      * Creates a {@code PersonBuilder} with the default details.
@@ -120,8 +122,16 @@ public class PersonBuilder {
         return this;
     }
 
+    /**
+     * Sets the {@code Nationality} of the {@code Person} that we are building.
+     */
+    public PersonBuilder withNationality(String nationality) {
+        this.nationality = new Nationality(nationality);
+        return this;
+    }
+
     public Person build() {
-        return new Person(name, major, year, email, description, tutorials, socialMediaLinks);
+        return new Person(name, major, year, email, description, tutorials, socialMediaLinks, nationality);
     }
 
 }

@@ -15,6 +15,7 @@ import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
+import seedu.address.model.person.Nationality;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Year;
 import seedu.address.model.socialmedialink.SocialMediaLink;
@@ -34,6 +35,7 @@ class JsonAdaptedPerson {
     private final String description;
     private final List<String> tutorials = new ArrayList<>();
     private final List<JsonAdaptedSocialMedia> socialMediaLinks = new ArrayList<>();
+    private final String nationality;
 
     /**
      * Constructs a {@code JsonAdaptedPerson} with the given person details.
@@ -45,7 +47,8 @@ class JsonAdaptedPerson {
                              @JsonProperty("email") String email,
                              @JsonProperty("description") String description,
                              @JsonProperty("tutorials") List<String> tutorials,
-                             @JsonProperty("socialMediaLinks") List<JsonAdaptedSocialMedia> socialMediaLinks) {
+                             @JsonProperty("socialMediaLinks") List<JsonAdaptedSocialMedia> socialMediaLinks,
+                             @JsonProperty("nationality") String nationality) {
         this.name = name;
         this.major = major;
         this.year = year;
@@ -57,6 +60,7 @@ class JsonAdaptedPerson {
         if (socialMediaLinks != null) {
             this.socialMediaLinks.addAll(socialMediaLinks);
         }
+        this.nationality = nationality;
     }
 
     /**
@@ -74,6 +78,7 @@ class JsonAdaptedPerson {
         socialMediaLinks.addAll(source.getSocialMediaLinks().stream()
                 .map(JsonAdaptedSocialMedia::new)
                 .collect(Collectors.toList()));
+        nationality = source.getNationality().value;
     }
 
     /**
@@ -128,6 +133,13 @@ class JsonAdaptedPerson {
         if (!Description.isValidDescription(description)) {
             throw new ParseException(Description.MESSAGE_CONSTRAINTS);
         }
+        if (nationality == null) {
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Nationality.class.getSimpleName()));
+        }
+        if (!Nationality.isValidNationality(nationality)) {
+            throw new IllegalValueException(Nationality.MESSAGE_CONSTRAINTS);
+        }
+        final Nationality modelNationality = new Nationality(nationality);
         final Description modelDescription = new Description(description);
 
         final Set<Tutorial> modelTutorials = new HashSet<>(personTutorials);
@@ -135,6 +147,7 @@ class JsonAdaptedPerson {
         final Set<SocialMediaLink> modelSocialMediaLinks = new HashSet<>(personSocialMediaLinks);
 
         return new Person(modelName, modelMajor, modelYear, modelEmail, modelDescription,
-                            modelTutorials, modelSocialMediaLinks);
+            modelTutorials, modelSocialMediaLinks, modelNationality);
+
     }
 }

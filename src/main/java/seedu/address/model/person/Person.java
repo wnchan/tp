@@ -27,13 +27,14 @@ public class Person {
     private final Description description;
     private final Set<SocialMediaLink> socialMediaLinks = new HashSet<>();
     private final Set<Tutorial> tutorials = new HashSet<>();
+    private final Nationality nationality;
 
     /**
      * Every field must be present and not null.
      */
     public Person(Name name, Major major, Year year, Email email, Description description, Set<Tutorial> tutorials,
-                  Set<SocialMediaLink> socialMediaLinks) {
-        requireAllNonNull(name, major, year, email, description, tutorials, socialMediaLinks);
+                  Set<SocialMediaLink> socialMediaLinks, Nationality nationality) {
+        requireAllNonNull(name, major, year, email, description, tutorials, socialMediaLinks, nationality);
         this.name = name;
         this.major = major;
         this.year = year;
@@ -41,6 +42,7 @@ public class Person {
         this.description = description;
         this.tutorials.addAll(tutorials);
         this.socialMediaLinks.addAll(socialMediaLinks);
+        this.nationality = nationality;
     }
 
     public Name getName() {
@@ -70,6 +72,8 @@ public class Person {
     public Set<SocialMediaLink> getSocialMediaLinks() {
         return Collections.unmodifiableSet(socialMediaLinks);
     }
+
+    public Nationality getNationality() { return nationality; }
 
     /**
      * Returns true if both persons have the same email.
@@ -106,12 +110,13 @@ public class Person {
             && email.equals(otherPerson.email)
             && description.equals(otherPerson.description)
             && tutorials.equals(otherPerson.tutorials)
-            && socialMediaLinks.equals(otherPerson.socialMediaLinks);
+            && socialMediaLinks.equals(otherPerson.socialMediaLinks)
+            && nationality.equals(otherPerson.nationality);
     }
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, major, year, email, description, tutorials, socialMediaLinks);
+        return Objects.hash(name, major, year, email, description, tutorials, socialMediaLinks, nationality);
     }
 
     @Override
@@ -124,6 +129,7 @@ public class Person {
             .add("description", description)
             .add("tutorials", tutorials)
             .add("socialMediaLinks", socialMediaLinks)
+            .add("nationality", nationality)
             .toString();
     }
 }
