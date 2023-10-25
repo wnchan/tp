@@ -33,6 +33,8 @@ public class AddCommand extends Command {
             + PREFIX_DESCRIPTION + "DESCRIPTION "
             + "[" + PREFIX_TUTORIAL + "TUTORIAL]...\n "
             + "[" + PREFIX_SOCIAL_MEDIA_LINK + "SOCIAL_MEDIA_LINK]...\n"
+            + PREFIX_NATIONALITY + "NATIONALITY"
+            + PREFIX_GENDER + "GENDER"
             + "Example: " + COMMAND_WORD + " "
             + PREFIX_NAME + "John Doe "
             + PREFIX_MAJOR + "Computer Science "
