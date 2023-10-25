@@ -1,15 +1,17 @@
 package seedu.address.ui;
 
-import java.util.Comparator;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import seedu.address.model.person.Person;
+import seedu.address.model.socialmedialink.SocialMediaLink;
 
 /**
  * An UI component that displays information of a {@code Person}.
@@ -77,13 +79,49 @@ public class PersonCard extends UiPart<Region> {
     }
 
     // Open the web browser with the specified link
-    private void openWebBrowser(String link) {
+    public void openWebBrowser(String link) {
         try {
             java.awt.Desktop.getDesktop().browse(new java.net.URI(link));
         } catch (java.io.IOException | java.net.URISyntaxException e) {
             // Exceptions handled in other classes
         }
     }
+
+    // Getter methods for testing
+    public String getName() {
+        return name.getText();
+    }
+
+    public String getMajor() {
+        return major.getText();
+    }
+
+    public String getYear() {
+        return year.getText();
+    }
+
+    public String getEmail() {
+        return email.getText();
+    }
+
+    public String getId() {
+        return id.getId();
+    }
+
+    public String getTutorials() {
+        return tutorials.getText();
+    }
+
+    public Set<SocialMediaLink> getSocialMediaLinks() {
+        Set<SocialMediaLink> links = new HashSet<>();
+        for (Node node : socialMediaLinks.getChildren()) {
+            if (node instanceof Hyperlink) {
+                Hyperlink hyperlink = (Hyperlink) node;
+                SocialMediaLink socialMediaLink = new SocialMediaLink(hyperlink.getText()); // Assuming a constructor like this
+                links.add(socialMediaLink);
+            }
+        }
+        return links;
+    }
+
 }
-
-
