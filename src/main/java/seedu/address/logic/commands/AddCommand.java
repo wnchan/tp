@@ -3,6 +3,7 @@ package seedu.address.logic.commands;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_GENDER;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_MAJOR;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NATIONALITY;
@@ -40,7 +41,8 @@ public class AddCommand extends Command {
             + PREFIX_DESCRIPTION + "I love programming in my free time "
             + PREFIX_TUTORIAL + "02 17 20 "
             + PREFIX_SOCIAL_MEDIA_LINK + "https://www.linkedin.com/in/john-doe-123456789 "
-            + PREFIX_NATIONALITY + "local ";
+            + PREFIX_NATIONALITY + "local "
+            + PREFIX_GENDER + "M";
 
     public static final String MESSAGE_SUCCESS = "Details added successfully! New student added: %1$s";
     public static final String MESSAGE_DUPLICATE_PERSON = "This student is already on StudentConnect as this "
