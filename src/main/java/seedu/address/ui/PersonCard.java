@@ -1,14 +1,21 @@
 package seedu.address.ui;
 
 import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import seedu.address.model.person.Person;
+import seedu.address.model.socialmedialink.SocialMediaLink;
 
 /**
  * An UI component that displays information of a {@code Person}.
@@ -16,7 +23,7 @@ import seedu.address.model.person.Person;
 public class PersonCard extends UiPart<Region> {
 
     private static final String FXML = "PersonListCard.fxml";
-
+    private static final Logger logger = Logger.getLogger(PersonCard.class.getName());
     public final Person person;
 
     @FXML
@@ -63,16 +70,82 @@ public class PersonCard extends UiPart<Region> {
         email.setText(person.getEmail().value);
         description.setText(person.getDescription().value);
         String tutorialsText = person.getTutorials().stream()
-            .map(t -> "T" + t.getValue())
-            .sorted()
-            .collect(Collectors.joining(", "));
+                .map(t -> "T" + t.getValue())
+                .sorted()
+                .collect(Collectors.joining(", "));
         tutorials.setText(tutorialsText);
+        int initialHyperlinksCount = socialMediaLinks.getChildren().size(); // Get the initial count
+
         person.getSocialMediaLinks().stream()
-            .sorted(Comparator.comparing(sm -> sm.socialMediaLink))
-            .forEach(sm -> {
-                Label label = new Label(sm.socialMediaLink);
-                label.setStyle("-fx-font-size: 13px; -fx-text-fill: white; -fx-font-family: 'Segoe UI Semibold';");
-                socialMediaLinks.getChildren().add(label);
-            });
+                .sorted(Comparator.comparing(sm -> sm.socialMediaLink))
+                .forEach(sm -> {
+                    Hyperlink hyperlink = new Hyperlink(sm.socialMediaLink);
+                    hyperlink.setStyle(
+                            "-fx-font-size: 13px; -fx-text-fill: white; -fx-font-family: 'Segoe UI Semibold';");
+                    hyperlink.setOnAction(event -> openWebBrowser(sm.socialMediaLink));
+                    socialMediaLinks.getChildren().add(hyperlink);
+                });
+
+        int finalHyperlinksCount = socialMediaLinks.getChildren().size(); // Get the final count
+
+        // Use an assertion to check the condition
+        assert finalHyperlinksCount > initialHyperlinksCount
+                : "No hyperlinks were added. Please check the code that adds hyperlinks.";
     }
+
+    /**
+     * Opens a web browser with the specified URL.
+     *
+     * @param link The URL to be opened in the web browser.
+     * @throws UnsupportedOperationException if the platform does not support the {@code Desktop} class.
+     * @throws java.io.IOException If the default browser is not found or it fails to be launched.
+     * @throws java.net.URISyntaxException If the specified link is not a valid URI.
+     */
+    public void openWebBrowser(String link) {
+        try {
+            java.awt.Desktop.getDesktop().browse(new java.net.URI(link));
+            logger.info("Opened web browser for link: " + link);
+        } catch (java.io.IOException | java.net.URISyntaxException e) {
+            // Exceptions handled in other classes
+            logger.log(Level.WARNING, "Failed to open the web browser with link: " + link, e);
+        }
+    }
+
+    // Getter methods for testing
+    public String getName() {
+        return name.getText();
+    }
+
+    public String getMajor() {
+        return major.getText();
+    }
+
+    public String getYear() {
+        return year.getText();
+    }
+
+    public String getEmail() {
+        return email.getText();
+    }
+
+    public String getId() {
+        return id.getId();
+    }
+
+    public String getTutorials() {
+        return tutorials.getText();
+    }
+
+    public Set<SocialMediaLink> getSocialMediaLinks() {
+        Set<SocialMediaLink> links = new HashSet<>();
+        for (Node node : socialMediaLinks.getChildren()) {
+            if (node instanceof Hyperlink) {
+                Hyperlink hyperlink = (Hyperlink) node;
+                SocialMediaLink socialMediaLink = new SocialMediaLink(hyperlink.getText());
+                links.add(socialMediaLink);
+            }
+        }
+        return links;
+    }
+
 }
