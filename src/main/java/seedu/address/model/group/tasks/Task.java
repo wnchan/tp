@@ -10,7 +10,7 @@ import seedu.address.model.group.exceptions.TaskException;
 
 
 /**
- * The Task class represents a task in the Duke chatbot application.
+ * The Task class represents a task in the StudentConnect application.
  */
 public class Task {
     private static ArrayList<Task> arr = new ArrayList<>();
