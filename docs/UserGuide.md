@@ -95,8 +95,8 @@ A student can have any number of social media links (including 0)
 </div>
 
 #### Examples:
-* `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I’m a Frontend Developer t/06 19 sm/https://www.linkedin.com/in/john-doe-123456789`
-* `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu  d/I’m adept at Backend technologies t/05 sm/`
+* `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I’m a Frontend Developer t/06 19 sm/https://www.linkedin.com/in/john-doe-123456789 nt/local g/m`
+* `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu  d/I’m adept at Backend technologies t/05 sm/ nt/foreigner g/f`
 
 #### Acceptable Values:
 * Name: Full names with alphabetical characters
@@ -106,6 +106,8 @@ A student can have any number of social media links (including 0)
 * Description: Maximum 150 characters
 * Tutorials: Two digit integers between 01 and 22 inclusive, each seperated by a space
 * Social Media Link: Valid URL format to social media account (optional to include)
+* Nationality: Either local or foreigner
+* Gender: A single character, either m or f
 
 #### Expected Output (Success):
 * GUI: New student entry added in the main student list
@@ -113,9 +115,9 @@ A student can have any number of social media links (including 0)
 
 #### Expected Output (Failure):
 * Message:  "Invalid command format! add: Adds a person to StudentConnect. <br>
-Parameters: n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION t/TUTORIALS sm/SOCIAL_MEDIA_LINK <br>
+Parameters: n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION t/TUTORIALS sm/SOCIAL_MEDIA_LINK nt/NATIONALITY g/GENDER<br>
 Example: add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time<br>
-t/02 17 20 sm/https://www.linkedin.com/in/john-doe-123456789";
+t/02 17 20 sm/https://www.linkedin.com/in/john-doe-123456789 nt/local g/m";
 
 #### Add feature output (Success): <br>
 ![Add feature](images/add.png)
@@ -139,7 +141,7 @@ Shows a list of all students in the system.
 
 Edits an existing student in the system.
 
-#### Format: `edit EMAIL [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS] [sm/SOCIALMEDIA]…​`
+#### Format: `edit EMAIL [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS] [sm/SOCIALMEDIA] [nt/NATIONALITY] [g/GENDER]…​`
 
 * Edits the student with the specified EMAIL.
 * At least one of the optional fields must be provided.
@@ -289,24 +291,14 @@ _Details coming soon ..._
 
 ## Command summary
 
-| Action     | Format, Examples                                                                                                                                                                               |
-|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Add**    | `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION t/TUTORIALS sm/SOCIALMEDIA` <br> e.g., `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu  d/I’m adept at Backend technologies` |
-| **Clear**  | `clear`                                                                                                                                                                                        |
-| **Delete** | `delete EMAIL`<br> e.g., `delete betsycrowe@u.nus.edu`                                                                                                                                         |
-| **Edit**   | `edit INDEX [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS] [sm/SOCIALMEDIA]` `<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                       |
-| **Find**   | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                                                     |
-| **List**   | `list`                                                                                                                                                                                         |
-| **Exit**   | `exit`                                                                                                                                                                                         |
-| **Help**   | `help`                                                                                                                                                                                         |
-| Action           | Format, Examples                                                                                                                                                                   |
-|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Add**          | `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION sm/SOCIALMEDIA` <br> e.g., `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu  d/I’m adept at Backend technologies` |
-| **Clear**        | `clear`                                                                                                                                                                            |
-| **Delete**       | `delete EMAIL`<br> e.g., `delete betsycrowe@u.nus.edu`                                                                                                                             |
-| **Edit**         | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                        |
-| **Find**         | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                                         |
-| **List**         | `list`                                                                                                                                                                             |
-| **Create group** | `create`                                                                                                                                                                           |
-| **Exit**         | `exit`                                                                                                                                                                             |
-| **Help**         | `help`                                                                                                                                                                             |
+| Action           | Format, Examples                                                                                                                                                                                                                        |
+|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Add**          | `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION t/TUTORIALS sm/SOCIALMEDIA nt/NATIONALITY g/GENDER` <br> e.g., `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu t/05 d/I’m adept at Backend technologies nt/local g/f` |
+| **Clear**        | `clear`                                                                                                                                                                                                                                 |
+| **Delete**       | `delete EMAIL`<br> e.g., `delete betsycrowe@u.nus.edu`                                                                                                                                                                                  |
+| **Edit**         | `edit INDEX [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS] [sm/SOCIALMEDIA] [nt/NATIONALITY] [g/GENDER]` <br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                     |
+| **Find**         | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                                                                                              |
+| **List**         | `list`                                                                                                                                                                                                                                  |
+| **Create group** | `create`                                                                                                                                                                                                                                |
+| **Exit**         | `exit`                                                                                                                                                                                                                                  |
+| **Help**         | `help`                                                                                                                                                                                                                                  |
