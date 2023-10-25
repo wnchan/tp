@@ -45,7 +45,7 @@ public class JavaFxInitializer {
         }
 
         /**
-         * Perform cleanup logic if needed.
+         * Performs cleanup logic if needed.
          * This method can be overridden in subclasses to add custom cleanup logic.
          */
         public void cleanup() {
