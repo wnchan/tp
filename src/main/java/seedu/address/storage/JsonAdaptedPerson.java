@@ -134,7 +134,8 @@ class JsonAdaptedPerson {
             throw new ParseException(Description.MESSAGE_CONSTRAINTS);
         }
         if (nationality == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Nationality.class.getSimpleName()));
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
+                                                                Nationality.class.getSimpleName()));
         }
         if (!Nationality.isValidNationality(nationality)) {
             throw new IllegalValueException(Nationality.MESSAGE_CONSTRAINTS);

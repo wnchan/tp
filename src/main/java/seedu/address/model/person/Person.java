@@ -73,7 +73,8 @@ public class Person {
         return Collections.unmodifiableSet(socialMediaLinks);
     }
 
-    public Nationality getNationality() { return nationality; }
+    public Nationality getNationality() {
+        return nationality; }
 
     /**
      * Returns true if both persons have the same email.

@@ -9,8 +9,6 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import seedu.address.model.person.Person;
-import javafx.geometry.Insets;
-import javafx.scene.layout.HBox;
 
 /**
  * An UI component that displays information of a {@code Person}.

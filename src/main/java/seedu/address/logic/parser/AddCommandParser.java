@@ -58,7 +58,8 @@ public class AddCommandParser implements Parser<AddCommand> {
                 argMultimap.getAllValues(PREFIX_SOCIAL_MEDIA_LINK));
         Nationality nationality = ParserUtil.parseNationality(argMultimap.getValue(PREFIX_NATIONALITY).get());
 
-        Person person = new Person(name, major, year, email, description, tutorialSet, socialMediaLinkList, nationality);
+        Person person = new Person(name, major, year, email, description,
+                                    tutorialSet, socialMediaLinkList, nationality);
 
         return new AddCommand(person);
     }
