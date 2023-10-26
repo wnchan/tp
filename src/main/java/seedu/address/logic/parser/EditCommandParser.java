@@ -12,7 +12,6 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_YEAR;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -68,11 +67,13 @@ public class EditCommandParser implements Parser<EditCommand> {
             editPersonDescriptor.setDescription(
                     ParserUtil.parseDescription(argMultimap.getValue(PREFIX_DESCRIPTION).get()));
         }
-//        List<String> tutorialsStrings = argMultimap.getAllValues(PREFIX_TUTORIAL);
-//        if (!tutorialsStrings.isEmpty()) {
-//            Set<Tutorial> tutorialList = ParserUtil.parseTutorials(tutorialsStrings);
-//            editPersonDescriptor.setTutorials(tutorialList);
-//        }
+        /*
+        List<String> tutorialsStrings = argMultimap.getAllValues(PREFIX_TUTORIAL);
+        if (!tutorialsStrings.isEmpty()) {
+            Set<Tutorial> tutorialList = ParserUtil.parseTutorials(tutorialsStrings);
+            editPersonDescriptor.setTutorials(tutorialList);
+        }
+        */
         parseTutorialsForEdit(argMultimap.getAllValues(PREFIX_TUTORIAL))
                 .ifPresent(editPersonDescriptor::setTutorials);
 
@@ -89,9 +90,9 @@ public class EditCommandParser implements Parser<EditCommand> {
     private Optional<Set<Tutorial>> parseTutorialsForEdit(Collection<String> tutorials) throws ParseException {
         assert tutorials != null;
 
-//        if (tutorials.isEmpty()) {
-//            return Optional.empty();
-//        }
+        if (tutorials.isEmpty()) {
+            return Optional.empty();
+        }
         Collection<String> tutorialSet =
                 tutorials.size() == 1 && tutorials.contains("") ? Collections.emptySet() : tutorials;
         return Optional.of(ParserUtil.parseTutorials(tutorialSet));
