@@ -216,26 +216,35 @@ public class EditCommand extends Command {
             return Optional.ofNullable(description);
         }
 
+        /**
+         * Sets {@code tutorials} to this object's {@code tutorials}.
+         * A defensive copy of {@code tutorials} is used internally.
+         */
         public void setTutorials(Set<Tutorial> tutorials) {
-            this.tutorials = tutorials;
-        }
-
-        public Optional<Set<Tutorial>> getTutorials() {
-            return Optional.ofNullable(tutorials);
+            this.tutorials = (tutorials != null) ? new HashSet<>(tutorials) : null;
         }
 
         /**
-         * Sets {@code tags} to this object's {@code tags}.
-         * A defensive copy of {@code tags} is used internally.
+         * Returns an unmodifiable tutorial set, which throws {@code UnsupportedOperationException}
+         * if modification is attempted.
+         * Returns {@code Optional#empty()} if {@code tutorials} is null.
+         */
+        public Optional<Set<Tutorial>> getTutorials() {
+            return (tutorials != null) ? Optional.of(Collections.unmodifiableSet(tutorials)) : Optional.empty();
+        }
+
+        /**
+         * Sets {@code socialMediaLinks} to this object's {@code socialMediaLinks}.
+         * A defensive copy of {@code socialMediaLinks} is used internally.
          */
         public void setSocialMediaLinks(Set<SocialMediaLink> socialMediaLinks) {
             this.socialMediaLinks = (socialMediaLinks != null) ? new HashSet<>(socialMediaLinks) : null;
         }
 
         /**
-         * Returns an unmodifiable tag set, which throws {@code UnsupportedOperationException}
+         * Returns an unmodifiable social media link set, which throws {@code UnsupportedOperationException}
          * if modification is attempted.
-         * Returns {@code Optional#empty()} if {@code tags} is null.
+         * Returns {@code Optional#empty()} if {@code socialMediaLinks} is null.
          */
         public Optional<Set<SocialMediaLink>> getSocialMediaLinks() {
             return (socialMediaLinks != null) ? Optional.of(Collections.unmodifiableSet(socialMediaLinks))

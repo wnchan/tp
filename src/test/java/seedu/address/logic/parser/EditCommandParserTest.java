@@ -1,6 +1,5 @@
 package seedu.address.logic.parser;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.commands.CommandTestUtil.DESCRIPTION_DESC_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.DESCRIPTION_DESC_BOB;
@@ -11,18 +10,23 @@ import static seedu.address.logic.commands.CommandTestUtil.INVALID_EMAIL_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_MAJOR_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_NAME_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_SM_DESC;
+import static seedu.address.logic.commands.CommandTestUtil.INVALID_TUTORIAL_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_YEAR_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.MAJOR_DESC_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.MAJOR_DESC_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.NAME_DESC_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.SM_DESC_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.SM_DESC_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.TUTORIAL_DESC_AMY;
+import static seedu.address.logic.commands.CommandTestUtil.TUTORIAL_DESC_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_DESCRIPTION_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_MAJOR_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_SM_GITHUB_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_SM_LINKEDIN_AMY;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_TUT_FIRST_AMY;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_TUT_SECOND_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_YEAR_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_YEAR_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.YEAR_DESC_AMY;
@@ -31,17 +35,12 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_MAJOR;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_SOCIAL_MEDIA_LINK;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_YEAR;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseFailure;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseSuccess;
 import static seedu.address.testutil.TypicalEmails.EMAIL_FIRST_PERSON;
 import static seedu.address.testutil.TypicalEmails.EMAIL_SECOND_PERSON;
 import static seedu.address.testutil.TypicalEmails.EMAIL_THIRD_PERSON;
-
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 
@@ -99,6 +98,8 @@ public class EditCommandParserTest {
                 Email.MESSAGE_CONSTRAINTS); // invalid email
         assertParseFailure(parser, VALID_EMAIL_AMY + INVALID_DESCRIPTION_DESC,
                 Description.MESSAGE_CONSTRAINTS); // invalid description
+        assertParseFailure(parser, VALID_EMAIL_AMY + INVALID_TUTORIAL_DESC,
+                Tutorial.MESSAGE_CONSTRAINTS); // invalid tutorial
         assertParseFailure(parser, VALID_EMAIL_AMY + INVALID_SM_DESC,
                 SocialMediaLink.MESSAGE_CONSTRAINTS); // invalid social media link
 
@@ -106,8 +107,8 @@ public class EditCommandParserTest {
         assertParseFailure(parser, VALID_EMAIL_AMY + INVALID_YEAR_DESC + EMAIL_DESC_AMY,
                 Year.MESSAGE_CONSTRAINTS);
 
-        // while parsing {@code PREFIX_SOCIAL_MEDIA_LINK} alone will reset the tags of the {@code Person} being edited,
-        // parsing it together with a valid social media link results in error
+        // while parsing {@code PREFIX_SOCIAL_MEDIA_LINK} alone will reset the social media links of the {@code Person}
+        // being edited, parsing it together with a valid social media link results in error
         assertParseFailure(parser, VALID_EMAIL_AMY + SM_DESC_AMY + SOCIAL_MEDIA_LINK_EMPTY,
                 SocialMediaLink.MESSAGE_CONSTRAINTS);
         assertParseFailure(parser, VALID_EMAIL_AMY + SOCIAL_MEDIA_LINK_EMPTY + SM_DESC_AMY,
@@ -122,11 +123,11 @@ public class EditCommandParserTest {
     @Test
     public void parse_allFieldsSpecified_success() {
         String userInput = EMAIL_SECOND_PERSON + YEAR_DESC_BOB + SM_DESC_AMY
-                + EMAIL_DESC_AMY + DESCRIPTION_DESC_AMY + NAME_DESC_AMY + MAJOR_DESC_AMY;
+                + EMAIL_DESC_AMY + DESCRIPTION_DESC_AMY + NAME_DESC_AMY + MAJOR_DESC_AMY + TUTORIAL_DESC_AMY;
 
         EditPersonDescriptor descriptor = new EditPersonDescriptorBuilder().withName(VALID_NAME_AMY)
                 .withMajor(VALID_MAJOR_AMY).withYear(VALID_YEAR_BOB).withEmail(VALID_EMAIL_AMY)
-                .withDescription(VALID_DESCRIPTION_AMY)
+                .withDescription(VALID_DESCRIPTION_AMY).withTutorials(VALID_TUT_FIRST_AMY, VALID_TUT_SECOND_AMY)
                 .withSocialMediaLinks(VALID_SM_GITHUB_AMY, VALID_SM_LINKEDIN_AMY).build();
         EditCommand expectedCommand = new EditCommand(EMAIL_SECOND_PERSON, descriptor);
 
@@ -176,6 +177,12 @@ public class EditCommandParserTest {
         expectedCommand = new EditCommand(EMAIL_THIRD_PERSON, descriptor);
         assertParseSuccess(parser, userInput, expectedCommand);
 
+        // tutorial
+        userInput = EMAIL_THIRD_PERSON + TUTORIAL_DESC_AMY;
+        descriptor = new EditPersonDescriptorBuilder().withTutorials(VALID_TUT_FIRST_AMY, VALID_TUT_SECOND_AMY).build();
+        expectedCommand = new EditCommand(EMAIL_THIRD_PERSON, descriptor);
+        assertParseSuccess(parser, userInput, expectedCommand);
+
         // social media links
         userInput = EMAIL_THIRD_PERSON + SM_DESC_AMY;
         descriptor = new EditPersonDescriptorBuilder().withSocialMediaLinks(VALID_SM_LINKEDIN_AMY, VALID_SM_GITHUB_AMY)
@@ -201,8 +208,9 @@ public class EditCommandParserTest {
 
         // multiple valid fields repeated
         userInput = EMAIL_FIRST_PERSON + YEAR_DESC_AMY + DESCRIPTION_DESC_AMY + EMAIL_DESC_AMY + MAJOR_DESC_AMY
-                + SM_DESC_AMY + YEAR_DESC_AMY + DESCRIPTION_DESC_AMY + EMAIL_DESC_AMY + SM_DESC_AMY
-                + YEAR_DESC_BOB + DESCRIPTION_DESC_BOB + EMAIL_DESC_BOB + SM_DESC_BOB + MAJOR_DESC_BOB;
+                + SM_DESC_AMY + YEAR_DESC_AMY + DESCRIPTION_DESC_AMY + EMAIL_DESC_AMY + SM_DESC_AMY + TUTORIAL_DESC_AMY
+                + YEAR_DESC_BOB + DESCRIPTION_DESC_BOB + EMAIL_DESC_BOB + SM_DESC_BOB + MAJOR_DESC_BOB
+                + TUTORIAL_DESC_BOB;
 
         assertParseFailure(parser, userInput,
                 Messages.getErrorMessageForDuplicatePrefixes(PREFIX_MAJOR, PREFIX_YEAR, PREFIX_EMAIL,
@@ -211,7 +219,7 @@ public class EditCommandParserTest {
         // multiple invalid values
         userInput = EMAIL_FIRST_PERSON + INVALID_MAJOR_DESC + INVALID_YEAR_DESC + INVALID_DESCRIPTION_DESC
                 + INVALID_EMAIL_DESC + INVALID_MAJOR_DESC + INVALID_YEAR_DESC + INVALID_DESCRIPTION_DESC
-                + INVALID_EMAIL_DESC;
+                + INVALID_TUTORIAL_DESC + INVALID_EMAIL_DESC + INVALID_TUTORIAL_DESC;
 
         assertParseFailure(parser, userInput,
                 Messages.getErrorMessageForDuplicatePrefixes(PREFIX_MAJOR, PREFIX_YEAR, PREFIX_EMAIL,
@@ -226,26 +234,6 @@ public class EditCommandParserTest {
         EditCommand expectedCommand = new EditCommand(EMAIL_THIRD_PERSON, descriptor);
 
         assertParseSuccess(parser, userInput, expectedCommand);
-    }
-
-    @Test
-    public void parseTutorials_validInput_success() throws Exception {
-        String userInput = " " + PREFIX_TUTORIAL + "01 02 03";
-        ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(userInput, PREFIX_TUTORIAL);
-
-        EditPersonDescriptorBuilder descriptorBuilder = new EditPersonDescriptorBuilder();
-        List<String> tutorialsStrings = argMultimap.getAllValues(PREFIX_TUTORIAL);
-
-        if (!tutorialsStrings.isEmpty()) {
-            Set<Tutorial> tutorialSet = ParserUtil.parseTutorials(tutorialsStrings);
-            descriptorBuilder.withTutorials(tutorialSet);
-        }
-
-        EditPersonDescriptor expectedDescriptor = new EditPersonDescriptorBuilder()
-            .withTutorials(new HashSet<>(List.of(new Tutorial("01"), new Tutorial("02"), new Tutorial("03"))))
-            .build();
-
-        assertEquals(expectedDescriptor, descriptorBuilder.build());
     }
 
 }
