@@ -3,10 +3,30 @@ layout: page
 title: StudentConnect User Guide
 ---
 
-StudentConnect is a solution for hassle-free team formation for students to browse profiles and connect with others for group projects.
+StudentConnect is a solution for hassle-free team formation for students to browse profiles and connect with others for the CS2103T and CS2101 group project.
 
-* Table of Contents
-  {to be added}
+## Table of Contents
+
+---
+<a id="table-of-contents"></a>
+1. [Quick start](#quick-start)
+2. [Features](#features)
+    1. [Viewing help : `help`](#viewing-help--help)
+    2. [Adding a student : `add`](#adding-a-student--add)
+    3. [Listing all students : `list`](#listing-all-students--list)
+    4. [Editing a person : `edit`](#editing-a-person--edit)
+    5. [Finding a student by name: `find`](#finding-a-student-by-name-find)
+    6. [Deleting a person : `delete`](#deleting-a-person--delete)
+    7. [Clearing all entries : `clear`](#clearing-all-entries--clear)
+    8. [Creating a new group : `create`](#creating-a-new-group--create)
+    9. [Exiting the program : `exit`](#exiting-the-program--exit)
+    10. [Saving the data](#saving-the-data)
+    11. [Editing the data file](#editing-the-data-file)
+    12. [Archiving data files [coming in v2.0]](#archiving-data-files-coming-in-v20)
+3. [FAQ](#faq)
+4. [Known issues](#known-issues)
+5. [Command summary](#command-summary)
+
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -112,6 +132,11 @@ A student can have any number of social media links (including 0)
 #### Expected Output (Success):
 * GUI: New student entry added in the main student list
 * Message: “Details added successfully! New student added: (details of new student)”
+* Social Media Link can be clicked
+* The link will be opened on a browser upon clicking
+
+![social_media](images/socialMediaLinks.png)
+
 
 #### Expected Output (Failure):
 * Message:  "Invalid command format! add: Adds a person to StudentConnect. <br>
@@ -286,6 +311,9 @@ _Details coming soon ..._
 ## Known issues
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
+
+
+2. Hyperlinks not supported when you add **more than one social media account** (coming soon).
 
 --------------------------------------------------------------------------------------------------------------------
 
