@@ -99,7 +99,7 @@ Provides the requirements for forming a group.
 
 ![help message](images/helpMessage.png)
 
-![help window](images/helpWindow.png)
+![help window](images/help.png)
 
 ### Adding a student : `add`
 
