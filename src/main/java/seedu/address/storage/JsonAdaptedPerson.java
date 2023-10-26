@@ -34,7 +34,7 @@ class JsonAdaptedPerson {
     private final String year;
     private final String email;
     private final String description;
-    private final List<String> tutorials = new ArrayList<>();
+    private final List<JsonAdaptedTutorial> tutorials = new ArrayList<>();
     private final List<JsonAdaptedSocialMedia> socialMediaLinks = new ArrayList<>();
     private final String nationality;
     private final String gender;
@@ -48,7 +48,7 @@ class JsonAdaptedPerson {
                              @JsonProperty("year") String year,
                              @JsonProperty("email") String email,
                              @JsonProperty("description") String description,
-                             @JsonProperty("tutorials") List<String> tutorials,
+                             @JsonProperty("tutorials") List<JsonAdaptedTutorial> tutorials,
                              @JsonProperty("socialMediaLinks") List<JsonAdaptedSocialMedia> socialMediaLinks,
                              @JsonProperty("nationality") String nationality,
                              @JsonProperty("gender") String gender) {
@@ -77,7 +77,7 @@ class JsonAdaptedPerson {
         email = source.getEmail().value;
         description = source.getDescription().value;
         tutorials.addAll(source.getTutorials().stream()
-                .map(Tutorial::getValue)
+                .map(JsonAdaptedTutorial::new)
                 .collect(Collectors.toList()));
         socialMediaLinks.addAll(source.getSocialMediaLinks().stream()
                 .map(JsonAdaptedSocialMedia::new)
@@ -92,8 +92,12 @@ class JsonAdaptedPerson {
      * @throws IllegalValueException if there were any data constraints violated in the adapted person.
      */
     public Person toModelType() throws IllegalValueException {
-        final List<SocialMediaLink> personSocialMediaLinks = new ArrayList<>();
         final List<Tutorial> personTutorials = new ArrayList<>();
+        final List<SocialMediaLink> personSocialMediaLinks = new ArrayList<>();
+
+        for (JsonAdaptedTutorial tutorial : tutorials) {
+            personTutorials.add(tutorial.toModelType());
+        }
 
         for (JsonAdaptedSocialMedia socialMediaLink : socialMediaLinks) {
             personSocialMediaLinks.add(socialMediaLink.toModelType());
