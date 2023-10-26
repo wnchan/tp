@@ -353,6 +353,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* * *` | student | join a group on the app                                       | form a group for the course                 |
 | `* * *` | user    | exit the app                                                  | close the app                               |
 | `* *`   | student | seek help and check requirements for cs2101/cs2103t groupings | be more clear of the valid group formations |
+| `* * `  | student | be able to click the links of the social media to view them   | avoid wasting time typing links manually    |
 
 
 *{More to be added}*

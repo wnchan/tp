@@ -7,6 +7,7 @@
       "year": "2",
       "email": "alice@u.nus.edu",
       "description": "web dev",
+      "tutorials": ["01", "02"],
       "socialMediaLinks": ["https://www.linkedin.com/in/alice"]
     },
     {
@@ -15,6 +16,7 @@
       "year": "2",
       "email": "johnd@u.nus.edu",
       "description": "mobile dev",
+      "tutorials": ["03", "04"],
       "socialMediaLinks": ["https://github.com/benson", "https://www.linkedin.com/in/benson"]
     },
     {
@@ -23,6 +25,7 @@
       "year": "2",
       "email": "heinz@u.nus.edu",
       "description": "fe dev",
+      "tutorials": ["05", "06"],
       "socialMediaLinks": []
     },
     {
@@ -31,6 +34,7 @@
       "year": "2",
       "email": "cornelia@u.nus.edu",
       "description": "be dev",
+      "tutorials": ["07", "08"],
       "socialMediaLinks": ["https://www.linkedin.com/in/daniel"]
     },
     {
@@ -39,6 +43,7 @@
       "year": "2",
       "email": "werner@u.nus.edu",
       "description": "fe dev",
+      "tutorials": ["09", "10"],
       "socialMediaLinks": []
     },
     {
@@ -47,6 +52,7 @@
       "year": "2",
       "email": "lydia@u.nus.edu",
       "description": "be dev",
+      "tutorials": ["11", "12"],
       "socialMediaLinks": []
     },
     {
@@ -55,6 +61,7 @@
       "year": "2",
       "email": "anna@u.nus.edu",
       "description": "fe dev",
+      "tutorials": ["13", "14"],
       "socialMediaLinks": []
     }
   ]

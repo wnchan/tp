@@ -96,20 +96,28 @@ public class ParserUtil {
     }
 
     /**
+     * Parses a {@code String tutorial} into a {@code Tutorial}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code tutorial} is invalid.
+     */
+    public static Tutorial parseTutorial(String tutorial) throws ParseException {
+        requireNonNull(tutorial);
+        String trimmedTutorial = tutorial.trim();
+        if (!Tutorial.isValidTutorial(trimmedTutorial)) {
+            throw new ParseException(Tutorial.MESSAGE_CONSTRAINTS);
+        }
+        return new Tutorial(trimmedTutorial);
+    }
+
+    /**
      * Parses {@code Collection<String> tutorials} into a {@code Set<Tutorial>}.
-     * @throws ParseException if any of the given {@code tutorials} is invalid.
      */
     public static Set<Tutorial> parseTutorials(Collection<String> tutorials) throws ParseException {
         requireNonNull(tutorials);
-        Set<Tutorial> tutorialSet = new HashSet<>();
-        for (String tutorialString : tutorials) {
-            String[] tutorialTokens = tutorialString.split(" ");
-            for (String token : tutorialTokens) {
-                if (!Tutorial.isValidTutorial(token)) {
-                    throw new ParseException(Tutorial.MESSAGE_CONSTRAINTS);
-                }
-                tutorialSet.add(new Tutorial(token));
-            }
+        final Set<Tutorial> tutorialSet = new HashSet<>();
+        for (String tut : tutorials) {
+            tutorialSet.add(parseTutorial(tut));
         }
         return tutorialSet;
     }

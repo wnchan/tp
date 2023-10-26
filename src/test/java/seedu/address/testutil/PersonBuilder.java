@@ -70,13 +70,13 @@ public class PersonBuilder {
      * Parses the {@code socialMediaLinks} into a {@code Set<SocialMediaLink>} and set it to the {@code Person} that
      * we are building.
      */
-    public PersonBuilder withSocialMediaLinks(String ... socialMediaLinks) {
+    public PersonBuilder withSocialMediaLinks(String... socialMediaLinks) {
         this.socialMediaLinks = SampleDataUtil.getSocialMediaLinkSet(socialMediaLinks);
         return this;
     }
 
     /**
-     * Parses the {@code tutorials} into a {@code List<Tutorial>}
+     * Parses the {@code tutorials} into a {@code Set<Tutorial>}
      * and sets it to the {@code Person} that we are building.
      *
      * @param tutorials A varargs of tutorial strings. Tutorial strings should be a 2-digit number between 01 and 22.
