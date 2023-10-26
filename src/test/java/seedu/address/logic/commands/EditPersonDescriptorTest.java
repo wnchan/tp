@@ -72,7 +72,10 @@ public class EditPersonDescriptorTest {
                 + editPersonDescriptor.getEmail().orElse(null) + ", description="
                 + editPersonDescriptor.getTutorials().orElse(null) + ", tutorials="
                 + editPersonDescriptor.getDescription().orElse(null) + ", social media links="
-                + editPersonDescriptor.getSocialMediaLinks().orElse(null) + "}";
+                + editPersonDescriptor.getSocialMediaLinks().orElse(null) + ", nationality="
+                + editPersonDescriptor.getNationality().orElse(null) + ", gender="
+                + editPersonDescriptor.getGender().orElse(null) + "}";
+
         assertEquals(expected, editPersonDescriptor.toString());
     }
 }

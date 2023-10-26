@@ -46,9 +46,12 @@ public class PersonCard extends UiPart<Region> {
     private FlowPane socialMediaLinks;
     @FXML
     private Label nationality;
-
     @FXML
     private HBox nationalityBox;
+    @FXML
+    private Label gender;
+    @FXML
+    private HBox genderBox;
 
     /**
      * Creates a {@code PersonCode} with the given {@code Person} and index to display.
@@ -59,12 +62,23 @@ public class PersonCard extends UiPart<Region> {
         id.setText(displayedIndex + ". ");
         id.setStyle("-fx-font-size: 17px; -fx-text-fill: #E7BE34; -fx-font-family: 'Arial';");
         name.setText(person.getName().fullName);
-        nationality.setText(person.getNationality().value);
+        name.setStyle("-fx-font-size: 20px");
         if (person.getNationality().value.equals("local")) {
-            nationalityBox.setStyle("-fx-background-color: rgba(77,152,60,0.82); -fx-background-radius: 10;");
+            nationality.setText("Local");
+            nationalityBox.setStyle("-fx-background-color: rgba(101,152,60,0.82); -fx-background-radius: 10;");
         } else {
+            nationality.setText("Foreigner");
             nationalityBox.setStyle("-fx-background-color: rgba(17,63,3,0.68); -fx-background-radius: 10;");
         }
+        nationality.setStyle("-fx-font-size: 14px");
+        if (person.getGender().value.equals("M")) {
+            gender.setText("Male");
+            genderBox.setStyle("-fx-background-color: rgb(78,88,136); -fx-background-radius: 10;");
+        } else {
+            gender.setText("Female");
+            genderBox.setStyle("-fx-background-color: rgb(93,81,87); -fx-background-radius: 10;");
+        }
+        gender.setStyle("-fx-font-size: 14px; -fx-text-fill: white");
         major.setText(person.getMajor().value);
         year.setText("Y" + person.getYear().value);
         email.setText(person.getEmail().value);

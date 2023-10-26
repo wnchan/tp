@@ -5,6 +5,7 @@ import java.util.Set;
 
 import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
+import seedu.address.model.person.Gender;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Nationality;
@@ -24,6 +25,8 @@ public class PersonBuilder {
     public static final String DEFAULT_YEAR = "2";
     public static final String DEFAULT_EMAIL = "amy@u.nus.edu";
     public static final String DEFAULT_DESCRIPTION = "CS nerd";
+    public static final String DEFAULT_NATIONALITY = "local";
+    public static final String DEFAULT_GENDER = "F";
 
     private Name name;
     private Major major;
@@ -33,6 +36,7 @@ public class PersonBuilder {
     private Set<Tutorial> tutorials;
     private Set<SocialMediaLink> socialMediaLinks;
     private Nationality nationality;
+    private Gender gender;
 
     /**
      * Creates a {@code PersonBuilder} with the default details.
@@ -45,6 +49,8 @@ public class PersonBuilder {
         description = new Description(DEFAULT_DESCRIPTION);
         tutorials = new HashSet<>();
         socialMediaLinks = new HashSet<>();
+        nationality = new Nationality(DEFAULT_NATIONALITY);
+        gender = new Gender(DEFAULT_GENDER);
     }
 
     /**
@@ -58,6 +64,8 @@ public class PersonBuilder {
         description = personToCopy.getDescription();
         tutorials = new HashSet<>(personToCopy.getTutorials());
         socialMediaLinks = new HashSet<>(personToCopy.getSocialMediaLinks());
+        nationality = personToCopy.getNationality();
+        gender = personToCopy.getGender();
     }
 
     /**
@@ -130,8 +138,16 @@ public class PersonBuilder {
         return this;
     }
 
+    /**
+     * Sets the {@code Gender} of the {@code Person} that we are building.
+     */
+    public PersonBuilder withGender(String gender) {
+        this.gender = new Gender(gender);
+        return this;
+    }
+
     public Person build() {
-        return new Person(name, major, year, email, description, tutorials, socialMediaLinks, nationality);
+        return new Person(name, major, year, email, description, tutorials, socialMediaLinks, nationality, gender);
     }
 
 }

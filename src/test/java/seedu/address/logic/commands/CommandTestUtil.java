@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_GENDER;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_MAJOR;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NATIONALITY;
@@ -44,6 +45,8 @@ public class CommandTestUtil {
     public static final String VALID_SM_GITHUB_BOB = "https://github.com/bob";
     public static final String VALID_NATIONALITY_AMY = "local";
     public static final String VALID_NATIONALITY_BOB = "foreigner";
+    public static final String VALID_GENDER_AMY = "F";
+    public static final String VALID_GENDER_BOB = "M";
     public static final String NAME_DESC_AMY = " " + PREFIX_NAME + VALID_NAME_AMY;
     public static final String NAME_DESC_BOB = " " + PREFIX_NAME + VALID_NAME_BOB;
     public static final String MAJOR_DESC_AMY = " " + PREFIX_MAJOR + VALID_MAJOR_AMY;
@@ -61,6 +64,8 @@ public class CommandTestUtil {
             + PREFIX_SOCIAL_MEDIA_LINK + VALID_SM_GITHUB_BOB;
     public static final String NATIONALITY_DESC_AMY = " " + PREFIX_NATIONALITY + VALID_NATIONALITY_AMY;
     public static final String NATIONALITY_DESC_BOB = " " + PREFIX_NATIONALITY + VALID_NATIONALITY_BOB;
+    public static final String GENDER_DESC_AMY = " " + PREFIX_GENDER + VALID_GENDER_AMY;
+    public static final String GENDER_DESC_BOB = " " + PREFIX_GENDER + VALID_GENDER_BOB;
 
     public static final String INVALID_NAME_DESC = " " + PREFIX_NAME + "James&"; // '&' not allowed in names
     public static final String INVALID_MAJOR_DESC = " " + PREFIX_MAJOR + "Computer Games"; // not in list of majors
@@ -71,6 +76,7 @@ public class CommandTestUtil {
     public static final String INVALID_SM_DESC = " " + PREFIX_SOCIAL_MEDIA_LINK
             + "example.com"; // does not start with https://
     public static final String INVALID_NATIONALITY_DESC = " " + PREFIX_NATIONALITY + "Singaporean";
+    public static final String INVALID_GENDER_DESC = " " + PREFIX_GENDER + "MALE";
 
 
     public static final String PREAMBLE_WHITESPACE = "\t  \r  \n";
@@ -83,11 +89,11 @@ public class CommandTestUtil {
         DESC_AMY = new EditPersonDescriptorBuilder().withName(VALID_NAME_AMY).withMajor(VALID_MAJOR_AMY)
                 .withYear(VALID_YEAR_AMY).withEmail(VALID_EMAIL_AMY).withDescription(VALID_DESCRIPTION_AMY)
                 .withSocialMediaLinks(VALID_SM_LINKEDIN_AMY, VALID_SM_GITHUB_AMY)
-                .withNationality(VALID_NATIONALITY_AMY).build();
+                .withNationality(VALID_NATIONALITY_AMY).withGender(VALID_GENDER_AMY).build();
         DESC_BOB = new EditPersonDescriptorBuilder().withName(VALID_NAME_BOB).withMajor(VALID_MAJOR_BOB)
                 .withYear(VALID_YEAR_BOB).withEmail(VALID_EMAIL_BOB).withDescription(VALID_DESCRIPTION_BOB)
                 .withSocialMediaLinks(VALID_SM_LINKEDIN_BOB, VALID_SM_GITHUB_BOB)
-                .withNationality(VALID_NATIONALITY_BOB).build();
+                .withNationality(VALID_NATIONALITY_BOB).withGender(VALID_GENDER_BOB).build();
     }
 
     /**

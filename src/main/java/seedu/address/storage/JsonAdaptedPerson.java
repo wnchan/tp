@@ -13,6 +13,7 @@ import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
+import seedu.address.model.person.Gender;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Nationality;
@@ -36,6 +37,7 @@ class JsonAdaptedPerson {
     private final List<String> tutorials = new ArrayList<>();
     private final List<JsonAdaptedSocialMedia> socialMediaLinks = new ArrayList<>();
     private final String nationality;
+    private final String gender;
 
     /**
      * Constructs a {@code JsonAdaptedPerson} with the given person details.
@@ -48,7 +50,8 @@ class JsonAdaptedPerson {
                              @JsonProperty("description") String description,
                              @JsonProperty("tutorials") List<String> tutorials,
                              @JsonProperty("socialMediaLinks") List<JsonAdaptedSocialMedia> socialMediaLinks,
-                             @JsonProperty("nationality") String nationality) {
+                             @JsonProperty("nationality") String nationality,
+                             @JsonProperty("gender") String gender) {
         this.name = name;
         this.major = major;
         this.year = year;
@@ -61,6 +64,7 @@ class JsonAdaptedPerson {
             this.socialMediaLinks.addAll(socialMediaLinks);
         }
         this.nationality = nationality;
+        this.gender = gender;
     }
 
     /**
@@ -79,6 +83,7 @@ class JsonAdaptedPerson {
                 .map(JsonAdaptedSocialMedia::new)
                 .collect(Collectors.toList()));
         nationality = source.getNationality().value;
+        gender = source.getGender().value;
     }
 
     /**
@@ -140,15 +145,19 @@ class JsonAdaptedPerson {
         if (!Nationality.isValidNationality(nationality)) {
             throw new IllegalValueException(Nationality.MESSAGE_CONSTRAINTS);
         }
+
+        if (!Gender.isValidGender(gender)) {
+            throw new IllegalValueException(Gender.MESSAGE_CONSTRAINTS);
+        }
+
         final Nationality modelNationality = new Nationality(nationality);
+        final Gender modelGender = new Gender(gender);
         final Description modelDescription = new Description(description);
-
         final Set<Tutorial> modelTutorials = new HashSet<>(personTutorials);
-
         final Set<SocialMediaLink> modelSocialMediaLinks = new HashSet<>(personSocialMediaLinks);
 
         return new Person(modelName, modelMajor, modelYear, modelEmail, modelDescription,
-            modelTutorials, modelSocialMediaLinks, modelNationality);
+            modelTutorials, modelSocialMediaLinks, modelNationality, modelGender);
 
     }
 }
