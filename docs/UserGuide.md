@@ -125,7 +125,7 @@ A student can have any number of social media links (including 0)
 * Email: Valid email address ending in “@u.nus.edu”
 * Description: Maximum 150 characters
 * Tutorials: Two digit integers between 01 and 22 inclusive, each seperated by a space
-* Social Media Link: Valid URL format to social media account (optional to include)
+* Social Media Link: Valid URL format to social media account (optional to include). Multiple URLs can be added by using `sm/` repeatedly.
 * Nationality: Either 'local' or 'foreigner'
 * Gender: A single character, either 'm' or 'f'
 
@@ -136,7 +136,10 @@ A student can have any number of social media links (including 0)
 * The link will be opened on a browser upon clicking
 
 ![social_media](images/socialMediaLinks.png)
+<div style="text-align: center;"> Output with single social media link
 
+![social_media](images/multipleLinks.png)
+Output with multiple social media links</div>
 
 #### Expected Output (Failure):
 * Message:  "Invalid command format! add: Adds a person to StudentConnect. <br>
@@ -311,9 +314,6 @@ _Details coming soon ..._
 ## Known issues
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
-
-
-2. Hyperlinks not supported when you add **more than one social media account** (coming soon).
 
 --------------------------------------------------------------------------------------------------------------------
 
