@@ -91,15 +91,15 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 Shows a message explaining how to access the help page in the user guide and a button to copy the link.<br>
 Provides the requirements for forming a group.
 
-Format: `help`
+#### Format: `help`
 
-Expected Output:
+#### Expected Output:
 * GUI: Help window opened with help message, copy button and requirement message.
 * Message: “Opened help window.”
 
 ![help message](images/helpMessage.png)
 
-![help window](images/helpWindow.png)
+![help window](images/help.png)
 
 ### Adding a student : `add`
 
