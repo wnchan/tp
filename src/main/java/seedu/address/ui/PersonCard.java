@@ -63,13 +63,14 @@ public class PersonCard extends UiPart<Region> {
         id.setStyle("-fx-font-size: 17px; -fx-text-fill: #E7BE34; -fx-font-family: 'Arial';");
         name.setText(person.getName().fullName);
         name.setStyle("-fx-font-size: 20px");
-        nationality.setText(person.getNationality().value);
-        nationality.setStyle("-fx-font-size: 14px");
         if (person.getNationality().value.equals("local")) {
+            nationality.setText("Local");
             nationalityBox.setStyle("-fx-background-color: rgba(101,152,60,0.82); -fx-background-radius: 10;");
         } else {
+            nationality.setText("Foreigner");
             nationalityBox.setStyle("-fx-background-color: rgba(17,63,3,0.68); -fx-background-radius: 10;");
         }
+        nationality.setStyle("-fx-font-size: 14px");
         if (person.getGender().value.equals("M")) {
             gender.setText("Male");
             genderBox.setStyle("-fx-background-color: rgb(78,88,136); -fx-background-radius: 10;");
