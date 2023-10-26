@@ -2,8 +2,10 @@ package seedu.address.testutil;
 
 import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_GENDER;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_MAJOR;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_NATIONALITY;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_SOCIAL_MEDIA_LINK;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_YEAR;
 
@@ -39,6 +41,8 @@ public class PersonUtil {
         person.getSocialMediaLinks().stream().forEach(
             s -> sb.append(PREFIX_SOCIAL_MEDIA_LINK + s.socialMediaLink + " ")
         );
+        sb.append(PREFIX_NATIONALITY + person.getNationality().value + " ");
+        sb.append(PREFIX_GENDER + person.getGender().value + " ");
         return sb.toString();
     }
 
@@ -62,6 +66,9 @@ public class PersonUtil {
                         .append(" "));
             }
         }
+        descriptor.getNationality().ifPresent(nationality -> sb.append(PREFIX_NATIONALITY)
+                                                .append(nationality.value).append(" "));
+        descriptor.getGender().ifPresent(gender -> sb.append(PREFIX_GENDER).append(gender.value).append(" "));
         return sb.toString();
     }
 }
