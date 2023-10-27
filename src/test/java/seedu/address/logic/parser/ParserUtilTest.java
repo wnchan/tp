@@ -28,6 +28,7 @@ public class ParserUtilTest {
     private static final String INVALID_YEAR = "1.5";
     private static final String INVALID_DESCRIPTION = " ";
     private static final String INVALID_EMAIL = "example.com";
+    private static final String INVALID_TUTORIAL = "1";
     private static final String INVALID_SM = "#www.invalid.com";
 
     private static final String VALID_NAME = "Rachel Walker";
@@ -35,6 +36,8 @@ public class ParserUtilTest {
     private static final String VALID_YEAR = "2";
     private static final String VALID_DESCRIPTION = "Web Developer";
     private static final String VALID_EMAIL = "rachel@u.nus.edu";
+    private static final String VALID_TUTORIAL_FIRST = "01";
+    private static final String VALID_TUTORIAL_SECOND = "02";
     private static final String VALID_SM_LINKEDIN = "https://www.linkedin.com/in/rachel";
     private static final String VALID_SM_GITHUB = "https://github.com/rachel";
 
@@ -167,6 +170,56 @@ public class ParserUtilTest {
         String emailWithWhitespace = WHITESPACE + VALID_EMAIL + WHITESPACE;
         Email expectedEmail = new Email(VALID_EMAIL);
         assertEquals(expectedEmail, ParserUtil.parseEmail(emailWithWhitespace));
+    }
+
+    @Test
+    public void parseTutorial_null_throwsNullPointerException() {
+        assertThrows(NullPointerException.class, () -> ParserUtil.parseTutorial(null));
+    }
+
+    @Test
+    public void parseTutorial_invalidValue_throwsParseException() {
+        assertThrows(ParseException.class, () -> ParserUtil.parseTutorial(INVALID_TUTORIAL));
+    }
+
+    @Test
+    public void parseTutorial_validValueWithoutWhitespace_returnsTutorial() throws Exception {
+        Tutorial expectedTutorial = new Tutorial(VALID_TUTORIAL_FIRST);
+        assertEquals(expectedTutorial, ParserUtil.parseTutorial(VALID_TUTORIAL_FIRST));
+    }
+
+    @Test
+    public void parseTutorial_validValueWithWhitespace_returnsTrimmedTutorial() throws Exception {
+        String tutorialWithWhitespace = WHITESPACE + VALID_TUTORIAL_FIRST + WHITESPACE;
+        Tutorial expectedTutorial = new Tutorial(VALID_TUTORIAL_FIRST);
+        assertEquals(expectedTutorial, ParserUtil.parseTutorial(tutorialWithWhitespace));
+    }
+
+    @Test
+    public void parseTutorials_null_throwsNullPointerException() {
+        assertThrows(NullPointerException.class, () -> ParserUtil.parseTutorials(null));
+    }
+
+    @Test
+    public void parseTutorials_collectionWithInvalidTutorials_throwsParseException() {
+        assertThrows(ParseException.class, () ->
+                ParserUtil.parseTutorials(Arrays.asList(VALID_TUTORIAL_FIRST, INVALID_TUTORIAL)));
+    }
+
+    @Test
+    public void parseTutorials_emptyCollection_returnsEmptySet() throws Exception {
+        assertTrue(ParserUtil.parseTutorials(Collections.emptyList()).isEmpty());
+    }
+
+    @Test
+    public void parseTutorials_collectionWithValidTutorials_returnsTutorialSet() throws Exception {
+        Set<Tutorial> actualTutorialSet =
+                ParserUtil.parseTutorials(Arrays.asList(VALID_TUTORIAL_FIRST, VALID_TUTORIAL_SECOND));
+        Set<Tutorial> expectedTutorialSet =
+                new HashSet<Tutorial>(Arrays.asList(new Tutorial(VALID_TUTORIAL_FIRST),
+                        new Tutorial(VALID_TUTORIAL_SECOND)));
+
+        assertEquals(expectedTutorialSet, actualTutorialSet);
     }
 
     @Test

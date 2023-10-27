@@ -39,6 +39,7 @@ public class EditPersonDescriptorBuilder {
         descriptor.setYear(person.getYear());
         descriptor.setEmail(person.getEmail());
         descriptor.setDescription(person.getDescription());
+        descriptor.setTutorials(person.getTutorials());
         descriptor.setSocialMediaLinks(person.getSocialMediaLinks());
     }
 
@@ -87,8 +88,9 @@ public class EditPersonDescriptorBuilder {
      * {@code EditPersonDescriptor} that we are building.
      */
     public EditPersonDescriptorBuilder withSocialMediaLinks(String... socialMediaLinks) {
-        Set<SocialMediaLink> tagSet = Stream.of(socialMediaLinks).map(SocialMediaLink::new).collect(Collectors.toSet());
-        descriptor.setSocialMediaLinks(tagSet);
+        Set<SocialMediaLink> socialmediaSet = Stream.of(socialMediaLinks).map(SocialMediaLink::new)
+                .collect(Collectors.toSet());
+        descriptor.setSocialMediaLinks(socialmediaSet);
         return this;
     }
 
@@ -96,14 +98,11 @@ public class EditPersonDescriptorBuilder {
      * Parses the {@code tutorials} into a {@code Set<Tutorial>} and sets it to the {@code EditPersonDescriptor}
      * that we are building.
      */
-    public EditPersonDescriptorBuilder withTutorials(Set<Tutorial> tutorials) {
-        Set<Tutorial> tutorialSet = tutorials.stream()
-            .map((Tutorial tutorial) -> new Tutorial(tutorial.getValue()))
-            .collect(Collectors.toSet());
+    public EditPersonDescriptorBuilder withTutorials(String... tutorials) {
+        Set<Tutorial> tutorialSet = Stream.of(tutorials).map(Tutorial::new).collect(Collectors.toSet());
         descriptor.setTutorials(tutorialSet);
         return this;
     }
-
 
     public EditPersonDescriptor build() {
         return descriptor;
