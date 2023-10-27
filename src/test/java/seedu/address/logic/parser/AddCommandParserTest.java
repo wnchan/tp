@@ -95,7 +95,7 @@ public class AddCommandParserTest {
     @Test
     public void parse_repeatedNonSocialMediaLinkValue_failure() {
         String validExpectedPersonString = NAME_DESC_BOB + MAJOR_DESC_BOB + YEAR_DESC_BOB + EMAIL_DESC_BOB
-                + DESCRIPTION_DESC_BOB + TUTORIAL_DESC_BOB + SM_DESC_BOB  NATIONALITY_DESC_BOB + GENDER_DESC_BOB;
+                + DESCRIPTION_DESC_BOB + TUTORIAL_DESC_BOB + SM_DESC_BOB + NATIONALITY_DESC_BOB + GENDER_DESC_BOB;
         // multiple names
         assertParseFailure(parser, NAME_DESC_AMY + validExpectedPersonString,
                 Messages.getErrorMessageForDuplicatePrefixes(PREFIX_NAME));

@@ -40,8 +40,8 @@ public class TypicalPersons {
             .withTutorials("01", "02").withSocialMediaLinks("https://www.linkedin.com/in/alice")
             .withNationality("foreigner").withGender("F").build();
     public static final Person BENSON = new PersonBuilder().withName("Benson Meier").withMajor("Computer Science")
-            .withYear("2").withEmail("johnd@u.nus.edu").withDescription("mobile dev")
-            .withTutorials("02", "03").withSocialMediaLinks("https://www.linkedin.com/in/benson", "https://github.com/benson")
+            .withYear("2").withEmail("johnd@u.nus.edu").withDescription("mobile dev").withTutorials("02", "03")
+            .withSocialMediaLinks("https://www.linkedin.com/in/benson", "https://github.com/benson")
             .withNationality("local").withGender("M").build();
     public static final Person CARL = new PersonBuilder().withName("Carl Kurz").withMajor("Computer Science")
             .withYear("2").withEmail("heinz@u.nus.edu").withDescription("fe dev")
@@ -76,7 +76,7 @@ public class TypicalPersons {
             .withNationality(VALID_NATIONALITY_AMY).withGender(VALID_GENDER_AMY).build();
     public static final Person BOB = new PersonBuilder().withName(VALID_NAME_BOB).withMajor(VALID_MAJOR_BOB)
             .withYear(VALID_YEAR_BOB).withEmail(VALID_EMAIL_BOB).withDescription(VALID_DESCRIPTION_BOB)
-            .withTutorials(VALID_TUT_FIRST_AMY, VALID_TUT_SECOND_AMY)
+            .withTutorials(VALID_TUT_FIRST_BOB, VALID_TUT_SECOND_BOB)
             .withSocialMediaLinks(VALID_SM_LINKEDIN_BOB, VALID_SM_GITHUB_BOB)
             .withNationality(VALID_NATIONALITY_BOB).withGender(VALID_GENDER_BOB).build();
 
