@@ -67,6 +67,28 @@ public class StringUtil {
     }
 
     /**
+     * Returns true if the {@code list} contains the {@code tut}.
+     *   A full tutorial match is required.
+     *
+     * @param list cannot be null
+     * @param tut cannot be null, cannot be empty, must be a single number
+     */
+    public static boolean containsTutorial(String list, String tut) {
+        requireNonNull(list);
+        requireNonNull(tut);
+
+        String preppedTut = tut.trim();
+        checkArgument(!preppedTut.isEmpty(), "Tutorial parameter cannot be empty");
+        checkArgument(preppedTut.split("\\s+").length == 1, "Tutorial parameter should be a single number");
+
+        String preppedList = list;
+        String[] tutsInPreppedList = preppedList.split("\\s+");
+
+        return Arrays.stream(tutsInPreppedList)
+                .anyMatch(t -> t.contains(preppedTut));
+    }
+
+    /**
      * Returns a detailed message of the t, including the stack trace.
      */
     public static String getDetails(Throwable t) {

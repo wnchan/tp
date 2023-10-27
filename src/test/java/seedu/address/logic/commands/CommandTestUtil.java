@@ -7,6 +7,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_MAJOR;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_SOCIAL_MEDIA_LINK;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_YEAR;
 import static seedu.address.testutil.Assert.assertThrows;
 
@@ -37,6 +38,10 @@ public class CommandTestUtil {
     public static final String VALID_EMAIL_BOB = "bob@u.nus.edu";
     public static final String VALID_DESCRIPTION_AMY = "Frontend Developer";
     public static final String VALID_DESCRIPTION_BOB = "Backend Developer";
+    public static final String VALID_TUT_FIRST_AMY = "01";
+    public static final String VALID_TUT_SECOND_AMY = "02";
+    public static final String VALID_TUT_FIRST_BOB = "03";
+    public static final String VALID_TUT_SECOND_BOB = "04";
     public static final String VALID_SM_LINKEDIN_AMY = "https://www.linkedin.com/in/amy";
     public static final String VALID_SM_GITHUB_AMY = "https://github.com/amy";
     public static final String VALID_SM_LINKEDIN_BOB = "https://www.linkedin.com/in/bob";
@@ -52,7 +57,10 @@ public class CommandTestUtil {
     public static final String EMAIL_DESC_BOB = " " + PREFIX_EMAIL + VALID_EMAIL_BOB;
     public static final String DESCRIPTION_DESC_AMY = " " + PREFIX_DESCRIPTION + VALID_DESCRIPTION_AMY;
     public static final String DESCRIPTION_DESC_BOB = " " + PREFIX_DESCRIPTION + VALID_DESCRIPTION_BOB;
-
+    public static final String TUTORIAL_DESC_AMY = " " + PREFIX_TUTORIAL + VALID_TUT_FIRST_AMY + " "
+            + PREFIX_TUTORIAL + VALID_TUT_SECOND_AMY;
+    public static final String TUTORIAL_DESC_BOB = " " + PREFIX_TUTORIAL + VALID_TUT_FIRST_BOB + " "
+            + PREFIX_TUTORIAL + VALID_TUT_SECOND_BOB;
     public static final String SM_DESC_AMY = " " + PREFIX_SOCIAL_MEDIA_LINK + VALID_SM_LINKEDIN_AMY + " "
             + PREFIX_SOCIAL_MEDIA_LINK + VALID_SM_GITHUB_AMY;
     public static final String SM_DESC_BOB = " " + PREFIX_SOCIAL_MEDIA_LINK + VALID_SM_LINKEDIN_BOB + " "
@@ -64,6 +72,7 @@ public class CommandTestUtil {
     public static final String INVALID_EMAIL_DESC = " " + PREFIX_EMAIL + "bob!yahoo"; // missing '@' symbol
     public static final String INVALID_DESCRIPTION_DESC = " "
             + PREFIX_DESCRIPTION; // empty string not allowed for description
+    public static final String INVALID_TUTORIAL_DESC = " " + PREFIX_TUTORIAL + "1"; // not a 2 digit number
     public static final String INVALID_SM_DESC = " " + PREFIX_SOCIAL_MEDIA_LINK
             + "example.com"; // does not start with https://
 
@@ -76,9 +85,11 @@ public class CommandTestUtil {
     static {
         DESC_AMY = new EditPersonDescriptorBuilder().withName(VALID_NAME_AMY).withMajor(VALID_MAJOR_AMY)
                 .withYear(VALID_YEAR_AMY).withEmail(VALID_EMAIL_AMY).withDescription(VALID_DESCRIPTION_AMY)
+                .withTutorials(VALID_TUT_FIRST_AMY, VALID_TUT_SECOND_AMY)
                 .withSocialMediaLinks(VALID_SM_LINKEDIN_AMY, VALID_SM_GITHUB_AMY).build();
         DESC_BOB = new EditPersonDescriptorBuilder().withName(VALID_NAME_BOB).withMajor(VALID_MAJOR_BOB)
                 .withYear(VALID_YEAR_BOB).withEmail(VALID_EMAIL_BOB).withDescription(VALID_DESCRIPTION_BOB)
+                .withTutorials(VALID_TUT_FIRST_BOB, VALID_TUT_SECOND_BOB)
                 .withSocialMediaLinks(VALID_SM_LINKEDIN_BOB, VALID_SM_GITHUB_BOB).build();
     }
 

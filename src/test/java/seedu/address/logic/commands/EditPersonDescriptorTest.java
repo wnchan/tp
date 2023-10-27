@@ -10,6 +10,7 @@ import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_MAJOR_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_SM_LINKEDIN_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_TUT_FIRST_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_YEAR_BOB;
 
 import org.junit.jupiter.api.Test;
@@ -55,6 +56,10 @@ public class EditPersonDescriptorTest {
 
         // different description -> returns false
         editedAmy = new EditPersonDescriptorBuilder(DESC_AMY).withDescription(VALID_DESCRIPTION_BOB).build();
+        assertFalse(DESC_AMY.equals(editedAmy));
+
+        // different tutorial -> returns false
+        editedAmy = new EditPersonDescriptorBuilder(DESC_AMY).withTutorials(VALID_TUT_FIRST_BOB).build();
         assertFalse(DESC_AMY.equals(editedAmy));
 
         // different social media links -> returns false
