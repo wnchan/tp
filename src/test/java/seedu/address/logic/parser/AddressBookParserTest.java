@@ -57,12 +57,13 @@ public class AddressBookParserTest {
 
     @Test
     public void parseCommand_edit() throws Exception {
-        Person person = new PersonBuilder().build();
+        Person person = new PersonBuilder().withSocialMediaLinks("https://example.com").build();
         EditPersonDescriptor descriptor = new EditPersonDescriptorBuilder(person).build();
         EditCommand command = (EditCommand) parser.parseCommand(EditCommand.COMMAND_WORD + " "
-                + EMAIL_FIRST_PERSON + " " + PersonUtil.getEditPersonDescriptorDetails(descriptor));
+            + EMAIL_FIRST_PERSON + " " + PersonUtil.getEditPersonDescriptorDetails(descriptor));
         assertEquals(new EditCommand(EMAIL_FIRST_PERSON, descriptor), command);
     }
+
 
     @Test
     public void parseCommand_exit() throws Exception {

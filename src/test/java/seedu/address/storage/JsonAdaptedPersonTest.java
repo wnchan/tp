@@ -27,6 +27,8 @@ public class JsonAdaptedPersonTest {
     private static final String INVALID_TUTORIAL = "1";
     private static final String INVALID_SM = "#www.invalid.com";
 
+    private static final String INVALID_NATIONALITY = "singaporean";
+    private static final String INVALID_GENDER = "male";
     private static final String VALID_NAME = BENSON.getName().toString();
     private static final String VALID_MAJOR = BENSON.getMajor().toString();
     private static final String VALID_YEAR = BENSON.getYear().toString();
@@ -122,7 +124,6 @@ public class JsonAdaptedPersonTest {
         JsonAdaptedPerson person =
                 new JsonAdaptedPerson(VALID_NAME, VALID_MAJOR, VALID_YEAR, VALID_EMAIL,
                     INVALID_DESCRIPTION, VALID_TUTORIALS, VALID_SM);
-
         String expectedMessage = Description.MESSAGE_CONSTRAINTS;
         assertThrows(IllegalValueException.class, expectedMessage, person::toModelType);
     }
