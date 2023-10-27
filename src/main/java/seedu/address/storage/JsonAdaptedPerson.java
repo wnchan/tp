@@ -49,7 +49,9 @@ class JsonAdaptedPerson {
                              @JsonProperty("email") String email,
                              @JsonProperty("description") String description,
                              @JsonProperty("tutorials") List<JsonAdaptedTutorial> tutorials,
-                             @JsonProperty("socialMediaLinks") List<JsonAdaptedSocialMedia> socialMediaLinks) {
+                             @JsonProperty("socialMediaLinks") List<JsonAdaptedSocialMedia> socialMediaLinks,
+                             @JsonProperty("nationality") String nationality,
+                             @JsonProperty("gender") String gender) {
         this.name = name;
         this.major = major;
         this.year = year;
