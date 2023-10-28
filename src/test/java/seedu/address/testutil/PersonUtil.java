@@ -65,7 +65,7 @@ public class PersonUtil {
         if (descriptor.getTutorials().isPresent()) {
             Set<Tutorial> tutorials = descriptor.getTutorials().get();
             if (tutorials.isEmpty()) {
-                sb.append(PREFIX_TUTORIAL);
+                sb.append(PREFIX_TUTORIAL).append(" ");
             } else {
                 tutorials.forEach(t -> sb.append(PREFIX_TUTORIAL).append(t.value).append(" "));
             }
@@ -73,7 +73,7 @@ public class PersonUtil {
         if (descriptor.getSocialMediaLinks().isPresent()) {
             Set<SocialMediaLink> socialMediaLinks = descriptor.getSocialMediaLinks().get();
             if (socialMediaLinks.isEmpty()) {
-                sb.append(PREFIX_SOCIAL_MEDIA_LINK);
+                sb.append(PREFIX_SOCIAL_MEDIA_LINK).append(" ");
             } else {
                 socialMediaLinks.forEach(s -> sb.append(PREFIX_SOCIAL_MEDIA_LINK).append(s.socialMediaLink)
                         .append(" "));

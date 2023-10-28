@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
 import static seedu.address.testutil.Assert.assertThrows;
+import static seedu.address.testutil.TypicalGroups.GROUP1;
 import static seedu.address.testutil.TypicalPersons.ALICE;
 import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
 
@@ -49,7 +50,8 @@ public class AddressBookTest {
         // Two persons with the same identity fields
         Person editedAlice = new PersonBuilder(ALICE).withName(VALID_NAME_BOB).build();
         List<Person> newPersons = Arrays.asList(ALICE, editedAlice);
-        AddressBookStub newData = new AddressBookStub(newPersons);
+        List<Group> groups = Arrays.asList(GROUP1);
+        AddressBookStub newData = new AddressBookStub(newPersons, groups);
 
         assertThrows(DuplicatePersonException.class, () -> addressBook.resetData(newData));
     }
@@ -95,8 +97,9 @@ public class AddressBookTest {
         private final ObservableList<Person> persons = FXCollections.observableArrayList();
         private final ObservableList<Group> groups = FXCollections.observableArrayList();
 
-        AddressBookStub(Collection<Person> persons) {
+        AddressBookStub(Collection<Person> persons, Collection<Group> groups) {
             this.persons.setAll(persons);
+            this.groups.setAll(groups);
         }
 
         @Override
@@ -110,15 +113,7 @@ public class AddressBookTest {
         }
 
         @Override
-        public void sortGroups() {
-            FXCollections.sort(groups, new Comparator<Group>() {
-                @Override
-                public int compare(Group g1, Group g2) {
-                    return Integer.compare(g1.getNumber(), g2.getNumber());
-                }
-            });
-        }
-
+        public void sortGroups() {}
     }
 
 }
