@@ -107,6 +107,22 @@ public class EditPersonDescriptorBuilder {
         return this;
     }
 
+    /**
+     * Sets the {@code Nationality} of the {@code EditPersonDescriptor} that we are building.
+     */
+    public EditPersonDescriptorBuilder withNationality(String nationality) {
+        descriptor.setNationality(new Nationality(nationality));
+        return this;
+    }
+
+    /**
+     * Sets the {@code Gender} of the {@code EditPersonDescriptor} that we are building.
+     */
+    public EditPersonDescriptorBuilder withGender(String gender) {
+        descriptor.setGender(new Gender(gender));
+        return this;
+    }
+
     public EditPersonDescriptor build() {
         return descriptor;
     }

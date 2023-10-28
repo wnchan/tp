@@ -50,10 +50,10 @@ public class EditCommand extends Command {
             + "[" + PREFIX_YEAR + "YEAR] "
             + "[" + PREFIX_EMAIL + "EMAIL] "
             + "[" + PREFIX_DESCRIPTION + "DESCRIPTION] "
-            + "[" + PREFIX_TUTORIAL + "TUTORIAL]...\n"
-            + "[" + PREFIX_SOCIAL_MEDIA_LINK + "SOCIAL_MEDIA_LINK]...\n"
+            + "[" + PREFIX_TUTORIAL + "TUTORIAL]... "
+            + "[" + PREFIX_SOCIAL_MEDIA_LINK + "SOCIAL_MEDIA_LINK]... "
             + "[" + PREFIX_NATIONALITY + "NATIONALITY] "
-            + "[" + PREFIX_GENDER + "GENDER] "
+            + "[" + PREFIX_GENDER + "GENDER] \n"
             + "Example: " + COMMAND_WORD + " johnd@u.nus.edu "
             + PREFIX_YEAR + "3 "
             + PREFIX_EMAIL + "johndoe@u.nus.edu";

@@ -97,10 +97,12 @@ public class CommandTestUtil {
     static {
         DESC_AMY = new EditPersonDescriptorBuilder().withName(VALID_NAME_AMY).withMajor(VALID_MAJOR_AMY)
                 .withYear(VALID_YEAR_AMY).withEmail(VALID_EMAIL_AMY).withDescription(VALID_DESCRIPTION_AMY)
+                .withTutorials(VALID_TUT_FIRST_AMY, VALID_TUT_SECOND_AMY)
                 .withSocialMediaLinks(VALID_SM_LINKEDIN_AMY, VALID_SM_GITHUB_AMY)
-                .withNationality(VALID_NATIONALITY_AMY).withGender(VALID_GENDER_AMY).build();
+                .withNationality(VALID_NATIONALITY_BOB).withGender(VALID_GENDER_BOB).build();
         DESC_BOB = new EditPersonDescriptorBuilder().withName(VALID_NAME_BOB).withMajor(VALID_MAJOR_BOB)
                 .withYear(VALID_YEAR_BOB).withEmail(VALID_EMAIL_BOB).withDescription(VALID_DESCRIPTION_BOB)
+                .withTutorials(VALID_TUT_FIRST_BOB, VALID_TUT_SECOND_BOB)
                 .withSocialMediaLinks(VALID_SM_LINKEDIN_BOB, VALID_SM_GITHUB_BOB)
                 .withNationality(VALID_NATIONALITY_BOB).withGender(VALID_GENDER_BOB).build();
     }
