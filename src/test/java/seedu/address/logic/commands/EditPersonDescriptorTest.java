@@ -10,6 +10,7 @@ import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_MAJOR_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_SM_LINKEDIN_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_TUT_FIRST_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_YEAR_BOB;
 
 import org.junit.jupiter.api.Test;
@@ -57,6 +58,10 @@ public class EditPersonDescriptorTest {
         editedAmy = new EditPersonDescriptorBuilder(DESC_AMY).withDescription(VALID_DESCRIPTION_BOB).build();
         assertFalse(DESC_AMY.equals(editedAmy));
 
+        // different tutorial -> returns false
+        editedAmy = new EditPersonDescriptorBuilder(DESC_AMY).withTutorials(VALID_TUT_FIRST_BOB).build();
+        assertFalse(DESC_AMY.equals(editedAmy));
+
         // different social media links -> returns false
         editedAmy = new EditPersonDescriptorBuilder(DESC_AMY).withSocialMediaLinks(VALID_SM_LINKEDIN_BOB).build();
         assertFalse(DESC_AMY.equals(editedAmy));
@@ -72,7 +77,10 @@ public class EditPersonDescriptorTest {
                 + editPersonDescriptor.getEmail().orElse(null) + ", description="
                 + editPersonDescriptor.getTutorials().orElse(null) + ", tutorials="
                 + editPersonDescriptor.getDescription().orElse(null) + ", social media links="
-                + editPersonDescriptor.getSocialMediaLinks().orElse(null) + "}";
+                + editPersonDescriptor.getSocialMediaLinks().orElse(null) + ", nationality="
+                + editPersonDescriptor.getNationality().orElse(null) + ", gender="
+                + editPersonDescriptor.getGender().orElse(null) + "}";
+
         assertEquals(expected, editPersonDescriptor.toString());
     }
 }

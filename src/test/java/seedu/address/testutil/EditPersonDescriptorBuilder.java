@@ -7,8 +7,10 @@ import java.util.stream.Stream;
 import seedu.address.logic.commands.EditCommand.EditPersonDescriptor;
 import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
+import seedu.address.model.person.Gender;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
+import seedu.address.model.person.Nationality;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Year;
 import seedu.address.model.socialmedialink.SocialMediaLink;
@@ -39,7 +41,9 @@ public class EditPersonDescriptorBuilder {
         descriptor.setYear(person.getYear());
         descriptor.setEmail(person.getEmail());
         descriptor.setDescription(person.getDescription());
+        descriptor.setTutorials(person.getTutorials());
         descriptor.setSocialMediaLinks(person.getSocialMediaLinks());
+        descriptor.setNationality(person.getNationality());
     }
 
     /**
@@ -87,8 +91,9 @@ public class EditPersonDescriptorBuilder {
      * {@code EditPersonDescriptor} that we are building.
      */
     public EditPersonDescriptorBuilder withSocialMediaLinks(String... socialMediaLinks) {
-        Set<SocialMediaLink> tagSet = Stream.of(socialMediaLinks).map(SocialMediaLink::new).collect(Collectors.toSet());
-        descriptor.setSocialMediaLinks(tagSet);
+        Set<SocialMediaLink> socialmediaSet = Stream.of(socialMediaLinks).map(SocialMediaLink::new)
+                .collect(Collectors.toSet());
+        descriptor.setSocialMediaLinks(socialmediaSet);
         return this;
     }
 
@@ -96,14 +101,27 @@ public class EditPersonDescriptorBuilder {
      * Parses the {@code tutorials} into a {@code Set<Tutorial>} and sets it to the {@code EditPersonDescriptor}
      * that we are building.
      */
-    public EditPersonDescriptorBuilder withTutorials(Set<Tutorial> tutorials) {
-        Set<Tutorial> tutorialSet = tutorials.stream()
-            .map((Tutorial tutorial) -> new Tutorial(tutorial.getValue()))
-            .collect(Collectors.toSet());
+    public EditPersonDescriptorBuilder withTutorials(String... tutorials) {
+        Set<Tutorial> tutorialSet = Stream.of(tutorials).map(Tutorial::new).collect(Collectors.toSet());
         descriptor.setTutorials(tutorialSet);
         return this;
     }
 
+    /**
+     * Sets the {@code Nationality} of the {@code EditPersonDescriptor} that we are building.
+     */
+    public EditPersonDescriptorBuilder withNationality(String nationality) {
+        descriptor.setNationality(new Nationality(nationality));
+        return this;
+    }
+
+    /**
+     * Sets the {@code Gender} of the {@code EditPersonDescriptor} that we are building.
+     */
+    public EditPersonDescriptorBuilder withGender(String gender) {
+        descriptor.setGender(new Gender(gender));
+        return this;
+    }
 
     public EditPersonDescriptor build() {
         return descriptor;

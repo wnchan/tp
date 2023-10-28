@@ -4,15 +4,16 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_GENDER;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_MAJOR;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_NATIONALITY;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_SOCIAL_MEDIA_LINK;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_YEAR;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -37,7 +38,7 @@ public class EditCommandParser implements Parser<EditCommand> {
         requireNonNull(args);
         ArgumentMultimap argMultimap =
             ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_MAJOR, PREFIX_YEAR, PREFIX_EMAIL,
-                PREFIX_DESCRIPTION, PREFIX_TUTORIAL, PREFIX_SOCIAL_MEDIA_LINK);
+                PREFIX_DESCRIPTION, PREFIX_TUTORIAL, PREFIX_SOCIAL_MEDIA_LINK, PREFIX_NATIONALITY, PREFIX_GENDER);
 
         Email email;
 
@@ -48,7 +49,7 @@ public class EditCommandParser implements Parser<EditCommand> {
         }
 
         argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_NAME, PREFIX_MAJOR, PREFIX_YEAR, PREFIX_EMAIL,
-                PREFIX_DESCRIPTION);
+                PREFIX_DESCRIPTION, PREFIX_NATIONALITY, PREFIX_GENDER);
 
         EditPersonDescriptor editPersonDescriptor = new EditPersonDescriptor();
 
@@ -68,20 +69,44 @@ public class EditCommandParser implements Parser<EditCommand> {
             editPersonDescriptor.setDescription(
                     ParserUtil.parseDescription(argMultimap.getValue(PREFIX_DESCRIPTION).get()));
         }
+        /*
         List<String> tutorialsStrings = argMultimap.getAllValues(PREFIX_TUTORIAL);
         if (!tutorialsStrings.isEmpty()) {
             Set<Tutorial> tutorialList = ParserUtil.parseTutorials(tutorialsStrings);
             editPersonDescriptor.setTutorials(tutorialList);
         }
+        */
+        parseTutorialsForEdit(argMultimap.getAllValues(PREFIX_TUTORIAL))
+                .ifPresent(editPersonDescriptor::setTutorials);
 
         parseSocialMediaLinksForEdit(argMultimap.getAllValues(PREFIX_SOCIAL_MEDIA_LINK))
                 .ifPresent(editPersonDescriptor::setSocialMediaLinks);
+
+        if (argMultimap.getValue(PREFIX_NATIONALITY).isPresent()) {
+            editPersonDescriptor.setNationality(
+                ParserUtil.parseNationality(argMultimap.getValue(PREFIX_NATIONALITY).get()));
+        }
+
+        if (argMultimap.getValue(PREFIX_GENDER).isPresent()) {
+            editPersonDescriptor.setGender(ParserUtil.parseGender(argMultimap.getValue(PREFIX_GENDER).get()));
+        }
 
         if (!editPersonDescriptor.isAnyFieldEdited()) {
             throw new ParseException(EditCommand.MESSAGE_NOT_EDITED);
         }
 
         return new EditCommand(email, editPersonDescriptor);
+    }
+
+    private Optional<Set<Tutorial>> parseTutorialsForEdit(Collection<String> tutorials) throws ParseException {
+        assert tutorials != null;
+
+        if (tutorials.isEmpty()) {
+            return Optional.empty();
+        }
+        Collection<String> tutorialSet =
+                tutorials.size() == 1 && tutorials.contains("") ? Collections.emptySet() : tutorials;
+        return Optional.of(ParserUtil.parseTutorials(tutorialSet));
     }
 
     /**

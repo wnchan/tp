@@ -347,7 +347,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* * *` | student | add my personal details to the system                         | get other students to learn more about me   |
 | `* * *` | student | view the rest of the students in the course                   | see my options for choosing teammates       |
 | `* * *` | student | see the other student’s name, major, basic info etc           | make informed decisions                     |
-| `* * * ` | student | customise and update my profile details                       | ensure that my profile is up to date        |
+| `* * *` | student | customise and update my profile details                       | ensure that my profile is up to date        |
+| `* * *` | student | view other students in the same tutorial group                | communicate with them                       |
 | `* * *` | student | remove my personal details from the system                    | stop using the application                  |
 | `* * *` | student | join a group on the app                                       | form a group for the course                 |
 | `* * *` | user    | exit the app                                                  | close the app                               |
@@ -403,7 +404,20 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Extensions:**
 
-* 2a. The given keyword does not match any of the students’ names.
+* 2a. The given keyword(s) does not match any of the students’ names.
+
+    Use case ends.
+
+**Use Case: Filter students**
+
+**MSS**
+
+1. Student requests to filter students by tutorial slot.
+2. StudentConnect shows a list of students whose tutorial(s) contain the given slot.
+
+    Use case ends.
+
+* 2a. The given slot(s) does not match any of the students' tutorial slots.
 
     Use case ends.
 

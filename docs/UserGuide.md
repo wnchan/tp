@@ -15,14 +15,15 @@ StudentConnect is a solution for hassle-free team formation for students to brow
     2. [Adding a student : `add`](#adding-a-student--add)
     3. [Listing all students : `list`](#listing-all-students--list)
     4. [Editing a person : `edit`](#editing-a-person--edit)
-    5. [Finding a student by name: `find`](#finding-a-student-by-name-find)
-    6. [Deleting a person : `delete`](#deleting-a-person--delete)
-    7. [Clearing all entries : `clear`](#clearing-all-entries--clear)
-    8. [Creating a new group : `create`](#creating-a-new-group--create)
-    9. [Exiting the program : `exit`](#exiting-the-program--exit)
-    10. [Saving the data](#saving-the-data)
-    11. [Editing the data file](#editing-the-data-file)
-    12. [Archiving data files [coming in v2.0]](#archiving-data-files-coming-in-v20)
+    5. [Finding a student by name : `find`](#finding-a-student-by-name-find)
+    6. [Filter students by tutorial : `filter](#filtering-students-by-tutorial--filter)
+    7. [Deleting a person : `delete`](#deleting-a-person--delete)
+    8. [Clearing all entries : `clear`](#clearing-all-entries--clear)
+    9. [Creating a new group : `create`](#creating-a-new-group--create)
+    10. [Exiting the program : `exit`](#exiting-the-program--exit)
+    11. [Saving the data](#saving-the-data)
+    12. [Editing the data file](#editing-the-data-file)
+    13. [Archiving data files [coming in v2.0]](#archiving-data-files-coming-in-v20)
 3. [FAQ](#faq)
 4. [Known issues](#known-issues)
 5. [Command summary](#command-summary)
@@ -90,15 +91,15 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 Shows a message explaining how to access the help page in the user guide and a button to copy the link.<br>
 Provides the requirements for forming a group.
 
-Format: `help`
+#### Format: `help`
 
-Expected Output:
+#### Expected Output:
 * GUI: Help window opened with help message, copy button and requirement message.
 * Message: “Opened help window.”
 
 ![help message](images/helpMessage.png)
 
-![help window](images/helpWindow.png)
+![help window](images/help.png)
 
 ### Adding a student : `add`
 
@@ -196,7 +197,7 @@ Edits an existing student in the system.
 
 ![sample result for 'edit'](images/edit.png)
 
-### Finding a student by name: `find`
+### Finding a student by name : `find`
 
 Finds student(s) whose name(s) contain any of the given keywords.
 
@@ -206,7 +207,7 @@ Finds student(s) whose name(s) contain any of the given keywords.
 * The order of the keywords does not matter. e.g. `John Doe` will match `Doe John`
 * Only the name is searched.
 * Partial words can be matched. e.g. `John` will match `Johnny`
-* Persons matching at least one keyword will be returned (i.e. `OR` search).
+* Students matching at least one keyword will be returned (i.e. `OR` search).
   e.g. `John Crowe` will return `John Doe`, `Betsy Crowe`
 
 #### Examples:
@@ -218,8 +219,28 @@ Finds student(s) whose name(s) contain any of the given keywords.
 
 #### Expected Output (Failure):
 * Message: “Error: No keyword(s) provided.”
-* Message: “Error: Unable to find students with the given keyword(s).”
   ![result for 'find alex'](images/findAlexResult.png)
+
+### Filtering students by tutorial : `filter`
+
+Filters students by tutorial based on the given slots.
+
+#### Format: `filter SLOT [MORE SLOTS]`
+
+* The slots must be 2-digit numbers between 01 and 22 inclusive.
+* The order of the slots does not matter. e.g. `08 15` will match `15 08`
+* Only the tutorial is searched.
+* Students matching at least one tutorial slot will be returned (i.e. `OR` search). e.g. `03 12` will return `03 16`, `04 12`
+
+#### Examples:
+* `filter 10` returns `10`, `06 10` and `10 18`
+* `filter 12 16` returns `05 12`, `16 22`
+
+#### Expected Output(Success):
+* GUI: List of all student entries whose tutorial(s) match the slot(s) in the system
+
+#### Expected Output (Failure):
+* Message: “Error: No slot(s) provided.”
 
 ### Deleting a person : `delete`
 
@@ -327,6 +348,7 @@ _Details coming soon ..._
 | **Edit**         | `edit INDEX [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS] [sm/SOCIALMEDIA] [nt/NATIONALITY] [g/GENDER]` <br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                     |
 | **Find**         | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                                                                                              |
 | **List**         | `list`                                                                                                                                                                                                                                  |
+| **Filter**       | `filter SLOT [MORE_SLOTS]`<br> e.g., `find 05 11`                                                                                                                                                                                       |
 | **Create group** | `create`                                                                                                                                                                                                                                |
 | **Exit**         | `exit`                                                                                                                                                                                                                                  |
 | **Help**         | `help`                                                                                                                                                                                                                                  |

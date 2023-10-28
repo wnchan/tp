@@ -5,8 +5,10 @@ import java.util.Set;
 
 import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
+import seedu.address.model.person.Gender;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
+import seedu.address.model.person.Nationality;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Year;
 import seedu.address.model.socialmedialink.SocialMediaLink;
@@ -23,6 +25,8 @@ public class PersonBuilder {
     public static final String DEFAULT_YEAR = "2";
     public static final String DEFAULT_EMAIL = "amy@u.nus.edu";
     public static final String DEFAULT_DESCRIPTION = "CS nerd";
+    public static final String DEFAULT_NATIONALITY = "local";
+    public static final String DEFAULT_GENDER = "F";
 
     private Name name;
     private Major major;
@@ -31,6 +35,8 @@ public class PersonBuilder {
     private Description description;
     private Set<Tutorial> tutorials;
     private Set<SocialMediaLink> socialMediaLinks;
+    private Nationality nationality;
+    private Gender gender;
 
     /**
      * Creates a {@code PersonBuilder} with the default details.
@@ -43,6 +49,8 @@ public class PersonBuilder {
         description = new Description(DEFAULT_DESCRIPTION);
         tutorials = new HashSet<>();
         socialMediaLinks = new HashSet<>();
+        nationality = new Nationality(DEFAULT_NATIONALITY);
+        gender = new Gender(DEFAULT_GENDER);
     }
 
     /**
@@ -56,6 +64,8 @@ public class PersonBuilder {
         description = personToCopy.getDescription();
         tutorials = new HashSet<>(personToCopy.getTutorials());
         socialMediaLinks = new HashSet<>(personToCopy.getSocialMediaLinks());
+        nationality = personToCopy.getNationality();
+        gender = personToCopy.getGender();
     }
 
     /**
@@ -70,13 +80,13 @@ public class PersonBuilder {
      * Parses the {@code socialMediaLinks} into a {@code Set<SocialMediaLink>} and set it to the {@code Person} that
      * we are building.
      */
-    public PersonBuilder withSocialMediaLinks(String ... socialMediaLinks) {
+    public PersonBuilder withSocialMediaLinks(String... socialMediaLinks) {
         this.socialMediaLinks = SampleDataUtil.getSocialMediaLinkSet(socialMediaLinks);
         return this;
     }
 
     /**
-     * Parses the {@code tutorials} into a {@code List<Tutorial>}
+     * Parses the {@code tutorials} into a {@code Set<Tutorial>}
      * and sets it to the {@code Person} that we are building.
      *
      * @param tutorials A varargs of tutorial strings. Tutorial strings should be a 2-digit number between 01 and 22.
@@ -120,8 +130,24 @@ public class PersonBuilder {
         return this;
     }
 
+    /**
+     * Sets the {@code Nationality} of the {@code Person} that we are building.
+     */
+    public PersonBuilder withNationality(String nationality) {
+        this.nationality = new Nationality(nationality);
+        return this;
+    }
+
+    /**
+     * Sets the {@code Gender} of the {@code Person} that we are building.
+     */
+    public PersonBuilder withGender(String gender) {
+        this.gender = new Gender(gender);
+        return this;
+    }
+
     public Person build() {
-        return new Person(name, major, year, email, description, tutorials, socialMediaLinks);
+        return new Person(name, major, year, email, description, tutorials, socialMediaLinks, nationality, gender);
     }
 
 }
