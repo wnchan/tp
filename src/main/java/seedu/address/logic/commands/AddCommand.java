@@ -3,8 +3,10 @@ package seedu.address.logic.commands;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_GENDER;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_MAJOR;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_NATIONALITY;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_SOCIAL_MEDIA_LINK;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_YEAR;
@@ -29,16 +31,20 @@ public class AddCommand extends Command {
             + PREFIX_YEAR + "YEAR "
             + PREFIX_EMAIL + "EMAIL "
             + PREFIX_DESCRIPTION + "DESCRIPTION "
-            + "[" + PREFIX_TUTORIAL + "TUTORIAL]...\n "
-            + "[" + PREFIX_SOCIAL_MEDIA_LINK + "SOCIAL_MEDIA_LINK]...\n"
+            + "[" + PREFIX_TUTORIAL + "TUTORIAL]... "
+            + "[" + PREFIX_SOCIAL_MEDIA_LINK + "SOCIAL_MEDIA_LINK]... "
+            + PREFIX_NATIONALITY + "NATIONALITY "
+            + PREFIX_GENDER + "GENDER \n"
             + "Example: " + COMMAND_WORD + " "
             + PREFIX_NAME + "John Doe "
             + PREFIX_MAJOR + "Computer Science "
             + PREFIX_YEAR + "2 "
             + PREFIX_EMAIL + "johnd@u.nus.edu "
             + PREFIX_DESCRIPTION + "I love programming in my free time "
-            + PREFIX_TUTORIAL + "02 17 20 "
-            + PREFIX_SOCIAL_MEDIA_LINK + "https://www.linkedin.com/in/john-doe-123456789 ";
+            + PREFIX_TUTORIAL + "02 "
+            + PREFIX_SOCIAL_MEDIA_LINK + "https://www.linkedin.com/in/john-doe-123456789 "
+            + PREFIX_NATIONALITY + "local "
+            + PREFIX_GENDER + "M";
 
     public static final String MESSAGE_SUCCESS = "Details added successfully! New student added: %1$s";
     public static final String MESSAGE_DUPLICATE_PERSON = "This student is already on StudentConnect as this "

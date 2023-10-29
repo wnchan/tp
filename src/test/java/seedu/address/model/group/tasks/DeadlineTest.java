@@ -1,9 +1,12 @@
 package seedu.address.model.group.tasks;
 
-import java.time.format.DateTimeFormatter;
-import java.time.LocalDateTime;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import org.junit.jupiter.api.Test;
+
 import seedu.address.model.group.exceptions.TaskException;
 
 public class DeadlineTest {
@@ -23,4 +26,3 @@ public class DeadlineTest {
         assertEquals(expectedGenerateStr, deadline.generateStr());
     }
 }
-

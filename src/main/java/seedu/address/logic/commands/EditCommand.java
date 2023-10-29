@@ -3,8 +3,10 @@ package seedu.address.logic.commands;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_GENDER;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_MAJOR;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_NATIONALITY;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_SOCIAL_MEDIA_LINK;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_YEAR;
@@ -23,8 +25,10 @@ import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
+import seedu.address.model.person.Gender;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
+import seedu.address.model.person.Nationality;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Year;
 import seedu.address.model.socialmedialink.SocialMediaLink;
@@ -46,8 +50,10 @@ public class EditCommand extends Command {
             + "[" + PREFIX_YEAR + "YEAR] "
             + "[" + PREFIX_EMAIL + "EMAIL] "
             + "[" + PREFIX_DESCRIPTION + "DESCRIPTION] "
-            + "[" + PREFIX_TUTORIAL + "TUTORIAL]...\n"
-            + "[" + PREFIX_SOCIAL_MEDIA_LINK + "SOCIAL_MEDIA_LINK]...\n"
+            + "[" + PREFIX_TUTORIAL + "TUTORIAL]... "
+            + "[" + PREFIX_SOCIAL_MEDIA_LINK + "SOCIAL_MEDIA_LINK]... "
+            + "[" + PREFIX_NATIONALITY + "NATIONALITY] "
+            + "[" + PREFIX_GENDER + "GENDER] \n"
             + "Example: " + COMMAND_WORD + " johnd@u.nus.edu "
             + PREFIX_YEAR + "3 "
             + PREFIX_EMAIL + "johndoe@u.nus.edu";
@@ -111,9 +117,11 @@ public class EditCommand extends Command {
             .orElse(personToEdit.getTutorials());
         Set<SocialMediaLink> updatedSocialMediaLinks = editPersonDescriptor.getSocialMediaLinks()
             .orElse(personToEdit.getSocialMediaLinks());
+        Nationality updatedNationality = editPersonDescriptor.getNationality().orElse(personToEdit.getNationality());
+        Gender updatedGender = editPersonDescriptor.getGender().orElse(personToEdit.getGender());
 
-        return new Person(updatedName, updatedMajor, updatedYear, updatedEmail,
-                            updatedDescription, updatedTutorials, updatedSocialMediaLinks);
+        return new Person(updatedName, updatedMajor, updatedYear, updatedEmail, updatedDescription,
+                updatedTutorials, updatedSocialMediaLinks, updatedNationality, updatedGender);
     }
 
     @Override
@@ -152,6 +160,8 @@ public class EditCommand extends Command {
         private Description description;
         private Set<Tutorial> tutorials;
         private Set<SocialMediaLink> socialMediaLinks;
+        private Nationality nationality;
+        private Gender gender;
 
         public EditPersonDescriptor() {}
 
@@ -167,13 +177,16 @@ public class EditCommand extends Command {
             setDescription(toCopy.description);
             setTutorials(toCopy.tutorials);
             setSocialMediaLinks(toCopy.socialMediaLinks);
+            setNationality(toCopy.nationality);
+            setGender(toCopy.gender);
         }
 
         /**
          * Returns true if at least one field is edited.
          */
         public boolean isAnyFieldEdited() {
-            return CollectionUtil.isAnyNonNull(name, major, year, email, description, tutorials, socialMediaLinks);
+            return CollectionUtil.isAnyNonNull(name, major, year, email, description,
+                    tutorials, socialMediaLinks, nationality, gender);
         }
 
         public void setName(Name name) {
@@ -224,6 +237,21 @@ public class EditCommand extends Command {
             this.tutorials = (tutorials != null) ? new HashSet<>(tutorials) : null;
         }
 
+        public Optional<Nationality> getNationality() {
+            return Optional.ofNullable(nationality);
+        }
+
+        public void setNationality(Nationality nationality) {
+            this.nationality = nationality;
+        }
+
+        public Optional<Gender> getGender() {
+            return Optional.ofNullable(gender);
+        }
+
+        public void setGender(Gender gender) {
+            this.gender = gender;
+        }
         /**
          * Returns an unmodifiable tutorial set, which throws {@code UnsupportedOperationException}
          * if modification is attempted.
@@ -269,7 +297,9 @@ public class EditCommand extends Command {
                     && Objects.equals(email, otherEditPersonDescriptor.email)
                     && Objects.equals(description, otherEditPersonDescriptor.description)
                     && Objects.equals(tutorials, otherEditPersonDescriptor.tutorials)
-                    && Objects.equals(socialMediaLinks, otherEditPersonDescriptor.socialMediaLinks);
+                    && Objects.equals(socialMediaLinks, otherEditPersonDescriptor.socialMediaLinks)
+                    && Objects.equals(nationality, otherEditPersonDescriptor.nationality)
+                    && Objects.equals(gender, otherEditPersonDescriptor.gender);
         }
 
         @Override
@@ -282,6 +312,8 @@ public class EditCommand extends Command {
                     .add("description", description)
                     .add("tutorials", tutorials)
                     .add("social media links", socialMediaLinks)
+                    .add("nationality", nationality)
+                    .add("gender", gender)
                     .toString();
         }
     }
