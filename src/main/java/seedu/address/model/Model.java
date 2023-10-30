@@ -101,6 +101,15 @@ public interface Model {
      */
     void addPersonToGroup(Person person, Group group);
 
+    /** Returns an unmodifiable view of the filtered group list */
+    ObservableList<Group> getFilteredGroupList();
+
+    /**
+     * Updates the filter of the filtered group list to filter by the given {@code predicate}.
+     * @throws NullPointerException if {@code predicate} is null.
+     */
+    void updateFilteredGroupList(Predicate<Group> predicate);
+
     Optional<Person> getPersonWithEmail(Email email);
 
     Optional<Group> getGroupWithNumber(int number);

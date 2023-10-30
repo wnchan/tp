@@ -97,11 +97,6 @@ public class AddCommandTest {
         }
 
         @Override
-        public void addGroup(Group group) {
-            throw new AssertionError("This method should not be called.");
-        }
-
-        @Override
         public ReadOnlyUserPrefs getUserPrefs() {
             throw new AssertionError("This method should not be called.");
         }
@@ -172,7 +167,32 @@ public class AddCommandTest {
         }
 
         @Override
+        public ObservableList<Group> getFilteredGroupList() {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void updateFilteredGroupList(Predicate<Group> predicate) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
         public Optional<Person> getPersonWithEmail(Email email) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public Optional<Group> getGroupWithNumber(int number) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void addPersonToGroup(Person person, Group group) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public boolean personIsInAGroup(Person person) {
             throw new AssertionError("This method should not be called.");
         }
     }
