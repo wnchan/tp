@@ -34,14 +34,18 @@ public class JoinCommand extends Command {
     public static final String MESSAGE_JOIN_SUCCESS = "Join successful! %1$s\nhas joined %2$s!";
     public static final String MESSAGE_JOIN_EMAIL_NOT_FOUND = "Person with the provided email not found.";
     public static final String MESSAGE_JOIN_GROUP_NOT_FOUND = "Group with the provided group number not found.";
-    public static final String MESSAGE_PERSON_ALREADY_IN_GROUP = "The provided person is " +
-            "already a member of the provided group.";
+    public static final String MESSAGE_PERSON_ALREADY_IN_GROUP = "The provided person is "
+            + "already a member of the provided group.";
     public static final String MESSAGE_GROUP_FULL = "Join failed as the group already has 5 members.";
     public static final String MESSAGE_PERSON_IN_ANOTHER_GROUP = "The provided person is already in another group.";
 
     private final Email targetEmail;
     private final int targetGroupNumber;
 
+    /**
+     * @param targetEmail of the student to be added to the group
+     * @param targetGroupNumber group number
+     */
     public JoinCommand(Email targetEmail, int targetGroupNumber) {
         this.targetEmail = targetEmail;
         this.targetGroupNumber = targetGroupNumber;
