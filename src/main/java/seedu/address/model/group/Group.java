@@ -8,6 +8,7 @@ import java.util.Set;
 
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.person.Person;
+import seedu.address.model.tutorial.Tutorial;
 
 /**
  * Represents a Group in StudentConnect.
@@ -18,15 +19,18 @@ public class Group {
     private static final int MAXIMUM_SIZE = 5;
 
     private final int number;
+    private final Tutorial tutorial;
     private Set<Person> members = new HashSet<>();
 
     /**
      * Constructs a {@code Group}.
      *
      * @param number A valid group number.
+     * @param tutorial A valid tutorial group.
      */
-    public Group(int number) {
+    public Group(int number, Tutorial tutorial) {
         this.number = number;
+        this.tutorial = tutorial;
     }
 
     /**
@@ -35,8 +39,9 @@ public class Group {
      * @param number A valid group number.
      * @param members The members of the group.
      */
-    public Group(int number, Set<Person> members) {
+    public Group(int number, Tutorial tutorial, Set<Person> members) {
         this.number = number;
+        this.tutorial = tutorial;
         this.members = members;
     }
 
@@ -51,6 +56,10 @@ public class Group {
 
     public int getNumber() {
         return this.number;
+    }
+
+    public Tutorial getTutorial() {
+        return this.tutorial;
     }
 
     public Set<Person> getMembers() {
@@ -99,7 +108,7 @@ public class Group {
     }
 
     /**
-     * Returns true if both groups have the same number and members.
+     * Returns true if both groups have the same number, tutorial and members.
      * This defines a stronger notion of equality between two groups.
      */
     @Override
@@ -115,6 +124,7 @@ public class Group {
 
         Group otherGroup = (Group) other;
         return number == otherGroup.getNumber()
+                && tutorial.equals(otherGroup.tutorial)
                 && members.equals(otherGroup.members);
     }
 
@@ -122,6 +132,7 @@ public class Group {
     public String toString() {
         return new ToStringBuilder(this)
                 .add("group number", number)
+                .add("tutorial", tutorial)
                 .add("members", members)
                 .toString();
     }
