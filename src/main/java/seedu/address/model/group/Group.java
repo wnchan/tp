@@ -125,4 +125,16 @@ public class Group {
                 .add("members", members)
                 .toString();
     }
+
+    /**
+     * Removes a person from the group.
+     * @param person The person to be removed.
+     * @return True if the person was removed from the group, false if the person was not found in the group.
+     */
+    public boolean removeMember(Person person) {
+        return members.remove(person);
+    }
+
+
+
 }

@@ -136,6 +136,12 @@ public class ModelManager implements Model {
         return false;
     }
 
+    @Override
+    public void removePersonFromGroup(Person person, Group group) {
+        requireAllNonNull(person, group);
+        addressBook.removePersonFromGroup(person);
+    }
+
     //=========== Filtered Person List Accessors =============================================================
 
     /**
@@ -196,4 +202,5 @@ public class ModelManager implements Model {
 
         return Optional.empty();
     }
+
 }
