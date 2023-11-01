@@ -1,5 +1,7 @@
 package seedu.address.logic.commands;
 
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -8,8 +10,9 @@ import seedu.address.model.Model;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.group.Group;
 import seedu.address.model.group.exceptions.TaskException;
-import seedu.address.model.group.tasks.TaskList;
 import seedu.address.model.group.tasks.TaskInitializer;
+import seedu.address.model.group.tasks.TaskList;
+import seedu.address.model.tutorial.Tutorial;
 
 /**
  * Creates a new empty group.
@@ -19,17 +22,23 @@ public class CreateCommand extends Command {
     public static final String COMMAND_WORD = "create";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Creates a new empty group.\n"
-        + "Example: " + COMMAND_WORD;
+            + "Parameters: "
+            + PREFIX_TUTORIAL + "TUTORIAL "
+            + "Example: " + COMMAND_WORD + " "
+            + PREFIX_TUTORIAL + "02";
 
     public static final String MESSAGE_SUCCESS = "Group created successfully! Group number is %1$s";
+
+    private final Tutorial tutorial;
+
+    public CreateCommand(Tutorial tutorial) {
+        this.tutorial = tutorial;
+    }
 
     @Override
     public CommandResult execute(Model model) {
         int number = generateGroupNumber(model);
-
-        // Create the group
-        Group createdGroup = new Group(number);
-
+        Group createdGroup = new Group(number, tutorial);
         // Initialize the tasks and add them to the group
         TaskList initialTasks = null;
         try {

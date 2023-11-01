@@ -20,10 +20,12 @@ StudentConnect is a solution for hassle-free team formation for students to brow
     7. [Deleting a person : `delete`](#deleting-a-person--delete)
     8. [Clearing all entries : `clear`](#clearing-all-entries--clear)
     9. [Creating a new group : `create`](#creating-a-new-group--create)
-    10. [Exiting the program : `exit`](#exiting-the-program--exit)
-    11. [Saving the data](#saving-the-data)
-    12. [Editing the data file](#editing-the-data-file)
-    13. [Archiving data files [coming in v2.0]](#archiving-data-files-coming-in-v20)
+   10. [Marking a task as done : `mark`](#marking-a-task-as-done--mark)
+   11. [Marking a task as not done : `unmark`](#marking-a-task-as-not-done--unmark)
+   12. [Exiting the program : `exit`](#exiting-the-program--exit)
+   13. [Saving the data](#saving-the-data)
+   14. [Editing the data file](#editing-the-data-file)
+   15. [Archiving data files [coming in v2.0]](#archiving-data-files-coming-in-v20)
 3. [FAQ](#faq)
 4. [Known issues](#known-issues)
 5. [Command summary](#command-summary)
@@ -292,6 +294,64 @@ Expected Output(Failure):
 
 ![Exit](images/create.png)
 
+### Marking a task as done : `mark`
+
+Mark a task for a specified group as done.
+
+#### Format: `mark gr/[GROUP_NUMBER] ti/[TASK_INDEX]`
+
+* Marks the task of the specified group as done.
+
+#### Examples:
+*  `mark gr/2 ti/1` Marks task 1 of group 2 as done.
+*  `mark ti/2 gr/12` Marks task 2 of group 12 as done.
+
+#### Acceptable Values:
+* GROUP_NUMBER: Must be an integer value that is grater than 0 and a group number that is found in the group list.
+* TASK_INDEX: Must be an integer value that is greater than 0 and smaller than task size.
+
+#### Expected Output (Success):
+* GUI: The task in the specified group is marked as done and task list is updated.
+* Message: “Marked task number (ti) for group (gr) [and displays the updated task list]"
+
+#### Expected Output (Failure):
+* Message: “Invalid command format! mark: Mark task specified as done. Parameters: gr/[GROUP NUMBER] ti/[TASK INDEX] Example: mark gr/2 ti/3”
+* Message: “Group with the provided group number not found.”
+* Message: “Group number is not a non-zero unsigned integer.”
+* Message: “Task index must be a positive integer.”
+* Message: “Invalid task index. Task not found.”
+
+![sample result for 'mark'](images/mark.png)
+
+### Marking a task as not done : `unmark`
+
+Mark a task for a specified group as not done.
+
+#### Format: `unmark gr/[GROUP_NUMBER] ti/[TASK_INDEX]`
+
+* Marks the task of the specified group as not done.
+
+#### Examples:
+*  `unmark gr/7 ti/3` Marks task 3 of group 7 as not done.
+*  `unmark ti/5 gr/9` Marks task 5 of group 9 as not done.
+
+#### Acceptable Values:
+* GROUP_NUMBER: Must be an integer value that is grater than 0 and a group number that is found in the group list.
+* TASK_INDEX: Must be an integer value that is greater than 0 and smaller than task size.
+
+#### Expected Output (Success):
+* GUI: The task in the specified group is marked as not done and task list is updated.
+* Message: “Unmarked task number (ti) for group (gr) [and displays the updated task list]"
+
+#### Expected Output (Failure):
+* Message: “Invalid command format! unmark: Mark task specified as not done. Parameters: gr/[GROUP NUMBER] ti/[TASK INDEX] Example: unmark gr/2 ti/3”
+* Message: “Group with the provided group number not found.”
+* Message: “Group number is not a non-zero unsigned integer.”
+* Message: “Task index must be a positive integer.”
+* Message: “Invalid task index. Task not found.”
+
+![sample result for 'unmark'](images/unmark.png)
+
 ### Exiting the program : `exit`
 
 Exits the program.
@@ -350,5 +410,8 @@ _Details coming soon ..._
 | **List**         | `list`                                                                                                                                                                                                                                  |
 | **Filter**       | `filter SLOT [MORE_SLOTS]`<br> e.g., `find 05 11`                                                                                                                                                                                       |
 | **Create group** | `create`                                                                                                                                                                                                                                |
+| **Mark**         | `mark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `mark gr/2 ti/1`                                                                                                                                                                         |
+| **Unmark**       | `unmark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `unmark gr/5 ti/1`                                                                                                                                                                     |
 | **Exit**         | `exit`                                                                                                                                                                                                                                  |
 | **Help**         | `help`                                                                                                                                                                                                                                  |
+
