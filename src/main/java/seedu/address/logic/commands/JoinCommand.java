@@ -45,8 +45,8 @@ public class JoinCommand extends Command {
     /**
      * Constructs a {@code JoinCommand} with the specified email and group number to join a group.
      *
-     * @param targetEmail The email of the person to join the group.
-     * @param targetGroupNumber The number of the group to join.
+     * @param targetEmail of the student to be added to the group
+     * @param targetGroupNumber group number
      */
     public JoinCommand(Email targetEmail, int targetGroupNumber) {
         this.targetEmail = targetEmail;
