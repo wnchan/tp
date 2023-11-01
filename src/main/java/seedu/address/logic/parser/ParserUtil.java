@@ -201,4 +201,23 @@ public class ParserUtil {
         return Integer.parseInt(trimmedIndex);
     }
 
+    /**
+     * Parses a string into an integer task index.
+     *
+     * @param taskIndexString The string representation of the task index.
+     * @return The parsed integer task index.
+     * @throws ParseException if the specified task index is invalid (not a positive integer).
+     */
+    public static int parseTaskIndex(String taskIndexString) throws ParseException {
+        String trimmedIndex = taskIndexString.trim();
+        try {
+            int taskIndex = Integer.parseInt(trimmedIndex);
+            if (taskIndex <= 0) {
+                throw new ParseException("Task index must be a positive integer.");
+            }
+            return taskIndex;
+        } catch (NumberFormatException e) {
+            throw new ParseException("Invalid task index format.");
+        }
+    }
 }
