@@ -214,6 +214,13 @@ public class Task {
     }
 
     /**
+     * Marks the task as not done.
+     */
+    public void unMark() {
+        this.status = TaskStatus.NOT_DONE;
+    }
+
+    /**
      * Checks if the current task contains the specified keyword.
      *
      * @param keyword The keyword to search for within the task.

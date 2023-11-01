@@ -31,6 +31,9 @@ public class ModelManager implements Model {
 
     /**
      * Initializes a ModelManager with the given addressBook and userPrefs.
+     *
+     * @param addressBook The initial address book data.
+     * @param userPrefs The user preferences.
      */
     public ModelManager(ReadOnlyAddressBook addressBook, ReadOnlyUserPrefs userPrefs) {
         requireAllNonNull(addressBook, userPrefs);
@@ -43,6 +46,9 @@ public class ModelManager implements Model {
         filteredGroups = new FilteredList<>(this.addressBook.getGroupList());
     }
 
+    /**
+     * Default constructor for ModelManager.
+     */
     public ModelManager() {
         this(new AddressBook(), new UserPrefs());
     }
@@ -144,6 +150,13 @@ public class ModelManager implements Model {
         addressBook.removePersonFromGroup(person);
     }
 
+    /**
+     * Checks if the specified group exists in the address book.
+     *
+     * @param group The group to check for existence.
+     * @return True if the group exists, false otherwise.
+     * @throws NullPointerException if the given group is null.
+     */
     public boolean hasGroup(Group group) {
         requireNonNull(group);
         return addressBook.hasGroup(group);
