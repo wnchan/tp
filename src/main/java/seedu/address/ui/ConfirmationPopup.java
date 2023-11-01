@@ -1,5 +1,8 @@
 package seedu.address.ui;
 
+import java.util.function.Consumer;
+import java.util.logging.Logger;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -7,8 +10,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import seedu.address.commons.core.LogsCenter;
 
-import java.util.function.Consumer;
-import java.util.logging.Logger;
+
 
 /**
  * Controller for a confirmation popup
@@ -51,19 +53,11 @@ public class ConfirmationPopup extends UiPart<Stage> {
      *
      */
     public void show() {
-        confirmationMessage.setText("Are you sure you would like to delete all the data?\n" +  "You will not be able to undo this action later.");
+        confirmationMessage.setText("Are you sure you would like to delete all the data? \n"
+                + "You will not be able to undo this action later.");
         getLogger().fine("Showing confirmation popup.");
         getRoot().show();
         getRoot().centerOnScreen();
-    }
-
-    /**
-     * Returns true if the user confirmed the action.
-     *
-     * @return true if confirmed, false otherwise.
-     */
-    public boolean isConfirmed() {
-        return isConfirmed;
     }
 
     @FXML
