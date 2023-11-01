@@ -25,6 +25,7 @@ import seedu.address.model.Model;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.ReadOnlyUserPrefs;
 import seedu.address.model.group.Group;
+import seedu.address.model.group.tasks.TaskList;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Person;
 import seedu.address.testutil.PersonBuilder;
@@ -96,6 +97,7 @@ public class AddCommandTest {
         private Group group;
 
         private List<Person> personsAdded = new ArrayList<>();
+        private Person person;
 
         @Override
         public void addPerson(Person person) {
@@ -103,22 +105,15 @@ public class AddCommandTest {
             personsAdded.add(person);
         }
 
-
         @Override
         public void setUserPrefs(ReadOnlyUserPrefs userPrefs) {
             throw new AssertionError("This method should not be called.");
         }
 
         @Override
-
         public void addGroup(Group group) {
             this.group = group;
             throw new AssertionError("This method should not be called.");
-        }
-
-        @Override
-        public void addPersonToGroup(Person person, Group group) {
-
         }
 
         @Override
@@ -143,21 +138,6 @@ public class AddCommandTest {
 
         @Override
         public void setAddressBookFilePath(Path addressBookFilePath) {
-            throw new AssertionError("This method should not be called.");
-        }
-
-        @Override
-        public void addPerson(Person person) {
-            throw new AssertionError("This method should not be called.");
-        }
-
-        @Override
-        public void addGroup(Group group) {
-            throw new AssertionError("This method should not be called.");
-        }
-
-        @Override
-        public void addPersonToGroup(Person person, Group group) {
             throw new AssertionError("This method should not be called.");
         }
 
@@ -218,6 +198,8 @@ public class AddCommandTest {
 
         @Override
         public void addPersonToGroup(Person person, Group group) {
+            this.person = person;
+            this.group = group;
             throw new AssertionError("This method should not be called.");
         }
 
@@ -228,6 +210,21 @@ public class AddCommandTest {
 
         @Override
         public void removePersonFromGroup(Person person, Group group) {
+
+        }
+
+        @Override
+        public void addTasksToGroup(TaskList taskList, Group group) {
+
+        }
+
+        @Override
+        public boolean hasGroup(Group group) {
+            return false;
+        }
+
+        @Override
+        public void deleteGroup(Group group) {
 
         }
     }
@@ -251,11 +248,11 @@ public class AddCommandTest {
     }
 
     /**
-     * A Model stub that always accept the person being added.
+     * A Model stub that always accepts the person being added.
      */
     private class ModelStubAcceptingPersonAdded extends ModelStub {
-        final ArrayList<Person> personsAdded = new ArrayList<>();
-        final ArrayList<Group> groupsAdded = new ArrayList<>();
+        final ArrayList<Person> personsAdded = new ArrayList();
+        final ArrayList<Group> groupsAdded = new ArrayList();
 
         @Override
         public void addPerson(Person person) {

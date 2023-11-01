@@ -145,4 +145,10 @@ public interface Model {
      */
     boolean hasGroup(Group group);
 
+    /**
+     * Deletes the given group.
+     * The group must exist in StudentConnect.
+     */
+    void deleteGroup(Group group);
+
 }
