@@ -15,22 +15,23 @@ import seedu.address.model.group.exceptions.TaskException;
 public class Task {
     private static ArrayList<Task> arr = new ArrayList<>();
     private static int counter = 0;
+
     private String task;
     private TaskStatus status;
-
-    private Boolean isNotSaved;
+    private TaskModule module;
 
 
     /**
-     * Constructs a Task object with a task description and save status.
+     * Constructs a Task object with a task description, status, module, and save status.
      *
      * @param task       The description of the task.
-     * @param isNotSaved A boolean indicating whether the task is saved.
+     * @param status     The status of the task (complete or incomplete).
+     * @param module     The module the task is assigned to (CS2103T or CS2101).
      */
-    public Task(String task, Boolean isNotSaved) {
+    public Task(String task, TaskStatus status, TaskModule module) {
         this.task = task;
-        this.status = TaskStatus.NOT_DONE;
-        this.isNotSaved = isNotSaved;
+        this.status = status;
+        this.module = module;
 
         if (!task.isEmpty()) {
             addTask(this.task);
@@ -51,7 +52,7 @@ public class Task {
      */
     @Override
     public String toString() {
-        return status.toString() + " " + this.task;
+        return status.toString() + " " + this.module + " " + this.task;
     }
 
     /**
@@ -93,6 +94,15 @@ public class Task {
      */
     public void setStatus(TaskStatus taskStatus) {
         this.status = taskStatus;
+    }
+
+    /**
+     * Gets the module of the task.
+     *
+     * @return The module the task is assigned to.
+     */
+    public TaskModule getModule() {
+        return module;
     }
 
     /**
@@ -268,4 +278,3 @@ public class Task {
         return;
     }
 }
-

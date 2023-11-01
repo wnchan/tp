@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import seedu.address.commons.util.ToStringBuilder;
+import seedu.address.model.group.tasks.TaskList;
 import seedu.address.model.person.Person;
 
 /**
@@ -19,6 +20,7 @@ public class Group {
 
     private final int number;
     private Set<Person> members = new HashSet<>();
+    private TaskList tasks = new TaskList();
 
     /**
      * Constructs a {@code Group}.
@@ -34,10 +36,12 @@ public class Group {
      *
      * @param number A valid group number.
      * @param members The members of the group.
+     * @param tasks The initial tasks for the group.
      */
-    public Group(int number, Set<Person> members) {
+    public Group(int number, Set<Person> members, TaskList tasks) {
         this.number = number;
         this.members = members;
+        this.tasks = tasks;
     }
 
     /**
@@ -98,6 +102,14 @@ public class Group {
                 && otherGroup.getNumber() == this.number;
     }
 
+    public TaskList getTasks() {
+        return tasks;
+    }
+
+    public void addTasks(TaskList tasks) {
+        this.tasks.addTasks(tasks.getTasks());
+    }
+
     /**
      * Returns true if both groups have the same number and members.
      * This defines a stronger notion of equality between two groups.
@@ -123,6 +135,19 @@ public class Group {
         return new ToStringBuilder(this)
                 .add("group number", number)
                 .add("members", members)
+                .add("tasks", tasks)
                 .toString();
     }
+
+    /**
+     * Removes a person from the group.
+     * @param person The person to be removed.
+     * @return True if the person was removed from the group, false if the person was not found in the group.
+     */
+    public boolean removeMember(Person person) {
+        return members.remove(person);
+    }
+
+
+
 }

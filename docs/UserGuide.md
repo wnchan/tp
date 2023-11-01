@@ -16,7 +16,7 @@ StudentConnect is a solution for hassle-free team formation for students to brow
     3. [Listing all students : `list`](#listing-all-students--list)
     4. [Editing a person : `edit`](#editing-a-person--edit)
     5. [Finding a student by name : `find`](#finding-a-student-by-name-find)
-    6. [Filter students by tutorial : `filter](#filtering-students-by-tutorial--filter)
+    6. [Filter students by tutorial : `filter`](#filtering-students-by-tutorial--filter)
     7. [Deleting a person : `delete`](#deleting-a-person--delete)
     8. [Clearing all entries : `clear`](#clearing-all-entries--clear)
     9. [Creating a new group : `create`](#creating-a-new-group--create)
