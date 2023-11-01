@@ -4,7 +4,6 @@ import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
-import javafx.stage.Stage;
 import seedu.address.commons.util.ToStringBuilder;
 
 /**
