@@ -11,8 +11,8 @@ import seedu.address.ui.ConfirmationPopup;
 public class ClearCommand extends Command {
 
     public static final String COMMAND_WORD = "clear";
+
     public static final String MESSAGE_SUCCESS = "All student data has been cleared.";
-    public static final String MESSAGE_CANCELLED = "Clear operation was cancelled.";
 
     public static final String SHOWING_CONFIRMATION_MESSAGE = "Opened confirmation window.";
 
