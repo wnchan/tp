@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 public class TodoTest {
     @Test
     void testGenerateStr() {
-        Todo task1 = new Todo("task1", false);
-        Todo task2 = new Todo("task2", false);
+        Todo task1 = new Todo("task1", TaskStatus.CS2103_DONE, TaskModule.CS2103T);
+        Todo task2 = new Todo("task2", TaskStatus.CS2101_NOT_DONE, TaskModule.CS2101);
         task2.mark();
         assertEquals("T | 0 | task1",
                 task1.generateStr(), "Generate str of uncompleted task");
@@ -16,8 +16,8 @@ public class TodoTest {
 
     @Test
     void testToString() {
-        Todo task1 = new Todo("task1", false);
-        Todo task2 = new Todo("task2", false);
+        Todo task1 = new Todo("task1", TaskStatus.CS2103_DONE, TaskModule.CS2103T);
+        Todo task2 = new Todo("task2", TaskStatus.CS2101_NOT_DONE, TaskModule.CS2101);
         task2.mark();
         assertEquals("[T][ ] task1",
                 task1.toString(), "To String of uncompleted task");
