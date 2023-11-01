@@ -34,6 +34,7 @@ public class MainWindow extends UiPart<Stage> {
 
     // Independent Ui parts residing in this Ui container
     private PersonListPanel personListPanel;
+    private GroupListPanel groupListPanel;
     private ResultDisplay resultDisplay;
     private HelpWindow helpWindow;
 
@@ -49,6 +50,9 @@ public class MainWindow extends UiPart<Stage> {
 
     @FXML
     private StackPane personListPanelPlaceholder;
+
+    @FXML
+    private StackPane groupListPanelPlaceholder;
 
     @FXML
     private StackPane resultDisplayPlaceholder;
@@ -121,6 +125,8 @@ public class MainWindow extends UiPart<Stage> {
         personListPanel = new PersonListPanel(logic.getFilteredPersonList());
         personListPanelPlaceholder.getChildren().add(personListPanel.getRoot());
 
+        groupListPanel = new GroupListPanel(logic.getFilteredGroupList());
+
         resultDisplay = new ResultDisplay();
         resultDisplayPlaceholder.getChildren().add(resultDisplay.getRoot());
 
@@ -177,7 +183,7 @@ public class MainWindow extends UiPart<Stage> {
      */
     @FXML
     private void handleExit() {
-        PauseTransition pause = new PauseTransition(Duration.seconds(2));
+        PauseTransition pause = new PauseTransition(Duration.seconds(1.6));
         pause.setOnFinished(event -> {
             GuiSettings guiSettings = new GuiSettings(primaryStage.getWidth(), primaryStage.getHeight(),
                     (int) primaryStage.getX(), (int) primaryStage.getY());
@@ -188,10 +194,34 @@ public class MainWindow extends UiPart<Stage> {
         pause.play();
     }
 
+    /**
+     * Displays the group UI.
+     */
+    @FXML
+    public void handleGroupCommand() {
+        personListPanelPlaceholder.getChildren().remove(personListPanel.getRoot());
+        if (!groupListPanelPlaceholder.getChildren().contains(groupListPanel.getRoot())) {
+            groupListPanelPlaceholder.getChildren().add(groupListPanel.getRoot());
+        }
+    }
 
+    /**
+     * Displays the normal UI.
+     */
+    @FXML
+    public void handlePersonCommand() {
+        groupListPanelPlaceholder.getChildren().remove(groupListPanel.getRoot());
+        if (!personListPanelPlaceholder.getChildren().contains(personListPanel.getRoot())) {
+            personListPanelPlaceholder.getChildren().add(personListPanel.getRoot());
+        }
+    }
 
     public PersonListPanel getPersonListPanel() {
         return personListPanel;
+    }
+
+    public GroupListPanel getGroupListPanel() {
+        return groupListPanel;
     }
 
     /**
@@ -210,6 +240,12 @@ public class MainWindow extends UiPart<Stage> {
 
             if (commandResult.isExit()) {
                 handleExit();
+            }
+
+            if (commandResult.isGroupCommand()) {
+                handleGroupCommand();
+            } else {
+                handlePersonCommand();
             }
 
             if (commandResult.isClear()) {

@@ -50,7 +50,8 @@ public class CreateCommand extends Command {
 
         model.addGroup(createdGroup);
 
-        return new CommandResult(String.format(MESSAGE_SUCCESS, createdGroup.getNumber()));
+        return new CommandResult(String.format(MESSAGE_SUCCESS, createdGroup.getNumber()),
+                false, false, true, false);
     }
 
     /**
