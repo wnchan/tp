@@ -5,8 +5,11 @@ import java.util.Optional;
 import java.util.function.Predicate;
 
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.model.group.Group;
+import seedu.address.model.group.tasks.Task;
+import seedu.address.model.group.tasks.TaskList;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Person;
 
@@ -119,4 +122,18 @@ public interface Model {
      * @param group The group from which the person should be removed.
      */
     void removePersonFromGroup(Person person, Group group);
+
+    /**
+     * Adds the given {@code TaskList} to the give {@code Group}.
+     *
+     * @param taskList The taskList to be added.
+     * @param group The group that the person will be added to.
+     */
+    void addTasksToGroup(TaskList taskList, Group group);
+
+    /**
+     * Returns true if a group with the same identity as {@code group} exists in StudentConnect.
+     */
+    boolean hasGroup(Group group);
+
 }

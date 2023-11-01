@@ -110,6 +110,7 @@ public class AddCommandTest {
         }
 
         @Override
+
         public void addGroup(Group group) {
             this.group = group;
             throw new AssertionError("This method should not be called.");
@@ -142,6 +143,21 @@ public class AddCommandTest {
 
         @Override
         public void setAddressBookFilePath(Path addressBookFilePath) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void addPerson(Person person) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void addGroup(Group group) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void addPersonToGroup(Person person, Group group) {
             throw new AssertionError("This method should not be called.");
         }
 

@@ -15,24 +15,22 @@ public class Deadline extends Task {
     private LocalDateTime by;
 
     /**
-     * Initializes a new `Deadline` task with the specified description and deadline.
+     * Initializes a new `Deadline` task with the specified description, status, module, and deadline.
      *
-     * @param task The description of the task.
-     * @param isNotSaved A boolean indicating whether the task needs to be saved.
-     * @param by The deadline of the task in string format (dd/MM/yyyy).
+     * @param task       The description of the task.
+     * @param status     The status of the task (complete or incomplete).
+     * @param module     The module the task is assigned to (CS2103T or CS2101).
+     * @param by         The deadline of the task in string format (dd/MM/yyyy).
      * @throws TaskException If there is an issue parsing the deadline format.
      */
-    public Deadline(String task, Boolean isNotSaved, String by) throws TaskException {
-        super(task, isNotSaved);
+    public Deadline(String task, TaskStatus status, TaskModule module, String by) throws TaskException {
+        super(task, status, module);
         try {
             this.by = parseDateTime(by);
             this.byStr = by;
 
         } catch (Exception e) {
             throw new TaskException("Invalid date format :< Please use dd/MM/yyyy\n");
-        }
-        if (isNotSaved) {
-            saveToFile();
         }
     }
 
@@ -66,9 +64,10 @@ public class Deadline extends Task {
      *
      * @return A formatted string representing the `Deadline` task for file storage.
      */
+    @Override
     public String generateStr() {
-        return "D | " + (this.getStatus() == TaskStatus.DONE ? 1 : 0)
-                + " | " + this.getTask() + " | " + byStr;
+        return "D | " + this.getStatus()
+            + " | " + this.getTask() + " | " + byStr + " | " + this.getModule();
     }
 
     /*/**
@@ -82,4 +81,3 @@ public class Deadline extends Task {
     }*/
 
 }
-

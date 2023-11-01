@@ -11,17 +11,17 @@ import seedu.address.model.group.exceptions.TaskException;
 
 public class DeadlineTest {
     void testToString() throws TaskException {
-        Deadline deadline = new Deadline("Finish assignment", false, "23/09/2023 1300");
+        Deadline deadline = new Deadline("Finish assignment", TaskStatus.CS2101_NOT_DONE, TaskModule.CS2101,"23/09/2023 1300");
         DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("MMM dd yyyy h:mm a");
         String expectedFormattedDateTime = LocalDateTime.parse("23/09/2023 1300",
                 DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm")).format(outputFormatter);
-        String expectedToString = "[D][ ] Finish assignment (by: " + expectedFormattedDateTime + ")";
+        String expectedToString = "[D][ ] CS2101 Finish assignment (by: " + expectedFormattedDateTime + ")";
         assertEquals(expectedToString, deadline.toString());
     }
 
     @Test
     void testGenerateStr() throws TaskException {
-        Deadline deadline = new Deadline("Finish assignment", false, "23/09/2023 1300");
+        Deadline deadline = new Deadline("Finish assignment", TaskStatus.CS2103_DONE, TaskModule.CS2103T, "23/09/2023 1300");
         String expectedGenerateStr = "D | 0 | Finish assignment | 23/09/2023 1300";
         assertEquals(expectedGenerateStr, deadline.generateStr());
     }
