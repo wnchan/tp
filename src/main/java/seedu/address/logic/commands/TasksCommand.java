@@ -1,16 +1,13 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
-
 import java.util.Optional;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.group.Group;
-import seedu.address.model.group.exceptions.GroupNotFoundException;
 import seedu.address.model.group.exceptions.TaskException;
-import seedu.address.model.group.tasks.Task;
-import seedu.address.model.group.tasks.TaskList;
 import seedu.address.model.group.tasks.TaskInitializer;
+import seedu.address.model.group.tasks.TaskList;
 
 public class TasksCommand extends Command {
 
@@ -44,6 +41,15 @@ public class TasksCommand extends Command {
         Group group = optionalGroup.get();
 
         TaskList taskList = group.getTasks();
+
+        if (taskList.isEmpty()) {
+            try {
+                taskList = TaskInitializer.initializeTasks();
+            } catch (TaskException e) {
+                throw new RuntimeException(e);
+            }
+            group.addTasks(taskList);
+        }
 
         String displayedTasks = taskList.toString();
 

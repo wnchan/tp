@@ -15,6 +15,8 @@ public class JsonAdaptedTask {
     private final String task;
     private final String status;
     private final String module;
+    private final String type;
+    private final String by;
 
     /**
      * Constructs a {@code JsonAdaptedTask} with the given task details.
@@ -22,10 +24,14 @@ public class JsonAdaptedTask {
     @JsonCreator
     public JsonAdaptedTask(@JsonProperty("task") String task,
                            @JsonProperty("status") String status,
-                           @JsonProperty("module") String module) {
+                           @JsonProperty("module") String module,
+                           @JsonProperty("type") String type,
+                           @JsonProperty("by") String by){
         this.task = task;
         this.status = status;
         this.module = module;
+        this.type = type;
+        this.by = by;
     }
 
     /**
@@ -35,6 +41,8 @@ public class JsonAdaptedTask {
         task = source.getTask();
         status = source.getStatus().toString();
         module = source.getModule().toString();
+        type = source.getType();
+        by = source.getBy();
     }
 
     /**
@@ -63,6 +71,14 @@ public class JsonAdaptedTask {
         }
         final TaskModule modelModule = TaskModule.valueOf(module);
 
-        return new Task(task, modelStatus, modelModule);
+        if (type == null) {
+            throw new IllegalValueException("Task's type is missing!");
+        }
+
+        if (by == null) {
+            throw new IllegalValueException("Task's deadline is missing!");
+        }
+
+        return new Task(task, modelStatus, modelModule, type, by);
     }
 }

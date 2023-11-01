@@ -27,7 +27,7 @@ public class Event extends Task {
      * @throws TaskException If the date/time format is invalid.
      */
     public Event(String task, TaskStatus status, TaskModule module, String from, String to) throws TaskException {
-        super(task, status, module);
+        super(task, status, module, "E", to);
         this.fromStr = from;
         this.toStr = to;
         try {

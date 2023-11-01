@@ -6,7 +6,7 @@ import java.util.List;
 import seedu.address.model.group.exceptions.TaskException;
 
 public class TaskList {
-    private List<Task> tasks; // List for tasks
+    private List<Task> tasks;
 
     public TaskList() {
         tasks = new ArrayList<>();
@@ -66,8 +66,9 @@ public class TaskList {
             } else {
                 tempStatus = "[X]";
             }
-            result.append(tempStatus).append(" ").append(task.getModule()).append(" ")
-                .append(task.getTask()).append("\n");
+            result.append(task.getType()).append(tempStatus).append(" ").append(task.getModule()).append(" ")
+                .append(task.getTask()).append(" ").append(task.getBy()).append("\n");
+
         }
         return String.valueOf(result);
     }

@@ -4,8 +4,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-
 import seedu.address.model.group.exceptions.TaskException;
 
 
@@ -13,13 +11,13 @@ import seedu.address.model.group.exceptions.TaskException;
  * The Task class represents a task in the StudentConnect application.
  */
 public class Task {
-    private static ArrayList<Task> arr = new ArrayList<>();
     private static int counter = 0;
 
     private String task;
     private TaskStatus status;
     private TaskModule module;
-
+    private String type;
+    private String by;
 
     /**
      * Constructs a Task object with a task description, status, module, and save status.
@@ -27,11 +25,15 @@ public class Task {
      * @param task       The description of the task.
      * @param status     The status of the task (complete or incomplete).
      * @param module     The module the task is assigned to (CS2103T or CS2101).
+     * @param type       The type of task, either a deadline or a todo.
+     * @param by         The date the task must be completed by, empty for a todo.
      */
-    public Task(String task, TaskStatus status, TaskModule module) {
+    public Task(String task, TaskStatus status, TaskModule module, String type, String by) {
         this.task = task;
         this.status = status;
         this.module = module;
+        this.type = type;
+        this.by = by;
 
         if (!task.isEmpty()) {
             addTask(this.task);
@@ -52,7 +54,7 @@ public class Task {
      */
     @Override
     public String toString() {
-        return status.toString() + " " + this.module + " " + this.task;
+        return this.type + status.toString() + " " + this.module + " " + this.task + " " + this.by;
     }
 
     /**
@@ -112,6 +114,24 @@ public class Task {
      */
     public String getTask() {
         return this.task;
+    }
+
+    /**
+     * Gets the type of the task.
+     *
+     * @return The task type.
+     */
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * Gets the deadline of the task.
+     *
+     * @return The task deadline.
+     */
+    public String getBy() {
+        return this.by;
     }
 
     /**
@@ -269,6 +289,14 @@ public class Task {
      */
     public String generateStr() {
         return task;
+    }
+
+    public String getDeadline() {
+        if (this.getTaskType() == "D") {
+            return this.getDeadline();
+        } else {
+            return "";
+        }
     }
 
     /**
