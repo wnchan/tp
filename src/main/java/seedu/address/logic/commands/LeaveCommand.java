@@ -66,7 +66,7 @@ public class LeaveCommand extends Command {
         model.removePersonFromGroup(personToLeave, groupToLeave);
 
         return new CommandResult(String.format(MESSAGE_LEAVE_SUCCESS,
-                personToLeave.getName(), groupToLeave.getNumber()));
+                personToLeave.getName(), groupToLeave.getNumber()), false, false, true, false);
     }
 
     @Override
