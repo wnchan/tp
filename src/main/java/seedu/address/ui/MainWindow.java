@@ -38,11 +38,15 @@ public class MainWindow extends UiPart<Stage> {
     private ResultDisplay resultDisplay;
     private HelpWindow helpWindow;
 
+    private ConfirmationPopup confirmationPopup;
     @FXML
     private StackPane commandBoxPlaceholder;
 
     @FXML
     private MenuItem helpMenuItem;
+
+    @FXML
+    private MenuItem clearMenuItem;
 
     @FXML
     private StackPane personListPanelPlaceholder;
@@ -72,6 +76,7 @@ public class MainWindow extends UiPart<Stage> {
         setAccelerators();
 
         helpWindow = new HelpWindow();
+        confirmationPopup = new ConfirmationPopup();
     }
 
     public Stage getPrimaryStage() {
@@ -80,6 +85,7 @@ public class MainWindow extends UiPart<Stage> {
 
     private void setAccelerators() {
         setAccelerator(helpMenuItem, KeyCombination.valueOf("F1"));
+        setAccelerator(clearMenuItem, KeyCombination.valueOf("F2"));
     }
 
     /**
@@ -155,6 +161,19 @@ public class MainWindow extends UiPart<Stage> {
         }
     }
 
+    /**
+     * Opens the confirmation popup for clearing data.
+     *
+     */
+    @FXML
+    public void handleClear() {
+        if (!confirmationPopup.isShowing()) {
+            confirmationPopup.show();
+        } else {
+            confirmationPopup.focus();
+        }
+    }
+
     void show() {
         primaryStage.show();
     }
@@ -214,7 +233,6 @@ public class MainWindow extends UiPart<Stage> {
         try {
             CommandResult commandResult = logic.execute(commandText);
             logger.info("Result: " + commandResult.getFeedbackToUser());
-            resultDisplay.setFeedbackToUser(commandResult.getFeedbackToUser());
 
             if (commandResult.isShowHelp()) {
                 handleHelp();
@@ -228,6 +246,12 @@ public class MainWindow extends UiPart<Stage> {
                 handleGroupCommand();
             } else {
                 handlePersonCommand();
+
+            if (commandResult.isClear()) {
+                handleClear();
+            } else {
+                // If it's not a clear command, set the feedback message in ResultDisplay
+                resultDisplay.setFeedbackToUser(commandResult.getFeedbackToUser());
             }
 
             return commandResult;

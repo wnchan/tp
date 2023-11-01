@@ -6,6 +6,9 @@ import java.util.Objects;
 
 import seedu.address.commons.util.ToStringBuilder;
 
+
+
+
 /**
  * Represents the result of a command execution.
  */
@@ -22,15 +25,25 @@ public class CommandResult {
     /** Group UI should be shown. */
     private final boolean groupCommand;
 
+    /** Data should be cleared. */
+    private final boolean clear;
+
     /**
      * Constructs a {@code CommandResult} with the specified fields.
      */
+
     public CommandResult(String feedbackToUser, boolean showHelp,
                          boolean exit, boolean groupCommand) {
         this.feedbackToUser = requireNonNull(feedbackToUser);
         this.showHelp = showHelp;
         this.exit = exit;
         this.groupCommand = groupCommand;
+
+    public CommandResult(String feedbackToUser, boolean showHelp, boolean exit, boolean clear) {
+        this.feedbackToUser = requireNonNull(feedbackToUser);
+        this.showHelp = showHelp;
+        this.exit = exit;
+        this.clear = clear;
     }
 
     /**
@@ -55,6 +68,9 @@ public class CommandResult {
 
     public boolean isGroupCommand() {
         return groupCommand;
+
+    public boolean isClear() {
+        return clear;
     }
 
     @Override
@@ -71,12 +87,13 @@ public class CommandResult {
         CommandResult otherCommandResult = (CommandResult) other;
         return feedbackToUser.equals(otherCommandResult.feedbackToUser)
                 && showHelp == otherCommandResult.showHelp
-                && exit == otherCommandResult.exit;
+                && exit == otherCommandResult.exit
+                && clear == otherCommandResult.clear;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(feedbackToUser, showHelp, exit);
+        return Objects.hash(feedbackToUser, showHelp, exit, clear);
     }
 
     @Override
@@ -85,7 +102,7 @@ public class CommandResult {
                 .add("feedbackToUser", feedbackToUser)
                 .add("showHelp", showHelp)
                 .add("exit", exit)
+                .add("clear", clear)
                 .toString();
     }
-
 }
