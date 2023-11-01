@@ -22,13 +22,12 @@ public class Event extends Task {
      * save status, start date/time, and end date/time.
      *
      * @param task The description of the event task.
-     * @param isNotSaved A boolean indicating whether the task needs to be saved to a file.
      * @param from The start date/time of the event in string format (dd/MM/yyyy HHmm).
      * @param to The end date/time of the event in string format (dd/MM/yyyy HHmm).
      * @throws TaskException If the date/time format is invalid.
      */
-    public Event(String task, Boolean isNotSaved, String from, String to) throws TaskException {
-        super(task, isNotSaved);
+    public Event(String task, TaskStatus status, TaskModule module, String from, String to) throws TaskException {
+        super(task, status, module);
         this.fromStr = from;
         this.toStr = to;
         try {
@@ -36,10 +35,6 @@ public class Event extends Task {
             this.to = parseDateTime(to);
         } catch (Exception e) {
             throw new TaskException("Invalid date format :< Please use dd/MM/yyyy\n");
-        }
-
-        if (isNotSaved) {
-            saveToFile();
         }
     }
 
@@ -77,7 +72,7 @@ public class Event extends Task {
      * @return A formatted string for saving the event task to a file.
      */
     public String generateStr() {
-        return "E | " + (this.getStatus() == TaskStatus.DONE ? 1 : 0)
+        return "E | " + (this.getStatus())
                 + " | " + this.getTask() + " | " + fromStr + " | " + toStr;
     }
 
@@ -90,4 +85,3 @@ public class Event extends Task {
     }*/
 
 }
-
