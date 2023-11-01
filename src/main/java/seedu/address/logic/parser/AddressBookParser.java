@@ -13,12 +13,15 @@ import seedu.address.logic.commands.ClearCommand;
 import seedu.address.logic.commands.Command;
 import seedu.address.logic.commands.CreateCommand;
 import seedu.address.logic.commands.DeleteCommand;
+import seedu.address.logic.commands.DeleteGroupCommand;
 import seedu.address.logic.commands.EditCommand;
 import seedu.address.logic.commands.ExitCommand;
 import seedu.address.logic.commands.FilterCommand;
 import seedu.address.logic.commands.FindCommand;
+import seedu.address.logic.commands.FindGroupCommand;
 import seedu.address.logic.commands.HelpCommand;
 import seedu.address.logic.commands.JoinCommand;
+import seedu.address.logic.commands.LeaveCommand;
 import seedu.address.logic.commands.ListCommand;
 import seedu.address.logic.commands.TasksCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
@@ -79,10 +82,13 @@ public class AddressBookParser {
             return new ListCommand();
 
         case CreateCommand.COMMAND_WORD:
-            return new CreateCommand();
+            return new CreateCommandParser().parse(arguments);
 
         case JoinCommand.COMMAND_WORD:
             return new JoinCommandParser().parse(arguments);
+
+        case FindGroupCommand.COMMAND_WORD:
+            return new FindGroupCommandParser().parse(arguments);
 
         case ExitCommand.COMMAND_WORD:
             return new ExitCommand();
@@ -90,9 +96,14 @@ public class AddressBookParser {
         case HelpCommand.COMMAND_WORD:
             return new HelpCommand();
 
+        case LeaveCommand.COMMAND_WORD:
+            return new LeaveCommandParser().parse(arguments);
+            
         case TasksCommand.COMMAND_WORD:
             return new TasksCommandParser().parse(arguments);
 
+        case DeleteGroupCommand.COMMAND_WORD:
+            return new DeleteGroupCommandParser().parse(arguments);
         default:
             logger.finer("This user input caused a ParseException: " + userInput);
             throw new ParseException(MESSAGE_UNKNOWN_COMMAND);

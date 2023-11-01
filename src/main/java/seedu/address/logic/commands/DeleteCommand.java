@@ -8,6 +8,7 @@ import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
+import seedu.address.model.group.Group;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Person;
 
@@ -40,6 +41,14 @@ public class DeleteCommand extends Command {
 
         if (personToDelete.isEmpty()) {
             throw new CommandException(MESSAGE_DELETE_EMAIL_NOT_FOUND);
+        }
+
+        // Check if the person is in any groups
+        for (Group group : model.getAddressBook().getGroupList()) {
+            if (group.hasMember(personToDelete.get())) {
+                // If the person is in a group, remove them from the group
+                model.removePersonFromGroup(personToDelete.get(), group);
+            }
         }
 
         // Delete the person from the model

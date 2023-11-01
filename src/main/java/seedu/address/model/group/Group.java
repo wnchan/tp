@@ -9,6 +9,7 @@ import java.util.Set;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.group.tasks.TaskList;
 import seedu.address.model.person.Person;
+import seedu.address.model.tutorial.Tutorial;
 
 /**
  * Represents a Group in StudentConnect.
@@ -19,6 +20,7 @@ public class Group {
     private static final int MAXIMUM_SIZE = 5;
 
     private final int number;
+    private final Tutorial tutorial;
     private Set<Person> members = new HashSet<>();
     private TaskList tasks = new TaskList();
 
@@ -26,20 +28,24 @@ public class Group {
      * Constructs a {@code Group}.
      *
      * @param number A valid group number.
+     * @param tutorial A valid tutorial group.
      */
-    public Group(int number) {
+    public Group(int number, Tutorial tutorial) {
         this.number = number;
+        this.tutorial = tutorial;
     }
 
     /**
      * Constructs a {@code Group}.
      *
      * @param number A valid group number.
+     * @param tutorial A valid tutorial group.
      * @param members The members of the group.
      * @param tasks The initial tasks for the group.
      */
-    public Group(int number, Set<Person> members, TaskList tasks) {
+    public Group(int number, Tutorial tutorial, Set<Person> members, TaskList tasks) {
         this.number = number;
+        this.tutorial = tutorial;
         this.members = members;
         this.tasks = tasks;
     }
@@ -55,6 +61,10 @@ public class Group {
 
     public int getNumber() {
         return this.number;
+    }
+
+    public Tutorial getTutorial() {
+        return this.tutorial;
     }
 
     public Set<Person> getMembers() {
@@ -111,7 +121,7 @@ public class Group {
     }
 
     /**
-     * Returns true if both groups have the same number and members.
+     * Returns true if both groups have the same number, tutorial and members.
      * This defines a stronger notion of equality between two groups.
      */
     @Override
@@ -127,6 +137,7 @@ public class Group {
 
         Group otherGroup = (Group) other;
         return number == otherGroup.getNumber()
+                && tutorial.equals(otherGroup.tutorial)
                 && members.equals(otherGroup.members);
     }
 
@@ -134,8 +145,21 @@ public class Group {
     public String toString() {
         return new ToStringBuilder(this)
                 .add("group number", number)
+                .add("tutorial", tutorial)
                 .add("members", members)
                 .add("tasks", tasks)
                 .toString();
     }
+
+    /**
+     * Removes a person from the group.
+     * @param person The person to be removed.
+     * @return True if the person was removed from the group, false if the person was not found in the group.
+     */
+    public boolean removeMember(Person person) {
+        return members.remove(person);
+    }
+
+
+
 }

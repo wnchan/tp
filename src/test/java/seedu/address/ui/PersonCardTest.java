@@ -21,14 +21,20 @@ public class PersonCardTest {
 
     @BeforeAll
     public static void initJavaFx() {
-        Platform.startup(() -> {
-            // Initialization code, if needed
-        });
+        // Ensure JavaFX Toolkit is initialized only once
+        if (!Platform.isFxApplicationThread()) {
+            Platform.startup(() -> {
+                // Initialization code, if needed
+            });
+        }
     }
 
     @AfterAll
     public static void cleanupJavaFx() {
-        Platform.exit();
+        // Ensure JavaFX Toolkit is exited only once
+        if (!Platform.isFxApplicationThread()) {
+            Platform.exit();
+        }
     }
 
     @Test
