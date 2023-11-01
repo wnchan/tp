@@ -10,6 +10,7 @@ import static seedu.address.testutil.TypicalPersons.ALICE;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
 
@@ -18,6 +19,8 @@ import org.junit.jupiter.api.Test;
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.logic.Messages;
+import seedu.address.logic.commands.AddCommand;
+import seedu.address.logic.commands.CommandResult;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.AddressBook;
 import seedu.address.model.Model;
@@ -36,11 +39,12 @@ public class AddCommandTest {
     }
 
     @Test
-    public void execute_personAcceptedByModel_addSuccessful() throws Exception {
+    public void execute_personAcceptedByModel_addSuccessful() throws CommandException {
         ModelStubAcceptingPersonAdded modelStub = new ModelStubAcceptingPersonAdded();
         Person validPerson = new PersonBuilder().build();
 
-        CommandResult commandResult = new AddCommand(validPerson).execute(modelStub);
+        AddCommand addCommand = new AddCommand(validPerson);
+        CommandResult commandResult = addCommand.execute(modelStub);
 
         assertEquals(String.format(AddCommand.MESSAGE_SUCCESS, Messages.format(validPerson)),
                 commandResult.getFeedbackToUser());
@@ -91,6 +95,17 @@ public class AddCommandTest {
      * A default model stub that have all of the methods failing.
      */
     private class ModelStub implements Model {
+        private Group group;
+
+        private List<Person> personsAdded = new ArrayList<>();
+
+        @Override
+        public void addPerson(Person person) {
+            requireNonNull(person);
+            personsAdded.add(person);
+        }
+
+
         @Override
         public void setUserPrefs(ReadOnlyUserPrefs userPrefs) {
             throw new AssertionError("This method should not be called.");
@@ -98,7 +113,13 @@ public class AddCommandTest {
 
         @Override
         public void addGroup(Group group) {
+            this.group = group;
             throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void addPersonToGroup(Person person, Group group) {
+
         }
 
         @Override
@@ -123,16 +144,6 @@ public class AddCommandTest {
 
         @Override
         public void setAddressBookFilePath(Path addressBookFilePath) {
-            throw new AssertionError("This method should not be called.");
-        }
-
-        @Override
-        public void addPerson(Person person) {
-            throw new AssertionError("This method should not be called.");
-        }
-
-        @Override
-        public void addGroup(Group group) {
             throw new AssertionError("This method should not be called.");
         }
 
@@ -175,6 +186,21 @@ public class AddCommandTest {
         public Optional<Person> getPersonWithEmail(Email email) {
             throw new AssertionError("This method should not be called.");
         }
+
+        @Override
+        public Optional<Group> getGroupWithNumber(int number) {
+            return Optional.empty();
+        }
+
+        @Override
+        public boolean personIsInAGroup(Person person) {
+            return false;
+        }
+
+        @Override
+        public void removePersonFromGroup(Person person, Group group) {
+
+        }
     }
 
     /**
@@ -203,21 +229,24 @@ public class AddCommandTest {
         final ArrayList<Group> groupsAdded = new ArrayList<>();
 
         @Override
+        public void addPerson(Person person) {
+            requireNonNull(person);
+            personsAdded.add(person);
+        }
+
+        @Override
         public boolean hasPerson(Person person) {
             requireNonNull(person);
             return personsAdded.stream().anyMatch(person::isSamePerson);
         }
 
         @Override
-        public void addGroup(Group group) {
-            requireNonNull(group);
-            groupsAdded.add(group);
-        }
-
-        @Override
         public ReadOnlyAddressBook getAddressBook() {
-            return new AddressBook();
+            AddressBook addressBook = new AddressBook();
+            for (Person person : personsAdded) {
+                addressBook.addPerson(person);
+            }
+            return addressBook;
         }
     }
-
 }
