@@ -504,8 +504,47 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
    Use case ends.
 
+**Use Case: Mark Task as Done**
 
+**MSS**
 
+1. Student requests to mark a task of a group as done.
+2. Student provides the group number and task index.
+3. StudentConnect marks the specified task as done.
+4. StudentConnect displays a success message.
+
+   Use case ends.
+
+**Extensions:**
+
+* 4a. The specified group does not exist.
+    * 4a1. StudentConnect shows an error message: "Group with the provided group number not found."
+    * Use case ends.
+
+* 4b. The specified task index is invalid.
+    * 4b1. StudentConnect shows an error message: "Invalid task index. Task not found."
+    * Use case ends.
+
+**Use Case: Mark Task as Not Done**
+
+**MSS**
+
+1. Student requests to unmark a task that was marked as done.
+2. Student provides the group number and task index.
+3. StudentConnect marks the specified task as not done.
+4. StudentConnect displays a success message.
+
+    Use case ends.
+
+**Extensions:**
+
+* 4a. The specified group does not exist.
+    * 4a1. StudentConnect shows an error message: "Group with the provided group number not found."
+    * Use case ends.
+
+* 4b. The specified task index is invalid.
+    * 4b1. StudentConnect shows an error message: "Invalid task index. Task not found."
+    * Use case ends.
 
 *{More to be added}*
 
