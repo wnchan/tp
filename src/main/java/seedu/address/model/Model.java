@@ -104,6 +104,15 @@ public interface Model {
      */
     void addPersonToGroup(Person person, Group group);
 
+    /** Returns an unmodifiable view of the filtered group list */
+    ObservableList<Group> getFilteredGroupList();
+
+    /**
+     * Updates the filter of the filtered group list to filter by the given {@code predicate}.
+     * @throws NullPointerException if {@code predicate} is null.
+     */
+    void updateFilteredGroupList(Predicate<Group> predicate);
+
     Optional<Person> getPersonWithEmail(Email email);
 
     Optional<Group> getGroupWithNumber(int number);
@@ -114,6 +123,14 @@ public interface Model {
      * @param person The person to be checked.
      */
     boolean personIsInAGroup(Person person);
+
+    /**
+     * Removes a person from a group.
+     *
+     * @param person The person to be removed from the group.
+     * @param group The group from which the person should be removed.
+     */
+    void removePersonFromGroup(Person person, Group group);
 
     /**
      * Adds the given {@code TaskList} to the give {@code Group}.
@@ -127,5 +144,11 @@ public interface Model {
      * Returns true if a group with the same identity as {@code group} exists in StudentConnect.
      */
     boolean hasGroup(Group group);
+
+    /**
+     * Deletes the given group.
+     * The group must exist in StudentConnect.
+     */
+    void deleteGroup(Group group);
 
 }

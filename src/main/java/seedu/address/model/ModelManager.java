@@ -139,6 +139,11 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public void removePersonFromGroup(Person person, Group group) {
+        requireAllNonNull(person, group);
+        addressBook.removePersonFromGroup(person);
+    }
+
     public boolean hasGroup(Group group) {
         requireNonNull(group);
         return addressBook.hasGroup(group);
@@ -150,6 +155,11 @@ public class ModelManager implements Model {
         group.addTasks(taskList);
     }
 
+    @Override
+    public void deleteGroup(Group group) {
+        requireNonNull(group);
+        addressBook.removeGroup(group);
+    }
 
     //=========== Filtered Person List Accessors =============================================================
 
@@ -166,6 +176,23 @@ public class ModelManager implements Model {
     public void updateFilteredPersonList(Predicate<Person> predicate) {
         requireNonNull(predicate);
         filteredPersons.setPredicate(predicate);
+    }
+
+    //=========== Filtered Group List Accessors ==============================================================
+
+    /**
+     * Returns an unmodifiable view of the list of {@code Group} backed by the internal list of
+     * {@code versionedAddressBook}
+     */
+    @Override
+    public ObservableList<Group> getFilteredGroupList() {
+        return filteredGroups;
+    }
+
+    @Override
+    public void updateFilteredGroupList(Predicate<Group> predicate) {
+        requireNonNull(predicate);
+        filteredGroups.setPredicate(predicate);
     }
 
     @Override
@@ -211,4 +238,5 @@ public class ModelManager implements Model {
 
         return Optional.empty();
     }
+
 }

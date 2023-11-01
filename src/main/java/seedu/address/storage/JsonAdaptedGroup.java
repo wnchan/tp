@@ -1,5 +1,7 @@
 package seedu.address.storage;
 
+import static seedu.address.storage.JsonAdaptedPerson.MISSING_FIELD_MESSAGE_FORMAT;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -11,6 +13,7 @@ import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.group.Group;
 import seedu.address.model.group.tasks.TaskList;
 import seedu.address.model.person.Person;
+import seedu.address.model.tutorial.Tutorial;
 
 /**
  * Jackson-friendly version of {@link Group}.
@@ -20,6 +23,7 @@ public class JsonAdaptedGroup {
     public static final String INVALID_NUMBER_MESSAGE = "Group number is invalid!";
 
     private final int number;
+    private final JsonAdaptedTutorial tutorial;
     private final List<JsonAdaptedPerson> members = new ArrayList<>();
     private final List<JsonAdaptedTask> tasks = new ArrayList<>();  // add a list of JsonAdaptedTask
 
@@ -28,9 +32,13 @@ public class JsonAdaptedGroup {
      */
     @JsonCreator
     public JsonAdaptedGroup(@JsonProperty("number") int number,
+
+                            @JsonProperty("tutorial") JsonAdaptedTutorial tutorial,
                             @JsonProperty("members") List<JsonAdaptedPerson> members,
                             @JsonProperty("tasks") List<JsonAdaptedTask> tasks) {  // add tasks parameter
+
         this.number = number;
+        this.tutorial = tutorial;
         if (members != null) {
             this.members.addAll(members);
         }
@@ -44,6 +52,7 @@ public class JsonAdaptedGroup {
      */
     public JsonAdaptedGroup(Group source) {
         number = source.getNumber();
+        tutorial = new JsonAdaptedTutorial(source.getTutorial());
         members.addAll(source.getMembers().stream()
             .map(JsonAdaptedPerson::new)
             .collect(Collectors.toList()));
@@ -72,8 +81,16 @@ public class JsonAdaptedGroup {
             throw new IllegalValueException(INVALID_NUMBER_MESSAGE);
         }
 
-        final Set<Person> members = new HashSet<>(groupMembers);
+        if (tutorial == null) {
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Tutorial.class.getSimpleName()));
+        }
+        if (!Tutorial.isValidTutorial(tutorial.getTutorial())) {
+            throw new IllegalValueException(Tutorial.MESSAGE_CONSTRAINTS);
+        }
+        final Tutorial modelTutorial = tutorial.toModelType();
 
-        return new Group(number, members, groupTasks);  // add tasks to constructor
+        final Set<Person> modelMembers = new HashSet<>(groupMembers);
+
+        return new Group(number, modelTutorial, modelMembers, groupTasks);
     }
 }

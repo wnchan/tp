@@ -182,4 +182,25 @@ public class AddressBook implements ReadOnlyAddressBook {
     public int hashCode() {
         return persons.hashCode();
     }
+
+
+
+    /**
+     * Removes the given person from the specified group.
+     * @param person The person to be removed from the group.
+     */
+    public void removePersonFromGroup(Person person) {
+        groups.remove(person);
+    }
+
+    /**
+     * Removes the given group from the address book.
+     *
+     * @param group The group to be removed.
+     */
+    public void removeGroup(Group group) {
+        requireNonNull(group);
+        groups.remove(group);
+    }
+
 }
