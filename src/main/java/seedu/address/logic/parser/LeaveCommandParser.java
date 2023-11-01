@@ -4,11 +4,12 @@ import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_GROUP;
 
+import java.util.stream.Stream;
+
 import seedu.address.logic.commands.LeaveCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.Email;
 
-import java.util.stream.Stream;
 
 /**
  * Parses input arguments and creates a new LeaveCommand object

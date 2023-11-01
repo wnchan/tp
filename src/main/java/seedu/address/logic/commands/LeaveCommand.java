@@ -35,6 +35,12 @@ public class LeaveCommand extends Command {
     private final Email targetEmail;
     private final int targetGroupNumber;
 
+    /**
+     * Constructs a {@code LeaveCommand} with the specified email and group number to leave a group.
+     *
+     * @param targetEmail The email of the person to leave the group.
+     * @param targetGroupNumber The number of the group to leave.
+     */
     public LeaveCommand(Email targetEmail, int targetGroupNumber) {
         this.targetEmail = targetEmail;
         this.targetGroupNumber = targetGroupNumber;
