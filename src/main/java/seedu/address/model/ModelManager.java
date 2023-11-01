@@ -155,6 +155,11 @@ public class ModelManager implements Model {
         group.addTasks(taskList);
     }
 
+    @Override
+    public void deleteGroup(Group group) {
+        requireNonNull(group);
+        addressBook.removeGroup(group);
+    }
 
     //=========== Filtered Person List Accessors =============================================================
 
