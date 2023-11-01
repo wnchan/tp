@@ -1,0 +1,83 @@
+package seedu.address.logic.commands;
+
+import static java.util.Objects.requireNonNull;
+
+import java.util.Set;
+
+import seedu.address.commons.util.ToStringBuilder;
+import seedu.address.logic.Messages;
+import seedu.address.logic.commands.exceptions.CommandException;
+import seedu.address.model.Model;
+import seedu.address.model.group.Group;
+import seedu.address.model.person.Person;
+
+/**
+ * Checks a group requirement by its group number.
+ */
+public class CheckCommand extends Command {
+
+    public static final String COMMAND_WORD = "checkGroup";
+
+    public static final String MESSAGE_USAGE = COMMAND_WORD
+            + ": Checks the group identified by its group number.\n"
+            + "Parameters: GROUP_NUMBER\n"
+            + "Example: " + COMMAND_WORD + " 1";
+
+    public static final String MESSAGE_CHECK_GROUP_SUCCESS =
+            "Group fulfils the nationality requirement of CS2103T. Group %1$s";
+    public static final String MESSAGE_CHECK_GROUP_WARNING =
+            "Group does not fulfil the nationality requirement of CS2103T. Group %1$s";
+    public static final String MESSAGE_CHECK_GROUP_NOT_FOUND = "Group with the provided group number not found.";
+
+    private final int groupNumber;
+
+    public CheckCommand(int groupNumber) {
+        this.groupNumber = groupNumber;
+    }
+
+    @Override
+    public CommandResult execute(Model model) throws CommandException {
+        requireNonNull(model);
+        // Check if the group with the provided group number exists
+        Group groupToCheck = model.getGroupWithNumber(groupNumber)
+                .orElseThrow(() -> new CommandException(MESSAGE_CHECK_GROUP_NOT_FOUND));
+
+        Set<Person> groupMembers = groupToCheck.getMembers();
+        int localCount = 0;
+        int foreignerCount = 0;
+        for (Person member : groupMembers) {
+            if (member.getNationality().value.equals("local")) {
+                localCount++;
+            } else {
+                foreignerCount++;
+            }
+        }
+
+        if (localCount == 0 || foreignerCount == 0) {
+            return new CommandResult(String.format(MESSAGE_CHECK_GROUP_WARNING, Messages.format(groupToCheck)));
+        }
+        return new CommandResult(String.format(MESSAGE_CHECK_GROUP_SUCCESS, Messages.format(groupToCheck)));
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == this) {
+            return true;
+        }
+
+        // instanceof handles nulls
+        if (!(other instanceof CheckCommand)) {
+            return false;
+        }
+
+        CheckCommand otherCheckCommand = (CheckCommand) other;
+        return groupNumber == otherCheckCommand.groupNumber;
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+                .add("groupNumber", groupNumber)
+                .toString();
+    }
+}
