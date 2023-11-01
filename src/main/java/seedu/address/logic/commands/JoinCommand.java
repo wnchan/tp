@@ -43,6 +43,8 @@ public class JoinCommand extends Command {
     private final int targetGroupNumber;
 
     /**
+     * Constructs a {@code JoinCommand} with the specified email and group number to join a group.
+     *
      * @param targetEmail of the student to be added to the group
      * @param targetGroupNumber group number
      */

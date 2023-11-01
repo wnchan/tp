@@ -139,6 +139,11 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public void removePersonFromGroup(Person person, Group group) {
+        requireAllNonNull(person, group);
+        addressBook.removePersonFromGroup(person);
+    }
+
     public boolean hasGroup(Group group) {
         requireNonNull(group);
         return addressBook.hasGroup(group);
@@ -228,4 +233,5 @@ public class ModelManager implements Model {
 
         return Optional.empty();
     }
+
 }
