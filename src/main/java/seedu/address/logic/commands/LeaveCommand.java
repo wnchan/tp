@@ -30,7 +30,7 @@ public class LeaveCommand extends Command {
     public static final String MESSAGE_LEAVE_SUCCESS = "Leave successful! %1$s\nhas left %2$s!";
     public static final String MESSAGE_LEAVE_EMAIL_NOT_FOUND = "Person with the provided email not found.";
     public static final String MESSAGE_LEAVE_GROUP_NOT_FOUND = "Group with the provided group number not found.";
-    public static final String MESSAGE_NOT_IN_GROUP = "The provided person is not a member of the provided group.";
+    public static final String MESSAGE_NOT_IN_GROUP = "The above student is not a member of the provided group.";
 
     private final Email targetEmail;
     private final int targetGroupNumber;
