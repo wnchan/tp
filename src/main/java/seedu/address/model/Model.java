@@ -5,10 +5,8 @@ import java.util.Optional;
 import java.util.function.Predicate;
 
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.model.group.Group;
-import seedu.address.model.group.tasks.Task;
 import seedu.address.model.group.tasks.TaskList;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Person;
@@ -147,5 +145,11 @@ public interface Model {
      * Returns true if a group with the same identity as {@code group} exists in StudentConnect.
      */
     boolean hasGroup(Group group);
+
+    /**
+     * Deletes the given group.
+     * The group must exist in StudentConnect.
+     */
+    void deleteGroup(Group group);
 
 }

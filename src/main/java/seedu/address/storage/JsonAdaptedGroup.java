@@ -7,8 +7,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.group.Group;
 import seedu.address.model.group.tasks.TaskList;
@@ -25,7 +27,7 @@ public class JsonAdaptedGroup {
     private final int number;
     private final JsonAdaptedTutorial tutorial;
     private final List<JsonAdaptedPerson> members = new ArrayList<>();
-    private final List<JsonAdaptedTask> tasks = new ArrayList<>();  // add a list of JsonAdaptedTask
+    private final List<JsonAdaptedTask> tasks = new ArrayList<>(); // add a list of JsonAdaptedTask
 
     /**
      * Constructs a {@code JsonAdaptedGroup} with the given group details.
@@ -35,7 +37,7 @@ public class JsonAdaptedGroup {
 
                             @JsonProperty("tutorial") JsonAdaptedTutorial tutorial,
                             @JsonProperty("members") List<JsonAdaptedPerson> members,
-                            @JsonProperty("tasks") List<JsonAdaptedTask> tasks) {  // add tasks parameter
+                            @JsonProperty("tasks") List<JsonAdaptedTask> tasks) { // add tasks parameter
 
         this.number = number;
         this.tutorial = tutorial;
@@ -56,7 +58,7 @@ public class JsonAdaptedGroup {
         members.addAll(source.getMembers().stream()
             .map(JsonAdaptedPerson::new)
             .collect(Collectors.toList()));
-        tasks.addAll(source.getTasks().getTaskList().stream()  // add tasks to constructor
+        tasks.addAll(source.getTasks().getTaskList().stream() // add tasks to constructor
             .map(JsonAdaptedTask::new)
             .collect(Collectors.toList()));
     }
@@ -82,7 +84,8 @@ public class JsonAdaptedGroup {
         }
 
         if (tutorial == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Tutorial.class.getSimpleName()));
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
+                Tutorial.class.getSimpleName()));
         }
         if (!Tutorial.isValidTutorial(tutorial.getTutorial())) {
             throw new IllegalValueException(Tutorial.MESSAGE_CONSTRAINTS);

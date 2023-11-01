@@ -193,5 +193,14 @@ public class AddressBook implements ReadOnlyAddressBook {
         groups.remove(person);
     }
 
+    /**
+     * Removes the given group from the address book.
+     *
+     * @param group The group to be removed.
+     */
+    public void removeGroup(Group group) {
+        requireNonNull(group);
+        groups.remove(group);
+    }
 
 }
