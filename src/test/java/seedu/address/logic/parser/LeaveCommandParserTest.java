@@ -1,8 +1,10 @@
 package seedu.address.logic.parser;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_GROUP;
+import static seedu.address.testutil.Assert.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,8 +12,7 @@ import seedu.address.logic.commands.LeaveCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.Email;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static seedu.address.testutil.Assert.assertThrows;
+
 
 public class LeaveCommandParserTest {
 
@@ -58,8 +59,9 @@ public class LeaveCommandParserTest {
         LeaveCommandParser parser = new LeaveCommandParser();
         String userInput = PREFIX_EMAIL + "invalid_email_format " + PREFIX_GROUP + "1";
 
-        assertThrows(ParseException.class, String.format(MESSAGE_INVALID_COMMAND_FORMAT, LeaveCommand.MESSAGE_USAGE), () -> {
-            parser.parse(userInput);
-        });
+        assertThrows(ParseException.class, String.format(
+                MESSAGE_INVALID_COMMAND_FORMAT, LeaveCommand.MESSAGE_USAGE), () -> {
+                parser.parse(userInput);
+                });
     }
 }
