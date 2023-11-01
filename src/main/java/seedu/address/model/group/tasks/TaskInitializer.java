@@ -36,9 +36,9 @@ public class TaskInitializer {
                 "20/10/2023 2359"));
         allTasks.add(new Deadline("Release v1.3.trial jar file", TaskStatus.NOT_DONE, TaskModule.CS2103T,
                 "27/10/2023 2359"));
-        allTasks.add(new Deadline("Wrap up mileston 1.3", TaskStatus.NOT_DONE, TaskModule.CS2103T, "03/11/2023 2359"));
+        allTasks.add(new Deadline("Wrap up milestone 1.3", TaskStatus.NOT_DONE, TaskModule.CS2103T, "03/11/2023 2359"));
         allTasks.add(new Deadline("Finalise tp", TaskStatus.NOT_DONE, TaskModule.CS2103T, "17/11/2023 2359"));
-        allTasks.add(new Todo("Update dg for each feature", TaskStatus.NOT_DONE, TaskModule.CS2103T));
+        allTasks.add(new Todo("Update DG for each feature", TaskStatus.NOT_DONE, TaskModule.CS2103T));
 
         // Add the tasks to the TaskList
         taskList.addTasks(allTasks);
