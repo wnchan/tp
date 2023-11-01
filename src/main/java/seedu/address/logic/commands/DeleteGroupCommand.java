@@ -20,8 +20,12 @@ public class DeleteGroupCommand extends Command {
 
     private final int groupNumber;
 
+    /**
+     * Creates a DeleteGroupCommand to delete the group with the specified group number.
+     *
+     * @param groupNumber The group number of the group to be deleted.
+     */
     public DeleteGroupCommand(int groupNumber) {
-        System.out.println("DeleteGroupCommand constructor called with groupNumber: " + groupNumber);
         this.groupNumber = groupNumber;
     }
 
