@@ -11,6 +11,9 @@ import seedu.address.model.Model;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.group.Group;
 import seedu.address.model.tutorial.Tutorial;
+import seedu.address.model.group.exceptions.TaskException;
+import seedu.address.model.group.tasks.TaskList;
+import seedu.address.model.group.tasks.TaskInitializer;
 
 /**
  * Creates a new empty group.
@@ -37,6 +40,16 @@ public class CreateCommand extends Command {
     public CommandResult execute(Model model) {
         int number = generateGroupNumber(model);
         Group createdGroup = new Group(number, tutorial);
+      
+        // Initialize the tasks and add them to the group
+        TaskList initialTasks = null;
+        try {
+            initialTasks = TaskInitializer.initializeTasks();
+        } catch (TaskException e) {
+            throw new RuntimeException(e);
+        }
+        createdGroup.addTasks(initialTasks);
+
         model.addGroup(createdGroup);
 
         return new CommandResult(String.format(MESSAGE_SUCCESS, createdGroup.getNumber()));
@@ -58,7 +71,7 @@ public class CreateCommand extends Command {
         } else {
             number = 2;
             List<Integer> groupNumbers = groups.stream()
-                    .map(Group::getNumber).collect(Collectors.toList());
+                .map(Group::getNumber).collect(Collectors.toList());
             while (groupNumbers.contains(number)) {
                 number++;
             }
