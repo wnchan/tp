@@ -40,32 +40,32 @@ public class TypicalPersons {
             .withTutorials("01", "02").withSocialMediaLinks("https://www.linkedin.com/in/alice")
             .withNationality("foreigner").withGender("F").build();
     public static final Person BENSON = new PersonBuilder().withName("Benson Meier").withMajor("Computer Science")
-            .withYear("2").withEmail("johnd@u.nus.edu").withDescription("mobile dev").withTutorials("02", "03")
+            .withYear("2").withEmail("johnd@u.nus.edu").withDescription("mobile dev").withTutorials("03", "04")
             .withSocialMediaLinks("https://www.linkedin.com/in/benson", "https://github.com/benson")
             .withNationality("local").withGender("M").build();
     public static final Person CARL = new PersonBuilder().withName("Carl Kurz").withMajor("Computer Science")
             .withYear("2").withEmail("heinz@u.nus.edu").withDescription("fe dev")
-             .withTutorials("04", "05").withNationality("local").withGender("M").build();
+             .withTutorials("05", "06").withNationality("local").withGender("M").build();
     public static final Person DANIEL = new PersonBuilder().withName("Daniel Meier").withMajor("Computer Science")
             .withYear("2").withEmail("cornelia@u.nus.edu").withDescription("be dev")
-            .withTutorials("06", "07").withSocialMediaLinks("https://www.linkedin.com/in/daniel")
+            .withTutorials("07", "08").withSocialMediaLinks("https://www.linkedin.com/in/daniel")
             .withGender("M").withNationality("local").build();
     public static final Person ELLE = new PersonBuilder().withName("Elle Meyer").withMajor("Computer Science")
-            .withYear("2").withEmail("werner@u.nus.edu").withDescription("fe dev").withTutorials("08", "09")
+            .withYear("2").withEmail("werner@u.nus.edu").withDescription("fe dev").withTutorials("09", "10")
             .withNationality("foreigner").withGender("F").build();
     public static final Person FIONA = new PersonBuilder().withName("Fiona Kunz").withMajor("Computer Science")
-            .withYear("2").withEmail("lydia@u.nus.edu").withDescription("be dev").withTutorials("10", "11")
+            .withYear("2").withEmail("lydia@u.nus.edu").withDescription("be dev").withTutorials("11", "12")
             .withGender("F").withNationality("foreigner").build();
     public static final Person GEORGE = new PersonBuilder().withName("George Best").withMajor("Computer Science")
-            .withYear("2").withEmail("anna@u.nus.edu").withDescription("fe dev").withTutorials("11", "12")
+            .withYear("2").withEmail("anna@u.nus.edu").withDescription("fe dev").withTutorials("13", "14")
             .withGender("F").withNationality("foreigner").build();
 
     // Manually added
     public static final Person HOON = new PersonBuilder().withName("Hoon Meier").withMajor("Computer Science")
-            .withYear("2").withEmail("stefan@u.nus.edu").withDescription("web dev").withTutorials("13", "14")
+            .withYear("2").withEmail("stefan@u.nus.edu").withDescription("web dev").withTutorials("15", "16")
             .withNationality("foreigner").withGender("M").build();
     public static final Person IDA = new PersonBuilder().withName("Ida Mueller").withMajor("Computer Science")
-            .withYear("2").withEmail("hans@u.nus.edu").withDescription("mobile dev").withTutorials("15", "16")
+            .withYear("2").withEmail("hans@u.nus.edu").withDescription("mobile dev").withTutorials("17", "18")
             .withNationality("local").withGender("F").build();
 
     // Manually added - Person's details found in {@code CommandTestUtil}
