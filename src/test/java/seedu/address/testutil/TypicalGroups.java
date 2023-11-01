@@ -18,6 +18,6 @@ import seedu.address.model.group.Group;
 public class TypicalGroups {
 
     public static final Group GROUP1 = new Group(1, Set.of(ALICE, BENSON, CARL));
-    public static final Group GROUP2 = new Group(1, Set.of(DANIEL, ELLE, FIONA));
-    public static final Group GROUP3 = new Group(1, Set.of(GEORGE));
+    public static final Group GROUP2 = new Group(2, Set.of(DANIEL, ELLE, FIONA));
+    public static final Group GROUP3 = new Group(3, Set.of(GEORGE));
 }
