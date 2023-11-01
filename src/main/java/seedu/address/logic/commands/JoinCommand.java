@@ -87,7 +87,8 @@ public class JoinCommand extends Command {
         model.addPersonToGroup(personToJoin.get(), groupToJoin.get());
 
         return new CommandResult(String.format(MESSAGE_JOIN_SUCCESS,
-                Messages.format(personToJoin.get()), Messages.format(groupToJoin.get())));
+                Messages.format(personToJoin.get()), Messages.format(groupToJoin.get())),
+                false, false, true, false);
     }
 
     @Override
