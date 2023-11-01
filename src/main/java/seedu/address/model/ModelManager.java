@@ -13,6 +13,7 @@ import javafx.collections.transformation.FilteredList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.model.group.Group;
+import seedu.address.model.group.tasks.TaskList;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Person;
 
@@ -26,6 +27,7 @@ public class ModelManager implements Model {
     private final UserPrefs userPrefs;
     private final FilteredList<Person> filteredPersons;
     private final FilteredList<Group> filteredGroups;
+
 
     /**
      * Initializes a ModelManager with the given addressBook and userPrefs.
@@ -135,6 +137,19 @@ public class ModelManager implements Model {
         }
         return false;
     }
+
+    @Override
+    public boolean hasGroup(Group group) {
+        requireNonNull(group);
+        return addressBook.hasGroup(group);
+    }
+
+    @Override
+    public void addTasksToGroup(TaskList taskList, Group group) {
+        requireAllNonNull(taskList, group);
+        group.addTasks(taskList);
+    }
+
 
     //=========== Filtered Person List Accessors =============================================================
 

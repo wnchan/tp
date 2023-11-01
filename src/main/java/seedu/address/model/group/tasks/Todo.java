@@ -7,16 +7,14 @@ package seedu.address.model.group.tasks;
 public class Todo extends Task {
 
     /**
-     * Constructs a new `Todo` task with the given description and save status.
+     * Constructs a new `Todo` task with the given description, status, and module.
      *
-     * @param task        The description of the to-do task.
-     * @param isNotSaved  A boolean indicating whether the task needs to be saved.
+     * @param task       The description of the to-do task.
+     * @param status     The status of the task (complete or incomplete).
+     * @param module     The module the task is assigned to (CS2103T or CS2101).
      */
-    public Todo(String task, boolean isNotSaved) {
-        super(task, isNotSaved);
-        if (isNotSaved) {
-            saveToFile();
-        }
+    public Todo(String task, TaskStatus status, TaskModule module) {
+        super(task, status, module);
     }
 
     /**
@@ -41,14 +39,10 @@ public class Todo extends Task {
             + Task.getCounter() + " tasks in the list\n");
     }
 
-    /**
-     * Generates a string representation of the to-do task for saving to a file.
-     *
-     * @return A string representation of the to-do task for file storage.
-     */
+    @Override
     public String generateStr() {
-        return "T | " + (this.getStatus() == TaskStatus.DONE ? 1 : 0)
-                + " | " + this.getTask();
+        return "T | " + (this.getStatus())
+            + " | " + this.getTask() + " | " + this.getModule();
     }
 
     /*/**
@@ -60,4 +54,3 @@ public class Todo extends Task {
     }*/
 
 }
-
