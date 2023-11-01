@@ -36,6 +36,17 @@ public class Group {
      *
      * @param number A valid group number.
      * @param members The members of the group.
+     */
+    public Group(int number, Set<Person> members) {
+        this.number = number;
+        this.members = members;
+    }
+
+    /**
+     * Constructs a {@code Group}.
+     *
+     * @param number A valid group number.
+     * @param members The members of the group.
      * @param tasks The initial tasks for the group.
      */
     public Group(int number, Set<Person> members, TaskList tasks) {
