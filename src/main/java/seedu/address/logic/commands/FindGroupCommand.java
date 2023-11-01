@@ -31,7 +31,7 @@ public class FindGroupCommand extends Command {
         model.updateFilteredGroupList(predicate);
         return new CommandResult(
                 String.format(Messages.MESSAGE_GROUPS_LISTED_OVERVIEW, model.getFilteredGroupList().size()),
-                false, false, true);
+                false, false, true, false);
     }
 
     @Override

@@ -88,7 +88,7 @@ public class JoinCommand extends Command {
 
         return new CommandResult(String.format(MESSAGE_JOIN_SUCCESS,
                 Messages.format(personToJoin.get()), Messages.format(groupToJoin.get())),
-                false, false, true);
+                false, false, true, false);
     }
 
     @Override

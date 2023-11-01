@@ -30,9 +30,9 @@ public class ClearCommand extends Command {
         confirmationPopup.show();
 
         if (isConfirmed) {
-            return new CommandResult(SHOWING_CONFIRMATION_MESSAGE, false, false, true);
+            return new CommandResult(SHOWING_CONFIRMATION_MESSAGE, false, false, false, true);
         } else {
-            return new CommandResult(SHOWING_CONFIRMATION_MESSAGE, false, false, false);
+            return new CommandResult(SHOWING_CONFIRMATION_MESSAGE, false, false, false, false);
         }
     }
 }

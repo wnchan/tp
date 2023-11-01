@@ -246,6 +246,7 @@ public class MainWindow extends UiPart<Stage> {
                 handleGroupCommand();
             } else {
                 handlePersonCommand();
+            }
 
             if (commandResult.isClear()) {
                 handleClear();
