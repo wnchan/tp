@@ -15,14 +15,14 @@ import seedu.address.model.person.Email;
 import seedu.address.model.person.Person;
 
 /**
- * Adds a person specified by email to a group specified by group number.
+ * Adds a student specified by email to a group specified by group number.
  */
 public class JoinCommand extends Command {
 
     public static final String COMMAND_WORD = "join";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
-            + ": Adds the person specified by email to the group specified by group number.\n"
+            + ": Adds the student specified by email to the group specified by group number.\n"
             + "Group number must be a positive integer. The maximum number of members a group can have is 5.\n"
             + "Parameters: "
             + PREFIX_EMAIL + "EMAIL "
@@ -32,12 +32,12 @@ public class JoinCommand extends Command {
             + PREFIX_GROUP + "1";
 
     public static final String MESSAGE_JOIN_SUCCESS = "Join successful! %1$s\nhas joined %2$s!";
-    public static final String MESSAGE_JOIN_EMAIL_NOT_FOUND = "Person with the provided email not found.";
+    public static final String MESSAGE_JOIN_EMAIL_NOT_FOUND = "Student with the provided email not found.";
     public static final String MESSAGE_JOIN_GROUP_NOT_FOUND = "Group with the provided group number not found.";
-    public static final String MESSAGE_PERSON_ALREADY_IN_GROUP = "The provided person is "
+    public static final String MESSAGE_PERSON_ALREADY_IN_GROUP = "The provided student is "
             + "already a member of the provided group.";
     public static final String MESSAGE_GROUP_FULL = "Join failed as the group already has 5 members.";
-    public static final String MESSAGE_PERSON_IN_ANOTHER_GROUP = "The provided person is already in another group.";
+    public static final String MESSAGE_PERSON_IN_ANOTHER_GROUP = "The provided student is already in another group.";
 
     private final Email targetEmail;
     private final int targetGroupNumber;
