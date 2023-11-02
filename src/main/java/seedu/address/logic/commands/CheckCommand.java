@@ -25,7 +25,7 @@ public class CheckCommand extends Command {
             + "Example: " + COMMAND_WORD + " 1";
 
     public static final String MESSAGE_CHECK_GROUP_SUCCESS =
-            "Group fulfils the nationality requirement of CS2103T. Group %1$s";
+            "Group fulfils the diversity requirements of CS2103T. Group %1$s";
     public static final String MESSAGE_CHECK_GROUP_NATIONALITY_WARNING =
             "Group does not fulfil the nationality requirement of CS2103T. Group %1$s";
     public static final String MESSAGE_CHECK_GROUP_GENDER_WARNING =
