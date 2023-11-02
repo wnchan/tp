@@ -108,6 +108,20 @@ Provides the requirements for forming a group.
 
 ![help window](images/help.png)
 
+### Clearing all entries : `clear`
+
+Clears all entries from the system upon confirmation in the pop-up.
+
+#### Format: `clear`
+
+#### Expected Output(Success):
+* Confirmation Pop-up opened.
+* GUI: All students' details are removed from student list.
+* Message: `Opened confirmation window. Please ensure you use the exit command when exiting StudentConnect for successful reset.`
+  ![]() <!-- Image of pop-up -->
+  ![]() <!-- Image of GUI -->
+
+## Person Commands
 ### Adding a student : `add`
 
 Adds a student to the system.
@@ -280,19 +294,8 @@ Deletes a specific student and all personal details based on email.
 #### Expected Output (Failure):
 * Message: `Error! Email not found!`
 
-### Clearing all entries : `clear`
 
-Clears all entries from the system upon confirmation in the pop-up.
-
-#### Format: `clear`
-
-#### Expected Output(Success):
-* Confirmation Pop-up opened.
-* GUI: All students' details are removed from student list.
-* Message: `Opened confirmation window. Please ensure you use the exit command when exiting StudentConnect for successful reset.`
-  ![]() <!-- Image of pop-up -->
-  ![]() <!-- Image of GUI -->
-
+## Group Commands
 
 ### Creating a new group : `create`
 
@@ -358,31 +361,6 @@ Deletes a member from a specific group, indicating that they have left.
 
 ![]() <!-- Image of GUI -->
 
-### Listing all tasks for a specific group : `tasks`
-
-Lists out all tasks for a specific group.
-
-#### Format: `tasks [GROUP_NUMBER]`
-
-* Lists out all tasks for the specified group.
-
-#### Examples:
-*  `tasks 2` Lists out all tasks for group 2.
-*  `tasks 5` Lists out all tasks for group 5.
-
-#### Acceptable Values:
-* GROUP_NUMBER: Must be a non-zero unsigned integer.
-
-#### Expected Output (Success):
-* GUI: List of all tasks for the specified group is displayed.
-* Message: “Here are the tasks for group [GROUP_NUMBER]: [list of tasks]”
-
-#### Expected Output (Failure):
-* Message: “Group with the provided group number not found.”
-* Message: “Group number is not a non-zero unsigned integer.”
-
-![sample result for 'tasks'](images/tasks.png)
-
 ### Finding a group by group number : `findGroup`
 
 Finds group(s) with group number(s) that matches any of the given keywords.
@@ -404,7 +382,7 @@ Finds group(s) with group number(s) that matches any of the given keywords.
 #### Expected Output (Failure):
 * Message: "Invalid command format!
 
-    findGroup: Finds all groups whose number contain any of the specified keywords and displays them as a list with index numbers.
+  findGroup: Finds all groups whose number contain any of the specified keywords and displays them as a list with index numbers.
   Parameters: KEYWORD [MORE_KEYWORDS]...
   Example: findGroup 1 5 10"
 
@@ -425,8 +403,8 @@ Filters groups by tutorial based on the given slot.
 
 #### Expected Output (Failure):
 * Message: "Invalid command format!
-  
-    filterGroup: Filters all groups that belong to the specified tutorial slot (2-digit numbers between 01 and 22) and displays them as a list with index numbers.
+
+  filterGroup: Filters all groups that belong to the specified tutorial slot (2-digit numbers between 01 and 22) and displays them as a list with index numbers.
   Parameters: SLOT
   Example: filterGroup 01"
 
@@ -448,8 +426,8 @@ If the group fulfils the group requirements,
 
 If the group has no members,
 * Message: "Group does not have any members. Group GROUP_NUMBER
-  
-    You can enter the `help` command for more information on group requirements."
+
+  You can enter the `help` command for more information on group requirements."
 
 If the number of group members is more than 5,
 * Message: "Group size has exceeded limit with more than 5 members. Group GROUP_NUMBER
@@ -476,10 +454,35 @@ If the group has not been created,
 
 #### Expected Output (Failure):
 * Message: "Invalid command format!
-  
-    checkGroup: Checks the group identified by its group number.
+
+  checkGroup: Checks the group identified by its group number.
   Parameters: GROUP_NUMBER
   Example: checkGroup 1"
+
+### Listing all tasks for a specific group : `tasks`
+
+Lists out all tasks for a specific group.
+
+#### Format: `tasks [GROUP_NUMBER]`
+
+* Lists out all tasks for the specified group.
+
+#### Examples:
+*  `tasks 2` Lists out all tasks for group 2.
+*  `tasks 5` Lists out all tasks for group 5.
+
+#### Acceptable Values:
+* GROUP_NUMBER: Must be a non-zero unsigned integer.
+
+#### Expected Output (Success):
+* GUI: List of all tasks for the specified group is displayed.
+* Message: “Here are the tasks for group [GROUP_NUMBER]: [list of tasks]”
+
+#### Expected Output (Failure):
+* Message: “Group with the provided group number not found.”
+* Message: “Group number is not a non-zero unsigned integer.”
+
+![sample result for 'tasks'](images/tasks.png)
 
 
 ### Marking a task as done : `mark`
