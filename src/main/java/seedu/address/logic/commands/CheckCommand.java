@@ -10,6 +10,7 @@ import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.group.Group;
 import seedu.address.model.person.Person;
+import seedu.address.model.tutorial.Tutorial;
 
 /**
  * Checks a group requirement by its group number.
@@ -25,8 +26,12 @@ public class CheckCommand extends Command {
 
     public static final String MESSAGE_CHECK_GROUP_SUCCESS =
             "Group fulfils the nationality requirement of CS2103T. Group %1$s";
-    public static final String MESSAGE_CHECK_GROUP_WARNING =
+    public static final String MESSAGE_CHECK_GROUP_NATIONALITY_WARNING =
             "Group does not fulfil the nationality requirement of CS2103T. Group %1$s";
+    public static final String MESSAGE_CHECK_GROUP_GENDER_WARNING =
+            "Group does not fulfil the gender requirement of CS2103T. Group %1$s";
+    public static final String MESSAGE_CHECK_GROUP_TUTORIAL_WARNING =
+            "Not every group member's tutorial matches the group's tutorial. Group %1$s";
     public static final String MESSAGE_CHECK_GROUP_NOT_FOUND = "Group with the provided group number not found.";
 
     private final int groupNumber;
@@ -43,6 +48,8 @@ public class CheckCommand extends Command {
                 .orElseThrow(() -> new CommandException(MESSAGE_CHECK_GROUP_NOT_FOUND));
 
         Set<Person> groupMembers = groupToCheck.getMembers();
+
+        // check nationality requirement
         int localCount = 0;
         int foreignerCount = 0;
         for (Person member : groupMembers) {
@@ -53,8 +60,39 @@ public class CheckCommand extends Command {
             }
         }
 
+        // check gender requirement
+        int maleCount = 0;
+        int femaleCount = 0;
+        for (Person member : groupMembers) {
+            if (member.getGender().value.equals("M")) {
+                maleCount++;
+            } else {
+                femaleCount++;
+            }
+        }
+
+        // check group members' tutorial
+        String groupTutorial = groupToCheck.getTutorial().value;
+        int count = 0;
+        for (Person member : groupMembers) {
+            for (Tutorial tut : member.getTutorials()) {
+                if (tut.value.equals((groupTutorial))) {
+                    count++;
+                    continue;
+                }
+            }
+        }
+
         if (localCount == 0 || foreignerCount == 0) {
-            return new CommandResult(String.format(MESSAGE_CHECK_GROUP_WARNING, Messages.format(groupToCheck)));
+            return new CommandResult(
+                    String.format(MESSAGE_CHECK_GROUP_NATIONALITY_WARNING, Messages.format(groupToCheck)));
+        }
+        if (maleCount == 0 || femaleCount == 0) {
+            return new CommandResult(String.format(MESSAGE_CHECK_GROUP_GENDER_WARNING, Messages.format(groupToCheck)));
+        }
+        if (count != groupMembers.size()) {
+            return new CommandResult(
+                    String.format(MESSAGE_CHECK_GROUP_TUTORIAL_WARNING, Messages.format(groupToCheck)));
         }
         return new CommandResult(String.format(MESSAGE_CHECK_GROUP_SUCCESS, Messages.format(groupToCheck)));
     }
