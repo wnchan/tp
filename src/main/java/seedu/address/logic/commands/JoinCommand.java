@@ -33,7 +33,7 @@ public class JoinCommand extends Command {
             + PREFIX_EMAIL + "johnd@u.nus.edu "
             + PREFIX_GROUP + "1";
 
-    public static final String MESSAGE_JOIN_SUCCESS = "Join successful! %1$s\nhas joined %2$s!";
+    public static final String MESSAGE_JOIN_SUCCESS = "Join successful! %1$s has joined Group %2$s!";
     public static final String MESSAGE_JOIN_EMAIL_NOT_FOUND = "Student with the provided email not found.";
     public static final String MESSAGE_JOIN_GROUP_NOT_FOUND = "Group with the provided group number not found.";
     public static final String MESSAGE_PERSON_ALREADY_IN_GROUP = "The provided student is "
@@ -90,7 +90,7 @@ public class JoinCommand extends Command {
         model.addPersonToGroup(personToJoin.get(), groupToJoin.get());
 
         return new CommandResult(String.format(MESSAGE_JOIN_SUCCESS,
-                Messages.format(personToJoin.get()), Messages.format(groupToJoin.get())),
+                personToJoin.get().getName(), groupToJoin.get().getNumber()),
                 false, false, true, false);
     }
 

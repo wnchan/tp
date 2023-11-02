@@ -146,6 +146,17 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public Group getGroupThatPersonIsIn(Person person) {
+        assert personIsInAGroup(person) : "This person is not in a group.";
+        for (Group group : addressBook.getGroupList()) {
+            if (group.hasMember(person)) {
+                return group;
+            }
+        }
+        return null;
+    }
+
+    @Override
     public void removePersonFromGroup(Person person, Group group) {
         requireAllNonNull(person, group);
         addressBook.removePersonFromGroup(person);
