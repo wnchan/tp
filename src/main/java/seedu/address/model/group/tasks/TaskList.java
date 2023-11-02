@@ -108,10 +108,9 @@ public class TaskList {
             } else {
                 tempStatus = "✅";
             }
-            result.append(tempStatus).append(" ").append(i + 1).append(". ").append(task.getModule())
-                .append(" ").append(task.getTask()).append("\n");
-            result.append(task.getType()).append(tempStatus).append(" ").append(task.getModule()).append(" ")
-                .append(task.getTask()).append(" ").append(task.getBy()).append("\n");
+            result.append(i+1).append(" ").append(task.getType()).append(" ").append(tempStatus).append(" ").
+                append(task.getModule()).append(" ").append(task.getTask()).
+                append(" ").append(task.getBy()).append("\n");
 
         }
         return String.valueOf(result);

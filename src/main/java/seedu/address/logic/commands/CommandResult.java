@@ -90,12 +90,13 @@ public class CommandResult {
         return feedbackToUser.equals(otherCommandResult.feedbackToUser)
                 && showHelp == otherCommandResult.showHelp
                 && exit == otherCommandResult.exit
-                && clear == otherCommandResult.clear;
+                && clear == otherCommandResult.clear
+                && groupCommand == otherCommandResult.groupCommand;
     }
 
     @Override
     public int hashCode () {
-        return Objects.hash(feedbackToUser, showHelp, exit, clear);
+        return Objects.hash(feedbackToUser, showHelp, exit, groupCommand, clear);
     }
 
     @Override
@@ -104,8 +105,8 @@ public class CommandResult {
                 .add("feedbackToUser", feedbackToUser)
                 .add("showHelp", showHelp)
                 .add("exit", exit)
+                .add("groupCommand", groupCommand)
                 .add("clear", clear)
                 .toString();
     }
 }
-
