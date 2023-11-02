@@ -19,12 +19,22 @@ public class UnMarkCommandParser implements Parser<UnMarkCommand> {
     public UnMarkCommand parse(String args) throws ParseException {
         requireNonNull(args);
         try {
-            String[] argParts = args.trim().split("gr/|ti/");
-            if (argParts.length != 3) {
+            String[] argParts = args.trim().split(" ");
+            int groupNumber = -1;
+            int taskIndex = -1;
+
+            for (String part : argParts) {
+                if (part.startsWith("gr/")) {
+                    groupNumber = ParserUtil.parseGroupNumber(part.substring(3));
+                } else if (part.startsWith("ti/")) {
+                    taskIndex = ParserUtil.parseTaskIndex(part.substring(3)) - 1;
+                }
+            }
+
+            if (groupNumber == -1 || taskIndex == -1) {
                 throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, UnMarkCommand.MESSAGE_USAGE));
             }
-            int groupNumber = ParserUtil.parseGroupNumber(argParts[1]);
-            int taskIndex = ParserUtil.parseTaskIndex(argParts[2]) - 1;
+
             return new UnMarkCommand(groupNumber, taskIndex);
         } catch (NumberFormatException nfe) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, UnMarkCommand.MESSAGE_USAGE), nfe);
