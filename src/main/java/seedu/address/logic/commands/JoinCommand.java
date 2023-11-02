@@ -4,6 +4,7 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_GROUP;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_GROUPS;
+import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 import java.util.Optional;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
@@ -56,6 +57,7 @@ public class JoinCommand extends Command {
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
         model.updateFilteredGroupList(PREDICATE_SHOW_ALL_GROUPS);
+        model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
         // Find the person with the provided email
         Optional<Person> personToJoin = model.getPersonWithEmail(targetEmail);
 

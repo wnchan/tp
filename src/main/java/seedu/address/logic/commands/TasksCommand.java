@@ -2,6 +2,7 @@ package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_GROUPS;
+import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 import java.util.Optional;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
@@ -44,6 +45,7 @@ public class TasksCommand extends Command {
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
         model.updateFilteredGroupList(PREDICATE_SHOW_ALL_GROUPS);
+        model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
 
         // Retrieve the group using the groupId
         Optional<Group> optionalGroup = model.getGroupWithNumber(groupId);
