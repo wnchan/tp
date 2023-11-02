@@ -257,7 +257,6 @@ public class Task {
     public String generateStr() {
         return task;
     }
-
     public String getDeadline() {
         if (this.getTaskType() == "D") {
             return this.getDeadline();

@@ -112,4 +112,3 @@ public class Major {
         return value.hashCode();
     }
 }
-

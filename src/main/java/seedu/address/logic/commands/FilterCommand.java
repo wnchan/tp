@@ -10,13 +10,13 @@ import seedu.address.model.Model;
 import seedu.address.model.tutorial.TutorialContainsSlotsPredicate;
 
 /**
- * Filters all persons in StudentConnect whose tutorial slots match the filter slots.
+ * Filters all students in StudentConnect whose tutorial slots match the filter slots.
  */
 public class FilterCommand extends Command {
 
     public static final String COMMAND_WORD = "filter";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Filters all persons whose tutorials match any of "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Filters all students whose tutorials match any of "
             + "the specified slots (2-digit numbers between 01 and 22) and displays them as a list with index numbers."
             + "\nParameters: SLOT [MORE_SLOTS]...\n"
             + "Example: " + COMMAND_WORD + "08 15";

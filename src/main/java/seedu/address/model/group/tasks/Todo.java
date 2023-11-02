@@ -45,13 +45,4 @@ public class Todo extends Task {
         return "T | " + (this.getStatus())
             + " | " + this.getTask() + " | " + this.getModule();
     }
-
-    /*/**
-     * Saves the to-do task to a file.
-     */
-    /*@Override
-    public void saveToFile() {
-        Storage.saveTaskToFile(generateStr());
-    }*/
-
 }

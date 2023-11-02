@@ -15,6 +15,8 @@ public class JsonAdaptedTutorial {
 
     /**
      * Constructs a {@code JsonAdaptedTutorial} with the given {@code tutorial}.
+     *
+     * @param tutorial The tutorial value to be used in the adapted object.
      */
     @JsonCreator
     public JsonAdaptedTutorial(String tutorial) {
@@ -23,11 +25,18 @@ public class JsonAdaptedTutorial {
 
     /**
      * Converts a given {@code Tutorial} into this class for Jackson use.
+     *
+     * @param source The source Tutorial to be converted.
      */
     public JsonAdaptedTutorial(Tutorial source) {
         tutorial = source.value;
     }
 
+    /**
+     * Gets the tutorial value.
+     *
+     * @return The tutorial value as a string.
+     */
     @JsonValue
     public String getTutorial() {
         return tutorial;
@@ -36,6 +45,7 @@ public class JsonAdaptedTutorial {
     /**
      * Converts this Jackson-friendly adapted tutorial object into the model's {@code Tutorial} object.
      *
+     * @return A Tutorial object.
      * @throws IllegalValueException if there were any data constraints violated in the adapted tutorial.
      */
     public Tutorial toModelType() throws IllegalValueException {
