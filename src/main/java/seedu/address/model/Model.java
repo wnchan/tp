@@ -126,6 +126,13 @@ public interface Model {
     boolean personIsInAGroup(Person person);
 
     /**
+     * Returns the group that the given person is in.
+     *
+     * @param person
+     */
+    Group getGroupThatPersonIsIn(Person person);
+
+    /**
      * Removes a person from a group.
      *
      * @param person The person to be removed from the group.
