@@ -35,14 +35,14 @@ import seedu.address.model.socialmedialink.SocialMediaLink;
 import seedu.address.model.tutorial.Tutorial;
 
 /**
- * Edits the details of an existing person in StudentConnect.
+ * Edits the details of an existing student in StudentConnect.
  */
 public class EditCommand extends Command {
 
     public static final String COMMAND_WORD = "edit";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the details of the student identified "
-            + "by the email used in the displayed person list. "
+            + "by the email used in the displayed student list. "
             + "Existing values will be overwritten by the input values.\n"
             + "Parameters: EMAIL (must end with u.nus.edu) "
             + "[" + PREFIX_NAME + "NAME] "
@@ -68,8 +68,8 @@ public class EditCommand extends Command {
     private final EditPersonDescriptor editPersonDescriptor;
 
     /**
-     * @param email of the person in the filtered person list to edit
-     * @param editPersonDescriptor details to edit the person with
+     * @param email of the person in the filtered student list to edit
+     * @param editPersonDescriptor details to edit the student with
      */
     public EditCommand(Email email, EditPersonDescriptor editPersonDescriptor) {
         requireNonNull(email);
@@ -149,8 +149,8 @@ public class EditCommand extends Command {
     }
 
     /**
-     * Stores the details to edit the person with. Each non-empty field value will replace the
-     * corresponding field value of the person.
+     * Stores the details to edit the student with. Each non-empty field value will replace the
+     * corresponding field value of the student.
      */
     public static class EditPersonDescriptor {
         private Name name;

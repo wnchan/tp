@@ -237,11 +237,4 @@ public class Task {
     public String generateStr() {
         return task;
     }
-
-    /**
-     * Saves the task to a file.
-     */
-    public void saveToFile() {
-        return;
-    }
 }
