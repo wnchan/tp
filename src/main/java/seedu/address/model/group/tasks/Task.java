@@ -203,34 +203,18 @@ public class Task {
         }
     }
 
-    /*/**
-     * Marks a task as done in the task list and updates
-     * the storage file accordingly.
-     *
-     * @param i The index of the task to be marked as done.
-     * @return A message confirming the task's status change.
-     * @throws TaskException If the provided index is invalid.
-     */
-    /*public String mark(int i) throws TaskException {
-        if (i > Duke.taskList.getTasks().size() || i <= 0) {
-            throw new TaskException(
-                    "OOPS!!! Invalid number :(\n"
-                    );
-        }
-        Task markTask = Duke.taskList.getTasks().get(i - 1);
-        markTask.status = TaskStatus.DONE;
-
-        // Update the task description in the file
-        Storage.updateLineInFile(i, markTask.generateStr());
-        return ( "Nice! I've marked this task as done:\n"
-                + markTask.toString() + "\n" );
-    }*/
-
     /**
      * Marks the task as done.
      */
     public void mark() {
         this.status = TaskStatus.DONE;
+    }
+
+    /**
+     * Marks the task as not done.
+     */
+    public void unMark() {
+        this.status = TaskStatus.NOT_DONE;
     }
 
     /**
@@ -243,23 +227,6 @@ public class Task {
     public boolean contains(String keyword) {
         return task.contains(keyword);
     }
-    /*/**
-     * Unmarks a task as done by changing its status to "not done."
-     *
-     * @param i The index of the task in the list to unmark.
-     * @return A string confirming the task's status change.
-     * @throws TaskException If the provided index is invalid.
-     */
-    /*public String unmark(int i) throws TaskException {
-        if (i > Duke.taskList.getTasks().size() || i <= 0) {
-            throw new TaskException( "OOPS!!! Invalid number :(\n" );
-        }
-        Task unmarkTask = Duke.taskList.getTasks().get(i - 1);
-        unmarkTask.status = TaskStatus.NOT_DONE;
-        Storage.updateLineInFile(i, unmarkTask.generateStr());
-        return ("Ok, I've marked this task as not done yet:\n"
-                + unmarkTask.toString() + "\n" );
-    }*/
 
     /*/**
      * Deletes a task from the task list and updates the

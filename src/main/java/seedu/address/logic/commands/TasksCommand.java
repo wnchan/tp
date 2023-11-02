@@ -2,13 +2,18 @@ package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
 import java.util.Optional;
+
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.group.Group;
 import seedu.address.model.group.exceptions.TaskException;
 import seedu.address.model.group.tasks.TaskInitializer;
 import seedu.address.model.group.tasks.TaskList;
+import seedu.address.model.group.tasks.TaskList;
 
+/**
+ * Lists out all tasks for a specific group.
+ */
 public class TasksCommand extends Command {
 
     public static final String COMMAND_WORD = "tasks";
@@ -21,9 +26,13 @@ public class TasksCommand extends Command {
     public static final String MESSAGE_SUCCESS = "Listing out tasks for group %1$s";
     public static final String MESSAGE_TASK_GROUP_NOT_FOUND = "Group with the provided group number not found.";
 
-
     private final int groupId;
 
+    /**
+     * Creates a TasksCommand to list out all tasks for a specific group.
+     *
+     * @param groupId The group ID for which tasks should be listed.
+     */
     public TasksCommand(int groupId) {
         this.groupId = groupId;
     }

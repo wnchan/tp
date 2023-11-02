@@ -2,9 +2,19 @@ package seedu.address.model.group.tasks;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import seedu.address.model.group.exceptions.TaskException;
 
+/**
+ * A utility class for initializing tasks and creating a TaskList.
+ */
 public class TaskInitializer {
+    /**
+     * Initializes tasks for different modules and creates a TaskList.
+     *
+     * @return A TaskList with the initialized tasks.
+     * @throws TaskException If there is an issue with task initialization.
+     */
     public static TaskList initializeTasks() throws TaskException {
         // Create an empty TaskList
         TaskList taskList = new TaskList();
