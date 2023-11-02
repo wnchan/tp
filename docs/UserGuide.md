@@ -312,7 +312,7 @@ Creates a new empty group. The group number is automatically assigned and is use
 
 Deletes a group from the system, based on group number. 
 
-#### Format: `deleteGroup [GROUP_NUMBER]`
+#### Format: `deleteGroup gr/[GROUP_NUMBER]`
 
 #### Expected Output(Success):
 * GUI: Specified group is no longer visible.
