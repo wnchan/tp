@@ -4,7 +4,7 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
 
 /**
- * Represents a Student's numeric year level
+ * Represents a Student's numeric year level.
  * Guarantees: immutable; is valid as declared in {@link #isValidYear(String)}
  */
 public class Year {
@@ -58,6 +58,4 @@ public class Year {
     public int hashCode() {
         return value.hashCode();
     }
-
 }
-

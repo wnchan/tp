@@ -4,7 +4,7 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
 
 /**
- * Represents a Person's nationality in the address book.
+ * Represents a Student's nationality in StudentConnect.
  * Guarantees: immutable; is valid as declared in {@link #isValidNationality(String)}
  */
 public class Nationality {

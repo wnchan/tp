@@ -143,7 +143,11 @@ public class ParserUtil {
     }
 
     /**
-     * Parses {@code Collection<String> socialMediaLinks} into a {@code Set<SocialMediaLink>}.
+     * Parses a collection of social media links into a set of SocialMediaLink objects.
+     *
+     * @param socialMediaLinks A collection of social media links as a Collection of strings.
+     * @return A Set of SocialMediaLink objects representing the parsed social media links.
+     * @throws ParseException If there is an issue parsing the social media links.
      */
     public static Set<SocialMediaLink> parseSocialMediaLinks(Collection<String> socialMediaLinks)
             throws ParseException {

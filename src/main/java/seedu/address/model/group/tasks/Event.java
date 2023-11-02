@@ -75,13 +75,4 @@ public class Event extends Task {
         return "E | " + (this.getStatus())
                 + " | " + this.getTask() + " | " + fromStr + " | " + toStr;
     }
-
-    /*/**
-     * Saves the `Event` task to a file.
-     */
-    /*@Override
-    public void saveToFile() {
-        Storage.saveTaskToFile(generateStr());
-    }*/
-
 }

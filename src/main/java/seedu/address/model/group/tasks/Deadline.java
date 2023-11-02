@@ -69,15 +69,4 @@ public class Deadline extends Task {
         return "D | " + this.getStatus()
             + " | " + this.getTask() + " | " + byStr + " | " + this.getModule();
     }
-
-    /*/**
-     * Saves the `Deadline` task to a file if it has not been saved already.
-     */
-    /*@Override
-    public void saveToFile() {
-        if (isNotSaved) {
-            Storage.saveTaskToFile(generateStr());
-        }
-    }*/
-
 }
