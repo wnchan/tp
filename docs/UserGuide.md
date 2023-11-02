@@ -20,6 +20,7 @@ StudentConnect is a solution for hassle-free team formation for students to brow
     7. [Deleting a person : `delete`](#deleting-a-person--delete)
     8. [Clearing all entries : `clear`](#clearing-all-entries--clear)
     9. [Creating a new group : `create`](#creating-a-new-group--create)
+   10. [Deleting a group : `deleteGroup`](#deleting-a-group--deleteGroup)
    10. [Finding a group by group number : `findGroup`](#finding-a-group-by-group-number--findgroup)
    11. [Filtering groups by tutorial : `filterGroup`](#filtering-groups-by-tutorial--filtergroup)
    12. [Checking a group : `checkGroup`](#checking-a-group--checkgroup)
@@ -57,7 +58,7 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 
     * `delete [email]` : Deletes the student with the corresponding email.
 
-    * `clear` : Deletes all students.
+    * `clear` : Deletes all data from the system (i.e. students, groups, and tasks).
 
     * `exit` : Exits the app.
 
@@ -280,18 +281,21 @@ Deletes a specific student and all personal details based on email.
 
 ### Clearing all entries : `clear`
 
-Clears all entries from the system.
+Clears all entries from the system upon confirmation in the pop-up.
 
 #### Format: `clear`
 
 #### Expected Output(Success):
+* Confirmation Pop-up opened.
 * GUI: All students' details are removed from student list.
-* Message: `All student data has been cleared`
-  ![Clear feature](images/clear.png)
+* Message: `Opened confirmation window. Please ensure you use the exit command when exiting StudentConnect for successful reset.`
+  ![]() <!-- Image of pop-up -->
+  ![]() <!-- Image of GUI -->
+
 
 ### Creating a new group : `create`
 
-Creates a new empty group. The group number is automatically assigned and is used to uniquely identify the group.
+Creates a new empty group. The group number is automatically assigned and is used to uniquely identify each group.
 
 #### Format: `create`
 
@@ -303,6 +307,21 @@ Creates a new empty group. The group number is automatically assigned and is use
 * Message: `Error: Failed to create group.`
 
 ![Sample result for create](images/create.png)
+
+### Deleting a group : `deleteGroup`
+
+Deletes a group from the system, based on group number. 
+
+#### Format: `deleteGroup [GROUP_NUMBER]`
+
+#### Expected Output(Success):
+* GUI: Specified group is no longer visible.
+* Message: `Group deleted successfully!`
+
+#### Expected Output(Failure):
+* Message: `Group with the provided group number not found.`
+
+![]() <!-- Image of GUI -->
 
 ### Listing all tasks for a specific group : `tasks`
 
