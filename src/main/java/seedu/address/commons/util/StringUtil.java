@@ -85,7 +85,7 @@ public class StringUtil {
         String[] tutsInPreppedList = preppedList.split("\\s+");
 
         return Arrays.stream(tutsInPreppedList)
-                .anyMatch(t -> t.contains(preppedTut));
+                .anyMatch(preppedTut::contentEquals);
     }
 
     /**
