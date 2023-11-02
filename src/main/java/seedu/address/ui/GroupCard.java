@@ -3,7 +3,6 @@ package seedu.address.ui;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
@@ -23,9 +22,9 @@ public class GroupCard extends UiPart<Region> {
     @FXML
     private HBox cardPane;
     @FXML
-    private Label number;
+    private Label id; // No need to change the id label style
     @FXML
-    private Label id;
+    private Label number;
     @FXML
     private HBox tutorialBox;
     @FXML
@@ -54,7 +53,7 @@ public class GroupCard extends UiPart<Region> {
 
         assert number != null : "Number is null";
         number.setText("Group " + group.getNumber() + " ");
-        number.setStyle("-fx-font-size: 20px");
+        number.setStyle("-fx-font-size: 17px; -fx-text-fill: #E7BE34; -fx-font-family: 'Arial';"); // Apply the same style as id
 
         tutorialBox.setStyle("-fx-background-color: rgba(101,152,60,0.82); -fx-background-radius: 10;");
         tutorial.setText("T" + group.getTutorial().getValue());
@@ -104,5 +103,4 @@ public class GroupCard extends UiPart<Region> {
     public String getMember5() {
         return member5.getText();
     }
-
 }
