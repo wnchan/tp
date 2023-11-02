@@ -314,6 +314,13 @@ Deletes a group from the system, based on group number.
 
 #### Format: `deleteGroup gr/[GROUP_NUMBER]`
 
+#### Examples:
+*  `deleteGroup gr/2` deletes Group 2 from the system.
+*  `deleteGroup gr/5` deletes Group 5 from the system.
+
+#### Acceptable Values:
+* GROUP_NUMBER: Must be a non-zero unsigned integer.
+
 #### Expected Output(Success):
 * GUI: Specified group is no longer visible.
 * Message: `Group deleted successfully!`
@@ -322,6 +329,7 @@ Deletes a group from the system, based on group number.
 * Message: `Group with the provided group number not found.`
 
 ![]() <!-- Image of GUI -->
+
 
 ### Listing all tasks for a specific group : `tasks`
 
@@ -552,22 +560,3 @@ _Details coming soon ..._
 --------------------------------------------------------------------------------------------------------------------
 
 ## Command summary
-
-| Action            | Format, Examples                                                                                                                                                                                                                        |
-|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Add**           | `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION t/TUTORIALS sm/SOCIALMEDIA nt/NATIONALITY g/GENDER` <br> e.g., `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu t/05 d/I’m adept at Backend technologies nt/local g/f` |
-| **Clear**         | `clear`                                                                                                                                                                                                                                 |
-| **Delete**        | `delete EMAIL`<br> e.g., `delete betsycrowe@u.nus.edu`                                                                                                                                                                                  |
-| **Edit**          | `edit INDEX [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS] [sm/SOCIALMEDIA] [nt/NATIONALITY] [g/GENDER]` <br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                     |
-| **Find**          | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                                                                                              |
-| **List**          | `list`                                                                                                                                                                                                                                  |
-| **Filter**        | `filter SLOT [MORE_SLOTS]`<br> e.g., `filter 05 11`                                                                                                                                                                                     |
-| **Create group**  | `create`                                                                                                                                                                                                                                |
-| **Find group**    | `findGroup KEYWORD [MORE_KEYWORDS]`<br> e.g., `findGroup 7 15`                                                                                                                                                                          |
-| **Filter group**  | `filter SLOT` <br> e.g., `filterGroup 3`                                                                                                                                                                                                |
-| **Check group**   | `checkGroup GR0UP_NUMBER` <br> e.g., `checkGroup 4`                                                                                                                                                                                     |
-| **List Tasks**    | `tasks GROUP_NUMBER`<br> e.g., `tasks 5`                                                                                                                                                                                                |
-| **Mark**          | `mark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `mark gr/2 ti/1`                                                                                                                                                                         |
-| **Unmark**        | `unmark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `unmark gr/5 ti/1`                                                                                                                                                                     |
-| **Exit**          | `exit`                                                                                                                                                                                                                                  |
-| **Help**          | `help`                                                                                                                                                                                                                                  |
