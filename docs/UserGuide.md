@@ -24,9 +24,9 @@ StudentConnect is a solution for hassle-free team formation for students to brow
         6. [Deleting a person : `delete`](#deleting-a-person--delete)
     3. [Group Commands](#group-commands)
         1. [Creating a new group : `create`](#creating-a-new-group--create)
-        2. [Listing all groups : `listGroup`](#listing-all-groups--listGroup)
+        2. [Listing all groups : `listGroup`](#listing-all-groups--listgroup)
         3. [Joining a group : `join`](#joining-a-group--join)
-        4. [Deleting a group : `deleteGroup`](#deleting-a-group--deleteGroup)
+        4. [Deleting a group : `deleteGroup`](#deleting-a-group--deletegroup)
         5. [Leaving a group : `leave`](#leaving-a-specific-group--leave)
         6. [Finding a group by group number : `findGroup`](#finding-a-group-by-group-number--findgroup)
         7. [Filtering groups by tutorial : `filterGroup`](#filtering-groups-by-tutorial--filtergroup)
@@ -48,7 +48,7 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
-2. Download the latest `studentconnect.jar` from [here]().
+2. Download the latest `studentconnect.jar` from [here](https://github.com/AY2324S1-CS2103T-F12-2/tp/releases).
 
 3. Copy the file to the folder you want to use as the _home folder_ for your StudentConnect.
 
@@ -125,8 +125,10 @@ Clears all entries from the system upon confirmation in the pop-up.
 * Confirmation Pop-up opened.
 * GUI: All students' details are removed from student list.
 * Message: `Opened confirmation window. Please ensure you use the exit command when exiting StudentConnect for successful reset.`
-  ![]() <!-- Image of pop-up -->
-  ![]() <!-- Image of GUI -->
+* Message (Once confirmed): `All student data has been cleared.`
+  ![result for 'clear' pop-up](images/clearPopUp.png)
+  ![result for 'clear' GUI](images/clear.png)
+
 
 ### Exiting the program : `exit`
 
@@ -137,11 +139,12 @@ Exits the program.
 #### Expected Output(Success):
 * GUI: Application window closes.
 * Message (before closing): "Thank you for using StudentConnect! Exiting the application now…"
+  ![Exit](images/exit.png)
 
 #### Expected Output(Failure):
 * Message: "Error: Exiting the program failed."
 
-![Exit](images/exit.png)
+
 
 ## Person Commands
 ### Adding a student : `add`
@@ -176,6 +179,8 @@ A student can have any number of social media links (including 0). Add multiple 
 #### Expected Output (Success):
 * GUI: New student entry added in the main student list
 * Message: “Details added successfully! New student added: (details of new student)”
+  ![Add feature](images/add.png)
+
 * Social Media Link can be clicked
 * The link will be opened on a browser upon clicking
 
@@ -191,8 +196,6 @@ Output with multiple social media links</div>
   Example: add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time<br>
   t/02 17 20 sm/https://www.linkedin.com/in/john-doe-123456789 nt/local g/m";
 
-#### Add feature output (Success): <br>
-![Add feature](images/add.png)
 
 ### Listing all students : `list`
 
@@ -203,11 +206,10 @@ Shows a list of all students in the system.
 #### Expected Output (Success):
 * GUI: List of all student entries in the system
 * Message: “Viewing all students”
+  ![sample result for 'list'](images/list.png)
 
 #### Expected Output (Failure):
 * Message: “Error: Unable to retrieve student entries. Please try again.”
-
-![sample result for 'list'](images/list.png)
 
 ### Editing a person : `edit`
 
@@ -232,13 +234,12 @@ Edits an existing student in the system.
 
 #### Expected Output (Success):
 * GUI: Student details updated in the student list.
-* Message: “Details updated successfully!”
+* Message: “Details edited successfully! Edited Student: [Updated data]”
+  ![sample result for 'edit'](images/edit.png)
 
 #### Expected Output (Failure):
 * Message: “Error: Email not found.”
 * Message: “Error: None of the optional fields provided. Give at least one.”
-
-![sample result for 'edit'](images/edit.png)
 
 ### Finding a student by name : `find`
 
@@ -255,18 +256,18 @@ Finds student(s) whose name(s) contain any of the given keywords.
 
 #### Examples:
 * `find John` returns `john`, `John Doe` and `Johnny Wee`.
-* `find john betsy` returns `John Doe`, `Betsy Crowe`<br>.
+* `find john betsy` returns `John Doe`, `Betsy Crowe`.<br>
 
 #### Expected Output (Success):
 * GUI: List of all student entries whose name(s) match the keyword(s) in the system.
-
+  ![result for 'find alex'](images/findAlexResult.png)
+* 
 #### Expected Output (Failure):
 * Message: “Invalid command format!
-
-  find: Finds all students whose names contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
+    find: Finds all students whose names contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
   Parameters: KEYWORD [MORE_KEYWORDS]...
   Example: find alice bob charlie"
-  ![result for 'find alex'](images/findAlexResult.png)
+
 
 ### Filtering students by tutorial : `filter`
 
@@ -275,6 +276,7 @@ Filters students by tutorial based on the given slots.
 #### Format: `filter SLOT [MORE SLOTS]`
 
 * The slots must be 2-digit numbers between 01 and 22 inclusive.
+* Tutorials are only accepted as 2-digits, ie. `3` is not a valid tutorial, but `03` is.
 * The order of the slots does not matter. e.g. `08 15` will match `15 08`
 * Only the tutorial is searched.
 * Students matching at least one tutorial slot will be returned (i.e. `OR` search). e.g. `03 12` will return `03 16`, `04 12`
@@ -285,6 +287,7 @@ Filters students by tutorial based on the given slots.
 
 #### Expected Output(Success):
 * GUI: List of all student entries whose tutorial(s) match the slot(s) in the system.
+  ![result for 'filter 04'](images/filter.png)
 
 #### Expected Output (Failure):
 * Message: “Invalid command format!
@@ -327,11 +330,12 @@ Creates a new empty group with the given tutorial number. The group number is au
 #### Expected Output(Success):
 * GUI: A new empty group, with a group number, is created.
 * Message: `Group created successfully! Group number is [GROUP_NUMBER]`
+  ![Sample result for create](images/create.png)
 
 #### Expected Output(Failure):
 * Message: `Tutorials should be 2-digit numbers between 01 and 22, separated by spaces.`
 
-![Sample result for create](images/create.png)
+
 
 ### Listing all groups : `listGroup`
 
@@ -364,11 +368,12 @@ Deletes a group from the system, based on group number.
 #### Expected Output(Success):
 * GUI: Specified group is no longer visible.
 * Message: `Group deleted successfully!`
+  ![result for 'deleteGroup gr/3'](images/deleteGroup.png)
 
 #### Expected Output(Failure):
 * Message: `Group with the provided group number not found.`
 
-![]() <!-- Image of GUI -->
+
 
 ### Joining a group : `join`
 
@@ -408,13 +413,13 @@ Deletes a member from a specific group, indicating that they have left.
 #### Expected Output (Success):
 * GUI: Student details removed from specified group.
 * Message: “Leave successful! `[NAME]` has left group 1!”
+![sample result for 'leave'](images/leave.png)
+
 
 #### Expected Output (Failure):
 * Message: “Person with the provided email not found.”
 * Message: “Group with the provided group number not found.”
 * Message: “The above student is not a member of the provided group.”
-
-![]() <!-- Image of GUI -->
 
 ### Finding a group by group number : `findGroup`
 
@@ -433,6 +438,8 @@ Finds group(s) with group number(s) that matches any of the given keywords.
 
 #### Expected Output (Success):
 * GUI: List of all group entries whose group number(s) match the keyword(s) in the system.
+  ![sample result for 'findGroup'](images/findGroup.png)
+
 
 #### Expected Output (Failure):
 * Message: "Invalid command format!
@@ -445,9 +452,10 @@ Finds group(s) with group number(s) that matches any of the given keywords.
 
 Filters groups by tutorial based on the given slot.
 
-#### Format: `filter SLOT`
+#### Format: `filterGroup SLOT`
 
 * The slot must be 2-digit numbers between 01 and 22 inclusive.
+* Tutorials are only accepted as 2-digits, ie. `3` is not a valid tutorial, but `03` is.
 * Only the tutorial is searched.
 
 #### Examples:
@@ -455,6 +463,8 @@ Filters groups by tutorial based on the given slot.
 
 #### Expected Output(Success):
 * GUI: List of all group entries with the tutorial that match the slot in the system.
+  ![sample result for 'filterGroup'](images/filterGroup.png)
+
 
 #### Expected Output (Failure):
 * Message: "Invalid command format!
@@ -478,6 +488,7 @@ Checks if a group fulfils the group requirements of the course.
 #### Expected Output(Success):
 If the group fulfils the group requirements,
 * Message: "Group fulfils the diversity requirements of CS2103T. Group GROUP_NUMBER"
+  ![sample result for 'checkGroup'](images/checkGroup.png)
 
 If the group has no members,
 * Message: "Group does not have any members. Group GROUP_NUMBER
@@ -532,12 +543,12 @@ Lists out all tasks for a specific group.
 #### Expected Output (Success):
 * GUI: List of all tasks for the specified group is displayed.
 * Message: “Here are the tasks for group [GROUP_NUMBER]: [list of tasks]”
+  ![sample result for 'tasks'](images/tasks.png)
 
 #### Expected Output (Failure):
 * Message: “Group with the provided group number not found.”
 * Message: “Group number is not a non-zero unsigned integer.”
 
-![sample result for 'tasks'](images/tasks.png)
 
 
 ### Marking a task as done : `mark`
@@ -559,6 +570,7 @@ Mark a task for a specified group as done.
 #### Expected Output (Success):
 * GUI: The task in the specified group is marked as done and task list is updated.
 * Message: “Marked task number (ti) for group (gr) [and displays the updated task list]"
+  ![sample result for 'mark'](images/mark.png)
 
 #### Expected Output (Failure):
 * Message: “Invalid command format! mark: Mark task specified as done. Parameters: gr/[GROUP NUMBER] ti/[TASK INDEX] Example: mark gr/2 ti/3”
@@ -567,7 +579,7 @@ Mark a task for a specified group as done.
 * Message: “Task index must be a positive integer.”
 * Message: “Invalid task index. Task not found.”
 
-![sample result for 'mark'](images/mark.png)
+
 
 ### Marking a task as not done : `unmark`
 
@@ -588,6 +600,7 @@ Mark a task for a specified group as not done.
 #### Expected Output (Success):
 * GUI: The task in the specified group is marked as not done and task list is updated.
 * Message: “Unmarked task number (ti) for group (gr) [and displays the updated task list]"
+  ![sample result for 'unmark'](images/unmark.png)
 
 #### Expected Output (Failure):
 * Message: “Invalid command format! unmark: Mark task specified as not done. Parameters: gr/[GROUP NUMBER] ti/[TASK INDEX] Example: unmark gr/2 ti/3”
@@ -595,9 +608,6 @@ Mark a task for a specified group as not done.
 * Message: “Group number is not a non-zero unsigned integer.”
 * Message: “Task index must be a positive integer.”
 * Message: “Invalid task index. Task not found.”
-
-![sample result for 'unmark'](images/unmark.png)
-
 
 ### Saving the data
 
@@ -634,25 +644,25 @@ _Details coming soon ..._
 
 ## Command summary
 
-| Action          | Format, Examples                                                                                                                                                                                                                        |
-|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Help**        | `help`                                                                                                                                                                                                                                  |
-| **Clear**       | `clear`                                                                                                                                                                                                                                 |
-| **Exit**        | `exit`                                                                                                                                                                                                                                  |
-| **Add**         | `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION t/TUTORIALS sm/SOCIALMEDIA nt/NATIONALITY g/GENDER` <br> e.g., `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu t/05 d/I’m adept at Backend technologies nt/local g/f` |
-| **List**        | `list`                                                                                                                                                                                                                                  |
-| **Edit**        | `edit INDEX [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS] [sm/SOCIALMEDIA] [nt/NATIONALITY] [g/GENDER]` <br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                     |
-| **Find**        | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                                                                                              |
-| **Filter**      | `filter SLOT [MORE_SLOTS]`<br> e.g., `filter 05 11`                                                                                                                                                                                     |
-| **Delete**      | `delete EMAIL`<br> e.g., `delete betsycrowe@u.nus.edu`                                                                                                                                                                                  |
+| Action           | Format, Examples                                                                                                                                                                                                                        |
+|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Help**         | `help`                                                                                                                                                                                                                                  |
+| **Clear**        | `clear`                                                                                                                                                                                                                                 |
+| **Exit**         | `exit`                                                                                                                                                                                                                                  |
+| **Add**          | `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION t/TUTORIALS sm/SOCIALMEDIA nt/NATIONALITY g/GENDER` <br> e.g., `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu t/05 d/I’m adept at Backend technologies nt/local g/f` |
+| **List**         | `list`                                                                                                                                                                                                                                  |
+| **Edit**         | `edit INDEX [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS] [sm/SOCIALMEDIA] [nt/NATIONALITY] [g/GENDER]` <br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                     |
+| **Find**         | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                                                                                              |
+| **Filter**       | `filter SLOT [MORE_SLOTS]`<br> e.g., `filter 05 11`                                                                                                                                                                                     |
+| **Delete**       | `delete EMAIL`<br> e.g., `delete betsycrowe@u.nus.edu`                                                                                                                                                                                  |
 | **Create group** | `create t/[TUTORIAL]` <br> e.g., `create t/01`                                                                                                                                                                                          |
-| **List groups** | `listGroup`                                                                                                                                                                                                                             |
-| **Delete group** | `deleteGroup gr/[GROUP_NUMBER}` <br> e.g., `deleteGroup gr/1`
-| **Join group**  | `join e/[EMAIL] gr/[GROUP_NUMBER]` <br> e.g., `join e/johnd@u.nus.edu gr/1`                                                                                                                                                              |
-| **Leave group** | `leave e/[EMAIL] gr/[GROUP_NUMBER}` <br> e.g., `leave e/johnd@u.nus.edu gr/1`
-| **Find group**  | `findGroup KEYWORD [MORE_KEYWORDS]`<br> e.g., `findGroup 7 15`                                                                                                                                                                          |
+| **List groups**  | `listGroup`                                                                                                                                                                                                                             |
+| **Delete group** | `deleteGroup gr/[GROUP_NUMBER}` <br> e.g., `deleteGroup gr/1`                                                                                                                                                                           |
+| **Join group**   | `join e/[EMAIL] gr/[GROUP_NUMBER]` <br> e.g., `join e/johnd@u.nus.edu gr/1`                                                                                                                                                             |
+| **Leave group**  | `leave e/[EMAIL] gr/[GROUP_NUMBER}` <br> e.g., `leave e/johnd@u.nus.edu gr/1`                                                                                                                                                           |
+| **Find group**   | `findGroup KEYWORD [MORE_KEYWORDS]`<br> e.g., `findGroup 7 15`                                                                                                                                                                          |
 | **Filter group** | `filter SLOT` <br> e.g., `filterGroup 3`                                                                                                                                                                                                |
-| **Check group** | `checkGroup GR0UP_NUMBER` <br> e.g., `checkGroup 4`                                                                                                                                                                                     |
-| **List Tasks**  | `tasks GROUP_NUMBER`<br> e.g., `tasks 5`                                                                                                                                                                                                |
-| **Mark**        | `mark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `mark gr/2 ti/1`                                                                                                                                                                         |
-| **Unmark**      | `unmark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `unmark gr/5 ti/1`                                                                                                                                                                     |
+| **Check group**  | `checkGroup GR0UP_NUMBER` <br> e.g., `checkGroup 4`                                                                                                                                                                                     |
+| **List Tasks**   | `tasks GROUP_NUMBER`<br> e.g., `tasks 5`                                                                                                                                                                                                |
+| **Mark**         | `mark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `mark gr/2 ti/1`                                                                                                                                                                         |
+| **Unmark**       | `unmark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `unmark gr/5 ti/1`                                                                                                                                                                     |
