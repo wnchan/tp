@@ -1,5 +1,7 @@
 package seedu.address.logic.commands;
 
+import static java.util.Objects.requireNonNull;
+
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.group.Group;
@@ -31,6 +33,7 @@ public class DeleteGroupCommand extends Command {
 
     @Override
     public CommandResult execute(Model model) throws CommandException {
+        requireNonNull(model);
         // Check if the group with the provided group number exists
         Group groupToDelete = model.getGroupWithNumber(groupNumber)
                 .orElseThrow(() -> new CommandException(MESSAGE_DELETE_GROUP_NOT_FOUND));
