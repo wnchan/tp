@@ -23,7 +23,10 @@ public class Messages {
                 "Multiple values specified for the following single-valued field(s): ";
 
     /**
-     * Returns an error message indicating the duplicate prefixes.
+     * Returns an error message indicating duplicate prefixes.
+     *
+     * @param duplicatePrefixes An array of Prefixes that are duplicated.
+     * @return Error message indicating duplicate prefixes.
      */
     public static String getErrorMessageForDuplicatePrefixes(Prefix... duplicatePrefixes) {
         assert duplicatePrefixes.length > 0;
@@ -35,7 +38,10 @@ public class Messages {
     }
 
     /**
-     * Formats the {@code person} for display to the user.
+     * Formats the given {@code person} for display to the user.
+     *
+     * @param person The Person object to be formatted.
+     * @return A formatted string representing the Person's information.
      */
     public static String format(Person person) {
         final StringBuilder builder = new StringBuilder();
@@ -50,12 +56,15 @@ public class Messages {
     }
 
     /**
-     * Formats the {@code group} for display to the user.
+     * Formats the given {@code group} for display to the user.
+     *
+     * @param group The Group object to be formatted.
+     * @return A formatted string representing the Group's information.
      */
     public static String format(Group group) {
         final StringBuilder builder = new StringBuilder();
         builder.append("Group Number: ").append(group.getNumber())
-                .append("; Members: ").append(group.getMembers());
+                .append("; Members: ").append(group.getMembers()); // todo: needs to be edited, formatting is wrong
         return builder.toString();
     }
 

@@ -14,7 +14,8 @@ public class Todo extends Task {
      * @param module     The module the task is assigned to (CS2103T or CS2101).
      */
     public Todo(String task, TaskStatus status, TaskModule module) {
-        super(task, status, module);
+        super(task, status, module, "T", "");
+
     }
 
     /**
@@ -44,13 +45,4 @@ public class Todo extends Task {
         return "T | " + (this.getStatus())
             + " | " + this.getTask() + " | " + this.getModule();
     }
-
-    /*/**
-     * Saves the to-do task to a file.
-     */
-    /*@Override
-    public void saveToFile() {
-        Storage.saveTaskToFile(generateStr());
-    }*/
-
 }

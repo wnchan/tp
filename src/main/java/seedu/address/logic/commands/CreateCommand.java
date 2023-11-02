@@ -1,6 +1,8 @@
 package seedu.address.logic.commands;
 
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
+import static seedu.address.model.Model.PREDICATE_SHOW_ALL_GROUPS;
+import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -37,6 +39,8 @@ public class CreateCommand extends Command {
 
     @Override
     public CommandResult execute(Model model) {
+        model.updateFilteredGroupList(PREDICATE_SHOW_ALL_GROUPS);
+        model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
         int number = generateGroupNumber(model);
         Group createdGroup = new Group(number, tutorial);
         // Initialize the tasks and add them to the group
@@ -58,19 +62,15 @@ public class CreateCommand extends Command {
      * Generates the next group number to be used when creating a new group.
      *
      * @param model
-     * @return
      */
     private int generateGroupNumber(Model model) {
-        int number;
+        int number = 1;
         ReadOnlyAddressBook addressBook = model.getAddressBook();
         ObservableList<Group> groups = addressBook.getGroupList();
 
-        if (groups.isEmpty()) {
-            number = 1;
-        } else {
-            number = 2;
+        if (!groups.isEmpty()) {
             List<Integer> groupNumbers = groups.stream()
-                .map(Group::getNumber).collect(Collectors.toList());
+                    .map(Group::getNumber).collect(Collectors.toList());
             while (groupNumbers.contains(number)) {
                 number++;
             }

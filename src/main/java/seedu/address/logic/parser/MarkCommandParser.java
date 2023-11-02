@@ -3,8 +3,11 @@ package seedu.address.logic.parser;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 
+import java.util.Arrays;
+
 import seedu.address.logic.commands.MarkCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
+import seedu.address.model.group.GroupContainsKeywordsPredicate;
 
 /**
  * Parses input arguments and creates a new MarkCommand object
@@ -18,16 +21,25 @@ public class MarkCommandParser implements Parser<MarkCommand> {
     public MarkCommand parse(String args) throws ParseException {
         requireNonNull(args);
         try {
-            String[] argParts = args.trim().split("gr/|ti/");
-            if (argParts.length != 3) {
+            String[] argParts = args.trim().split(" ");
+            int groupNumber = -1;
+            int taskIndex = -1;
+
+            for (String part : argParts) {
+                if (part.startsWith("gr/")) {
+                    groupNumber = ParserUtil.parseGroupNumber(part.substring(3));
+                } else if (part.startsWith("ti/")) {
+                    taskIndex = ParserUtil.parseTaskIndex(part.substring(3)) - 1;
+                }
+            }
+
+            if (groupNumber == -1 || taskIndex == -1) {
                 throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, MarkCommand.MESSAGE_USAGE));
             }
-            int groupNumber = ParserUtil.parseGroupNumber(argParts[1]);
-            int taskIndex = ParserUtil.parseTaskIndex(argParts[2]) - 1;
-            return new MarkCommand(groupNumber, taskIndex);
+            return new MarkCommand(groupNumber, taskIndex, new GroupContainsKeywordsPredicate(Arrays.asList(
+                String.valueOf(groupNumber))));
         } catch (NumberFormatException nfe) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, MarkCommand.MESSAGE_USAGE), nfe);
         }
     }
 }
-

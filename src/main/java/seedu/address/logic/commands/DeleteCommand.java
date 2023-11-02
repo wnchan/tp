@@ -1,6 +1,8 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.model.Model.PREDICATE_SHOW_ALL_GROUPS;
+import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
 import java.util.Optional;
 
@@ -13,19 +15,19 @@ import seedu.address.model.person.Email;
 import seedu.address.model.person.Person;
 
 /**
- * Deletes a person identified using it's displayed index from the address book.
+ * Deletes a student identified using it's displayed index from the address book.
  */
 public class DeleteCommand extends Command {
 
     public static final String COMMAND_WORD = "delete";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
-            + ": Deletes the person identified by the email address.\n"
+            + ": Deletes the student identified by the email address.\n"
             + "Parameters: EMAIL\n"
             + "Example: " + COMMAND_WORD + " alexyeoh@u.nus.edu";
 
-    public static final String MESSAGE_DELETE_PERSON_SUCCESS = "Person deleted Successfully! Deleted Person: %1$s";
-    public static final String MESSAGE_DELETE_EMAIL_NOT_FOUND = "Person with the provided email not found.";
+    public static final String MESSAGE_DELETE_PERSON_SUCCESS = "Student deleted Successfully! Deleted Student: %1$s";
+    public static final String MESSAGE_DELETE_EMAIL_NOT_FOUND = "Student with the provided email not found.";
     private final Email targetEmail;
 
     public DeleteCommand(Email targetEmail) {
@@ -34,6 +36,8 @@ public class DeleteCommand extends Command {
 
     @Override
     public CommandResult execute(Model model) throws CommandException {
+        model.updateFilteredGroupList(PREDICATE_SHOW_ALL_GROUPS);
+        model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
         requireNonNull(model);
 
         // Find the person with the provided email
@@ -63,6 +67,7 @@ public class DeleteCommand extends Command {
             return true;
         }
 
+        // instanceof handles nulls
         if (!(other instanceof DeleteCommand)) {
             return false;
         }

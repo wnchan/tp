@@ -27,7 +27,7 @@ public class Event extends Task {
      * @throws TaskException If the date/time format is invalid.
      */
     public Event(String task, TaskStatus status, TaskModule module, String from, String to) throws TaskException {
-        super(task, status, module);
+        super(task, status, module, "E", to);
         this.fromStr = from;
         this.toStr = to;
         try {
@@ -75,13 +75,4 @@ public class Event extends Task {
         return "E | " + (this.getStatus())
                 + " | " + this.getTask() + " | " + fromStr + " | " + toStr;
     }
-
-    /*/**
-     * Saves the `Event` task to a file.
-     */
-    /*@Override
-    public void saveToFile() {
-        Storage.saveTaskToFile(generateStr());
-    }*/
-
 }
