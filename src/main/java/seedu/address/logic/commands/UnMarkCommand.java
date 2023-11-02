@@ -67,7 +67,8 @@ public class UnMarkCommand extends Command {
             String displayedTasks = taskList.toString();
             requireNonNull(model);
             model.updateFilteredGroupList(predicate);
-            return new CommandResult(String.format(MESSAGE_SUCCESS, groupId, taskIndex + 1) + "\n" + displayedTasks,  false, false, true, false);
+            return new CommandResult(String.format(MESSAGE_SUCCESS, groupId, taskIndex + 1) + "\n"
+                + displayedTasks, false, false, true, false);
         } else {
             throw new CommandException(MESSAGE_INVALID_TASK_INDEX);
         }

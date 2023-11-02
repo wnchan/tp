@@ -76,7 +76,7 @@ public class CommandResult {
     }
 
     @Override
-    public boolean equals (Object other){
+    public boolean equals(Object other) {
         if (other == this) {
             return true;
         }
@@ -95,12 +95,12 @@ public class CommandResult {
     }
 
     @Override
-    public int hashCode () {
+    public int hashCode() {
         return Objects.hash(feedbackToUser, showHelp, exit, groupCommand, clear);
     }
 
     @Override
-    public String toString () {
+    public String toString() {
         return new ToStringBuilder(this)
                 .add("feedbackToUser", feedbackToUser)
                 .add("showHelp", showHelp)

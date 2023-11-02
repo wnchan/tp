@@ -26,7 +26,7 @@ public class JsonAdaptedTask {
                            @JsonProperty("status") String status,
                            @JsonProperty("module") String module,
                            @JsonProperty("type") String type,
-                           @JsonProperty("by") String by){
+                           @JsonProperty("by") String by) {
         this.task = task;
         this.status = status;
         this.module = module;
