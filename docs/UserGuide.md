@@ -292,7 +292,32 @@ Expected Output(Success):
 Expected Output(Failure):
 * Message: `Error: Failed to create group.`
 
-![Exit](images/create.png)
+![Sample result for create](images/create.png)
+
+### Listing all tasks for a specific group : `tasks`
+
+Lists out all tasks for a specific group.
+
+#### Format: `tasks [GROUP_NUMBER]`
+
+* Lists out all tasks for the specified group.
+
+#### Examples:
+*  `tasks 2` Lists out all tasks for group 2.
+*  `tasks 5` Lists out all tasks for group 5.
+
+#### Acceptable Values:
+* GROUP_NUMBER: Must be a non-zero unsigned integer.
+
+#### Expected Output (Success):
+* GUI: List of all tasks for the specified group is displayed.
+* Message: “Here are the tasks for group [GROUP_NUMBER]: [list of tasks]”
+
+#### Expected Output (Failure):
+* Message: “Group with the provided group number not found.”
+* Message: “Group number is not a non-zero unsigned integer.”
+
+![sample result for 'tasks'](images/tasks.png)
 
 ### Marking a task as done : `mark`
 
@@ -410,8 +435,8 @@ _Details coming soon ..._
 | **List**         | `list`                                                                                                                                                                                                                                  |
 | **Filter**       | `filter SLOT [MORE_SLOTS]`<br> e.g., `find 05 11`                                                                                                                                                                                       |
 | **Create group** | `create`                                                                                                                                                                                                                                |
+| **List Tasks**   | `tasks GROUP_NUMBER`<br> e.g., `tasks 5`                                                                                                                                                                                                |
 | **Mark**         | `mark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `mark gr/2 ti/1`                                                                                                                                                                         |
 | **Unmark**       | `unmark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `unmark gr/5 ti/1`                                                                                                                                                                     |
 | **Exit**         | `exit`                                                                                                                                                                                                                                  |
 | **Help**         | `help`                                                                                                                                                                                                                                  |
-
