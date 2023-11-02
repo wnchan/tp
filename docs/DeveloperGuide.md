@@ -397,8 +397,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1. Student requests to find students with a keyword.
-2. StudentConnect shows a list of students whose name(s) contain the keyword.
+1. Student requests to find students by name with keyword(s).
+2. StudentConnect shows a list of students whose name(s) contain the keyword(s).
 
     Use case ends.
 
@@ -503,6 +503,34 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 2. StudentConnect displays the help message, along with the requirement message.
 
    Use case ends.
+
+**Use Case: Find a group**
+
+**MSS**
+
+1. Student requests to find groups by group number with keyword(s).
+2. StudentConnect shows a list of group(s) with group number(s) matching the keyword(s).
+
+    Use case ends.
+
+**Extensions:**
+* 2a. The given keyword(s) does not match any of the group numbers.
+
+    Use case ends.
+
+**Use Case: Filter groups**
+
+**MSS**
+
+1. Student requests to filter groups by tutorial slot.
+2. StudentConnect shows a list of groups that belong to the given tutorial slot.
+
+    Use case ends.
+
+**Extensions:**
+* 2a. The given slot does not match any of the groups' tutorial slot.
+
+    Use case ends.
 
 **Use Case: Mark Task as Done**
 
