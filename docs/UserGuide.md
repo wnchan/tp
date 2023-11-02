@@ -11,29 +11,34 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 <a id="table-of-contents"></a>
 1. [Quick start](#quick-start)
 2. [Features](#features)
-    1. [Viewing help : `help`](#viewing-help--help)
-    2. [Adding a student : `add`](#adding-a-student--add)
-    3. [Listing all students : `list`](#listing-all-students--list)
-    4. [Editing a person : `edit`](#editing-a-person--edit)
-    5. [Finding a student by name : `find`](#finding-a-student-by-name--find)
-    6. [Filtering students by tutorial : `filter`](#filtering-students-by-tutorial--filter)
-    7. [Deleting a person : `delete`](#deleting-a-person--delete)
-    8. [Clearing all entries : `clear`](#clearing-all-entries--clear)
-    9. [Creating a new group : `create`](#creating-a-new-group--create)
-   10. [Deleting a group : `deleteGroup`](#deleting-a-group--deleteGroup)
-   11. [Leaving a group : `leave`](#leaving-a-specific-group--leave)
-   12. [Finding a group by group number : `findGroup`](#finding-a-group-by-group-number--findgroup)
-   13. [Filtering groups by tutorial : `filterGroup`](#filtering-groups-by-tutorial--filtergroup)
-   14. [Checking a group : `checkGroup`](#checking-a-group--checkgroup)
-   15. [Marking a task as done : `mark`](#marking-a-task-as-done--mark)
-   16. [Marking a task as not done : `unmark`](#marking-a-task-as-not-done--unmark)
-   17. [Exiting the program : `exit`](#exiting-the-program--exit)
-   18. [Saving the data](#saving-the-data)
-   19. [Editing the data file](#editing-the-data-file)
-   20. [Archiving data files [coming in v2.0]](#archiving-data-files-coming-in-v20)
-3. [FAQ](#faq)
-4. [Known issues](#known-issues)
-5. [Command summary](#command-summary)
+    1. [General Commands](#general-commands)
+        1. [Viewing help : `help`](#viewing-help--help)
+        2. [Clearing all entries : `clear`](#clearing-all-entries--clear)
+        3. [Exiting the program : `exit`](#exiting-the-program--exit)
+    2. [Person Commands](#person-commands)
+        1. [Adding a student : `add`](#adding-a-student--add)
+        2. [Listing all students : `list`](#listing-all-students--list)
+        3. [Editing a person : `edit`](#editing-a-person--edit)
+        4. [Finding a student by name : `find`](#finding-a-student-by-name--find)
+        5. [Filtering students by tutorial : `filter`](#filtering-students-by-tutorial--filter)
+        6. [Deleting a person : `delete`](#deleting-a-person--delete)
+        7. [Clearing all entries : `clear`](#clearing-all-entries--clear)
+    3. [Group Commands](#group-commands)
+        1. [Creating a new group : `create`](#creating-a-new-group--create)
+        2. [Deleting a group : `deleteGroup`](#deleting-a-group--deleteGroup)
+        3. [Leaving a group : `leave`](#leaving-a-specific-group--leave)
+        4. [Finding a group by group number : `findGroup`](#finding-a-group-by-group-number--findgroup)
+        5. [Filtering groups by tutorial : `filterGroup`](#filtering-groups-by-tutorial--filtergroup)
+        6. [Checking a group : `checkGroup`](#checking-a-group--checkgroup)
+        7. [List tasks : `tasks`](#listing-all-tasks-for-a-specific-group--tasks)
+        8. [Marking a task as done : `mark`](#marking-a-task-as-done--mark)
+        9. [Marking a task as not done : `unmark`](#marking-a-task-as-not-done--unmark)
+3. [Saving the data](#saving-the-data)
+4. [Editing the data file](#editing-the-data-file)
+5. [Archiving data files [coming in v2.0]](#archiving-data-files-coming-in-v20)
+6. [FAQ](#faq)
+7. [Known issues](#known-issues)
+8. [Command summary](#command-summary)
 
 
 --------------------------------------------------------------------------------------------------------------------
@@ -93,6 +98,7 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </div>
 
+## General Commands
 ### Viewing help : `help`
 
 Shows a message explaining how to access the help page in the user guide and a button to copy the link.<br>
@@ -120,6 +126,21 @@ Clears all entries from the system upon confirmation in the pop-up.
 * Message: `Opened confirmation window. Please ensure you use the exit command when exiting StudentConnect for successful reset.`
   ![]() <!-- Image of pop-up -->
   ![]() <!-- Image of GUI -->
+
+### Exiting the program : `exit`
+
+Exits the program.
+
+#### Format: `exit`
+
+#### Expected Output(Success):
+* GUI: Application window closes.
+* Message (before closing): `Thank you for using StudentConnect! Exiting the application now…`
+
+#### Expected Output(Failure):
+* Message: `Error: Exiting the program failed.`
+
+![Exit](images/exit.png)
 
 ## Person Commands
 ### Adding a student : `add`
@@ -369,7 +390,7 @@ Finds group(s) with group number(s) that matches any of the given keywords.
 
 * The order of the keywords does not matter. e.g. `5 12` will match `12 5`
 * Only the group number is searched.
-* Only the full keywords will be matched e.g. `1` will not match `12`
+* Only the full keywords will be matched. e.g. `1` will not match `12`
 * Groups matching one keyword will be returned (i.e. `OR` search). e.g. `5 12` will return `5`, `12`
 
 #### Examples:
@@ -457,7 +478,7 @@ If the group has not been created,
 
   checkGroup: Checks the group identified by its group number.
   Parameters: GROUP_NUMBER
-  Example: checkGroup 1"
+  Example: checkGroup 1
 
 ### Listing all tasks for a specific group : `tasks`
 
@@ -543,20 +564,6 @@ Mark a task for a specified group as not done.
 
 ![sample result for 'unmark'](images/unmark.png)
 
-### Exiting the program : `exit`
-
-Exits the program.
-
-#### Format: `exit`
-
-#### Expected Output(Success):
-* GUI: Application window closes.
-* Message (before closing): `Thank you for using StudentConnect! Exiting the application now…`
-
-#### Expected Output(Failure):
-* Message: `Error: Exiting the program failed.`
-
-![Exit](images/exit.png)
 
 ### Saving the data
 
