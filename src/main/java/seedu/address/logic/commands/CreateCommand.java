@@ -1,6 +1,5 @@
 package seedu.address.logic.commands;
 
-import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 
 import java.util.List;
@@ -10,10 +9,10 @@ import javafx.collections.ObservableList;
 import seedu.address.model.Model;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.group.Group;
-import seedu.address.model.tutorial.Tutorial;
 import seedu.address.model.group.exceptions.TaskException;
-import seedu.address.model.group.tasks.TaskList;
 import seedu.address.model.group.tasks.TaskInitializer;
+import seedu.address.model.group.tasks.TaskList;
+import seedu.address.model.tutorial.Tutorial;
 
 /**
  * Creates a new empty group.
@@ -40,7 +39,6 @@ public class CreateCommand extends Command {
     public CommandResult execute(Model model) {
         int number = generateGroupNumber(model);
         Group createdGroup = new Group(number, tutorial);
-      
         // Initialize the tasks and add them to the group
         TaskList initialTasks = null;
         try {
@@ -52,26 +50,23 @@ public class CreateCommand extends Command {
 
         model.addGroup(createdGroup);
 
-        return new CommandResult(String.format(MESSAGE_SUCCESS, createdGroup.getNumber()));
+        return new CommandResult(String.format(MESSAGE_SUCCESS, createdGroup.getNumber()),
+                false, false, true, false);
     }
 
     /**
      * Generates the next group number to be used when creating a new group.
      *
      * @param model
-     * @return
      */
     private int generateGroupNumber(Model model) {
-        int number;
+        int number = 1;
         ReadOnlyAddressBook addressBook = model.getAddressBook();
         ObservableList<Group> groups = addressBook.getGroupList();
 
-        if (groups.isEmpty()) {
-            number = 1;
-        } else {
-            number = 2;
+        if (!groups.isEmpty()) {
             List<Integer> groupNumbers = groups.stream()
-                .map(Group::getNumber).collect(Collectors.toList());
+                    .map(Group::getNumber).collect(Collectors.toList());
             while (groupNumbers.contains(number)) {
                 number++;
             }
