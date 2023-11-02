@@ -342,19 +342,22 @@ CS2103T students.
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
 
-| Priority | As a …​ | I want to …​                                                  | So that I can…​                             |
-|---------|---------|---------------------------------------------------------------|---------------------------------------------|
-| `* * *` | student | add my personal details to the system                         | get other students to learn more about me   |
-| `* * *` | student | view the rest of the students in the course                   | see my options for choosing teammates       |
-| `* * *` | student | see the other student’s name, major, basic info etc           | make informed decisions                     |
-| `* * *` | student | customise and update my profile details                       | ensure that my profile is up to date        |
-| `* * *` | student | view other students in the same tutorial group                | communicate with them                       |
-| `* * *` | student | remove my personal details from the system                    | stop using the application                  |
-| `* * *` | student | join a group on the app                                       | form a group for the course                 |
-| `* * *` | user    | exit the app                                                  | close the app                               |
-| `* *`   | student | seek help and check requirements for cs2101/cs2103t groupings | be more clear of the valid group formations |
-| `* * `  | student | be able to click the links of the social media to view them   | avoid wasting time typing links manually    |
-
+| Priority | As a …​            | I want to …​                                                  | So that I can…​                                   |
+|----------|--------------------|---------------------------------------------------------------|---------------------------------------------------|
+| `* * *`  | student            | add my personal details to the system                         | get other students to learn more about me         |
+| `* * *`  | student            | view the rest of the students in the course                   | see my options for choosing teammates             |
+| `* * *`  | student            | see the other student’s name, major, basic info etc           | make informed decisions                           |
+| `* * *`  | student            | customise and update my profile details                       | ensure that my profile is up to date              |
+| `* * *`  | student            | view other students in the same tutorial group                | communicate with them                             |
+| `* * *`  | student            | remove my personal details from the system                    | stop using the application                        |
+| `* * *`  | student            | join a group on the app                                       | form a group for the course                       |
+| `* * *`  | user               | exit the app                                                  | close the app                                     |
+| `* *`    | student            | seek help and check requirements for cs2101/cs2103t groupings | be more clear of the valid group formations       |
+| `* * `   | student            | be able to click the links of the social media to view them   | avoid wasting time typing links manually          |
+| `* * `   | student            | be able to leave a group on the app                           | join another group of my choice                   |
+| `* * `   | student            | be able to delete a group I created on the app                | get rid of unnecessary groups on the system       |
+| `* * *`  | course coordinator | be able to remove all the data from the system                | reuse the application for new batches of students |
+| `* * *`  | course coordinator | be asked to confirm if I want to clear all the data           | prevent accidentally clearing all the data        |
 
 *{More to be added}*
 
