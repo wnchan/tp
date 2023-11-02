@@ -330,6 +330,32 @@ Deletes a group from the system, based on group number.
 
 ![]() <!-- Image of GUI -->
 
+### Leaving a specific group : `leave`
+
+Deletes a member from a specific group, indicating that they have left.
+
+#### Format: `leave e/[EMAIL] gr/[GROUP_NUMBER]`
+
+* Removes student from specified group. 
+
+#### Examples:
+*  `leave e/johnd@u.nus.edu gr/1` Removes member with email `johnd@u.nus.edu` from Group 1.
+*  `leave e/bettyc@u.nus.edu gr/11` Removes member with email `bettyc@u.nus.edu` from Group 11.
+
+#### Acceptable Values:
+* GROUP_NUMBER: Must be a non-zero unsigned integer.
+* EMAIL: Must be a valid NUS email registered in the system.
+
+#### Expected Output (Success):
+* GUI: Student details removed from specified group.
+* Message: “Leave successful! `[NAME]` has left group 1!”
+
+#### Expected Output (Failure):
+* Message: “Person with the provided email not found.”
+* Message: “Group with the provided group number not found.”
+*  Message: “The above student is not a member of the provided group.”
+
+![]() <!-- Image of GUI -->
 
 ### Listing all tasks for a specific group : `tasks`
 
@@ -453,6 +479,7 @@ If the group has not been created,
     checkGroup: Checks the group identified by its group number.
   Parameters: GROUP_NUMBER
   Example: checkGroup 1"
+
 
 ### Marking a task as done : `mark`
 
