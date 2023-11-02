@@ -15,6 +15,7 @@ import javafx.util.Duration;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.logic.Logic;
+import seedu.address.logic.commands.ClearCommand;
 import seedu.address.logic.commands.CommandResult;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.logic.parser.exceptions.ParseException;
@@ -45,6 +46,8 @@ public class MainWindow extends UiPart<Stage> {
     @FXML
     private MenuItem helpMenuItem;
 
+    @FXML
+    private MenuItem clearMenuItem;
     @FXML
     private StackPane personListPanelPlaceholder;
 
@@ -82,7 +85,7 @@ public class MainWindow extends UiPart<Stage> {
 
     private void setAccelerators() {
         setAccelerator(helpMenuItem, KeyCombination.valueOf("F1"));
-        //setAccelerator(clearMenuItem, KeyCombination.valueOf("F2"));
+        setAccelerator(clearMenuItem, KeyCombination.valueOf("F2"));
     }
 
     /**
@@ -160,16 +163,19 @@ public class MainWindow extends UiPart<Stage> {
 
     /**
      * Opens the confirmation popup for clearing data.
-     *
      */
     @FXML
     public void handleClear() {
-        if (!confirmationPopup.isShowing()) {
-            confirmationPopup.show();
-        } else {
-            confirmationPopup.focus();
+        // You can directly execute the ClearCommand logic here
+        try {
+            CommandResult result = logic.execute(ClearCommand.COMMAND_WORD);
+            // Check the result if needed
+        } catch (CommandException | ParseException e) {
+            // Handle exceptions if any
+            e.printStackTrace(); // You might want to log or display an error message
         }
     }
+
 
     void show() {
         primaryStage.show();
