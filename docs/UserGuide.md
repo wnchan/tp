@@ -21,15 +21,16 @@ StudentConnect is a solution for hassle-free team formation for students to brow
     8. [Clearing all entries : `clear`](#clearing-all-entries--clear)
     9. [Creating a new group : `create`](#creating-a-new-group--create)
    10. [Deleting a group : `deleteGroup`](#deleting-a-group--deleteGroup)
-   10. [Finding a group by group number : `findGroup`](#finding-a-group-by-group-number--findgroup)
-   11. [Filtering groups by tutorial : `filterGroup`](#filtering-groups-by-tutorial--filtergroup)
-   12. [Checking a group : `checkGroup`](#checking-a-group--checkgroup)
-   13. [Marking a task as done : `mark`](#marking-a-task-as-done--mark)
-   14. [Marking a task as not done : `unmark`](#marking-a-task-as-not-done--unmark)
-   15. [Exiting the program : `exit`](#exiting-the-program--exit)
-   16. [Saving the data](#saving-the-data)
-   17. [Editing the data file](#editing-the-data-file)
-   18. [Archiving data files [coming in v2.0]](#archiving-data-files-coming-in-v20)
+   11. [Leaving a group : `leave`](#leaving-a-specific-group--leave)
+   12. [Finding a group by group number : `findGroup`](#finding-a-group-by-group-number--findgroup)
+   13. [Filtering groups by tutorial : `filterGroup`](#filtering-groups-by-tutorial--filtergroup)
+   14. [Checking a group : `checkGroup`](#checking-a-group--checkgroup)
+   15. [Marking a task as done : `mark`](#marking-a-task-as-done--mark)
+   16. [Marking a task as not done : `unmark`](#marking-a-task-as-not-done--unmark)
+   17. [Exiting the program : `exit`](#exiting-the-program--exit)
+   18. [Saving the data](#saving-the-data)
+   19. [Editing the data file](#editing-the-data-file)
+   20. [Archiving data files [coming in v2.0]](#archiving-data-files-coming-in-v20)
 3. [FAQ](#faq)
 4. [Known issues](#known-issues)
 5. [Command summary](#command-summary)
@@ -353,7 +354,7 @@ Deletes a member from a specific group, indicating that they have left.
 #### Expected Output (Failure):
 * Message: “Person with the provided email not found.”
 * Message: “Group with the provided group number not found.”
-*  Message: “The above student is not a member of the provided group.”
+* Message: “The above student is not a member of the provided group.”
 
 ![]() <!-- Image of GUI -->
 
@@ -598,7 +599,8 @@ _Details coming soon ..._
 | **List**         | `list`                                                                                                                                                                                                                                  |
 | **Filter**       | `filter SLOT [MORE_SLOTS]`<br> e.g., `filter 05 11`                                                                                                                                                                                     |
 | **Create group** | `create`                                                                                                                                                                                                                                |
-| **Delete group** | `deleteGroup gr/[GROUP_NUMBER}` <br> e.g., `deleteGroup gr/1`                        
+| **Delete group** | `deleteGroup gr/[GROUP_NUMBER}` <br> e.g., `deleteGroup gr/1`    
+| **Leave group**  | `leave e/[EMAIL] gr/[GROUP_NUMBER}` <br> e.g., `leave e/johnd@u.nus.edu gr/1`        
 | **Find group**   | `findGroup KEYWORD [MORE_KEYWORDS]`<br> e.g., `findGroup 7 15`                                                                                                                                                                          |
 | **Filter group** | `filter SLOT` <br> e.g., `filterGroup 3`                                                                                                                                                                                                |
 | **Check group**  | `checkGroup GR0UP_NUMBER` <br> e.g., `checkGroup 4`                                                                                                                                                                                     |
