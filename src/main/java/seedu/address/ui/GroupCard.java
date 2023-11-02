@@ -49,11 +49,12 @@ public class GroupCard extends UiPart<Region> {
         super(FXML);
         this.group = group;
         id.setText(displayedIndex + ". ");
-        id.setStyle("-fx-font-size: 17px; -fx-text-fill: #E7BE34; -fx-font-family: 'Arial';");
+        id.setStyle("-fx-font-size: 17px; -fx-text-fill: #E7BE34; -fx-font-family: 'Arial'; -fx-font-weight: bold");
 
         assert number != null : "Number is null";
         number.setText("Group " + group.getNumber() + " ");
-        number.setStyle("-fx-font-size: 17px; -fx-text-fill: #E7BE34; -fx-font-family: 'Arial';"); // Apply the same style as id
+        number.setStyle("-fx-font-size: 17px; -fx-text-fill: #E7BE34; -fx-font-family: 'Arial'; -fx-font-weight: bold;");
+        // Apply the same style as id
 
         tutorialBox.setStyle("-fx-background-color: rgba(101,152,60,0.82); -fx-background-radius: 10;");
         tutorial.setText("T" + group.getTutorial().getValue());
