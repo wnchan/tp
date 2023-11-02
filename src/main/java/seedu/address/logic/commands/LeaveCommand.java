@@ -3,6 +3,7 @@ package seedu.address.logic.commands;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_GROUP;
+import static seedu.address.model.Model.PREDICATE_SHOW_ALL_GROUPS;
 
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.commands.exceptions.CommandException;
@@ -49,7 +50,7 @@ public class LeaveCommand extends Command {
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
-
+        model.updateFilteredGroupList(PREDICATE_SHOW_ALL_GROUPS);
         // Find the person with the provided email
         Person personToLeave = model.getPersonWithEmail(targetEmail)
                 .orElseThrow(() -> new CommandException(MESSAGE_LEAVE_EMAIL_NOT_FOUND));
@@ -61,7 +62,6 @@ public class LeaveCommand extends Command {
         if (!groupToLeave.hasMember(personToLeave)) {
             throw new CommandException(MESSAGE_NOT_IN_GROUP);
         }
-
         // Remove the person from the group
         model.removePersonFromGroup(personToLeave, groupToLeave);
 
@@ -92,4 +92,3 @@ public class LeaveCommand extends Command {
                 .toString();
     }
 }
-
