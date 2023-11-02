@@ -2,8 +2,10 @@ package seedu.address.logic.parser;
 
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 
+import java.util.Arrays;
 import seedu.address.logic.commands.CheckCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
+import seedu.address.model.group.GroupContainsKeywordsPredicate;
 
 /**
  * Parses input arguments and creates a new CheckCommand object
@@ -22,6 +24,7 @@ public class CheckCommandParser implements Parser<CheckCommand> {
             throw new ParseException(
                     String.format(MESSAGE_INVALID_COMMAND_FORMAT, CheckCommand.MESSAGE_USAGE));
         }
-        return new CheckCommand(Integer.parseInt(trimmedArgs));
+        return new CheckCommand(Integer.parseInt(trimmedArgs), new GroupContainsKeywordsPredicate(Arrays.asList(
+            String.valueOf(Integer.parseInt(trimmedArgs)))));
     }
 }

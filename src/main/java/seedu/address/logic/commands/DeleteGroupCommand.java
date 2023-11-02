@@ -48,6 +48,6 @@ public class DeleteGroupCommand extends Command {
         model.deleteGroup(groupToDelete);
 
         return new CommandResult(String.format(MESSAGE_DELETE_GROUP_SUCCESS, groupToDelete),
-                false, false, false, false);
+                false, false, true, false);
     }
 }
