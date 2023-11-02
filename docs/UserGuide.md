@@ -22,7 +22,6 @@ StudentConnect is a solution for hassle-free team formation for students to brow
         4. [Finding a student by name : `find`](#finding-a-student-by-name--find)
         5. [Filtering students by tutorial : `filter`](#filtering-students-by-tutorial--filter)
         6. [Deleting a person : `delete`](#deleting-a-person--delete)
-        7. [Clearing all entries : `clear`](#clearing-all-entries--clear)
     3. [Group Commands](#group-commands)
         1. [Creating a new group : `create`](#creating-a-new-group--create)
         2. [Deleting a group : `deleteGroup`](#deleting-a-group--deleteGroup)
@@ -315,7 +314,6 @@ Deletes a specific student and all personal details based on email.
 #### Expected Output (Failure):
 * Message: `Error! Email not found!`
 
-
 ## Group Commands
 
 ### Creating a new group : `create`
@@ -602,13 +600,15 @@ _Details coming soon ..._
 
 | Action           | Format, Examples                                                                                                                                                                                                                        |
 |------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Add**          | `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION t/TUTORIALS sm/SOCIALMEDIA nt/NATIONALITY g/GENDER` <br> e.g., `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu t/05 d/I’m adept at Backend technologies nt/local g/f` |
+| **Help**         | `help`                                                                                                                                                                                                                                  |
 | **Clear**        | `clear`                                                                                                                                                                                                                                 |
-| **Delete**       | `delete EMAIL`<br> e.g., `delete betsycrowe@u.nus.edu`                                                                                                                                                                                  |
+| **Exit**         | `exit`                                                                                                                                                                                                                                  |
+| **Add**          | `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION t/TUTORIALS sm/SOCIALMEDIA nt/NATIONALITY g/GENDER` <br> e.g., `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu t/05 d/I’m adept at Backend technologies nt/local g/f` |
+| **List**         | `list`                                                                                                                                                                                                                                  |
 | **Edit**         | `edit INDEX [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS] [sm/SOCIALMEDIA] [nt/NATIONALITY] [g/GENDER]` <br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                     |
 | **Find**         | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                                                                                              |
-| **List**         | `list`                                                                                                                                                                                                                                  |
 | **Filter**       | `filter SLOT [MORE_SLOTS]`<br> e.g., `filter 05 11`                                                                                                                                                                                     |
+| **Delete**       | `delete EMAIL`<br> e.g., `delete betsycrowe@u.nus.edu`                                                                                                                                                                                  |
 | **Create group** | `create`                                                                                                                                                                                                                                |
 | **Delete group** | `deleteGroup gr/[GROUP_NUMBER}` <br> e.g., `deleteGroup gr/1`    
 | **Leave group**  | `leave e/[EMAIL] gr/[GROUP_NUMBER}` <br> e.g., `leave e/johnd@u.nus.edu gr/1`        
@@ -618,5 +618,3 @@ _Details coming soon ..._
 | **List Tasks**   | `tasks GROUP_NUMBER`<br> e.g., `tasks 5`                                                                                                                                                                                                |
 | **Mark**         | `mark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `mark gr/2 ti/1`                                                                                                                                                                         |
 | **Unmark**       | `unmark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `unmark gr/5 ti/1`                                                                                                                                                                     |
-| **Exit**         | `exit`                                                                                                                                                                                                                                  |
-| **Help**         | `help`                                                                                                                                                                                                                                  |
