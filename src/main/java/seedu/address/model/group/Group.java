@@ -18,7 +18,6 @@ import seedu.address.model.tutorial.Tutorial;
 public class Group {
 
     private static final int MAXIMUM_SIZE = 5;
-
     private final int number;
     private final Tutorial tutorial;
     private Set<Person> members = new HashSet<>();

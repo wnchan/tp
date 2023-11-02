@@ -12,7 +12,7 @@ import seedu.address.model.socialmedialink.SocialMediaLink;
 import seedu.address.model.tutorial.Tutorial;
 
 /**
- * Represents a Person in StudentConnect.
+ * Represents a Person/Student in StudentConnect.
  * Guarantees: details are present and not null, field values are validated, immutable.
  */
 public class Person {
