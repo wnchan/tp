@@ -10,6 +10,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_NATIONALITY;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_SOCIAL_MEDIA_LINK;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_YEAR;
+import static seedu.address.model.Model.PREDICATE_SHOW_ALL_GROUPS;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
 import java.util.Collections;
@@ -82,7 +83,8 @@ public class EditCommand extends Command {
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
-
+        model.updateFilteredGroupList(PREDICATE_SHOW_ALL_GROUPS);
+        model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
         // Find the person with the provided email
         Optional<Person> personToEdit = model.getPersonWithEmail(email);
 

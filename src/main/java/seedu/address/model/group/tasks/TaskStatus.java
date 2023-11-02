@@ -53,4 +53,12 @@ public enum TaskStatus {
         }
         return false;
     }
+
+    public String getSymbol() {
+        if (this == DONE) {
+            return "✅";
+        } else {
+            return "❌";
+        }
+    }
 }
