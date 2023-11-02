@@ -7,7 +7,7 @@ import java.util.List;
  * Represents a list of tasks in a group.
  */
 public class TaskList {
-    private List<Task> tasks; // List for tasks
+    private List<Task> tasks;
 
     /**
      * Constructs an empty TaskList.
@@ -108,8 +108,10 @@ public class TaskList {
             } else {
                 tempStatus = "✅";
             }
-            result.append(tempStatus).append(" ").append(i + 1).append(". ").append(task.getModule())
-                .append(" ").append(task.getTask()).append("\n");
+            result.append(tempStatus).append(" ").append(task.getType()).append(" ").append(i + 1).append(".")
+                .append(" ").append(task.getModule()).append(" ").append(task.getTask())
+                .append(" ").append(task.getBy()).append("\n");
+
         }
         return String.valueOf(result);
     }

@@ -3,12 +3,15 @@ package seedu.address.logic.commands;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_GROUP;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TASK_INDEX;
+import static seedu.address.model.Model.PREDICATE_SHOW_ALL_GROUPS;
+import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
 import java.util.Optional;
 
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.group.Group;
+import seedu.address.model.group.GroupContainsKeywordsPredicate;
 import seedu.address.model.group.tasks.Task;
 import seedu.address.model.group.tasks.TaskList;
 
@@ -29,6 +32,7 @@ public class MarkCommand extends Command {
     public static final String MESSAGE_INVALID_TASK_INDEX = "Invalid task index. Task not found.";
     private final int groupId;
     private final int taskIndex;
+    private final GroupContainsKeywordsPredicate predicate;
 
     /**
      * Creates a MarkCommand to mark a task as done within a specific group.
@@ -36,14 +40,17 @@ public class MarkCommand extends Command {
      * @param groupId The group ID in which the task exists.
      * @param taskIndex The index of the task to mark as done.
      */
-    public MarkCommand(int groupId, int taskIndex) {
+    public MarkCommand(int groupId, int taskIndex, GroupContainsKeywordsPredicate predicate) {
         this.groupId = groupId;
         this.taskIndex = taskIndex;
+        this.predicate = predicate;
     }
 
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
+        model.updateFilteredGroupList(PREDICATE_SHOW_ALL_GROUPS);
+        model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
 
         // Retrieve the group using the groupId
         Optional<Group> optionalGroup = model.getGroupWithNumber(groupId);
@@ -56,10 +63,14 @@ public class MarkCommand extends Command {
             Task taskToMark = taskList.getTasks().get(taskIndex);
             taskToMark.mark();
             String displayedTasks = taskList.toString();
-            return new CommandResult(String.format(MESSAGE_SUCCESS, groupId, taskIndex + 1) + "\n" + displayedTasks);
+            requireNonNull(model);
+            model.updateFilteredGroupList(predicate);
+            return new CommandResult(String.format(MESSAGE_SUCCESS, groupId, taskIndex + 1) + "\n" + displayedTasks,
+                false, false, true, false);
         } else {
             throw new CommandException(MESSAGE_INVALID_TASK_INDEX);
         }
+
     }
 
     private boolean isValidTaskIndex(int taskIndex, TaskList taskList) {

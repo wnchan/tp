@@ -64,7 +64,7 @@ public class Messages {
     public static String format(Group group) {
         final StringBuilder builder = new StringBuilder();
         builder.append("Group Number: ").append(group.getNumber())
-                .append("; Members: ").append(group.getMembers());
+                .append("; Members: ").append(group.getMembers()); // todo: needs to be edited, formatting is wrong
         return builder.toString();
     }
 

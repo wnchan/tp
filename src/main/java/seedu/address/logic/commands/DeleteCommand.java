@@ -1,6 +1,8 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.model.Model.PREDICATE_SHOW_ALL_GROUPS;
+import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
 import java.util.Optional;
 
@@ -34,6 +36,8 @@ public class DeleteCommand extends Command {
 
     @Override
     public CommandResult execute(Model model) throws CommandException {
+        model.updateFilteredGroupList(PREDICATE_SHOW_ALL_GROUPS);
+        model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
         requireNonNull(model);
 
         // Find the person with the provided email
@@ -63,6 +67,7 @@ public class DeleteCommand extends Command {
             return true;
         }
 
+        // instanceof handles nulls
         if (!(other instanceof DeleteCommand)) {
             return false;
         }
