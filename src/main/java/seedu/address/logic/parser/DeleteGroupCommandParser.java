@@ -23,7 +23,7 @@ public class DeleteGroupCommandParser implements Parser<DeleteGroupCommand> {
         // Parse the group number from the args using the group prefix
         ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args, PREFIX_GROUP);
 
-        if (!argMultimap.getValue(PREFIX_GROUP).isPresent() || argMultimap.getPreamble().isEmpty()) {
+        if (!argMultimap.getValue(PREFIX_GROUP).isPresent() || !argMultimap.getPreamble().isEmpty()) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteGroupCommand.MESSAGE_USAGE));
         }
 
