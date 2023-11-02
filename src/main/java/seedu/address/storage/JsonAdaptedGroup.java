@@ -34,7 +34,6 @@ public class JsonAdaptedGroup {
      */
     @JsonCreator
     public JsonAdaptedGroup(@JsonProperty("number") int number,
-
                             @JsonProperty("tutorial") JsonAdaptedTutorial tutorial,
                             @JsonProperty("members") List<JsonAdaptedPerson> members,
                             @JsonProperty("tasks") List<JsonAdaptedTask> tasks) { // add tasks parameter
@@ -58,7 +57,7 @@ public class JsonAdaptedGroup {
         members.addAll(source.getMembers().stream()
             .map(JsonAdaptedPerson::new)
             .collect(Collectors.toList()));
-        tasks.addAll(source.getTasks().getTaskList().stream() // add tasks to constructor
+        tasks.addAll(source.getTasks().getTaskList().stream()
             .map(JsonAdaptedTask::new)
             .collect(Collectors.toList()));
     }

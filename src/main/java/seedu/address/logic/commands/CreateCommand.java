@@ -1,6 +1,8 @@
 package seedu.address.logic.commands;
 
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
+import static seedu.address.model.Model.PREDICATE_SHOW_ALL_GROUPS;
+import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -37,6 +39,8 @@ public class CreateCommand extends Command {
 
     @Override
     public CommandResult execute(Model model) {
+        model.updateFilteredGroupList(PREDICATE_SHOW_ALL_GROUPS);
+        model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
         int number = generateGroupNumber(model);
         Group createdGroup = new Group(number, tutorial);
         // Initialize the tasks and add them to the group

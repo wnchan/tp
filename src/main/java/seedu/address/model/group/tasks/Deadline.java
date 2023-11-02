@@ -24,14 +24,18 @@ public class Deadline extends Task {
      * @throws TaskException If there is an issue parsing the deadline format.
      */
     public Deadline(String task, TaskStatus status, TaskModule module, String by) throws TaskException {
-        super(task, status, module);
+        super(task, status, module, "D", by);
         try {
             this.by = parseDateTime(by);
             this.byStr = by;
-
         } catch (Exception e) {
             throw new TaskException("Invalid date format :< Please use dd/MM/yyyy\n");
         }
+    }
+
+    @Override
+    public String getDeadline() {
+        return "(by " + this.byStr + ")";
     }
 
     /**
