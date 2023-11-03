@@ -282,8 +282,8 @@ Filters students by tutorial based on the given slots.
 * Students matching at least one tutorial slot will be returned (i.e. `OR` search). e.g. `03 12` will return `03 16`, `04 12`
 
 #### Examples:
-* `filter 10` returns `10`, `06 10` and `10 18`.
-* `filter 12 16` returns `05 12`, `16 22`.
+* `filter 10` returns students in `T10`, `T06 T10` and `T10 T18`.
+* `filter 12 16` returns students in `T05 T12`, `T16 T22`.
 
 #### Expected Output(Success):
 * GUI: List of all student entries whose tutorial(s) match the slot(s) in the system.
@@ -433,8 +433,8 @@ Finds group(s) with group number(s) that matches any of the given keywords.
 * Groups matching one keyword will be returned (i.e. `OR` search). e.g. `5 12` will return `5`, `12`
 
 #### Examples:
-* `findGroup 7` returns `7`.
-* `findGroup 7 15` returns `7`, `15`.
+* `findGroup 7` returns Group `7`.
+* `findGroup 7 15` returns Group `7`, Group `15`.
 
 #### Expected Output (Success):
 * GUI: List of all group entries whose group number(s) match the keyword(s) in the system.
@@ -459,7 +459,7 @@ Filters groups by tutorial based on the given slot.
 * Only the tutorial is searched.
 
 #### Examples:
-* `filterGroup 3` returns `3`.
+* `filterGroup 03` returns groups that belong to `T03`.
 
 #### Expected Output(Success):
 * GUI: List of all group entries with the tutorial that match the slot in the system.
