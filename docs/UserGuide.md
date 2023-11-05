@@ -318,11 +318,18 @@ Deletes a specific student and all personal details based on email.
 
 ## Group Commands
 
+<div markdown="span" class="alert alert-primary">:exclamation: **Important:**
+StudentConnect provides a set of group formation features to make it more convenient for students to find group mates. A group consists of 3 main components: a group number, a tutorial number and the group members.
+<br> Group number: Used to uniquely identify the group.
+<br> Tutorial number: This number is set by the creator of the group and serves as an indication of which tutorial class the members of the group are interested in enrolling in. It **does not** restrict students who do not have a matching tutorial number in their profile from joining the group.
+<br> Group members: The students who are members of this group.
+</div>
+
 ### Creating a new group : `create`
 
 Creates a new empty group with the given tutorial number. The group number is automatically assigned and is used to uniquely identify each group. The tutorial number serves as an indication of which tutorial class the members of the group are interested in enrolling in. This can provide information about the tutorial preferences of the group members, to other students who are looking for a group to join.
 
-#### Format: `create t/[TUTORIAL]`
+#### Format: `create t/TUTORIAL`
 
 #### Expected Output(Success):
 * GUI: A new empty group, with a group number, is created.
@@ -381,6 +388,7 @@ Adds a student to the specified group.
 * Message: "Join successful! `[NAME]` has joined Group `[GROUP_NUMBER]`!"
 
 #### Expected Output(Failure):
+Listed below are some cases where the join command will not execute successfully.
 * Message: "Student with the provided email not found."
 * Message: "Group with the provided group number not found."
 * Message: "The provided student is already a member of the provided group."
