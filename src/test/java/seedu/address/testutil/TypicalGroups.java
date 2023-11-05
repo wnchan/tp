@@ -25,9 +25,9 @@ public class TypicalGroups {
 
     public static final Group GROUP1 = new Group(1, new Tutorial("01"),
             Set.of(ALICE, BENSON, CARL), new TaskList());
-    public static final Group GROUP2 = new Group(2, new Tutorial("12"),
+    public static final Group GROUP2 = new Group(2, new Tutorial("02"),
             Set.of(DANIEL, ELLE, FIONA), new TaskList());
-    public static final Group GROUP3 = new Group(3, new Tutorial("02"),
+    public static final Group GROUP3 = new Group(3, new Tutorial("03"),
             Set.of(GEORGE), new TaskList());
 
     private TypicalGroups() {} // prevents instantiation

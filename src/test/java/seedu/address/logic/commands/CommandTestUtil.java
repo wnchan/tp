@@ -102,13 +102,14 @@ public class CommandTestUtil {
     public static final String VALID_NUMBER_GROUP1 = "1";
     public static final String VALID_NUMBER_GROUP2 = "2";
     public static final String VALID_TUTORIAL_GROUP1 = "01";
+    public static final String VALID_TUTORIAL_GROUP2 = "02";
     public static final Person VALID_MEMBER1_GROUP1 = ALICE;
     public static final Person VALID_MEMBER2_GROUP1 = BENSON;
     public static final Person VALID_MEMBER3_GROUP1 = CARL;
     public static final Person VALID_MEMBER1_GROUP2 = DANIEL;
     public static final Person VALID_MEMBER2_GROUP2 = ELLE;
     public static final Person VALID_MEMBER3_GROUP2 = FIONA;
-    public static final String VALID_TUTORIAL_GROUP2 = "12";
+
     public static final Task VALID_TASK1 = new Todo("Upload video of OP1.",
             TaskStatus.NOT_DONE, TaskModule.CS2101);
     public static final Task VALID_TASK2 = new Todo("Complete mid semester review form.",
