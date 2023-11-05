@@ -1,14 +1,16 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.model.Model.PREDICATE_SHOW_ALL_GROUPS;
+import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
 import java.util.Set;
 
 import seedu.address.commons.util.ToStringBuilder;
-import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.group.Group;
+import seedu.address.model.group.GroupContainsKeywordsPredicate;
 import seedu.address.model.person.Person;
 import seedu.address.model.tutorial.Tutorial;
 
@@ -26,6 +28,12 @@ public class CheckCommand extends Command {
 
     public static final String MESSAGE_CHECK_GROUP_SUCCESS =
             "Group fulfils the diversity requirements of CS2103T. Group %1$s";
+    public static final String MESSAGE_HELP =
+            "\nYou can enter the `help` command for more information on group requirements.";
+    public static final String MESSAGE_CHECK_GROUP_SIZE_EMPTY =
+            "Group does not have any members. Group %1$s";
+    public static final String MESSAGE_CHECK_GROUP_SIZE_OVER =
+            "Group size has exceeded limit with more than 5 members. Group %1$s";
     public static final String MESSAGE_CHECK_GROUP_NATIONALITY_WARNING =
             "Group does not fulfil the nationality requirement of CS2103T. Group %1$s";
     public static final String MESSAGE_CHECK_GROUP_GENDER_WARNING =
@@ -33,21 +41,40 @@ public class CheckCommand extends Command {
     public static final String MESSAGE_CHECK_GROUP_TUTORIAL_WARNING =
             "Not every group member's tutorial matches the group's tutorial. Group %1$s";
     public static final String MESSAGE_CHECK_GROUP_NOT_FOUND = "Group with the provided group number not found.";
+    private final GroupContainsKeywordsPredicate predicate;
+
 
     private final int groupNumber;
 
-    public CheckCommand(int groupNumber) {
+    public CheckCommand(int groupNumber, GroupContainsKeywordsPredicate predicate) {
         this.groupNumber = groupNumber;
+        this.predicate = predicate;
     }
 
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
+        model.updateFilteredGroupList(PREDICATE_SHOW_ALL_GROUPS);
+        model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+        model.updateFilteredGroupList(predicate);
+
         // Check if the group with the provided group number exists
         Group groupToCheck = model.getGroupWithNumber(groupNumber)
                 .orElseThrow(() -> new CommandException(MESSAGE_CHECK_GROUP_NOT_FOUND));
 
         Set<Person> groupMembers = groupToCheck.getMembers();
+
+        // check group size
+        if (groupMembers.size() == 0) {
+            return new CommandResult(
+                    String.format(MESSAGE_CHECK_GROUP_SIZE_EMPTY + MESSAGE_HELP, groupToCheck.getNumber()),
+                false, false, true, false);
+        }
+        if (groupMembers.size() > 5) {
+            return new CommandResult(
+                    String.format(MESSAGE_CHECK_GROUP_SIZE_OVER + MESSAGE_HELP, groupToCheck.getNumber()),
+                false, false, true, false);
+        }
 
         // check nationality requirement
         int localCount = 0;
@@ -85,16 +112,21 @@ public class CheckCommand extends Command {
 
         if (localCount == 0 || foreignerCount == 0) {
             return new CommandResult(
-                    String.format(MESSAGE_CHECK_GROUP_NATIONALITY_WARNING, Messages.format(groupToCheck)));
+                    String.format(MESSAGE_CHECK_GROUP_NATIONALITY_WARNING + MESSAGE_HELP, groupToCheck.getNumber()),
+                false, false, true, false);
         }
         if (maleCount == 0 || femaleCount == 0) {
-            return new CommandResult(String.format(MESSAGE_CHECK_GROUP_GENDER_WARNING, Messages.format(groupToCheck)));
+            return new CommandResult(
+                    String.format(MESSAGE_CHECK_GROUP_GENDER_WARNING + MESSAGE_HELP, groupToCheck.getNumber()),
+                false, false, true, false);
         }
         if (count != groupMembers.size()) {
             return new CommandResult(
-                    String.format(MESSAGE_CHECK_GROUP_TUTORIAL_WARNING, Messages.format(groupToCheck)));
+                    String.format(MESSAGE_CHECK_GROUP_TUTORIAL_WARNING + MESSAGE_HELP, groupToCheck.getNumber()),
+                false, false, true, false);
         }
-        return new CommandResult(String.format(MESSAGE_CHECK_GROUP_SUCCESS, Messages.format(groupToCheck)));
+        return new CommandResult(String.format(MESSAGE_CHECK_GROUP_SUCCESS, groupToCheck.getNumber()),
+            false, false, true, false);
     }
 
     @Override

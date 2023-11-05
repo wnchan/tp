@@ -24,6 +24,7 @@ import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
+import seedu.address.model.group.Group;
 import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Gender;
@@ -100,6 +101,11 @@ public class EditCommand extends Command {
 
         model.setPerson(personToEdit.get(), editedPerson);
         model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+        if (model.personIsInAGroup(editedPerson)) {
+            Group targetGroup = model.getGroupThatPersonIsIn(personToEdit.get());
+            targetGroup.removeMember(personToEdit.get());
+            targetGroup.addMember(editedPerson);
+        }
         return new CommandResult(String.format(MESSAGE_EDIT_PERSON_SUCCESS, Messages.format(editedPerson)));
     }
 
