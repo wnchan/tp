@@ -129,7 +129,6 @@ Clears all entries from the system upon confirmation in the pop-up.
   ![result for 'clear' pop-up](images/clearPopUp.png)
   ![result for 'clear' GUI](images/clear.png)
 
-
 ### Exiting the program : `exit`
 
 Exits the program.
@@ -139,63 +138,138 @@ Exits the program.
 #### Expected Output(Success):
 * GUI: Application window closes.
 * Message (before closing): "Thank you for using StudentConnect! Exiting the application now…"
-  ![Exit](images/exit.png)
+![Exit](images/exit.png)
 
 #### Expected Output(Failure):
 * Message: "Error: Exiting the program failed."
 
-
-
 ## Person Commands
+
 ### Adding a student : `add`
 
 Adds a student to the system.
 
-#### Format: `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION t/TUTORIALS sm/SOCIALMEDIA nt/NATIONALITY g/GENDER`
+#### Format: `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION [t/TUTORIALS] [sm/SOCIALMEDIA] nt/NATIONALITY g/GENDER`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-A student can include multiple tutorial groups they are interested in. Add multiple tutorials with multiple `t/`.
+Including social media links and tutorial groups are optional.
 </div>
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-A student can have any number of social media links (including 0). Add multiple social media links with multiple `sm/`.
+A student can include multiple tutorial groups they are interested in. Add multiple tutorial groups with multiple `t/`.
+</div>
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+A student can have any number of social media links. Add multiple social media links with multiple `sm/`.
 </div>
 
 #### Examples:
-* `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I’m a Frontend Developer t/06 19 sm/https://www.linkedin.com/in/john-doe-123456789 nt/local g/m`
-* `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu  d/I’m adept at Backend technologies t/05 sm/ nt/foreigner g/f`
+* `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I’m a Frontend Developer t/06 t/19 sm/https://www.linkedin.com/in/john-doe-123456789 nt/local g/m`
+* `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu d/I’m adept at Backend technologies t/05 nt/foreigner g/f`
 
 #### Acceptable Values:
-* Name: Full names with alphabetical characters
-* Major: Valid major names at NUS
-* Year: Numeric year level
-* Email: Valid email address ending in “@u.nus.edu”
-* Description: Maximum 150 characters
-* Tutorials: Two digit integers between 01 and 22 inclusive, each seperated by a space
-* Social Media Link: Valid URL format to social media account (optional to include). Multiple URLs can be added by using `sm/` repeatedly.
-* Nationality: Either 'local' or 'foreigner'
-* Gender: A single character, either 'm' or 'f'
+* Name: Full names with alphabetical characters. Maximum 30 characters.
+* Major: Valid major names at NUS. More information listed below.
+* Year: Numeric year level. 
+* Email: Valid email address ending in “@u.nus.edu”. Maximum 20 characters.
+* Description: Maximum 150 characters.
+* Tutorials: Two digit integers between 01 and 22 inclusive. Multiple tutorial slots can be added by using `t/` repeatedly.
+* Social Media Link: Valid URL format to social media account. Multiple URLs can be added by using `sm/` repeatedly.
+* Nationality: Either 'local' or 'foreigner'.
+* Gender: A single character, either 'm' or 'f'.
+
+#### Valid Majors:
+
+For now, we accept the following majors in National University of Singapore(NUS):
+* Accountancy 
+* Actuarial Studies 
+* Anthropology 
+* Architecture 
+* Biological Sciences 
+* Biomedical Engineering 
+* Business Administration 
+* Business Administration (Accountancy)
+* Business Analytics 
+* Chemical Engineering 
+* Chemistry
+* Chinese Language
+* Chinese Studies 
+* Communications and New Media 
+* Civil Engineering 
+* Computer Engineering 
+* Computer Science 
+* Data Science and Analytics 
+* Data Science and Economics 
+* Dentistry 
+* Economics 
+* Electrical Engineering 
+* English Language 
+* English Literature 
+* Environmental Engineering 
+* Environmental Studies 
+* Food Science and Technology 
+* Geography 
+* Global Studies 
+* History 
+* Japanese Studies 
+* Industrial Design 
+* Industrial Engineering 
+* Industrial and Systems Engineering 
+* Information Systems 
+* Information Security 
+* Infrastructure and Project Management 
+* Landscape Architecture 
+* Law 
+* Life Sciences 
+* Malay Studies 
+* Management 
+* Marketing 
+* Materials Science and Engineering 
+* Mathematics 
+* Mechanical Engineering 
+* Medicine
+* Pharmaceutical Science 
+* Philosophy 
+* Philosophy, Politics, and Economics 
+* Physics 
+* Political Science 
+* Psychology 
+* Quantitative Finance 
+* Real Estate 
+* Social Work 
+* Sociology 
+* South Asian Studies 
+* Southeast Asian Studies 
+* Statistics 
+* Systems Engineering 
+* Theatre Studies 
+* Urban Studies 
+* Visual Communications
+
+If your major is not on this list, you can simply write "Others" as your major.<br>
+
+If you have a double major or a major-minor, you are required to choose only one major. Please select any one of the majors listed above.
 
 #### Expected Output (Success):
 * GUI: New student entry added in the main student list
 * Message: “Details added successfully! New student added: (details of new student)”
-  ![Add feature](images/add.png)
+![Add feature](images/add.png)
 
-* Social Media Link can be clicked
+Note: 
+* Social media links can be clicked
 * The link will be opened on a browser upon clicking
 
 ![social_media](images/socialMediaLinks.png)
-<div style="text-align: center;"> Output with single social media link
+<div style="text-align: center;">Output with a single social media link</div>
 
 ![social_media](images/multipleLinks.png)
-Output with multiple social media links</div>
+<div style="text-align: center;">Output with multiple social media links</div>
 
 #### Expected Output (Failure):
-* Message:  "Invalid command format! add: Adds a person to StudentConnect. <br>
-  Parameters: n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION t/TUTORIALS sm/SOCIAL_MEDIA_LINK nt/NATIONALITY g/GENDER<br>
+* Message:  "Invalid command format! add: Adds a student to StudentConnect. <br>
+  Parameters: n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION [t/TUTORIALS]... [sm/SOCIAL_MEDIA_LINK]... nt/NATIONALITY g/GENDER<br>
   Example: add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time<br>
-  t/02 17 20 sm/https://www.linkedin.com/in/john-doe-123456789 nt/local g/m";
-
+  t/02 sm/https://www.linkedin.com/in/john-doe-123456789 nt/local g/M";
 
 ### Listing all students : `list`
 
@@ -555,7 +629,7 @@ Lists out all tasks for a specific group.
 
 Mark a task for a specified group as done.
 
-#### Format: `mark gr/[GROUP_NUMBER] ti/[TASK_INDEX]`
+#### Format: `mark gr/GROUP_NUMBER ti/TASK_INDEX`
 
 * Marks the task of the specified group as done.
 
@@ -573,19 +647,22 @@ Mark a task for a specified group as done.
   ![sample result for 'mark'](images/mark.png)
 
 #### Expected Output (Failure):
-* Message: “Invalid command format! mark: Mark task specified as done. Parameters: gr/[GROUP NUMBER] ti/[TASK INDEX] Example: mark gr/2 ti/3”
-* Message: “Group with the provided group number not found.”
-* Message: “Group number is not a non-zero unsigned integer.”
-* Message: “Task index must be a positive integer.”
-* Message: “Invalid task index. Task not found.”
-
-
+* Case: Invalid mark command, e.g. 'mark ', 'mark t', etc.<br>
+Message: “Invalid command format! mark: Mark task specified as done. Parameters: gr/GROUP_NUMBER ti/TASK_INDEX Example: mark gr/2 ti/3”
+* Case: Invalid group number, a group number that is not found from the list in 'listGroup' command.<br>
+Message: “Group with the provided group number not found.”
+* Case: Invalid group number, e.g. zero or negative numbers.<br>
+Message: “Group number is not a non-zero unsigned integer.”
+* Case: Invalid task index, e.g zero or negative numbers.<br>
+Message: “Task index must be a positive integer.”
+* Case: Invalid task index, e.g. task index greater than the number of tasks found from the list in 'tasks' command.<br>
+Message: “Invalid task index. Task not found.”
 
 ### Marking a task as not done : `unmark`
 
 Mark a task for a specified group as not done.
 
-#### Format: `unmark gr/[GROUP_NUMBER] ti/[TASK_INDEX]`
+#### Format: `unmark gr/GROUP_NUMBER ti/TASK_INDEX`
 
 * Marks the task of the specified group as not done.
 
@@ -603,11 +680,16 @@ Mark a task for a specified group as not done.
   ![sample result for 'unmark'](images/unmark.png)
 
 #### Expected Output (Failure):
-* Message: “Invalid command format! unmark: Mark task specified as not done. Parameters: gr/[GROUP NUMBER] ti/[TASK INDEX] Example: unmark gr/2 ti/3”
-* Message: “Group with the provided group number not found.”
-* Message: “Group number is not a non-zero unsigned integer.”
-* Message: “Task index must be a positive integer.”
-* Message: “Invalid task index. Task not found.”
+* Case: Invalid unmark command, e.g. 'unmark ', 'unmark t', etc.<br>
+  Message: “Invalid command format! unmark: Mark task specified as not done. Parameters: gr/GROUP_NUMBER ti/TASK_INDEX Example: unmark gr/2 ti/3”
+* Case: Invalid group number, a group number that is not found from the list in 'listGroup' command.<br>
+Message: “Group with the provided group number not found.”
+* Case: Invalid group number, e.g. zero or negative numbers.<br>
+Message: “Group number is not a non-zero unsigned integer.”
+* Case: Invalid task index, e.g zero or negative numbers.<br>
+Message: “Task index must be a positive integer.”
+* Case: Invalid task index, e.g. task index greater than the number of tasks found from the list in 'tasks' command.<br>
+Message: “Invalid task index. Task not found.”
 
 ### Saving the data
 
@@ -619,7 +701,6 @@ Students' data are saved automatically as a JSON file `[JAR file location]/data/
 
 <div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
 If your changes to the data file makes its format invalid, StudentConnect will discard all data and start with an empty data file at the next run. Hence, it is recommended to take a backup of the file before editing it.
-
 </div>
 
 ### Archiving data files `[coming in v2.0]`
@@ -644,25 +725,25 @@ _Details coming soon ..._
 
 ## Command summary
 
-| Action           | Format, Examples                                                                                                                                                                                                                        |
-|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Help**         | `help`                                                                                                                                                                                                                                  |
-| **Clear**        | `clear`                                                                                                                                                                                                                                 |
-| **Exit**         | `exit`                                                                                                                                                                                                                                  |
-| **Add**          | `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION t/TUTORIALS sm/SOCIALMEDIA nt/NATIONALITY g/GENDER` <br> e.g., `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu t/05 d/I’m adept at Backend technologies nt/local g/f` |
-| **List**         | `list`                                                                                                                                                                                                                                  |
-| **Edit**         | `edit INDEX [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS] [sm/SOCIALMEDIA] [nt/NATIONALITY] [g/GENDER]` <br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                     |
-| **Find**         | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                                                                                              |
-| **Filter**       | `filter SLOT [MORE_SLOTS]`<br> e.g., `filter 05 11`                                                                                                                                                                                     |
-| **Delete**       | `delete EMAIL`<br> e.g., `delete betsycrowe@u.nus.edu`                                                                                                                                                                                  |
-| **Create group** | `create t/[TUTORIAL]` <br> e.g., `create t/01`                                                                                                                                                                                          |
-| **List groups**  | `listGroup`                                                                                                                                                                                                                             |
-| **Delete group** | `deleteGroup gr/[GROUP_NUMBER}` <br> e.g., `deleteGroup gr/1`                                                                                                                                                                           |
-| **Join group**   | `join e/[EMAIL] gr/[GROUP_NUMBER]` <br> e.g., `join e/johnd@u.nus.edu gr/1`                                                                                                                                                             |
-| **Leave group**  | `leave e/[EMAIL] gr/[GROUP_NUMBER}` <br> e.g., `leave e/johnd@u.nus.edu gr/1`                                                                                                                                                           |
-| **Find group**   | `findGroup KEYWORD [MORE_KEYWORDS]`<br> e.g., `findGroup 7 15`                                                                                                                                                                          |
-| **Filter group** | `filter SLOT` <br> e.g., `filterGroup 3`                                                                                                                                                                                                |
-| **Check group**  | `checkGroup GR0UP_NUMBER` <br> e.g., `checkGroup 4`                                                                                                                                                                                     |
-| **List Tasks**   | `tasks GROUP_NUMBER`<br> e.g., `tasks 5`                                                                                                                                                                                                |
-| **Mark**         | `mark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `mark gr/2 ti/1`                                                                                                                                                                         |
-| **Unmark**       | `unmark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `unmark gr/5 ti/1`                                                                                                                                                                     |
+| Action           | Format, Examples                                                                                                                                                                                                                            |
+|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Help**         | `help`                                                                                                                                                                                                                                      |
+| **Clear**        | `clear`                                                                                                                                                                                                                                     |
+| **Exit**         | `exit`                                                                                                                                                                                                                                      |
+| **Add**          | `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION [t/TUTORIALS] [sm/SOCIALMEDIA] nt/NATIONALITY g/GENDER` <br> e.g., `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu t/05 d/I’m adept at Backend technologies nt/local g/f` |
+| **List**         | `list`                                                                                                                                                                                                                                      |
+| **Edit**         | `edit INDEX [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS] [sm/SOCIALMEDIA] [nt/NATIONALITY] [g/GENDER]` <br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                         |
+| **Find**         | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                                                                                                  |
+| **Filter**       | `filter SLOT [MORE_SLOTS]`<br> e.g., `filter 05 11`                                                                                                                                                                                         |
+| **Delete**       | `delete EMAIL`<br> e.g., `delete betsycrowe@u.nus.edu`                                                                                                                                                                                      |
+| **Create group** | `create t/[TUTORIAL]` <br> e.g., `create t/01`                                                                                                                                                                                              |
+| **List groups**  | `listGroup`                                                                                                                                                                                                                                 |
+| **Delete group** | `deleteGroup gr/[GROUP_NUMBER}` <br> e.g., `deleteGroup gr/1`                                                                                                                                                                               |
+| **Join group**   | `join e/[EMAIL] gr/[GROUP_NUMBER]` <br> e.g., `join e/johnd@u.nus.edu gr/1`                                                                                                                                                                 |
+| **Leave group**  | `leave e/[EMAIL] gr/[GROUP_NUMBER}` <br> e.g., `leave e/johnd@u.nus.edu gr/1`                                                                                                                                                               |
+| **Find group**   | `findGroup KEYWORD [MORE_KEYWORDS]`<br> e.g., `findGroup 7 15`                                                                                                                                                                              |
+| **Filter group** | `filter SLOT` <br> e.g., `filterGroup 3`                                                                                                                                                                                                    |
+| **Check group**  | `checkGroup GR0UP_NUMBER` <br> e.g., `checkGroup 4`                                                                                                                                                                                         |
+| **List Tasks**   | `tasks GROUP_NUMBER`<br> e.g., `tasks 5`                                                                                                                                                                                                    |
+| **Mark**         | `mark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `mark gr/2 ti/1`                                                                                                                                                                             |
+| **Unmark**       | `unmark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `unmark gr/5 ti/1`                                                                                                                                                                         |
