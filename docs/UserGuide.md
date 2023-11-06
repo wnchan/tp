@@ -358,9 +358,9 @@ Filters students by tutorial based on the given slots.
 
 * The slots must be 2-digit numbers between 01 and 22 inclusive.
 * Tutorials are only accepted as 2-digits, ie. `3` is not a valid tutorial, but `03` is.
-* The order of the slots does not matter. e.g. `08 15` will match `15 08`
+* The order of the slots does not matter. e.g. `08 15` will match `15 08`.
 * Only the tutorial is searched.
-* Students matching at least one tutorial slot will be returned (i.e. `OR` search). e.g. `03 12` will return `03 16`, `04 12`
+* Students matching at least one tutorial slot will be returned (i.e. `OR` search). e.g. `03 12` will return `03 16`, `04 12`.
 
 #### Examples:
 * `filter 10` returns students in `T10`, `T06 T10` and `T10 T18`.
@@ -371,11 +371,15 @@ Filters students by tutorial based on the given slots.
   ![result for 'filter 04'](images/filter.png)
 
 #### Expected Output (Failure):
+If an invalid command format is provided,
 * Message: “Invalid command format!
 
   filter: Filters all students whose tutorials match any of the specified slots (2-digit numbers between 01 and 22) and displays them as a list with index numbers.
   Parameters: SLOT [MORE_SLOTS]...
   Example: filter 08 15"
+
+If an invalid slot(s) is provided,
+* Message: "Tutorials should be 2-digit numbers between 01 and 22."
 
 ### Deleting a person : `delete`
 
@@ -421,7 +425,7 @@ Creates a new empty group with the given tutorial number. The group number is au
   ![Sample result for create](images/create.png)
 
 #### Expected Output(Failure):
-* Message: `Tutorials should be 2-digit numbers between 01 and 22, separated by spaces.`
+* Message: `Tutorials should be 2-digit numbers between 01 and 22.`
 
 
 
@@ -516,10 +520,11 @@ Finds group(s) with group number(s) that matches any of the given keywords.
 
 #### Format: `findGroup KEYWORD [MORE_KEYWORDS]`
 
-* The order of the keywords does not matter. e.g. `5 12` will match `12 5`
+* The order of the keywords does not matter. e.g. `5 12` will match `12 5`.
 * Only the group number is searched.
-* Only the full keywords will be matched. e.g. `1` will not match `12`
-* Groups matching one keyword will be returned (i.e. `OR` search). e.g. `5 12` will return `5`, `12`
+* Only the full keywords will be matched. e.g. `1` will not match `12`.
+* Groups matching one keyword will be returned (i.e. `OR` search). e.g. `5 12` will return `5`, `12`.
+* The keyword(s) must be a non-zero unsigned integer.
 
 #### Examples:
 * `findGroup 7` returns Group `7`.
@@ -531,11 +536,15 @@ Finds group(s) with group number(s) that matches any of the given keywords.
 
 
 #### Expected Output (Failure):
+If an invalid command format is provided,
 * Message: "Invalid command format!
 
   findGroup: Finds all groups whose number contain any of the specified keywords and displays them as a list with index numbers.
   Parameters: KEYWORD [MORE_KEYWORDS]...
   Example: findGroup 1 5 10"
+
+If an invalid keyword(s) is provided,
+* Message: "Group number is not a non-zero unsigned integer."
 
 ### Filtering groups by tutorial : `filterGroup`
 
