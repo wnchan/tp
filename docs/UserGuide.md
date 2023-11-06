@@ -401,9 +401,9 @@ Deletes a specific student and all personal details based on email.
 
 <div markdown="span" class="alert alert-primary">:exclamation: **Important:**
 StudentConnect provides a set of group formation features to make it more convenient for students to find group mates. A group consists of 3 main components: a group number, a tutorial number and the group members.
-<br> <u>Group number:</u> Used to uniquely identify the group.
-<br> <u>Tutorial number:</u> This number is set by the creator of the group and serves as an indication of which tutorial class the members of the group are interested in enrolling in. It **does not** restrict students who do not have a matching tutorial number in their profile from joining the group. Running the [checkGroup](#checking-a-group--checkgroup) command displays a warning if there are members whose tutorial numbers do not match the group's tutorial number.
-<br> <u>Group members:</u> The students who are members of this group.
+<br> **Group number:** Used to uniquely identify the group.
+<br> **Tutorial number:** This number is set by the creator of the group and serves as an indication of which tutorial class the members of the group are interested in enrolling in. It **does not** restrict students who do not have a matching tutorial number in their profile from joining the group. Running the [checkGroup](#checking-a-group--checkgroup) command displays a warning if there are members whose tutorial numbers do not match the group's tutorial number.
+<br> **Group members:** The students who are members of this group.
 </div>
 
 ### Creating a new group : `create`
