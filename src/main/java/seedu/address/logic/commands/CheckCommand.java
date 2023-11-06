@@ -46,6 +46,10 @@ public class CheckCommand extends Command {
 
     private final int groupNumber;
 
+    /**
+     * @param groupNumber unique identifier of the group
+     * @param predicate check group number
+     */
     public CheckCommand(int groupNumber, GroupContainsKeywordsPredicate predicate) {
         this.groupNumber = groupNumber;
         this.predicate = predicate;
