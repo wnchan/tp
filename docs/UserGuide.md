@@ -316,8 +316,11 @@ Edits an existing student in the system.
   ![sample result for 'edit'](images/edit.png)
 
 #### Expected Output (Failure):
-* Message: “Error: Email not found.”
-* Message: “Error: None of the optional fields provided. Give at least one.”
+If no fields to edit are provided,
+* Message: “At least one field to edit must be provided.”
+
+If the email provided is not in the system,
+* Message: “Student with the provided email not found.”
 
 ### Finding a student by name : `find`
 
