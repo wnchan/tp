@@ -21,11 +21,19 @@ public class TasksCommandParser implements Parser<TasksCommand> {
      */
     public TasksCommand parse(String args) throws ParseException {
         requireNonNull(args);
+        String trimmedArgs = args.trim();
+
+        // Check if the input is an unsigned, non-zero integer
+        if (!trimmedArgs.matches("\\d+") || trimmedArgs.equals("0")) {
+            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, TasksCommand.MESSAGE_USAGE));
+        }
+
         try {
-            int groupNumber = ParserUtil.parseGroupNumber(args.trim());
+            int groupNumber = ParserUtil.parseGroupNumber(trimmedArgs);
             return new TasksCommand(groupNumber, new GroupContainsKeywordsPredicate(Arrays.asList(
                 String.valueOf(groupNumber))));
         } catch (NumberFormatException nfe) {
+            // This should not happen as we have already validated the input
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, TasksCommand.MESSAGE_USAGE), nfe);
         }
     }

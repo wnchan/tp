@@ -24,7 +24,7 @@ public class MarkCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Mark task specified as done.\n"
-            + "Parameters: " + PREFIX_GROUP + "[GROUP NUMBER] " + PREFIX_TASK_INDEX + "[TASK INDEX]\n"
+            + "Parameters: " + PREFIX_GROUP + "GROUP_NUMBER " + PREFIX_TASK_INDEX + "TASK_INDEX\n"
             + "Example: " + COMMAND_WORD + " gr/2 ti/3";
 
     public static final String MESSAGE_SUCCESS = "Marked task number %2$s for group %1$s";

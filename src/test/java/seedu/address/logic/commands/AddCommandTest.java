@@ -209,6 +209,11 @@ public class AddCommandTest {
         }
 
         @Override
+        public Group getGroupThatPersonIsIn(Person person) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
         public void removePersonFromGroup(Person person, Group group) {
 
         }
