@@ -40,8 +40,10 @@ public class ParserUtilTest {
     private static final String VALID_TUTORIAL_SECOND = "02";
     private static final String VALID_SM_LINKEDIN = "https://www.linkedin.com/in/rachel";
     private static final String VALID_SM_GITHUB = "https://github.com/rachel";
-
     private static final String WHITESPACE = " \t\r\n";
+    private static final String INVALID_TASK_INDEX_ZERO = "0";
+    private static final String INVALID_TASK_INDEX_NEGATIVE = "-1";
+    private static final String INVALID_TASK_INDEX_NON_NUMERIC = "abc";
 
     @Test
     public void parseEmail_invalidInput_throwsParseException() {
@@ -300,4 +302,32 @@ public class ParserUtilTest {
         assertEquals(expectedTutorials, actualTutorials);
     }
 
+    @Test
+    public void parseTaskIndex_invalidInputZero_throwsParseException() {
+        assertThrows(ParseException.class, () -> ParserUtil.parseTaskIndex(INVALID_TASK_INDEX_ZERO));
+    }
+
+    @Test
+    public void parseTaskIndex_invalidInputNegative_throwsParseException() {
+        assertThrows(ParseException.class, () -> ParserUtil.parseTaskIndex(INVALID_TASK_INDEX_NEGATIVE));
+    }
+
+    @Test
+    public void parseTaskIndex_invalidInputNonNumeric_throwsParseException() {
+        assertThrows(ParseException.class, () -> ParserUtil.parseTaskIndex(INVALID_TASK_INDEX_NON_NUMERIC));
+    }
+
+    @Test
+    public void parseTaskIndex_validInput_success() throws Exception {
+        int expectedTaskIndex = 1;
+        int actualTaskIndex = ParserUtil.parseTaskIndex("1");
+        assertEquals(expectedTaskIndex, actualTaskIndex);
+    }
+
+    @Test
+    public void parseTaskIndex_validInputWithWhitespace_success() throws Exception {
+        int expectedTaskIndex = 5;
+        int actualTaskIndex = ParserUtil.parseTaskIndex("  5  ");
+        assertEquals(expectedTaskIndex, actualTaskIndex);
+    }
 }
