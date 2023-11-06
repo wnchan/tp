@@ -181,70 +181,74 @@ A student can have any number of social media links. Add multiple social media l
 #### Valid Majors:
 
 For now, we accept the following majors in National University of Singapore(NUS):
-* Accountancy 
-* Actuarial Studies 
-* Anthropology 
-* Architecture 
-* Biological Sciences 
-* Biomedical Engineering 
-* Business Administration 
-* Business Administration (Accountancy)
-* Business Analytics 
-* Chemical Engineering 
-* Chemistry
-* Chinese Language
-* Chinese Studies 
-* Communications and New Media 
-* Civil Engineering 
-* Computer Engineering 
-* Computer Science 
-* Data Science and Analytics 
-* Data Science and Economics 
-* Dentistry 
-* Economics 
-* Electrical Engineering 
-* English Language 
-* English Literature 
-* Environmental Engineering 
-* Environmental Studies 
-* Food Science and Technology 
-* Geography 
-* Global Studies 
-* History 
-* Japanese Studies 
-* Industrial Design 
-* Industrial Engineering 
-* Industrial and Systems Engineering 
-* Information Systems 
-* Information Security 
-* Infrastructure and Project Management 
-* Landscape Architecture 
-* Law 
-* Life Sciences 
-* Malay Studies 
-* Management 
-* Marketing 
-* Materials Science and Engineering 
-* Mathematics 
-* Mechanical Engineering 
-* Medicine
-* Pharmaceutical Science 
-* Philosophy 
-* Philosophy, Politics, and Economics 
-* Physics 
-* Political Science 
-* Psychology 
-* Quantitative Finance 
-* Real Estate 
-* Social Work 
-* Sociology 
-* South Asian Studies 
-* Southeast Asian Studies 
-* Statistics 
-* Systems Engineering 
-* Theatre Studies 
-* Urban Studies 
-* Visual Communications
+
+| Major                                     |
+|-------------------------------------------|
+| Accountancy                               |
+| Actuarial Studies                         |
+| Anthropology                              |
+| Architecture                              |
+| Biological Sciences                       |
+| Biomedical Engineering                    |
+| Business Administration                   |
+| Business Administration (Accountancy)     |
+| Business Analytics                        |
+| Chemical Engineering                      |
+| Chemistry                                 |
+| Chinese Language                          |
+| Chinese Studies                           |
+| Communications and New Media              |
+| Civil Engineering                         |
+| Computer Engineering                      |
+| Computer Science                          |
+| Data Science and Analytics                |
+| Data Science and Economics                |
+| Dentistry                                 |
+| Economics                                 |
+| Electrical Engineering                    |
+| English Language                          |
+| English Literature                        |
+| Environmental Engineering                 |
+| Environmental Studies                     |
+| Food Science and Technology               |
+| Geography                                 |
+| Global Studies                            |
+| History                                   |
+| Japanese Studies                          |
+| Industrial Design                         |
+| Industrial Engineering                    |
+| Industrial and Systems Engineering        |
+| Information Systems                       |
+| Information Security                      |
+| Infrastructure and Project Management     |
+| Landscape Architecture                    |
+| Law                                       |
+| Life Sciences                             |
+| Malay Studies                             |
+| Management                                |
+| Marketing                                 |
+| Materials Science and Engineering         |
+| Mathematics                               |
+| Mechanical Engineering                    |
+| Medicine                                  |
+| Pharmaceutical Science                    |
+| Philosophy                                |
+| Philosophy, Politics, and Economics       |
+| Physics                                   |
+| Political Science                         |
+| Psychology                                |
+| Quantitative Finance                      |
+| Real Estate                               |
+| Social Work                               |
+| Sociology                                 |
+| South Asian Studies                       |
+| Southeast Asian Studies                   |
+| Statistics                                |
+| Systems Engineering                       |
+| Theatre Studies                           |
+| Urban Studies                             |
+| Visual Communications                     |
+
 
 If your major is not on this list, you can simply write "Others" as your major.<br>
 
