@@ -12,6 +12,12 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_SOCIAL_MEDIA_LINK;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_YEAR;
 import static seedu.address.testutil.Assert.assertThrows;
+import static seedu.address.testutil.TypicalPersons.ALICE;
+import static seedu.address.testutil.TypicalPersons.BENSON;
+import static seedu.address.testutil.TypicalPersons.CARL;
+import static seedu.address.testutil.TypicalPersons.DANIEL;
+import static seedu.address.testutil.TypicalPersons.ELLE;
+import static seedu.address.testutil.TypicalPersons.FIONA;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,6 +27,11 @@ import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.AddressBook;
 import seedu.address.model.Model;
+import seedu.address.model.group.tasks.Deadline;
+import seedu.address.model.group.tasks.Task;
+import seedu.address.model.group.tasks.TaskModule;
+import seedu.address.model.group.tasks.TaskStatus;
+import seedu.address.model.group.tasks.Todo;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
 import seedu.address.model.person.Person;
 import seedu.address.testutil.EditPersonDescriptorBuilder;
@@ -86,6 +97,25 @@ public class CommandTestUtil {
             + "example.com"; // does not start with https://
     public static final String INVALID_NATIONALITY_DESC = " " + PREFIX_NATIONALITY + "Singaporean";
     public static final String INVALID_GENDER_DESC = " " + PREFIX_GENDER + "MALE";
+
+
+    public static final String VALID_NUMBER_GROUP1 = "1";
+    public static final String VALID_NUMBER_GROUP2 = "2";
+    public static final String VALID_TUTORIAL_GROUP1 = "01";
+    public static final String VALID_TUTORIAL_GROUP2 = "02";
+    public static final Person VALID_MEMBER1_GROUP1 = ALICE;
+    public static final Person VALID_MEMBER2_GROUP1 = BENSON;
+    public static final Person VALID_MEMBER3_GROUP1 = CARL;
+    public static final Person VALID_MEMBER1_GROUP2 = DANIEL;
+    public static final Person VALID_MEMBER2_GROUP2 = ELLE;
+    public static final Person VALID_MEMBER3_GROUP2 = FIONA;
+
+    public static final Task VALID_TASK1 = new Todo("Upload video of OP1.",
+            TaskStatus.NOT_DONE, TaskModule.CS2101);
+    public static final Task VALID_TASK2 = new Todo("Complete mid semester review form.",
+            TaskStatus.NOT_DONE, TaskModule.CS2103T);
+    public static final Task VALID_TASK3 = new Todo("Attend tutorials",
+            TaskStatus.NOT_DONE, TaskModule.CS2103T);
 
 
     public static final String PREAMBLE_WHITESPACE = "\t  \r  \n";
