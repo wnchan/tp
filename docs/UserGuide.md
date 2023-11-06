@@ -565,11 +565,15 @@ Filters groups by tutorial based on the given slot.
 
 
 #### Expected Output (Failure):
+If an invalid command format is provided,
 * Message: "Invalid command format!
 
   filterGroup: Filters all groups that belong to the specified tutorial slot (2-digit numbers between 01 and 22) and displays them as a list with index numbers.
   Parameters: SLOT
   Example: filterGroup 01"
+
+If an invalid slot is provided,
+* Message: "Tutorials should be 2-digit numbers between 01 and 22."
 
 ### Checking a group : `checkGroup`
 
