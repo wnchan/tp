@@ -342,19 +342,22 @@ CS2103T students.
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
 
-| Priority | As a …​ | I want to …​                                                  | So that I can…​                             |
-|---------|---------|---------------------------------------------------------------|---------------------------------------------|
-| `* * *` | student | add my personal details to the system                         | get other students to learn more about me   |
-| `* * *` | student | view the rest of the students in the course                   | see my options for choosing teammates       |
-| `* * *` | student | see the other student’s name, major, basic info etc           | make informed decisions                     |
-| `* * *` | student | customise and update my profile details                       | ensure that my profile is up to date        |
-| `* * *` | student | view other students in the same tutorial group                | communicate with them                       |
-| `* * *` | student | remove my personal details from the system                    | stop using the application                  |
-| `* * *` | student | join a group on the app                                       | form a group for the course                 |
-| `* * *` | user    | exit the app                                                  | close the app                               |
-| `* *`   | student | seek help and check requirements for cs2101/cs2103t groupings | be more clear of the valid group formations |
-| `* * `  | student | be able to click the links of the social media to view them   | avoid wasting time typing links manually    |
-
+| Priority | As a …​            | I want to …​                                                  | So that I can…​                                   |
+|----------|--------------------|---------------------------------------------------------------|---------------------------------------------------|
+| `* * *`  | student            | add my personal details to the system                         | get other students to learn more about me         |
+| `* * *`  | student            | view the rest of the students in the course                   | see my options for choosing teammates             |
+| `* * *`  | student            | see the other student’s name, major, basic info etc           | make informed decisions                           |
+| `* * *`  | student            | customise and update my profile details                       | ensure that my profile is up to date              |
+| `* * *`  | student            | view other students in the same tutorial group                | communicate with them                             |
+| `* * *`  | student            | remove my personal details from the system                    | stop using the application                        |
+| `* * *`  | student            | join a group on the app                                       | form a group for the course                       |
+| `* * *`  | user               | exit the app                                                  | close the app                                     |
+| `* *`    | student            | seek help and check requirements for cs2101/cs2103t groupings | be more clear of the valid group formations       |
+| `* * `   | student            | be able to click the links of the social media to view them   | avoid wasting time typing links manually          |
+| `* * `   | student            | be able to leave a group on the app                           | join another group of my choice                   |
+| `* * `   | student            | be able to delete a group I created on the app                | get rid of unnecessary groups on the system       |
+| `* * *`  | course coordinator | be able to remove all the data from the system                | reuse the application for new batches of students |
+| `* * *`  | course coordinator | be asked to confirm if I want to clear all the data           | prevent accidentally clearing all the data        |
 
 *{More to be added}*
 
@@ -397,8 +400,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1. Student requests to find students with a keyword.
-2. StudentConnect shows a list of students whose name(s) contain the keyword.
+1. Student requests to find students by name with keyword(s).
+2. StudentConnect shows a list of students whose name(s) contain the keyword(s).
 
     Use case ends.
 
@@ -480,6 +483,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * 4a. The website linked does not exist.
   * 4a1. Browser shows that corresponding link does not exist.
 
+    Use case ends.
+
 * 4b. Hyperlink does not exist
   * 4b1. StudentConnect does not redirect to the browser.
     
@@ -495,6 +500,28 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
    Use case ends.
 
+**Use case: Clearing all data**
+
+**MSS**
+
+1. User requests to clear data.
+2. StudentConnect shows a pop-up asking for confirmation.
+3. User confirms.
+4. StudentConnect clears all data from the system.
+
+    Use case ends.
+
+**Extensions**
+
+* 3a. User cancels clearing the data.
+  * 3a1. StudentConnect cancels the process and returns to main window.
+
+    Use case ends.
+* 3a. User does not respond.
+
+    Use case ends.
+
+
 **Use Case: Checking valid group formations**
 
 **MSS**
@@ -503,6 +530,72 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 2. StudentConnect displays the help message, along with the requirement message.
 
    Use case ends.
+
+**Use Case: Delete a group**
+
+**MSS**
+
+1. Student requests to delete a specific group.
+2. StudentConnect deletes the particular group.
+
+   Use case ends.
+
+**Extensions:**
+
+* 1a. The specified group does not exist. 
+  * 1a1. StudentConnect states the corresponding group does not exist.
+
+      Use case ends.
+
+**Use Case: Find a group**
+
+**MSS**
+
+1. Student requests to find groups by group number with keyword(s).
+2. StudentConnect shows a list of group(s) with group number(s) matching the keyword(s).
+
+    Use case ends.
+
+**Extensions:**
+* 2a. The given keyword(s) does not match any of the group numbers.
+
+    Use case ends.
+
+**Use Case: Filter groups**
+
+**MSS**
+
+1. Student requests to filter groups by tutorial slot.
+2. StudentConnect shows a list of groups that belong to the given tutorial slot.
+
+    Use case ends.
+
+**Extensions:**
+* 2a. The given slot does not match any of the groups' tutorial slot.
+
+    Use case ends.
+
+**Use Case: Leave a group**
+
+**MSS**
+
+1. Student requests to leave a specific group.
+2. StudentConnect removes their details from the particular group.
+
+   Use case ends.
+
+**Extensions:**
+
+* 1a. The specified group does not exist. 
+  * 1a1. StudentConnect states the corresponding group does not exist.
+
+    Use case ends.
+
+* 1b. The student is not in the specified group.
+  * 1b1. StudentConnect notifies the student that they are not in the group.
+
+    Use case ends.
+
 
 **Use Case: Mark Task as Done**
 
