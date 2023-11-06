@@ -23,7 +23,7 @@ public class Major {
         "Biomedical Engineering",
         "Business Administration",
         "Business Administration (Accountancy)",
-         "Business Analytics",
+        "Business Analytics",
         "Chemical Engineering",
         "Chemistry",
         "Chinese Language",
