@@ -23,7 +23,7 @@ public class TasksCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
         + ": Lists out all tasks for a specific group.\n"
-        + "Parameters: Group Number\n"
+        + "Parameters: GROUP_NUMBER\n"
         + "Example: " + COMMAND_WORD + " 3";
 
     public static final String MESSAGE_SUCCESS = "Listing out tasks for group %1$s";
