@@ -16,8 +16,10 @@ import org.junit.jupiter.api.Test;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
+import seedu.address.model.person.Gender;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
+import seedu.address.model.person.Nationality;
 import seedu.address.model.person.Year;
 import seedu.address.model.socialmedialink.SocialMediaLink;
 import seedu.address.model.tutorial.Tutorial;
@@ -30,6 +32,8 @@ public class ParserUtilTest {
     private static final String INVALID_EMAIL = "example.com";
     private static final String INVALID_TUTORIAL = "1";
     private static final String INVALID_SM = "#www.invalid.com";
+    private static final String INVALID_GENDER = "a";
+    private static final String INVALID_NATIONALITY = "abc";
 
     private static final String VALID_NAME = "Rachel Walker";
     private static final String VALID_MAJOR = "Computer Science";
@@ -40,6 +44,8 @@ public class ParserUtilTest {
     private static final String VALID_TUTORIAL_SECOND = "02";
     private static final String VALID_SM_LINKEDIN = "https://www.linkedin.com/in/rachel";
     private static final String VALID_SM_GITHUB = "https://github.com/rachel";
+    private static final String VALID_GENDER = "f";
+    private static final String VALID_NATIONALITY = "local";
 
     private static final String WHITESPACE = " \t\r\n";
 
@@ -300,4 +306,49 @@ public class ParserUtilTest {
         assertEquals(expectedTutorials, actualTutorials);
     }
 
+    @Test
+    public void parseNationality_null_throwsNullPointerException() {
+        assertThrows(NullPointerException.class, () -> ParserUtil.parseNationality((String) null));
+    }
+
+    @Test
+    public void parseNationality_invalidValue_throwsParseException() {
+        assertThrows(ParseException.class, () -> ParserUtil.parseNationality(INVALID_NATIONALITY));
+    }
+
+    @Test
+    public void parseNationality_validValueWithoutWhitespace_returnsNationality() throws Exception {
+        Nationality expectedNationality = new Nationality(VALID_NATIONALITY);
+        assertEquals(expectedNationality, ParserUtil.parseNationality(VALID_NATIONALITY));
+    }
+
+    @Test
+    public void parseNationality_validValueWithWhitespace_returnsTrimmedNationality() throws Exception {
+        String nationalityWithWhitespace = WHITESPACE + VALID_NATIONALITY + WHITESPACE;
+        Nationality expectedNationality = new Nationality(VALID_NATIONALITY);
+        assertEquals(expectedNationality, ParserUtil.parseNationality(nationalityWithWhitespace));
+    }
+
+    @Test
+    public void parseGender_null_throwsNullPointerException() {
+        assertThrows(NullPointerException.class, () -> ParserUtil.parseGender((String) null));
+    }
+
+    @Test
+    public void parseGender_invalidValue_throwsParseException() {
+        assertThrows(ParseException.class, () -> ParserUtil.parseGender(INVALID_GENDER));
+    }
+
+    @Test
+    public void parseGender_validValueWithoutWhitespace_returnsGender() throws Exception {
+        Gender expectedGender = new Gender(VALID_GENDER);
+        assertEquals(expectedGender, ParserUtil.parseGender(VALID_GENDER));
+    }
+
+    @Test
+    public void parseGender_validValueWithWhitespace_returnsTrimmedGender() throws Exception {
+        String genderWithWhitespace = WHITESPACE + VALID_GENDER + WHITESPACE;
+        Gender expectedGender = new Gender(VALID_GENDER);
+        assertEquals(expectedGender, ParserUtil.parseGender(genderWithWhitespace));
+    }
 }

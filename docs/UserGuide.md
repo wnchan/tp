@@ -164,11 +164,11 @@ Including social media links and tutorial groups are optional.
 </div>
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-A student can include multiple tutorial groups they are interested in. Add multiple tutorial groups with multiple `t/`.
+A student can include multiple tutorial groups they are interested in. Add multiple tutorial groups by using `t/` repeatedly.
 </div>
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-A student can have any number of social media links. Add multiple social media links with multiple `sm/`.
+A student can have any number of social media links. Add multiple social media links by using `sm/` repeatedly.
 </div>
 
 #### Examples:
@@ -311,6 +311,14 @@ Edits an existing student in the system.
 * You can remove all the student's social media by typing `sm/` without
   specifying any social media after it.
 
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+A student can edit to include multiple tutorial groups they are interested in. Add multiple tutorial groups by using `t/` repeatedly.
+</div>
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+A student can edit to have any number of social media links. Add multiple social media links by using `sm/` repeatedly.
+</div>
+
 #### Examples:
 *  `edit johnd@u.nus.edu y/3 e/johndoe@u.nus.edu` Edits the year and email address of the student with the email `johnd@u.nus.edu` to be `3` and `johndoe@u.nus.edu` respectively.
 *  `edit betsycrowe@u.nus.edu n/Betsy Crower sm/` Edits the name of the student with the email `betsycrowe@u.nus.edu` to be `Betsy Crower` and clears all existing social media.
@@ -324,8 +332,11 @@ Edits an existing student in the system.
   ![sample result for 'edit'](images/edit.png)
 
 #### Expected Output (Failure):
-* Message: “Error: Email not found.”
-* Message: “Error: None of the optional fields provided. Give at least one.”
+If no fields to edit are provided,
+* Message: “At least one field to edit must be provided.”
+
+If the email provided is not in the system,
+* Message: “Student with the provided email not found.”
 
 ### Finding a student by name : `find`
 
@@ -363,9 +374,9 @@ Filters students by tutorial based on the given slots.
 
 * The slots must be 2-digit numbers between 01 and 22 inclusive.
 * Tutorials are only accepted as 2-digits, ie. `3` is not a valid tutorial, but `03` is.
-* The order of the slots does not matter. e.g. `08 15` will match `15 08`
+* The order of the slots does not matter. e.g. `08 15` will match `15 08`.
 * Only the tutorial is searched.
-* Students matching at least one tutorial slot will be returned (i.e. `OR` search). e.g. `03 12` will return `03 16`, `04 12`
+* Students matching at least one tutorial slot will be returned (i.e. `OR` search). e.g. `03 12` will return `03 16`, `04 12`.
 
 #### Examples:
 * `filter 10` returns students in `T10`, `T06 T10` and `T10 T18`.
@@ -376,10 +387,14 @@ Filters students by tutorial based on the given slots.
   ![result for 'filter 04'](images/filter.png)
 
 #### Expected Output (Failure):
+If an invalid command format is provided,
 * Message: “Invalid command format!<br>
   filter: Filters all students whose tutorials match any of the specified slots (2-digit numbers between 01 and 22) and displays them as a list with index numbers.<br>
   Parameters: SLOT [MORE_SLOTS]...<br>
   Example: filter 08 15"
+
+If an invalid slot(s) is provided,
+* Message: "Tutorials should be 2-digit numbers between 01 and 22."
 
 ### Deleting a person : `delete`
 
@@ -429,10 +444,13 @@ Creates a new empty group with the given tutorial number. The group number is au
   ![Sample result for create](images/create.png)
 
 #### Expected Output(Failure):
-* Message: `Tutorials should be 2-digit numbers between 01 and 22, separated by spaces.`
+If an invalid command format is provided,
 * Message: `Invalid command format!
   create: Creates a new empty group.
   Parameters: t/TUTORIAL Example: create t/02`
+
+If an invalid tutorial number is provided,
+* Message: `Tutorials should be 2-digit numbers between 01 and 22.`
 
 
 
@@ -528,10 +546,11 @@ Finds group(s) with group number(s) that matches any of the given keywords.
 
 #### Format: `findGroup KEYWORD [MORE_KEYWORDS]`
 
-* The order of the keywords does not matter. e.g. `5 12` will match `12 5`
+* The order of the keywords does not matter. e.g. `5 12` will match `12 5`.
 * Only the group number is searched.
-* Only the full keywords will be matched. e.g. `1` will not match `12`
-* Groups matching one keyword will be returned (i.e. `OR` search). e.g. `5 12` will return `5`, `12`
+* Only the full keywords will be matched. e.g. `1` will not match `12`.
+* Groups matching one keyword will be returned (i.e. `OR` search). e.g. `5 12` will return `5`, `12`.
+* The keyword(s) must be a non-zero unsigned integer.
 
 #### Examples:
 * `findGroup 7` returns Group `7`.
@@ -543,11 +562,15 @@ Finds group(s) with group number(s) that matches any of the given keywords.
 
 
 #### Expected Output (Failure):
+If an invalid command format is provided,
 * Message: "Invalid command format!
 
   findGroup: Finds all groups whose number contain any of the specified keywords and displays them as a list with index numbers.
   Parameters: KEYWORD [MORE_KEYWORDS]...
   Example: findGroup 1 5 10"
+
+If an invalid keyword(s) is provided,
+* Message: "Group number is not a non-zero unsigned integer."
 
 ### Filtering groups by tutorial : `filterGroup`
 
@@ -568,11 +591,15 @@ Filters groups by tutorial based on the given slot.
 
 
 #### Expected Output (Failure):
+If an invalid command format is provided,
 * Message: "Invalid command format!
 
   filterGroup: Filters all groups that belong to the specified tutorial slot (2-digit numbers between 01 and 22) and displays them as a list with index numbers.
   Parameters: SLOT
   Example: filterGroup 01"
+
+If an invalid slot is provided,
+* Message: "Tutorials should be 2-digit numbers between 01 and 22."
 
 ### Checking a group : `checkGroup`
 
@@ -589,43 +616,40 @@ Checks if a group fulfils the group requirements of the course.
 
 #### Expected Output(Success):
 If the group fulfils the group requirements,
-* Message: "Group fulfils the diversity requirements of CS2103T. Group GROUP_NUMBER"
+* Message: "Group GROUP_NUMBER<br>
+  Group fulfils the diversity requirements of CS2103T."
   ![sample result for 'checkGroup'](images/checkGroup.png)
 
 If the group has no members,
-* Message: "Group does not have any members. Group GROUP_NUMBER
-
+* Message: "Group GROUP_NUMBER<br>
+  Group does not have any members.<br>
   You can enter the `help` command for more information on group requirements."
 
-If the number of group members is more than 5,
-* Message: "Group size has exceeded limit with more than 5 members. Group GROUP_NUMBER
-
+If the group has only 1 member,
+* Message: "Group GROUP_NUMBER<br>
+  Group has only one member.<br>
   You can enter the `help` command for more information on group requirements."
 
-If all the members in the group have the same nationality,
-* Message: "Group does not fulfil the nationality requirement of CS2103T. Group GROUP_NUMBER
+If the group has more than 1 member and the group does not fulfil the group requirements, here is a list of message(s) that will be displayed,
 
-  You can enter the `help` command for more information on group requirements."
-
-If all the members in the group have the same gender,
-* Message: "Group does not fulfil the gender requirement of CS2103T. Group GROUP_NUMBER
-
-  You can enter the `help` command for more information on group requirements."
-
-If not every member in the group has a tutorial that matches the group's tutorial,
-* Message: "Not every group member's tutorial matches the group's tutorial. Group GROUP_NUMBER
-
-  You can enter the `help` command for more information on group requirements."
-
-If the group has not been created,
-* Message: "Group with the provided group number not found."
+* Message: "Group GROUP_NUMBER"
+* Message: "Group has less than 5 members."
+* Message: "Group size has exceeded limit with more than 5 members."
+* Message: "Group comprises of members of the same nationality."
+* Message: "Group comprises of members of the same gender."
+* Message: "Not every group member's tutorial matches the group's tutorial."
+* Message: "You can enter the `help` command for more information on group requirements."
 
 #### Expected Output (Failure):
+If an invalid command format is provided,
 * Message: "Invalid command format!<br>
   checkGroup: Checks the group identified by its group number.<br>
   Parameters: GROUP_NUMBER"<br>
 
   Example: checkGroup 1"
+
+If the group has not been created,
+* Message: "Group with the provided group number not found."
 
 ### Listing all tasks for a specific group : `tasks`
 
@@ -758,28 +782,28 @@ _Details coming soon ..._
 
 ## Command summary
 
-| Action           | Format, Examples                                                                                                                                                                                                                            |
-|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Help**         | `help`                                                                                                                                                                                                                                      |
-| **Clear**        | `clear`                                                                                                                                                                                                                                     |
-| **Exit**         | `exit`                                                                                                                                                                                                                                      |
-| **Add**          | `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION [t/TUTORIALS]…​ [sm/SOCIALMEDIA]…​ nt/NATIONALITY g/GENDER` <br> e.g., `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu t/05 d/I’m adept at Backend technologies nt/local g/f` |
-| **List**         | `list`                                                                                                                                                                                                                                      |
-| **Edit**         | `edit INDEX [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS]…​ [sm/SOCIALMEDIA]…​ [nt/NATIONALITY] [g/GENDER]` <br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                         |
-| **Find**         | `find KEYWORD [MORE_KEYWORDS]…​`<br> e.g., `find James Jake`                                                                                                                                                                                  |
-| **Filter**       | `filter SLOT [MORE_SLOTS]…​`<br> e.g., `filter 05 11`                                                                                                                                                                                         |
-| **Delete**       | `delete EMAIL`<br> e.g., `delete betsycrowe@u.nus.edu`                                                                                                                                                                                      |
-| **Create group** | `create t/[TUTORIAL]` <br> e.g., `create t/01`                                                                                                                                                                                              |
-| **List groups**  | `listGroup`                                                                                                                                                                                                                                 |
-| **Delete group** | `deleteGroup gr/[GROUP_NUMBER}` <br> e.g., `deleteGroup gr/1`                                                                                                                                                                               |
-| **Join group**   | `join e/[EMAIL] gr/[GROUP_NUMBER]` <br> e.g., `join e/johnd@u.nus.edu gr/1`                                                                                                                                                                 |
-| **Leave group**  | `leave e/[EMAIL] gr/[GROUP_NUMBER}` <br> e.g., `leave e/johnd@u.nus.edu gr/1`                                                                                                                                                               |
-| **Find group**   | `findGroup KEYWORD [MORE_KEYWORDS]`<br> e.g., `findGroup 7 15`                                                                                                                                                                              |
-| **Filter group** | `filter SLOT` <br> e.g., `filterGroup 3`                                                                                                                                                                                                    |
-| **Check group**  | `checkGroup GR0UP_NUMBER` <br> e.g., `checkGroup 4`                                                                                                                                                                                         |
-| **List Tasks**   | `tasks GROUP_NUMBER`<br> e.g., `tasks 5`                                                                                                                                                                                                    |
-| **Mark**         | `mark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `mark gr/2 ti/1`                                                                                                                                                                             |
-| **Unmark**       | `unmark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `unmark gr/5 ti/1`                                                                                                                                                                         |
+| Action           | Format, Examples                                                                                                                                                                                                                               |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Help**         | `help`                                                                                                                                                                                                                                         |
+| **Clear**        | `clear`                                                                                                                                                                                                                                        |
+| **Exit**         | `exit`                                                                                                                                                                                                                                         |
+| **Add**          | `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION [t/TUTORIALS]…​ [sm/SOCIALMEDIA]…​ nt/NATIONALITY g/GENDER` <br> e.g., `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu t/05 d/I’m adept at Backend technologies nt/local g/f`|
+| **List**         | `list`                                                                                                                                                                                                                                         |
+| **Edit**         | `edit EMAIL [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS]…​ [sm/SOCIALMEDIA]…​ [nt/NATIONALITY] [g/GENDER]` <br> e.g.,`edit jameslee@u.nus.edu n/James Lee e/jameslee@u.nus.edu`                                         |
+| **Find**         | `find KEYWORD [MORE_KEYWORDS]…​`<br> e.g., `find James Jake`                                                                                                                                                                                   |
+| **Filter**       | `filter SLOT [MORE_SLOTS]…​`<br> e.g., `filter 05 11`                                                                                                                                                                                          |
+| **Delete**       | `delete EMAIL`<br> e.g., `delete betsycrowe@u.nus.edu`                                                                                                                                                                                         |
+| **Create group** | `create t/[TUTORIAL]` <br> e.g., `create t/01`                                                                                                                                                                                                 |
+| **List groups**  | `listGroup`                                                                                                                                                                                                                                    |
+| **Delete group** | `deleteGroup gr/[GROUP_NUMBER}` <br> e.g., `deleteGroup gr/1`                                                                                                                                                                                  |
+| **Join group**   | `join e/[EMAIL] gr/[GROUP_NUMBER]` <br> e.g., `join e/johnd@u.nus.edu gr/1`                                                                                                                                                                    |
+| **Leave group**  | `leave e/[EMAIL] gr/[GROUP_NUMBER}` <br> e.g., `leave e/johnd@u.nus.edu gr/1`                                                                                                                                                                  |
+| **Find group**   | `findGroup KEYWORD [MORE_KEYWORDS]`<br> e.g., `findGroup 7 15`                                                                                                                                                                                 |
+| **Filter group** | `filter SLOT` <br> e.g., `filterGroup 3`                                                                                                                                                                                                       |
+| **Check group**  | `checkGroup GR0UP_NUMBER` <br> e.g., `checkGroup 4`                                                                                                                                                                                            |
+| **List Tasks**   | `tasks GROUP_NUMBER`<br> e.g., `tasks 5`                                                                                                                                                                                                       |
+| **Mark**         | `mark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `mark gr/2 ti/1`                                                                                                                                                                                |
+| **Unmark**       | `unmark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `unmark gr/5 ti/1`                                                                                                                                                                            |
 
 --------------------------------------------------------------------------------------------------------------------
 
