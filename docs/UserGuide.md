@@ -125,13 +125,13 @@ Clears all entries from the system upon confirmation in the pop-up.
 * * Message: `Opened confirmation window. Please ensure you use the exit command when exiting StudentConnect for successful reset.`
 #### Expected Output(Success):
 
-* GUI: All students' details are removed from student list.
+* GUI: All students' details are removed from the student list.
   ![result for 'clear' pop-up](images/clearPopUp.png)
   ![result for 'clear' GUI](images/clearUI.png)
 
 #### Expected Output(Failure or Cancellation):
-If clear fails or you press `cancel` on the confirmation pop-up: 
-* GUI: All students' details remain on student list.
+If the clear command fails, or you press `cancel` on the confirmation pop-up: 
+* GUI: All students' details remain on the student list.
   ![result for cancelled 'clear' GUI](images/clearCancel.png)
 
 ### Exiting the program : `exit`
