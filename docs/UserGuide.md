@@ -605,11 +605,10 @@ If the group has not been created,
 * Message: "Group with the provided group number not found."
 
 #### Expected Output (Failure):
-* Message: "Invalid command format!
-
-  checkGroup: Checks the group identified by its group number.
-  Parameters: GROUP_NUMBER
-  Example: checkGroup 1
+* Message: "Invalid command format!<br>
+  checkGroup: Checks the group identified by its group number.<br>
+  Parameters: GROUP_NUMBER<br>
+  Example: checkGroup 1"
 
 ### Listing all tasks for a specific group : `tasks`
 
@@ -627,13 +626,18 @@ Lists out all tasks for a specific group.
 * GROUP_NUMBER: Must be a non-zero unsigned integer.
 
 #### Expected Output (Success):
-* GUI: List of all tasks for the specified group is displayed.
+* GUI: List of all tasks for the specified group is displayed, the specified group and group members are shown.
 * Message: “Here are the tasks for group [GROUP_NUMBER]: [list of tasks]”
   ![sample result for 'tasks'](images/tasks.png)
 
 #### Expected Output (Failure):
-* Message: “Group with the provided group number not found.”
-* Message: “Group number is not a non-zero unsigned integer.”
+* Case: Invalid tasks command, e.g. `tasks gr/3`, `tasks t`, etc.<br>
+  * Message: “Invalid command format!<br>
+  tasks: Lists out all tasks for a specific group.<br>
+  Parameters: GROUP_NUMBER<br>
+  Example: tasks 3”
+* Case: Invalid group number as the group has not yet been created
+    * Message: “Group with the provided group number not found.”
 
 
 
