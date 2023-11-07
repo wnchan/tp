@@ -400,7 +400,7 @@ Deletes a specific student and all personal details based on email.
   ![Delete feature](images/delete.png)
 
 #### Expected Output (Failure):
-* Message: `Error! Email not found!`
+* Message: `Student with the provided email not found.`
 
 ## Group Commands
 
