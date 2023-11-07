@@ -499,7 +499,7 @@ Listed below are some cases where the join command will not execute successfully
 
 Deletes a member from a specific group, indicating that they have left.
 
-#### Format: `leave e/[EMAIL] gr/[GROUP_NUMBER]`
+#### Format: `leave e/EMAIL gr/GROUP_NUMBER`
 
 * Removes student from specified group.
 
@@ -513,14 +513,14 @@ Deletes a member from a specific group, indicating that they have left.
 
 #### Expected Output (Success):
 * GUI: Student details removed from specified group.
-* Message: “Leave successful! `[NAME]` has left group 1!”
+* Message: `Leave successful! NAME has left group 1!`
 ![sample result for 'leave'](images/leave.png)
 
 
 #### Expected Output (Failure):
-* Message: “Person with the provided email not found.”
-* Message: “Group with the provided group number not found.”
-* Message: “The above student is not a member of the provided group.”
+* Message: `Person with the provided email not found.`
+* Message: `Group with the provided group number not found.`
+* Message: `The above student is not a member of the provided group.`
 
 ### Finding a group by group number : `findGroup`
 
