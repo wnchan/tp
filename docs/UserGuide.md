@@ -120,14 +120,18 @@ Provides the requirements for forming a group.
 Clears all entries from the system upon confirmation in the pop-up.
 
 #### Format: `clear`
-
-#### Expected Output(Success):
 * Confirmation Pop-up opened.
+* * Message: `Opened confirmation window. Please ensure you use the exit command when exiting StudentConnect for successful reset.`
+#### Expected Output(Success):
+
 * GUI: All students' details are removed from student list.
-* Message: `Opened confirmation window. Please ensure you use the exit command when exiting StudentConnect for successful reset.`
-* Message (Once confirmed): `All student data has been cleared.`
   ![result for 'clear' pop-up](images/clearPopUp.png)
   ![result for 'clear' GUI](images/clear.png)
+
+#### Expected Output(Failure or Cancellation):
+If clear fails or you press `cancel` on the confirmation pop-up: 
+* GUI: All students' details remain on student list.
+
 
 ### Exiting the program : `exit`
 
