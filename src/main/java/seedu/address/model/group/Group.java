@@ -165,7 +165,4 @@ public class Group {
     public boolean removeMember(Person person) {
         return members.remove(person);
     }
-
-
-
 }
