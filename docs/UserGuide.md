@@ -40,6 +40,7 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 6. [FAQ](#faq)
 7. [Known issues](#known-issues)
 8. [Command summary](#command-summary)
+9. [Appendix](#appendix)
 
 
 --------------------------------------------------------------------------------------------------------------------
@@ -123,14 +124,18 @@ Provides the requirements for forming a group based on CS2103T and CS2101 coordi
 Clears all entries from the system upon confirmation in the pop-up.
 
 #### Format: `clear`
-
-#### Expected Output(Success):
 * Confirmation Pop-up opened.
-* GUI: All students' details are removed from student list.
-* Message: `Opened confirmation window. Please ensure you use the exit command when exiting StudentConnect for successful reset.`
-* Message (Once confirmed): `All student data has been cleared.`
+* * Message: `Opened confirmation window. Please ensure you use the exit command when exiting StudentConnect for successful reset.`
+#### Expected Output(Success):
+
+* GUI: All students' details are removed from the student list.
   ![result for 'clear' pop-up](images/clearPopUp.png)
-  ![result for 'clear' GUI](images/clear.png)
+  ![result for 'clear' GUI](images/clearUI.png)
+
+#### Expected Output(Failure or Cancellation):
+If the clear command fails, or you press `cancel` on the confirmation pop-up: 
+* GUI: All students' details remain on the student list.
+  ![result for cancelled 'clear' GUI](images/clearCancel.png)
 
 ### Exiting the program : `exit`
 
@@ -397,7 +402,11 @@ Deletes a specific student and all personal details based on email.
   ![Delete feature](images/delete.png)
 
 #### Expected Output (Failure):
-* Message: `Error! Email not found!`
+* Message: `Student with the provided email not found.`
+* Message: `Invalid command format!`<br>
+  `delete: Deletes the student identified by the email address.`<br>
+  `Parameters: EMAIL`<br>
+  `Example: delete alexyeoh@u.nus.edu`
 
 ## Group Commands
 
@@ -447,7 +456,7 @@ Displays a list of all groups. For each group, the group number, and the names a
 
 Deletes a group from the system, based on group number.
 
-#### Format: `deleteGroup gr/[GROUP_NUMBER]`
+#### Format: `deleteGroup gr/GROUP_NUMBER`
 
 #### Examples:
 *  `deleteGroup gr/2` deletes Group 2 from the system.
@@ -614,7 +623,8 @@ If the group has not been created,
 #### Expected Output (Failure):
 * Message: "Invalid command format!<br>
   checkGroup: Checks the group identified by its group number.<br>
-  Parameters: GROUP_NUMBER<br>
+  Parameters: GROUP_NUMBER"<br>
+
   Example: checkGroup 1"
 
 ### Listing all tasks for a specific group : `tasks`
@@ -770,3 +780,7 @@ _Details coming soon ..._
 | **List Tasks**   | `tasks GROUP_NUMBER`<br> e.g., `tasks 5`                                                                                                                                                                                                    |
 | **Mark**         | `mark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `mark gr/2 ti/1`                                                                                                                                                                             |
 | **Unmark**       | `unmark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `unmark gr/5 ti/1`                                                                                                                                                                         |
+
+--------------------------------------------------------------------------------------------------------------------
+
+## Appendix
