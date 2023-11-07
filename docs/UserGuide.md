@@ -140,7 +140,7 @@ Exits the program.
 
 #### Expected Output(Success):
 * GUI: Application window closes.
-* Message (before closing): "Thank you for using StudentConnect! Exiting the application now…"
+* Message (before closing): "Thank you for using StudentConnect!<br>Exiting the application now…"
 ![Exit](images/exit.png)
 
 #### Expected Output(Failure):
@@ -152,7 +152,7 @@ Exits the program.
 
 Adds a student to the system.
 
-#### Format: `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION [t/TUTORIALS] [sm/SOCIALMEDIA] nt/NATIONALITY g/GENDER`
+#### Format: `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION [t/TUTORIALS]… [sm/SOCIALMEDIA]… nt/NATIONALITY g/GENDER`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 Including social media links and tutorial groups are optional.
@@ -172,7 +172,7 @@ A student can have any number of social media links. Add multiple social media l
 
 #### Acceptable Values:
 * Name: Full names with alphabetical characters. Maximum 30 characters.
-* Major: Valid major names at NUS. More information listed below.
+* Major: Valid major names at NUS. More information listed [below](#valid-majors)
 * Year: Numeric year level. 
 * Email: Valid email address ending in “@u.nus.edu”. Maximum 20 characters.
 * Description: Maximum 150 characters.
@@ -296,7 +296,7 @@ Shows a list of all students in the system.
 
 Edits an existing student in the system.
 
-#### Format: `edit EMAIL [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS] [sm/SOCIALMEDIA] [nt/NATIONALITY] [g/GENDER]…​`
+#### Format: `edit EMAIL [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS]... [sm/SOCIALMEDIA]... [nt/NATIONALITY] [g/GENDER]…​`
 
 * Edits the student with the specified EMAIL.
 * At least one of the optional fields must be provided.
@@ -344,9 +344,9 @@ Finds student(s) whose name(s) contain any of the given keywords.
   ![result for 'find alex'](images/findAlexResult.png)
 * 
 #### Expected Output (Failure):
-* Message: “Invalid command format!
-    find: Finds all students whose names contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
-  Parameters: KEYWORD [MORE_KEYWORDS]...
+* Message: “Invalid command format! <br>
+    find: Finds all students whose names contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.<br>
+  Parameters: KEYWORD [MORE_KEYWORDS]...<br>
   Example: find alice bob charlie"
 
 
@@ -371,10 +371,9 @@ Filters students by tutorial based on the given slots.
   ![result for 'filter 04'](images/filter.png)
 
 #### Expected Output (Failure):
-* Message: “Invalid command format!
-
-  filter: Filters all students whose tutorials match any of the specified slots (2-digit numbers between 01 and 22) and displays them as a list with index numbers.
-  Parameters: SLOT [MORE_SLOTS]...
+* Message: “Invalid command format!<br>
+  filter: Filters all students whose tutorials match any of the specified slots (2-digit numbers between 01 and 22) and displays them as a list with index numbers.<br>
+  Parameters: SLOT [MORE_SLOTS]...<br>
   Example: filter 08 15"
 
 ### Deleting a person : `delete`
@@ -422,6 +421,9 @@ Creates a new empty group with the given tutorial number. The group number is au
 
 #### Expected Output(Failure):
 * Message: `Tutorials should be 2-digit numbers between 01 and 22, separated by spaces.`
+* Message: `Invalid command format!
+  create: Creates a new empty group.
+  Parameters: t/TUTORIAL Example: create t/02`
 
 
 
@@ -435,10 +437,11 @@ Displays a list of all groups. For each group, the group number, and the names a
 * GUI: A list of all groups that are in the system is shown.
 * Message: `Viewing all groups`
 
+![Sample result for listGroup](images/listGroup.png)
+
 #### Expected Output(Failure):
 * Message: `Error: Unable to retrieve group entries. Please try again.`
 
-![Sample result for listGroup](images/listGroup.png)
 
 ### Deleting a group : `deleteGroup`
 
@@ -455,7 +458,7 @@ Deletes a group from the system, based on group number.
 
 #### Expected Output(Success):
 * GUI: Specified group is no longer visible.
-* Message: `Group deleted successfully!`
+* Message: `Group deleted successfully! Deleted Group: [GROUP_NUMBER]`
   ![result for 'deleteGroup gr/3'](images/deleteGroup.png)
 
 #### Expected Output(Failure):
