@@ -26,20 +26,25 @@ public class CheckCommand extends Command {
             + "Parameters: GROUP_NUMBER\n"
             + "Example: " + COMMAND_WORD + " 1";
 
+    public static final String GROUP_NUM = "Group %1$s\n";
     public static final String MESSAGE_CHECK_GROUP_SUCCESS =
-            "Group fulfils the diversity requirements of CS2103T. Group %1$s";
+            "Group fulfils the diversity requirements of CS2103T.";
     public static final String MESSAGE_HELP =
-            "\nYou can enter the `help` command for more information on group requirements.";
+            "You can enter the `help` command for more information on group requirements.";
     public static final String MESSAGE_CHECK_GROUP_SIZE_EMPTY =
-            "Group does not have any members. Group %1$s";
+            "Group does not have any members.\n";
+    public static final String MESSAGE_CHECK_GROUP_SIZE_ONE =
+            "Group has only one member.\n";
+    public static final String MESSAGE_CHECK_GROUP_SIZE_UNDER =
+            "Group has less than 5 members.\n";
     public static final String MESSAGE_CHECK_GROUP_SIZE_OVER =
-            "Group size has exceeded limit with more than 5 members. Group %1$s";
+            "Group size has exceeded limit with more than 5 members.\n";
     public static final String MESSAGE_CHECK_GROUP_NATIONALITY_WARNING =
-            "Group does not fulfil the nationality requirement of CS2103T. Group %1$s";
+            "Group does not fulfil the nationality requirement of CS2103T.\n";
     public static final String MESSAGE_CHECK_GROUP_GENDER_WARNING =
-            "Group does not fulfil the gender requirement of CS2103T. Group %1$s";
+            "Group does not fulfil the gender requirement of CS2103T.\n";
     public static final String MESSAGE_CHECK_GROUP_TUTORIAL_WARNING =
-            "Not every group member's tutorial matches the group's tutorial. Group %1$s";
+            "Not every group member's tutorial matches the group's tutorial.\n";
     public static final String MESSAGE_CHECK_GROUP_NOT_FOUND = "Group with the provided group number not found.";
     private final GroupContainsKeywordsPredicate predicate;
 
@@ -66,71 +71,81 @@ public class CheckCommand extends Command {
         Group groupToCheck = model.getGroupWithNumber(groupNumber)
                 .orElseThrow(() -> new CommandException(MESSAGE_CHECK_GROUP_NOT_FOUND));
 
+        String message = "";
+        boolean isSuccess = true;
         Set<Person> groupMembers = groupToCheck.getMembers();
 
         // check group size
         if (groupMembers.size() == 0) {
-            return new CommandResult(
-                    String.format(MESSAGE_CHECK_GROUP_SIZE_EMPTY + MESSAGE_HELP, groupToCheck.getNumber()),
-                false, false, true, false);
-        }
-        if (groupMembers.size() > 5) {
-            return new CommandResult(
-                    String.format(MESSAGE_CHECK_GROUP_SIZE_OVER + MESSAGE_HELP, groupToCheck.getNumber()),
-                false, false, true, false);
-        }
-
-        // check nationality requirement
-        int localCount = 0;
-        int foreignerCount = 0;
-        for (Person member : groupMembers) {
-            if (member.getNationality().value.equals("local")) {
-                localCount++;
-            } else {
-                foreignerCount++;
-            }
+            isSuccess = false;
+            message = MESSAGE_CHECK_GROUP_SIZE_EMPTY;
+        } else if (groupMembers.size() == 1) {
+            isSuccess = false;
+            message = MESSAGE_CHECK_GROUP_SIZE_ONE;
+        } else if (groupMembers.size() > 1 && groupMembers.size() < 5) {
+            isSuccess = false;
+            message = MESSAGE_CHECK_GROUP_SIZE_UNDER;
+        } else if (groupMembers.size() > 5) {
+            isSuccess = false;
+            message = MESSAGE_CHECK_GROUP_SIZE_OVER;
         }
 
-        // check gender requirement
-        int maleCount = 0;
-        int femaleCount = 0;
-        for (Person member : groupMembers) {
-            if (member.getGender().value.equals("M")) {
-                maleCount++;
-            } else {
-                femaleCount++;
-            }
-        }
-
-        // check group members' tutorial
-        String groupTutorial = groupToCheck.getTutorial().value;
-        int count = 0;
-        for (Person member : groupMembers) {
-            for (Tutorial tut : member.getTutorials()) {
-                if (tut.value.equals((groupTutorial))) {
-                    count++;
-                    continue;
+        if (groupMembers.size() > 1) {
+            // check nationality requirement
+            int localCount = 0;
+            int foreignerCount = 0;
+            for (Person member : groupMembers) {
+                if (member.getNationality().value.equals("local")) {
+                    localCount++;
+                } else {
+                    foreignerCount++;
                 }
             }
+
+            // check gender requirement
+            int maleCount = 0;
+            int femaleCount = 0;
+            for (Person member : groupMembers) {
+                if (member.getGender().value.equals("M")) {
+                    maleCount++;
+                } else {
+                    femaleCount++;
+                }
+            }
+
+            // check group members' tutorial
+            String groupTutorial = groupToCheck.getTutorial().value;
+            int count = 0;
+            for (Person member : groupMembers) {
+                for (Tutorial tut : member.getTutorials()) {
+                    if (tut.value.equals((groupTutorial))) {
+                        count++;
+                        continue;
+                    }
+                }
+            }
+
+            if (localCount == 0 || foreignerCount == 0) {
+                isSuccess = false;
+                message += MESSAGE_CHECK_GROUP_NATIONALITY_WARNING;
+            }
+            if (maleCount == 0 || femaleCount == 0) {
+                isSuccess = false;
+                message += MESSAGE_CHECK_GROUP_GENDER_WARNING;
+            }
+            if (count != groupMembers.size()) {
+                isSuccess = false;
+                message += MESSAGE_CHECK_GROUP_TUTORIAL_WARNING;
+            }
         }
 
-        if (localCount == 0 || foreignerCount == 0) {
-            return new CommandResult(
-                    String.format(MESSAGE_CHECK_GROUP_NATIONALITY_WARNING + MESSAGE_HELP, groupToCheck.getNumber()),
-                false, false, true, false);
+        if (isSuccess) {
+            return new CommandResult(String.format(GROUP_NUM + MESSAGE_CHECK_GROUP_SUCCESS, groupToCheck.getNumber()),
+                    false, false, true, false);
+        } else {
+            return new CommandResult(String.format(GROUP_NUM + message + MESSAGE_HELP, groupToCheck.getNumber()),
+                    false, false, true, false);
         }
-        if (maleCount == 0 || femaleCount == 0) {
-            return new CommandResult(
-                    String.format(MESSAGE_CHECK_GROUP_GENDER_WARNING + MESSAGE_HELP, groupToCheck.getNumber()),
-                false, false, true, false);
-        }
-        if (count != groupMembers.size()) {
-            return new CommandResult(
-                    String.format(MESSAGE_CHECK_GROUP_TUTORIAL_WARNING + MESSAGE_HELP, groupToCheck.getNumber()),
-                false, false, true, false);
-        }
-        return new CommandResult(String.format(MESSAGE_CHECK_GROUP_SUCCESS, groupToCheck.getNumber()),
-            false, false, true, false);
     }
 
     @Override

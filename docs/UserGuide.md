@@ -589,43 +589,45 @@ Checks if a group fulfils the group requirements of the course.
 
 #### Expected Output(Success):
 If the group fulfils the group requirements,
-* Message: "Group fulfils the diversity requirements of CS2103T. Group GROUP_NUMBER"
+* Message: "Group GROUP_NUMBER
+
+    Group fulfils the diversity requirements of CS2103T."
   ![sample result for 'checkGroup'](images/checkGroup.png)
 
 If the group has no members,
-* Message: "Group does not have any members. Group GROUP_NUMBER
+* Message: "Group GROUP_NUMBER
 
-  You can enter the `help` command for more information on group requirements."
+    Group does not have any members.
 
-If the number of group members is more than 5,
-* Message: "Group size has exceeded limit with more than 5 members. Group GROUP_NUMBER
+    You can enter the `help` command for more information on group requirements."
 
-  You can enter the `help` command for more information on group requirements."
+If the group has only 1 member,
+* Message: "Group GROUP_NUMBER
 
-If all the members in the group have the same nationality,
-* Message: "Group does not fulfil the nationality requirement of CS2103T. Group GROUP_NUMBER
+    Group has only one member.
+  
+    You can enter the `help` command for more information on group requirements."
 
-  You can enter the `help` command for more information on group requirements."
+If the group has more than 1 member and the group does not fulfil the group requirements, here is a list of message(s) that will be displayed,
 
-If all the members in the group have the same gender,
-* Message: "Group does not fulfil the gender requirement of CS2103T. Group GROUP_NUMBER
-
-  You can enter the `help` command for more information on group requirements."
-
-If not every member in the group has a tutorial that matches the group's tutorial,
-* Message: "Not every group member's tutorial matches the group's tutorial. Group GROUP_NUMBER
-
-  You can enter the `help` command for more information on group requirements."
-
-If the group has not been created,
-* Message: "Group with the provided group number not found."
+* Message: "Group GROUP_NUMBER"
+* Message: "Group has less than 5 members."
+* Message: "Group size has exceeded limit with more than 5 members."
+* Message: "Group does not fulfil the nationality requirement of CS2103T."
+* Message: "Group does not fulfil the gender requirement of CS2103T."
+* Message: "Not every group member's tutorial matches the group's tutorial."
+* Message: "You can enter the `help` command for more information on group requirements."
 
 #### Expected Output (Failure):
+If an invalid command format is provided,
 * Message: "Invalid command format!
 
   checkGroup: Checks the group identified by its group number.
   Parameters: GROUP_NUMBER
   Example: checkGroup 1
+
+If the group has not been created,
+* Message: "Group with the provided group number not found."
 
 ### Listing all tasks for a specific group : `tasks`
 
