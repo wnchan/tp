@@ -597,24 +597,19 @@ Checks if a group fulfils the group requirements of the course.
 
 #### Expected Output(Success):
 If the group fulfils the group requirements,
-* Message: "Group GROUP_NUMBER
-
-    Group fulfils the diversity requirements of CS2103T."
+* Message: "Group GROUP_NUMBER<br>
+  Group fulfils the diversity requirements of CS2103T."
   ![sample result for 'checkGroup'](images/checkGroup.png)
 
 If the group has no members,
-* Message: "Group GROUP_NUMBER
-
-    Group does not have any members.
-
-    You can enter the `help` command for more information on group requirements."
+* Message: "Group GROUP_NUMBER<br>
+  Group does not have any members.<br>
+  You can enter the `help` command for more information on group requirements."
 
 If the group has only 1 member,
-* Message: "Group GROUP_NUMBER
-
-    Group has only one member.
-  
-    You can enter the `help` command for more information on group requirements."
+* Message: "Group GROUP_NUMBER<br>
+  Group has only one member.<br>
+  You can enter the `help` command for more information on group requirements."
 
 If the group has more than 1 member and the group does not fulfil the group requirements, here is a list of message(s) that will be displayed,
 
