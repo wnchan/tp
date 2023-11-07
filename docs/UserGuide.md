@@ -63,7 +63,7 @@ StudentConnect is a solution for hassle-free team formation for students to brow
         * Lists all students in the StudentConnect system.
     * `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time t/02 t/17 t/20 sm/https://www.linkedin.com/in/john-doe-123456789 nt/local g/m` : 
         * Adds a student named `John Doe` and their details to the StudentConnect system.
-    * `delete [email]` : 
+    * `delete EMAIL` : 
         * Deletes the student with the corresponding email.
     * `clear` : 
         * Deletes all data from the system (i.e. students, groups, and tasks).
@@ -106,7 +106,7 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 ### Viewing help : `help`
 
 Shows a message explaining how to access the help page in the user guide and a button to copy the link.<br>
-Provides the requirements for forming a group.
+Provides the requirements for forming a group based on CS2103T and CS2101 coordinators.
 
 #### Format: `help`
 
@@ -326,7 +326,7 @@ Edits an existing student in the system.
 
 Finds student(s) whose name(s) contain any of the given keywords.
 
-#### Format: `find KEYWORD [MORE_KEYWORDS]`
+#### Format: `find KEYWORD [MORE_KEYWORDS]…​`
 
 * The search is case-insensitive. e.g. `john` will match `John`
 * The order of the keywords does not matter. e.g. `John Doe` will match `Doe John`
@@ -354,7 +354,7 @@ Finds student(s) whose name(s) contain any of the given keywords.
 
 Filters students by tutorial based on the given slots.
 
-#### Format: `filter SLOT [MORE SLOTS]`
+#### Format: `filter SLOT [MORE SLOTS]…​`
 
 * The slots must be 2-digit numbers between 01 and 22 inclusive.
 * Tutorials are only accepted as 2-digits, ie. `3` is not a valid tutorial, but `03` is.
@@ -753,11 +753,11 @@ _Details coming soon ..._
 | **Help**         | `help`                                                                                                                                                                                                                                      |
 | **Clear**        | `clear`                                                                                                                                                                                                                                     |
 | **Exit**         | `exit`                                                                                                                                                                                                                                      |
-| **Add**          | `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION [t/TUTORIALS] [sm/SOCIALMEDIA] nt/NATIONALITY g/GENDER` <br> e.g., `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu t/05 d/I’m adept at Backend technologies nt/local g/f` |
+| **Add**          | `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION [t/TUTORIALS]…​ [sm/SOCIALMEDIA]…​ nt/NATIONALITY g/GENDER` <br> e.g., `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu t/05 d/I’m adept at Backend technologies nt/local g/f` |
 | **List**         | `list`                                                                                                                                                                                                                                      |
-| **Edit**         | `edit INDEX [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS] [sm/SOCIALMEDIA] [nt/NATIONALITY] [g/GENDER]` <br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                         |
-| **Find**         | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                                                                                                  |
-| **Filter**       | `filter SLOT [MORE_SLOTS]`<br> e.g., `filter 05 11`                                                                                                                                                                                         |
+| **Edit**         | `edit INDEX [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS]…​ [sm/SOCIALMEDIA]…​ [nt/NATIONALITY] [g/GENDER]` <br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                         |
+| **Find**         | `find KEYWORD [MORE_KEYWORDS]…​`<br> e.g., `find James Jake`                                                                                                                                                                                  |
+| **Filter**       | `filter SLOT [MORE_SLOTS]…​`<br> e.g., `filter 05 11`                                                                                                                                                                                         |
 | **Delete**       | `delete EMAIL`<br> e.g., `delete betsycrowe@u.nus.edu`                                                                                                                                                                                      |
 | **Create group** | `create t/[TUTORIAL]` <br> e.g., `create t/01`                                                                                                                                                                                              |
 | **List groups**  | `listGroup`                                                                                                                                                                                                                                 |
