@@ -445,7 +445,7 @@ Displays a list of all groups. For each group, the group number, and the names a
 
 Deletes a group from the system, based on group number.
 
-#### Format: `deleteGroup gr/[GROUP_NUMBER]`
+#### Format: `deleteGroup gr/GROUP_NUMBER`
 
 #### Examples:
 *  `deleteGroup gr/2` deletes Group 2 from the system.
