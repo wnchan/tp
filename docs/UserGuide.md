@@ -401,6 +401,10 @@ Deletes a specific student and all personal details based on email.
 
 #### Expected Output (Failure):
 * Message: `Student with the provided email not found.`
+* Message: `Invalid command format!`<br>
+  `delete: Deletes the student identified by the email address.`<br>
+  `Parameters: EMAIL`<br>
+  `Example: delete alexyeoh@u.nus.edu`
 
 ## Group Commands
 
