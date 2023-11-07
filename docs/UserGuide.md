@@ -303,6 +303,14 @@ Edits an existing student in the system.
 * You can remove all the student's social media by typing `sm/` without
   specifying any social media after it.
 
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+A student can edit to include multiple tutorial groups they are interested in. Add multiple tutorial groups with multiple `t/`.
+</div>
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+A student can edit to have any number of social media links. Add multiple social media links with multiple `sm/`.
+</div>
+
 #### Examples:
 *  `edit johnd@u.nus.edu y/3 e/johndoe@u.nus.edu` Edits the year and email address of the student with the email `johnd@u.nus.edu` to be `3` and `johndoe@u.nus.edu` respectively.
 *  `edit betsycrowe@u.nus.edu n/Betsy Crower sm/` Edits the name of the student with the email `betsycrowe@u.nus.edu` to be `Betsy Crower` and clears all existing social media.
