@@ -59,17 +59,18 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
-    * `list` : Lists all students.
-
-    * `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time t/02 17 20 sm/https://www.linkedin.com/in/john-doe-123456789 nt/local g/m` : Adds a student named `John Doe` to the StudentConnect system.
-
-    * `delete [email]` : Deletes the student with the corresponding email.
-
-    * `clear` : Deletes all data from the system (i.e. students, groups, and tasks).
-
-    * `exit` : Exits the app.
-
-    * `create` : Creates a new group.
+    * `list` : 
+        * Lists all students in the StudentConnect system.
+    * `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time t/02 t/17 t/20 sm/https://www.linkedin.com/in/john-doe-123456789 nt/local g/m` : 
+        * Adds a student named `John Doe` and their details to the StudentConnect system.
+    * `delete [email]` : 
+        * Deletes the student with the corresponding email.
+    * `clear` : 
+        * Deletes all data from the system (i.e. students, groups, and tasks).
+    * `exit` : 
+        * Exits the app.
+    * `create t/03` : 
+        * Creates a new group assigned to tutorial 3.
 
 6. Refer to the [Features](#features) below for details of each command.
 
@@ -88,13 +89,15 @@ StudentConnect is a solution for hassle-free team formation for students to brow
   e.g. `n/NAME [t/TUTORIALS]` can be used as `n/John Doe t/02` or as `n/John Doe`.
 
 * Items with `…`​ after them can be used multiple times including zero times.<br>
-  e.g. `[t/TAG]…​` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
+  e.g. `[t/TUTORIALS]…​` can be used as ` ` (i.e. 0 times), `t/03`, `t/11 t/20` etc.
 
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME m/MAJOR`, `m/MAJOR n/NAME` is also acceptable.
 
 * Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
   e.g. if the command specifies `list 123`, it will be interpreted as `list`.
+
+* Commands must be in lower case. <br> e.g. `list` is a valid command, but `LIST` is not.
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </div>
