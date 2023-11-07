@@ -618,7 +618,7 @@ If the group has not been created,
 
   checkGroup: Checks the group identified by its group number.
   Parameters: GROUP_NUMBER
-  Example: checkGroup 1
+  Example: checkGroup 1"
 
 ### Listing all tasks for a specific group : `tasks`
 
