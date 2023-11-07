@@ -296,7 +296,7 @@ Shows a list of all students in the system.
 
 Edits an existing student in the system.
 
-#### Format: `edit EMAIL [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS]... [sm/SOCIALMEDIA]... [nt/NATIONALITY] [g/GENDER]…​`
+#### Format: `edit EMAIL [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS]…​ [sm/SOCIALMEDIA]…​ [nt/NATIONALITY] [g/GENDER]`
 
 * Edits the student with the specified EMAIL.
 * At least one of the optional fields must be provided.
@@ -573,6 +573,7 @@ Checks if a group fulfils the group requirements of the course.
 
 * Checks the group with the specified `GROUP_NUMBER`.
 * The group number must come from a group that has been created in the system.
+* checkGroup does not restrict students from joining a group, instead, it provides helpful alerts to help groups adhere to the critreria set by CS2103T and CS2101.
 
 #### Examples:
 * `checkGroup 4` checks the group with a group number 4 if it is created in the system.
