@@ -40,6 +40,7 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 6. [FAQ](#faq)
 7. [Known issues](#known-issues)
 8. [Command summary](#command-summary)
+9. [Appendix](#appendix)
 
 
 --------------------------------------------------------------------------------------------------------------------
@@ -763,3 +764,7 @@ _Details coming soon ..._
 | **List Tasks**   | `tasks GROUP_NUMBER`<br> e.g., `tasks 5`                                                                                                                                                                                                    |
 | **Mark**         | `mark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `mark gr/2 ti/1`                                                                                                                                                                             |
 | **Unmark**       | `unmark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `unmark gr/5 ti/1`                                                                                                                                                                         |
+
+--------------------------------------------------------------------------------------------------------------------
+
+## Appendix
