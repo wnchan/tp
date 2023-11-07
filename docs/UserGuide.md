@@ -613,8 +613,8 @@ If the group has more than 1 member and the group does not fulfil the group requ
 * Message: "Group GROUP_NUMBER"
 * Message: "Group has less than 5 members."
 * Message: "Group size has exceeded limit with more than 5 members."
-* Message: "Group does not fulfil the nationality requirement of CS2103T."
-* Message: "Group does not fulfil the gender requirement of CS2103T."
+* Message: "Group comprises of members of the same nationality."
+* Message: "Group comprises of members of the same gender."
 * Message: "Not every group member's tutorial matches the group's tutorial."
 * Message: "You can enter the `help` command for more information on group requirements."
 

@@ -40,9 +40,9 @@ public class CheckCommand extends Command {
     public static final String MESSAGE_CHECK_GROUP_SIZE_OVER =
             "Group size has exceeded limit with more than 5 members.\n";
     public static final String MESSAGE_CHECK_GROUP_NATIONALITY_WARNING =
-            "Group does not fulfil the nationality requirement of CS2103T.\n";
+            "Group comprises of members of the same nationality.\n";
     public static final String MESSAGE_CHECK_GROUP_GENDER_WARNING =
-            "Group does not fulfil the gender requirement of CS2103T.\n";
+            "Group comprises of members of the same gender.\n";
     public static final String MESSAGE_CHECK_GROUP_TUTORIAL_WARNING =
             "Not every group member's tutorial matches the group's tutorial.\n";
     public static final String MESSAGE_CHECK_GROUP_NOT_FOUND = "Group with the provided group number not found.";
