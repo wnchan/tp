@@ -126,12 +126,12 @@ Clears all entries from the system upon confirmation in the pop-up.
 
 * GUI: All students' details are removed from student list.
   ![result for 'clear' pop-up](images/clearPopUp.png)
-  ![result for 'clear' GUI](images/clear.png)
+  ![result for 'clear' GUI](images/clearUI.png)
 
 #### Expected Output(Failure or Cancellation):
 If clear fails or you press `cancel` on the confirmation pop-up: 
 * GUI: All students' details remain on student list.
-
+  ![result for cancelled 'clear' GUI](images/clearCancel.png)
 
 ### Exiting the program : `exit`
 
