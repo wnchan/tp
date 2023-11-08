@@ -1,8 +1,6 @@
 package seedu.address.model.group.tasks;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
 import seedu.address.model.group.exceptions.TaskException;
 
 /**
@@ -38,39 +36,39 @@ public class Deadline extends Task {
         return "(by " + this.byStr + ")";
     }
 
-    /**
-     * Returns a string representation of the `Deadline` task, including its description and deadline.
-     *
-     * @return A formatted string representing the `Deadline` task.
-     */
-    public String toString() {
-        // Format LocalDateTime as a string in your desired output format
-        DateTimeFormatter outputFormatter = DateTimeFormatter
-                .ofPattern("MMM dd yyyy h:mm a");
-        String formattedDateTime = by.format(outputFormatter);
-        return "[D]" + super.toString() + " (by: " + formattedDateTime + ")";
-    }
+//    /**
+//     * Returns a string representation of the `Deadline` task, including its description and deadline.
+//     *
+//     * @return A formatted string representing the `Deadline` task.
+//     */
+//    public String toString() {
+//        // Format LocalDateTime as a string in your desired output format
+//        DateTimeFormatter outputFormatter = DateTimeFormatter
+//                .ofPattern("MMM dd yyyy h:mm a");
+//        String formattedDateTime = by.format(outputFormatter);
+//        return "[D]" + super.toString() + " (by: " + formattedDateTime + ")";
+//    }
 
-    /**
-     * Formats the task's information into a user-friendly string representation.
-     * This method is used to generate a message indicating that a task has been added successfully.
-     *
-     * @return A formatted string message indicating the task addition.
-     */
-    public String printStr() {
-        return ("Got it. I've added this task:\n "
-                + this.toString() + "\n" + "Now you have "
-                + Task.getCounter() + " tasks in the list\n");
-    }
+//    /**
+//     * Formats the task's information into a user-friendly string representation.
+//     * This method is used to generate a message indicating that a task has been added successfully.
+//     *
+//     * @return A formatted string message indicating the task addition.
+//     */
+//    public String printStr() {
+//        return ("Got it. I've added this task:\n "
+//                + this.toString() + "\n" + "Now you have "
+//                + Task.getCounter() + " tasks in the list\n");
+//    }
 
-    /**
-     * Generates a string representation of the `Deadline` task for saving to a file.
-     *
-     * @return A formatted string representing the `Deadline` task for file storage.
-     */
-    @Override
-    public String generateStr() {
-        return "D | " + this.getStatus()
-            + " | " + this.getTask() + " | " + byStr + " | " + this.getModule();
-    }
+//    /**
+//     * Generates a string representation of the `Deadline` task for saving to a file.
+//     *
+//     * @return A formatted string representing the `Deadline` task for file storage.
+//     */
+//    @Override
+//    public String generateStr() {
+//        return "D | " + this.getStatus()
+//            + " | " + this.getTask() + " | " + byStr + " | " + this.getModule();
+//    }
 }
