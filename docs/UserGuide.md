@@ -80,7 +80,7 @@ instead of selecting `exit` from the menu options or closing the application win
 This practice helps prevent data loss and ensures a proper shutdown of the application.
 </div>
 
-3. Should you encounter any terminology within the guide that is unfamiliar, you can consult the [glossary](#glossary) section below. It provides clear definitions and explanations to help you grasp the specialized language used throughout this guide.
+3. Should you encounter any terminology within the guide that is unfamiliar, you can consult the [glossary](#glossary) section below. It provides clear definitions and explanations to help you grasp the specialised language used throughout this guide.
 4. For any inquiries, the [FAQ](#faq) section is a good place to look for answers. In case your question is not addressed there, do not hesitate to contact us at [] for further assistance.
 5. The [appendix](#appendix) section is included to detail all possible input values for fields that have specific constraints or require particular formats. This reference can help ensure that you input data correctly and understand the limitations of each field.
 6. For a quick and compact overview of all the commands that StudentConnect offers, refer to the [command summary](#command-summary). This section servers as a handy reference for all possible actions you can perform within the application, laid out in an easily digestible format.
