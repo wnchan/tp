@@ -9,13 +9,14 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 
 ---
 <a id="table-of-contents"></a>
-1. [Quick start](#quick-start)
-2. [Features](#features)
+1. [How to Use This Guide](#how-to-use-this-guide)
+2. [Quick start](#quick-start)
+3. [Features](#features)
     1. [General Commands](#general-commands)
         1. [Viewing help : `help`](#viewing-help--help)
         2. [Clearing all entries : `clear`](#clearing-all-entries--clear)
         3. [Exiting the program : `exit`](#exiting-the-program--exit)
-    2. [Person Commands](#person-commands)
+    2. [Student Commands](#person-commands)
         1. [Adding a student : `add`](#adding-a-student--add)
         2. [Listing all students : `list`](#listing-all-students--list)
         3. [Editing a person : `edit`](#editing-a-person--edit)
@@ -34,14 +35,55 @@ StudentConnect is a solution for hassle-free team formation for students to brow
         9. [List tasks : `tasks`](#listing-all-tasks-for-a-specific-group--tasks)
         10. [Marking a task as done : `mark`](#marking-a-task-as-done--mark)
         11. [Marking a task as not done : `unmark`](#marking-a-task-as-not-done--unmark)
-3. [Saving the data](#saving-the-data)
-4. [Editing the data file](#editing-the-data-file)
-5. [Archiving data files [coming in v2.0]](#archiving-data-files-coming-in-v20)
-6. [FAQ](#faq)
-7. [Known issues](#known-issues)
-8. [Command summary](#command-summary)
-9. [Appendix](#appendix)
+4. [Saving the data](#saving-the-data)
+5. [Editing the data file](#editing-the-data-file)
+6. [Archiving data files [coming in v2.0]](#archiving-data-files-coming-in-v20)
+7. [FAQ](#faq)
+8. [Known issues](#known-issues)
+9. [Command summary](#command-summary)
+10. [Appendix](#appendix)
+11. [Glossary](#glossary)
 
+--------------------------------------------------------------------------------------------------------------------
+## How to Use This Guide
+
+This guide is designed to help you navigate the features of StudentConnect with ease. 
+
+1. To assist you in understanding and using this manual effectively, we've included a symbol table that outlines the icons and notations you'll encounter throughout the document.
+
+| Symbol               | Type        | Description                                                                                                                             |
+|----------------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| :information_source: | Information | This icon indicates additional information or context that can help you understand the features or requirements better.                 |
+| :bulb:               | Tip         | Look for this symbol when you need helpful suggestions on using StudentConnect features more efficiently.                               |
+| :exclamation:        | Important   | This symbol alerts you to critical information or essential functionality within StudentConnect that you should pay close attention to. |
+
+2. Throughout this guide, we've provided screenshots that illustrate the expected output for each command and feature. This visual aid is designed to enhance your understanding and ensure that you can confidently anticipate the results of your actions. Below is a detailed overview of the various interface components that you'll become familiar with.
+
+<div style="text-align: center; border: 1px solid #000; padding: 10px; display: inline-block; margin: auto;">
+  <img src="images/StudentListUI.png" alt="Student List View of StudentConnect" style="margin-bottom: 10px;"/>
+  <div>Figure 1: Student List View of StudentConnect</div>
+</div>
+
+<div style="text-align: center; border: 1px solid #000; padding: 10px; display: inline-block; margin: auto;">
+  <img src="images/GroupListUI.png" alt="Group List View of StudentConnect" style="margin-bottom: 10px;"/>
+  <div>Figure 1: Group List View of StudentConnect</div>
+</div>
+
+- **Command Box**: This is where you can enter any command for execution. After typing your command, press Enter to submit. If there is a syntax error or the command is unrecognizable, the text will turn red, prompting you to correct the command according to the specified requirements before pressing Enter again.
+- **Feedback Box**: The feedback box is the area where the application communicates responses to your commands. It displays the correct command format if there is an input error, error messages when a command fails to execute, and the outcomes for commands like the `tasks` command.
+- **Student List**: The student list panel displays a roster of all students and their associated details. Executing any student-related command will result in this panel being updated to show the relevant student list.
+- **Group List**: Similar to the student list, the group list panel shows all existing groups along with their members and designated tutorials. Group-related commands will update this panel accordingly.
+- **Menu Options**: The menu options provide quick access to general tasks within the application.
+<div markdown="span" class="alert alert-primary">:exclamation: **Important:**
+To guarantee that all your changes and data are saved correctly, it is strongly advised to type the `exit` command into the Command Box
+instead of selecting `exit` from the menu options or closing the application window directly.
+This practice helps prevent data loss and ensures a proper shutdown of the application.
+</div>
+
+3. Should you encounter any terminology within the guide that is unfamiliar, you can consult the [glossary](#glossary) section below. It provides clear definitions and explanations to help you grasp the specialized language used throughout this guide.
+4. For any inquiries, the [FAQ](#faq) section is a good place to look for answers. In case your question is not addressed there, do not hesitate to contact us at [] for further assistance.
+5. The [appendix](#appendix) section is included to detail all possible input values for fields that have specific constraints or require particular formats. This reference can help ensure that you input data correctly and understand the limitations of each field.
+6. For a quick and compact overview of all the commands that StudentConnect offers, refer to the [command summary](#command-summary). This section servers as a handy reference for all possible actions you can perform within the application, laid out in an easily digestible format.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -808,3 +850,6 @@ _Details coming soon ..._
 --------------------------------------------------------------------------------------------------------------------
 
 ## Appendix
+
+--------------------------------------------------------------------------------------------------------------------
+## Glossary
