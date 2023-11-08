@@ -7,6 +7,7 @@ import static seedu.address.testutil.TypicalPersons.DANIEL;
 import static seedu.address.testutil.TypicalPersons.ELLE;
 import static seedu.address.testutil.TypicalPersons.FIONA;
 import static seedu.address.testutil.TypicalPersons.GEORGE;
+import static seedu.address.testutil.TypicalPersons.HOON;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,6 +30,8 @@ public class TypicalGroups {
             Set.of(DANIEL, ELLE, FIONA), new TaskList());
     public static final Group GROUP3 = new Group(3, new Tutorial("03"),
             Set.of(GEORGE), new TaskList());
+    public static final Group GROUP4 = new Group(4, new Tutorial("01"),
+            Set.of(HOON), new TaskList());
 
     private TypicalGroups() {} // prevents instantiation
 
@@ -44,6 +47,6 @@ public class TypicalGroups {
     }
 
     public static List<Group> getTypicalGroups() {
-        return new ArrayList<>(Arrays.asList(GROUP1, GROUP2, GROUP3));
+        return new ArrayList<>(Arrays.asList(GROUP1, GROUP2, GROUP3, GROUP4));
     }
 }
