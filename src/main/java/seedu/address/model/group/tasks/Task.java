@@ -4,15 +4,13 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-
-import seedu.address.model.group.exceptions.TaskException;
+import java.util.Objects;
 
 
 /**
  * The Task class represents a task in the StudentConnect application.
  */
 public class Task {
-    private static int counter = 0;
 
     private String task;
     private TaskStatus status;
@@ -64,12 +62,7 @@ public class Task {
      * @param task The task description to add.
      */
     public void addTask(String task) {
-        if (!task.equals("")) {
-            if (!task.isEmpty()) {
-                //Duke.taskList.addTask(this); //need to change according to how we implement the main class
-                counter++;
-            }
-        }
+        //Duke.taskList.addTask(this); //need to change according to how we implement the main class
     }
 
     /**
@@ -131,9 +124,8 @@ public class Task {
      *
      * @param dateTimeString The date and time string in the format "dd/MM/yyyy HHmm".
      * @return A LocalDateTime object representing the parsed date and time.
-     * @throws TaskException If the date and time string has an invalid format.
      */
-    public LocalDateTime parseDateTime(String dateTimeString) throws TaskException {
+    public LocalDateTime parseDateTime(String dateTimeString) {
         // Split the input string into date and time parts
         String[] parts = dateTimeString.split(" ", 2);
 
@@ -196,7 +188,7 @@ public class Task {
      * @return string representation of deadline, or empty string for todo tasks.
      */
     public String getDeadline() {
-        if (this.getTaskType() == "D") {
+        if (Objects.equals(this.getTaskType(), "D")) {
             return this.getDeadline();
         } else {
             return "";

@@ -18,31 +18,4 @@ public class Todo extends Task {
 
     }
 
-//    /**
-//     * Returns a formatted string representation of the to-do task.
-//     *
-//     * @return A string representing the to-do task.
-//     */
-//    @Override
-//    public String toString() {
-//        return "[T]" + super.toString();
-//    }
-//
-//    /**
-//     * Formats the task's information into a user-friendly string representation.
-//     *
-//     * @return A formatted string indicating that the task has been
-//     *     added successfully.
-//     */
-//    public String printStr() {
-//        return ("Got it. I've added this task:\n "
-//            + this.toString() + "\n" + "Now you have "
-//            + Task.getCounter() + " tasks in the list\n");
-//    }
-//
-//    @Override
-//    public String generateStr() {
-//        return "T | " + (this.getStatus())
-//            + " | " + this.getTask() + " | " + this.getModule();
-//    }
 }
