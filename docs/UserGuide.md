@@ -129,7 +129,7 @@ Clears all entries from the system upon confirmation in the pop-up.
 * * Message: `Opened confirmation window. Please ensure you use the exit command when exiting StudentConnect for successful reset.`
 
 #### Expected Output(Success):
-* GUI: All students' details are removed from the student list.
+* GUI: All students' details are removed from the student list.<br>
   ![result for 'clear' pop-up](images/clearPopUp.png)
   ![result for 'clear' GUI](images/clearUI.png)
 
@@ -203,7 +203,8 @@ Note:
 <div style="text-align: center;">Output with multiple social media links</div>
 
 #### Expected Output (Failure):
-* Message: `Invalid command format! add: Adds a student to StudentConnect.`<br>
+* Case: Invalid command format, e.g. `add`, `add 1`, etc.
+Message: `Invalid command format! add: Adds a student to StudentConnect.`<br>
   `Parameters: n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION [t/TUTORIALS]... [sm/SOCIAL_MEDIA_LINK]... nt/NATIONALITY g/GENDER`<br>
   `Example: add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time`<br>
   `t/02 sm/https://www.linkedin.com/in/john-doe-123456789 nt/local g/M;`
@@ -248,7 +249,7 @@ A student can edit to have any number of social media links. Add multiple social
 *  `edit betsycrowe@u.nus.edu n/Betsy Crower sm/` Edits the name of the student with the email `betsycrowe@u.nus.edu` to be `Betsy Crower` and clears all existing social media.
 
 #### Acceptable Values:
-* EMAIL: a previously registered email address ending in “@u.nus.edu”
+* EMAIL: a previously registered email address ending in `@u.nus.edu`
 
 #### Expected Output (Success):
 * GUI: Student details updated in the student list.
@@ -282,7 +283,8 @@ Finds student(s) whose name(s) contain any of the given keywords.
   ![result for 'find alex'](images/findAlexResult.png)
 
 #### Expected Output (Failure):
-* Message: `Invalid command format!`<br>
+* Case: Invalid command format, e.g. `find`.
+Message: `Invalid command format!`<br>
   `find: Finds all students whose names contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.`<br>
   `Parameters: KEYWORD [MORE_KEYWORDS]...`<br>
   `Example: find alice bob charlie`
@@ -308,7 +310,7 @@ Filters students by tutorial based on the given slots.
   ![result for 'filter 04'](images/filter.png)
 
 #### Expected Output (Failure):
-* Case: Invalid command format, e.g. `filter`, `filter a`, etc.
+* Case: Invalid command format, e.g. `filter`.
  Message: `Invalid command format!`<br>
   `filter: Filters all students whose tutorials match any of the specified slots (2-digit numbers between 01 and 22) and displays them as a list with index numbers.`<br>
   `Parameters: SLOT [MORE_SLOTS]...`<br>
@@ -568,8 +570,8 @@ Lists out all tasks for a specific group.
 * Lists out all tasks for the specified group.
 
 #### Examples:
-*  `tasks 2` Lists out all tasks for group 2.
-*  `tasks 5` Lists out all tasks for group 5.
+*  `tasks 2` Lists out all tasks for group `2`.
+*  `tasks 5` Lists out all tasks for group `5`.
 
 #### Acceptable Values:
 * GROUP_NUMBER: Must be a non-zero unsigned integer.
@@ -597,8 +599,8 @@ Mark a task for a specified group as done.
 * Marks the task of the specified group as done.
 
 #### Examples:
-*  `mark gr/2 ti/1` Marks task 1 of group 2 as done.
-*  `mark ti/2 gr/12` Marks task 2 of group 12 as done.
+*  `mark gr/2 ti/1` Marks task `1` of group `2` as done.
+*  `mark ti/2 gr/12` Marks task `2` of group `12` as done.
 
 #### Acceptable Values:
 * GROUP_NUMBER: Must be an integer value that is grater than 0 and a group number that is found in the group list.
@@ -630,8 +632,8 @@ Mark a task for a specified group as not done.
 * Marks the task of the specified group as not done.
 
 #### Examples:
-*  `unmark gr/7 ti/3` Marks task 3 of group 7 as not done.
-*  `unmark ti/5 gr/9` Marks task 5 of group 9 as not done.
+*  `unmark gr/7 ti/3` Marks task `3` of group `7` as not done.
+*  `unmark ti/5 gr/9` Marks task `5` of group `9` as not done.
 
 #### Acceptable Values:
 * GROUP_NUMBER: Must be an integer value that is grater than 0 and a group number that is found in the group list.
