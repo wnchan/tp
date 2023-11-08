@@ -26,6 +26,9 @@ public class FilterCommandParser implements Parser<FilterCommand> {
         }
 
         String[] tutorialSlots = trimmedArgs.split("\\s+");
+        for (String tut : tutorialSlots) {
+            ParserUtil.parseTutorial(tut);
+        }
 
         return new FilterCommand(new TutorialContainsSlotsPredicate(Arrays.asList(tutorialSlots)));
     }

@@ -27,7 +27,7 @@ public class FilterCommandParserTest {
                 new FilterCommand(new TutorialContainsSlotsPredicate(Arrays.asList("01", "02")));
         assertParseSuccess(parser, "01 02", expectedFilterCommand);
 
-        // multiple whitespaces between keywords
+        // multiple whitespaces between slots
         assertParseSuccess(parser, " \n 01 \n \t 02  \t", expectedFilterCommand);
     }
 }
