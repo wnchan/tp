@@ -183,7 +183,7 @@ A student can have any number of social media links. Add multiple social media l
 * Email: Valid email address ending in `@u.nus.edu`. Maximum 20 characters.
 * Description: Maximum 150 characters.
 * Tutorials: Two digit integers between `01` and `22` inclusive. Multiple tutorial slots can be added by using `t/` repeatedly.
-* Social Media Link: Valid URL format to social media account. Multiple URLs can be added by using `sm/` repeatedly.
+* Social Media Link: Valid URL format to social media account. It must start with `https://`. Multiple URLs can be added by using `sm/` repeatedly.
 * Nationality: Either `local` or `foreigner`.
 * Gender: A single character, either `m` or `f`.
 
@@ -257,9 +257,9 @@ A student can edit to have any number of social media links. Add multiple social
   ![sample result for 'edit'](images/edit.png)
 
 #### Expected Output (Failure):
-* Case: No fields provided for edit<br>
+* Case: No fields provided for edit.<br>
 Message: `At least one field to edit must be provided.`
-* Case: Email not found in the system<br>
+* Case: Email not found in the system.<br>
 Message: `Student with the provided email not found.`
 
 ### Finding a student by name : `find`
@@ -788,6 +788,10 @@ For now, we accept the following majors in National University of Singapore(NUS)
 | Urban Studies                             |
 | Visual Communications                     |
 
-If your major is not on this list, you can simply write "Others" as your major.<br>
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+If your major is not on this list, you can simply write `Others` as your major.
+</div>
 
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 If you have a double major or a major-minor, you are required to choose only one major. Please select any one of the majors listed above.
+</div>
