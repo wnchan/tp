@@ -16,13 +16,13 @@ StudentConnect is a solution for hassle-free team formation for students to brow
         1. [Viewing help : `help`](#viewing-help--help)
         2. [Clearing all entries : `clear`](#clearing-all-entries--clear)
         3. [Exiting the program : `exit`](#exiting-the-program--exit)
-    2. [Student Commands](#person-commands)
+    2. [Student Commands](#student-commands)
         1. [Adding a student : `add`](#adding-a-student--add)
         2. [Listing all students : `list`](#listing-all-students--list)
-        3. [Editing a person : `edit`](#editing-a-person--edit)
+        3. [Editing a student : `edit`](#editing-a-student--edit)
         4. [Finding a student by name : `find`](#finding-a-student-by-name--find)
         5. [Filtering students by tutorial : `filter`](#filtering-students-by-tutorial--filter)
-        6. [Deleting a person : `delete`](#deleting-a-person--delete)
+        6. [Deleting a student : `delete`](#deleting-a-student--delete)
     3. [Group Commands](#group-commands)
         1. [Creating a new group : `create`](#creating-a-new-group--create)
         2. [Listing all groups : `listGroup`](#listing-all-groups--listgroup)
@@ -194,7 +194,7 @@ Exits the program.
 #### Expected Output(Failure):
 * Message: `Error: Exiting the program failed.`
 
-## Person Commands
+## Student Commands
 
 ### Adding a student : `add`
 
@@ -265,7 +265,7 @@ Shows a list of all students in the system.
 #### Expected Output (Failure):
 * Message: `Error: Unable to retrieve student entries. Please try again.`
 
-### Editing a person : `edit`
+### Editing a student : `edit`
 
 Edits an existing student in the system.
 
@@ -360,13 +360,13 @@ Filters students by tutorial based on the given slots.
 * Case: Invalid slot(s) is provided, e.g. `filter 25`, `filter 0`, etc.
  Message: "Tutorials should be 2-digit numbers between 01 and 22."
 
-### Deleting a person : `delete`
+### Deleting a student : `delete`
 
 Deletes a specific student and all personal details based on email.
 
 #### Format: `delete EMAIL`
 
-* Deletes the person with the specified `EMAIL`.
+* Deletes the student with the specified `EMAIL`.
 * The email must be registered in the system.
 
 #### Examples:
@@ -377,7 +377,7 @@ Deletes a specific student and all personal details based on email.
 
 #### Expected Output(Success):
 * GUI: Student details removed from student list.
-* Message: `Person deleted successfully!`
+* Message: `Student deleted successfully! [Deleted student's details]`
   ![Delete feature](images/delete.png)
 
 #### Expected Output (Failure):
