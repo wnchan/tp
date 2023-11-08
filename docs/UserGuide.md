@@ -66,7 +66,7 @@ This guide is designed to help you navigate the features of StudentConnect with 
 
 <div style="text-align: center; border: 1px solid #000; padding: 10px; display: inline-block; margin: auto;">
   <img src="images/GroupListUI.png" alt="Group List View of StudentConnect" style="margin-bottom: 10px;"/>
-  <div>Figure 1: Group List View of StudentConnect</div>
+  <div>Figure 2: Group List View of StudentConnect</div>
 </div>
 
 - **Command Box**: This is where you can enter any command for execution. After typing your command, press Enter to submit. If there is a syntax error or the command is unrecognizable, the text will turn red, prompting you to correct the command according to the specified requirements before pressing Enter again.
