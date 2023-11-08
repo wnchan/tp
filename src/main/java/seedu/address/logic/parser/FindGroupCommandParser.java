@@ -26,6 +26,9 @@ public class FindGroupCommandParser implements Parser<FindGroupCommand> {
         }
 
         String[] groupKeywords = trimmedArgs.split("\\s+");
+        for (String gk : groupKeywords) {
+            ParserUtil.parseGroupNumber(gk);
+        }
 
         return new FindGroupCommand(new GroupContainsKeywordsPredicate(Arrays.asList(groupKeywords)));
     }

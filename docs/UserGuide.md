@@ -40,6 +40,7 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 6. [FAQ](#faq)
 7. [Known issues](#known-issues)
 8. [Command summary](#command-summary)
+9. [Appendix](#appendix)
 
 
 --------------------------------------------------------------------------------------------------------------------
@@ -59,17 +60,18 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
-    * `list` : Lists all students.
-
-    * `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time t/02 17 20 sm/https://www.linkedin.com/in/john-doe-123456789 nt/local g/m` : Adds a student named `John Doe` to the StudentConnect system.
-
-    * `delete [email]` : Deletes the student with the corresponding email.
-
-    * `clear` : Deletes all data from the system (i.e. students, groups, and tasks).
-
-    * `exit` : Exits the app.
-
-    * `create` : Creates a new group.
+    * `list` : 
+        * Lists all students in the StudentConnect system.
+    * `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time t/02 t/17 t/20 sm/https://www.linkedin.com/in/john-doe-123456789 nt/local g/m` : 
+        * Adds a student named `John Doe` and their details to the StudentConnect system.
+    * `delete EMAIL` : 
+        * Deletes the student with the corresponding email.
+    * `clear` : 
+        * Deletes all data from the system (i.e. students, groups, and tasks).
+    * `exit` : 
+        * Exits the app.
+    * `create t/03` : 
+        * Creates a new group assigned to tutorial 3.
 
 6. Refer to the [Features](#features) below for details of each command.
 
@@ -88,13 +90,15 @@ StudentConnect is a solution for hassle-free team formation for students to brow
   e.g. `n/NAME [t/TUTORIALS]` can be used as `n/John Doe t/02` or as `n/John Doe`.
 
 * Items with `…`​ after them can be used multiple times including zero times.<br>
-  e.g. `[t/TAG]…​` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
+  e.g. `[t/TUTORIALS]…​` can be used as ` ` (i.e. 0 times), `t/03`, `t/11 t/20` etc.
 
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME m/MAJOR`, `m/MAJOR n/NAME` is also acceptable.
 
 * Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
   e.g. if the command specifies `list 123`, it will be interpreted as `list`.
+
+* Commands must be in lower case. <br> e.g. `list` is a valid command, but `LIST` is not.
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </div>
@@ -103,7 +107,7 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 ### Viewing help : `help`
 
 Shows a message explaining how to access the help page in the user guide and a button to copy the link.<br>
-Provides the requirements for forming a group.
+Provides the requirements for forming a group based on CS2103T and CS2101 coordinators.
 
 #### Format: `help`
 
@@ -120,14 +124,18 @@ Provides the requirements for forming a group.
 Clears all entries from the system upon confirmation in the pop-up.
 
 #### Format: `clear`
-
-#### Expected Output(Success):
 * Confirmation Pop-up opened.
-* GUI: All students' details are removed from student list.
-* Message: `Opened confirmation window. Please ensure you use the exit command when exiting StudentConnect for successful reset.`
-* Message (Once confirmed): `All student data has been cleared.`
+* * Message: `Opened confirmation window. Please ensure you use the exit command when exiting StudentConnect for successful reset.`
+#### Expected Output(Success):
+
+* GUI: All students' details are removed from the student list.
   ![result for 'clear' pop-up](images/clearPopUp.png)
-  ![result for 'clear' GUI](images/clear.png)
+  ![result for 'clear' GUI](images/clearUI.png)
+
+#### Expected Output(Failure or Cancellation):
+If the clear command fails, or you press `cancel` on the confirmation pop-up: 
+* GUI: All students' details remain on the student list.
+  ![result for cancelled 'clear' GUI](images/clearCancel.png)
 
 ### Exiting the program : `exit`
 
@@ -137,7 +145,7 @@ Exits the program.
 
 #### Expected Output(Success):
 * GUI: Application window closes.
-* Message (before closing): "Thank you for using StudentConnect! Exiting the application now…"
+* Message (before closing): "Thank you for using StudentConnect!<br>Exiting the application now…"
 ![Exit](images/exit.png)
 
 #### Expected Output(Failure):
@@ -149,18 +157,18 @@ Exits the program.
 
 Adds a student to the system.
 
-#### Format: `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION [t/TUTORIALS] [sm/SOCIALMEDIA] nt/NATIONALITY g/GENDER`
+#### Format: `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION [t/TUTORIALS]… [sm/SOCIALMEDIA]… nt/NATIONALITY g/GENDER`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 Including social media links and tutorial groups are optional.
 </div>
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-A student can include multiple tutorial groups they are interested in. Add multiple tutorial groups with multiple `t/`.
+A student can include multiple tutorial groups they are interested in. Add multiple tutorial groups by using `t/` repeatedly.
 </div>
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-A student can have any number of social media links. Add multiple social media links with multiple `sm/`.
+A student can have any number of social media links. Add multiple social media links by using `sm/` repeatedly.
 </div>
 
 #### Examples:
@@ -169,7 +177,7 @@ A student can have any number of social media links. Add multiple social media l
 
 #### Acceptable Values:
 * Name: Full names with alphabetical characters. Maximum 30 characters.
-* Major: Valid major names at NUS. More information listed below.
+* Major: Valid major names at NUS. More information listed [below](#valid-majors)
 * Year: Numeric year level. 
 * Email: Valid email address ending in “@u.nus.edu”. Maximum 20 characters.
 * Description: Maximum 150 characters.
@@ -293,7 +301,7 @@ Shows a list of all students in the system.
 
 Edits an existing student in the system.
 
-#### Format: `edit EMAIL [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS] [sm/SOCIALMEDIA] [nt/NATIONALITY] [g/GENDER]…​`
+#### Format: `edit EMAIL [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS]…​ [sm/SOCIALMEDIA]…​ [nt/NATIONALITY] [g/GENDER]`
 
 * Edits the student with the specified EMAIL.
 * At least one of the optional fields must be provided.
@@ -302,6 +310,14 @@ Edits an existing student in the system.
 * When editing social media, the existing social media of the student will be removed i.e. adding of social media is not cumulative.
 * You can remove all the student's social media by typing `sm/` without
   specifying any social media after it.
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+A student can edit to include multiple tutorial groups they are interested in. Add multiple tutorial groups by using `t/` repeatedly.
+</div>
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+A student can edit to have any number of social media links. Add multiple social media links by using `sm/` repeatedly.
+</div>
 
 #### Examples:
 *  `edit johnd@u.nus.edu y/3 e/johndoe@u.nus.edu` Edits the year and email address of the student with the email `johnd@u.nus.edu` to be `3` and `johndoe@u.nus.edu` respectively.
@@ -316,14 +332,17 @@ Edits an existing student in the system.
   ![sample result for 'edit'](images/edit.png)
 
 #### Expected Output (Failure):
-* Message: “Error: Email not found.”
-* Message: “Error: None of the optional fields provided. Give at least one.”
+If no fields to edit are provided,
+* Message: “At least one field to edit must be provided.”
+
+If the email provided is not in the system,
+* Message: “Student with the provided email not found.”
 
 ### Finding a student by name : `find`
 
 Finds student(s) whose name(s) contain any of the given keywords.
 
-#### Format: `find KEYWORD [MORE_KEYWORDS]`
+#### Format: `find KEYWORD [MORE_KEYWORDS]…​`
 
 * The search is case-insensitive. e.g. `john` will match `John`
 * The order of the keywords does not matter. e.g. `John Doe` will match `Doe John`
@@ -341,9 +360,9 @@ Finds student(s) whose name(s) contain any of the given keywords.
   ![result for 'find alex'](images/findAlexResult.png)
 * 
 #### Expected Output (Failure):
-* Message: “Invalid command format!
-    find: Finds all students whose names contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.
-  Parameters: KEYWORD [MORE_KEYWORDS]...
+* Message: “Invalid command format! <br>
+    find: Finds all students whose names contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.<br>
+  Parameters: KEYWORD [MORE_KEYWORDS]...<br>
   Example: find alice bob charlie"
 
 
@@ -351,13 +370,13 @@ Finds student(s) whose name(s) contain any of the given keywords.
 
 Filters students by tutorial based on the given slots.
 
-#### Format: `filter SLOT [MORE SLOTS]`
+#### Format: `filter SLOT [MORE SLOTS]…​`
 
 * The slots must be 2-digit numbers between 01 and 22 inclusive.
 * Tutorials are only accepted as 2-digits, ie. `3` is not a valid tutorial, but `03` is.
-* The order of the slots does not matter. e.g. `08 15` will match `15 08`
+* The order of the slots does not matter. e.g. `08 15` will match `15 08`.
 * Only the tutorial is searched.
-* Students matching at least one tutorial slot will be returned (i.e. `OR` search). e.g. `03 12` will return `03 16`, `04 12`
+* Students matching at least one tutorial slot will be returned (i.e. `OR` search). e.g. `03 12` will return `03 16`, `04 12`.
 
 #### Examples:
 * `filter 10` returns students in `T10`, `T06 T10` and `T10 T18`.
@@ -368,11 +387,14 @@ Filters students by tutorial based on the given slots.
   ![result for 'filter 04'](images/filter.png)
 
 #### Expected Output (Failure):
-* Message: “Invalid command format!
-
-  filter: Filters all students whose tutorials match any of the specified slots (2-digit numbers between 01 and 22) and displays them as a list with index numbers.
-  Parameters: SLOT [MORE_SLOTS]...
+If an invalid command format is provided,
+* Message: “Invalid command format!<br>
+  filter: Filters all students whose tutorials match any of the specified slots (2-digit numbers between 01 and 22) and displays them as a list with index numbers.<br>
+  Parameters: SLOT [MORE_SLOTS]...<br>
   Example: filter 08 15"
+
+If an invalid slot(s) is provided,
+* Message: "Tutorials should be 2-digit numbers between 01 and 22."
 
 ### Deleting a person : `delete`
 
@@ -395,15 +417,19 @@ Deletes a specific student and all personal details based on email.
   ![Delete feature](images/delete.png)
 
 #### Expected Output (Failure):
-* Message: `Error! Email not found!`
+* Message: `Student with the provided email not found.`
+* Message: `Invalid command format!`<br>
+  `delete: Deletes the student identified by the email address.`<br>
+  `Parameters: EMAIL`<br>
+  `Example: delete alexyeoh@u.nus.edu`
 
 ## Group Commands
 
 <div markdown="span" class="alert alert-primary">:exclamation: **Important:**
 StudentConnect provides a set of group formation features to make it more convenient for students to find group mates. A group consists of 3 main components: a group number, a tutorial number and the group members.
-<br> Group number: Used to uniquely identify the group.
-<br> Tutorial number: This number is set by the creator of the group and serves as an indication of which tutorial class the members of the group are interested in enrolling in. It **does not** restrict students who do not have a matching tutorial number in their profile from joining the group.
-<br> Group members: The students who are members of this group.
+<br> **Group number:** Used to uniquely identify the group.
+<br> **Tutorial number:** This number is set by the creator of the group and serves as an indication of which tutorial class the members of the group are interested in enrolling in. It **does not** restrict students who do not have a matching tutorial number in their profile from joining the group. Running the [checkGroup](#checking-a-group--checkgroup) command displays a warning if there are members whose tutorial numbers do not match the group's tutorial number.
+<br> **Group members:** The students who are members of this group.
 </div>
 
 ### Creating a new group : `create`
@@ -418,7 +444,13 @@ Creates a new empty group with the given tutorial number. The group number is au
   ![Sample result for create](images/create.png)
 
 #### Expected Output(Failure):
-* Message: `Tutorials should be 2-digit numbers between 01 and 22, separated by spaces.`
+If an invalid command format is provided,
+* Message: `Invalid command format!
+  create: Creates a new empty group.
+  Parameters: t/TUTORIAL Example: create t/02`
+
+If an invalid tutorial number is provided,
+* Message: `Tutorials should be 2-digit numbers between 01 and 22.`
 
 
 
@@ -432,16 +464,17 @@ Displays a list of all groups. For each group, the group number, and the names a
 * GUI: A list of all groups that are in the system is shown.
 * Message: `Viewing all groups`
 
+![Sample result for listGroup](images/listGroup.png)
+
 #### Expected Output(Failure):
 * Message: `Error: Unable to retrieve group entries. Please try again.`
 
-![Sample result for listGroup](images/listGroup.png)
 
 ### Deleting a group : `deleteGroup`
 
 Deletes a group from the system, based on group number.
 
-#### Format: `deleteGroup gr/[GROUP_NUMBER]`
+#### Format: `deleteGroup gr/GROUP_NUMBER`
 
 #### Examples:
 *  `deleteGroup gr/2` deletes Group 2 from the system.
@@ -452,7 +485,7 @@ Deletes a group from the system, based on group number.
 
 #### Expected Output(Success):
 * GUI: Specified group is no longer visible.
-* Message: `Group deleted successfully!`
+* Message: `Group deleted successfully! Deleted Group: [GROUP_NUMBER]`
   ![result for 'deleteGroup gr/3'](images/deleteGroup.png)
 
 #### Expected Output(Failure):
@@ -484,7 +517,7 @@ Listed below are some cases where the join command will not execute successfully
 
 Deletes a member from a specific group, indicating that they have left.
 
-#### Format: `leave e/[EMAIL] gr/[GROUP_NUMBER]`
+#### Format: `leave e/EMAIL gr/GROUP_NUMBER`
 
 * Removes student from specified group.
 
@@ -498,14 +531,14 @@ Deletes a member from a specific group, indicating that they have left.
 
 #### Expected Output (Success):
 * GUI: Student details removed from specified group.
-* Message: “Leave successful! `[NAME]` has left group 1!”
+* Message: `Leave successful! NAME has left group 1!`
 ![sample result for 'leave'](images/leave.png)
 
 
 #### Expected Output (Failure):
-* Message: “Person with the provided email not found.”
-* Message: “Group with the provided group number not found.”
-* Message: “The above student is not a member of the provided group.”
+* Message: `Person with the provided email not found.`
+* Message: `Group with the provided group number not found.`
+* Message: `The above student is not a member of the provided group.`
 
 ### Finding a group by group number : `findGroup`
 
@@ -513,10 +546,11 @@ Finds group(s) with group number(s) that matches any of the given keywords.
 
 #### Format: `findGroup KEYWORD [MORE_KEYWORDS]`
 
-* The order of the keywords does not matter. e.g. `5 12` will match `12 5`
+* The order of the keywords does not matter. e.g. `5 12` will match `12 5`.
 * Only the group number is searched.
-* Only the full keywords will be matched. e.g. `1` will not match `12`
-* Groups matching one keyword will be returned (i.e. `OR` search). e.g. `5 12` will return `5`, `12`
+* Only the full keywords will be matched. e.g. `1` will not match `12`.
+* Groups matching one keyword will be returned (i.e. `OR` search). e.g. `5 12` will return `5`, `12`.
+* The keyword(s) must be a non-zero unsigned integer.
 
 #### Examples:
 * `findGroup 7` returns Group `7`.
@@ -528,11 +562,15 @@ Finds group(s) with group number(s) that matches any of the given keywords.
 
 
 #### Expected Output (Failure):
+If an invalid command format is provided,
 * Message: "Invalid command format!
 
   findGroup: Finds all groups whose number contain any of the specified keywords and displays them as a list with index numbers.
   Parameters: KEYWORD [MORE_KEYWORDS]...
   Example: findGroup 1 5 10"
+
+If an invalid keyword(s) is provided,
+* Message: "Group number is not a non-zero unsigned integer."
 
 ### Filtering groups by tutorial : `filterGroup`
 
@@ -553,11 +591,15 @@ Filters groups by tutorial based on the given slot.
 
 
 #### Expected Output (Failure):
+If an invalid command format is provided,
 * Message: "Invalid command format!
 
   filterGroup: Filters all groups that belong to the specified tutorial slot (2-digit numbers between 01 and 22) and displays them as a list with index numbers.
   Parameters: SLOT
   Example: filterGroup 01"
+
+If an invalid slot is provided,
+* Message: "Tutorials should be 2-digit numbers between 01 and 22."
 
 ### Checking a group : `checkGroup`
 
@@ -567,49 +609,47 @@ Checks if a group fulfils the group requirements of the course.
 
 * Checks the group with the specified `GROUP_NUMBER`.
 * The group number must come from a group that has been created in the system.
+* checkGroup does not restrict students from joining a group, instead, it provides helpful alerts to help groups adhere to the critreria set by CS2103T and CS2101.
 
 #### Examples:
 * `checkGroup 4` checks the group with a group number 4 if it is created in the system.
 
 #### Expected Output(Success):
 If the group fulfils the group requirements,
-* Message: "Group fulfils the diversity requirements of CS2103T. Group GROUP_NUMBER"
+* Message: "Group GROUP_NUMBER<br>
+  Group fulfils the diversity requirements of CS2103T."
   ![sample result for 'checkGroup'](images/checkGroup.png)
 
 If the group has no members,
-* Message: "Group does not have any members. Group GROUP_NUMBER
-
+* Message: "Group GROUP_NUMBER<br>
+  Group does not have any members.<br>
   You can enter the `help` command for more information on group requirements."
 
-If the number of group members is more than 5,
-* Message: "Group size has exceeded limit with more than 5 members. Group GROUP_NUMBER
-
+If the group has only 1 member,
+* Message: "Group GROUP_NUMBER<br>
+  Group has only one member.<br>
   You can enter the `help` command for more information on group requirements."
 
-If all the members in the group have the same nationality,
-* Message: "Group does not fulfil the nationality requirement of CS2103T. Group GROUP_NUMBER
+If the group has more than 1 member and the group does not fulfil the group requirements, here is a list of message(s) that will be displayed,
 
-  You can enter the `help` command for more information on group requirements."
+* Message: "Group GROUP_NUMBER"
+* Message: "Group has less than 5 members."
+* Message: "Group size has exceeded limit with more than 5 members."
+* Message: "Group comprises of members of the same nationality."
+* Message: "Group comprises of members of the same gender."
+* Message: "Not every group member's tutorial matches the group's tutorial."
+* Message: "You can enter the `help` command for more information on group requirements."
 
-If all the members in the group have the same gender,
-* Message: "Group does not fulfil the gender requirement of CS2103T. Group GROUP_NUMBER
+#### Expected Output (Failure):
+If an invalid command format is provided,
+* Message: "Invalid command format!<br>
+  checkGroup: Checks the group identified by its group number.<br>
+  Parameters: GROUP_NUMBER"<br>
 
-  You can enter the `help` command for more information on group requirements."
-
-If not every member in the group has a tutorial that matches the group's tutorial,
-* Message: "Not every group member's tutorial matches the group's tutorial. Group GROUP_NUMBER
-
-  You can enter the `help` command for more information on group requirements."
+  Example: checkGroup 1"
 
 If the group has not been created,
 * Message: "Group with the provided group number not found."
-
-#### Expected Output (Failure):
-* Message: "Invalid command format!
-
-  checkGroup: Checks the group identified by its group number.
-  Parameters: GROUP_NUMBER
-  Example: checkGroup 1
 
 ### Listing all tasks for a specific group : `tasks`
 
@@ -627,13 +667,18 @@ Lists out all tasks for a specific group.
 * GROUP_NUMBER: Must be a non-zero unsigned integer.
 
 #### Expected Output (Success):
-* GUI: List of all tasks for the specified group is displayed.
+* GUI: List of all tasks for the specified group is displayed, the specified group and group members are shown.
 * Message: “Here are the tasks for group [GROUP_NUMBER]: [list of tasks]”
   ![sample result for 'tasks'](images/tasks.png)
 
 #### Expected Output (Failure):
-* Message: “Group with the provided group number not found.”
-* Message: “Group number is not a non-zero unsigned integer.”
+* Case: Invalid tasks command, e.g. `tasks gr/3`, `tasks t`, etc.<br>
+  * Message: “Invalid command format!<br>
+  tasks: Lists out all tasks for a specific group.<br>
+  Parameters: GROUP_NUMBER<br>
+  Example: tasks 3”
+* Case: Invalid group number as the group has not yet been created
+    * Message: “Group with the provided group number not found.”
 
 
 
@@ -737,25 +782,29 @@ _Details coming soon ..._
 
 ## Command summary
 
-| Action           | Format, Examples                                                                                                                                                                                                                            |
-|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Help**         | `help`                                                                                                                                                                                                                                      |
-| **Clear**        | `clear`                                                                                                                                                                                                                                     |
-| **Exit**         | `exit`                                                                                                                                                                                                                                      |
-| **Add**          | `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION [t/TUTORIALS] [sm/SOCIALMEDIA] nt/NATIONALITY g/GENDER` <br> e.g., `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu t/05 d/I’m adept at Backend technologies nt/local g/f` |
-| **List**         | `list`                                                                                                                                                                                                                                      |
-| **Edit**         | `edit INDEX [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS] [sm/SOCIALMEDIA] [nt/NATIONALITY] [g/GENDER]` <br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                         |
-| **Find**         | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                                                                                                  |
-| **Filter**       | `filter SLOT [MORE_SLOTS]`<br> e.g., `filter 05 11`                                                                                                                                                                                         |
-| **Delete**       | `delete EMAIL`<br> e.g., `delete betsycrowe@u.nus.edu`                                                                                                                                                                                      |
-| **Create group** | `create t/[TUTORIAL]` <br> e.g., `create t/01`                                                                                                                                                                                              |
-| **List groups**  | `listGroup`                                                                                                                                                                                                                                 |
-| **Delete group** | `deleteGroup gr/[GROUP_NUMBER}` <br> e.g., `deleteGroup gr/1`                                                                                                                                                                               |
-| **Join group**   | `join e/[EMAIL] gr/[GROUP_NUMBER]` <br> e.g., `join e/johnd@u.nus.edu gr/1`                                                                                                                                                                 |
-| **Leave group**  | `leave e/[EMAIL] gr/[GROUP_NUMBER}` <br> e.g., `leave e/johnd@u.nus.edu gr/1`                                                                                                                                                               |
-| **Find group**   | `findGroup KEYWORD [MORE_KEYWORDS]`<br> e.g., `findGroup 7 15`                                                                                                                                                                              |
-| **Filter group** | `filter SLOT` <br> e.g., `filterGroup 3`                                                                                                                                                                                                    |
-| **Check group**  | `checkGroup GR0UP_NUMBER` <br> e.g., `checkGroup 4`                                                                                                                                                                                         |
-| **List Tasks**   | `tasks GROUP_NUMBER`<br> e.g., `tasks 5`                                                                                                                                                                                                    |
-| **Mark**         | `mark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `mark gr/2 ti/1`                                                                                                                                                                             |
-| **Unmark**       | `unmark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `unmark gr/5 ti/1`                                                                                                                                                                         |
+| Action           | Format, Examples                                                                                                                                                                                                                               |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Help**         | `help`                                                                                                                                                                                                                                         |
+| **Clear**        | `clear`                                                                                                                                                                                                                                        |
+| **Exit**         | `exit`                                                                                                                                                                                                                                         |
+| **Add**          | `add n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION [t/TUTORIALS]…​ [sm/SOCIALMEDIA]…​ nt/NATIONALITY g/GENDER` <br> e.g., `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu t/05 d/I’m adept at Backend technologies nt/local g/f`|
+| **List**         | `list`                                                                                                                                                                                                                                         |
+| **Edit**         | `edit EMAIL [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS]…​ [sm/SOCIALMEDIA]…​ [nt/NATIONALITY] [g/GENDER]` <br> e.g.,`edit jameslee@u.nus.edu n/James Lee e/jameslee@u.nus.edu`                                         |
+| **Find**         | `find KEYWORD [MORE_KEYWORDS]…​`<br> e.g., `find James Jake`                                                                                                                                                                                   |
+| **Filter**       | `filter SLOT [MORE_SLOTS]…​`<br> e.g., `filter 05 11`                                                                                                                                                                                          |
+| **Delete**       | `delete EMAIL`<br> e.g., `delete betsycrowe@u.nus.edu`                                                                                                                                                                                         |
+| **Create group** | `create t/[TUTORIAL]` <br> e.g., `create t/01`                                                                                                                                                                                                 |
+| **List groups**  | `listGroup`                                                                                                                                                                                                                                    |
+| **Delete group** | `deleteGroup gr/[GROUP_NUMBER}` <br> e.g., `deleteGroup gr/1`                                                                                                                                                                                  |
+| **Join group**   | `join e/[EMAIL] gr/[GROUP_NUMBER]` <br> e.g., `join e/johnd@u.nus.edu gr/1`                                                                                                                                                                    |
+| **Leave group**  | `leave e/[EMAIL] gr/[GROUP_NUMBER}` <br> e.g., `leave e/johnd@u.nus.edu gr/1`                                                                                                                                                                  |
+| **Find group**   | `findGroup KEYWORD [MORE_KEYWORDS]`<br> e.g., `findGroup 7 15`                                                                                                                                                                                 |
+| **Filter group** | `filter SLOT` <br> e.g., `filterGroup 3`                                                                                                                                                                                                       |
+| **Check group**  | `checkGroup GR0UP_NUMBER` <br> e.g., `checkGroup 4`                                                                                                                                                                                            |
+| **List Tasks**   | `tasks GROUP_NUMBER`<br> e.g., `tasks 5`                                                                                                                                                                                                       |
+| **Mark**         | `mark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `mark gr/2 ti/1`                                                                                                                                                                                |
+| **Unmark**       | `unmark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `unmark gr/5 ti/1`                                                                                                                                                                            |
+
+--------------------------------------------------------------------------------------------------------------------
+
+## Appendix
