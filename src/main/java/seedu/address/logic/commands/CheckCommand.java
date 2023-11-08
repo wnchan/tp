@@ -76,7 +76,7 @@ public class CheckCommand extends Command {
         Set<Person> groupMembers = groupToCheck.getMembers();
 
         // check group size
-        if (groupMembers.size() == 0) {
+        if (groupMembers.isEmpty()) {
             isSuccess = false;
             message = MESSAGE_CHECK_GROUP_SIZE_EMPTY;
         } else if (groupMembers.size() == 1) {
@@ -91,50 +91,17 @@ public class CheckCommand extends Command {
         }
 
         if (groupMembers.size() > 1) {
-            // check nationality requirement
-            int localCount = 0;
-            int foreignerCount = 0;
-            for (Person member : groupMembers) {
-                if (member.getNationality().value.equals("local")) {
-                    localCount++;
-                } else {
-                    foreignerCount++;
-                }
-            }
-
-            // check gender requirement
-            int maleCount = 0;
-            int femaleCount = 0;
-            for (Person member : groupMembers) {
-                if (member.getGender().value.equals("M")) {
-                    maleCount++;
-                } else {
-                    femaleCount++;
-                }
-            }
-
-            // check group members' tutorial
             String groupTutorial = groupToCheck.getTutorial().value;
-            int count = 0;
-            for (Person member : groupMembers) {
-                for (Tutorial tut : member.getTutorials()) {
-                    if (tut.value.equals((groupTutorial))) {
-                        count++;
-                        continue;
-                    }
-                }
-            }
+            isSuccess = hasMixNationality(groupMembers) && hasMixGender(groupMembers)
+                    && hasGroupTutorial(groupMembers, groupTutorial);
 
-            if (localCount == 0 || foreignerCount == 0) {
-                isSuccess = false;
+            if (!hasMixNationality(groupMembers)) {
                 message += MESSAGE_CHECK_GROUP_NATIONALITY_WARNING;
             }
-            if (maleCount == 0 || femaleCount == 0) {
-                isSuccess = false;
+            if (!hasMixGender(groupMembers)) {
                 message += MESSAGE_CHECK_GROUP_GENDER_WARNING;
             }
-            if (count != groupMembers.size()) {
-                isSuccess = false;
+            if (!hasGroupTutorial(groupMembers, groupTutorial)) {
                 message += MESSAGE_CHECK_GROUP_TUTORIAL_WARNING;
             }
         }
@@ -146,6 +113,57 @@ public class CheckCommand extends Command {
             return new CommandResult(String.format(GROUP_NUM + message + MESSAGE_HELP, groupToCheck.getNumber()),
                     false, false, true, false);
         }
+    }
+
+    private boolean hasMixNationality(Set<Person> groupMembers) {
+        int localCount = 0;
+        int foreignerCount = 0;
+        for (Person member : groupMembers) {
+            if (member.getNationality().value.equals("local")) {
+                localCount++;
+            } else {
+                foreignerCount++;
+            }
+        }
+
+        if (localCount == 0 || foreignerCount == 0) {
+            return false;
+        }
+        return true;
+    }
+
+    private boolean hasMixGender(Set<Person> groupMembers) {
+        int maleCount = 0;
+        int femaleCount = 0;
+        for (Person member : groupMembers) {
+            if (member.getGender().value.equals("M")) {
+                maleCount++;
+            } else {
+                femaleCount++;
+            }
+        }
+
+        if (maleCount == 0 || femaleCount == 0) {
+            return false;
+        }
+        return true;
+    }
+
+    private boolean hasGroupTutorial(Set<Person> groupMembers, String groupTutorial) {
+        int count = 0;
+        for (Person member : groupMembers) {
+            for (Tutorial tut : member.getTutorials()) {
+                if (tut.value.equals((groupTutorial))) {
+                    count++;
+                    continue;
+                }
+            }
+        }
+
+        if (count != groupMembers.size()) {
+            return false;
+        }
+        return true;
     }
 
     @Override
