@@ -719,6 +719,14 @@ _Details coming soon ..._
 
 ### Valid Majors
 
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+If your major is not in the list below, you can simply write `Others` as your major.
+</div>
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+If you have a double degree, double major or a major-minor, you are required to choose only one major. Please select any one of the majors listed below.
+</div>
+
 For now, we accept the following majors in National University of Singapore(NUS):
 
 | Major                                     |
@@ -787,11 +795,3 @@ For now, we accept the following majors in National University of Singapore(NUS)
 | Theatre Studies                           |
 | Urban Studies                             |
 | Visual Communications                     |
-
-<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-If your major is not on this list, you can simply write `Others` as your major.
-</div>
-
-<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-If you have a double major or a major-minor, you are required to choose only one major. Please select any one of the majors listed above.
-</div>
