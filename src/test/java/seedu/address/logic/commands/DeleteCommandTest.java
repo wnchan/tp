@@ -36,7 +36,7 @@ public class DeleteCommandTest {
         ModelManager expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
         expectedModel.deletePerson(personToDelete);
 
-        assertCommandSuccess(deleteCommand, model, expectedMessage, expectedModel);
+        assertCommandSuccess(deleteCommand, model, expectedMessage, expectedModel, false);
     }
 
     @Test
@@ -44,7 +44,7 @@ public class DeleteCommandTest {
         Email invalidEmail = new Email("invalid@u.nus.edu"); // Use an email that doesn't exist in the test data
         DeleteCommand deleteCommand = new DeleteCommand(invalidEmail);
 
-        assertCommandFailure(deleteCommand, model, "Person with the provided email not found.");
+        assertCommandFailure(deleteCommand, model, "Student with the provided email not found.");
     }
 
     @Test

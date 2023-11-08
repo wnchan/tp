@@ -158,8 +158,13 @@ public class CommandTestUtil {
      * that takes a string {@code expectedMessage}.
      */
     public static void assertCommandSuccess(Command command, Model actualModel, String expectedMessage,
-            Model expectedModel) {
-        CommandResult expectedCommandResult = new CommandResult(expectedMessage);
+            Model expectedModel, boolean groupCommand) {
+        CommandResult expectedCommandResult;
+        if (groupCommand) {
+            expectedCommandResult = new CommandResult(expectedMessage, false, false, true, false);
+        } else {
+            expectedCommandResult = new CommandResult(expectedMessage);
+        }
         assertCommandSuccess(command, actualModel, expectedCommandResult, expectedModel);
     }
 
