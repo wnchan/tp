@@ -8,6 +8,8 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 ## Table of Contents
 
 ---
+<a id="table-of-contents"></a>
+
 1. <a href=#how-to-use-this-guide style="color: blue;">How to Use This Guide</a>
 2. <a href=#quick-start style="color: blue;">Quick Start</a>
 3. <a href=#features style="color: blue;">Features</a>
@@ -77,6 +79,7 @@ instead of selecting `exit` from the menu options or closing the application win
 This practice helps prevent data loss and ensures a proper shutdown of the application.
 </div>
 
+- For convenient navigation throughout this UG, you can refer to the <a href=#table-of-contents style="color: blue;">table of contents</a>.
 - Should you encounter any terminology within the guide that is unfamiliar, you can consult the <a href=#glossary style="color: blue;">glossary</a> section below. It provides clear definitions and explanations to help you grasp the specialized language used throughout this guide.
 - For any inquiries, the <a href=#faq style="color: blue;">faq</a> section is a good place to look for answers. In case your question is not addressed there, do not hesitate to submit an issue <a href="https://github.com/AY2324S1-CS2103T-F12-2/tp/issues" style="color: blue;">here</a> for further assistance.
 - The <a href=#appendix style="color: blue;">appendix</a> section is included to detail all possible input values for fields that have specific constraints or require particular formats. This reference can help ensure that you input data correctly and understand the limitations of each field.
