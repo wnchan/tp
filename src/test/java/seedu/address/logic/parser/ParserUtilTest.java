@@ -34,7 +34,6 @@ public class ParserUtilTest {
     private static final String INVALID_SM = "#www.invalid.com";
     private static final String INVALID_GENDER = "a";
     private static final String INVALID_NATIONALITY = "abc";
-
     private static final String VALID_NAME = "Rachel Walker";
     private static final String VALID_MAJOR = "Computer Science";
     private static final String VALID_YEAR = "2";
@@ -335,6 +334,7 @@ public class ParserUtilTest {
         int expectedTaskIndex = 5;
         int actualTaskIndex = ParserUtil.parseTaskIndex("  5  ");
         assertEquals(expectedTaskIndex, actualTaskIndex);
+    }
 
     @Test  
     public void parseNationality_null_throwsNullPointerException() {
