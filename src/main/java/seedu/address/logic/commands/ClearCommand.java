@@ -14,7 +14,8 @@ public class ClearCommand extends Command {
 
     public static final String MESSAGE_SUCCESS = "All student data has been cleared.";
 
-    public static final String SHOWING_CONFIRMATION_MESSAGE = "Opened confirmation window. Please ensure you use the exit command when exiting StudentConnect for successful reset.";
+    public static final String SHOWING_CONFIRMATION_MESSAGE = "Opened confirmation window. "
+            + "Please ensure you use the exit command when exiting StudentConnect for successful reset.";
 
     private boolean isConfirmed = false;
 
