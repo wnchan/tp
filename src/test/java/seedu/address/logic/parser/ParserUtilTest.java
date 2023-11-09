@@ -308,6 +308,11 @@ public class ParserUtilTest {
     }
 
     @Test
+    public void parseTaskIndex_null_throwsNullPointerException() {
+        assertThrows(NullPointerException.class, () -> ParserUtil.parseTaskIndex((String) null));
+    }
+
+    @Test
     public void parseTaskIndex_invalidInputZero_throwsParseException() {
         assertThrows(ParseException.class, () -> ParserUtil.parseTaskIndex(INVALID_TASK_INDEX_ZERO));
     }
