@@ -20,10 +20,10 @@ public class ConfirmationPopup extends UiPart<Stage> {
     private static final String FXML = "ClearConfirmationPopup.fxml";
 
     @FXML
-    Button yesButton;
+    private Button yesButton;
 
     @FXML
-    Button cancelButton;
+    private Button cancelButton;
 
     @FXML
     private Label confirmationMessage;
