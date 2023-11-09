@@ -35,7 +35,6 @@ public class ParserUtilTest {
     private static final String INVALID_GENDER = "a";
     private static final String INVALID_NATIONALITY = "abc";
     private static final String INVALID_GROUP_NUMBER = "a";
-    private static final String INVALID_TASK_INDEX = "-1";
 
     private static final String VALID_NAME = "Rachel Walker";
     private static final String VALID_MAJOR = "Computer Science";
@@ -49,7 +48,6 @@ public class ParserUtilTest {
     private static final String VALID_GENDER = "f";
     private static final String VALID_NATIONALITY = "local";
     private static final String VALID_GROUP_NUMBER = "1";
-    private static final String VALID_TASK_INDEX = "1";
 
     private static final String WHITESPACE = " \t\r\n";
 
@@ -375,26 +373,5 @@ public class ParserUtilTest {
     public void parseGroupNumber_validValueWithWhitespace_returnsTrimmedGroupNumber() throws Exception {
         String groupNumberWithWhitespace = WHITESPACE + VALID_GROUP_NUMBER + WHITESPACE;
         assertEquals(1, ParserUtil.parseGroupNumber(groupNumberWithWhitespace));
-    }
-
-    @Test
-    public void parseTaskIndex_null_throwsNullPointerException() {
-        assertThrows(NullPointerException.class, () -> ParserUtil.parseTaskIndex((String) null));
-    }
-
-    @Test
-    public void parseTaskIndex_invalidValue_throwsParseException() {
-        assertThrows(ParseException.class, () -> ParserUtil.parseTaskIndex(INVALID_TASK_INDEX));
-    }
-
-    @Test
-    public void parseTaskIndex_validValueWithoutWhitespace_returnsTaskIndex() throws Exception {
-        assertEquals(1, ParserUtil.parseTaskIndex(VALID_TASK_INDEX));
-    }
-
-    @Test
-    public void parseTaskIndex_validValueWithWhitespace_returnsTrimmedTaskIndex() throws Exception {
-        String taskIndexWithWhitespace = WHITESPACE + VALID_TASK_INDEX + WHITESPACE;
-        assertEquals(1, ParserUtil.parseTaskIndex(taskIndexWithWhitespace));
     }
 }
