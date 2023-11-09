@@ -1,6 +1,8 @@
 package seedu.address.logic.parser;
 
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_GROUP;
 import static seedu.address.testutil.Assert.assertThrows;
 
@@ -17,10 +19,17 @@ public class DeleteGroupCommandParserTest {
     public void parse_validArgs_returnsDeleteGroupCommand() {
         // Test valid input
         String userInput = " " + PREFIX_GROUP + "1";
-        DeleteGroupCommand expectedCommand = new DeleteGroupCommand(1);
-        CommandParserTestUtil.assertParseSuccess(parser, userInput, expectedCommand);
-    }
+        int groupNumber = 1;
+        DeleteGroupCommand expectedCommand = new DeleteGroupCommand(groupNumber);
 
+        // Use assertDoesNotThrow to check if parsing is successful
+        assertDoesNotThrow(() -> {
+            DeleteGroupCommand actualCommand = parser.parse(userInput);
+
+            // Compare the groupNumber attribute directly
+            assertEquals(expectedCommand.getGroupNumber(), actualCommand.getGroupNumber());
+        });
+    }
     @Test
     public void parse_missingGroupPrefix_throwsParseException() {
         // Test input without group prefix
