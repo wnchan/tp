@@ -3,6 +3,7 @@ package seedu.address.ui;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
@@ -53,7 +54,8 @@ public class GroupCard extends UiPart<Region> {
 
         assert number != null : "Number is null";
         number.setText("Group " + group.getNumber() + " ");
-        number.setStyle("-fx-font-size: 17px; -fx-text-fill: #E7BE34; -fx-font-family: 'Arial'; -fx-font-weight: bold;");
+        number.setStyle("-fx-font-size: 17px; -fx-text-fill: #E7BE34; -fx-font-family: 'Arial'; "
+                + "-fx-font-weight: bold;");
         // Apply the same style as id
 
         tutorialBox.setStyle("-fx-background-color: rgba(101,152,60,0.82); -fx-background-radius: 10;");

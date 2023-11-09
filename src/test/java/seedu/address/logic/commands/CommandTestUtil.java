@@ -27,7 +27,6 @@ import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.AddressBook;
 import seedu.address.model.Model;
-import seedu.address.model.group.tasks.Deadline;
 import seedu.address.model.group.tasks.Task;
 import seedu.address.model.group.tasks.TaskModule;
 import seedu.address.model.group.tasks.TaskStatus;
@@ -158,8 +157,13 @@ public class CommandTestUtil {
      * that takes a string {@code expectedMessage}.
      */
     public static void assertCommandSuccess(Command command, Model actualModel, String expectedMessage,
-            Model expectedModel) {
-        CommandResult expectedCommandResult = new CommandResult(expectedMessage);
+            Model expectedModel, boolean groupCommand) {
+        CommandResult expectedCommandResult;
+        if (groupCommand) {
+            expectedCommandResult = new CommandResult(expectedMessage, false, false, true, false);
+        } else {
+            expectedCommandResult = new CommandResult(expectedMessage);
+        }
         assertCommandSuccess(command, actualModel, expectedCommandResult, expectedModel);
     }
 
