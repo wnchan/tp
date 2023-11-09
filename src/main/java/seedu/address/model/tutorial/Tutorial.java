@@ -9,9 +9,7 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
  */
 public class Tutorial {
 
-    public static final String MESSAGE_CONSTRAINTS = "Tutorials should be 2-digit numbers between 01 and 22. "
-                                                        + "Multiple tutorial slots can be added by using "
-                                                             + "`t/` repeatedly.";
+    public static final String MESSAGE_CONSTRAINTS = "Tutorials should be 2-digit numbers between 01 and 22.";
 
     public static final String VALIDATION_REGEX = "^(0[1-9]|1\\d|2[0-2])$";
 

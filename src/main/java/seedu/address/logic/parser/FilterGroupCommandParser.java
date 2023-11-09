@@ -23,6 +23,8 @@ public class FilterGroupCommandParser implements Parser<FilterGroupCommand> {
                     String.format(MESSAGE_INVALID_COMMAND_FORMAT, FilterGroupCommand.MESSAGE_USAGE));
         }
 
+        ParserUtil.parseTutorial(trimmedArgs);
+
         return new FilterGroupCommand(new GroupBelongsTutorialPredicate(trimmedArgs));
     }
 }

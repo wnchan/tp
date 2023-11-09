@@ -17,7 +17,8 @@ public class ClearCommandTest {
         Model model = new ModelManager();
         Model expectedModel = new ModelManager();
 
-        assertCommandSuccess(new ClearCommand(), model, ClearCommand.SHOWING_CONFIRMATION_MESSAGE, expectedModel);
+        assertCommandSuccess(new ClearCommand(), model, ClearCommand.SHOWING_CONFIRMATION_MESSAGE, expectedModel,
+                false);
     }
 
     @Test
@@ -26,7 +27,8 @@ public class ClearCommandTest {
         Model expectedModel = new ModelManager(getTypicalAddressBook(), new UserPrefs());
         expectedModel.setAddressBook(new AddressBook());
 
-        assertCommandSuccess(new ClearCommand(), model, ClearCommand.SHOWING_CONFIRMATION_MESSAGE, expectedModel);
+        assertCommandSuccess(new ClearCommand(), model, ClearCommand.SHOWING_CONFIRMATION_MESSAGE, expectedModel,
+                false);
     }
 
 }

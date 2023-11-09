@@ -11,7 +11,8 @@ import seedu.address.model.group.exceptions.TaskException;
 
 public class DeadlineTest {
     void testToString() throws TaskException {
-        Deadline deadline = new Deadline("Finish assignment", TaskStatus.NOT_DONE, TaskModule.CS2101,"23/09/2023 1300");
+        Deadline deadline = new Deadline("Finish assignment", TaskStatus.NOT_DONE, TaskModule.CS2101,
+                "23/09/2023 1300");
         DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("MMM dd yyyy h:mm a");
         String expectedFormattedDateTime = LocalDateTime.parse("23/09/2023 1300",
                 DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm")).format(outputFormatter);
