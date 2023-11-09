@@ -62,7 +62,6 @@ public class Task {
      * @param task The task description to add.
      */
     public void addTask(String task) {
-        //Duke.taskList.addTask(this); //need to change according to how we implement the main class
     }
 
     /**
