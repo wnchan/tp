@@ -39,10 +39,10 @@ public class MarkCommandTest {
     public void execute_validTaskIndex_success() throws CommandException {
         int groupId = 1;
         int taskIndex = 0; // When printing message, CommandResult adds 1 to taskIndex.
-        MarkCommand MarkCommand = new MarkCommand(1, taskIndex,
+        MarkCommand markCommand = new MarkCommand(1, taskIndex,
                 new GroupContainsKeywordsPredicate(Arrays.asList(String.valueOf(groupId))));
 
-        CommandResult result = MarkCommand.execute(model);
+        CommandResult result = markCommand.execute(model);
 
         assertEquals("Marked task number 1 for group 1\n"
                         + "✅ T 1. CS2101 Upload video of OP1. \n"
@@ -65,10 +65,10 @@ public class MarkCommandTest {
     public void execute_taskAlreadyMarked_success() throws CommandException {
         int groupId = 1;
         int taskIndex = 0; // Task is already marked
-        MarkCommand MarkCommand = new MarkCommand(groupId, taskIndex,
+        MarkCommand markCommand = new MarkCommand(groupId, taskIndex,
                 new GroupContainsKeywordsPredicate(Arrays.asList(String.valueOf(groupId))));
 
-        CommandResult result = MarkCommand.execute(model);
+        CommandResult result = markCommand.execute(model);
 
         assertEquals("Marked task number 1 for group 1\n"
                         + "✅ T 1. CS2101 Upload video of OP1. \n"
@@ -91,50 +91,50 @@ public class MarkCommandTest {
     public void execute_groupNotFound_throwsCommandException() {
         int groupId = 2; // Invalid groupId
         int taskIndex = 0;
-        MarkCommand MarkCommand = new MarkCommand(groupId, taskIndex,
+        MarkCommand markCommand = new MarkCommand(groupId, taskIndex,
                 new GroupContainsKeywordsPredicate(Arrays.asList(String.valueOf(groupId))));
 
-        assertThrows(CommandException.class, () -> MarkCommand.execute(model));
+        assertThrows(CommandException.class, () -> markCommand.execute(model));
     }
 
     @Test
     public void execute_invalidTaskIndex_throwsCommandException() {
         int groupId = 1;
         int taskIndex = 15; // Invalid task index
-        MarkCommand MarkCommand = new MarkCommand(groupId, taskIndex,
+        MarkCommand markCommand = new MarkCommand(groupId, taskIndex,
                 new GroupContainsKeywordsPredicate(Arrays.asList(String.valueOf(groupId))));
 
-        assertThrows(CommandException.class, () -> MarkCommand.execute(model));
+        assertThrows(CommandException.class, () -> markCommand.execute(model));
     }
 
     @Test
     public void execute_nullModel_throwsNullPointerException() {
         int groupId = 1;
         int taskIndex = 0;
-        MarkCommand MarkCommand = new MarkCommand(groupId, taskIndex,
+        MarkCommand markCommand = new MarkCommand(groupId, taskIndex,
                 new GroupContainsKeywordsPredicate(Arrays.asList(String.valueOf(groupId))));
 
-        assertThrows(NullPointerException.class, () -> MarkCommand.execute(null));
+        assertThrows(NullPointerException.class, () -> markCommand.execute(null));
     }
 
     @Test
     public void execute_negativeTaskIndex_throwsCommandException() {
         int groupId = 1;
         int taskIndex = -1; // Negative task index
-        MarkCommand MarkCommand = new MarkCommand(groupId, taskIndex,
+        MarkCommand markCommand = new MarkCommand(groupId, taskIndex,
                 new GroupContainsKeywordsPredicate(Arrays.asList(String.valueOf(groupId))));
 
-        assertThrows(CommandException.class, () -> MarkCommand.execute(model));
+        assertThrows(CommandException.class, () -> markCommand.execute(model));
     }
 
     @Test
     public void isValidTaskIndex_validTaskIndex_returnsTrue() {
         int taskIndex = 1;
         TaskList taskList = group.getTasks();
-        MarkCommand MarkCommand = new MarkCommand(1, taskIndex,
+        MarkCommand markCommand = new MarkCommand(1, taskIndex,
                 new GroupContainsKeywordsPredicate(Arrays.asList(String.valueOf(1))));
 
-        boolean isValid = MarkCommand.isValidTaskIndex(taskIndex, taskList);
+        boolean isValid = markCommand.isValidTaskIndex(taskIndex, taskList);
 
         assertTrue(isValid);
     }
@@ -143,10 +143,10 @@ public class MarkCommandTest {
     public void isValidTaskIndex_invalidTaskIndex_returnsFalse() {
         int taskIndex = 15; // Invalid task index
         TaskList taskList = group.getTasks();
-        MarkCommand MarkCommand = new MarkCommand(1, taskIndex,
+        MarkCommand markCommand = new MarkCommand(1, taskIndex,
                 new GroupContainsKeywordsPredicate(Arrays.asList(String.valueOf(1))));
 
-        boolean isValid = MarkCommand.isValidTaskIndex(taskIndex, taskList);
+        boolean isValid = markCommand.isValidTaskIndex(taskIndex, taskList);
 
         assertFalse(isValid);
     }
@@ -155,22 +155,22 @@ public class MarkCommandTest {
     public void equals_sameObject_returnsTrue() {
         int groupId = 1;
         int taskIndex = 0;
-        MarkCommand MarkCommand = new MarkCommand(groupId, taskIndex,
+        MarkCommand markCommand = new MarkCommand(groupId, taskIndex,
                 new GroupContainsKeywordsPredicate(Arrays.asList(String.valueOf(groupId))));
 
-        assertTrue(MarkCommand.equals(MarkCommand));
+        assertTrue(markCommand.equals(markCommand));
     }
 
     @Test
     public void equals_differentObjectSameValues_returnsTrue() {
         int groupId = 1;
         int taskIndex = 0;
-        MarkCommand MarkCommand1 = new MarkCommand(groupId, taskIndex,
+        MarkCommand markCommand1 = new MarkCommand(groupId, taskIndex,
                 new GroupContainsKeywordsPredicate(Arrays.asList(String.valueOf(groupId))));
-        MarkCommand MarkCommand2 = new MarkCommand(groupId, taskIndex,
+        MarkCommand markCommand2 = new MarkCommand(groupId, taskIndex,
                 new GroupContainsKeywordsPredicate(Arrays.asList(String.valueOf(groupId))));
 
-        assertTrue(MarkCommand1.equals(MarkCommand2));
+        assertTrue(markCommand1.equals(markCommand2));
     }
 
     @Test
@@ -179,11 +179,11 @@ public class MarkCommandTest {
         int taskIndex1 = 0;
         int groupId2 = 2;
         int taskIndex2 = 1;
-        MarkCommand MarkCommand1 = new MarkCommand(groupId1, taskIndex1,
+        MarkCommand markCommand1 = new MarkCommand(groupId1, taskIndex1,
                 new GroupContainsKeywordsPredicate(Arrays.asList(String.valueOf(groupId1))));
-        MarkCommand MarkCommand2 = new MarkCommand(groupId2, taskIndex2,
+        MarkCommand markCommand2 = new MarkCommand(groupId2, taskIndex2,
                 new GroupContainsKeywordsPredicate(Arrays.asList(String.valueOf(groupId2))));
 
-        assertFalse(MarkCommand1.equals(MarkCommand2));
+        assertFalse(markCommand1.equals(markCommand2));
     }
 }
