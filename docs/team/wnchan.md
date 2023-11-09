@@ -3,6 +3,7 @@ layout: page
 title: Wei Ning's Project Portfolio Page
 ---
 # Overview
+
 StudentConnect is the solution for hassle-free team formation for CS2103T students to browse profiles and connect with others for group work.
 
 # Summary of Contributions
