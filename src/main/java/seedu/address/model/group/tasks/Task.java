@@ -182,7 +182,7 @@ public class Task {
     }
 
     /**
-     * Get the deadline of the task.
+     * Gets the deadline of the task.
      *
      * @return string representation of deadline, or empty string for todo tasks.
      */
