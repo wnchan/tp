@@ -44,6 +44,11 @@ public class ConfirmationPopup extends UiPart<Stage> {
         initialize();
     }
 
+    /**
+     * Sets the callback to be executed when the confirmation is received.
+     *
+     * @param callback The callback to be executed.
+     */
     public void setConfirmationCallback(Consumer<Boolean> callback) {
         this.confirmationCallback = callback;
     }
@@ -60,6 +65,9 @@ public class ConfirmationPopup extends UiPart<Stage> {
         getRoot().centerOnScreen();
     }
 
+    /**
+     * Initializes the confirmation popup, setting up event handlers for the "Yes" and "Cancel" buttons.
+     */
     @FXML
     private void initialize() {
         yesButton.setOnAction(event -> {
@@ -73,12 +81,19 @@ public class ConfirmationPopup extends UiPart<Stage> {
         cancelButton.setOnAction(event -> getRoot().close());
     }
 
+    /**
+     * Gets the logger for the ConfirmationPopup class.
+     *
+     * @return The logger for the ConfirmationPopup class.
+     */
     private static Logger getLogger() {
         return LogsCenter.getLogger(ConfirmationPopup.class);
     }
 
     /**
-     * Returns true if the confirmation popup is currently being shown.
+     * Checks if the confirmation popup is currently being shown.
+     *
+     * @return True if the confirmation popup is showing, false otherwise.
      */
     public boolean isShowing() {
         return getRoot().isShowing();
@@ -92,7 +107,9 @@ public class ConfirmationPopup extends UiPart<Stage> {
     }
 
     /**
-     * Returns true if the confirmation was confirmed.
+     * Checks if the confirmation was confirmed.
+     *
+     * @return True if the confirmation was confirmed, false otherwise.
      */
     public boolean isConfirmed() {
         return isConfirmed;
