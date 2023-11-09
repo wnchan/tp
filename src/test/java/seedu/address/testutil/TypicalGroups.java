@@ -63,7 +63,8 @@ public class TypicalGroups {
                     new PersonBuilder().withEmail("fourth@u.nus.edu").withTutorials("01").build(),
                     new PersonBuilder().withEmail("fifth@u.nus.edu").withTutorials("01").build()), new TaskList());
     public static final Group GROUP13 = new Group(13, new Tutorial("01"),
-            Set.of(new PersonBuilder().withEmail("first@u.nus.edu").withTutorials("01").withNationality("foreigner").build(),
+            Set.of(new PersonBuilder().withEmail("first@u.nus.edu").withTutorials("01").withNationality("foreigner")
+                            .build(),
                     new PersonBuilder().withEmail("second@u.nus.edu").withTutorials("01").build(),
                     new PersonBuilder().withEmail("third@u.nus.edu").withTutorials("01").build(),
                     new PersonBuilder().withEmail("fourth@u.nus.edu").withTutorials("01").build(),
@@ -76,7 +77,8 @@ public class TypicalGroups {
                     new PersonBuilder().withEmail("fifth@u.nus.edu").withTutorials("01").build()), new TaskList());
     public static final Group GROUP15 = new Group(15, new Tutorial("01"),
             Set.of(new PersonBuilder().withEmail("first@u.nus.edu").withTutorials("01").withGender("m").build(),
-                    new PersonBuilder().withEmail("second@u.nus.edu").withTutorials("01").withNationality("foreigner").build(),
+                    new PersonBuilder().withEmail("second@u.nus.edu").withTutorials("01").withNationality("foreigner")
+                            .build(),
                     new PersonBuilder().withEmail("third@u.nus.edu").withTutorials("01").build(),
                     new PersonBuilder().withEmail("fourth@u.nus.edu").withTutorials("01").build(),
                     new PersonBuilder().withEmail("fifth@u.nus.edu").withTutorials("01").build()), new TaskList());

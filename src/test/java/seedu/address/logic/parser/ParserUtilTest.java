@@ -35,7 +35,9 @@ public class ParserUtilTest {
     private static final String INVALID_GENDER = "a";
     private static final String INVALID_NATIONALITY = "abc";
     private static final String INVALID_GROUP_NUMBER = "a";
-
+    private static final String INVALID_TASK_INDEX_ZERO = "0";
+    private static final String INVALID_TASK_INDEX_NEGATIVE = "-1";
+    private static final String INVALID_TASK_INDEX_NON_NUMERIC = "abc";
     private static final String VALID_NAME = "Rachel Walker";
     private static final String VALID_MAJOR = "Computer Science";
     private static final String VALID_YEAR = "2";
@@ -48,7 +50,7 @@ public class ParserUtilTest {
     private static final String VALID_GENDER = "f";
     private static final String VALID_NATIONALITY = "local";
     private static final String VALID_GROUP_NUMBER = "1";
-
+    private static final String VALID_TASK_INDEX = "5";
     private static final String WHITESPACE = " \t\r\n";
 
     @Test
@@ -306,6 +308,37 @@ public class ParserUtilTest {
         Set<Tutorial> actualTutorials = ParserUtil.parseTutorials(duplicateTutorials);
 
         assertEquals(expectedTutorials, actualTutorials);
+    }
+
+    @Test
+    public void parseTaskIndex_null_throwsNullPointerException() {
+        assertThrows(NullPointerException.class, () -> ParserUtil.parseTaskIndex((String) null));
+    }
+
+    @Test
+    public void parseTaskIndex_invalidValueZero_throwsParseException() {
+        assertThrows(ParseException.class, () -> ParserUtil.parseTaskIndex(INVALID_TASK_INDEX_ZERO));
+    }
+
+    @Test
+    public void parseTaskIndex_invalidValueNegative_throwsParseException() {
+        assertThrows(ParseException.class, () -> ParserUtil.parseTaskIndex(INVALID_TASK_INDEX_NEGATIVE));
+    }
+
+    @Test
+    public void parseTaskIndex_invalidValueNonNumeric_throwsParseException() {
+        assertThrows(ParseException.class, () -> ParserUtil.parseTaskIndex(INVALID_TASK_INDEX_NON_NUMERIC));
+    }
+
+    @Test
+    public void parseTaskIndex_validValueWithoutWhitespace_returnsTaskIndex() throws Exception {
+        assertEquals(5, ParserUtil.parseTaskIndex(VALID_TASK_INDEX));
+    }
+
+    @Test
+    public void parseTaskIndex_validValueWithWhitespace_returnsTrimmedTaskIndex() throws Exception {
+        String taskIndexWithWhitespace = WHITESPACE + VALID_TASK_INDEX + WHITESPACE;
+        assertEquals(5, ParserUtil.parseTaskIndex(taskIndexWithWhitespace));
     }
 
     @Test
