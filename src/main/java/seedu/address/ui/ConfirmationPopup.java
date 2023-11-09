@@ -97,4 +97,23 @@ public class ConfirmationPopup extends UiPart<Stage> {
     public boolean isConfirmed() {
         return isConfirmed;
     }
+
+    /**
+     * Gets the "Yes" button of the confirmation popup.
+     *
+     * @return The "Yes" button.
+     */
+    public Button getYesButton() {
+        return yesButton;
+    }
+
+    /**
+     * Gets the "Cancel" button of the confirmation popup.
+     *
+     * @return The "Cancel" button.
+     */
+    public Button getCancelButton() {
+        return cancelButton;
+    }
+
 }

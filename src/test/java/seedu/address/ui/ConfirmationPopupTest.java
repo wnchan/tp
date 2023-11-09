@@ -41,7 +41,7 @@ class ConfirmationPopupTest {
             assertTrue(confirmationPopup.isShowing());
 
             // Fire the 'yes' button event
-            confirmationPopup.yesButton.fire();
+            confirmationPopup.getYesButton().fire();
 
             // Check if the confirmation callback was invoked and if the confirmation state is true
             assertTrue(callbackInvoked[0]);
@@ -82,7 +82,7 @@ class ConfirmationPopupTest {
             assertTrue(confirmationPopup.isShowing());
 
             // Fire the 'cancel' button event
-            confirmationPopup.cancelButton.fire();
+            confirmationPopup.getCancelButton().fire();
 
             // Check if the confirmation callback was not invoked and if the confirmation state is false
             assertFalse(callbackInvoked[0]);
