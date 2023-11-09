@@ -49,6 +49,7 @@ public class ParserUtilTest {
     private static final String INVALID_TASK_INDEX_ZERO = "0";
     private static final String INVALID_TASK_INDEX_NEGATIVE = "-1";
     private static final String INVALID_TASK_INDEX_NON_NUMERIC = "abc";
+    private static final String VALID_TASK_INDEX = "5";
 
     @Test
     public void parseEmail_invalidInput_throwsParseException() {
@@ -313,32 +314,29 @@ public class ParserUtilTest {
     }
 
     @Test
-    public void parseTaskIndex_invalidInputZero_throwsParseException() {
+    public void parseTaskIndex_invalidValueZero_throwsParseException() {
         assertThrows(ParseException.class, () -> ParserUtil.parseTaskIndex(INVALID_TASK_INDEX_ZERO));
     }
 
     @Test
-    public void parseTaskIndex_invalidInputNegative_throwsParseException() {
+    public void parseTaskIndex_invalidValueNegative_throwsParseException() {
         assertThrows(ParseException.class, () -> ParserUtil.parseTaskIndex(INVALID_TASK_INDEX_NEGATIVE));
     }
 
     @Test
-    public void parseTaskIndex_invalidInputNonNumeric_throwsParseException() {
+    public void parseTaskIndex_invalidValueNonNumeric_throwsParseException() {
         assertThrows(ParseException.class, () -> ParserUtil.parseTaskIndex(INVALID_TASK_INDEX_NON_NUMERIC));
     }
 
     @Test
-    public void parseTaskIndex_validInput_success() throws Exception {
-        int expectedTaskIndex = 1;
-        int actualTaskIndex = ParserUtil.parseTaskIndex("1");
-        assertEquals(expectedTaskIndex, actualTaskIndex);
+    public void parseTaskIndex_validValueWithoutWhitespace_returnsTaskIndex() throws Exception {
+        assertEquals(5, ParserUtil.parseTaskIndex(VALID_TASK_INDEX));
     }
 
     @Test
-    public void parseTaskIndex_validInputWithWhitespace_success() throws Exception {
-        int expectedTaskIndex = 5;
-        int actualTaskIndex = ParserUtil.parseTaskIndex("  5  ");
-        assertEquals(expectedTaskIndex, actualTaskIndex);
+    public void parseTaskIndex_validValueWithWhitespace_returnsTrimmedTaskIndex() throws Exception {
+        String taskIndexWithWhitespace = WHITESPACE + VALID_TASK_INDEX + WHITESPACE;
+        assertEquals(5, ParserUtil.parseTaskIndex(taskIndexWithWhitespace));
     }
 
     @Test
