@@ -1,7 +1,9 @@
 package seedu.address.logic.parser;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -43,5 +45,22 @@ public class UnMarkCommandParserTest {
         assertThrows(ParseException.class, () -> parser.parse("1 ti/2"));
         assertThrows(ParseException.class, () -> parser.parse("gr/1 2"));
     }
-}
 
+    @Test
+    public void parse_nullArgs_throwsNullPointerException() {
+        assertThrows(NullPointerException.class, () -> parser.parse(null));
+    }
+
+    @Test
+    public void equals_sameObject_returnsTrue() {
+        assertTrue(parser.equals(parser));
+    }
+
+    @Test
+    public void equals_differentObject_returnsFalse() {
+        UnMarkCommandParser parser1 = new UnMarkCommandParser();
+        UnMarkCommandParser parser2 = new UnMarkCommandParser();
+
+        assertFalse(parser1.equals(parser2));
+    }
+}
