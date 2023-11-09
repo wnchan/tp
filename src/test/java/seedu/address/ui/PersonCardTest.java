@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.testutil.TypicalPersons.ALICE;
 import static seedu.address.testutil.TypicalPersons.AMY;
 
+import java.awt.*;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -19,21 +20,19 @@ import seedu.address.model.socialmedialink.SocialMediaLink;
 
 public class PersonCardTest {
 
+    private static boolean isJavaFxInitialized = false;
+
     @BeforeAll
-    public static void initJavaFx() {
-        // Ensure JavaFX Toolkit is initialized only once
-        if (!Platform.isFxApplicationThread()) {
-            Platform.startup(() -> {
-                // Initialization code, if needed
-            });
+    public static void init() {
+        if (!GraphicsEnvironment.isHeadless()) {
+            JavaFxInitializer.initialize();
         }
     }
 
     @AfterAll
-    public static void cleanupJavaFx() {
-        // Ensure JavaFX Toolkit is exited only once
-        if (!Platform.isFxApplicationThread()) {
-            Platform.exit();
+    public static void cleanup() {
+        if (!GraphicsEnvironment.isHeadless()) {
+            JavaFxInitializer.cleanup();
         }
     }
 

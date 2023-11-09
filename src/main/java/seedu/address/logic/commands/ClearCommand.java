@@ -36,4 +36,8 @@ public class ClearCommand extends Command {
             return new CommandResult(SHOWING_CONFIRMATION_MESSAGE, false, false, false, false);
         }
     }
+
+    public void setConfirmed(boolean isConfirmed) {
+        this.isConfirmed = isConfirmed;
+    }
 }

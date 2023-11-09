@@ -28,7 +28,10 @@ public class JavaFxInitializer {
      * This method can be called after tests are completed to perform any necessary cleanup logic.
      */
     public static void cleanup() {
-        JavaFxInit.getInstance().cleanup();
+        JavaFxInit instance = JavaFxInit.getInstance();
+        if (instance != null) {
+            instance.cleanup();
+        }
     }
 
     /**
