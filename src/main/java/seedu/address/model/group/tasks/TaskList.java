@@ -57,7 +57,7 @@ public class TaskList {
     /**
      * Returns the task at index in the task list.
      *
-     * @param index        The index of task to be returned.
+     * @param index The index of task to be returned.
      * @return The task at the index.
      */
     public Task getTask(int index) {
