@@ -5,10 +5,9 @@ title: About Us
 
 We are a team based in the [School of Computing, National University of Singapore](http://www.comp.nus.edu.sg).
 
-You can reach us at the email `seer[at]comp.nus.edu.sg`
+You can reach us from our [GitHub Website](https://github.com/AY2324S1-CS2103T-F12-2/tp).
 
 ## Project team
-
 
 ### Pearlynn Toh
 
@@ -28,7 +27,6 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 * Role: Developer
 * Responsibilities: Testing + Integration
-
 
 ### Chan Wei Ning
 
