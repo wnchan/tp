@@ -2,6 +2,7 @@ package seedu.address.model.person;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_BOB;
 import static seedu.address.testutil.Assert.assertThrows;
@@ -168,5 +169,37 @@ public class UniquePersonListTest {
     @Test
     public void toStringMethod() {
         assertEquals(uniquePersonList.asUnmodifiableObservableList().toString(), uniquePersonList.toString());
+    }
+
+    @Test
+    public void equals_sameList_returnsTrue() {
+        UniquePersonList firstList = new UniquePersonList();
+        UniquePersonList secondList = new UniquePersonList();
+        assertTrue(firstList.equals(secondList));
+    }
+
+    @Test
+    public void equals_differentLists_returnsFalse() {
+        UniquePersonList firstList = new UniquePersonList();
+        UniquePersonList secondList = new UniquePersonList();
+        firstList.add(ALICE);
+        secondList.add(BOB);
+        assertFalse(firstList.equals(secondList));
+    }
+
+    @Test
+    public void hashCode_sameList_returnsSameHashCode() {
+        UniquePersonList firstList = new UniquePersonList();
+        UniquePersonList secondList = new UniquePersonList();
+        assertEquals(firstList.hashCode(), secondList.hashCode());
+    }
+
+    @Test
+    public void hashCode_differentLists_returnsDifferentHashCode() {
+        UniquePersonList firstList = new UniquePersonList();
+        UniquePersonList secondList = new UniquePersonList();
+        firstList.add(ALICE);
+        secondList.add(BOB);
+        assertNotEquals(firstList.hashCode(), secondList.hashCode());
     }
 }

@@ -34,6 +34,10 @@ public class ParserUtilTest {
     private static final String INVALID_SM = "#www.invalid.com";
     private static final String INVALID_GENDER = "a";
     private static final String INVALID_NATIONALITY = "abc";
+    private static final String INVALID_GROUP_NUMBER = "a";
+    private static final String INVALID_TASK_INDEX_ZERO = "0";
+    private static final String INVALID_TASK_INDEX_NEGATIVE = "-1";
+    private static final String INVALID_TASK_INDEX_NON_NUMERIC = "abc";
     private static final String VALID_NAME = "Rachel Walker";
     private static final String VALID_MAJOR = "Computer Science";
     private static final String VALID_YEAR = "2";
@@ -45,11 +49,9 @@ public class ParserUtilTest {
     private static final String VALID_SM_GITHUB = "https://github.com/rachel";
     private static final String VALID_GENDER = "f";
     private static final String VALID_NATIONALITY = "local";
-    private static final String WHITESPACE = " \t\r\n";
-    private static final String INVALID_TASK_INDEX_ZERO = "0";
-    private static final String INVALID_TASK_INDEX_NEGATIVE = "-1";
-    private static final String INVALID_TASK_INDEX_NON_NUMERIC = "abc";
+    private static final String VALID_GROUP_NUMBER = "1";
     private static final String VALID_TASK_INDEX = "5";
+    private static final String WHITESPACE = " \t\r\n";
 
     @Test
     public void parseEmail_invalidInput_throwsParseException() {
@@ -383,5 +385,26 @@ public class ParserUtilTest {
         String genderWithWhitespace = WHITESPACE + VALID_GENDER + WHITESPACE;
         Gender expectedGender = new Gender(VALID_GENDER);
         assertEquals(expectedGender, ParserUtil.parseGender(genderWithWhitespace));
+    }
+
+    @Test
+    public void parseGroupNumber_null_throwsNullPointerException() {
+        assertThrows(NullPointerException.class, () -> ParserUtil.parseGroupNumber((String) null));
+    }
+
+    @Test
+    public void parseGroupNumber_invalidValue_throwsParseException() {
+        assertThrows(ParseException.class, () -> ParserUtil.parseGroupNumber(INVALID_GROUP_NUMBER));
+    }
+
+    @Test
+    public void parseGroupNumber_validValueWithoutWhitespace_returnsGroupNumber() throws Exception {
+        assertEquals(1, ParserUtil.parseGroupNumber(VALID_GROUP_NUMBER));
+    }
+
+    @Test
+    public void parseGroupNumber_validValueWithWhitespace_returnsTrimmedGroupNumber() throws Exception {
+        String groupNumberWithWhitespace = WHITESPACE + VALID_GROUP_NUMBER + WHITESPACE;
+        assertEquals(1, ParserUtil.parseGroupNumber(groupNumberWithWhitespace));
     }
 }
