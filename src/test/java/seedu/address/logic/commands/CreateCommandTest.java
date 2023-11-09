@@ -38,6 +38,13 @@ public class CreateCommandTest {
     }
 
     @Test
+    public void generateGroupNumberTest() {
+        Model model = new ModelManager(TypicalGroups.getTypicalAddressBook(), new UserPrefs());
+        CreateCommand command = new CreateCommand(new Tutorial("01"));
+        assertEquals(command.generateGroupNumber(model), model.getFilteredGroupList().size() + 1);
+    }
+
+    @Test
     public void equals() {
         CreateCommand firstCreateCommand = new CreateCommand(new Tutorial("01"));
         CreateCommand secondCreateCommand = new CreateCommand(new Tutorial("02"));
