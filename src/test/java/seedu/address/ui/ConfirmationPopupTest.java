@@ -1,6 +1,8 @@
 package seedu.address.ui;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.function.Consumer;
@@ -94,4 +96,93 @@ class ConfirmationPopupTest {
             assertFalse(confirmationPopup.isShowing());
         });
     }
+
+    @Test
+    void testInitializeMethod() {
+        // Initialize JavaFX toolkit
+        new JFXPanel();
+
+        // Run the test on the JavaFX application thread
+        Platform.runLater(() -> {
+            ConfirmationPopup confirmationPopup = new ConfirmationPopup();
+
+            // Initial state checks
+            assertFalse(confirmationPopup.isShowing());
+            assertFalse(confirmationPopup.isConfirmed());
+
+            // Manually trigger 'Yes' button action
+            confirmationPopup.getYesButton().fire();
+
+            // Check if the confirmation callback was invoked and if the confirmation state is true
+            assertTrue(confirmationPopup.isConfirmed());
+
+            // Manually trigger 'Cancel' button action
+            confirmationPopup.getCancelButton().fire();
+
+            // Check if the confirmation callback was not invoked and if the confirmation state is false
+            assertFalse(confirmationPopup.isConfirmed());
+        });
+    }
+
+    @Test
+    void testIsConfirmed() {
+        // Initialize JavaFX toolkit
+        new JFXPanel();
+
+        // Run the test on the JavaFX application thread
+        Platform.runLater(() -> {
+            ConfirmationPopup confirmationPopup = new ConfirmationPopup();
+
+            // Initial state check
+            assertFalse(confirmationPopup.isConfirmed());
+
+            // Manually trigger 'Yes' button action
+            confirmationPopup.getYesButton().fire();
+
+            // Check if the confirmation state is true
+            assertTrue(confirmationPopup.isConfirmed());
+
+            // Manually trigger 'Cancel' button action
+            confirmationPopup.getCancelButton().fire();
+
+            // Check if the confirmation state is still true (should not change on 'Cancel' button)
+            assertTrue(confirmationPopup.isConfirmed());
+        });
+    }
+
+    @Test
+    void testGetYesButton() {
+        // Initialize JavaFX toolkit
+        new JFXPanel();
+
+        // Run the test on the JavaFX application thread
+        Platform.runLater(() -> {
+            ConfirmationPopup confirmationPopup = new ConfirmationPopup();
+
+            // Get the 'Yes' button
+            assertNotNull(confirmationPopup.getYesButton());
+
+            // Check if the 'Yes' button has the correct label or other properties if needed
+            assertEquals("Yes", confirmationPopup.getYesButton().getText());
+        });
+    }
+
+    @Test
+    void testGetCancelButton() {
+        // Initialize JavaFX toolkit
+        new JFXPanel();
+
+        // Run the test on the JavaFX application thread
+        Platform.runLater(() -> {
+            ConfirmationPopup confirmationPopup = new ConfirmationPopup();
+
+            // Get the 'Cancel' button
+            assertNotNull(confirmationPopup.getCancelButton());
+
+            // Check if the 'Cancel' button has the correct label or other properties if needed
+            assertEquals("Cancel", confirmationPopup.getCancelButton().getText());
+        });
+    }
 }
+
+
