@@ -25,7 +25,7 @@ public class DeleteGroupCommandParserTest {
     public void parse_missingGroupPrefix_throwsParseException() {
         // Test input without group prefix
         String userInput = "1";
-        String expectedMessage = String.format(DeleteGroupCommand.MESSAGE_USAGE);
+        String expectedMessage = String.format("Invalid command format! \n" + DeleteGroupCommand.MESSAGE_USAGE);
         CommandParserTestUtil.assertParseFailure(parser, userInput, expectedMessage);
     }
 
