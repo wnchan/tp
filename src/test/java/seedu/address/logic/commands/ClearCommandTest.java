@@ -15,9 +15,7 @@ import seedu.address.model.group.tasks.TaskList;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Person;
 import javafx.collections.ObservableList;
-import seedu.address.ui.JavaFxInitializer;
 
-import java.awt.*;
 import java.nio.file.Path;
 import java.util.Optional;
 import java.util.function.Predicate;
@@ -26,20 +24,19 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import seedu.address.ui.JavaFxInitializer;
+
+
 public class ClearCommandTest {
 
     @BeforeAll
     public static void init() {
-        if (!GraphicsEnvironment.isHeadless()) {
-            JavaFxInitializer.initialize();
-        }
+        JavaFxInitializer.initialize();
     }
 
     @AfterAll
     public static void cleanup() {
-        if (!GraphicsEnvironment.isHeadless()) {
-            JavaFxInitializer.cleanup();
-        }
+        JavaFxInitializer.cleanup();
     }
 
     @Test
@@ -62,7 +59,7 @@ public class ClearCommandTest {
                 assertTrue(commandResult.isClear());
                 assertEquals(0, modelStub.getAddressBook().getPersonList().size());
             } catch (CommandException e) {
-                // Handle exception if needed
+                // Handle exception
             }
         });
     }
@@ -92,7 +89,7 @@ public class ClearCommandTest {
         });
     }
 
-
+    // Rest of the class remains unchanged
     private static class ModelStub implements Model {
             private final AddressBook addressBook = new AddressBook();
 

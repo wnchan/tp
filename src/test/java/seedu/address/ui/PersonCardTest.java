@@ -11,6 +11,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import javafx.embed.swing.JFXPanel;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -20,20 +21,14 @@ import seedu.address.model.socialmedialink.SocialMediaLink;
 
 public class PersonCardTest {
 
-    private static boolean isJavaFxInitialized = false;
-
     @BeforeAll
     public static void init() {
-        if (!GraphicsEnvironment.isHeadless()) {
-            JavaFxInitializer.initialize();
-        }
+        JavaFxInitializer.initialize();
     }
 
     @AfterAll
     public static void cleanup() {
-        if (!GraphicsEnvironment.isHeadless()) {
-            JavaFxInitializer.cleanup();
-        }
+        JavaFxInitializer.cleanup();
     }
 
     @Test
