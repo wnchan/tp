@@ -56,6 +56,7 @@ Given below are my contributions to the project.
 ## Contributions to team-based tasks
 * Did equal share of tasks assigned.
 * Brainstormed other features that were implemented.
+* Updated README.md and index.md.
 
 ## Review/ mentoring contributions
 * Review other members' pull requests and gave ideas and suggestions.
