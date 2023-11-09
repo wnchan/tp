@@ -19,7 +19,7 @@ import seedu.address.model.group.GroupContainsKeywordsPredicate;
 import seedu.address.model.group.tasks.TaskList;
 import seedu.address.model.tutorial.Tutorial;
 
-public class UnMarkCommandTest {
+public class MarkCommandTest {
 
     private Group group;
     private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
@@ -37,13 +37,13 @@ public class UnMarkCommandTest {
     public void execute_validTaskIndex_success() throws CommandException {
         int groupId = 1;
         int taskIndex = 0; // When printing message, CommandResult adds 1 to taskIndex.
-        UnMarkCommand unMarkCommand = new UnMarkCommand(1, taskIndex,
+        MarkCommand MarkCommand = new MarkCommand(1, taskIndex,
                 new GroupContainsKeywordsPredicate(Arrays.asList(String.valueOf(groupId))));
 
-        CommandResult result = unMarkCommand.execute(model);
+        CommandResult result = MarkCommand.execute(model);
 
-        assertEquals("Unmarked task number 1 for group 1\n"
-                        + "❌ T 1. CS2101 Upload video of OP1. \n"
+        assertEquals("Marked task number 1 for group 1\n"
+                        + "✅ T 1. CS2101 Upload video of OP1. \n"
                         + "❌ T 2. CS2101 Complete peer review for OP2. \n"
                         + "❌ D 3. CS2101 Submit slides for OP2. 29/10/2023 2359\n"
                         + "❌ D 4. CS2101 Complete peer review. 02/11/2023 2359\n"
@@ -63,30 +63,30 @@ public class UnMarkCommandTest {
     public void execute_groupNotFound_throwsCommandException() {
         int groupId = 2; // Invalid groupId
         int taskIndex = 0;
-        UnMarkCommand unMarkCommand = new UnMarkCommand(groupId, taskIndex,
+        MarkCommand MarkCommand = new MarkCommand(groupId, taskIndex,
                 new GroupContainsKeywordsPredicate(Arrays.asList(String.valueOf(groupId))));
 
-        assertThrows(CommandException.class, () -> unMarkCommand.execute(model));
+        assertThrows(CommandException.class, () -> MarkCommand.execute(model));
     }
 
     @Test
     public void execute_invalidTaskIndex_throwsCommandException() {
         int groupId = 1;
         int taskIndex = 15; // Invalid task index
-        UnMarkCommand unMarkCommand = new UnMarkCommand(groupId, taskIndex,
+        MarkCommand MarkCommand = new MarkCommand(groupId, taskIndex,
                 new GroupContainsKeywordsPredicate(Arrays.asList(String.valueOf(groupId))));
 
-        assertThrows(CommandException.class, () -> unMarkCommand.execute(model));
+        assertThrows(CommandException.class, () -> MarkCommand.execute(model));
     }
 
     @Test
     public void isValidTaskIndex_validTaskIndex_returnsTrue() {
         int taskIndex = 1;
         TaskList taskList = group.getTasks();
-        UnMarkCommand unMarkCommand = new UnMarkCommand(1, taskIndex,
+        MarkCommand MarkCommand = new MarkCommand(1, taskIndex,
                 new GroupContainsKeywordsPredicate(Arrays.asList(String.valueOf(1))));
 
-        boolean isValid = unMarkCommand.isValidTaskIndex(taskIndex, taskList);
+        boolean isValid = MarkCommand.isValidTaskIndex(taskIndex, taskList);
 
         assertEquals(true, isValid);
     }
@@ -95,10 +95,10 @@ public class UnMarkCommandTest {
     public void isValidTaskIndex_invalidTaskIndex_returnsFalse() {
         int taskIndex = 15; // Invalid task index
         TaskList taskList = group.getTasks();
-        UnMarkCommand unMarkCommand = new UnMarkCommand(1, taskIndex,
+        MarkCommand MarkCommand = new MarkCommand(1, taskIndex,
                 new GroupContainsKeywordsPredicate(Arrays.asList(String.valueOf(1))));
 
-        boolean isValid = unMarkCommand.isValidTaskIndex(taskIndex, taskList);
+        boolean isValid = MarkCommand.isValidTaskIndex(taskIndex, taskList);
 
         assertEquals(false, isValid);
     }
