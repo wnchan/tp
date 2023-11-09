@@ -63,7 +63,7 @@ public class CreateCommand extends Command {
      *
      * @param model
      */
-    private int generateGroupNumber(Model model) {
+    public int generateGroupNumber(Model model) {
         int number = 1;
         ReadOnlyAddressBook addressBook = model.getAddressBook();
         ObservableList<Group> groups = addressBook.getGroupList();
@@ -77,5 +77,20 @@ public class CreateCommand extends Command {
         }
 
         return number;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == this) {
+            return true;
+        }
+
+        // instanceof handles nulls
+        if (!(other instanceof CreateCommand)) {
+            return false;
+        }
+
+        CreateCommand otherCreateCommand = (CreateCommand) other;
+        return tutorial.equals(otherCreateCommand.tutorial);
     }
 }
