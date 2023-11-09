@@ -899,3 +899,31 @@ For now, we accept the following majors in National University of Singapore(NUS)
 
 --------------------------------------------------------------------------------------------------------------------
 ## Glossary
+
+This glossary is intended to provide definitions for terms that may be unfamiliar to users. It is arranged in alphabetical order.
+
+- **CS2101**: Effective Communication for Computing Professionals - A course designed to equip computing professionals with essential communication skills, both in technical and non-technical contexts. It covers the creation of clear and comprehensible software documentation and effective communication strategies for diverse audiences.
+
+- **CS2103T**: Software Engineering - A course focusing on the systematic and rigorous development of software systems. It covers essential concepts and analytical tools necessary for software engineering.
+
+- **Case-Insensitive**: Refers to the handling of text where uppercase and lowercase letters are treated as equivalent. For instance, in a case-insensitive search, searching for "Java" or "java" would yield the same results.
+
+- **Case-Sensitive**: Opposite of case-insensitive, this refers to situations where uppercase and lowercase letters are treated differently. For example, "Java" and "java" would be considered distinct.
+
+- **Command Terminal**: An interface in a computing environment where the user can input text commands to perform specific tasks.
+
+- **Double Degree**: An academic program where a student earns two distinct degrees simultaneously, usually in different fields.
+
+- **Double Major**: A type of academic degree where a student completes two sets of major requirements, although they receive just one degree.
+
+- **Extraneous Parameters**: These are additional or unnecessary parameters given in a command that do not affect its execution but are not required for the command to function properly.
+
+- **GUI (Graphical User Interface)**: A type of user interface that allows users to interact with electronic devices through graphical icons and visual indicators, as opposed to text-based interfaces, typed command labels, or text navigation.
+
+- **Home Folder**: In computing, this is a personal directory assigned to a user in a file system, where they store personal files, settings, and configurations.
+
+- **Issue (GitHub)**: A feature in GitHub used to track ideas, enhancements, tasks, or bugs for work on GitHub projects.
+
+- **Java 11**: A version of Java, a widely used programming language and computing platform. Java 11 includes various updates and features different from its predecessors.
+
+- **Major-Minor**: An academic program where a student completes a major (primary focus) and a minor (secondary concentration) in different subjects.
