@@ -80,7 +80,7 @@ public class TasksCommandTest {
         TasksCommand tasksCommand = new TasksCommand(groupId,
             new GroupContainsKeywordsPredicate(List.of(String.valueOf(groupId))));
 
-        assertEquals(tasksCommand, tasksCommand);
+        assertTrue(tasksCommand.equals(tasksCommand));
     }
 
     @Test
@@ -91,7 +91,7 @@ public class TasksCommandTest {
         TasksCommand tasksCommand2 = new TasksCommand(groupId,
             new GroupContainsKeywordsPredicate(List.of(String.valueOf(groupId))));
 
-        assertEquals(tasksCommand1, tasksCommand2);
+        assertTrue(tasksCommand1.equals(tasksCommand2));
     }
 
     @Test
@@ -103,6 +103,6 @@ public class TasksCommandTest {
         TasksCommand tasksCommand2 = new TasksCommand(groupId2,
             new GroupContainsKeywordsPredicate(List.of(String.valueOf(groupId2))));
 
-        assertNotEquals(tasksCommand1, tasksCommand2);
+        assertFalse(tasksCommand1.equals(tasksCommand2));
     }
 }
