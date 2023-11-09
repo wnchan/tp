@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
+
 import seedu.address.model.group.exceptions.TaskException;
 
 public class TaskInitializerTest {
@@ -20,8 +21,10 @@ public class TaskInitializerTest {
         assertEquals(13, taskList.getTaskList().size());
 
         // Verify the correct tasks have been added to the list
-        verifyTask(taskList.getTask(0), Todo.class, "Upload video of OP1.", TaskStatus.NOT_DONE, TaskModule.CS2101);
-        verifyTask(taskList.getTask(1), Todo.class, "Complete peer review for OP2.", TaskStatus.NOT_DONE, TaskModule.CS2101);
+        verifyTask(taskList.getTask(0), Todo.class,
+            "Upload video of OP1.", TaskStatus.NOT_DONE, TaskModule.CS2101);
+        verifyTask(taskList.getTask(1), Todo.class,
+            "Complete peer review for OP2.", TaskStatus.NOT_DONE, TaskModule.CS2101);
 
         // Verify the tasks of type Deadline have correct deadlines
         verifyDeadline(taskList.getTask(2), "(by 29/10/2023 2359)");

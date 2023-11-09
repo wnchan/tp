@@ -2,8 +2,11 @@ package seedu.address.model.group.tasks;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import java.time.LocalDateTime;
+
 import org.junit.jupiter.api.Test;
+
 import seedu.address.model.group.exceptions.TaskException;
 
 public class TaskTest {

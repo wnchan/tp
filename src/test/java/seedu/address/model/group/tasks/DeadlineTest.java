@@ -1,7 +1,9 @@
 package seedu.address.model.group.tasks;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Test;
+
 import seedu.address.model.group.exceptions.TaskException;
 
 public class DeadlineTest {
