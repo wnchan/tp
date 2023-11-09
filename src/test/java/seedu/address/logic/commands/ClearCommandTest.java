@@ -219,7 +219,6 @@ public class ClearCommandTest {
 
             @Override
             public boolean hasGroup(Group group) {
-                // Implement if needed
                 return false;
             }
 

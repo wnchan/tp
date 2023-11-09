@@ -20,10 +20,10 @@ public class ConfirmationPopup extends UiPart<Stage> {
     private static final String FXML = "ClearConfirmationPopup.fxml";
 
     @FXML
-    private Button yesButton;
+    Button yesButton;
 
     @FXML
-    private Button cancelButton;
+    Button cancelButton;
 
     @FXML
     private Label confirmationMessage;
@@ -89,5 +89,12 @@ public class ConfirmationPopup extends UiPart<Stage> {
      */
     public void focus() {
         getRoot().requestFocus();
+    }
+
+    /**
+     * Returns true if the confirmation was confirmed.
+     */
+    public boolean isConfirmed() {
+        return isConfirmed;
     }
 }

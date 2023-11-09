@@ -6,17 +6,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.testutil.TypicalPersons.ALICE;
 import static seedu.address.testutil.TypicalPersons.AMY;
 
-import java.awt.*;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import javafx.embed.swing.JFXPanel;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import javafx.application.Platform;
 import seedu.address.model.socialmedialink.SocialMediaLink;
 
 public class PersonCardTest {
