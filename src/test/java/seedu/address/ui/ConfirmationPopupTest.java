@@ -1,12 +1,16 @@
 package seedu.address.ui;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.function.Consumer;
+
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
 import org.junit.jupiter.api.Test;
 
-import java.util.function.Consumer;
 
-import static org.junit.jupiter.api.Assertions.*;
+
 
 class ConfirmationPopupTest {
 
