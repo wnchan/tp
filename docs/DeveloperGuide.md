@@ -116,8 +116,15 @@ How the parsing works:
 
 ### Model component
 **API** : [`Model.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/model/Model.java)
+<div style="text-align: center; border: 1px solid #000; padding: 10px; display: inline-block; margin: auto;">
+  <img src="images/PersonModelClassDiagram.png" width="450" alt="Person Model Class Diagram" style="margin-bottom: 10px;"/>
+  <div>Person Model Class Diagram</div>
+</div>
 
-<img src="images/ModelClassDiagram.png" width="450" />
+<div style="text-align: center; border: 1px solid #000; padding: 10px; display: inline-block; margin: auto;">
+  <img src="images/GroupModelClassDiagram.png" width="450" alt="Group Model Class Diagram" style="margin-bottom: 10px;"/>
+  <div>Group Model Class Diagram</div>
+</div>
 
 
 The `Model` component,
@@ -127,12 +134,6 @@ The `Model` component,
 * stores the currently 'selected' `Group` objects (e.g., results of a search query) as a separate _filtered_ list which is exposed to outsiders as an unmodifiable `ObservableList<Group>` that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.
 * stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
 * does not depend on any of the other three components (as the `Model` represents data entities of the domain, they should make sense on their own without depending on other components)
-
-<div markdown="span" class="alert alert-info">:information_source: **Note:** An alternative (arguably, a more OOP) model is given below. It has a `Tag` list in the `AddressBook`, which `Person` references. This allows `AddressBook` to only require one `Tag` object per unique tag, instead of each `Person` needing their own `Tag` objects.<br>
-
-<img src="images/BetterModelClassDiagram.png" width="450" />
-
-</div>
 
 
 ### Storage component
@@ -343,22 +344,23 @@ CS2103T students.
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
 
-| Priority | As a …​            | I want to …​                                                  | So that I can…​                                   |
-|----------|--------------------|---------------------------------------------------------------|---------------------------------------------------|
-| `* * *`  | student            | add my personal details to the system                         | get other students to learn more about me         |
-| `* * *`  | student            | view the rest of the students in the course                   | see my options for choosing teammates             |
-| `* * *`  | student            | see the other student’s name, major, basic info etc           | make informed decisions                           |
-| `* * *`  | student            | customise and update my profile details                       | ensure that my profile is up to date              |
-| `* * *`  | student            | view other students in the same tutorial group                | communicate with them                             |
-| `* * *`  | student            | remove my personal details from the system                    | stop using the application                        |
-| `* * *`  | student            | join a group on the app                                       | form a group for the course                       |
-| `* * *`  | user               | exit the app                                                  | close the app                                     |
-| `* *`    | student            | seek help and check requirements for cs2101/cs2103t groupings | be more clear of the valid group formations       |
-| `* * `   | student            | be able to click the links of the social media to view them   | avoid wasting time typing links manually          |
-| `* * `   | student            | be able to leave a group on the app                           | join another group of my choice                   |
-| `* * `   | student            | be able to delete a group I created on the app                | get rid of unnecessary groups on the system       |
-| `* * *`  | course coordinator | be able to remove all the data from the system                | reuse the application for new batches of students |
-| `* * *`  | course coordinator | be asked to confirm if I want to clear all the data           | prevent accidentally clearing all the data        |
+| Priority | As a …​            | I want to …​                                                       | So that I can…​                                   |
+|----------|--------------------|--------------------------------------------------------------------|---------------------------------------------------|
+| `* * *`  | student            | add my personal details to the system                              | get other students to learn more about me         |
+| `* * *`  | student            | view the rest of the students in the course                        | see my options for choosing teammates             |
+| `* * *`  | student            | see the other student’s name, major,tutorial slots, basic info etc | make informed decisions                           |
+| `* * *`  | student            | customise and update my profile details                            | ensure that my profile is up to date              |
+| `* * *`  | student            | view other students in the same tutorial group                     | communicate with them                             |
+| `* * *`  | student            | remove my personal details from the system                         | stop using the application                        |
+| `* * *`  | student            | join a group on the app                                            | form a group for the course                       |
+| `* * *`  | user               | exit the app                                                       | close the app                                     |
+| `* *`    | student            | seek help and check requirements for cs2101/cs2103t groupings      | be more clear of the valid group formations       |
+| `* * `   | student            | be able to click the links of the social media to view them        | avoid wasting time typing links manually          |
+| `* * `   | student            | be able to leave a group on the app                                | join another group of my choice                   |
+| `* * `   | student            | be able to delete a group I created on the app                     | get rid of unnecessary groups on the system       |
+| `* * `   | student            | be able to view my courses' deadlines and tasks                    | keep track of my projects' deliverables           |
+| `* * *`  | course coordinator | be able to remove all the data from the system                     | reuse the application for new batches of students |
+| `* * *`  | course coordinator | be asked to confirm if I want to clear all the data                | prevent accidentally clearing all the data        |
 
 *{More to be added}*
 
@@ -598,6 +600,36 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     Use case ends.
 
 
+**Use Case: List Tasks**
+
+**MSS**
+
+1. Student requests to list tasks of a specific group.
+2. Student provides the group number.
+3. StudentConnect retrieves the group by the given group number.
+4. If the group exists, StudentConnect displays the group in the group panel.
+5. StudentConnect displays the listed tasks along with a success message.
+   Use case ends.
+
+**Extensions:**
+
+* 2a. The student enters a non-existent group number.
+    * 2a1. StudentConnect shows an error message: "Group with the provided group number not found."
+    * Use case ends.
+
+* 2b. The student enters an invalid group number.
+    * 2a1. StudentConnect shows an error message: "Invalid command format!"
+    * Use case ends.
+
+* 4a. The specified group exists but has no tasks initialized.
+    * 4a1. StudentConnect initializes the tasks for the group.
+    * 4a2. StudentConnect displays the newly initialized tasks along with a success message.
+    * Use case resumes at step 5.
+
+* 4b. Task initialization fails due to a system error.
+    * 4b1. StudentConnect displays an error message indicating a failure in task initialization.
+    * Use case ends.
+
 **Use Case: Mark Task as Done**
 
 **MSS**
@@ -672,16 +704,16 @@ testers are expected to do more *exploratory* testing.
 
    1. Download the jar file and copy into an empty folder
 
-   1. Double-click the jar file Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
+   2. Double-click the jar file Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
 
-1. Saving window preferences
+2. Saving window preferences
 
    1. Resize the window to an optimum size. Move the window to a different location. Close the window.
 
-   1. Re-launch the app by double-clicking the jar file.<br>
+   2. Re-launch the app by double-clicking the jar file.<br>
        Expected: The most recent window size and location is retained.
 
-1. _{ more test cases …​ }_
+3. _{ more test cases …​ }_
 
 ### Deleting a person
 
@@ -689,16 +721,16 @@ testers are expected to do more *exploratory* testing.
 
    1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
 
-   1. Test case: `delete alexy@u.nus.edu`<br>
+   2. Test case: `delete alexy@u.nus.edu`<br>
       Expected: Contact with above email deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
 
-   1. Test case: `delete 0`<br>
+   3. Test case: `delete 0`<br>
       Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.
 
-   1. Other incorrect delete commands to try: `delete`, `delete abc@gmail.com`, `delete 1`<br>
+   4. Other incorrect delete commands to try: `delete`, `delete abc@gmail.com`, `delete 1`<br>
       Expected: Similar to previous.
 
-1. _{ more test cases …​ }_
+2. _{ more test cases …​ }_
 
 ### Saving data
 
@@ -706,4 +738,4 @@ testers are expected to do more *exploratory* testing.
 
    1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
 
-1. _{ more test cases …​ }_
+2. _{ more test cases …​ }_
