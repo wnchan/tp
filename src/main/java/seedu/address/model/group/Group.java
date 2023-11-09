@@ -1,14 +1,10 @@
 package seedu.address.model.group;
 
 import static java.util.Objects.requireNonNull;
-
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-
 import seedu.address.commons.util.ToStringBuilder;
-import seedu.address.model.group.exceptions.TaskException;
-import seedu.address.model.group.tasks.TaskInitializer;
 import seedu.address.model.group.tasks.TaskList;
 import seedu.address.model.person.Person;
 import seedu.address.model.tutorial.Tutorial;
@@ -34,11 +30,6 @@ public class Group {
     public Group(int number, Tutorial tutorial) {
         this.number = number;
         this.tutorial = tutorial;
-        try {
-            this.tasks = TaskInitializer.initializeTasks();
-        } catch (TaskException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     /**

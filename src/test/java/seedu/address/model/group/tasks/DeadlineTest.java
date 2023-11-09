@@ -25,15 +25,9 @@ public class DeadlineTest {
 
     @Test
     void testToString_withValidDeadline() throws TaskException {
-        Deadline deadline = new Deadline("Finish assignment", TaskStatus.NOT_DONE, TaskModule.CS2101, "23/09/2023 1300");
-        String expectedToString = "D NOT_DONE CS2101 Finish assignment 23/09/2023 1300";
-    void testToString() throws TaskException {
         Deadline deadline = new Deadline("Finish assignment", TaskStatus.NOT_DONE, TaskModule.CS2101,
                 "23/09/2023 1300");
-        DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("MMM dd yyyy h:mm a");
-        String expectedFormattedDateTime = LocalDateTime.parse("23/09/2023 1300",
-                DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm")).format(outputFormatter);
-        String expectedToString = "[D][ ] CS2101 Finish assignment (by: " + expectedFormattedDateTime + ")";
+        String expectedToString = "D NOT_DONE CS2101 Finish assignment 23/09/2023 1300";
         assertEquals(expectedToString, deadline.toString());
     }
 
