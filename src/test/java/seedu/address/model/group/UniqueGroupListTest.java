@@ -2,6 +2,7 @@ package seedu.address.model.group;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.testutil.Assert.assertThrows;
 import static seedu.address.testutil.TypicalGroups.GROUP1;
@@ -117,5 +118,37 @@ public class UniqueGroupListTest {
     @Test
     public void toStringMethod() {
         assertEquals(uniqueGroupList.asUnmodifiableObservableList().toString(), uniqueGroupList.toString());
+    }
+
+    @Test
+    public void equals_sameList_returnsTrue() {
+        UniqueGroupList firstList = new UniqueGroupList();
+        UniqueGroupList secondList = new UniqueGroupList();
+        assertTrue(firstList.equals(secondList));
+    }
+
+    @Test
+    public void equals_differentLists_returnsFalse() {
+        UniqueGroupList firstList = new UniqueGroupList();
+        UniqueGroupList secondList = new UniqueGroupList();
+        firstList.add(GROUP1);
+        secondList.add(GROUP2);
+        assertFalse(firstList.equals(secondList));
+    }
+
+    @Test
+    public void hashCode_sameList_returnsSameHashCode() {
+        UniqueGroupList firstList = new UniqueGroupList();
+        UniqueGroupList secondList = new UniqueGroupList();
+        assertEquals(firstList.hashCode(), secondList.hashCode());
+    }
+
+    @Test
+    public void hashCode_differentLists_returnsDifferentHashCode() {
+        UniqueGroupList firstList = new UniqueGroupList();
+        UniqueGroupList secondList = new UniqueGroupList();
+        firstList.add(GROUP1);
+        secondList.add(GROUP2);
+        assertNotEquals(firstList.hashCode(), secondList.hashCode());
     }
 }

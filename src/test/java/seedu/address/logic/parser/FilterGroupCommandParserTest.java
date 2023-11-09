@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import seedu.address.logic.commands.FilterGroupCommand;
 import seedu.address.model.group.GroupBelongsTutorialPredicate;
+import seedu.address.model.tutorial.Tutorial;
 
 public class FilterGroupCommandParserTest {
 
@@ -20,7 +21,12 @@ public class FilterGroupCommandParserTest {
     }
 
     @Test
-    public void parse_validArgs_returnsFilterGroupCommand() {
+    public void parse_invalidArg_throwsParseException() {
+        assertParseFailure(parser, "1", Tutorial.MESSAGE_CONSTRAINTS);
+    }
+
+    @Test
+    public void parse_validArg_returnsFilterGroupCommand() {
         // no leading and trailing whitespaces
         FilterGroupCommand expectedFilterGroupCommand = new FilterGroupCommand(new GroupBelongsTutorialPredicate("01"));
         assertParseSuccess(parser, "01", expectedFilterGroupCommand);

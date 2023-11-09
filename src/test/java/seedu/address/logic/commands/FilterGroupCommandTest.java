@@ -5,8 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.Messages.MESSAGE_GROUPS_LISTED_OVERVIEW;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
-import static seedu.address.testutil.TypicalGroups.GROUP1;
 import static seedu.address.testutil.TypicalGroups.GROUP2;
+import static seedu.address.testutil.TypicalGroups.GROUP3;
 import static seedu.address.testutil.TypicalGroups.GROUP4;
 import static seedu.address.testutil.TypicalGroups.getTypicalAddressBook;
 
@@ -54,21 +54,21 @@ public class FilterGroupCommandTest {
     @Test
     public void execute_oneSlot_oneGroupFound() {
         String expectedMessage = String.format(MESSAGE_GROUPS_LISTED_OVERVIEW, 1);
-        GroupBelongsTutorialPredicate predicate = preparePredicate("02");
+        GroupBelongsTutorialPredicate predicate = preparePredicate("03");
         FilterGroupCommand command = new FilterGroupCommand(predicate);
         expectedModel.updateFilteredGroupList(predicate);
         assertCommandSuccess(command, model, expectedMessage, expectedModel, true);
-        assertEquals(Arrays.asList(GROUP2), model.getFilteredGroupList());
+        assertEquals(Arrays.asList(GROUP3), model.getFilteredGroupList());
     }
 
     @Test
     public void execute_oneSlot_multipleGroupsFound() {
         String expectedMessage = String.format(MESSAGE_GROUPS_LISTED_OVERVIEW, 2);
-        GroupBelongsTutorialPredicate predicate = preparePredicate("01");
+        GroupBelongsTutorialPredicate predicate = preparePredicate("02");
         FilterGroupCommand command = new FilterGroupCommand(predicate);
         expectedModel.updateFilteredGroupList(predicate);
         assertCommandSuccess(command, model, expectedMessage, expectedModel, true);
-        assertEquals(Arrays.asList(GROUP1, GROUP4), model.getFilteredGroupList());
+        assertEquals(Arrays.asList(GROUP2, GROUP4), model.getFilteredGroupList());
     }
 
     @Test

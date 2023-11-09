@@ -22,6 +22,32 @@ public class FindGroupCommandParserTest {
     }
 
     @Test
+    public void parse_invalidArg_throwsParseException() {
+        assertParseFailure(parser, "a", ParserUtil.MESSAGE_INVALID_GROUP_NUMBER);
+    }
+
+    @Test
+    public void parse_invalidArgs_throwsParseException() {
+        assertParseFailure(parser, "a b", ParserUtil.MESSAGE_INVALID_GROUP_NUMBER);
+    }
+
+    @Test
+    public void parse_validAndInvalidArgs_throwsParseException() {
+        assertParseFailure(parser, "1 b", ParserUtil.MESSAGE_INVALID_GROUP_NUMBER);
+    }
+
+    @Test
+    public void parse_validArg_returnsFindGroupCommand() {
+        // no leading and trailing whitespaces
+        FindGroupCommand expectedFindGroupCommand =
+                new FindGroupCommand(new GroupContainsKeywordsPredicate(Arrays.asList("1")));
+        assertParseSuccess(parser, "1", expectedFindGroupCommand);
+
+        // multiple whitespaces before and after keyword
+        assertParseSuccess(parser, " \n 1 \n \t", expectedFindGroupCommand);
+    }
+
+    @Test
     public void parse_validArgs_returnsFindGroupCommand() {
         // no leading and trailing whitespaces
         FindGroupCommand expectedFindGroupCommand =
