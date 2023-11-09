@@ -9,7 +9,6 @@ import org.testfx.framework.junit5.ApplicationTest;
 
 import javafx.application.Platform;
 import javafx.scene.input.Clipboard;
-import javafx.scene.input.DataFormat;
 import javafx.stage.Stage;
 
 public class HelpWindowTest extends ApplicationTest {
@@ -44,14 +43,40 @@ public class HelpWindowTest extends ApplicationTest {
     }
 
     @Test
-    public void testCopyUrlMethod() {
+    public void focusShouldMakeWindowFocused() {
+        Platform.runLater(() -> {
+            helpWindow.show();
+            helpWindow.focus();
+            assertTrue(helpWindow.getRoot().isFocused());
+        });
+    }
+
+    @Test
+    public void otherWindowFocusShouldMakeWindowNotFocused() {
+        Platform.runLater(() -> {
+            helpWindow.show();
+            helpWindow.focus();
+            Stage otherWindow = new Stage();
+            otherWindow.show();
+            otherWindow.requestFocus();
+            assertFalse(helpWindow.getRoot().isFocused());
+        });
+    }
+
+    @Test
+    public void copyUrlShouldCopyCorrectUrlToClipboard() {
         Platform.runLater(() -> {
             helpWindow.copyUrl();
             Clipboard clipboard = Clipboard.getSystemClipboard();
-            DataFormat dataFormat = DataFormat.PLAIN_TEXT;
-            assertTrue(clipboard.hasContent(dataFormat), "Clipboard should contain plain text");
-            String clipboardText = (String) clipboard.getContent(dataFormat);
-            assertEquals(HelpWindow.USERGUIDE_URL, clipboardText, "Copied URL should match the expected URL");
+            assertEquals(HelpWindow.USERGUIDE_URL, clipboard.getString());
+        });
+    }
+
+    @Test
+    public void copyUrlShouldNotThrowExceptionWhenWindowIsNotShown() {
+        Platform.runLater(() -> {
+            helpWindow.copyUrl();
+            assertFalse(helpWindow.isShowing());
         });
     }
 }
