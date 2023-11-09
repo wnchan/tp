@@ -73,7 +73,7 @@ public class MarkCommand extends Command {
 
     }
 
-    private boolean isValidTaskIndex(int taskIndex, TaskList taskList) {
+    public boolean isValidTaskIndex(int taskIndex, TaskList taskList) {
         return taskIndex >= 0 && taskIndex < taskList.getTasks().size();
     }
 

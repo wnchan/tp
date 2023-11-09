@@ -7,8 +7,8 @@ import static seedu.address.testutil.Assert.assertThrows;
 import org.junit.jupiter.api.Test;
 
 import seedu.address.logic.commands.DeleteGroupCommand;
-
 import seedu.address.logic.parser.exceptions.ParseException;
+
 public class DeleteGroupCommandParserTest {
 
     private DeleteGroupCommandParser parser = new DeleteGroupCommandParser();

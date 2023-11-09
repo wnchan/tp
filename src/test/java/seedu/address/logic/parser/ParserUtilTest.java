@@ -336,7 +336,7 @@ public class ParserUtilTest {
         assertEquals(expectedTaskIndex, actualTaskIndex);
     }
 
-    @Test  
+    @Test
     public void parseNationality_null_throwsNullPointerException() {
         assertThrows(NullPointerException.class, () -> ParserUtil.parseNationality((String) null));
     }
