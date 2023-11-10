@@ -113,4 +113,13 @@ public class HelpWindow extends UiPart<Stage> {
         url.putString(USERGUIDE_URL);
         clipboard.setContent(url);
     }
+
+    /**
+     * Gets the "Copy" button of the help window.
+     *
+     * @return The "Copy" button.
+     */
+    public Button getCopyButton() {
+        return copyButton;
+    }
 }
