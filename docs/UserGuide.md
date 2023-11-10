@@ -1,6 +1,6 @@
 ---
 layout: page
-title: StudentConnect User Guide
+title: User Guide
 ---
 
 StudentConnect is a solution for hassle-free team formation for students to browse profiles and connect with others for the CS2103T and CS2101 group project.
