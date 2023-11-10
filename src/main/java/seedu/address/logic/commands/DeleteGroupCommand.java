@@ -50,4 +50,13 @@ public class DeleteGroupCommand extends Command {
         return new CommandResult(String.format(MESSAGE_DELETE_GROUP_SUCCESS, groupToDelete.getNumber()),
                 false, false, true, false);
     }
+
+    /**
+     * Gets the group number of the group to be deleted.
+     *
+     * @return The group number.
+     */
+    public int getGroupNumber() {
+        return groupNumber;
+    }
 }

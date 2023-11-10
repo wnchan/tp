@@ -9,55 +9,55 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 
 ---
 <a id="table-of-contents"></a>
-1. [How to Use This Guide](#how-to-use-this-guide)
-2. [Quick start](#quick-start)
-3. [Features](#features)
-    1. [General Commands](#general-commands)
-        1. [Viewing help : `help`](#viewing-help--help)
-        2. [Clearing all entries : `clear`](#clearing-all-entries--clear)
-        3. [Exiting the program : `exit`](#exiting-the-program--exit)
-    2. [Student Commands](#student-commands)
-        1. [Adding a student : `add`](#adding-a-student--add)
-        2. [Listing all students : `list`](#listing-all-students--list)
-        3. [Editing a student : `edit`](#editing-a-student--edit)
-        4. [Finding a student by name : `find`](#finding-a-student-by-name--find)
-        5. [Filtering students by tutorial : `filter`](#filtering-students-by-tutorial--filter)
-        6. [Deleting a student : `delete`](#deleting-a-student--delete)
-    3. [Group Commands](#group-commands)
-        1. [Creating a new group : `create`](#creating-a-new-group--create)
-        2. [Listing all groups : `listGroup`](#listing-all-groups--listgroup)
-        3. [Joining a group : `join`](#joining-a-group--join)
-        4. [Deleting a group : `deleteGroup`](#deleting-a-group--deletegroup)
-        5. [Leaving a group : `leave`](#leaving-a-specific-group--leave)
-        6. [Finding a group by group number : `findGroup`](#finding-a-group-by-group-number--findgroup)
-        7. [Filtering groups by tutorial : `filterGroup`](#filtering-groups-by-tutorial--filtergroup)
-        8. [Checking a group : `checkGroup`](#checking-a-group--checkgroup)
-        9. [List tasks : `tasks`](#listing-all-tasks-for-a-specific-group--tasks)
-        10. [Marking a task as done : `mark`](#marking-a-task-as-done--mark)
-        11. [Marking a task as not done : `unmark`](#marking-a-task-as-not-done--unmark)
-4. [Saving the data](#saving-the-data)
-5. [Editing the data file](#editing-the-data-file)
-6. [Archiving data files [coming in v2.0]](#archiving-data-files-coming-in-v20)
-7. [FAQ](#faq)
-8. [Known issues](#known-issues)
-9. [Command summary](#command-summary)
-10. [Appendix](#appendix)
-11. [Glossary](#glossary)
+
+1. <a href="#how-to-use-this-guide" style="color: blue;">How to Use This Guide</a>
+2. <a href="#quick-start" style="color: blue;">Quick Start</a>
+3. <a href="#features" style="color: blue;">Features</a>
+    1. <a href="#general-commands" style="color: blue;">General Commands</a>
+        1. <a href="#viewing-help--help" style="color: blue;">Viewing Help : `help`</a>
+        2. <a href="#clearing-all-entries--clear" style="color: blue;">Clearing All Entries : `clear`</a>
+        3. <a href="#exiting-the-program--exit" style="color: blue;">Exiting The Program : `exit`</a>
+    2. <a href="#student-commands" style="color: blue;">Student Commands</a>
+        1. <a href="#adding-a-student--add" style="color: blue;">Adding a Student : `add`</a>
+        2. <a href="#listing-all-students--list" style="color: blue;">Listing All Students : `list`</a>
+        3. <a href="#editing-a-student--edit" style="color: blue;">Editing a Student : `edit`</a>
+        4. <a href="#finding-a-student-by-name--find" style="color: blue;">Finding a Student by Name : `find`</a>
+        5. <a href="#filtering-students-by-tutorial--filter" style="color: blue;">Filtering Students by Tutorial : `filter`</a>
+        6. <a href="#deleting-a-student--delete" style="color: blue;">Deleting a Student : `delete`</a>
+    3. <a href="#group-commands" style="color: blue;">Group Commands</a>
+        1. <a href="#creating-a-new-group--create" style="color: blue;">Creating a New Group : `create`</a>
+        2. <a href="#listing-all-groups--listgroup" style="color: blue;">Listing All Groups : `listGroup`</a>
+        3. <a href="#joining-a-group--join" style="color: blue;">Joining a Group : `join`</a>
+        4. <a href="#deleting-a-group--deletegroup" style="color: blue;">Deleting a Group : `deleteGroup`</a>
+        5. <a href="#leaving-a-specific-group--leave" style="color: blue;">Leaving a Group : `leave`</a>
+        6. <a href="#finding-a-group-by-group-number--findgroup" style="color: blue;">Finding a Group by Group Number : `findGroup`</a>
+        7. <a href="#filtering-groups-by-tutorial--filtergroup" style="color: blue;">Filtering Groups by Tutorial : `filterGroup`</a>
+        8. <a href="#checking-a-group--checkgroup" style="color: blue;">Checking a Group : `checkGroup`</a>
+        9. <a href="#listing-all-tasks-for-a-specific-group--tasks" style="color: blue;">Listing All Tasks : `tasks`</a>
+        10. <a href="#marking-a-task-as-done--mark" style="color: blue;">Marking a Task as Done : `mark`</a>
+        11. <a href="#marking-a-task-as-not-done--unmark" style="color: blue;">Marking a Task as Not Done : `unmark`</a>
+4. <a href="#saving-the-data" style="color: blue;">Saving The Data</a>
+5. <a href="#editing-the-data-file" style="color: blue;">Editing The Data File</a>
+6. <a href="#archiving-data-files-coming-in-v20" style="color: blue;">Archiving Data Files [coming in v2.0]</a>
+7. <a href="#faq" style="color: blue;">FAQ</a>
+8. <a href="#known-issues" style="color: blue;">Known Issues</a>
+9. <a href="#command-summary" style="color: blue;">Command Summary</a>
+10. <a href="#appendix" style="color: blue;">Appendix</a>
+11. <a href="#glossary" style="color: blue;">Glossary</a>
 
 --------------------------------------------------------------------------------------------------------------------
 ## How to Use This Guide
 
 This guide is designed to help you navigate the features of StudentConnect with ease. 
+- To assist you in understanding and using this manual effectively, we've included a symbol table that outlines the icons and notations you'll encounter throughout the document.
 
-1. To assist you in understanding and using this manual effectively, we've included a symbol table that outlines the icons and notations you'll encounter throughout the document.
+| Symbol               | Type        | Description                                                                                                                         |
+|----------------------|-------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| :information_source: | Information | This icon indicates additional information or context that can help you understand the features or requirements better.             |
+| :bulb:               | Tip         | Look for this symbol when you need helpful suggestions on using StudentConnect features more efficiently.                           |
+| :exclamation:        | Important   | This alerts you to critical information or functionality within StudentConnect that you should pay close attention to.              |
 
-| Symbol               | Type        | Description                                                                                                                             |
-|----------------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| :information_source: | Information | This icon indicates additional information or context that can help you understand the features or requirements better.                 |
-| :bulb:               | Tip         | Look for this symbol when you need helpful suggestions on using StudentConnect features more efficiently.                               |
-| :exclamation:        | Important   | This symbol alerts you to critical information or essential functionality within StudentConnect that you should pay close attention to. |
-
-2. Throughout this guide, we've provided screenshots that illustrate the expected output for each command and feature. This visual aid is designed to enhance your understanding and ensure that you can confidently anticipate the results of your actions. Below is a detailed overview of the various interface components that you'll become familiar with.
+- Throughout this guide, we've provided screenshots that illustrate the expected output for each command and feature. This visual aid is designed to enhance your understanding and ensure that you can confidently anticipate the results of your actions. Below is a detailed overview of the various interface components that you'll become familiar with.
 
 <div style="text-align: center; border: 1px solid #000; padding: 10px; display: inline-block; margin: auto;">
   <img src="images/StudentListUI.png" alt="Student List View of StudentConnect" style="margin-bottom: 10px;"/>
@@ -69,29 +69,30 @@ This guide is designed to help you navigate the features of StudentConnect with 
   <div>Figure 2: Group List View of StudentConnect</div>
 </div>
 
-- **Command Box**: This is where you can enter any command for execution. After typing your command, press Enter to submit. If there is a syntax error or the command is unrecognisable, the text will turn red, prompting you to correct the command according to the specified requirements before pressing Enter again.
-- **Feedback Box**: The feedback box is the area where the application communicates responses to your commands. It displays the correct command format if there is an input error, error messages when a command fails to execute, and the outcomes for commands like the `tasks` command.
-- **Student List**: The student list panel displays a roster of all students and their associated details. Executing any student-related command will result in this panel being updated to show the relevant student list.
-- **Group List**: Similar to the student list, the group list panel shows all existing groups along with their members and designated tutorials. Group-related commands will update this panel accordingly.
-- **Menu Options**: The menu options provide quick access to general tasks within the application.
+1. **Command Box**: This is where you can enter any command for execution. After typing your command, press Enter to submit. If there is a syntax error or the command is unrecognisable, the text will turn red, prompting you to correct the command according to the specified requirements before pressing Enter again.
+2. **Feedback Box**: The feedback box is the area where the application communicates responses to your commands. It displays the correct command format if there is an input error, error messages when a command fails to execute, and the outcomes for commands like the `tasks` command.
+3. **Student List**: The student list panel displays a roster of all students and their associated details. Executing any student-related command will result in this panel being updated to show the relevant student list.
+4. **Group List**: Similar to the student list, the group list panel shows all existing groups along with their members and designated tutorials. Group-related commands will update this panel accordingly.
+5. **Menu Options**: The menu options provide quick access to general tasks within the application.
 <div markdown="span" class="alert alert-primary">:exclamation: **Important:**
 To guarantee that all your changes and data are saved correctly, it is strongly advised to type the `exit` command into the Command Box
 instead of selecting `exit` from the menu options or closing the application window directly.
 This practice helps prevent data loss and ensures a proper shutdown of the application.
 </div>
 
-3. Should you encounter any terminology within the guide that is unfamiliar, you can consult the [glossary](#glossary) section below. It provides clear definitions and explanations to help you grasp the specialized language used throughout this guide.
-4. For any inquiries, the [FAQ](#faq) section is a good place to look for answers. In case your question is not addressed there, do not hesitate to submit an issue [here](https://github.com/AY2324S1-CS2103T-F12-2/tp/issues) for further assistance.
-5. The [appendix](#appendix) section is included to detail all possible input values for fields that have specific constraints or require particular formats. This reference can help ensure that you input data correctly and understand the limitations of each field.
-6. For a quick and compact overview of all the commands that StudentConnect offers, refer to the [command summary](#command-summary). This section servers as a handy reference for all possible actions you can perform within the application, laid out in an easily digestible format.
+- For convenient navigation throughout this UG, you can refer to the <a href="#table-of-contents" style="color: blue;">table of contents</a>.
+- Should you encounter any terminology within the guide that is unfamiliar, you can consult the <a href="#glossary" style="color: blue;">glossary</a> section below. It provides clear definitions and explanations to help you grasp the specialized language used throughout this guide.
+- For any inquiries, the <a href="#faq" style="color: blue;">faq</a> section is a good place to look for answers. In case your question is not addressed there, do not hesitate to submit an issue <a href="https://github.com/AY2324S1-CS2103T-F12-2/tp/issues" style="color: blue;">here</a> for further assistance.
+- The <a href="#appendix" style="color: blue;">appendix</a> section is included to detail all possible input values for fields that have specific constraints or require particular formats. This reference can help ensure that you input data correctly and understand the limitations of each field.
+- For a quick and compact overview of all the commands that StudentConnect offers, refer to the <a href="#command-summary" style="color: blue;">command summary</a>. This section servers as a handy reference for all possible actions you can perform within the application, laid out in an easily digestible format.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Quick start
+## Quick Start
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
-2. Download the latest `studentconnect.jar` from [here](https://github.com/AY2324S1-CS2103T-F12-2/tp/releases).
+2. Download the latest `studentconnect.jar` from <a href="https://github.com/AY2324S1-CS2103T-F12-2/tp/releases" style="color: blue;">here</a>
 
 3. Copy the file to the folder you want to use as the _home folder_ for your StudentConnect.
 
@@ -115,10 +116,9 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
     * `create t/03` : 
         * Creates a new group assigned to tutorial 3.
 
-6. Refer to the [Features](#features) below for details of each command.
+6. Refer to the <a href="#features" style="color: blue;">Features</a> below for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
-
 ## Features
 
 <div markdown="block" class="alert alert-info">
@@ -145,9 +145,17 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </div>
 
+<hr>
+
 ## General Commands
 
-### Viewing help : `help`
+<div markdown="span" class="alert alert-primary">:exclamation: **Important:**
+StudentConnect provides a set of general commands to make it more convenient for users to navigate the app.
+</div>
+
+<hr>
+
+### Viewing Help : `help`
 
 Shows a message explaining how to access the help page in the user guide and a button to copy the link.<br>
 Provides a list of requirements for forming a group in CS2103T/CS2101.
@@ -162,7 +170,9 @@ Provides a list of requirements for forming a group in CS2103T/CS2101.
 
 ![help window](images/help.png)
 
-### Clearing all entries : `clear`
+<hr>
+
+### Clearing All Entries : `clear`
 
 Clears all entries from the system upon confirmation in the pop-up.
 
@@ -176,11 +186,14 @@ Clears all entries from the system upon confirmation in the pop-up.
   ![result for 'clear' GUI](images/clearUI.png)
 
 #### Expected Output(Failure or Cancellation):
-If the clear command fails, or you press `cancel` on the confirmation pop-up: 
-* GUI: All students' details remain on the student list.
+* Case: Clear command fails.
+* Case: You press `cancel` on the confirmation pop-up.
+  GUI: All students' details remain on the student list.
   ![result for cancelled 'clear' GUI](images/clearCancel.png)
 
-### Exiting the program : `exit`
+<hr>
+
+### Exiting The Program : `exit`
 
 Exits the program.
 
@@ -194,9 +207,17 @@ Exits the program.
 #### Expected Output(Failure):
 * Message: `Error: Exiting the program failed.`
 
+<hr>
+
 ## Student Commands
 
-### Adding a student : `add`
+<div markdown="span" class="alert alert-primary">:exclamation: **Important:**
+StudentConnect provides a set of student information to make it more convenient for students to connect with others.
+</div>
+
+<hr>
+
+### Adding a Student : `add`
 
 Adds a student to the system.
 
@@ -220,7 +241,7 @@ A student can have any number of social media links. Add multiple social media l
 
 #### Acceptable Values:
 * Name: Full names with alphabetical characters. Maximum 30 characters.
-* Major: Valid major names at NUS. View the [appendix](#valid-majors) for more information.
+* Major: Valid major names at NUS. View the <a href="#valid-majors" style="color: blue;">valid majors</a> list below for more information.
 * Year: Numeric year level. Accept values between `1` and `6` inclusive.
 * Email: Valid email address ending in `@u.nus.edu`. Maximum 20 characters.
 * Description: Maximum 150 characters.
@@ -251,7 +272,9 @@ Message: `Invalid command format! add: Adds a student to StudentConnect.`<br>
   `Example: add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time`<br>
   `t/02 sm/https://www.linkedin.com/in/john-doe-123456789 nt/local g/M;`
 
-### Listing all students : `list`
+<hr>
+
+### Listing All Students : `list`
 
 Shows a list of all students in the system.
 
@@ -265,7 +288,9 @@ Shows a list of all students in the system.
 #### Expected Output (Failure):
 * Message: `Error: Unable to retrieve student entries. Please try again.`
 
-### Editing a student : `edit`
+<hr>
+
+### Editing a Student : `edit`
 
 Edits an existing student in the system.
 
@@ -304,7 +329,9 @@ Message: `At least one field to edit must be provided.`
 * Case: Email not found in the system.<br>
 Message: `Student with the provided email not found.`
 
-### Finding a student by name : `find`
+<hr>
+
+### Finding a Student by Name : `find`
 
 Finds student(s) whose name(s) contain any of the given keywords.
 
@@ -331,7 +358,9 @@ Message: `Invalid command format!`<br>
   `Parameters: KEYWORD [MORE_KEYWORDS]...`<br>
   `Example: find alice bob charlie`
 
-### Filtering students by tutorial : `filter`
+<hr>
+
+### Filtering Students by Tutorial : `filter`
 
 Filters students by tutorial based on the given slots.
 
@@ -360,7 +389,9 @@ Filters students by tutorial based on the given slots.
 * Case: Invalid slot(s) is provided, e.g. `filter 25`, `filter 0`, etc.
  Message: "Tutorials should be 2-digit numbers between 01 and 22."
 
-### Deleting a student : `delete`
+<hr>
+
+### Deleting a Student : `delete`
 
 Deletes a specific student and all personal details based on email.
 
@@ -381,22 +412,28 @@ Deletes a specific student and all personal details based on email.
   ![Delete feature](images/delete.png)
 
 #### Expected Output (Failure):
-* Message: `Student with the provided email not found.`
-* Message: `Invalid command format!`<br>
+* Case: Provided email not registered in system.
+  Message: `Student with the provided email not found.`
+* Case: Invalid command format e.g. `delete 02`.
+  Message: `Invalid command format!`<br>
   `delete: Deletes the student identified by the email address.`<br>
   `Parameters: EMAIL`<br>
   `Example: delete alexyeoh@u.nus.edu`
+
+<hr>
 
 ## Group Commands
 
 <div markdown="span" class="alert alert-primary">:exclamation: **Important:**
 StudentConnect provides a set of group formation features to make it more convenient for students to find group mates. A group consists of 3 main components: a group number, a tutorial number and the group members.
 <br> **Group number:** Used to uniquely identify the group.
-<br> **Tutorial number:** This number is set by the creator of the group and serves as an indication of which tutorial class the members of the group are interested in enrolling in. It **does not** restrict students who do not have a matching tutorial number in their profile from joining the group. Running the [checkGroup](#checking-a-group--checkgroup) command displays a warning if there are members whose tutorial numbers do not match the group's tutorial number.
+<br> **Tutorial number:** This number is set by the creator of the group and serves as an indication of which tutorial class the members of the group are interested in enrolling in. It **does not** restrict students who do not have a matching tutorial number in their profile from joining the group. Running the <a href="#checking-a-group--checkgroup" style="color: blue;">checkGroup</a> command displays a warning if there are members whose tutorial numbers do not match the group's tutorial number.
 <br> **Group members:** The students who are members of this group.
 </div>
 
-### Creating a new group : `create`
+<hr>
+
+### Creating a New Group : `create`
 
 Creates a new empty group with the given tutorial number. The group number is automatically assigned and is used to uniquely identify each group. The tutorial number serves as an indication of which tutorial class the members of the group are interested in enrolling in. This can provide information about the tutorial preferences of the group members, to other students who are looking for a group to join.
 
@@ -415,7 +452,9 @@ Message: `Invalid command format!`
 * Case: Invalid tutorial number is provided, e.g. `create t/0`, `create t/25`, etc.
  Message: `Tutorials should be 2-digit numbers between 01 and 22.`
 
-### Listing all groups : `listGroup`
+<hr>
+
+### Listing All Groups : `listGroup`
 
 Displays a list of all groups. For each group, the group number, and the names and emails of the members are shown.
 
@@ -429,7 +468,9 @@ Displays a list of all groups. For each group, the group number, and the names a
 #### Expected Output(Failure):
 * Message: `Error: Unable to retrieve group entries. Please try again.`
 
-### Deleting a group : `deleteGroup`
+<hr>
+
+### Deleting a Group : `deleteGroup`
 
 Deletes a group from the system, based on group number.
 
@@ -448,9 +489,12 @@ Deletes a group from the system, based on group number.
   ![result for 'deleteGroup gr/3'](images/deleteGroup.png)
 
 #### Expected Output(Failure):
-* Message: `Group with the provided group number not found.`
+* Case: Group with specified number is not in the system.
+  Message: `Group with the provided group number not found.`
 
-### Joining a group : `join`
+<hr>
+
+### Joining a Group : `join`
 
 Adds a student to the specified group.
 
@@ -474,7 +518,9 @@ Message: `The provided student is already in another group.`
 
 ![Sample result for join](images/join.png)
 
-### Leaving a specific group : `leave`
+<hr>
+
+### Leaving a Specific Group : `leave`
 
 Deletes a member from a specific group, indicating that they have left.
 
@@ -495,7 +541,6 @@ Deletes a member from a specific group, indicating that they have left.
 * Message: `Leave successful! NAME has left group 1!`
 ![sample result for 'leave'](images/leave.png)
 
-
 #### Expected Output (Failure):
 * Case: Email not found in the system.<br>
 Message: `Person with the provided email not found.`
@@ -504,7 +549,9 @@ Message: `Group with the provided group number not found.`
 * Case: Student is not a member of the provided group.<br> 
 Message: `The above student is not a member of the provided group.`
 
-### Finding a group by group number : `findGroup`
+<hr>
+
+### Finding a Group by Group Number : `findGroup`
 
 Finds group(s) with group number(s) that matches any of the given keywords.
 
@@ -533,7 +580,9 @@ Finds group(s) with group number(s) that matches any of the given keywords.
 * Case: Invalid keyword(s) is provided, e.g. `findGroup a`, `findGroup 0`, etc.
  Message: `Group number is not a non-zero unsigned integer.`
 
-### Filtering groups by tutorial : `filterGroup`
+<hr>
+
+### Filtering Groups by Tutorial : `filterGroup`
 
 Filters the groups by tutorial based on the given slot.
 
@@ -559,7 +608,9 @@ Message: `Invalid command format!`<br>
 * Case: Invalid slot is provided, e.g. `filterGroup 0`, `filterGroup 25`, etc.
 Message: `Tutorials should be 2-digit numbers between 01 and 22.`
 
-### Checking a group : `checkGroup`
+<hr>
+
+### Checking a Group : `checkGroup`
 
 Checks if a group fulfils the group requirements of the course.
 
@@ -603,7 +654,9 @@ Message: `Invalid command format!`<br>
 * Case: Group not found in the system.<br>
 Message: `Group with the provided group number not found.`
 
-### Listing all tasks for a specific group : `tasks`
+<hr>
+
+### Listing All Tasks : `tasks`
 
 Lists out all tasks for a specific group.
 
@@ -632,7 +685,9 @@ Lists out all tasks for a specific group.
 * Case: Invalid group number as the group has not yet been created
     * Message: `Group with the provided group number not found.`
 
-### Marking a task as done : `mark`
+<hr>
+
+### Marking a Task as Done : `mark`
 
 Mark a task for a specified group as done.
 
@@ -665,7 +720,9 @@ Message: `Task index must be a positive integer.`
 * Case: Invalid task index, e.g. task index greater than the number of tasks found from the list in `tasks` command.<br>
 Message: `Invalid task index. Task not found.`
 
-### Marking a task as not done : `unmark`
+<hr>
+
+### Marking a Task as Not Done : `unmark`
 
 Mark a task for a specified group as not done.
 
@@ -698,11 +755,15 @@ Message: `Task index must be a positive integer.`
 * Case: Invalid task index, e.g. task index greater than the number of tasks found from the list in `tasks` command.<br>
 Message: `Invalid task index. Task not found.`
 
-### Saving the data
+--------------------------------------------------------------------------------------------------------------------
+
+### Saving The Data
 
 Students' data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
 
-### Editing the data file
+--------------------------------------------------------------------------------------------------------------------
+
+### Editing The Data File
 
 Students' data are saved automatically as a JSON file `[JAR file location]/data/addressbook.json`. Advanced users are welcome to update data directly by editing that data file.
 
@@ -710,7 +771,9 @@ Students' data are saved automatically as a JSON file `[JAR file location]/data/
 If your changes to the data file makes its format invalid, StudentConnect will discard all data and start with an empty data file at the next run. Hence, it is recommended to take a backup of the file before editing it.
 </div>
 
-### Archiving data files `[coming in v2.0]`
+--------------------------------------------------------------------------------------------------------------------
+
+### Archiving Data Files `[coming in v2.0]`
 
 _Details coming soon ..._
 
@@ -721,16 +784,18 @@ _Details coming soon ..._
 **Q**: How do I transfer my data to another Computer?<br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous StudentConnect home folder.
 
+**Q**: Where is my data being saved? <br>
+**A**: It is saved in `[JAR file location]/data/addressbook.json`.
 --------------------------------------------------------------------------------------------------------------------
 
-## Known issues
+## Known Issues
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 2. **Clear Command**, if you use the clear command, but exit the application incorrectly using the red exit button instead of running the exit command, data will not be cleared. Kindly always use the exit command to leave the application.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Command summary
+## Command Summary
 
 | Action           | Format, Examples                                                                                                                                                                                                                                |
 |------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -840,3 +905,31 @@ For now, we accept the following majors in National University of Singapore(NUS)
 
 --------------------------------------------------------------------------------------------------------------------
 ## Glossary
+
+This glossary is intended to provide definitions for terms that may be unfamiliar to users. It is arranged in alphabetical order.
+
+- **CS2101**: Effective Communication for Computing Professionals - A course designed to equip computing professionals with essential communication skills, both in technical and non-technical contexts. It covers the creation of clear and comprehensible software documentation and effective communication strategies for diverse audiences.
+
+- **CS2103T**: Software Engineering - A course focusing on the systematic and rigorous development of software systems. It covers essential concepts and analytical tools necessary for software engineering.
+
+- **Case-Insensitive**: Refers to the handling of text where uppercase and lowercase letters are treated as equivalent. For instance, in a case-insensitive search, searching for "Java" or "java" would yield the same results.
+
+- **Case-Sensitive**: Opposite of case-insensitive, this refers to situations where uppercase and lowercase letters are treated differently. For example, "Java" and "java" would be considered distinct.
+
+- **Command Terminal**: An interface in a computing environment where the user can input text commands to perform specific tasks.
+
+- **Double Degree**: An academic program where a student earns two distinct degrees simultaneously, usually in different fields.
+
+- **Double Major**: A type of academic degree where a student completes two sets of major requirements, although they receive just one degree.
+
+- **Extraneous Parameters**: These are additional or unnecessary parameters given in a command that do not affect its execution but are not required for the command to function properly.
+
+- **GUI (Graphical User Interface)**: A type of user interface that allows users to interact with electronic devices through graphical icons and visual indicators, as opposed to text-based interfaces, typed command labels, or text navigation.
+
+- **Home Folder**: In computing, this is a personal directory assigned to a user in a file system, where they store personal files, settings, and configurations.
+
+- **Issue (GitHub)**: A feature in GitHub used to track ideas, enhancements, tasks, or bugs for work on GitHub projects.
+
+- **Java 11**: A version of Java, a widely used programming language and computing platform. Java 11 includes various updates and features different from its predecessors.
+
+- **Major-Minor**: An academic program where a student completes a major (primary focus) and a minor (secondary concentration) in different subjects.

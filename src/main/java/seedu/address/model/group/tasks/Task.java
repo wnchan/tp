@@ -4,15 +4,13 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-
-import seedu.address.model.group.exceptions.TaskException;
+import java.util.Objects;
 
 
 /**
  * The Task class represents a task in the StudentConnect application.
  */
 public class Task {
-    private static int counter = 0;
 
     private String task;
     private TaskStatus status;
@@ -55,7 +53,7 @@ public class Task {
      */
     @Override
     public String toString() {
-        return this.type + status.toString() + " " + this.module + " " + this.task + " " + this.by;
+        return this.type + " " + status.toString() + " " + this.module + " " + this.task + " " + this.by;
     }
 
     /**
@@ -64,21 +62,6 @@ public class Task {
      * @param task The task description to add.
      */
     public void addTask(String task) {
-        if (!task.equals("")) {
-            if (!task.isEmpty()) {
-                //Duke.taskList.addTask(this); //need to change according to how we implement the main class
-                counter++;
-            }
-        }
-    }
-
-    /**
-     * Gets the count of tasks.
-     *
-     * @return The count of tasks.
-     */
-    public static int getCounter() {
-        return counter;
     }
 
     /**
@@ -140,9 +123,8 @@ public class Task {
      *
      * @param dateTimeString The date and time string in the format "dd/MM/yyyy HHmm".
      * @return A LocalDateTime object representing the parsed date and time.
-     * @throws TaskException If the date and time string has an invalid format.
      */
-    public LocalDateTime parseDateTime(String dateTimeString) throws TaskException {
+    public LocalDateTime parseDateTime(String dateTimeString) {
         // Split the input string into date and time parts
         String[] parts = dateTimeString.split(" ", 2);
 
@@ -168,25 +150,6 @@ public class Task {
         // Combine the date and time into a LocalDateTime object
         return LocalDateTime.of(date, time);
     }
-
-    /**
-     * Formats the list of tasks into a human-readable string.
-     *
-     * @return A formatted string containing the tasks in the list.
-     */
-    public String formatList() {
-        StringBuilder formattedList = new StringBuilder();
-        formattedList.append("Here are the tasks in your list:\n");
-
-        /*for (int i = 0; i < Duke.taskList.size(); i++) {
-            Task task = Duke.taskList.getTasks().get(i);
-            formattedList.append((i + 1)).append(". ").append(task.toString()).append("\n");
-        }*/
-
-        //formattedList.append(Ui.horizontalLine);
-        return formattedList.toString();
-    }
-
 
     /**
      * Gets the type of the task.
@@ -219,57 +182,16 @@ public class Task {
     }
 
     /**
-     * Checks if the current task contains the specified keyword.
+     * Gets the deadline of the task.
      *
-     * @param keyword The keyword to search for within the task.
-     * @return {@code true} if the task contains the keyword,
-     *     {@code false} otherwise.
+     * @return string representation of deadline, or empty string for todo tasks.
      */
-    public boolean contains(String keyword) {
-        return task.contains(keyword);
-    }
-
-    /*/**
-     * Deletes a task from the task list and updates the
-     * storage file accordingly.
-     *
-     * @param i The index of the task to be deleted.
-     * @return A message confirming the deletion of the task and
-     * the current task count.
-     * @throws TaskException If the provided index is invalid.
-     */
-    /*public String delete(int i) throws TaskException {
-        if (i > Duke.taskList.size() || i <= 0) {
-            throw new TaskException(
-                    "OOPS!!! Invalid number :(\n");
-        }
-        Task deleteTask = Duke.taskList.getTasks().get(i - 1);
-        counter = counter - 1;
-        Duke.taskList.deleteTask(i - 1);
-        Storage.deleteLineFromFile(i);
-        return ("Noted. I've removed this task:\n" + deleteTask.toString()
-                + "\n" + String.format("Now you have %d tasks in the list\n", counter)
-                );
-    }*/
-
-    /**
-     * Generates String representation to be saved in text file.
-     */
-    public String generateStr() {
-        return task;
-    }
     public String getDeadline() {
-        if (this.getTaskType() == "D") {
+        if (Objects.equals(this.getTaskType(), "D")) {
             return this.getDeadline();
         } else {
             return "";
         }
     }
 
-    /**
-     * Saves the task to a file.
-     */
-    public void saveToFile() {
-        return;
-    }
 }

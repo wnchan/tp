@@ -14,27 +14,18 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import javafx.application.Platform;
 import seedu.address.model.socialmedialink.SocialMediaLink;
 
 public class PersonCardTest {
 
     @BeforeAll
-    public static void initJavaFx() {
-        // Ensure JavaFX Toolkit is initialized only once
-        if (!Platform.isFxApplicationThread()) {
-            Platform.startup(() -> {
-                // Initialization code, if needed
-            });
-        }
+    public static void init() {
+        JavaFxInitializer.initialize();
     }
 
     @AfterAll
-    public static void cleanupJavaFx() {
-        // Ensure JavaFX Toolkit is exited only once
-        if (!Platform.isFxApplicationThread()) {
-            Platform.exit();
-        }
+    public static void cleanup() {
+        JavaFxInitializer.cleanup();
     }
 
     @Test

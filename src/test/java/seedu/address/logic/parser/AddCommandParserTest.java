@@ -9,8 +9,10 @@ import static seedu.address.logic.commands.CommandTestUtil.GENDER_DESC_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.GENDER_DESC_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_DESCRIPTION_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_EMAIL_DESC;
+import static seedu.address.logic.commands.CommandTestUtil.INVALID_GENDER_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_MAJOR_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_NAME_DESC;
+import static seedu.address.logic.commands.CommandTestUtil.INVALID_NATIONALITY_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_SM_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_TUTORIAL_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_YEAR_DESC;
@@ -26,8 +28,10 @@ import static seedu.address.logic.commands.CommandTestUtil.SM_DESC_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.TUTORIAL_DESC_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_DESCRIPTION_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_GENDER_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_MAJOR_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_NATIONALITY_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_SM_GITHUB_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_SM_LINKEDIN_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TUT_FIRST_BOB;
@@ -53,8 +57,10 @@ import seedu.address.logic.Messages;
 import seedu.address.logic.commands.AddCommand;
 import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
+import seedu.address.model.person.Gender;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
+import seedu.address.model.person.Nationality;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Year;
 import seedu.address.model.socialmedialink.SocialMediaLink;
@@ -116,6 +122,14 @@ public class AddCommandParserTest {
         assertParseFailure(parser, DESCRIPTION_DESC_AMY + validExpectedPersonString,
                 Messages.getErrorMessageForDuplicatePrefixes(PREFIX_DESCRIPTION));
 
+        // multiple nationalities
+        assertParseFailure(parser, NATIONALITY_DESC_AMY + validExpectedPersonString,
+            Messages.getErrorMessageForDuplicatePrefixes(PREFIX_NATIONALITY));
+
+        // multiple genders
+        assertParseFailure(parser, GENDER_DESC_AMY + validExpectedPersonString,
+            Messages.getErrorMessageForDuplicatePrefixes(PREFIX_GENDER));
+
         // multiple fields repeated
         assertParseFailure(parser,
                 validExpectedPersonString + MAJOR_DESC_AMY + EMAIL_DESC_AMY + NAME_DESC_AMY
@@ -146,6 +160,14 @@ public class AddCommandParserTest {
         assertParseFailure(parser, INVALID_DESCRIPTION_DESC + validExpectedPersonString,
                 Messages.getErrorMessageForDuplicatePrefixes(PREFIX_DESCRIPTION));
 
+        // invalid nationality
+        assertParseFailure(parser, INVALID_NATIONALITY_DESC + validExpectedPersonString,
+            Messages.getErrorMessageForDuplicatePrefixes(PREFIX_NATIONALITY));
+
+        // invalid gender
+        assertParseFailure(parser, INVALID_GENDER_DESC + validExpectedPersonString,
+            Messages.getErrorMessageForDuplicatePrefixes(PREFIX_GENDER));
+
         // valid value followed by invalid value
 
         // invalid name
@@ -167,6 +189,14 @@ public class AddCommandParserTest {
         // invalid description
         assertParseFailure(parser, validExpectedPersonString + INVALID_DESCRIPTION_DESC,
                 Messages.getErrorMessageForDuplicatePrefixes(PREFIX_DESCRIPTION));
+
+        // invalid nationality
+        assertParseFailure(parser, validExpectedPersonString + INVALID_NATIONALITY_DESC,
+            Messages.getErrorMessageForDuplicatePrefixes(PREFIX_NATIONALITY));
+
+        // invalid gender
+        assertParseFailure(parser, validExpectedPersonString + INVALID_GENDER_DESC,
+            Messages.getErrorMessageForDuplicatePrefixes(PREFIX_GENDER));
     }
 
     @Test
@@ -212,6 +242,18 @@ public class AddCommandParserTest {
                         + NATIONALITY_DESC_BOB + GENDER_DESC_BOB,
                 expectedMessage);
 
+        // missing gender prefix
+        assertParseFailure(parser, NAME_DESC_BOB + MAJOR_DESC_BOB + YEAR_DESC_BOB + EMAIL_DESC_BOB
+                + DESCRIPTION_DESC_BOB + TUTORIAL_DESC_BOB + SM_DESC_BOB
+                + NATIONALITY_DESC_BOB + VALID_GENDER_BOB,
+            expectedMessage);
+
+        // missing nationality prefix
+        assertParseFailure(parser, NAME_DESC_BOB + MAJOR_DESC_BOB + YEAR_DESC_BOB + EMAIL_DESC_BOB
+                + DESCRIPTION_DESC_BOB + TUTORIAL_DESC_BOB + SM_DESC_BOB
+                + VALID_NATIONALITY_BOB + GENDER_DESC_BOB,
+            expectedMessage);
+
         // all prefixes missing
         assertParseFailure(parser, VALID_NAME_BOB + VALID_MAJOR_BOB + VALID_YEAR_BOB + VALID_EMAIL_BOB
                         + VALID_DESCRIPTION_BOB + NATIONALITY_DESC_BOB + GENDER_DESC_BOB,
@@ -254,6 +296,16 @@ public class AddCommandParserTest {
         assertParseFailure(parser, NAME_DESC_BOB + MAJOR_DESC_BOB + YEAR_DESC_BOB + EMAIL_DESC_BOB
                 + DESCRIPTION_DESC_BOB + TUTORIAL_DESC_BOB + INVALID_SM_DESC
                            + NATIONALITY_DESC_BOB + GENDER_DESC_BOB, SocialMediaLink.MESSAGE_CONSTRAINTS);
+
+        // invalid gender
+        assertParseFailure(parser, NAME_DESC_BOB + MAJOR_DESC_BOB + YEAR_DESC_BOB + EMAIL_DESC_BOB
+            + DESCRIPTION_DESC_BOB + TUTORIAL_DESC_BOB + SM_DESC_BOB
+            + NATIONALITY_DESC_BOB + INVALID_GENDER_DESC, Gender.MESSAGE_CONSTRAINTS);
+
+        // invalid nationality
+        assertParseFailure(parser, NAME_DESC_BOB + MAJOR_DESC_BOB + YEAR_DESC_BOB + EMAIL_DESC_BOB
+            + DESCRIPTION_DESC_BOB + TUTORIAL_DESC_BOB + SM_DESC_BOB
+            + INVALID_NATIONALITY_DESC + GENDER_DESC_BOB, Nationality.MESSAGE_CONSTRAINTS);
 
         // two invalid values, only first invalid value reported
         assertParseFailure(parser, INVALID_NAME_DESC + MAJOR_DESC_BOB + YEAR_DESC_BOB + EMAIL_DESC_BOB

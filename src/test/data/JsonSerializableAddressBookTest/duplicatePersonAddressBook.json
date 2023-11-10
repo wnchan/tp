@@ -5,14 +5,22 @@
       "major": "Computer Science",
       "year": "2",
       "email": "pauline@u.nus.edu",
-      "description": "Friendly person"
+      "description": "Friendly person",
+      "tutorials": ["01", "02"],
+      "socialMediaLinks": ["https://www.linkedin.com/in/alice"],
+      "gender" : "F",
+      "nationality": "foreigner"
     },
     {
       "name": "Alice Pauline",
       "major": "Computer Science",
       "year": "2",
       "email": "pauline@u.nus.edu",
-      "description": "Colleague"
+      "description": "Friendly person",
+      "tutorials": ["01", "02"],
+      "socialMediaLinks": ["https://www.linkedin.com/in/alice"],
+      "gender" : "F",
+      "nationality": "foreigner"
     }
-  ]
+  ], "groups" : []
 }
