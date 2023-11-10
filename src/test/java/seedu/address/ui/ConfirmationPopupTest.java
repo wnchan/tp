@@ -12,7 +12,6 @@ import org.junit.jupiter.api.Test;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
 
-
 class ConfirmationPopupTest {
 
     @Test
@@ -184,5 +183,3 @@ class ConfirmationPopupTest {
         });
     }
 }
-
-
