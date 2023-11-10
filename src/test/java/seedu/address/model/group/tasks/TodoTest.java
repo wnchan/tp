@@ -1,27 +1,39 @@
 package seedu.address.model.group.tasks;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
+import seedu.address.model.group.exceptions.TaskException;
+
 public class TodoTest {
+
     @Test
-    void testGenerateStr() {
-        Todo task1 = new Todo("task1", TaskStatus.DONE, TaskModule.CS2103T);
-        Todo task2 = new Todo("task2", TaskStatus.NOT_DONE, TaskModule.CS2101);
-        task2.mark();
-        assertEquals("T | 0 | task1",
-                task1.generateStr(), "Generate str of uncompleted task");
-        assertEquals("T | 1 | task2", task2.generateStr(), "Generate str of completed task");
+    void constructor_validTodo_createsTodo() throws TaskException {
+        String taskDescription = "Submit report";
+        TaskStatus status = TaskStatus.NOT_DONE;
+        TaskModule module = TaskModule.CS2103T;
+
+        Todo deadline = new Todo(taskDescription, status, module);
+
+        assertEquals(taskDescription, deadline.getTask());
+        assertEquals(status, deadline.getStatus());
+        assertEquals(module, deadline.getModule());
+        assertEquals("T", deadline.getType());
+        assertEquals("", deadline.getDeadline());
     }
 
     @Test
-    void testToString() {
-        Todo task1 = new Todo("task1", TaskStatus.DONE, TaskModule.CS2103T);
-        Todo task2 = new Todo("task2", TaskStatus.NOT_DONE, TaskModule.CS2101);
-        task2.mark();
-        assertEquals("[T][ ] task1",
-                task1.toString(), "To String of uncompleted task");
-        assertEquals("[T][X] task2", task2.toString(), "To String of completed task");
+    void testToString_withValidTodo() throws TaskException {
+        Todo todo = new Todo("Finish assignment", TaskStatus.NOT_DONE, TaskModule.CS2101);
+        String expectedToString = "T NOT_DONE CS2101 Finish assignment ";
+        assertEquals(expectedToString, todo.toString());
     }
 
+    @Test
+    void testToString_withDoneStatus() throws TaskException {
+        Todo todo = new Todo("Finish assignment", TaskStatus.DONE, TaskModule.CS2103T);
+        String expectedGenerateStr = "T DONE CS2103T Finish assignment ";
+        assertEquals(expectedGenerateStr, todo.toString());
+    }
 }
