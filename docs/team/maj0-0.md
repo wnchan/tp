@@ -36,6 +36,7 @@ Given below are my contributions to the project.
 * Updated the diagrams and description under Model Component section.
 * Under Use-cases, the 'tasks' feature.
 * Updated user stories for assigned tasks.
+* Under implementation section, the tutorial field and list tasks features.
 
 ## Contributions to team-based tasks
 * Did equal share of tasks assigned.

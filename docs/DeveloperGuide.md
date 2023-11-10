@@ -157,6 +157,7 @@ Classes used by multiple components are in the `seedu.addressbook.commons` packa
 
 This section describes some noteworthy details on how certain features are implemented.
 
+---
 
 ### Tutorial Field
 
@@ -195,6 +196,40 @@ To provide a visual representation of the Tutorial field's implementation, we of
 - **Class Diagram for Person**: This diagram illustrates the structure of the Person class, highlighting its relationship with the Tutorial field.
 
 <img src="images/PersonClassDiagram.png" width="800" />
+
+---
+
+### List Tasks Feature
+
+#### Current Implementation
+
+The list tasks feature is facilitated by the `TasksCommand` class and involves the cooperation of several other classes including `Group`, `TaskList`, and `Model`. This command is designed to list all tasks associated with a specific group in StudentConnect, which is particularly useful for managing tasks in courses like CS2103T and CS2101.
+
+The process is initiated when the user inputs a command to list tasks associated with a group. Here's the breakdown of the steps and class interactions:
+
+1. **Input Parsing**: The user's input is first parsed by `AddressBookParser` which identifies the command word and delegates the argument parsing to `TasksCommandParser`.
+
+2. **Command Creation**: `TasksCommandParser` parses the provided arguments, checks for correctness, and if valid, constructs a `TasksCommand` object with the specified group number.
+
+3. **Command Execution**: `TasksCommand#execute()` is then called. It retrieves the specified group by number using `Model#getGroupWithNumber()`. If the group exists, it then retrieves the group's tasks using `Group#getTasks()`.
+
+4. **Task Initialization**: If no tasks are currently set, `TasksCommand` initializes a default set of tasks through `TaskInitializer.initializeTasks()` to ensure that each group has tasks pre-set, reflecting the course's structure.
+
+5. **Result Generation**: Finally, the tasks are converted to a String format and included in the `CommandResult` which then displays the tasks in the feedback panel.
+
+The `TasksCommand` class performs the following operations:
+- `TasksCommand#execute()` - Lists all tasks for the specified group number.
+- `TasksCommand#equals()` - Compares this `TasksCommand` with another command for equality, based on the group number.
+
+The feature's utility is highlighted by its ability to list pre-set tasks automatically assigned to each group, reflecting the tasks specific to CS2103T and CS2101 courses.
+
+#### Proposed Future Implementation
+
+The future enhancements for the Tasks Command aim to significantly improve user interaction and task management within the application. The proposed improvements will enable users to not only list tasks but also add, edit, and delete tasks as per their requirements. This will provide users with full control over how they manage the task workflow for each group, making the application more flexible and user-friendly.
+
+Additionally, we plan to develop a dedicated panel within the User Interface (UI) specifically for tasks. This dedicated task panel will allow users to view all tasks in a separate, focused area of the UI, making task management more organized and less cluttered. With a dedicated panel, the tasks will not only be more visible but can also be interacted with in a more intuitive way. Users will be able to see at a glance all the tasks for a group, check their completion status, and access task details with a single click.
+
+---
 
 ###  Create group feature
 
@@ -349,18 +384,23 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* * *`  | student            | add my personal details to the system                              | get other students to learn more about me         |
 | `* * *`  | student            | view the rest of the students in the course                        | see my options for choosing teammates             |
 | `* * *`  | student            | see the other student’s name, major,tutorial slots, basic info etc | make informed decisions                           |
+| `* * *`  | student            | see the nationality and gender of other students                   | meet the criteria when forming a group            |
 | `* * *`  | student            | customise and update my profile details                            | ensure that my profile is up to date              |
 | `* * *`  | student            | view other students in the same tutorial group                     | communicate with them                             |
 | `* * *`  | student            | remove my personal details from the system                         | stop using the application                        |
 | `* * *`  | student            | join a group on the app                                            | form a group for the course                       |
-| `* * *`  | user               | exit the app                                                       | close the app                                     |
 | `* *`    | student            | seek help and check requirements for cs2101/cs2103t groupings      | be more clear of the valid group formations       |
 | `* * `   | student            | be able to click the links of the social media to view them        | avoid wasting time typing links manually          |
 | `* * `   | student            | be able to leave a group on the app                                | join another group of my choice                   |
 | `* * `   | student            | be able to delete a group I created on the app                     | get rid of unnecessary groups on the system       |
 | `* * `   | student            | be able to view my courses' deadlines and tasks                    | keep track of my projects' deliverables           |
+| `* * `   | student            | be able to mark a task as complete                                 | priotise other tasks                              |
+| `* * `   | student            | be able to unmark a task as incomplete                             | priotise on completing it                         |
+| `* * `   | student            | be able to view my courses' deadlines and tasks                    | keep track of my projects' deliverables           |
 | `* * *`  | course coordinator | be able to remove all the data from the system                     | reuse the application for new batches of students |
 | `* * *`  | course coordinator | be asked to confirm if I want to clear all the data                | prevent accidentally clearing all the data        |
+| `* * *`  | user               | exit the app                                                       | close the app                                     |
+
 
 *{More to be added}*
 

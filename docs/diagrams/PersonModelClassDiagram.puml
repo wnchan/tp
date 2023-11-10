@@ -19,8 +19,8 @@ Class Name
 Class Major
 Class Year
 Class Description
-Class SocialMediaLinks
-Class Tutorials
+Class SocialMediaLink
+Class Tutorial
 Class Nationality
 Class Gender
 
@@ -46,8 +46,8 @@ Person *--> Email
 Person *--> Major
 Person *--> Year
 Person *--> Description
-Person *--> "*" SocialMediaLinks
-Person *--> "*" Tutorials
+Person *--> "*" SocialMediaLink
+Person *--> "*" Tutorial
 Person *--> Nationality
 Person *--> Gender
 

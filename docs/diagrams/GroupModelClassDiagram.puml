@@ -15,8 +15,9 @@ Class UserPrefs
 Class Person
 
 Class UniqueGroupList
-Class Group
-Class GroupNumber
+Class Group {
+- int number
+}
 Class Tutorial
 Class TaskList
 
@@ -36,7 +37,6 @@ UserPrefs .up.|> ReadOnlyUserPrefs
 
 AddressBook *--> "1" UniqueGroupList
 UniqueGroupList --> "~* all" Group
-Group *--> GroupNumber
 Group *--> "1" Tutorial
 Group *-->"members *" Person
 Group *--> "1" TaskList
