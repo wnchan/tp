@@ -408,7 +408,23 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 (For all use cases below, the System is `StudentConnect` and the Actor is the `student`, unless specified otherwise)
 
-**Use case: List students**
+**Use case: UC1 - Adding a student**
+
+**MSS**
+
+1. Student requests to add their personal information.
+2. StudentConnect adds the student’s information into the list.
+
+   Use case ends.
+
+**Extensions**
+
+* 2a. Input is invalid.
+    * StudentConnect displays error message.
+
+  Use case ends.
+
+**Use case: UC2 - List students**
 
 **MSS**
 
@@ -423,49 +439,46 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
   Use case ends.
 
-**Use case: Adding a student**
+**Use Case: UC3 - Access social media**
 
 **MSS**
 
-1. Student requests to add their personal information.
-2. StudentConnect adds the student’s information into the list.
+1. Student requests to list students.
+2. Student clicks on social media link of a person.
+3. Student connect opens the social media link in the browser.
 
-    Use case ends.
-
-**Extensions**
-
-* 2a. Input is invalid.
-    * StudentConnect displays error message.
-
-  Use case ends.
-
-**Use Case: Find a student**
-
-**MSS**
-
-1. Student requests to find students by name with keyword(s).
-2. StudentConnect shows a list of students whose name(s) contain the keyword(s).
-
-    Use case ends.
+   Use case ends.
 
 **Extensions:**
 
-* 2a. The given keyword(s) does not match any of the students’ names.
+* 1a. Student requests to find a student instead.
+    * Use case resumes from step 2.
 
-    Use case ends.
+* 4a. The website linked does not exist.
+    * 4a1. Browser shows that corresponding link does not exist.
 
-**Use Case: Filter students**
+      Use case ends.
+
+* 4b. Hyperlink does not exist
+    * 4b1. StudentConnect does not redirect to the browser.
+
+      Use case ends.
+
+**Use Case: Edit a student**
 
 **MSS**
 
-1. Student requests to filter students by tutorial slot.
-2. StudentConnect shows a list of students whose tutorial(s) contain the given slot.
+1. Student requests to update a specific student’s details on the list by email.
+2. StudentConnect shows a list of students containing the student with the updated details.
 
-    Use case ends.
+   Use case ends.
 
-* 2a. The given slot(s) does not match any of the students' tutorial slots.
+**Extensions:**
 
-    Use case ends.
+* 1a. The given email is invalid.
+    * 1a1. StudentConnect shows an error message.
+
+  Use case ends.
 
 **Use Case: Delete a student**
 
@@ -483,21 +496,6 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
   Use case ends.
 
-**Use Case: Edit a student**
-
-**MSS**
-
-1. Student requests to update a specific student’s details on the list by email.
-2. StudentConnect shows a list of students containing the student with the updated details.
-
-   Use case ends.
-
-**Extensions:**
-
-* 1a. The given email is invalid.
-    * 1a1. StudentConnect shows an error message.
-
-   Use case ends.
 
 **Use Case: Create a group**
 
@@ -508,30 +506,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
    Use case ends.
 
-**Use Case: Access social media**
 
-**MSS**
-
-1. Student requests to list students.
-2. Student clicks on social media link of a person.
-3. Student connect opens the social media link in the browser.
-
-   Use case ends.
-
-**Extensions:**
-
-* 1a. Student requests to find a student instead.
-    * Use case resumes from step 2.
-
-* 4a. The website linked does not exist.
-  * 4a1. Browser shows that corresponding link does not exist.
-
-    Use case ends.
-
-* 4b. Hyperlink does not exist
-  * 4b1. StudentConnect does not redirect to the browser.
-    
-    Use case ends.
 
 **Use Case: Exit the app**
 
