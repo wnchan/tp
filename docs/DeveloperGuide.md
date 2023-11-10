@@ -205,9 +205,9 @@ The create group feature is implemented via the `CreateCommand` class and involv
 * `CreateCommand#execute()` — Creates a new empty group using the group number generated from `generateGroupNumber`.
 * `CreateCommand#generateGroupNumber()` — Generates the next available group number.
 
-Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.
+Given below is an example usage scenario and how the create feature behaves at each step.
 
-Step 1. The user types in "create t/01". The string, "create t/01", is parsed by `CreateCommandParser`, which returns a new instance of `CreateCommand`.
+Step 1. The user types in "create t/01". The string, "t/01", is parsed by `CreateCommandParser`, which returns a new instance of `CreateCommand`.
 <br>
 Step 2. The command is then executed by `CreateCommand#execute()`. `CreateCommand#execute()` calls `CreateCommand#generateGroupNumber()`.
 <br>
@@ -217,6 +217,11 @@ Step 4. `CreateCommand#execute()` creates a new `Group` using the generated grou
 <br>
 Step 5. The `CommandResult` containing the success message is shown to the user.
 
+Shown below is the sequence diagram for the given scenario. The `LogicManager`, `AddressBookParser` and `Model` classes are also included to give a complete picture of the process.
+
+![CreateCommand sequence diagram](images/CreateSequenceDiagram.png)
+
+<div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `CreateCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
 ### \[Proposed\] Undo/redo feature
 
