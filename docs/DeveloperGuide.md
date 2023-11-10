@@ -73,7 +73,7 @@ The **API** of this component is specified in [`Ui.java`](https://github.com/se-
 
 ![Structure of the UI Component](images/UiClassDiagram.png)
 
-The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`, `StatusBarFooter` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which captures the commonalities between classes that represent parts of the visible GUI.
+The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`, `StatusBarFooter`, `ConfirmationPopup` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which captures the commonalities between classes that represent parts of the visible GUI.
 
 The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/resources/view/MainWindow.fxml)
 
@@ -82,7 +82,7 @@ The `UI` component,
 * executes user commands using the `Logic` component.
 * listens for changes to `Model` data so that the UI can be updated with the modified data.
 * keeps a reference to the `Logic` component, because the `UI` relies on the `Logic` to execute commands.
-* depends on some classes in the `Model` component, as it displays `Person` object residing in the `Model`.
+* depends on some classes in the `Model` component, as it displays `Person` or `Group` object residing in the `Model`.
 
 ### Logic component
 
@@ -207,7 +207,7 @@ The create group feature is implemented via the `CreateCommand` class and involv
 
 Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.
 
-Step 1. The user types in "create". The string, "create", is parsed by `AddressBookParser`, which returns a new instance of `CreateCommand`.
+Step 1. The user types in "create t/01". The string, "create t/01", is parsed by `CreateCommandParser`, which returns a new instance of `CreateCommand`.
 <br>
 Step 2. The command is then executed by `CreateCommand#execute()`. `CreateCommand#execute()` calls `CreateCommand#generateGroupNumber()`.
 <br>
@@ -351,7 +351,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* * *`  | student            | customise and update my profile details                       | ensure that my profile is up to date              |
 | `* * *`  | student            | view other students in the same tutorial group                | communicate with them                             |
 | `* * *`  | student            | remove my personal details from the system                    | stop using the application                        |
-| `* * *`  | student            | join a group on the app                                       | form a group for the course                       |
+| `* * *`  | student            | create a group on the app                                     | form a group for the course                       |
+| `* * *`  | student            | join a group on the app                                       | be part of a group for the course                 |
 | `* * *`  | user               | exit the app                                                  | close the app                                     |
 | `* *`    | student            | seek help and check requirements for cs2101/cs2103t groupings | be more clear of the valid group formations       |
 | `* * `   | student            | be able to click the links of the social media to view them   | avoid wasting time typing links manually          |
@@ -461,10 +462,53 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1. Student requests to create a group by typing “create”.
+1. Student requests to create a group by providing a tutorial number.
 2. StudentConnect creates a new empty group.
 
    Use case ends.
+
+**Extensions:**
+
+* 1a. The given tutorial number is invalid.
+    * 1a1. StudentConnect shows an error message.
+
+      Use case ends.
+
+**Use Case: Join a group**
+
+**MSS**
+
+1. Student requests to join a group by providing their email and the group number.
+2. StudentConnect adds the student to the group in the system.
+
+   Use case ends.
+
+**Extensions:**
+
+* 1a. The specified group does not exist.
+    * 1a1. StudentConnect shows an error message.
+
+      Use case ends.
+
+* 1b. The specified student is not found in the system.
+    * 1b1. StudentConnect shows an error message.
+
+      Use case ends.
+
+* 1c. The specified group is full.
+    * 1c1. StudentConnect shows an error message.
+
+      Use case ends.
+
+* 1d. The specified student is already in the specified group.
+    * 1d1. StudentConnect shows an error message.
+
+      Use case ends.
+
+* 1e. The specified student is already in another group.
+    * 1e1. StudentConnect shows an error message.
+
+      Use case ends.
 
 **Use Case: Access social media**
 
@@ -689,7 +733,7 @@ testers are expected to do more *exploratory* testing.
 
    1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
 
-   1. Test case: `delete alexy@u.nus.edu`<br>
+   1. Test case: `delete alexyeoh@u.nus.edu`<br>
       Expected: Contact with above email deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
 
    1. Test case: `delete 0`<br>
