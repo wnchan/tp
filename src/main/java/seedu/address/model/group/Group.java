@@ -34,11 +34,14 @@ public class Group {
     public Group(int number, Tutorial tutorial) {
         this.number = number;
         this.tutorial = tutorial;
-        try {
-            this.tasks = TaskInitializer.initializeTasks();
-        } catch (TaskException e) {
-            throw new RuntimeException(e);
+        if (tasks.isEmpty()) {
+            try {
+                tasks = TaskInitializer.initializeTasks();
+            } catch (TaskException e) {
+                throw new RuntimeException(e);
+            }
         }
+
     }
 
     /**

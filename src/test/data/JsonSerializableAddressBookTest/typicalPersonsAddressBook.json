@@ -8,7 +8,9 @@
       "email": "alice@u.nus.edu",
       "description": "web dev",
       "tutorials": ["01", "02"],
-      "socialMediaLinks": ["https://www.linkedin.com/in/alice"]
+      "socialMediaLinks": ["https://www.linkedin.com/in/alice"],
+      "nationality": "foreigner",
+      "gender" : "F"
     },
     {
       "name": "Benson Meier",
@@ -17,7 +19,9 @@
       "email": "johnd@u.nus.edu",
       "description": "mobile dev",
       "tutorials": ["03", "04"],
-      "socialMediaLinks": ["https://github.com/benson", "https://www.linkedin.com/in/benson"]
+      "socialMediaLinks": ["https://github.com/benson", "https://www.linkedin.com/in/benson"],
+      "nationality": "local",
+      "gender" : "M"
     },
     {
       "name": "Carl Kurz",
@@ -26,7 +30,9 @@
       "email": "heinz@u.nus.edu",
       "description": "fe dev",
       "tutorials": ["05", "06"],
-      "socialMediaLinks": []
+      "socialMediaLinks": [],
+      "nationality": "local",
+      "gender" : "M"
     },
     {
       "name": "Daniel Meier",
@@ -35,7 +41,9 @@
       "email": "cornelia@u.nus.edu",
       "description": "be dev",
       "tutorials": ["07", "08"],
-      "socialMediaLinks": ["https://www.linkedin.com/in/daniel"]
+      "socialMediaLinks": ["https://www.linkedin.com/in/daniel"],
+      "nationality": "local",
+      "gender" : "M"
     },
     {
       "name": "Elle Meyer",
@@ -44,7 +52,9 @@
       "email": "werner@u.nus.edu",
       "description": "fe dev",
       "tutorials": ["09", "10"],
-      "socialMediaLinks": []
+      "socialMediaLinks": [],
+      "nationality": "foreigner",
+      "gender" : "F"
     },
     {
       "name": "Fiona Kunz",
@@ -53,7 +63,9 @@
       "email": "lydia@u.nus.edu",
       "description": "be dev",
       "tutorials": ["11", "12"],
-      "socialMediaLinks": []
+      "socialMediaLinks": [],
+      "nationality": "foreigner",
+      "gender" : "F"
     },
     {
       "name": "George Best",
@@ -62,7 +74,9 @@
       "email": "anna@u.nus.edu",
       "description": "fe dev",
       "tutorials": ["13", "14"],
-      "socialMediaLinks": []
+      "socialMediaLinks": [],
+      "nationality": "foreigner",
+      "gender" : "F"
     }
-  ]
+  ], "groups" : []
 }
