@@ -10,40 +10,40 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 ---
 <a id="table-of-contents"></a>
 
-1. <a href=#how-to-use-this-guide style="color: blue;">How to Use This Guide</a>
-2. <a href=#quick-start style="color: blue;">Quick Start</a>
-3. <a href=#features style="color: blue;">Features</a>
-    1. <a href=#general-commands style="color: blue;">General Commands</a>
-        1. <a href=#viewing-help--help style="color: blue;">Viewing Help : `help`</a>
-        2. <a href=#clearing-all-entries--clear style="color: blue;">Clearing All Entries : `clear`</a>
-        3. <a href=#exiting-the-program--exit style="color: blue;">Exiting The Program : `exit`</a>
-    2. <a href=#student-commands style="color: blue;">Student Commands</a>
-        1. <a href=#adding-a-student--add style="color: blue;">Adding a Student : `add`</a>
-        2. <a href=#listing-all-students--list style="color: blue;">Listing All Students : `list`</a>
-        3. <a href=#editing-a-student--edit style="color: blue;">Editing a Student : `edit`</a>
-        4. <a href=#finding-a-student-by-name--find style="color: blue;">Finding a Student by Name : `find`</a>
-        5. <a href=#filtering-students-by-tutorial--filter style="color: blue;">Filtering Students by Tutorial : `filter`</a>
-        6. <a href=#deleting-a-student--delete style="color: blue;">Deleting a Student : `delete`</a>
-    3. <a href=#group-commands style="color: blue;">Group Commands</a>
-        1. <a href=#creating-a-new-group--create style="color: blue;">Creating a New Group : `create`</a>
-        2. <a href=#listing-all-groups--listgroup style="color: blue;">Listing All Groups : `listGroup`</a>
-        3. <a href=#joining-a-group--join style="color: blue;">Joining a Group : `join`</a>
-        4. <a href=#deleting-a-group--deletegroup style="color: blue;">Deleting a Group : `deleteGroup`</a>
-        5. <a href=#leaving-a-specific-group--leave style="color: blue;">Leaving a Group : `leave`</a>
-        6. <a href=#finding-a-group-by-group-number--findgroup style="color: blue;">Finding a Group by Group Number : `findGroup`</a>
-        7. <a href=#filtering-groups-by-tutorial--filtergroup style="color: blue;">Filtering Groups by Tutorial : `filterGroup`</a>
-        8. <a href=#checking-a-group--checkgroup style="color: blue;">Checking a Group : `checkGroup`</a>
-        9. <a href=#listing-all-tasks-for-a-specific-group--tasks style="color: blue;">Listing All Tasks : `tasks`</a>
-        10. <a href=#marking-a-task-as-done--mark style="color: blue;">Marking a Task as Done : `mark`</a>
-        11. <a href=#marking-a-task-as-not-done--unmark style="color: blue;">Marking a Task as Not Done : `unmark`</a>
-4. <a href=#saving-the-data style="color: blue;">Saving The Data</a>
-5. <a href=#editing-the-data-file style="color: blue;">Editing The Data File</a>
-6. <a href=#archiving-data-files-coming-in-v20 style="color: blue;">Archiving Data Files [coming in v2.0]</a>
-7. <a href=#faq style="color: blue;">FAQ</a>
-8. <a href=#known-issues style="color: blue;">Known Issues</a>
-9. <a href=#command-summary style="color: blue;">Command Summary</a>
-10. <a href=#appendix style="color: blue;">Appendix</a>
-11. <a href=#glossary style="color: blue;">Glossary</a>
+1. <a href="#how-to-use-this-guide" style="color: blue;">How to Use This Guide</a>
+2. <a href="#quick-start" style="color: blue;">Quick Start</a>
+3. <a href="#features" style="color: blue;">Features</a>
+    1. <a href="#general-commands" style="color: blue;">General Commands</a>
+        1. <a href="#viewing-help--help" style="color: blue;">Viewing Help : `help`</a>
+        2. <a href="#clearing-all-entries--clear" style="color: blue;">Clearing All Entries : `clear`</a>
+        3. <a href="#exiting-the-program--exit" style="color: blue;">Exiting The Program : `exit`</a>
+    2. <a href="#student-commands" style="color: blue;">Student Commands</a>
+        1. <a href="#adding-a-student--add" style="color: blue;">Adding a Student : `add`</a>
+        2. <a href="#listing-all-students--list" style="color: blue;">Listing All Students : `list`</a>
+        3. <a href="#editing-a-student--edit" style="color: blue;">Editing a Student : `edit`</a>
+        4. <a href="#finding-a-student-by-name--find" style="color: blue;">Finding a Student by Name : `find`</a>
+        5. <a href="#filtering-students-by-tutorial--filter" style="color: blue;">Filtering Students by Tutorial : `filter`</a>
+        6. <a href="#deleting-a-student--delete" style="color: blue;">Deleting a Student : `delete`</a>
+    3. <a href="#group-commands" style="color: blue;">Group Commands</a>
+        1. <a href="#creating-a-new-group--create" style="color: blue;">Creating a New Group : `create`</a>
+        2. <a href="#listing-all-groups--listgroup" style="color: blue;">Listing All Groups : `listGroup`</a>
+        3. <a href="#joining-a-group--join" style="color: blue;">Joining a Group : `join`</a>
+        4. <a href="#deleting-a-group--deletegroup" style="color: blue;">Deleting a Group : `deleteGroup`</a>
+        5. <a href="#leaving-a-specific-group--leave" style="color: blue;">Leaving a Group : `leave`</a>
+        6. <a href="#finding-a-group-by-group-number--findgroup" style="color: blue;">Finding a Group by Group Number : `findGroup`</a>
+        7. <a href="#filtering-groups-by-tutorial--filtergroup" style="color: blue;">Filtering Groups by Tutorial : `filterGroup`</a>
+        8. <a href="#checking-a-group--checkgroup" style="color: blue;">Checking a Group : `checkGroup`</a>
+        9. <a href="#listing-all-tasks-for-a-specific-group--tasks" style="color: blue;">Listing All Tasks : `tasks`</a>
+        10. <a href="#marking-a-task-as-done--mark" style="color: blue;">Marking a Task as Done : `mark`</a>
+        11. <a href="#marking-a-task-as-not-done--unmark" style="color: blue;">Marking a Task as Not Done : `unmark`</a>
+4. <a href="#saving-the-data" style="color: blue;">Saving The Data</a>
+5. <a href="#editing-the-data-file" style="color: blue;">Editing The Data File</a>
+6. <a href="#archiving-data-files-coming-in-v20" style="color: blue;">Archiving Data Files [coming in v2.0]</a>
+7. <a href="#faq" style="color: blue;">FAQ</a>
+8. <a href="#known-issues" style="color: blue;">Known Issues</a>
+9. <a href="#command-summary" style="color: blue;">Command Summary</a>
+10. <a href="#appendix" style="color: blue;">Appendix</a>
+11. <a href="#glossary" style="color: blue;">Glossary</a>
 
 --------------------------------------------------------------------------------------------------------------------
 ## How to Use This Guide
@@ -79,11 +79,11 @@ instead of selecting `exit` from the menu options or closing the application win
 This practice helps prevent data loss and ensures a proper shutdown of the application.
 </div>
 
-- For convenient navigation throughout this UG, you can refer to the <a href=#table-of-contents style="color: blue;">table of contents</a>.
-- Should you encounter any terminology within the guide that is unfamiliar, you can consult the <a href=#glossary style="color: blue;">glossary</a> section below. It provides clear definitions and explanations to help you grasp the specialized language used throughout this guide.
-- For any inquiries, the <a href=#faq style="color: blue;">faq</a> section is a good place to look for answers. In case your question is not addressed there, do not hesitate to submit an issue <a href="https://github.com/AY2324S1-CS2103T-F12-2/tp/issues" style="color: blue;">here</a> for further assistance.
+- For convenient navigation throughout this UG, you can refer to the <a href="#table-of-contents" style="color: blue;">table of contents</a>.
+- Should you encounter any terminology within the guide that is unfamiliar, you can consult the <a href="#glossary" style="color: blue;">glossary</a> section below. It provides clear definitions and explanations to help you grasp the specialized language used throughout this guide.
+- For any inquiries, the <a href="#faq" style="color: blue;">faq</a> section is a good place to look for answers. In case your question is not addressed there, do not hesitate to submit an issue <a href="https://github.com/AY2324S1-CS2103T-F12-2/tp/issues" style="color: blue;">here</a> for further assistance.
 - The <a href=#appendix style="color: blue;">appendix</a> section is included to detail all possible input values for fields that have specific constraints or require particular formats. This reference can help ensure that you input data correctly and understand the limitations of each field.
-- For a quick and compact overview of all the commands that StudentConnect offers, refer to the <a href=#command-summary style="color: blue;">command summary</a>. This section servers as a handy reference for all possible actions you can perform within the application, laid out in an easily digestible format.
+- For a quick and compact overview of all the commands that StudentConnect offers, refer to the <a href="#command-summary" style="color: blue;">command summary</a>. This section servers as a handy reference for all possible actions you can perform within the application, laid out in an easily digestible format.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -115,10 +115,9 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
     * `create t/03` : 
         * Creates a new group assigned to tutorial 3.
 
-6. Refer to the <a href=#features style="color: blue;">Features</a> below for details of each command.
+6. Refer to the <a href="#features" style="color: blue;">Features</a> below for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
-
 ## Features
 
 <div markdown="block" class="alert alert-info">
@@ -207,6 +206,8 @@ Exits the program.
 #### Expected Output(Failure):
 * Message: `Error: Exiting the program failed.`
 
+<hr>
+
 ## Student Commands
 
 <div markdown="span" class="alert alert-primary">:exclamation: **Important:**
@@ -239,7 +240,7 @@ A student can have any number of social media links. Add multiple social media l
 
 #### Acceptable Values:
 * Name: Full names with alphabetical characters. Maximum 30 characters.
-* Major: Valid major names at NUS. View the <a href=#valid-majors style="color: blue;">valid majors</a> list below for more information.
+* Major: Valid major names at NUS. View the <a href="#valid-majors" style="color: blue;">valid majors</a> list below for more information.
 * Year: Numeric year level. Accept values between `1` and `6` inclusive.
 * Email: Valid email address ending in `@u.nus.edu`. Maximum 20 characters.
 * Description: Maximum 150 characters.
@@ -425,7 +426,7 @@ Deletes a specific student and all personal details based on email.
 <div markdown="span" class="alert alert-primary">:exclamation: **Important:**
 StudentConnect provides a set of group formation features to make it more convenient for students to find group mates. A group consists of 3 main components: a group number, a tutorial number and the group members.
 <br> **Group number:** Used to uniquely identify the group.
-<br> **Tutorial number:** This number is set by the creator of the group and serves as an indication of which tutorial class the members of the group are interested in enrolling in. It **does not** restrict students who do not have a matching tutorial number in their profile from joining the group. Running the <a href=#checking-a-group--checkgroup style="color: blue;">checkGroup</a> command displays a warning if there are members whose tutorial numbers do not match the group's tutorial number.
+<br> **Tutorial number:** This number is set by the creator of the group and serves as an indication of which tutorial class the members of the group are interested in enrolling in. It **does not** restrict students who do not have a matching tutorial number in their profile from joining the group. Running the <a href="#checking-a-group--checkgroup" style="color: blue;">checkGroup</a> command displays a warning if there are members whose tutorial numbers do not match the group's tutorial number.
 <br> **Group members:** The students who are members of this group.
 </div>
 
