@@ -36,4 +36,13 @@ public class ClearCommand extends Command {
             return new CommandResult(SHOWING_CONFIRMATION_MESSAGE, false, false, false, false);
         }
     }
+
+    /**
+     * Sets the confirmation status of the popup.
+     *
+     * @param isConfirmed The confirmation status to be set. True if confirmed, false otherwise.
+     */
+    public void setConfirmed(boolean isConfirmed) {
+        this.isConfirmed = isConfirmed;
+    }
 }

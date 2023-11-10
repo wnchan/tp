@@ -55,6 +55,16 @@ public class TaskList {
     }
 
     /**
+     * Returns the task at index in the task list.
+     *
+     * @param index The index of task to be returned.
+     * @return The task at the index.
+     */
+    public Task getTask(int index) {
+        return tasks.get(index);
+    }
+
+    /**
      * Checks if a task with the specified task type and task description exists in the task list.
      *
      * @param taskType        The type of the task.
