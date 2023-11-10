@@ -11,9 +11,6 @@ import javafx.collections.ObservableList;
 import seedu.address.model.Model;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.group.Group;
-import seedu.address.model.group.exceptions.TaskException;
-import seedu.address.model.group.tasks.TaskInitializer;
-import seedu.address.model.group.tasks.TaskList;
 import seedu.address.model.tutorial.Tutorial;
 
 /**
@@ -43,15 +40,6 @@ public class CreateCommand extends Command {
         model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
         int number = generateGroupNumber(model);
         Group createdGroup = new Group(number, tutorial);
-        // Initialize the tasks and add them to the group
-        TaskList initialTasks = null;
-        try {
-            initialTasks = TaskInitializer.initializeTasks();
-        } catch (TaskException e) {
-            throw new RuntimeException(e);
-        }
-        createdGroup.addTasks(initialTasks);
-
         model.addGroup(createdGroup);
 
         return new CommandResult(String.format(MESSAGE_SUCCESS, createdGroup.getNumber()),
