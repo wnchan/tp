@@ -1,6 +1,6 @@
 ---
 layout: page
-title: StudentConnect User Guide
+title: User Guide
 ---
 
 StudentConnect is a solution for hassle-free team formation for students to browse profiles and connect with others for the CS2103T and CS2101 group project.
@@ -176,8 +176,9 @@ Clears all entries from the system upon confirmation in the pop-up.
   ![result for 'clear' GUI](images/clearUI.png)
 
 #### Expected Output(Failure or Cancellation):
-If the clear command fails, or you press `cancel` on the confirmation pop-up: 
-* GUI: All students' details remain on the student list.
+* Case: Clear command fails.
+* Case: You press `cancel` on the confirmation pop-up.
+  GUI: All students' details remain on the student list.
   ![result for cancelled 'clear' GUI](images/clearCancel.png)
 
 ### Exiting the program : `exit`
@@ -381,8 +382,10 @@ Deletes a specific student and all personal details based on email.
   ![Delete feature](images/delete.png)
 
 #### Expected Output (Failure):
-* Message: `Student with the provided email not found.`
-* Message: `Invalid command format!`<br>
+* Case: Provided email not registered in system.
+  Message: `Student with the provided email not found.`
+* Case: Invalid command format e.g. `delete 02`.
+  Message: `Invalid command format!`<br>
   `delete: Deletes the student identified by the email address.`<br>
   `Parameters: EMAIL`<br>
   `Example: delete alexyeoh@u.nus.edu`
@@ -448,7 +451,8 @@ Deletes a group from the system, based on group number.
   ![result for 'deleteGroup gr/3'](images/deleteGroup.png)
 
 #### Expected Output(Failure):
-* Message: `Group with the provided group number not found.`
+* Case: Group with specified number is not in the system.
+  Message: `Group with the provided group number not found.`
 
 ### Joining a group : `join`
 
