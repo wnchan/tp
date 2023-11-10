@@ -51,11 +51,12 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 This guide is designed to help you navigate the features of StudentConnect with ease. 
 - To assist you in understanding and using this manual effectively, we've included a symbol table that outlines the icons and notations you'll encounter throughout the document.
 
-| Symbol               | Type        | Description                                                                                                                             |
-|----------------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| :information_source: | Information | This icon indicates additional information or context that can help you understand the features or requirements better.                 |
-| :bulb:               | Tip         | Look for this symbol when you need helpful suggestions on using StudentConnect features more efficiently.                               |
-| :exclamation:        | Important   | This symbol alerts you to critical information or essential functionality within StudentConnect that you should pay close attention to. |
+| Symbol               | Type        | Description                                                                                                                         |
+|----------------------|-------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| :information_source: | Information | This icon indicates additional information or context that can help you understand the features or requirements better.             |
+| :bulb:               | Tip         | Look for this symbol when you need helpful suggestions on using StudentConnect features more efficiently.                           |
+| :exclamation:        | Important   | This alerts you to critical information or functionality within StudentConnect that you should pay close attention to.              |
+
 - Throughout this guide, we've provided screenshots that illustrate the expected output for each command and feature. This visual aid is designed to enhance your understanding and ensure that you can confidently anticipate the results of your actions. Below is a detailed overview of the various interface components that you'll become familiar with.
 
 <div style="text-align: center; border: 1px solid #000; padding: 10px; display: inline-block; margin: auto;">
