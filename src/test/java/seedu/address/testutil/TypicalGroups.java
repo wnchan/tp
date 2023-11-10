@@ -13,12 +13,14 @@ import static seedu.address.testutil.TypicalPersons.IDA;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import seedu.address.model.AddressBook;
 import seedu.address.model.group.Group;
 import seedu.address.model.group.tasks.TaskList;
+import seedu.address.model.person.Person;
 import seedu.address.model.tutorial.Tutorial;
 
 /**
@@ -31,7 +33,7 @@ public class TypicalGroups {
     public static final Group GROUP2 = new Group(2, new Tutorial("02"),
             Set.of(DANIEL, ELLE, FIONA), new TaskList());
     public static final Group GROUP3 = new Group(3, new Tutorial("03"),
-            Set.of(GEORGE), new TaskList());
+            new HashSet<>(Set.of(GEORGE)), new TaskList());
     public static final Group GROUP4 = new Group(4, new Tutorial("02"),
             Set.of(HOON), new TaskList());
 
@@ -89,9 +91,12 @@ public class TypicalGroups {
      * Returns an {@code AddressBook} with all the typical groups.
      */
     public static AddressBook getTypicalAddressBook() {
-        AddressBook ab = new AddressBook();
+        AddressBook ab = TypicalPersons.getTypicalAddressBook();
+        for (Person person : ab.getPersonList()) {
+            ab.setPerson(person, new PersonBuilder(person).build());
+        }
         for (Group group : getTypicalGroups()) {
-            ab.addGroup(group);
+            ab.addGroup(new GroupBuilder(group).build());
         }
         return ab;
     }
