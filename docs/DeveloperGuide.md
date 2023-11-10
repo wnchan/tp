@@ -408,7 +408,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 (For all use cases below, the System is `StudentConnect` and the Actor is the `student`, unless specified otherwise)
 
-**Use case: UC1 - Adding a student**
+**Use case: UC1 - Add a student**
 
 **MSS**
 
@@ -443,7 +443,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1. Student requests to list students.
+1. Student requests to list students (UC2).
 2. Student clicks on social media link of a person.
 3. Student connect opens the social media link in the browser.
 
@@ -464,7 +464,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case ends.
 
-**Use Case: Edit a student**
+**Use Case: UC4 - Edit a student**
 
 **MSS**
 
@@ -480,7 +480,35 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
   Use case ends.
 
-**Use Case: Delete a student**
+**Use Case: UC5 - Find a student**
+
+**MSS**
+
+1. Student requests to find students by name with keyword(s).
+2. StudentConnect shows a list of students whose name(s) contain the keyword(s).
+
+   Use case ends.
+
+**Extensions:**
+
+* 2a. The given keyword(s) does not match any of the students’ names.
+
+  Use case ends.
+
+**Use Case: UC6 - Filter students**
+
+**MSS**
+
+1. Student requests to filter students by tutorial slot.
+2. StudentConnect shows a list of students whose tutorial(s) contain the given slot.
+
+   Use case ends.
+
+* 2a. The given slot(s) does not match any of the students' tutorial slots.
+
+  Use case ends.
+
+**Use Case: UC7 - Delete a student**
 
 **MSS**
 
@@ -496,8 +524,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
   Use case ends.
 
-
-**Use Case: Create a group**
+**Use Case: UC8 - Create a group**
 
 **MSS**
 
@@ -506,50 +533,41 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
    Use case ends.
 
-
-
-**Use Case: Exit the app**
+**Use Case: UC9 - List all groups**
 
 **MSS**
 
-1. Student requests to delete the app by typing “exit”.
-2. StudentConnect displays the goodbye message.
-3. StudentConnect closes.
-
-   Use case ends.
-
-**Use case: Clearing all data**
-
-**MSS**
-
-1. User requests to clear data.
-2. StudentConnect shows a pop-up asking for confirmation.
-3. User confirms.
-4. StudentConnect clears all data from the system.
+1.  Student requests to list groups.
+2.  StudentConnect shows a list of groups.
 
     Use case ends.
 
 **Extensions**
 
-* 3a. User cancels clearing the data.
-  * 3a1. StudentConnect cancels the process and returns to main window.
+* 2a. The list is empty.
 
-    Use case ends.
-* 3a. User does not respond.
+  Use case ends.
 
-    Use case ends.
-
-
-**Use Case: Checking valid group formations**
+**Use Case: UC10 - Join a group**
 
 **MSS**
 
-1. Student requests to see requirement list by typing “help”.
-2. StudentConnect displays the help message, along with the requirement message.
+1.  Student requests to join a specific group.
+2.  StudentConnect adds the student to the group.
 
-   Use case ends.
+    Use case ends.
 
-**Use Case: Delete a group**
+**Extensions**
+
+* 1a. The specified group is not registered in the system.
+
+  Use case ends.
+
+* 1b. The specified group is full.
+
+  Use case ends.
+
+**Use Case: UC11 - Delete a group**
 
 **MSS**
 
@@ -560,40 +578,12 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Extensions:**
 
-* 1a. The specified group does not exist. 
-  * 1a1. StudentConnect states the corresponding group does not exist.
+* 1a. The specified group does not exist.
+    * 1a1. StudentConnect states the corresponding group does not exist.
 
       Use case ends.
 
-**Use Case: Find a group**
-
-**MSS**
-
-1. Student requests to find groups by group number with keyword(s).
-2. StudentConnect shows a list of group(s) with group number(s) matching the keyword(s).
-
-    Use case ends.
-
-**Extensions:**
-* 2a. The given keyword(s) does not match any of the group numbers.
-
-    Use case ends.
-
-**Use Case: Filter groups**
-
-**MSS**
-
-1. Student requests to filter groups by tutorial slot.
-2. StudentConnect shows a list of groups that belong to the given tutorial slot.
-
-    Use case ends.
-
-**Extensions:**
-* 2a. The given slot does not match any of the groups' tutorial slot.
-
-    Use case ends.
-
-**Use Case: Leave a group**
+**Use Case: UC12 - Leave a group**
 
 **MSS**
 
@@ -604,18 +594,59 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Extensions:**
 
-* 1a. The specified group does not exist. 
-  * 1a1. StudentConnect states the corresponding group does not exist.
+* 1a. The specified group does not exist.
+    * 1a1. StudentConnect states the corresponding group does not exist.
 
-    Use case ends.
+      Use case ends.
 
 * 1b. The student is not in the specified group.
-  * 1b1. StudentConnect notifies the student that they are not in the group.
+    * 1b1. StudentConnect notifies the student that they are not in the group.
 
-    Use case ends.
+      Use case ends.
 
+**Use Case: UC13 - Find a group**
 
-**Use Case: List Tasks**
+**MSS**
+
+1. Student requests to find groups by group number with keyword(s).
+2. StudentConnect shows a list of group(s) with group number(s) matching the keyword(s).
+
+   Use case ends.
+
+**Extensions:**
+* 1a. The given keyword(s) does not match any of the group numbers.
+
+  Use case ends.
+
+**Use Case: UC14 - Filter groups**
+
+**MSS**
+
+1. Student requests to filter groups by tutorial slot.
+2. StudentConnect shows a list of groups that belong to the given tutorial slot.
+
+   Use case ends.
+
+**Extensions:**
+* 1a. The given slot does not match any of the groups' tutorial slot.
+
+  Use case ends.
+
+**Use Case: UC15 - Check a group**
+
+**MSS**
+
+1. Student requests to check if a particular group meets the requirements for group formation.
+2. StudentConnect displays a message stating if the specified group meets the requirement.
+
+   Use case ends.
+
+**Extensions:**
+* 1a. The specified group is not registered in the system.
+
+  Use case ends.
+
+**Use Case: UC16 - List Tasks**
 
 **MSS**
 
@@ -630,22 +661,22 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 2a. The student enters a non-existent group number.
     * 2a1. StudentConnect shows an error message: "Group with the provided group number not found."
-    * Use case ends.
+    Use case ends.
 
 * 2b. The student enters an invalid group number.
     * 2a1. StudentConnect shows an error message: "Invalid command format!"
-    * Use case ends.
+    Use case ends.
 
 * 4a. The specified group exists but has no tasks initialized.
     * 4a1. StudentConnect initializes the tasks for the group.
     * 4a2. StudentConnect displays the newly initialized tasks along with a success message.
-    * Use case resumes at step 5.
+    Use case resumes at step 5.
 
 * 4b. Task initialization fails due to a system error.
     * 4b1. StudentConnect displays an error message indicating a failure in task initialization.
-    * Use case ends.
+    Use case ends.
 
-**Use Case: Mark Task as Done**
+**Use Case: UC17 - Mark Task as Done**
 
 **MSS**
 
@@ -658,15 +689,15 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Extensions:**
 
-* 4a. The specified group does not exist.
-    * 4a1. StudentConnect shows an error message: "Group with the provided group number not found."
-    * Use case ends.
+* 2a. The specified group does not exist.
+    * 2a1. StudentConnect shows an error message: "Group with the provided group number not found."
+    Use case ends.
 
-* 4b. The specified task index is invalid.
-    * 4b1. StudentConnect shows an error message: "Invalid task index. Task not found."
-    * Use case ends.
+* 2b. The specified task index is invalid.
+    * 2b1. StudentConnect shows an error message: "Invalid task index. Task not found."
+    Use case ends.
 
-**Use Case: Mark Task as Not Done**
+**Use Case: UC18 - Mark Task as Not Done**
 
 **MSS**
 
@@ -675,17 +706,58 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 3. StudentConnect marks the specified task as not done.
 4. StudentConnect displays a success message.
 
-    Use case ends.
+   Use case ends.
 
 **Extensions:**
 
-* 4a. The specified group does not exist.
-    * 4a1. StudentConnect shows an error message: "Group with the provided group number not found."
-    * Use case ends.
+* 2a. The specified group does not exist.
+    * 2a1. StudentConnect shows an error message: "Group with the provided group number not found."
+    Use case ends.
 
-* 4b. The specified task index is invalid.
-    * 4b1. StudentConnect shows an error message: "Invalid task index. Task not found."
-    * Use case ends.
+* 2b. The specified task index is invalid.
+    * 2b1. StudentConnect shows an error message: "Invalid task index. Task not found."
+    Use case ends.
+
+**Use Case: UC19 - Get help**
+
+**MSS**
+
+1. Student requests to see requirement list or user guide by typing “help”.
+2. StudentConnect displays the help message, along with the requirement message and a link to the user guide.
+
+   Use case ends.
+
+**Use case: UC20 - Clear all data**
+
+**MSS**
+
+1. User requests to clear data.
+2. StudentConnect shows a pop-up asking for confirmation.
+3. User confirms.
+4. StudentConnect clears all data from the system.
+
+   Use case ends.
+
+**Extensions**
+
+* 3a. User cancels clearing the data.
+    * 3a1. StudentConnect cancels the process and returns to main window.
+
+      Use case ends.
+  
+* 3a. User does not respond.
+
+  Use case ends.
+
+**Use Case: UC21 - Exit the app**
+
+**MSS**
+
+1. Student requests to delete the app by typing “exit”.
+2. StudentConnect displays the goodbye message.
+3. StudentConnect closes.
+
+   Use case ends.
 
 *{More to be added}*
 
