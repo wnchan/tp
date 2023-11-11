@@ -2,9 +2,9 @@
 layout: page
 title: User Guide
 ---
-<div style="display: inline-flex; align-items: center; border: 2px solid #ccc; padding: 15px; border-radius: 15px; vertical-align: top;">
+<div style="display: inline-flex; align-items: center; border: 2px solid #ccc; padding: 15px; border-radius: 15px; vertical-align: top; margin-bottom: 20px;">
   <!-- Logo on the left -->
-  <img src="images/StudentConnectLogo.png" alt="Logo" style="border-radius: 50%; width: 80px; height: 80px; object-fit: cover; border: 1px solid #ccc;">
+  <img src="images/StudentConnectLogo.png" alt="Logo" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover; border: 1px solid #ccc;">
 
   <!-- Header -->
   <h1 style="margin-left: 20px; margin-top: 0px ; display: inline;">StudentConnect</h1>
