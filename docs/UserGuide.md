@@ -12,7 +12,7 @@ title: User Guide
 
 <p>Welcome to the StudentConnect User Guide! This comprehensive manual is designed to assist students in navigating the features of StudentConnect, a hassle-free team formation solution for students to browse profiles and connect for the CS2103T and CS2101 team project. 
 Whether you're new to the platform or looking to enhance your understanding, this guide is tailored to meet your needs.
-To ensure a seamless experience, we recommend referring to the <a href="#how-to-use-this-guide" style="color: blue;">How to Use This Guide</a> section before you get started. This section provides valuable insights on navigating the document, understanding icons and formatting, and optimizing your overall learning journey. </p>
+To ensure a seamless experience, we recommend referring to the <a href="#how-to-use-this-guide" style="color: blue;">How to Use This Guide</a> section before you get started. This section provides valuable insights on navigating the document, understanding icons and formatting, and optimizing your overall journey. </p>
 
 ## Table of Contents
 
