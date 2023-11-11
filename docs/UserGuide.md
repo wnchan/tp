@@ -10,7 +10,8 @@ title: User Guide
   <h1 style="margin-left: 20px; margin-top: 0px ; display: inline;">StudentConnect</h1>
 </div>
 
-<p>StudentConnect is a solution for hassle-free team formation for students to browse profiles and connect with others for the CS2103T and CS2101 group project.</p>
+<p>Welcome to the StudentConnect User Guide! This comprehensive manual is designed to assist students in navigating the features of StudentConnect, a hassle-free team formation solution for the CS2103T and CS2101 group project. Whether you're new to the platform or looking to enhance your understanding, this guide is tailored to meet your needs.
+To make the most out of your experience, refer to <a href="#how-to-use-this-guide" style="color: blue;">How to Use This Guide</a> before you get started. </p>
 
 ## Table of Contents
 
@@ -136,7 +137,7 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 
 **:information_source: Notes about the command format:**<br>
 
-* Words in `UPPER_CASE` are the parameters to be supplied by the user.<br>
+* Words in `UPPER_CASE` are the parameters to be supplied by you.<br>
   e.g. in `add n/NAME`, `NAME` is a parameter which can be used as `add n/John Doe`.
 
 * Items in square brackets are optional.<br>
@@ -163,7 +164,7 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 ## General Commands
 
 <div markdown="span" class="alert alert-primary">:exclamation: **Important:**
-StudentConnect provides a set of general commands to make it more convenient for users to navigate the app.
+StudentConnect provides a set of general commands to make it more convenient for you to navigate the app.
 </div>
 
 <hr>
@@ -929,7 +930,7 @@ For now, we accept the following majors in National University of Singapore(NUS)
 
 ## Glossary
 
-This glossary is intended to provide definitions for terms that may be unfamiliar to users. It is arranged in alphabetical order.
+This glossary is intended to provide definitions for terms that may be unfamiliar to you. It is arranged in alphabetical order.
 
 - **CS2101**: Effective Communication for Computing Professionals - A course designed to equip computing professionals with essential communication skills, both in technical and non-technical contexts. It covers the creation of clear and comprehensible software documentation and effective communication strategies for diverse audiences.
 
@@ -939,7 +940,7 @@ This glossary is intended to provide definitions for terms that may be unfamilia
 
 - **Case-Sensitive**: Opposite of case-insensitive, this refers to situations where uppercase and lowercase letters are treated differently. For example, "Java" and "java" would be considered distinct.
 
-- **Command Terminal**: An interface in a computing environment where the user can input text commands to perform specific tasks.
+- **Command Terminal**: An interface in a computing environment where you can input text commands to perform specific tasks.
 
 - **Double Degree**: An academic program where a student earns two distinct degrees simultaneously, usually in different fields.
 
@@ -947,9 +948,9 @@ This glossary is intended to provide definitions for terms that may be unfamilia
 
 - **Extraneous Parameters**: These are additional or unnecessary parameters given in a command that do not affect its execution but are not required for the command to function properly.
 
-- **GUI (Graphical User Interface)**: A type of user interface that allows users to interact with electronic devices through graphical icons and visual indicators, as opposed to text-based interfaces, typed command labels, or text navigation.
+- **GUI (Graphical User Interface)**: A type of user interface that allows you to interact with electronic devices through graphical icons and visual indicators, as opposed to text-based interfaces, typed command labels, or text navigation.
 
-- **Home Folder**: In computing, this is a personal directory assigned to a user in a file system, where they store personal files, settings, and configurations.
+- **Home Folder**: In computing, this is a personal directory assigned to you in a file system, where they store personal files, settings, and configurations.
 
 - **Issue (GitHub)**: A feature in GitHub used to track ideas, enhancements, tasks, or bugs for work on GitHub projects.
 
