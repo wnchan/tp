@@ -10,8 +10,9 @@ title: User Guide
   <h1 style="margin-left: 20px; margin-top: 0px ; display: inline;">StudentConnect</h1>
 </div>
 
-<p>Welcome to the StudentConnect User Guide! This comprehensive manual is designed to assist students in navigating the features of StudentConnect, a hassle-free team formation solution for the CS2103T and CS2101 group project. Whether you're new to the platform or looking to enhance your understanding, this guide is tailored to meet your needs.
-To make the most out of your experience, refer to <a href="#how-to-use-this-guide" style="color: blue;">How to Use This Guide</a> before you get started. </p>
+<p>Welcome to the StudentConnect User Guide! This comprehensive manual is designed to assist students in navigating the features of StudentConnect, a hassle-free team formation solution for students to browse profiles and connect for the CS2103T and CS2101 team project. 
+Whether you're new to the platform or looking to enhance your understanding, this guide is tailored to meet your needs.
+To ensure a seamless experience, we recommend referring to the <a href="#how-to-use-this-guide" style="color: blue;">How to Use This Guide</a> section before you get started. This section provides valuable insights on navigating the document, understanding icons and formatting, and optimizing your overall learning journey. </p>
 
 ## Table of Contents
 
@@ -932,9 +933,9 @@ For now, we accept the following majors in National University of Singapore(NUS)
 
 This glossary is intended to provide definitions for terms that may be unfamiliar to you. It is arranged in alphabetical order.
 
-- **CS2101**: Effective Communication for Computing Professionals - A course designed to equip computing professionals with essential communication skills, both in technical and non-technical contexts. It covers the creation of clear and comprehensible software documentation and effective communication strategies for diverse audiences.
+- **CS2101**: Effective Communication for Computing Professionals - An NUS course designed to equip computing professionals with essential communication skills, both in technical and non-technical contexts. It covers the creation of clear and comprehensible software documentation and effective communication strategies for diverse audiences.
 
-- **CS2103T**: Software Engineering - A course focusing on the systematic and rigorous development of software systems. It covers essential concepts and analytical tools necessary for software engineering.
+- **CS2103T**: Software Engineering - An NUS course focusing on the systematic and rigorous development of software systems. It covers essential concepts and analytical tools necessary for software engineering.
 
 - **Case-Insensitive**: Refers to the handling of text where uppercase and lowercase letters are treated as equivalent. For instance, in a case-insensitive search, searching for "Java" or "java" would yield the same results.
 
