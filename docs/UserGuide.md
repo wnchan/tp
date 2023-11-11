@@ -2,8 +2,15 @@
 layout: page
 title: User Guide
 ---
+<div style="display: inline-flex; align-items: center; border: 2px solid #ccc; padding: 15px; border-radius: 15px; vertical-align: top; margin-bottom: 20px;">
+  <!-- Logo on the left -->
+  <img src="images/StudentConnectLogo.png" alt="Logo" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover; border: 1px solid #ccc;">
 
-StudentConnect is a solution for hassle-free team formation for students to browse profiles and connect with others for the CS2103T and CS2101 group project.
+  <!-- Header -->
+  <h1 style="margin-left: 20px; margin-top: 0px ; display: inline;">StudentConnect</h1>
+</div>
+
+<p>StudentConnect is a solution for hassle-free team formation for students to browse profiles and connect with others for the CS2103T and CS2101 group project.</p>
 
 ## Table of Contents
 
@@ -46,6 +53,8 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 11. <a href="#glossary" style="color: blue;">Glossary</a>
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
+
 ## How to Use This Guide
 
 This guide is designed to help you navigate the features of StudentConnect with ease. 
@@ -119,6 +128,8 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 6. Refer to the <a href="#features" style="color: blue;">Features</a> below for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
+
 ## Features
 
 <div markdown="block" class="alert alert-info">
@@ -146,6 +157,8 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 </div>
 
 <hr>
+
+<div style="page-break-after: always;"></div>
 
 ## General Commands
 
@@ -208,6 +221,7 @@ Exits the program.
 * Message: `Error: Exiting the program failed.`
 
 <hr>
+<div style="page-break-after: always;"></div>
 
 ## Student Commands
 
@@ -281,7 +295,7 @@ Shows a list of all students in the system.
 #### Format: `list`
 
 #### Expected Output (Success):
-* GUI: List of all student entries in the system
+* GUI: List of all student entries in the system.
 * Message: `Viewing all students`<br>
   ![sample result for 'list'](images/list.png)
 
@@ -316,7 +330,7 @@ A student can edit to have any number of social media links. Add multiple social
 *  `edit betsycrowe@u.nus.edu n/Betsy Crower sm/` Edits the name of the student with the email `betsycrowe@u.nus.edu` to be `Betsy Crower` and clears all existing social media.
 
 #### Acceptable Values:
-* EMAIL: a previously registered email address ending in `@u.nus.edu`
+* EMAIL: a previously registered email address ending in `@u.nus.edu`.
 
 #### Expected Output (Success):
 * GUI: Student details updated in the student list.
@@ -337,11 +351,11 @@ Finds student(s) whose name(s) contain any of the given keywords.
 
 #### Format: `find KEYWORD [MORE_KEYWORDS]…​`
 
-* The search is case-insensitive. e.g. `john` will match `John`
-* The order of the keywords does not matter. e.g. `John Doe` will match `Doe John`
+* The search is case-insensitive. e.g. `john` will match `John`.
+* The order of the keywords does not matter. e.g. `John Doe` will match `Doe John`.
 * Only the name is searched.
-* Partial words can be matched. e.g. `John` will match `Johnny`
-* Students matching at least one keyword will be returned (i.e. `OR` search). e.g. `John Crowe` will return `John Doe`, `Betsy Crowe`
+* Partial words can be matched. e.g. `John` will match `Johnny`.
+* Students matching at least one keyword will be returned (i.e. `OR` search). e.g. `John Crowe` will return `John Doe`, `Betsy Crowe`.
 
 #### Examples:
 * `find John` returns `john`, `John Doe` and `Johnny Wee`.
@@ -387,7 +401,7 @@ Filters students by tutorial based on the given slots.
   `Parameters: SLOT [MORE_SLOTS]...`<br>
   `Example: filter 08 15`
 * Case: Invalid slot(s) is provided, e.g. `filter 25`, `filter 0`, etc.
- Message: "Tutorials should be 2-digit numbers between 01 and 22."
+ Message: `Tutorials should be 2-digit numbers between 01 and 22.`
 
 <hr>
 
@@ -404,7 +418,7 @@ Deletes a specific student and all personal details based on email.
 * `list` followed by `delete alexy@u.nus.edu` deletes Alex Yeo from the system.
 
 #### Acceptable Values:
-* EMAIL: a previously registered email address ending in `u.nus.edu`
+* EMAIL: a previously registered email address ending in `u.nus.edu`.
 
 #### Expected Output(Success):
 * GUI: Student details removed from student list.
@@ -421,6 +435,7 @@ Deletes a specific student and all personal details based on email.
   `Example: delete alexyeoh@u.nus.edu`
 
 <hr>
+<div style="page-break-after: always;"></div>
 
 ## Group Commands
 
@@ -446,9 +461,9 @@ Creates a new empty group with the given tutorial number. The group number is au
 
 #### Expected Output(Failure):
 * Case: Invalid command format, e.g. `create`, `create 02`, etc.
-Message: `Invalid command format!`
-  `create: Creates a new empty group.`
-  `Parameters: t/TUTORIAL Example: create t/02`
+Message: `Invalid command format!`<br>
+  `create: Creates a new empty group.`<br>
+  `Parameters: t/TUTORIAL Example: create t/02`<br>
 * Case: Invalid tutorial number is provided, e.g. `create t/0`, `create t/25`, etc.
  Message: `Tutorials should be 2-digit numbers between 01 and 22.`
 
@@ -682,7 +697,7 @@ Lists out all tasks for a specific group.
   `tasks: Lists out all tasks for a specific group.`<br>
   `Parameters: GROUP_NUMBER`<br>
   `Example: tasks 3`
-* Case: Invalid group number as the group has not yet been created
+* Case: Invalid group number as the group has not yet been created.
     * Message: `Group with the provided group number not found.`
 
 <hr>
@@ -756,6 +771,7 @@ Message: `Task index must be a positive integer.`
 Message: `Invalid task index. Task not found.`
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ### Saving The Data
 
@@ -779,6 +795,8 @@ _Details coming soon ..._
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
+
 ## FAQ
 
 **Q**: How do I transfer my data to another Computer?<br>
@@ -787,6 +805,7 @@ _Details coming soon ..._
 **Q**: Where is my data being saved? <br>
 **A**: It is saved in `[JAR file location]/data/addressbook.json`.
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ## Known Issues
 
@@ -794,6 +813,7 @@ _Details coming soon ..._
 2. **Clear Command**, if you use the clear command, but exit the application incorrectly using the red exit button instead of running the exit command, data will not be cleared. Kindly always use the exit command to leave the application.
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ## Command Summary
 
@@ -821,6 +841,7 @@ _Details coming soon ..._
 | **Unmark**       | `unmark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `unmark gr/5 ti/1`                                                                                                                                                                             |
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ## Appendix
 
@@ -904,6 +925,8 @@ For now, we accept the following majors in National University of Singapore(NUS)
 | Visual Communications                     |
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
+
 ## Glossary
 
 This glossary is intended to provide definitions for terms that may be unfamiliar to users. It is arranged in alphabetical order.
