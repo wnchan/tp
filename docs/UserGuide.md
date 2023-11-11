@@ -102,7 +102,7 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 
 ## Quick Start
 
-1. Ensure you have Java `11` or above installed in your Computer.
+1. Ensure you have Java `11` or above installed in your Computer. If not, you can download Java `11` from <a href="https://www.oracle.com/java/technologies/downloads/#java11" style="color: blue;">here</a>
 
 2. Download the latest `studentconnect.jar` from <a href="https://github.com/AY2324S1-CS2103T-F12-2/tp/releases" style="color: blue;">here</a>
 
