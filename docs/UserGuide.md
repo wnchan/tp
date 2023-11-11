@@ -10,7 +10,7 @@ title: User Guide
   <h1 style="margin-left: 20px; margin-top: 0px ; display: inline;">StudentConnect</h1>
 </div>
 
-<p>Welcome to the StudentConnect User Guide! This comprehensive manual is designed to assist you in navigating the features of StudentConnect, a hassle-free team formation solution for CS2103T and CS2101 students to browse profiles and connect for the team project. 
+<p>Welcome to the StudentConnect User Guide! This comprehensive manual is designed to assist you in navigating the features of StudentConnect, a hassle-free team formation solution for CS2103T and CS2101 students to browse profiles and connect for the team project.
 Whether you're new to the platform or looking to enhance your understanding, this guide is tailored to meet your needs.
 To ensure a seamless experience, we recommend referring to the <a href="#how-to-use-this-guide" style="color: blue;">How to Use This Guide</a> section before you get started. This section provides valuable insights on navigating the document, understanding icons and formatting, and optimizing your overall journey. </p>
 
@@ -59,7 +59,7 @@ To ensure a seamless experience, we recommend referring to the <a href="#how-to-
 
 ## How to Use This Guide
 
-This guide is designed to help you navigate the features of StudentConnect with ease. 
+This guide is designed to help you navigate the features of StudentConnect with ease.
 - To assist you in understanding and using this manual effectively, we've included a symbol table that outlines the icons and notations you'll encounter throughout the document.
 
 | Symbol               | Type        | Description                                                                                                                         |
@@ -115,17 +115,17 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
-    * `list` : 
+    * `list` :
         * Lists all students in the StudentConnect system.
-    * `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time t/02 t/17 t/20 sm/https://www.linkedin.com/in/john-doe-123456789 nt/local g/m` : 
+    * `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time t/02 t/17 t/20 sm/https://www.linkedin.com/in/john-doe-123456789 nt/local g/m` :
         * Adds a student named `John Doe` and his details to the StudentConnect system.
-    * `delete EMAIL` : 
+    * `delete EMAIL` :
         * Deletes the student with the corresponding email.
     * `create t/03` :
          * Creates a new group assigned to tutorial 3.
-    * `clear` : 
+    * `clear` :
         * Deletes all data from the system (i.e. students, groups, and tasks).
-    * `exit` : 
+    * `exit` :
         * Exits the app.
 6. Refer to the <a href="#features" style="color: blue;">Features</a> below for details of each command.
 
@@ -532,7 +532,7 @@ Message: `Student with the provided email not found.`
 Message: `Group with the provided group number not found.`
 * Case: Student has been added in the group already.<br>
 Message: `The provided student is already a member of the provided group.`
-* Case: Group has 5 members and is full.<br> 
+* Case: Group has 5 members and is full.<br>
 Message: `Join failed as the group already has 5 members.`
 * Case: Student is found in another group already.<br>
 Message: `The provided student is already in another group.`
@@ -567,7 +567,7 @@ Deletes a member from a specific group, indicating that they have left.
 Message: `Person with the provided email not found.`
 * Case: Group number not found in the system.<br>
 Message: `Group with the provided group number not found.`
-* Case: Student is not a member of the provided group.<br> 
+* Case: Student is not a member of the provided group.<br>
 Message: `The above student is not a member of the provided group.`
 
 <hr>
