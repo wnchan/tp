@@ -46,6 +46,8 @@ StudentConnect is a solution for hassle-free team formation for students to brow
 11. <a href="#glossary" style="color: blue;">Glossary</a>
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
+
 ## How to Use This Guide
 
 This guide is designed to help you navigate the features of StudentConnect with ease. 
@@ -119,6 +121,8 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 6. Refer to the <a href="#features" style="color: blue;">Features</a> below for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
+
 ## Features
 
 <div markdown="block" class="alert alert-info">
@@ -146,6 +150,8 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 </div>
 
 <hr>
+
+<div style="page-break-after: always;"></div>
 
 ## General Commands
 
@@ -208,6 +214,7 @@ Exits the program.
 * Message: `Error: Exiting the program failed.`
 
 <hr>
+<div style="page-break-after: always;"></div>
 
 ## Student Commands
 
@@ -421,6 +428,7 @@ Deletes a specific student and all personal details based on email.
   `Example: delete alexyeoh@u.nus.edu`
 
 <hr>
+<div style="page-break-after: always;"></div>
 
 ## Group Commands
 
@@ -756,6 +764,7 @@ Message: `Task index must be a positive integer.`
 Message: `Invalid task index. Task not found.`
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ### Saving The Data
 
@@ -779,6 +788,8 @@ _Details coming soon ..._
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
+
 ## FAQ
 
 **Q**: How do I transfer my data to another Computer?<br>
@@ -787,6 +798,7 @@ _Details coming soon ..._
 **Q**: Where is my data being saved? <br>
 **A**: It is saved in `[JAR file location]/data/addressbook.json`.
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ## Known Issues
 
@@ -794,6 +806,7 @@ _Details coming soon ..._
 2. **Clear Command**, if you use the clear command, but exit the application incorrectly using the red exit button instead of running the exit command, data will not be cleared. Kindly always use the exit command to leave the application.
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ## Command Summary
 
@@ -821,6 +834,7 @@ _Details coming soon ..._
 | **Unmark**       | `unmark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `unmark gr/5 ti/1`                                                                                                                                                                             |
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ## Appendix
 
@@ -904,6 +918,8 @@ For now, we accept the following majors in National University of Singapore(NUS)
 | Visual Communications                     |
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
+
 ## Glossary
 
 This glossary is intended to provide definitions for terms that may be unfamiliar to users. It is arranged in alphabetical order.
