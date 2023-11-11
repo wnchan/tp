@@ -52,7 +52,7 @@ The bulk of the app's work is done by the following four components:
 
 **How the architecture components interact with each other**
 
-The *Sequence Diagram* below shows how the components interact with each other for the scenario where the user issues the command `delete 1`.
+The *Sequence Diagram* below shows how the components interact with each other for the scenario where the user issues the command `delete johnd@u.nus.edu`.
 
 <img src="images/ArchitectureSequenceDiagram.png" width="574" />
 
@@ -394,8 +394,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* * `   | student            | be able to leave a group on the app                                | join another group of my choice                   |
 | `* * `   | student            | be able to delete a group I created on the app                     | get rid of unnecessary groups on the system       |
 | `* * `   | student            | be able to view my courses' deadlines and tasks                    | keep track of my projects' deliverables           |
-| `* * `   | student            | be able to mark a task as complete                                 | priotise other tasks                              |
-| `* * `   | student            | be able to unmark a task as incomplete                             | priotise on completing it                         |
+| `* * `   | student            | be able to mark a task as complete                                 | prioritise other tasks                            |
+| `* * `   | student            | be able to unmark a task as incomplete                             | prioritise on completing it                       |
 | `* * `   | student            | be able to view my courses' deadlines and tasks                    | keep track of my projects' deliverables           |
 | `* * *`  | course coordinator | be able to remove all the data from the system                     | reuse the application for new batches of students |
 | `* * *`  | course coordinator | be asked to confirm if I want to clear all the data                | prevent accidentally clearing all the data        |
