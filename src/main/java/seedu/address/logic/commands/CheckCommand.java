@@ -115,6 +115,12 @@ public class CheckCommand extends Command {
         }
     }
 
+    /**
+     * Checks if a group has a mix of local and foreigner members.
+     *
+     * @param groupMembers The set of persons representing the group members.
+     * @return True if there is a mix of local and foreigner members, false otherwise.
+     */
     private boolean hasMixNationality(Set<Person> groupMembers) {
         int localCount = 0;
         int foreignerCount = 0;
@@ -132,6 +138,12 @@ public class CheckCommand extends Command {
         return true;
     }
 
+    /**
+     * Checks if a group has a mix of male and female members.
+     *
+     * @param groupMembers The set of persons representing the group members.
+     * @return True if there is a mix of male and female members, false otherwise.
+     */
     private boolean hasMixGender(Set<Person> groupMembers) {
         int maleCount = 0;
         int femaleCount = 0;
@@ -149,6 +161,13 @@ public class CheckCommand extends Command {
         return true;
     }
 
+    /**
+     * Checks if all members of a group belong to a specific tutorial.
+     *
+     * @param groupMembers The set of persons representing the group members.
+     * @param groupTutorial The tutorial code to check against.
+     * @return True if all members belong to the specified tutorial, false otherwise.
+     */
     private boolean hasGroupTutorial(Set<Person> groupMembers, String groupTutorial) {
         int count = 0;
         for (Person member : groupMembers) {
