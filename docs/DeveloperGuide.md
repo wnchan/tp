@@ -789,18 +789,34 @@ testers are expected to do more *exploratory* testing.
 
 1. Initial launch
 
-   1. Download the jar file and copy into an empty folder
-
-   2. Double-click the jar file Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
+   1. Ensure you have Java `11` or above installed in your Computer. 
+   
+   2. Download the latest `studentconnect.jar` from <a href="https://github.com/AY2324S1-CS2103T-F12-2/tp/releases" style="color: blue;">here</a>
+   
+   3. Copy the file to the folder you want to use as the _home folder_ for your StudentConnect. 
+   
+   4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar studentconnect.jar` command to run the application.<br>
+   
+   5. Expected: Shows the GUI with a set of sample data. The window size may not be optimum.
+   
+   ![Ui](images/Ui.png)
 
 2. Saving window preferences
 
    1. Resize the window to an optimum size. Move the window to a different location. Close the window.
 
-   2. Re-launch the app by double-clicking the jar file.<br>
+   2. Re-launch the app by repeating step 4 of the Initial launch.<br>
        Expected: The most recent window size and location is retained.
 
-3. _{ more test cases …​ }_
+3. Shutting down
+
+    1. Input command `Exit` into the CLI of the StudentConnect app.<br>
+        Alternatively, click the `File` button, followed by the `Exit` button.
+
+    2. Expected: The `Exit` message is shown and the app closes.
+        Exception: When using the `Exit` button to close the app, the `Exit` message is not shown. 
+
+4. _{ more test cases …​ }_
 
 ### Deleting a person
 
