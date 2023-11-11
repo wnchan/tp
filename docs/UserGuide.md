@@ -10,7 +10,7 @@ title: User Guide
   <h1 style="margin-left: 20px; margin-top: 0px ; display: inline;">StudentConnect</h1>
 </div>
 
-<p>Welcome to the StudentConnect User Guide! This comprehensive manual is designed to assist students in navigating the features of StudentConnect, a hassle-free team formation solution for students to browse profiles and connect for the CS2103T and CS2101 team project. 
+<p>Welcome to the StudentConnect User Guide! This comprehensive manual is designed to assist you in navigating the features of StudentConnect, a hassle-free team formation solution for CS2103T and CS2101 students to browse profiles and connect for the team project. 
 Whether you're new to the platform or looking to enhance your understanding, this guide is tailored to meet your needs.
 To ensure a seamless experience, we recommend referring to the <a href="#how-to-use-this-guide" style="color: blue;">How to Use This Guide</a> section before you get started. This section provides valuable insights on navigating the document, understanding icons and formatting, and optimizing your overall journey. </p>
 
@@ -97,6 +97,7 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 - The <a href="#appendix" style="color: blue;">appendix</a> section is included to detail all possible input values for fields that have specific constraints or require particular formats. This reference can help ensure that you input data correctly and understand the limitations of each field.
 - For a quick and compact overview of all the commands that StudentConnect offers, refer to the <a href="#command-summary" style="color: blue;">command summary</a>. This section servers as a handy reference for all possible actions you can perform within the application, laid out in an easily digestible format.
 
+> [Back to Table of Contents](#table-of-contents)
 --------------------------------------------------------------------------------------------------------------------
 
 ## Quick Start
@@ -120,15 +121,15 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
         * Adds a student named `John Doe` and his details to the StudentConnect system.
     * `delete EMAIL` : 
         * Deletes the student with the corresponding email.
+    * `create t/03` :
+         * Creates a new group assigned to tutorial 3.
     * `clear` : 
         * Deletes all data from the system (i.e. students, groups, and tasks).
     * `exit` : 
         * Exits the app.
-    * `create t/03` : 
-        * Creates a new group assigned to tutorial 3.
-
 6. Refer to the <a href="#features" style="color: blue;">Features</a> below for details of each command.
 
+> [Back to Table of Contents](#table-of-contents)
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
@@ -158,6 +159,7 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </div>
 
+> [Back to Table of Contents](#table-of-contents)
 <hr>
 
 <div style="page-break-after: always;"></div>
@@ -222,6 +224,7 @@ Exits the program.
 #### Expected Output(Failure):
 * Message: `Error: Exiting the program failed.`
 
+> [Back to Table of Contents](#table-of-contents)
 <hr>
 <div style="page-break-after: always;"></div>
 
@@ -436,6 +439,7 @@ Deletes a specific student and all personal details based on email.
   `Parameters: EMAIL`<br>
   `Example: delete alexyeoh@u.nus.edu`
 
+> [Back to Table of Contents](#table-of-contents)
 <hr>
 <div style="page-break-after: always;"></div>
 
@@ -795,6 +799,7 @@ If your changes to the data file makes its format invalid, StudentConnect will d
 
 _Details coming soon ..._
 
+> [Back to Table of Contents](#table-of-contents)
 --------------------------------------------------------------------------------------------------------------------
 
 <div style="page-break-after: always;"></div>
@@ -806,6 +811,7 @@ _Details coming soon ..._
 
 **Q**: Where is my data being saved? <br>
 **A**: It is saved in `[JAR file location]/data/addressbook.json`.
+> [Back to Table of Contents](#table-of-contents)
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
@@ -813,7 +819,7 @@ _Details coming soon ..._
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 2. **Clear Command**, if you use the clear command, but exit the application incorrectly using the red exit button instead of running the exit command, data will not be cleared. Kindly always use the exit command to leave the application.
-
+> [Back to Table of Contents](#table-of-contents)
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
@@ -842,6 +848,7 @@ _Details coming soon ..._
 | **Mark**         | `mark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `mark gr/2 ti/1`                                                                                                                                                                                 |
 | **Unmark**       | `unmark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `unmark gr/5 ti/1`                                                                                                                                                                             |
 
+> [Back to Table of Contents](#table-of-contents)
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
@@ -926,6 +933,7 @@ For now, we accept the following majors in National University of Singapore(NUS)
 | Urban Studies                             |
 | Visual Communications                     |
 
+> [Back to Table of Contents](#table-of-contents)
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
@@ -958,3 +966,5 @@ This glossary is intended to provide definitions for terms that may be unfamilia
 - **Java 11**: A version of Java, a widely used programming language and computing platform. Java 11 includes various updates and features different from its predecessors.
 
 - **Major-Minor**: An academic program where a student completes a major (primary focus) and a minor (secondary concentration) in different subjects.
+
+> [Back to Table of Contents](#table-of-contents)
