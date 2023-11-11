@@ -288,7 +288,7 @@ Shows a list of all students in the system.
 #### Format: `list`
 
 #### Expected Output (Success):
-* GUI: List of all student entries in the system
+* GUI: List of all student entries in the system.
 * Message: `Viewing all students`<br>
   ![sample result for 'list'](images/list.png)
 
@@ -323,7 +323,7 @@ A student can edit to have any number of social media links. Add multiple social
 *  `edit betsycrowe@u.nus.edu n/Betsy Crower sm/` Edits the name of the student with the email `betsycrowe@u.nus.edu` to be `Betsy Crower` and clears all existing social media.
 
 #### Acceptable Values:
-* EMAIL: a previously registered email address ending in `@u.nus.edu`
+* EMAIL: a previously registered email address ending in `@u.nus.edu`.
 
 #### Expected Output (Success):
 * GUI: Student details updated in the student list.
@@ -344,11 +344,11 @@ Finds student(s) whose name(s) contain any of the given keywords.
 
 #### Format: `find KEYWORD [MORE_KEYWORDS]…​`
 
-* The search is case-insensitive. e.g. `john` will match `John`
-* The order of the keywords does not matter. e.g. `John Doe` will match `Doe John`
+* The search is case-insensitive. e.g. `john` will match `John`.
+* The order of the keywords does not matter. e.g. `John Doe` will match `Doe John`.
 * Only the name is searched.
-* Partial words can be matched. e.g. `John` will match `Johnny`
-* Students matching at least one keyword will be returned (i.e. `OR` search). e.g. `John Crowe` will return `John Doe`, `Betsy Crowe`
+* Partial words can be matched. e.g. `John` will match `Johnny`.
+* Students matching at least one keyword will be returned (i.e. `OR` search). e.g. `John Crowe` will return `John Doe`, `Betsy Crowe`.
 
 #### Examples:
 * `find John` returns `john`, `John Doe` and `Johnny Wee`.
@@ -394,7 +394,7 @@ Filters students by tutorial based on the given slots.
   `Parameters: SLOT [MORE_SLOTS]...`<br>
   `Example: filter 08 15`
 * Case: Invalid slot(s) is provided, e.g. `filter 25`, `filter 0`, etc.
- Message: "Tutorials should be 2-digit numbers between 01 and 22."
+ Message: `Tutorials should be 2-digit numbers between 01 and 22.`
 
 <hr>
 
@@ -411,7 +411,7 @@ Deletes a specific student and all personal details based on email.
 * `list` followed by `delete alexy@u.nus.edu` deletes Alex Yeo from the system.
 
 #### Acceptable Values:
-* EMAIL: a previously registered email address ending in `u.nus.edu`
+* EMAIL: a previously registered email address ending in `u.nus.edu`.
 
 #### Expected Output(Success):
 * GUI: Student details removed from student list.
@@ -454,9 +454,9 @@ Creates a new empty group with the given tutorial number. The group number is au
 
 #### Expected Output(Failure):
 * Case: Invalid command format, e.g. `create`, `create 02`, etc.
-Message: `Invalid command format!`
-  `create: Creates a new empty group.`
-  `Parameters: t/TUTORIAL Example: create t/02`
+Message: `Invalid command format!`<br>
+  `create: Creates a new empty group.`<br>
+  `Parameters: t/TUTORIAL Example: create t/02`<br>
 * Case: Invalid tutorial number is provided, e.g. `create t/0`, `create t/25`, etc.
  Message: `Tutorials should be 2-digit numbers between 01 and 22.`
 
@@ -690,7 +690,7 @@ Lists out all tasks for a specific group.
   `tasks: Lists out all tasks for a specific group.`<br>
   `Parameters: GROUP_NUMBER`<br>
   `Example: tasks 3`
-* Case: Invalid group number as the group has not yet been created
+* Case: Invalid group number as the group has not yet been created.
     * Message: `Group with the provided group number not found.`
 
 <hr>
