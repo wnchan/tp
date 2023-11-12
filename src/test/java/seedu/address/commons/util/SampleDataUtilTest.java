@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
+import seedu.address.model.group.Group;
 import seedu.address.model.person.Person;
 import seedu.address.model.util.SampleDataUtil;
 
@@ -13,6 +14,12 @@ public class SampleDataUtilTest {
     public void getSamplePersons_validData_returnsSamplePersonsArray() {
         Person[] samplePersons = SampleDataUtil.getSamplePersons();
         assertEquals(6, samplePersons.length); // Check if the correct number of sample persons is returned
+    }
+
+    @Test
+    public void getSampleGroups_validData_returnsSampleGroupsArray() {
+        Group[] sampleGroups = SampleDataUtil.getSampleGroups();
+        assertEquals(2, sampleGroups.length); // Check if the correct number of sample groups is returned
     }
 
     @Test
