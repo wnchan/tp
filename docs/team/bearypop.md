@@ -30,7 +30,7 @@ Given below are my contributions to the project.
 * Updated tests for `add` command [\#57](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/57)
 * Updated tests for `delete`, `edit` commands and Logic Manager [\#58](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/58)
 * Created tests for the `Group` class [\#174](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/174)
-* Created tests for `create` and `join` commands [\#194](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/194)
+* Created tests for `create`, `join` and `listGroup` commands [\#194](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/194), [\#208](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/208)
 
 
 ### Code contributed: [RepoSense link](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=bearypop&breakdown=true)
@@ -40,16 +40,4 @@ Given below are my contributions to the project.
     * Added documentation for the features `exit` [\#15](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/15), [\#61](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/61)
     * Added documentation for the features `create`, `join` and `listGroup` [\#137](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/137)
 * Developer Guide:
-    * Added documentation for the features `create` [\#83](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/83)
-
-
-### Project management:
-* to be added soon
-
-### Community:
-* to be added soon
-
-### Tools:
-* to be added soon
-
-_{you can add/remove categories in the list above}_
+    * Added documentation for the features `create` and the `UI` component [\#83](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/83), [\#200](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/200)
