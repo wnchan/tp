@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 import org.junit.jupiter.api.Test;
 
 import seedu.address.model.group.exceptions.TaskException;
+import seedu.address.testutil.TaskBuilder;
 
 public class TaskTest {
 
@@ -84,6 +85,10 @@ public class TaskTest {
 
     @Test
     public void equals() {
+        // same values -> returns true
+        Task taskCopy = new TaskBuilder(CS2101_OP1_UPLOAD).build();
+        assertTrue(CS2101_OP1_UPLOAD.equals(taskCopy));
+
         // same object -> returns true
         assertTrue(CS2101_OP1_UPLOAD.equals(CS2101_OP1_UPLOAD));
 
@@ -93,7 +98,28 @@ public class TaskTest {
         // different type -> returns false
         assertFalse(CS2101_OP1_UPLOAD.equals("CS2101_OP1_UPLOAD"));
 
-        // different group -> returns false
+        // different task -> returns false
         assertFalse(CS2101_OP1_UPLOAD.equals(CS2101_PLAN_OP2));
+
+        // different description -> returns false
+        Task editedDescription = new TaskBuilder(CS2101_OP1_UPLOAD).withDescription("Different Task").build();
+        assertFalse(CS2101_OP1_UPLOAD.equals(editedDescription));
+
+        // different status -> returns false
+        Task editedStatus = new TaskBuilder(CS2101_OP1_UPLOAD).withStatus(TaskStatus.NOT_DONE).build();
+        assertFalse(CS2101_OP1_UPLOAD.equals(editedStatus));
+
+        // different module -> returns false
+        Task editedModule = new TaskBuilder(CS2101_OP1_UPLOAD).withModule(TaskModule.CS2103T).build();
+        assertFalse(CS2101_OP1_UPLOAD.equals(editedModule));
+
+        // different type -> returns false
+        Task editedType = new TaskBuilder(CS2101_OP1_UPLOAD).withType("DEADLINE").build();
+        assertFalse(CS2101_OP1_UPLOAD.equals(editedType));
+
+        // different deadline -> returns false
+        Task editedDeadline = new TaskBuilder(CS2101_OP1_UPLOAD).withBy("01/01/2024 0000").build();
+        assertFalse(CS2101_OP1_UPLOAD.equals(editedDeadline));
+
     }
 }
