@@ -63,4 +63,18 @@ public class TaskTest {
         task.unMark();
         assertEquals(TaskStatus.NOT_DONE, task.getStatus());
     }
+
+    @Test
+    void taskException_withMessage_containsCorrectMessage() {
+        String errorMessage = "Test error message";
+        TaskException exception = new TaskException(errorMessage);
+        assertEquals(errorMessage, exception.getMessage());
+    }
+
+    @Test
+    void constructor_withInvalidDateFormat_throwsTaskException() {
+        assertThrows(TaskException.class, () -> {
+            new Deadline("Read book", TaskStatus.NOT_DONE, TaskModule.CS2101, "invalid-date-format");
+        });
+    }
 }
