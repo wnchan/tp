@@ -1,11 +1,16 @@
 package seedu.address.model.util;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 import seedu.address.model.AddressBook;
 import seedu.address.model.ReadOnlyAddressBook;
+import seedu.address.model.group.Group;
+import seedu.address.model.group.exceptions.TaskException;
+import seedu.address.model.group.tasks.TaskInitializer;
+import seedu.address.model.group.tasks.TaskList;
 import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Gender;
@@ -57,10 +62,26 @@ public class SampleDataUtil {
         };
     }
 
+    public static Group[] getSampleGroups() {
+        try {
+            return new Group[]{
+                    new Group(1, new Tutorial("01"), new HashSet<>(Set.of(getSamplePersons()[0])),
+                            TaskInitializer.initializeTasks()),
+                    new Group(2, new Tutorial("11"), new HashSet<>(Set.of(getSamplePersons()[3],
+                            getSamplePersons()[5])), TaskInitializer.initializeTasks())
+            };
+        } catch (TaskException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static ReadOnlyAddressBook getSampleAddressBook() {
         AddressBook sampleAb = new AddressBook();
         for (Person samplePerson : getSamplePersons()) {
             sampleAb.addPerson(samplePerson);
+        }
+        for (Group sampleGroup : getSampleGroups()) {
+            sampleAb.addGroup(sampleGroup);
         }
         return sampleAb;
     }
