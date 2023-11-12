@@ -205,7 +205,7 @@ public class CommandTestUtil {
      * {@code model}'s address book.
      */
     public static void showGroupAtIndex(Model model, Index targetIndex) {
-        assertTrue(targetIndex.getZeroBased() < model.getFilteredPersonList().size());
+        assertTrue(targetIndex.getZeroBased() < model.getFilteredGroupList().size());
 
         Group group = model.getFilteredGroupList().get(targetIndex.getZeroBased());
         int groupNumber = group.getNumber();
