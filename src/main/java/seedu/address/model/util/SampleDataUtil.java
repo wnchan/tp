@@ -64,10 +64,10 @@ public class SampleDataUtil {
     public static Group[] getSampleGroups() {
         try {
             return new Group[]{
-                    new Group(1, new Tutorial("01"), new HashSet<>(Set.of(getSamplePersons()[0])),
-                            TaskInitializer.initializeTasks()),
-                    new Group(2, new Tutorial("11"), new HashSet<>(Set.of(getSamplePersons()[3],
-                            getSamplePersons()[5])), TaskInitializer.initializeTasks())
+                new Group(1, new Tutorial("01"), new HashSet<>(Set.of(getSamplePersons()[0])),
+                        TaskInitializer.initializeTasks()),
+                new Group(2, new Tutorial("11"), new HashSet<>(Set.of(getSamplePersons()[3],
+                        getSamplePersons()[5])), TaskInitializer.initializeTasks())
             };
         } catch (TaskException e) {
             throw new RuntimeException(e);
