@@ -34,7 +34,7 @@ Given below are my contributions to the project.
 
 
 ### Code contributed: [RepoSense link](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=bearypop&breakdown=true)
-    
+
 ### Documentation:
 * User Guide:
     * Added documentation for the features `exit` [\#15](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/15), [\#61](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/61)
