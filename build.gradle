@@ -27,8 +27,9 @@ run {
 test {
     doFirst {
         if (System.getProperty("os.name").equals("Linux")) {
+            // FX tests do not successfully run on Ubuntu Runner
             exclude '**/ui/**'
-            // Excluded because it fails on Ubuntu
+            // Excluded because ClearCommand uses FX as well
             exclude '**/ClearCommandTest.class'
         }
     }
