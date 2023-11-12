@@ -42,7 +42,7 @@ Given below are my contributions to the project.
 * Did equal share of tasks assigned.
 
 ## Review/ mentoring contributions
-* 
+* to be added soon
 
 ## Contributions beyond the project team
 * to be added soon
