@@ -10,7 +10,6 @@ import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.group.Group;
 import seedu.address.model.group.exceptions.TaskException;
 import seedu.address.model.group.tasks.TaskInitializer;
-import seedu.address.model.group.tasks.TaskList;
 import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Gender;
