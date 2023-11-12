@@ -1,7 +1,11 @@
 package seedu.address.model.group.tasks;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static seedu.address.testutil.TypicalTasks.CS2101_OP1_UPLOAD;
+import static seedu.address.testutil.TypicalTasks.CS2101_PLAN_OP2;
 
 import java.time.LocalDateTime;
 
@@ -36,7 +40,7 @@ public class TaskTest {
     }
 
     @Test
-    void parseDateTime_validDateTimeString_parsesCorrectly() throws TaskException {
+    void parseDateTime_validDateTimeString_parsesCorrectly() {
         Task task = new Task();
         LocalDateTime expectedDateTime = LocalDateTime.of(2023, 9, 23, 23, 59);
         assertEquals(expectedDateTime, task.parseDateTime("23/09/2023 2359"));
@@ -76,5 +80,20 @@ public class TaskTest {
         assertThrows(TaskException.class, () -> {
             new Deadline("Read book", TaskStatus.NOT_DONE, TaskModule.CS2101, "invalid-date-format");
         });
+    }
+
+    @Test
+    public void equals() {
+        // same object -> returns true
+        assertTrue(CS2101_OP1_UPLOAD.equals(CS2101_OP1_UPLOAD));
+
+        // null -> returns false
+        assertFalse(CS2101_OP1_UPLOAD.equals(null));
+
+        // different type -> returns false
+        assertFalse(CS2101_OP1_UPLOAD.equals("CS2101_OP1_UPLOAD"));
+
+        // different group -> returns false
+        assertFalse(CS2101_OP1_UPLOAD.equals(CS2101_PLAN_OP2));
     }
 }
