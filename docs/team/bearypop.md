@@ -32,7 +32,6 @@ Given below are my contributions to the project.
 * Created tests for the `Group` class [\#174](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/174)
 * Created tests for `create`, `join` and `listGroup` commands [\#194](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/194), [\#208](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/208)
 
-
 ### Code contributed: [RepoSense link](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=bearypop&breakdown=true)
 
 ### Documentation:
