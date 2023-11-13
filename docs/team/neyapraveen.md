@@ -23,16 +23,13 @@ Given below are my contributions to the project.
 * **New Feature**: Implemented and styled a confirmation pop-up for clear command (including css).
 
 ## Contributions to testing
-* Changed test cases pertaining to `delete` feature.
+* Changed test cases pertaining to `delete` feature, `clear` feature.
 * Created a `JavaFXInitialiser` to be used for fx and ui related tests.
-* Implemented `PersonCardTest`.
-* Implemented test cases pertaining to the `deleteGroup` command.
-* Implemented test cases for the `leave` command.
-* Updated `clear` test cases.
+* Implemented `PersonCardTest`.`deleteGroupCommandTest`, `deleteGroupCommandParserTest`, `leaveCommandTest`, `leaveCommandParserTest`.
 
 ## Contributions to the UG
 * Added documentation for the feature `delete`, `clear`, including the usage of the pop-up, `leave`, `deleteGroup` and social media hyperlinks.
-* Creation of Table of Contents.
+* Created Table of Contents.
 * Reformatted UG according to general commands, person commands and group commands.
 * Wrote the Introduction section and created the Appendix section.
 * Added page breaks for formatting and back to table of contents hyperlink at the end of pages.
@@ -52,8 +49,7 @@ Given below are my contributions to the project.
 
 ## Review/ mentoring contributions
 * Reviewed teammates' PRs and gave suggestions when appropriate.
-* Helped with teammates' UI and debugging.
-* Ensured code quality, helped in adding javadocs.
+* Helped with teammates' UI and debugging, ensured code quality, helped in adding javadocs.
 
 ## Contributions beyond the project team
 * Participated in load testing, helped in finding other group's bugs during PED.
