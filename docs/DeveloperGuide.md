@@ -208,14 +208,6 @@ The Tutorial field is a crucial addition to the StudentConnect application, prov
   List<Tutorial> tutorials = new ArrayList<Tutorial>();
   ```
 
-#### UML Diagrams
-
-To provide a visual representation of the Tutorial field's implementation, we offer the following UML diagrams:
-
-- **Class Diagram for Person**: This diagram illustrates the structure of the Person class, highlighting its relationship with the Tutorial field.
-
-<img src="images/PersonClassDiagram.png" width="800" />
-
 ---
 
 ### List Tasks Feature
