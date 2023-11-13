@@ -751,8 +751,6 @@ Mark a task for a specified group as done.
 
 * Marks the task of the specified group as done.
 
-<div style="page-break-after: always;"></div>
-
 #### Examples:
 *  `mark gr/2 ti/1` Marks task `1` of group `2` as done.
 *  `mark ti/2 gr/12` Marks task `2` of group `12` as done.
