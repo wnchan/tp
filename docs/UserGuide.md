@@ -14,6 +14,8 @@ title: User Guide
 Whether you're new to the platform or looking to enhance your understanding, this guide is tailored to meet your needs.
 To ensure a seamless experience, we recommend referring to the <a href="#how-to-use-this-guide" style="color: blue;">How to Use This Guide</a> section before you get started. This section provides valuable insights on navigating the document, understanding icons and formatting, and optimizing your overall journey. </p>
 
+<div style="page-break-after: always;"></div>
+
 ## Table of Contents
 
 ---
