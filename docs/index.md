@@ -8,6 +8,7 @@ title: StudentConnect
 ![Ui](images/Ui.png)
 
 **StudentConnect is a solution for hassle-free team formation for students to browse profiles and connect with others for the CS2103T and CS2101 group project.**<br>
+<div></div>
 While it has a GUI, most of the user interactions happen using a CLI (Command Line Interface).
 
 * If you are interested in using StudentConnect, head over to the [_Quick Start_ section of the **User Guide**](https://ay2324s1-cs2103t-f12-2.github.io/tp/UserGuide.html#quick-start).
@@ -17,4 +18,4 @@ While it has a GUI, most of the user interactions happen using a CLI (Command Li
 **Acknowledgements**
 
 * This project is based on the AddressBook-Level3 project created by the [**SE-EDU initiative**](https://se-education.org).
-* Libraries used: [**JavaFX**](https://openjfx.io/), [**Jackson**](https://github.com/FasterXML/jackson), [**JUnit5**](https://github.com/junit-team/junit5)
+* Libraries used: [**JavaFX**](https://openjfx.io/), [**Jackson**](https://github.com/FasterXML/jackson), [**JUnit5**](https://github.com/junit-team/junit5).
