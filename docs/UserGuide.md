@@ -109,7 +109,7 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 3. Copy the file to the folder you want to use as the _home folder_ for your StudentConnect.
 
 4. Open a command terminal, and use `cd` to change the current working directory into the folder you put the jar file in. Use the `java -jar studentconnect.jar` command to run the application.<br>
-   A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
+   A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data for students and groups.<br>
    ![Ui](images/Ui.png)
 
 5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
