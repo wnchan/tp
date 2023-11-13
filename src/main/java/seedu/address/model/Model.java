@@ -114,8 +114,20 @@ public interface Model {
      */
     void updateFilteredGroupList(Predicate<Group> predicate);
 
+    /**
+     * Retrieves a {@code Person} with the specified email.
+     *
+     * @param email The email associated with the person.
+     * @return An {@code Optional} containing the {@code Person} if found, or empty otherwise.
+     */
     Optional<Person> getPersonWithEmail(Email email);
 
+    /**
+     * Retrieves a {@code Group} with the specified group number.
+     *
+     * @param number The number associated with the group.
+     * @return An {@code Optional} containing the {@code Group} if found, or empty otherwise.
+     */
     Optional<Group> getGroupWithNumber(int number);
 
     /**
