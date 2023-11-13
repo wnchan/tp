@@ -197,7 +197,7 @@ Clears all entries from the system upon confirmation in the pop-up.
 
 #### Format: `clear`
 * Confirmation Pop-up opened.
-* * Message: `Opened confirmation window. Please ensure you use the exit command when exiting StudentConnect for successful reset.`
+* Message: `Opened confirmation window. Please ensure you use the exit command when exiting StudentConnect for successful reset.`
 
 #### Expected Output(Success):
 * GUI: All students' details are removed from the student list.<br>
@@ -206,7 +206,7 @@ Clears all entries from the system upon confirmation in the pop-up.
 
 #### Expected Output(Failure or Cancellation):
 * Case: Clear command fails.
-* Case: You press `cancel` on the confirmation pop-up.
+* Case: You press `cancel` on the confirmation pop-up.<br>
   GUI: All students' details remain on the student list.
   ![result for cancelled 'clear' GUI](images/clearCancel.png)
 
@@ -287,7 +287,7 @@ Note:
 <div style="text-align: center;">Output with multiple social media links</div>
 
 #### Expected Output (Failure):
-* Case: Invalid command format, e.g. `add`, `add 1`, etc.
+* Case: Invalid command format, e.g. `add`, `add 1`, etc.<br>
 Message: `Invalid command format! add: Adds a student to StudentConnect.`<br>
   `Parameters: n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION [t/TUTORIALS]... [sm/SOCIAL_MEDIA_LINK]... nt/NATIONALITY g/GENDER`<br>
   `Example: add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time`<br>
@@ -373,7 +373,7 @@ Finds student(s) whose name(s) contain any of the given keywords.
   ![result for 'find alex'](images/findAlexResult.png)
 
 #### Expected Output (Failure):
-* Case: Invalid command format, e.g. `find`.
+* Case: Invalid command format, e.g. `find`.<br>
 Message: `Invalid command format!`<br>
   `find: Finds all students whose names contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.`<br>
   `Parameters: KEYWORD [MORE_KEYWORDS]...`<br>
@@ -388,7 +388,7 @@ Filters students by tutorial based on the given slots.
 #### Format: `filter SLOT [MORE SLOTS]…​`
 
 * The slots must be 2-digit numbers between `01` and `22` inclusive.
-* Tutorials are only accepted as 2-digits, ie. `3` is not a valid tutorial, but `03` is.
+* Tutorials are only accepted as 2-digits, i.e. `3` is not a valid tutorial, but `03` is.
 * The order of the slots does not matter. e.g. `08 15` will match `15 08`.
 * Only the tutorial is searched.
 * Students matching at least one tutorial slot will be returned (i.e. `OR` search). e.g. `03 12` will return `03 16`, `04 12`.
@@ -402,12 +402,12 @@ Filters students by tutorial based on the given slots.
   ![result for 'filter 04'](images/filter.png)
 
 #### Expected Output (Failure):
-* Case: Invalid command format, e.g. `filter`.
+* Case: Invalid command format, e.g. `filter`.<br>
  Message: `Invalid command format!`<br>
   `filter: Filters all students whose tutorials match any of the specified slots (2-digit numbers between 01 and 22) and displays them as a list with index numbers.`<br>
   `Parameters: SLOT [MORE_SLOTS]...`<br>
   `Example: filter 08 15`
-* Case: Invalid slot(s) is provided, e.g. `filter 25`, `filter 0`, etc.
+* Case: Invalid slot(s) is provided, e.g. `filter 25`, `filter 0`, etc.<br>
  Message: `Tutorials should be 2-digit numbers between 01 and 22.`
 
 <hr>
@@ -433,9 +433,9 @@ Deletes a specific student and all personal details based on email.
   ![Delete feature](images/delete.png)
 
 #### Expected Output (Failure):
-* Case: Provided email not registered in system.
+* Case: Provided email not registered in system.<br>
   Message: `Student with the provided email not found.`
-* Case: Invalid command format e.g. `delete 02`.
+* Case: Invalid command format e.g. `delete 02`.<br>
   Message: `Invalid command format!`<br>
   `delete: Deletes the student identified by the email address.`<br>
   `Parameters: EMAIL`<br>
@@ -468,11 +468,11 @@ Creates a new empty group with the given tutorial number. The group number is au
   ![Sample result for create](images/create.png)
 
 #### Expected Output(Failure):
-* Case: Invalid command format, e.g. `create`, `create 02`, etc.
+* Case: Invalid command format, e.g. `create`, `create 02`, etc.<br>
 Message: `Invalid command format!`<br>
   `create: Creates a new empty group.`<br>
   `Parameters: t/TUTORIAL Example: create t/02`<br>
-* Case: Invalid tutorial number is provided, e.g. `create t/0`, `create t/25`, etc.
+* Case: Invalid tutorial number is provided, e.g. `create t/0`, `create t/25`, etc.<br>
  Message: `Tutorials should be 2-digit numbers between 01 and 22.`
 
 <hr>
@@ -512,7 +512,7 @@ Deletes a group from the system, based on group number.
   ![result for 'deleteGroup gr/3'](images/deleteGroup.png)
 
 #### Expected Output(Failure):
-* Case: Group with specified number is not in the system.
+* Case: Group with specified number is not in the system.<br>
   Message: `Group with the provided group number not found.`
 
 <hr>
@@ -595,12 +595,12 @@ Finds group(s) with group number(s) that matches any of the given keywords.
   ![sample result for 'findGroup'](images/findGroup.png)
 
 #### Expected Output (Failure):
-* Case: Invalid command format is provided, e.g. `findGroup`.
+* Case: Invalid command format is provided, e.g. `findGroup`.<br>
  Message: `Invalid command format!`<br>
   `findGroup: Finds all groups whose number contain any of the specified keywords and displays them as a list with index numbers.`<br>
   `Parameters: KEYWORD [MORE_KEYWORDS]...`<br>
   `Example: findGroup 1 5 10`
-* Case: Invalid keyword(s) is provided, e.g. `findGroup a`, `findGroup 0`, etc.
+* Case: Invalid keyword(s) is provided, e.g. `findGroup a`, `findGroup 0`, etc.<br>
  Message: `Group number is not a non-zero unsigned integer.`
 
 <hr>
@@ -612,7 +612,7 @@ Filters the groups by tutorial based on the given slot.
 #### Format: `filterGroup SLOT`
 
 * The slot must be 2-digit numbers between `01` and `22` inclusive.
-* Tutorials are only accepted as 2-digits, ie. `3` is not a valid tutorial, but `03` is.
+* Tutorials are only accepted as 2-digits, i.e. `3` is not a valid tutorial, but `03` is.
 * Only the tutorial is searched.
 
 #### Examples:
@@ -623,12 +623,12 @@ Filters the groups by tutorial based on the given slot.
   ![sample result for 'filterGroup'](images/filterGroup.png)
 
 #### Expected Output (Failure):
-* Case: Invalid command format is provided, e.g. `filterGroup`.
+* Case: Invalid command format is provided, e.g. `filterGroup`.<br>
 Message: `Invalid command format!`<br>
   `filterGroup: Filters all groups that belong to the specified tutorial slot (2-digit numbers between 01 and 22) and displays them as a list with index numbers.`<br>
   `Parameters: SLOT`<br>
   `Example: filterGroup 01"`
-* Case: Invalid slot is provided, e.g. `filterGroup 0`, `filterGroup 25`, etc.
+* Case: Invalid slot is provided, e.g. `filterGroup 0`, `filterGroup 25`, etc.<br>
 Message: `Tutorials should be 2-digit numbers between 01 and 22.`
 
 <hr>
@@ -669,7 +669,7 @@ Message: `Not every group member's tutorial matches the group's tutorial.`<br>
 Message: `You can enter the help command for more information on group requirements.`<br>
 
 #### Expected Output (Failure):
-* Case: Invalid command format is provided, e.g. `checkGroup`.
+* Case: Invalid command format is provided, e.g. `checkGroup`.<br>
 Message: `Invalid command format!`<br>
   `checkGroup: Checks the group identified by its group number.`<br>
   `Parameters: GROUP_NUMBER"`<br>
@@ -705,7 +705,7 @@ Lists out all tasks for a specific group.
   `tasks: Lists out all tasks for a specific group.`<br>
   `Parameters: GROUP_NUMBER`<br>
   `Example: tasks 3`
-* Case: Invalid group number as the group has not yet been created.
+* Case: Invalid group number as the group has not yet been created.<br>
     * Message: `Group with the provided group number not found.`
 
 <hr>
@@ -738,7 +738,7 @@ Message: `Invalid command format! mark: Mark task specified as done. Parameters:
 Message: `Group with the provided group number not found.`
 * Case: Invalid group number, e.g. zero or negative numbers.<br>
 Message: `Group number is not a non-zero unsigned integer.`
-* Case: Invalid task index, e.g zero or negative numbers.<br>
+* Case: Invalid task index, e.g. zero or negative numbers.<br>
 Message: `Task index must be a positive integer.`
 * Case: Invalid task index, e.g. task index greater than the number of tasks found from the list in `tasks` command.<br>
 Message: `Invalid task index. Task not found.`
@@ -773,7 +773,7 @@ Mark a task for a specified group as not done.
 Message: `Group with the provided group number not found.`
 * Case: Invalid group number, e.g. zero or negative numbers.<br>
 Message: `Group number is not a non-zero unsigned integer.`
-* Case: Invalid task index, e.g zero or negative numbers.<br>
+* Case: Invalid task index, e.g. zero or negative numbers.<br>
 Message: `Task index must be a positive integer.`
 * Case: Invalid task index, e.g. task index greater than the number of tasks found from the list in `tasks` command.<br>
 Message: `Invalid task index. Task not found.`
@@ -1150,7 +1150,7 @@ This glossary is intended to provide definitions for terms that may be unfamilia
 
 - **Case-Insensitive**: <a id="glossary-case-insensitive"></a> Refers to the handling of text where uppercase and lowercase letters are treated as equivalent. For instance, in a case-insensitive search, searching for "Java" or "java" would yield the same results.
 
-- **Command Terminal**: <a id="glossary-command-terminal"></a> An interface in a computing environment where you can input text commands to perform specific tasks. Some examples include "Terminal" on MacOS and "Powershell" on Windows.
+- **Command Terminal**: <a id="glossary-command-terminal"></a> An interface in a computing environment where you can input text commands to perform specific tasks. Some examples include "Terminal" on macOS and "Powershell" on Windows.
 
 - **Double Degree**: <a id="glossary-double-degree"></a> An academic program where a student earns two distinct degrees simultaneously, usually in different fields.
 
