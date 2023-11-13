@@ -346,7 +346,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1. Student requests to add their personal information.
+1. Student requests to add his/her personal information.
 2. StudentConnect adds the student’s information into the list.
 
    Use case ends.
@@ -418,7 +418,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1. Student requests to find students by name with keyword(s).
+1. Student requests to find student(s) by name with keyword(s).
 2. StudentConnect shows a list of students whose name(s) contain the keyword(s).
 
    Use case ends.
@@ -570,7 +570,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1. Student requests to find groups by group number with keyword(s).
+1. Student requests to find group(s) by group number with keyword(s).
 2. StudentConnect shows a list of group(s) with group number(s) matching the keyword(s).
 
    Use case ends.
