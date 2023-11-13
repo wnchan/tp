@@ -3,10 +3,10 @@ layout: page
 title: Pearlynn Toh's Project Portfolio Page
 ---
 
-## Overview
+### Overview
 StudentConnect is the solution for hassle-free team formation for CS2103T students to browse profiles and connect with others for group work.
 
-## Summary of Contributions
+### Summary of Contributions
 Given below are my contributions to the project.
 
 **Code contributed**
@@ -19,23 +19,23 @@ Given below are my contributions to the project.
   * Highlights: Modified the code to allow the new student fields to be editable.
 * **Find Students Feature**: Added the ability to find student(s) by name
   * What it does: This feature allows the user to find student(s) by name with any combination of partial keyword(s).
-  * Justification: This feature helps users to find other students more quickly and easily. Users can enter any combination of partial keywords, such as the first few letters of the student's name, their middle name, or their last name.
+  * Justification: This feature helps users to find other students more quickly and easily.
   * Highlights: Modified the code to check of each word in the students' name contains the keyword(s) instead of having to match the keyword(s).
 * **Filter Students Feature**: Added the ability to filter students by tutorial
   * What it does: This feature allows the user to filter students by tutorial with any combination of tutorial slot(s).
-  * Justification: This feature helps users to search for other students who are also interested in attending or are assigned to the same tutorial slot. Users can enter any combination of valid tutorial slot(s) to retrieve the list of students in the tutorial slot(s) provided.
+  * Justification: This feature helps users to search for other students who are also interested in attending or are assigned to the same tutorial slot.
   * Highlights: A new Predicate class had to be written to support this feature. Invalid tutorial slot(s) provided by the user had to be handled gracefully so that the user can understand how to proceed to use the command correctly.
 * **Find Group Feature**: Added the ability to find a group by group number
   * What it does: This feature allows the user to find a project group by a group number.
-  * Justification: This feature helps users to find a specific group more quickly and easily. Users can simply enter a group number and the system will return a list of all the group members.
+  * Justification: This feature helps users to find a specific group more quickly and easily.
   * Highlights: A new Predicate class had to be written to support this feature. Invalid group number provided by the user had to be handled gracefully so that the user can understand how to proceed to use the command correctly.
 * **Filter Groups Feature**: Added the ability to filter groups by tutorial
   * What it does: This feature allows the user to filter groups by a tutorial slot.
-  * Justification: This feature helps users to search for groups that belong to a particular tutorial that they may prefer.Users can enter a tutorial slot to retrieve the list of groups that belong to the tutorial slot provided.
+  * Justification: This feature helps users to search for groups that belong to a particular tutorial that they may prefer.
   * Highlights: A new Predicate class had to be written to support this feature. Invalid tutorial slot provided by the user had to be handled gracefully so that the user can understand how to proceed to use the command correctly.
 * **Check Group Feature**: Added the ability to check if a group fulfils the diversity requirements of the course
   * What it does: This feature allows the user to check the composition of a group's members.
-  * Justification: This feature helps users to check if a group fulfils the diversity group formation requirements of the course with a single command. Users can enter a group number to easily check the composition of the group members.
+  * Justification: This feature helps users to check if a group fulfils the diversity group formation requirements of the course with a single command.
   * Highlights: Different warning messages were written to inform users of what the group may fall short of in terms of group formation so that the user can ensure that the members are from diverse backgrounds. Extensive test cases and test data were written to rigorously test the different possible composition of the group members.
 
 **Contributions to the UG**
