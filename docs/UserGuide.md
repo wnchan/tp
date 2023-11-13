@@ -743,6 +743,8 @@ Lists out all tasks for a specific group.
 
 <hr>
 
+<div style="page-break-after: always;"></div>
+
 ### Marking a Task as Done : `mark`
 
 Mark a task for a specified group as done.
