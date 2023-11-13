@@ -7,7 +7,6 @@ title: Neya's Project Portfolio Page
 StudentConnect is the solution for hassle-free team formation for CS2103T students to browse profiles and connect with others for group work.
 
 # Summary of Contributions
-Given below are my contributions to the project.
 
 ## Code contributed
 * Link to my [Reposense Report](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=neya&sort=groupTitle&sortWithin=title&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=true&checkedFileTypes=docs~functional-code~test-code&since=2023-09-22)
@@ -16,10 +15,10 @@ Given below are my contributions to the project.
 * **Enhancement**: Changed `delete` feature to delete by email rather than by index.
 * **Enhancement**: Redid the UI, making styling decisions such as colour scheme, fonts.
 * **Enhancement**: Edited UI for GroupListPanel, so it would resemble PersonListPanel.
-* **New Feature**: Added hyperlinks to the social media field, so users can open the urls in a browser by clicking on them.
+* **New Feature**: Added hyperlinks to the social media field, so users can open the urls in a browser.
 * **New Feature**: Implemented the `deleteGroup` command.
 * **New Feature**: Implemented the `leave` command.
-* **New Feature**: Added basic task classes for `Todo`, `Deadlines` and `Tasklist` before implementation of the task related functions.
+* **New Feature**: Added classes for `Todo`, `Deadlines` and `Tasklist` before implementation of task functions.
 * **New Feature**: Implemented and styled a confirmation pop-up for clear command (including css).
 
 ## Contributions to testing
