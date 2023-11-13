@@ -77,7 +77,7 @@ The **API** of this component is specified in [`Ui.java`](https://github.com/se-
 
 ![Structure of the UI Component](images/UiClassDiagram.png)
 
-The UI consists of a `MainWindow` that is made up of different parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`, 
+The UI consists of a `MainWindow` that is made up of different parts e.g., `CommandBox`, `ResultDisplay`, `PersonListPanel`, 
 `StatusBarFooter`, `ConfirmationPopup` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which 
 captures the commonalities between classes that represent parts of the visible GUI.
 
@@ -114,7 +114,7 @@ How the `Logic` component works:
 1. When `Logic` is called upon to execute a command, it is passed to an `AddressBookParser` object which in turn creates 
 a parser that matches the command (e.g., `DeleteCommandParser`) and uses it to parse the command.
 2. This results in a `Command` object (more precisely, an object of one of its subclasses e.g., `DeleteCommand`) which is executed by the `LogicManager`.
-3. The command can communicate with the `Model` when it is executed (e.g. to delete a person).
+3. The command can communicate with the `Model` when it is executed (e.g., to delete a person).
 4. The result of the command execution is encapsulated as a `CommandResult` object which is returned back from `Logic`.
 
 Here are the other classes in `Logic` (omitted from the class diagram above) that are used for parsing a user command:
@@ -145,10 +145,10 @@ The `Model` component,
 * stores the address book data i.e., all `Person` objects (which are contained in a `UniquePersonList` object), and all 
 `Group` objects (which are contained in a `UniqueGroupList` object).
 * stores the currently 'selected' `Person` objects (e.g., results of a search query) as a separate _filtered_ list which 
-is exposed to outsiders as an unmodifiable `ObservableList<Person>` that can be 'observed' e.g. the UI can be bound to 
+is exposed to outsiders as an unmodifiable `ObservableList<Person>` that can be 'observed' e.g., the UI can be bound to 
 this list so that the UI automatically updates when the data in the list change.
 * stores the currently 'selected' `Group` objects (e.g., results of a search query) as a separate _filtered_ list which 
-is exposed to outsiders as an unmodifiable `ObservableList<Group>` that can be 'observed' e.g. the UI can be bound to this 
+is exposed to outsiders as an unmodifiable `ObservableList<Group>` that can be 'observed' e.g., the UI can be bound to this 
 list so that the UI automatically updates when the data in the list change.
 * stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
 * does not depend on any of the other three components (as the `Model` represents data entities of the domain, 
@@ -226,13 +226,13 @@ The list tasks feature is facilitated by the `TasksCommand` class and involves t
 
 The process is initiated when the user inputs a command to list tasks associated with a group. Here's the breakdown of the steps and class interactions:
 
-1. **Input Parsing**: The user's input is first parsed by `AddressBookParser` which identifies the command word and delegates the argument parsing to `TasksCommandParser`.
+1. **Input Parsing**: The user's input is first parsed by `AddressBookParser`, which identifies the command word and delegates the argument parsing to `TasksCommandParser`.
 
 2. **Command Creation**: `TasksCommandParser` parses the provided arguments, checks for correctness, and if valid, constructs a `TasksCommand` object with the specified group number.
 
 3. **Command Execution**: `TasksCommand#execute()` is then called. It retrieves the specified group by number using `Model#getGroupWithNumber()`. If the group exists, it then retrieves the group's tasks using `Group#getTasks()`.
 
-4. **Task Initialization**: If no tasks are currently set, `TasksCommand` initialises a default set of tasks through `TaskInitializer.initializeTasks()` to ensure that each group has tasks pre-set, reflecting the course's structure.
+4. **Task Initialisation**: If no tasks are currently set, `TasksCommand` initialises a default set of tasks through `TaskInitializer.initializeTasks()` to ensure that each group has tasks pre-set, reflecting the course's structure.
 
 5. **Result Generation**: Finally, the tasks are converted to a String format and included in the `CommandResult` which then displays the tasks in the feedback panel.
 
@@ -636,13 +636,13 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 2a1. StudentConnect shows an error message: "Invalid command format!"
     Use case ends.
 
-* 4a. The specified group exists but has no tasks initialized.
-    * 4a1. StudentConnect initializes the tasks for the group.
-    * 4a2. StudentConnect displays the newly initialized tasks along with a success message.
+* 4a. The specified group exists but has no tasks initialised.
+    * 4a1. StudentConnect initialises the tasks for the group.
+    * 4a2. StudentConnect displays the newly initialised tasks along with a success message.
     Use case resumes at step 5.
 
-* 4b. Task initialization fails due to a system error.
-    * 4b1. StudentConnect displays an error message indicating a failure in task initialization.
+* 4b. Task initialisation fails due to a system error.
+    * 4b1. StudentConnect displays an error message indicating a failure in task initialisation.
     Use case ends.
 
 **Use Case: UC17 - Mark Task as Done**
@@ -732,7 +732,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 1. Should work on any mainstream OS as long as it has Java `11` or above installed.
 2. Should be able to hold up to 1000 students without a noticeable sluggishness in performance for typical usage.
-3. A student with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+3. A student with above average typing speed for regular English text (i.e., not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
 
 ### Glossary
 
@@ -780,7 +780,7 @@ to check out more ways to test the app.
     1. Input command `Exit` into the CLI of the StudentConnect app.<br>
         Alternatively, click the `File` button, followed by the `Exit` button.
 
-    2. Expected: The `Exit` message is shown and the app closes.
+    2. Expected: The `Exit` message is shown and the app closes.<br>
         Exception: When using the `Exit` button to close the app, the `Exit` message is not shown.
 
 ### General Commands
@@ -828,7 +828,7 @@ to check out more ways to test the app.
    1. Test case: `edit johnd@u.nus.edu y/3 e/johndoe@u.nus.edu`.<br>
       Expected: Student with above email has year changed to `3` and email changed to `johndoe@u.nus.edu`.
    
-   2. Test case: `edit X`
+   2. Test case: `edit X`<br>
       `X` is any input that does not follow format: `EMAIL [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS]…​ [sm/SOCIALMEDIA]…​ [nt/NATIONALITY] [g/GENDER]`.<br>
       Note: Fields in `[]` are optional.<br>
       Expected: Error details shown in the status message.
@@ -866,7 +866,7 @@ to check out more ways to test the app.
     2. Test case: `filter 12 15`.<br>
        Expected: List students with `T12` or `T15` as their chosen tutorial. If no students found, no students will be listed.
 
-    3. Test case: `filter 0` or `filter 23`.
+    3. Test case: `filter 0` or `filter 23`.<br>
        Expected: Error details shown in status message as command only accepts tutorial groups from 01 to 22 inclusive.
 
 ### Group Commands
@@ -876,7 +876,7 @@ to check out more ways to test the app.
    1. Test case: `create t/10`.<br>
       Expected: Create a new empty group with `T10` as its tutorial group. 
    
-   2. Test case: `create t/0` or `create t/23`.
+   2. Test case: `create t/0` or `create t/23`.<br>
       Expected: Error details shown in status message as command only accepts tutorial groups from 01 to 22 inclusive.
 
 2. Listing all groups
@@ -937,9 +937,9 @@ to check out more ways to test the app.
 8. Checking a group
     
    1. Test case: `checkGroup 4`<br>
-      Expected: Checks if group 4 fulfills requirements mentioned in the `help` window. Returns message of requirements that are and are not fulfilled.
+      Expected: Checks if group 4 fulfils requirements mentioned in the `help` window. Returns message of requirements that are and are not fulfilled.
 
-   2. Test case: `checkGroup a`
+   2. Test case: `checkGroup a`<br>
       Expected: Error details shown in status message as command only accepts non-zero unsigned integers.
 
 9. Listing all tasks

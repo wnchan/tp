@@ -12,7 +12,7 @@ title: User Guide
 
 <p>Welcome to the StudentConnect User Guide! This comprehensive manual is designed to assist you in navigating the features of StudentConnect, a hassle-free team formation solution for <a href="#glossary-cs2103t" style="text-decoration: underline; color: black;">CS2103T</a> and <a href="#glossary-cs2101" style="text-decoration: underline; color: black;">CS2101</a> students to browse profiles and connect for the team project.
 Whether you're new to the platform or looking to enhance your understanding, this guide is tailored to meet your needs.
-To ensure a seamless experience, we recommend referring to the <a href="#how-to-use-this-guide" style="color: blue;">How to Use This Guide</a> section before you get started. This section provides valuable insights on navigating the document, understanding icons and formatting, and optimizing your overall journey. </p>
+To ensure a seamless experience, we recommend referring to the <a href="#how-to-use-this-guide" style="color: blue;">How to Use This Guide</a> section before you get started. This section provides valuable insights on navigating the document, understanding icons and formatting, and optimising your overall journey. </p>
 
 <div style="page-break-after: always;"></div>
 
@@ -94,7 +94,7 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 </div>
 
 - For convenient navigation throughout this UG, you can refer to the <a href="#table-of-contents" style="color: blue;">table of contents</a>.
-- Should you encounter any terminology within the guide that is unfamiliar, you can consult the <a href="#glossary" style="color: blue;">glossary</a> section below. It provides clear definitions and explanations to help you grasp the specialized language used throughout this guide.
+- Should you encounter any terminology within the guide that is unfamiliar, you can consult the <a href="#glossary" style="color: blue;">glossary</a> section below. It provides clear definitions and explanations to help you grasp the specialised language used throughout this guide.
 - For any inquiries, the <a href="#faq" style="color: blue;">faq</a> section is a good place to look for answers. In case your question is not addressed there, do not hesitate to submit an <a href="#glossary-issue" style="text-decoration: underline; color: black;">issue</a> <a href="https://github.com/AY2324S1-CS2103T-F12-2/tp/issues" style="color: blue;">here</a> for further assistance.
 - The <a href="#appendix" style="color: blue;">appendix</a> section is included to detail all possible input values for fields that have specific constraints or require particular formats. This reference can help ensure that you input data correctly and understand the limitations of each field.
 - For a quick and compact overview of all the commands that StudentConnect offers, refer to the <a href="#command-summary" style="color: blue;">command summary</a>. This section servers as a handy reference for all possible actions you can perform within the application, laid out in an easily digestible format.
