@@ -27,6 +27,8 @@ Refer to the guide [**_Setting up and getting started_**](SettingUp.md).
 [_PlantUML Tutorial_ at se-edu/guides](https://se-education.org/guides/tutorials/plantUml.html) to learn how to create and edit diagrams.
 </div>
 
+<div style="page-break-after: always;"></div>
+
 ### Architecture
 
 <img src="images/ArchitectureDiagram.png" width="280" />
@@ -318,7 +320,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* * *`  | student            | remove my personal details from the system                           | stop using the application                        |
 | `* * *`  | student            | create a group on the app                                            | form a group for the course                       |
 | `* * *`  | student            | join a group on the app                                              | form a group for the course                       |
-| `* *`    | student            | seek help and check requirements for CS2101/CS2103t groupings        | be more clear of the valid group formations       |
+| `* *`    | student            | seek help and check requirements for CS2101/CS2103T groupings        | be more clear of the valid group formations       |
 | `* * `   | student            | be able to click the links of the social media to view them          | avoid wasting time typing links manually          |
 | `* * `   | student            | be able to leave a group on the app                                  | join another group of my choice                   |
 | `* * `   | student            | be able to delete a group I created on the app                       | get rid of unnecessary groups on the system       |
