@@ -84,7 +84,7 @@ This guide is designed to help you navigate the features of StudentConnect with 
 2. **Feedback Box**: The feedback box is the area where the application communicates responses to your commands. It displays the correct command format if there is an input error, error messages when a command fails to execute, and the outcomes for commands like the `tasks` command.
 3. **Student List**: The student list panel displays a roster of all students and their associated details. Executing any student-related command will result in this panel being updated to show the relevant student list.
 4. **Group List**: Similar to the student list, the group list panel shows all existing groups along with their members and designated tutorials. Group-related commands will update this panel accordingly.
-5. **Menu Options**: The menu options provide quick access to general tasks within the application. Note that no messages are displayed when using the menu options.
+5. **Menu Options**: The menu options provide quick access to general tasks within the application. Note that no messages are displayed in the feedback box when using the menu options.
 <div markdown="span" class="alert alert-primary">:exclamation: **Important:**
 To guarantee that all your changes and data are saved correctly, it is strongly advised to type the `exit` command into the Command Box
 instead of selecting `exit` from the menu options or closing the application window directly.
