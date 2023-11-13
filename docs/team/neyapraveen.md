@@ -31,28 +31,18 @@ Given below are my contributions to the project.
 * Updated `clear` test cases.
 
 ## Contributions to the UG
-* Added documentation for the feature `delete`
+* Added documentation for the feature `delete`, `clear`, including the usage of the pop-up, `leave`, `deleteGroup` and social media hyperlinks.
 * Creation of Table of Contents
-* Added documentation for social media hyperlinks
-* Added documentation for the feature `clear`, including the usage of the pop-up
 * Reformatted UG according to general commands, person commands and group commands
-* Added documentation for the feature `leave`
-* Added documentation for the feature `deleteGroup`
 * Created the Appendix section.
 * Wrote introduction section.
-* Added page breaks for formatting.
-* Added back to table of contents hyperlink at the end of pages.
-* Added relevant hyperlinks like download link for java 11.
-* Added relevant warning messages on things to look out for.
+* Added page breaks for formatting and back to table of contents hyperlink at the end of pages.
+* Added relevant hyperlinks like download link for java 11 and warning messages on things to look out for.
 * Added hyperlinks of glossary terms.
 
 ## Contributions to the DG
 * Updated initial contents in DG after discussion(target user profile, value proposition, user stories, use cases, NFRs, Glossary )
-* Under Use-cases, `Delete a student`
-* Under Use-cases, `Access social media`
-* Under Use-cases, `Clearing all data`
-* Under Use-cases, `Delete a group`
-* Under Use-cases, `Leave a group`
+* Under Use-cases, `Delete a student`, `Access social media` , `Clearing all data`, `Delete a group`, `Leave a group`
 * Add relevant user stories for clear, delete group, leave group, social media links, delete.
 * Rearranged all use cases.
 * Numbered all use cases for easy reference.
@@ -71,3 +61,4 @@ Given below are my contributions to the project.
 * Brainstormed ideas for features and further iterations.
 * Participated in load testing.
 * Helped in finding other group's bugs during PED.
+* Helped peer in forum
