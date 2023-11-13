@@ -3,13 +3,22 @@ layout: page
 title: Pearlynn Toh's Project Portfolio Page
 ---
 
-### Project: StudentConnect
+# Project: StudentConnect
 
-StudentConnect is a desktop application that stores and organises students’ contact details, and project group. Students can easily search for the profiles of other students and connect with potential teammates. This streamlines the process of forming project teams. It also offers tools for tracking project progress/deadlines, ensuring that the group stays on task.
+# Overview
+StudentConnect is the solution for hassle-free team formation for CS2103T students to browse profiles and connect with others for group work.
 
 # Summary of Contributions
 Given below are my contributions to the project.
 
+## Code contributed
+* Link to my [RepoSense report](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=pearlynnt&breakdown=false&sort=groupTitle%20dsc&sortWithin=title&since=2023-09-22&timeframe=commit&mergegroup=&groupSelect=groupByRepos)
+
+## Enhancements implemented
+* **Edit Student Feature**: Added the ability to edit a student's personal details
+  * What it does: This feature allows the user to edit a student's personal details in the system.
+  * Justification: This feature helps users to keep their personal details up-to-date. Details such as social media links or their preferred tutorial slots may change over time. This is important in ensuring that users remain contactable. This feature also allows users to correct any errors in their personal details. This is important in ensuring that users' personal details are accurate and complete.
+  * Highlights: Modified the code to allow the new student fields to be editable.
 * **Find Students Feature**: Added the ability to find student(s) by name
   * What it does: This feature allows the user to find student(s) by name with any combination of partial keyword(s).
   * Justification: This feature helps users to find other students more quickly and easily. Without this feature, users would need to know the exact spelling of a student's name in order to find them. With this feature, users can enter any combination of partial keywords, such as the first few letters of the student's name, their middle name, or their last name. This can be especially helpful for users who are not sure of the exact spelling of a student's name, or for users who are trying to find a student who has a common name.
@@ -31,14 +40,33 @@ Given below are my contributions to the project.
   * Justification: This feature helps users to check if a group fulfils the diversity group formation requirements of the course with a single command. Without this feature, users would need to manually find the details of each member in the group to check if the group meets the diversity requirements. With this feature, users can enter a group number to easily check the composition of the group members. This helps to ensure that users have the opportunity to work with and learn from others from different backgrounds.
   * Highlights: Different warning messages were written to inform users of what the group may fall short of in terms of group formation so that the user can ensure that the members are from diverse backgrounds. Extensive test cases and test data were written to rigorously test the different possible composition of the group members.
 
-* **Code Contributed**: [RepoSense link](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=pearlynnt&breakdown=false&sort=groupTitle%20dsc&sortWithin=title&since=2023-09-22&timeframe=commit&mergegroup=&groupSelect=groupByRepos)
+## Contributions to the UG
+* Added the 'Edit Command' section.
+* Added the 'Find Command' section.
+* Added the 'Filter Command' section.
+* Added the 'Find Group Command' section.
+* Added the 'Filter Group Command' section.
+* Added the 'Check Command' section.
+* Ensured consistent formatting of the content in the User Guide.
 
+## Contributions to the DG
+* Added the 'Edit a Student' use case.
+* Added the 'Find a student' use case.
+* Added the 'Filter students' use case.
+* Added the 'Find a group' use case.
+* Added the 'Filter groups' use case.
+* Added the 'Check a group' use case.
+* Updated the Storage Class Diagram using PlantUML.
+
+## Contributions to team-based tasks
 * **Project management**:
   * Set up the team's Github Repository, and project documentation.
-  * Reviewed the team's Github pull requests.
   * Managed the milestones on Github.
+  * Led the team's project meetings
 
-* **Documentation**:
-  * User Guide:
-    * Added the 'Find Command', 'Filter Command', 'Find Group Command', 'Filter Group Command', and 'Check Command' sections
-  * Developer Guide:
+## Review/mentoring contributions
+* Reviewed the team's Github pull requests and gave comments where appropriate. (e.g., [#106](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/106), [#177](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/177), [#190](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/190))
+
+## Contributions beyond the project team
+* Tested another team's product and reported bugs during PE-D. ([list of issues](https://github.com/PearlynnT/ped/issues))
+* Participated in load testing.
