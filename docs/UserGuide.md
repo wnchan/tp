@@ -356,7 +356,7 @@ Finds student(s) whose name(s) contain any of the given keywords.
 
 #### Format: `find KEYWORD [MORE_KEYWORDS]…​`
 
-* The search is <a href="#glossary-cs2103t" style="text-decoration: underline; color: black;">case-insensitive</a>. e.g. `john` will match `John`.
+* The search is <a href="#glossary-case-insensitive" style="text-decoration: underline; color: black;">case-insensitive</a>. e.g. `john` will match `John`.
 * The order of the keywords does not matter. e.g. `John Doe` will match `Doe John`.
 * Only the name is searched.
 * Partial words can be matched. e.g. `John` will match `Johnny`.
@@ -952,7 +952,7 @@ This glossary is intended to provide definitions for terms that may be unfamilia
 
 - **Command Terminal**: <a id="glossary-command-terminal"></a> An interface in a computing environment where you can input text commands to perform specific tasks. Some examples include "Terminal" on MacOS and "Powershell" on Windows.
 
-- **Double Degree**: An academic program where a student earns two distinct degrees simultaneously, usually in different fields.
+- **Double Degree**: <a id="glossary-double-degree"></a> An academic program where a student earns two distinct degrees simultaneously, usually in different fields.
 
 - **Double Major**: A type of academic degree where a student completes two sets of major requirements, although they receive just one degree.
 
