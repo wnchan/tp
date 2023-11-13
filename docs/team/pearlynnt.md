@@ -49,7 +49,7 @@ Given below are my contributions to the project.
 **Contributions to team-based tasks**
 * Set up the team's Github Repository, and project documentation.
 * Managed the milestones on Github.
-* Led the team's project meetings
+* Led the team's project meetings.
 
 **Review/mentoring contributions**
 * Reviewed the team's Github pull requests and gave comments where appropriate. (e.g., [#106](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/106), [#177](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/177), [#190](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/190))
