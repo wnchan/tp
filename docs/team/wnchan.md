@@ -52,6 +52,7 @@ Given below are my contributions to the project.
 * Under Use-cases, the `mark` feature.
 * Under Use-cases, the `unmark` feature.
 * Updated the sequence diagram under `Logic Component` section.
+* Updated `Appendix: Instructions for manual testing` to include all the commands for StudentConnect.
 
 ## Contributions to team-based tasks
 * Did equal share of tasks assigned.
