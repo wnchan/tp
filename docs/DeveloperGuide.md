@@ -753,7 +753,7 @@ to check out more ways to test the app.
 
    1. Ensure you have Java `11` or above installed in your Computer.
 
-   2. Download the latest `studentconnect.jar` from <a href="https://github.com/AY2324S1-CS2103T-F12-2/tp/releases" style="color: blue;">here</a>
+   2. Download the latest `studentconnect.jar` from <a href="https://github.com/AY2324S1-CS2103T-F12-2/tp/releases" style="color: blue;">here</a>.
 
    3. Copy the file to the folder you want to use as the _home folder_ for your StudentConnect. 
 
@@ -823,7 +823,7 @@ to check out more ways to test the app.
    1. Test case: `edit johnd@u.nus.edu y/3 e/johndoe@u.nus.edu`.<br>
       Expected: Student with above email has year changed to `3` and email changed to `johndoe@u.nus.edu`.
    
-   2. Test case: `edit X`<br>
+   2. Test case: `edit X`.<br>
       `X` is any input that does not follow format: `EMAIL [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS]…​ [sm/SOCIALMEDIA]…​ [nt/NATIONALITY] [g/GENDER]`.<br>
       Note: Fields in `[]` are optional.<br>
       Expected: Error details shown in the status message.
@@ -847,10 +847,10 @@ to check out more ways to test the app.
 
 5. Finding a student by name
     
-   1. Test case: `find John`<br>
+   1. Test case: `find John`.<br>
        Expected: List students with `john` in their name. If no students found, no students will be listed.
     
-   2. Test case: `find john betsy`<br>
+   2. Test case: `find john betsy`.<br>
       Expected: List students with `john` or `betsy` in their name. If no students found, no students will be listed.
 
 6. Filtering students by tutorial
@@ -901,10 +901,10 @@ to check out more ways to test the app.
 
 5. Leaving a group
     
-   1. Test case: `leave e/johnd@u.nus.edu gr/1`<br>
+   1. Test case: `leave e/johnd@u.nus.edu gr/1`.<br>
       Expected: If John Doe is in the group 1, his details will be removed from the group.
 
-   2. Test case: `leave e/johnd@u.nus.edu gr/2`<br>
+   2. Test case: `leave e/johnd@u.nus.edu gr/2`.<br>
       Expected: Since John Doe is not a member of group 2, error details will be shown in the status message.
 
 6. Finding group by group number
@@ -931,10 +931,10 @@ to check out more ways to test the app.
 
 8. Checking a group
     
-   1. Test case: `checkGroup 4`<br>
+   1. Test case: `checkGroup 4`.<br>
       Expected: Checks if group 4 fulfils requirements mentioned in the `help` window. Returns message of requirements that are and are not fulfilled.
 
-   2. Test case: `checkGroup a`<br>
+   2. Test case: `checkGroup a`.<br>
       Expected: Error details shown in status message as command only accepts non-zero unsigned integers.
 
 9. Listing all tasks
