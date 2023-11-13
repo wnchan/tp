@@ -189,8 +189,6 @@ Provides a list of requirements for forming a group in CS2103T/CS2101.
 
 ![help message](images/helpMessage.png)
 
-> <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
-
 ![help window](images/help.png)
 
 <hr>
@@ -206,8 +204,6 @@ Clears all entries from the system upon confirmation in the pop-up.
 #### Expected Output (Success):
 * GUI: All students' details are removed from the student list.<br>
 
-> <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
-
 ![result for 'clear' pop-up](images/clearPopUp.png)
 
 ![result for 'clear' GUI](images/clearUI.png)
@@ -216,8 +212,6 @@ Clears all entries from the system upon confirmation in the pop-up.
 * Case: Clear command fails.
 * Case: You press `cancel` on the confirmation pop-up.<br>
   GUI: All students' details remain on the student list.
-
-> <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
   
 ![result for cancelled 'clear' GUI](images/clearCancel.png)
 
@@ -232,8 +226,6 @@ Exits the program.
 #### Expected Output (Success):
 * GUI: Application window closes.
 * Message (before closing): `Thank you for using StudentConnect! Exiting the application now…`
-
-> <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
 
 ![Exit](images/exit.png)
 
@@ -488,12 +480,6 @@ Creates a new empty group with the given tutorial number. The group number is au
 
 #### Expected Output (Success):
 * GUI: A new empty group, with a group number, is created.
-* Message: `Group created successfully! Group number is [GROUP_NUMBER]`
-  
-![Sample result for create](images/create.png)
-
-#### Expected Output (Failure):
-* Case: Invalid command format, e.g. `create`, `create 02`, etc.
 * Message: `Group created successfully! Group number is [GROUP_NUMBER]`
   
 ![Sample result for create](images/create.png)
