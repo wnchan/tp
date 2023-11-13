@@ -659,6 +659,8 @@ Message: `Tutorials should be 2-digit numbers between 01 and 22.`
 
 <hr>
 
+<div style="page-break-after: always;"></div>
+
 ### Checking a Group : `checkGroup`
 
 Checks if a group fulfils the group requirements of the course.
@@ -722,6 +724,8 @@ Lists out all tasks for a specific group.
 #### Acceptable Values:
 * GROUP_NUMBER: Must be a non-zero unsigned integer.
 
+<div style="page-break-after: always;"></div>
+
 #### Expected Output (Success):
 * GUI: List of all tasks for the specified group is displayed, the specified group and group members are shown.
 * Message: `Here are the tasks for group [GROUP_NUMBER]: [list of tasks]`
@@ -746,6 +750,8 @@ Mark a task for a specified group as done.
 #### Format: `mark gr/GROUP_NUMBER ti/TASK_INDEX`
 
 * Marks the task of the specified group as done.
+
+<div style="page-break-after: always;"></div>
 
 #### Examples:
 *  `mark gr/2 ti/1` Marks task `1` of group `2` as done.
