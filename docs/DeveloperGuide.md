@@ -379,7 +379,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 1. Student requests to <u>list students (UC2)</u>.
 2. Student clicks on social media link of a person.
-3. Student connect opens the social media link in the browser.
+3. StudentConnect opens the social media link in the browser.
 
    Use case ends.
 
@@ -388,13 +388,13 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * 1a. Student requests to find a student instead.
     * Use case resumes from step 2.
 
-* 4a. The website linked does not exist.
-    * 4a1. Browser shows that corresponding link does not exist.
+* 3a. The website linked does not exist.
+    * 3a1. Browser shows that corresponding link does not exist.
 
       Use case ends.
 
-* 4b. Hyperlink does not exist
-    * 4b1. StudentConnect does not redirect to the browser.
+* 3b. Hyperlink does not exist
+    * 3b1. StudentConnect does not redirect to the browser.
 
       Use case ends.
 
