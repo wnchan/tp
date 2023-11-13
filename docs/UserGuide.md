@@ -948,13 +948,13 @@ This glossary is intended to provide definitions for terms that may be unfamilia
 
 - **Case-Insensitive**: <a id="glossary-case-insensitive"></a> Refers to the handling of text where uppercase and lowercase letters are treated as equivalent. For instance, in a case-insensitive search, searching for "Java" or "java" would yield the same results.
 
-- **Case-Sensitive**: Opposite of case-insensitive, this refers to situations where uppercase and lowercase letters are treated differently. For example, "Java" and "java" would be considered distinct.
-
 - **Command Terminal**: <a id="glossary-command-terminal"></a> An interface in a computing environment where you can input text commands to perform specific tasks. Some examples include "Terminal" on MacOS and "Powershell" on Windows.
 
 - **Double Degree**: <a id="glossary-double-degree"></a> An academic program where a student earns two distinct degrees simultaneously, usually in different fields.
 
 - **Double Major**: <a id="glossary-double-major"></a> A type of academic degree where a student completes two sets of major requirements, although they receive just one degree.
+
+- **Major-Minor**: <a id="glossary-major-minor"></a> An academic program where a student completes a major (primary focus) and a minor (secondary concentration) in different subjects.
 
 - **Extraneous Parameters**: <a id="glossary-extraneous-parameters"></a> These are additional or unnecessary parameters given in a command that do not affect its execution but are not required for the command to function properly.
 
@@ -965,7 +965,5 @@ This glossary is intended to provide definitions for terms that may be unfamilia
 - **Issue (GitHub)**: <a id="glossary-issue"></a> A feature in GitHub used to track ideas, enhancements, tasks, or bugs for work on GitHub projects.
 
 - **Java 11**: A version of Java, a widely used programming language and computing platform. Java 11 includes various updates and features different from its predecessors.
-
-- **Major-Minor**: <a id="glossary-major-minor"></a> An academic program where a student completes a major (primary focus) and a minor (secondary concentration) in different subjects.
 
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
