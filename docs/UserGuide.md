@@ -99,6 +99,7 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 - For a quick and compact overview of all the commands that StudentConnect offers, refer to the <a href="#command-summary" style="color: blue;">command summary</a>. This section servers as a handy reference for all possible actions you can perform within the application, laid out in an easily digestible format.
 
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
+
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
@@ -132,6 +133,7 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 6. Refer to the <a href="#features" style="color: blue;">Features</a> below for details of each command.
 
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
+
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
@@ -824,6 +826,7 @@ Message: `Task index must be a positive integer.`
 Message: `Invalid task index. Task not found.`
 
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
+
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
@@ -842,6 +845,7 @@ If your changes to the data file makes its format invalid, StudentConnect will d
 </div>
 
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
+
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
@@ -853,6 +857,7 @@ If your changes to the data file makes its format invalid, StudentConnect will d
 **Q**: Where is my data being saved? <br>
 **A**: It is saved in `[JAR file location]/data/addressbook.json`.
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
+
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
@@ -861,6 +866,7 @@ If your changes to the data file makes its format invalid, StudentConnect will d
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 2. **Clear Command**, if you use the clear command, but exit the application incorrectly using the red exit button instead of running the exit command, data will not be cleared. Kindly always use the exit command to leave the application.
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
+
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
@@ -890,6 +896,7 @@ If your changes to the data file makes its format invalid, StudentConnect will d
 | **Unmark**       | `unmark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `unmark gr/5 ti/1`                                                                                                                                                                             |
 
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
+
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
@@ -1182,6 +1189,7 @@ Ensure the number is purely numeric without any alphabetic characters or special
 - **Uniqueness:** Each task number is unique. It should not duplicate the identifier of another task .
 
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
+
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
