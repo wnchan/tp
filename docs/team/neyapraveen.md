@@ -26,32 +26,29 @@ Given below are my contributions to the project.
 * Changed test cases pertaining to `delete` feature.
 * Created a `JavaFXInitialiser` to be used for fx and ui related tests.
 * Implemented `PersonCardTest`.
-* Added test cases pertaining to the `deleteGroup` command.
-* Added test cases for the `leave` command.
+* Implemented test cases pertaining to the `deleteGroup` command.
+* Implemented test cases for the `leave` command.
 * Updated `clear` test cases.
 
 ## Contributions to the UG
 * Added documentation for the feature `delete`, `clear`, including the usage of the pop-up, `leave`, `deleteGroup` and social media hyperlinks.
 * Creation of Table of Contents.
 * Reformatted UG according to general commands, person commands and group commands.
-* Created the Appendix section.
-* Wrote introduction section.
+* Wrote the Intoduction section and created the Appendix section.
 * Added page breaks for formatting and back to table of contents hyperlink at the end of pages.
-* Added relevant hyperlinks like download link for java 11 and warning messages on things to look out for.
+* Added relevant hyperlinks like download link for java 11 and warning messages.
 * Added hyperlinks of glossary terms.
 
 ## Contributions to the DG
 * Updated initial contents in DG after discussion(target user profile, value proposition, user stories, use cases, NFRs, Glossary).
 * Under Use-cases, `Delete a student`, `Access social media` , `Clearing all data`, `Delete a group`, `Leave a group`.
 * Add relevant user stories for clear, delete group, leave group, social media links, delete.
-* Rearranged all use cases.
-* Numbered all use cases for easy reference.
+* Rearranged all use cases and numbered all for easy reference.
 * Added sequence diagram using PlantUML.
 
 ## Contributions to team-based tasks
 * Did equal share of tasks assigned.
-* Wrote intro.
-* Brainstormed ideas for features and further iterations.
+* Wrote intro and Brainstormed ideas for features for further iterations.
 
 ## Review/ mentoring contributions
 * Reviewed teammates' PRs and gave suggestions when appropriate.
