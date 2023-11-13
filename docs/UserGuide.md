@@ -49,12 +49,11 @@ To ensure a seamless experience, we recommend referring to the <a href="#how-to-
         11. <a href="#marking-a-task-as-not-done--unmark" style="color: blue;">Marking a Task as Not Done : `unmark`</a>
 4. <a href="#saving-the-data" style="color: blue;">Saving The Data</a>
 5. <a href="#editing-the-data-file" style="color: blue;">Editing The Data File</a>
-6. <a href="#archiving-data-files-coming-in-v20" style="color: blue;">Archiving Data Files [coming in v2.0]</a>
-7. <a href="#faq" style="color: blue;">FAQ</a>
-8. <a href="#known-issues" style="color: blue;">Known Issues</a>
-9. <a href="#command-summary" style="color: blue;">Command Summary</a>
-10. <a href="#appendix" style="color: blue;">Appendix</a>
-11. <a href="#glossary" style="color: blue;">Glossary</a>
+6. <a href="#faq" style="color: blue;">FAQ</a>
+7. <a href="#known-issues" style="color: blue;">Known Issues</a>
+8. <a href="#command-summary" style="color: blue;">Command Summary</a>
+9. <a href="#appendix" style="color: blue;">Appendix</a>
+10. <a href="#glossary" style="color: blue;">Glossary</a>
 
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
