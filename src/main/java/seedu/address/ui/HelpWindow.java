@@ -24,7 +24,6 @@ public class HelpWindow extends UiPart<Stage> {
             + "~ Default team size: 5\n"
             + "~ All team members must be assigned to the same tutorial.\n"
             + "~ Teams composed entirely of members from a single nationality are prohibited.\n"
-            + "~ Each team may include no more than one exchange student.\n"
             + "~ Same gender teams are allowed, but are discouraged.";
 
     private static final Logger logger = LogsCenter.getLogger(HelpWindow.class);

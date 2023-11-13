@@ -83,7 +83,7 @@ public class TaskListTest {
     void toString_tasksInList_correctStringRepresentation() {
         Task task = new Todo("Read book", TaskStatus.NOT_DONE, TaskModule.CS2101);
         taskList.addTask(task);
-        String expected = "❌ T 1. CS2101 Read book \n"; // Replace this with the actual expected String format.
+        String expected = "❌ T 1. CS2101 Read book \n";
         assertEquals(expected, taskList.toString());
     }
 }
