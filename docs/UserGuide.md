@@ -570,6 +570,8 @@ Deletes a member from a specific group, indicating that they have left.
 
 * Removes student from specified group.
 
+<div style="page-break-after: always;"></div>
+
 #### Examples:
 *  `leave e/johnd@u.nus.edu gr/1` Removes member with email `johnd@u.nus.edu` from Group 1.
 *  `leave e/bettyc@u.nus.edu gr/11` Removes member with email `bettyc@u.nus.edu` from Group 11.
@@ -577,8 +579,6 @@ Deletes a member from a specific group, indicating that they have left.
 #### Acceptable Values:
 * GROUP_NUMBER: Must be a non-zero unsigned integer.
 * EMAIL: Must be a valid NUS email registered in the system.
-
-
 
 #### Expected Output (Success):
 * GUI: Student details removed from specified group.
