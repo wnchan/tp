@@ -39,7 +39,6 @@ public class TasksCommandTest {
 
         CommandResult result = tasksCommand.execute(model);
 
-        // Assuming the task list is empty or has a known state
         assertEquals(String.format(TasksCommand.MESSAGE_SUCCESS, groupId)
                 + "\n❌ T 1. CS2101 Upload video of OP1. \n"
                 + "❌ T 2. CS2101 Complete peer review for OP2. \n"
