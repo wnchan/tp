@@ -886,10 +886,10 @@ to check out more ways to test the app.
 
 3. Deleting a group
 
-   1. Test case: `delete gr/1`.<br>
+   1. Test case: `deleteGroup gr/1`.<br>
       Expected: Group with above group number deleted from the group list. 
 
-   2. Test case: `delete 0`.<br>
+   2. Test case: `deleteGroup 0`.<br>
       Expected: No group is deleted. Error details shown in the status message.
 
 4. Joining a group
