@@ -854,8 +854,37 @@ _Details coming soon ..._
 <div style="page-break-after: always;"></div>
 
 ## Appendix
+This section includes details on the requirements of each field in the StudentConnect system.
+
+### Name Format
+The name field indicates the student's name.
+
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+Ensure that the name is appropriately formatted with only letters and spaces, without exceeding the specified character limit below. Special characters and digits are not permitted.
+</div>
+
+- **Type:** Alphabetic
+- **Character Restrictions:** Only alphabetical characters (A-Z, a-z) and spaces are allowed.
+- **Length:** Must not exceed 30 characters.
+- **Blank Fields:** The field should not be left blank.
+
+**Examples of Valid Inputs:**
+- John Doe
+- Alice
+- La Niña
+- Élise DuPont
+
+**Examples of Invalid Inputs:**
+- John123 (Invalid due to numeric characters)
+- John_Doe (Invalid due to underscore)
+- [Blank Field] (Invalid as the field cannot be blank)
+- Elizabeth Alexandra Mary Windsor (Invalid as it exceeds 30 characters)
+
+<hr>
 
 ### Valid Majors
+The majors field indicates the major that the student is enrolled in.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 If your major is not in the list below, you can simply write `Others` as your major.
@@ -933,6 +962,184 @@ For now, we accept the following majors in National University of Singapore(NUS)
 | Theatre Studies                           |
 | Urban Studies                             |
 | Visual Communications                     |
+
+<hr>
+
+### Valid Years
+The year field is used to represent the student's current year of study.
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+This field strictly requires a single-digit number. Ensure there are no leading zeros or non-numeric characters.
+</div>
+
+| Year |
+|------|
+| 1    |
+| 2    |
+| 3    |
+| 4    |
+| 5    |
+| 6    |
+
+
+<hr>
+
+### Email Formats
+The email field is used to represent the student's email, and is the unique identifier for each student.
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+Ensure the email address includes the specified domain and the local-part conforms to the outlined character restrictions and length below.
+</div>
+
+1. **Local-Part Format:**
+    - **Allowed Characters:** Alphanumeric characters (A-Z, a-z, 0-9) and special characters (+, _, ., -) only.
+    - **Character Limit:** Must not exceed 20 characters.
+    - **Positioning of Special Characters:** The local-part must not start or end with any of the special characters (+, _, ., -).
+    - **Structure:** It should be in the format of `local-part@u.nus.edu`.
+
+2. **Domain Name:**
+    - **Fixed Domain:** The domain name must be `u.nus.edu`.
+    - **Symbol:** The local-part and domain name should be separated by an '@' symbol.
+
+**Examples of Valid Inputs:**
+- johndoe@u.nus.edu
+- alice.bob@u.nus.edu
+- n_user123@u.nus.edu
+
+**Examples of Invalid Inputs:**
+- john@u.nus.edu (Invalid as it exceeds 20 characters in the local-part)
+- .johndoe@u.nus.edu (Invalid as the local-part starts with a special character)
+- johndoe@example.com (Invalid as the domain name is not 'u.nus.edu')
+- johndoe@u.nus (Invalid as the domain name is incomplete)
+
+<hr>
+
+### Description Formats
+The description field is to allow student's to put any fun facts or information they'd like to share.
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+Descriptions that are blank or that exceed 150 characters are not accepted.
+</div>
+
+**Length Constraints:**
+    - **Minimum Length:** The description must not be blank.
+    - **Maximum Length:** The description should not exceed 150 characters.
+
+**Examples of Valid Inputs:**
+- "Minoring in Mathematics"
+- "Backend Developer"
+- "In need of two more members!"
+
+<hr>
+
+### Valid Tutorials
+The tutorial field is used to represent tutorial slots students' are interested in or have been assigned. 
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+This field strictly requires a double-digit number. Ensure are no non-numeric characters.<br>
+</div>
+
+| Tutorial |
+|----------|
+| 01       |
+| 02       |
+| 03       |
+| 04       |
+| 05       |
+| 06       |
+| 07       |
+| 08       |
+| 09       |
+| 10       |
+| 11       |
+| 12       |
+| 13       |
+| 14       |
+| 15       |
+| 16       |
+| 17       |
+| 18       |
+| 19       |
+| 20       |
+| 21       |
+| 22       |
+
+<hr>
+
+### Valid Social Media Links
+The social media links field is used for entering URLs that direct to social media profiles or pages.
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+ Ensure that the social media links conform to the standard URL format, with the correct protocol and a valid domain name. The link should be fully functional and direct to the intended social media page.</div>
+
+- **Protocol Prefix:** Must begin with either "http://" or "https://".
+- **Domain Name:**
+    - **Allowed Characters:** Alphanumeric characters (A-Z, a-z, 0-9), dots (.), and hyphens (-).
+    - **Requirement:** The domain name must consist of one or more of the allowed characters.
+- **Structure:** The format should follow the standard URL structure, starting with the protocol prefix, followed by the domain name.
+
+**Examples of Valid Inputs:**
+- http://facebook.com/username
+- https://twitter.com/username
+- http://www.linkedin.com/in/username
+
+**Examples of Invalid Inputs:**
+- www.instagram.com/username (Invalid as it lacks the "http://" or "https://" prefix)
+- https://facebook_com/username (Invalid due to the use of an underscore in the domain name)
+- https:/twitter.com/username (Invalid due to incorrect protocol format)
+
+<hr>
+
+### Valid Nationalities
+Nationality field is used to display the nationality of the student.
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+The nationality field is case-insensitive, but can only contain values `local` or `foreigner`.
+</div>
+
+| Nationality |
+|-------------|
+| local       |
+| foreigner   |
+
+<hr>
+
+### Valid Genders
+Nationality field is used to display the nationality of the student.
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+The gender field is case-insensitive, but can only contain values `M` or `F`.
+</div>
+
+| Gender |
+|--------|
+| M      |
+| F      |
+<hr>
+
+### Valid Group Numbers
+The group number field is used to specify the numeric identifier of a group.
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+Verify that the group number entered is for a group that exists in the system.<br>
+Ensure the number is purely numeric without any alphabetic characters or special symbols.
+</div>
+
+- **Type:** Numeric
+- **Reference Requirement:** The number must correspond to a group that has already been created within the system.
+- **Uniqueness:** Each group number is unique. It should not duplicate the identifier of another group.
+
+<hr>
+
+### Valid Task Indexes
+The task index field is used to differentiate tasks.
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+Verify that the task index entered is for a task that exists for that group.<br>
+Ensure the number is purely numeric without any alphabetic characters or special symbols.
+</div>
+
+- **Type:** Numeric
+- **Reference Requirement:** The number must correspond to a task within the system.
+- **Uniqueness:** Each task number is unique. It should not duplicate the identifier of another task .
 
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
 --------------------------------------------------------------------------------------------------------------------
