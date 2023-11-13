@@ -194,4 +194,22 @@ public class Task {
         }
     }
 
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) {
+            return true;
+        }
+        if (!(other instanceof Task)) {
+            return false;
+        }
+
+        Task task = (Task) other;
+        return Objects.equals(this.task, task.task)
+            && this.status == task.status
+            && this.module == task.module
+            && Objects.equals(this.type, task.type)
+            && Objects.equals(this.by, task.by);
+    }
+
+
 }

@@ -4,8 +4,6 @@ import static seedu.address.testutil.Assert.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
-import seedu.address.model.tag.Tag;
-
 public class SocialMediaLinkTest {
 
     @Test
@@ -16,7 +14,7 @@ public class SocialMediaLinkTest {
     @Test
     public void constructor_invalidSocialMediaLink_throwsIllegalArgumentException() {
         String invalidSocialMediaLink = "";
-        assertThrows(IllegalArgumentException.class, () -> new Tag(invalidSocialMediaLink));
+        assertThrows(IllegalArgumentException.class, () -> new SocialMediaLink(invalidSocialMediaLink));
     }
 
     @Test

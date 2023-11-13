@@ -1,13 +1,18 @@
 package seedu.address.model.group.tasks;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static seedu.address.testutil.TypicalTasks.CS2101_OP1_UPLOAD;
+import static seedu.address.testutil.TypicalTasks.CS2101_PLAN_OP2;
 
 import java.time.LocalDateTime;
 
 import org.junit.jupiter.api.Test;
 
 import seedu.address.model.group.exceptions.TaskException;
+import seedu.address.testutil.TaskBuilder;
 
 public class TaskTest {
 
@@ -36,7 +41,7 @@ public class TaskTest {
     }
 
     @Test
-    void parseDateTime_validDateTimeString_parsesCorrectly() throws TaskException {
+    void parseDateTime_validDateTimeString_parsesCorrectly() {
         Task task = new Task();
         LocalDateTime expectedDateTime = LocalDateTime.of(2023, 9, 23, 23, 59);
         assertEquals(expectedDateTime, task.parseDateTime("23/09/2023 2359"));
@@ -62,5 +67,59 @@ public class TaskTest {
         Task task = new Task("Read book", TaskStatus.DONE, TaskModule.CS2101, "TODO", "");
         task.unMark();
         assertEquals(TaskStatus.NOT_DONE, task.getStatus());
+    }
+
+    @Test
+    void taskException_withMessage_containsCorrectMessage() {
+        String errorMessage = "Test error message";
+        TaskException exception = new TaskException(errorMessage);
+        assertEquals(errorMessage, exception.getMessage());
+    }
+
+    @Test
+    void constructor_withInvalidDateFormat_throwsTaskException() {
+        assertThrows(TaskException.class, () -> {
+            new Deadline("Read book", TaskStatus.NOT_DONE, TaskModule.CS2101, "invalid-date-format");
+        });
+    }
+
+    @Test
+    public void equals() {
+        // same values -> returns true
+        Task taskCopy = new TaskBuilder(CS2101_OP1_UPLOAD).build();
+        assertTrue(CS2101_OP1_UPLOAD.equals(taskCopy));
+
+        // same object -> returns true
+        assertTrue(CS2101_OP1_UPLOAD.equals(CS2101_OP1_UPLOAD));
+
+        // null -> returns false
+        assertFalse(CS2101_OP1_UPLOAD.equals(null));
+
+        // different type -> returns false
+        assertFalse(CS2101_OP1_UPLOAD.equals("CS2101_OP1_UPLOAD"));
+
+        // different task -> returns false
+        assertFalse(CS2101_OP1_UPLOAD.equals(CS2101_PLAN_OP2));
+
+        // different description -> returns false
+        Task editedDescription = new TaskBuilder(CS2101_OP1_UPLOAD).withDescription("Different Task").build();
+        assertFalse(CS2101_OP1_UPLOAD.equals(editedDescription));
+
+        // different status -> returns false
+        Task editedStatus = new TaskBuilder(CS2101_OP1_UPLOAD).withStatus(TaskStatus.NOT_DONE).build();
+        assertFalse(CS2101_OP1_UPLOAD.equals(editedStatus));
+
+        // different module -> returns false
+        Task editedModule = new TaskBuilder(CS2101_OP1_UPLOAD).withModule(TaskModule.CS2103T).build();
+        assertFalse(CS2101_OP1_UPLOAD.equals(editedModule));
+
+        // different type -> returns false
+        Task editedType = new TaskBuilder(CS2101_OP1_UPLOAD).withType("DEADLINE").build();
+        assertFalse(CS2101_OP1_UPLOAD.equals(editedType));
+
+        // different deadline -> returns false
+        Task editedDeadline = new TaskBuilder(CS2101_OP1_UPLOAD).withBy("01/01/2024 0000").build();
+        assertFalse(CS2101_OP1_UPLOAD.equals(editedDeadline));
+
     }
 }
