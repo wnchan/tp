@@ -32,8 +32,8 @@ Given below are my contributions to the project.
 
 ## Contributions to the UG
 * Added documentation for the feature `delete`, `clear`, including the usage of the pop-up, `leave`, `deleteGroup` and social media hyperlinks.
-* Creation of Table of Contents
-* Reformatted UG according to general commands, person commands and group commands
+* Creation of Table of Contents.
+* Reformatted UG according to general commands, person commands and group commands.
 * Created the Appendix section.
 * Wrote introduction section.
 * Added page breaks for formatting and back to table of contents hyperlink at the end of pages.
@@ -41,8 +41,8 @@ Given below are my contributions to the project.
 * Added hyperlinks of glossary terms.
 
 ## Contributions to the DG
-* Updated initial contents in DG after discussion(target user profile, value proposition, user stories, use cases, NFRs, Glossary )
-* Under Use-cases, `Delete a student`, `Access social media` , `Clearing all data`, `Delete a group`, `Leave a group`
+* Updated initial contents in DG after discussion(target user profile, value proposition, user stories, use cases, NFRs, Glossary).
+* Under Use-cases, `Delete a student`, `Access social media` , `Clearing all data`, `Delete a group`, `Leave a group`.
 * Add relevant user stories for clear, delete group, leave group, social media links, delete.
 * Rearranged all use cases.
 * Numbered all use cases for easy reference.
