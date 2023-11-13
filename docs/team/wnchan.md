@@ -4,13 +4,13 @@ title: Wei Ning's Project Portfolio Page
 ---
 # Overview
 
-StudentConnect is the solution for hassle-free team formation for CS2103T students to browse profiles and connect with others for group work.
+StudentConnect is the solution for hassle-free team formation for CS2101/CS2103T students to browse profiles and connect with others for group work.
 
 # Summary of Contributions
 Given below are my contributions to the project.
 
 ## Code contributed
-* Link to my [RepoSense report](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=&sort=groupTitle&sortWithin=title&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=true&checkedFileTypes=docs~functional-code~test-code&since=2023-09-22&chartGroupIndex=23&chartIndex=1)
+* Link to my [**RepoSense report**](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=&sort=groupTitle&sortWithin=title&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=true&checkedFileTypes=docs~functional-code~test-code&since=2023-09-22&chartGroupIndex=23&chartIndex=1)
 
 ## Enhancements implemented
 * **Updated Feature**: Added the ability to `add` the student's personal details into the system.
@@ -38,30 +38,23 @@ Given below are my contributions to the project.
   * Added test cases for the feature.
 
 ## Contributions to the UG
-* Under features and command summary, the `add` portion.
-* Under features and command summary, the `help` portion.
-* Under features and command summary, the `mark` portion.
-* Under features and command summary, the `unmark` portion.
-* Added valid major list in the appendix.
-* Helped standardise messages in UG.
+* Under features and command summary, the `add`, `help`, `mark` and `unmark` portion.
+* Helped standardise messages, added logo and valid major list (in appendix) in the UG.
 
 ## Contributions to the DG
 * Brainstorm as a group for the details included in the DG.
-* Under Use-cases, the `add` feature.
-* Under Use-cases, the `help` feature.
-* Under Use-cases, the `mark` feature.
-* Under Use-cases, the `unmark` feature.
+* Under Use-cases, the `add`, `help`, `mark` and `unmark`  feature.
 * Updated the sequence diagram under `Logic Component` section.
 * Updated `Appendix: Instructions for manual testing` to include all the commands for StudentConnect.
 
 ## Contributions to team-based tasks
 * Did equal share of tasks assigned.
-* Brainstormed other features that were implemented.
-* Updated README.md and index.md.
+* Brainstormed features that were implemented.
+* Created the StudentConnect logo, updated README.md and index.md.
 
 ## Review/ mentoring contributions
-* Review other members' pull requests and gave ideas and suggestions.
+* Review other members' pull requests, gave ideas and suggestions.
+* Help members with debugging and test cases.
 
 ## Contributions beyond the project team
-* Helped in the load testing.
-* Help find bugs of other team's project during PE-D and PE.
+* Helped in the load testing, found bugs of other team's project during PE-D and PE.
