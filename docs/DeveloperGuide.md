@@ -140,7 +140,7 @@ The `Model` component,
 
 **API** : [`Storage.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/storage/Storage.java)
 
-<img src="images/StorageClassDiagram.png" width="550" />
+<img src="images/StorageClassDiagramNew.png" width="550" />
 
 The `Storage` component,
 * can save both address book data and user preference data in JSON format, and read them back into corresponding objects.
@@ -504,10 +504,14 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1. Student requests to filter students by tutorial slot.
+1. Student requests to filter students by tutorial slot(s).
 2. StudentConnect shows a list of students whose tutorial(s) contain the given slot.
 
    Use case ends.
+
+**Extensions:**
+* 1a. The given tutorial slot(s) is invalid.
+  * 1a1. StudentConnect shows an error message.
 
 * 2a. The given slot(s) does not match any of the students' tutorial slots.
 
@@ -643,7 +647,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
    Use case ends.
 
 **Extensions:**
-* 1a. The given keyword(s) does not match any of the group numbers.
+* 1a. The given keyword(s) is invalid.
+  * 1a1. StudentConnect shows an error message.
+* 1b. The given keyword(s) does not match any of the group numbers.
 
   Use case ends.
 
@@ -657,7 +663,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
    Use case ends.
 
 **Extensions:**
-* 1a. The given slot does not match any of the groups' tutorial slot.
+* 1a. The given tutorial slot is invalid.
+  * 1a1. StudentConnect shows an error message.
+* 1b. The given tutorial slot does not match any of the groups' tutorial slot.
 
   Use case ends.
 
@@ -665,13 +673,16 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1. Student requests to check if a particular group meets the requirements for group formation.
+1. Student requests to check if a particular group meets the requirements for group formation by group number.
 2. StudentConnect displays a message stating if the specified group meets the requirement.
 
    Use case ends.
 
 **Extensions:**
 * 1a. The specified group is not registered in the system.
+  * 1a1. StudentConnect shows an error message.
+* 1a. The group number is invalid.
+  * 1b1. StudentConnect shows an error message.
 
   Use case ends.
 
