@@ -156,7 +156,7 @@ public interface Model {
      * Adds the given {@code TaskList} to the give {@code Group}.
      *
      * @param taskList The taskList to be added.
-     * @param group The group that the person will be added to.
+     * @param group The group that the task will be added to.
      */
     void addTasksToGroup(TaskList taskList, Group group);
 
