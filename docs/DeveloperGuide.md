@@ -425,7 +425,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **Extensions**
 
 * 2a. Input is invalid.
-    * StudentConnect displays error message.
+    * 2a1. StudentConnect displays error message.
 
   Use case ends.
 
@@ -448,7 +448,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1. Student requests to list students (UC2).
+1. Student requests to <u>list students (UC2)</u>.
 2. Student clicks on social media link of a person.
 3. Student connect opens the social media link in the browser.
 
@@ -799,15 +799,11 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
    Use case ends.
 
-*{More to be added}*
-
 ### Non-Functional Requirements
 
 1. Should work on any mainstream OS as long as it has Java `11` or above installed.
 2. Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
 3. A student with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
-
-*{More to be added}*
 
 ### Glossary
 
