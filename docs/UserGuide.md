@@ -106,7 +106,7 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 
 2. Download the latest `studentconnect.jar` from <a href="https://github.com/AY2324S1-CS2103T-F12-2/tp/releases" style="color: blue;">here</a>.
 
-3. Copy the file to the folder you want to use as the _home folder_ for your StudentConnect.
+3. Copy the file to the folder you want to use as the <a href="#glossary-home-folder" style="text-decoration: underline; color: black;">home folder</a> for your StudentConnect.
 
 4. Open a <a href="#glossary-command-terminal" style="text-decoration: underline; color: black;">command terminal</a>, and type `cd` to change the current working directory into the folder you put the jar file in. Use the `java -jar studentconnect.jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
@@ -808,7 +808,7 @@ _Details coming soon ..._
 ## FAQ
 
 **Q**: How do I transfer my data to another Computer?<br>
-**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous StudentConnect home folder.
+**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous StudentConnect <a href="#glossary-home-folder" style="text-decoration: underline; color: black;">home folder</a>.
 
 **Q**: Where is my data being saved? <br>
 **A**: It is saved in `[JAR file location]/data/addressbook.json`.
@@ -862,7 +862,7 @@ If your major is not in the list below, you can simply write `Others` as your ma
 </div>
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-If you have a <a href="#glossary-double-degree" style="text-decoration: underline; color: black;">double degree</a>, <a href="#glossary-double-major" style="text-decoration: underline; color: black;">double major</a> or a major-minor, you are required to choose only one major. Please select any one of the majors listed below.
+If you have a <a href="#glossary-double-degree" style="text-decoration: underline; color: black;">double degree</a>, <a href="#glossary-double-major" style="text-decoration: underline; color: black;">double major</a> or a <a href="#glossary-major-minor" style="text-decoration: underline; color: black;">major-minor</a>, you are required to choose only one major. Please select any one of the majors listed below.
 </div>
 
 For now, we accept the following majors in National University of Singapore(NUS):
@@ -960,12 +960,12 @@ This glossary is intended to provide definitions for terms that may be unfamilia
 
 - **GUI (Graphical User Interface)**: A type of user interface that allows you to interact with electronic devices through graphical icons and visual indicators, as opposed to text-based interfaces, typed command labels, or text navigation.
 
-- **Home Folder**: In computing, this is a personal directory assigned to you in a file system, where they store personal files, settings, and configurations.
+- **Home Folder**: <a id="glossary-home-folder"></a> In computing, this is a personal directory assigned to you in a file system, where they store personal files, settings, and configurations.
 
 - **Issue (GitHub)**: A feature in GitHub used to track ideas, enhancements, tasks, or bugs for work on GitHub projects.
 
 - **Java 11**: A version of Java, a widely used programming language and computing platform. Java 11 includes various updates and features different from its predecessors.
 
-- **Major-Minor**: An academic program where a student completes a major (primary focus) and a minor (secondary concentration) in different subjects.
+- **Major-Minor**: <a id="glossary-major-minor"></a> An academic program where a student completes a major (primary focus) and a minor (secondary concentration) in different subjects.
 
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
