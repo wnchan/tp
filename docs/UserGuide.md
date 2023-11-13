@@ -12,7 +12,7 @@ title: User Guide
 
 <p>Welcome to the StudentConnect User Guide! This comprehensive manual is designed to assist you in navigating the features of StudentConnect, a hassle-free team formation solution for <a href="#glossary-cs2103t" style="text-decoration: underline; color: black;">CS2103T</a> and <a href="#glossary-cs2101" style="text-decoration: underline; color: black;">CS2101</a> students to browse profiles and connect for the team project.
 Whether you're new to the platform or looking to enhance your understanding, this guide is tailored to meet your needs.
-To ensure a seamless experience, we recommend referring to the <a href="#how-to-use-this-guide" style="color: blue;">How to Use This Guide</a> section before you get started. This section provides valuable insights on navigating the document, understanding icons and formatting, and optimizing your overall journey. </p>
+To ensure a seamless experience, we recommend referring to the <a href="#how-to-use-this-guide" style="color: blue;">How to Use This Guide</a> section before you get started. This section provides valuable insights on navigating the document, understanding icons and formatting, and optimising your overall journey. </p>
 
 <div style="page-break-after: always;"></div>
 
@@ -49,12 +49,11 @@ To ensure a seamless experience, we recommend referring to the <a href="#how-to-
         11. <a href="#marking-a-task-as-not-done--unmark" style="color: blue;">Marking a Task as Not Done : `unmark`</a>
 4. <a href="#saving-the-data" style="color: blue;">Saving The Data</a>
 5. <a href="#editing-the-data-file" style="color: blue;">Editing The Data File</a>
-6. <a href="#archiving-data-files-coming-in-v20" style="color: blue;">Archiving Data Files [coming in v2.0]</a>
-7. <a href="#faq" style="color: blue;">FAQ</a>
-8. <a href="#known-issues" style="color: blue;">Known Issues</a>
-9. <a href="#command-summary" style="color: blue;">Command Summary</a>
-10. <a href="#appendix" style="color: blue;">Appendix</a>
-11. <a href="#glossary" style="color: blue;">Glossary</a>
+6. <a href="#faq" style="color: blue;">FAQ</a>
+7. <a href="#known-issues" style="color: blue;">Known Issues</a>
+8. <a href="#command-summary" style="color: blue;">Command Summary</a>
+9. <a href="#appendix" style="color: blue;">Appendix</a>
+10. <a href="#glossary" style="color: blue;">Glossary</a>
 
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
@@ -88,19 +87,20 @@ This guide is designed to help you navigate the features of StudentConnect with 
 4. **Group List**: Similar to the student list, the group list panel shows all existing groups along with their members and designated tutorials. Group-related commands will update this panel accordingly.
 5. **Menu Options**: The menu options provide quick access to general tasks within the application. Note that no messages are displayed in the feedback box when using the menu options.
 <div markdown="span" class="alert alert-primary">:exclamation: **Important:**
-To guarantee that all your changes and data are saved correctly, it is strongly advised to type the `exit` command into the Command Box
+To guarantee that all your changes and data are saved correctly, it is strongly advised to type the `exit` command into the Command Box,
 instead of selecting `exit` from the menu options or closing the application window directly.
 This practice helps prevent data loss and ensures a proper shutdown of the application.
 </div>
 
 - For convenient navigation throughout this UG, you can refer to the <a href="#table-of-contents" style="color: blue;">table of contents</a>.
-- Should you encounter any terminology within the guide that is unfamiliar, you can consult the <a href="#glossary" style="color: blue;">glossary</a> section below. It provides clear definitions and explanations to help you grasp the specialized language used throughout this guide.
+- Should you encounter any terminology within the guide that is unfamiliar, you can consult the <a href="#glossary" style="color: blue;">glossary</a> section below. It provides clear definitions and explanations to help you grasp the specialised language used throughout this guide.
 - For any inquiries, the <a href="#faq" style="color: blue;">faq</a> section is a good place to look for answers. In case your question is not addressed there, do not hesitate to submit an <a href="#glossary-issue" style="text-decoration: underline; color: black;">issue</a> <a href="https://github.com/AY2324S1-CS2103T-F12-2/tp/issues" style="color: blue;">here</a> for further assistance.
 - The <a href="#appendix" style="color: blue;">appendix</a> section is included to detail all possible input values for fields that have specific constraints or require particular formats. This reference can help ensure that you input data correctly and understand the limitations of each field.
 - For a quick and compact overview of all the commands that StudentConnect offers, refer to the <a href="#command-summary" style="color: blue;">command summary</a>. This section servers as a handy reference for all possible actions you can perform within the application, laid out in an easily digestible format.
 
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
---------------------------------------------------------------------------------------------------------------------
+<hr>
+<div style="page-break-after: always;"></div>
 
 ## Quick Start
 
@@ -132,7 +132,7 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 6. Refer to the <a href="#features" style="color: blue;">Features</a> below for details of each command.
 
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
---------------------------------------------------------------------------------------------------------------------
+<hr>
 <div style="page-break-after: always;"></div>
 
 ## Features
@@ -197,18 +197,21 @@ Clears all entries from the system upon confirmation in the pop-up.
 
 #### Format: `clear`
 * Confirmation Pop-up opened.
-* * Message: `Opened confirmation window. Please ensure you use the exit command when exiting StudentConnect for successful reset.`
+* Message: `Opened confirmation window. Please ensure you use the exit command when exiting StudentConnect for successful reset.`
 
-#### Expected Output(Success):
+#### Expected Output (Success):
 * GUI: All students' details are removed from the student list.<br>
-  ![result for 'clear' pop-up](images/clearPopUp.png)
-  ![result for 'clear' GUI](images/clearUI.png)
 
-#### Expected Output(Failure or Cancellation):
+![result for 'clear' pop-up](images/clearPopUp.png)
+
+![result for 'clear' GUI](images/clearUI.png)
+
+#### Expected Output (Failure or Cancellation):
 * Case: Clear command fails.
-* Case: You press `cancel` on the confirmation pop-up.
+* Case: You press `cancel` on the confirmation pop-up.<br>
   GUI: All students' details remain on the student list.
-  ![result for cancelled 'clear' GUI](images/clearCancel.png)
+  
+![result for cancelled 'clear' GUI](images/clearCancel.png)
 
 <hr>
 
@@ -218,12 +221,13 @@ Exits the program.
 
 #### Format: `exit`
 
-#### Expected Output(Success):
+#### Expected Output (Success):
 * GUI: Application window closes.
-* Message (before closing): `Thank you for using StudentConnect! Exiting the application now…`<br>
+* Message (before closing): `Thank you for using StudentConnect! Exiting the application now…`
+
 ![Exit](images/exit.png)
 
-#### Expected Output(Failure):
+#### Expected Output (Failure):
 * Message: `Error: Exiting the program failed.`
 
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
@@ -273,7 +277,8 @@ A student can have any number of social media links. Add multiple social media l
 
 #### Expected Output (Success):
 * GUI: New student entry added in the main student list.
-* Message: `Details added successfully! New student added: (details of new student).`<br>
+* Message: `Details added successfully! New student added: (details of new student).`
+
 ![Add feature](images/add.png)
 
 Note: 
@@ -287,7 +292,7 @@ Note:
 <div style="text-align: center;">Output with multiple social media links</div>
 
 #### Expected Output (Failure):
-* Case: Invalid command format, e.g. `add`, `add 1`, etc.
+* Case: Invalid command format, e.g. `add`, `add 1`, etc.<br>
 Message: `Invalid command format! add: Adds a student to StudentConnect.`<br>
   `Parameters: n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION [t/TUTORIALS]... [sm/SOCIAL_MEDIA_LINK]... nt/NATIONALITY g/GENDER`<br>
   `Example: add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time`<br>
@@ -303,8 +308,11 @@ Shows a list of all students in the system.
 
 #### Expected Output (Success):
 * GUI: List of all student entries in the system.
-* Message: `Viewing all students`<br>
-  ![sample result for 'list'](images/list.png)
+* Message: `Viewing all students`
+  
+![sample result for 'list'](images/list.png)
+
+<div style="page-break-after: always;"></div>
 
 #### Expected Output (Failure):
 * Message: `Error: Unable to retrieve student entries. Please try again.`
@@ -341,8 +349,9 @@ A student can edit to have any number of social media links. Add multiple social
 
 #### Expected Output (Success):
 * GUI: Student details updated in the student list.
-* Message: `Details edited successfully! Edited Student: [Updated data]`<br>
-  ![sample result for 'edit'](images/edit.png)
+* Message: `Details edited successfully! Edited Student: [Updated data]`
+  
+![sample result for 'edit'](images/edit.png)
 
 #### Expected Output (Failure):
 * Case: No fields provided for edit.<br>
@@ -369,11 +378,12 @@ Finds student(s) whose name(s) contain any of the given keywords.
 * `find john betsy` returns `John Doe`, `Betsy Crowe`.<br>
 
 #### Expected Output (Success):
-* GUI: List of all student entries whose name(s) match the keyword(s) in the system.<br>
-  ![result for 'find alex'](images/findAlexResult.png)
+* GUI: List of all student entries whose name(s) match the keyword(s) in the system.
+  
+![result for 'find alex'](images/findAlexResult.png)
 
 #### Expected Output (Failure):
-* Case: Invalid command format, e.g. `find`.
+* Case: Invalid command format, e.g. `find`.<br>
 Message: `Invalid command format!`<br>
   `find: Finds all students whose names contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.`<br>
   `Parameters: KEYWORD [MORE_KEYWORDS]...`<br>
@@ -388,7 +398,7 @@ Filters students by tutorial based on the given slots.
 #### Format: `filter SLOT [MORE SLOTS]…​`
 
 * The slots must be 2-digit numbers between `01` and `22` inclusive.
-* Tutorials are only accepted as 2-digits, ie. `3` is not a valid tutorial, but `03` is.
+* Tutorials are only accepted as 2-digits, i.e. `3` is not a valid tutorial, but `03` is.
 * The order of the slots does not matter. e.g. `08 15` will match `15 08`.
 * Only the tutorial is searched.
 * Students matching at least one tutorial slot will be returned (i.e. `OR` search). e.g. `03 12` will return `03 16`, `04 12`.
@@ -397,17 +407,20 @@ Filters students by tutorial based on the given slots.
 * `filter 10` returns students in `T10`, `T06 T10` and `T10 T18`.
 * `filter 12 16` returns students in `T05 T12`, `T16 T22`.
 
-#### Expected Output(Success):
-* GUI: List of all student entries whose tutorial(s) match the slot(s) in the system.<br>
-  ![result for 'filter 04'](images/filter.png)
+#### Expected Output (Success):
+* GUI: List of all student entries whose tutorial(s) match the slot(s) in the system.
+  
+![result for 'filter 04'](images/filter.png)
+
+<div style="page-break-after: always;"></div>
 
 #### Expected Output (Failure):
-* Case: Invalid command format, e.g. `filter`.
+* Case: Invalid command format, e.g. `filter`.<br>
  Message: `Invalid command format!`<br>
   `filter: Filters all students whose tutorials match any of the specified slots (2-digit numbers between 01 and 22) and displays them as a list with index numbers.`<br>
   `Parameters: SLOT [MORE_SLOTS]...`<br>
   `Example: filter 08 15`
-* Case: Invalid slot(s) is provided, e.g. `filter 25`, `filter 0`, etc.
+* Case: Invalid slot(s) is provided, e.g. `filter 25`, `filter 0`, etc.<br>
  Message: `Tutorials should be 2-digit numbers between 01 and 22.`
 
 <hr>
@@ -427,15 +440,16 @@ Deletes a specific student and all personal details based on email.
 #### Acceptable Values:
 * EMAIL: a previously registered email address ending in `u.nus.edu`.
 
-#### Expected Output(Success):
+#### Expected Output (Success):
 * GUI: Student details removed from student list.
 * Message: `Student deleted successfully! [Deleted student's details]`
-  ![Delete feature](images/delete.png)
+  
+![Delete feature](images/delete.png)
 
 #### Expected Output (Failure):
-* Case: Provided email not registered in system.
+* Case: Provided email not registered in system.<br>
   Message: `Student with the provided email not found.`
-* Case: Invalid command format e.g. `delete 02`.
+* Case: Invalid command format e.g. `delete 02`.<br>
   Message: `Invalid command format!`<br>
   `delete: Deletes the student identified by the email address.`<br>
   `Parameters: EMAIL`<br>
@@ -462,17 +476,18 @@ Creates a new empty group with the given tutorial number. The group number is au
 
 #### Format: `create t/TUTORIAL`
 
-#### Expected Output(Success):
+#### Expected Output (Success):
 * GUI: A new empty group, with a group number, is created.
 * Message: `Group created successfully! Group number is [GROUP_NUMBER]`
-  ![Sample result for create](images/create.png)
+  
+![Sample result for create](images/create.png)
 
 #### Expected Output(Failure):
-* Case: Invalid command format, e.g. `create`, `create 02`, etc.
+* Case: Invalid command format, e.g. `create`, `create 02`, etc.<br>
 Message: `Invalid command format!`<br>
   `create: Creates a new empty group.`<br>
   `Parameters: t/TUTORIAL Example: create t/02`<br>
-* Case: Invalid tutorial number is provided, e.g. `create t/0`, `create t/25`, etc.
+* Case: Invalid tutorial number is provided, e.g. `create t/0`, `create t/25`, etc.<br>
  Message: `Tutorials should be 2-digit numbers between 01 and 22.`
 
 <hr>
@@ -483,12 +498,13 @@ Displays a list of all groups. For each group, the group number, and the names a
 
 #### Format: `listGroup`
 
-#### Expected Output(Success):
+#### Expected Output (Success):
 * GUI: A list of all groups that are in the system is shown.
-* Message: `Viewing all groups`<br>
+* Message: `Viewing all groups`
+
 ![Sample result for listGroup](images/listGroup.png)
 
-#### Expected Output(Failure):
+#### Expected Output (Failure):
 * Message: `Error: Unable to retrieve group entries. Please try again.`
 
 <hr>
@@ -506,13 +522,16 @@ Deletes a group from the system, based on group number.
 #### Acceptable Values:
 * GROUP_NUMBER: Must be a non-zero unsigned integer.
 
-#### Expected Output(Success):
+<div style="page-break-after: always;"></div>
+
+#### Expected Output (Success):
 * GUI: Specified group is no longer visible.
 * Message: `Group deleted successfully! Deleted Group: [GROUP_NUMBER]`
-  ![result for 'deleteGroup gr/3'](images/deleteGroup.png)
+  
+![result for 'deleteGroup gr/3'](images/deleteGroup.png)
 
-#### Expected Output(Failure):
-* Case: Group with specified number is not in the system.
+#### Expected Output (Failure):
+* Case: Group with specified number is not in the system.<br>
   Message: `Group with the provided group number not found.`
 
 <hr>
@@ -523,11 +542,11 @@ Adds a student to the specified group.
 
 #### Format: `join e/EMAIL gr/GROUP_NUMBER`
 
-#### Expected Output(Success):
+#### Expected Output (Success):
 * GUI: The student's name and email are displayed in the specified group's card.
 * Message: `Join successful! [NAME] has joined Group [GROUP_NUMBER]!`
 
-#### Expected Output(Failure):
+#### Expected Output (Failure):
 * Case: Email not found in the system.<br>
 Message: `Student with the provided email not found.`
 * Case: Group number not found in the system.<br>
@@ -551,6 +570,8 @@ Deletes a member from a specific group, indicating that they have left.
 
 * Removes student from specified group.
 
+<div style="page-break-after: always;"></div>
+
 #### Examples:
 *  `leave e/johnd@u.nus.edu gr/1` Removes member with email `johnd@u.nus.edu` from Group 1.
 *  `leave e/bettyc@u.nus.edu gr/11` Removes member with email `bettyc@u.nus.edu` from Group 11.
@@ -562,6 +583,7 @@ Deletes a member from a specific group, indicating that they have left.
 #### Expected Output (Success):
 * GUI: Student details removed from specified group.
 * Message: `Leave successful! NAME has left group 1!`
+
 ![sample result for 'leave'](images/leave.png)
 
 #### Expected Output (Failure):
@@ -591,16 +613,17 @@ Finds group(s) with group number(s) that matches any of the given keywords.
 * `findGroup 7 15` returns Group `7`, Group `15`.
 
 #### Expected Output (Success):
-* GUI: List of all group entries whose group number(s) match the keyword(s) in the system.<br>
-  ![sample result for 'findGroup'](images/findGroup.png)
+* GUI: List of all group entries whose group number(s) match the keyword(s) in the system.
+  
+![sample result for 'findGroup'](images/findGroup.png)
 
 #### Expected Output (Failure):
-* Case: Invalid command format is provided, e.g. `findGroup`.
+* Case: Invalid command format is provided, e.g. `findGroup`.<br>
  Message: `Invalid command format!`<br>
   `findGroup: Finds all groups whose number contain any of the specified keywords and displays them as a list with index numbers.`<br>
   `Parameters: KEYWORD [MORE_KEYWORDS]...`<br>
   `Example: findGroup 1 5 10`
-* Case: Invalid keyword(s) is provided, e.g. `findGroup a`, `findGroup 0`, etc.
+* Case: Invalid keyword(s) is provided, e.g. `findGroup a`, `findGroup 0`, etc.<br>
  Message: `Group number is not a non-zero unsigned integer.`
 
 <hr>
@@ -612,7 +635,7 @@ Filters the groups by tutorial based on the given slot.
 #### Format: `filterGroup SLOT`
 
 * The slot must be 2-digit numbers between `01` and `22` inclusive.
-* Tutorials are only accepted as 2-digits, ie. `3` is not a valid tutorial, but `03` is.
+* Tutorials are only accepted as 2-digits, i.e. `3` is not a valid tutorial, but `03` is.
 * Only the tutorial is searched.
 
 #### Examples:
@@ -620,15 +643,16 @@ Filters the groups by tutorial based on the given slot.
 
 #### Expected Output(Success):
 * GUI: List of all group entries with the tutorial that match the slot in the system.
-  ![sample result for 'filterGroup'](images/filterGroup.png)
+  
+![sample result for 'filterGroup'](images/filterGroup.png)
 
 #### Expected Output (Failure):
-* Case: Invalid command format is provided, e.g. `filterGroup`.
+* Case: Invalid command format is provided, e.g. `filterGroup`.<br>
 Message: `Invalid command format!`<br>
   `filterGroup: Filters all groups that belong to the specified tutorial slot (2-digit numbers between 01 and 22) and displays them as a list with index numbers.`<br>
   `Parameters: SLOT`<br>
   `Example: filterGroup 01"`
-* Case: Invalid slot is provided, e.g. `filterGroup 0`, `filterGroup 25`, etc.
+* Case: Invalid slot is provided, e.g. `filterGroup 0`, `filterGroup 25`, etc.<br>
 Message: `Tutorials should be 2-digit numbers between 01 and 22.`
 
 <hr>
@@ -646,11 +670,13 @@ Checks if a group fulfils the group requirements of the course.
 #### Examples:
 * `checkGroup 4` checks the group with a group number `4` if it is created in the system.
 
-#### Expected Output(Success):
+#### Expected Output (Success):
 * Case: Group fulfils the group requirements.<br>
 Message: `Group GROUP_NUMBER`<br>
-  `Group fulfils the diversity requirements of CS2103T.`<br>
-  ![sample result for 'checkGroup'](images/checkGroup.png)
+  `Group fulfils the diversity requirements of CS2103T.`
+  
+![sample result for 'checkGroup'](images/checkGroup.png)
+
 * Case: Group has no members.<br>
 Message: `Group GROUP_NUMBER`<br>
   `Group does not have any members.`<br>
@@ -669,7 +695,7 @@ Message: `Not every group member's tutorial matches the group's tutorial.`<br>
 Message: `You can enter the help command for more information on group requirements.`<br>
 
 #### Expected Output (Failure):
-* Case: Invalid command format is provided, e.g. `checkGroup`.
+* Case: Invalid command format is provided, e.g. `checkGroup`.<br>
 Message: `Invalid command format!`<br>
   `checkGroup: Checks the group identified by its group number.`<br>
   `Parameters: GROUP_NUMBER"`<br>
@@ -697,7 +723,8 @@ Lists out all tasks for a specific group.
 #### Expected Output (Success):
 * GUI: List of all tasks for the specified group is displayed, the specified group and group members are shown.
 * Message: `Here are the tasks for group [GROUP_NUMBER]: [list of tasks]`
-  ![sample result for 'tasks'](images/tasks.png)
+  
+![sample result for 'tasks'](images/tasks.png)
 
 #### Expected Output (Failure):
 * Case: Invalid tasks command, e.g. `tasks gr/3`, `tasks t`, etc.<br>
@@ -705,7 +732,7 @@ Lists out all tasks for a specific group.
   `tasks: Lists out all tasks for a specific group.`<br>
   `Parameters: GROUP_NUMBER`<br>
   `Example: tasks 3`
-* Case: Invalid group number as the group has not yet been created.
+* Case: Invalid group number as the group has not yet been created.<br>
     * Message: `Group with the provided group number not found.`
 
 <hr>
@@ -729,7 +756,8 @@ Mark a task for a specified group as done.
 #### Expected Output (Success):
 * GUI: The task in the specified group is marked as done and task list is updated.
 * Message: `Marked task number (ti) for group (gr) [and displays the updated task list]`
-  ![sample result for 'mark'](images/mark.png)
+  
+![sample result for 'mark'](images/mark.png)
 
 #### Expected Output (Failure):
 * Case: Invalid mark command, e.g. `mark`, `mark t`, etc.<br>
@@ -738,7 +766,7 @@ Message: `Invalid command format! mark: Mark task specified as done. Parameters:
 Message: `Group with the provided group number not found.`
 * Case: Invalid group number, e.g. zero or negative numbers.<br>
 Message: `Group number is not a non-zero unsigned integer.`
-* Case: Invalid task index, e.g zero or negative numbers.<br>
+* Case: Invalid task index, e.g. zero or negative numbers.<br>
 Message: `Task index must be a positive integer.`
 * Case: Invalid task index, e.g. task index greater than the number of tasks found from the list in `tasks` command.<br>
 Message: `Invalid task index. Task not found.`
@@ -764,7 +792,8 @@ Mark a task for a specified group as not done.
 #### Expected Output (Success):
 * GUI: The task in the specified group is marked as not done and task list is updated.
 * Message: `Unmarked task number (ti) for group (gr) [and displays the updated task list]`
-  ![sample result for 'unmark'](images/unmark.png)
+  
+![sample result for 'unmark'](images/unmark.png)
 
 #### Expected Output (Failure):
 * Case: Invalid unmark command, e.g. `unmark`, `unmark t`, etc.<br>
@@ -773,13 +802,13 @@ Mark a task for a specified group as not done.
 Message: `Group with the provided group number not found.`
 * Case: Invalid group number, e.g. zero or negative numbers.<br>
 Message: `Group number is not a non-zero unsigned integer.`
-* Case: Invalid task index, e.g zero or negative numbers.<br>
+* Case: Invalid task index, e.g. zero or negative numbers.<br>
 Message: `Task index must be a positive integer.`
 * Case: Invalid task index, e.g. task index greater than the number of tasks found from the list in `tasks` command.<br>
 Message: `Invalid task index. Task not found.`
 
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
---------------------------------------------------------------------------------------------------------------------
+<hr>
 <div style="page-break-after: always;"></div>
 
 ### Saving The Data
@@ -797,7 +826,7 @@ If your changes to the data file makes its format invalid, StudentConnect will d
 </div>
 
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
---------------------------------------------------------------------------------------------------------------------
+<hr>
 <div style="page-break-after: always;"></div>
 
 ## FAQ
@@ -808,7 +837,7 @@ If your changes to the data file makes its format invalid, StudentConnect will d
 **Q**: Where is my data being saved? <br>
 **A**: It is saved in `[JAR file location]/data/addressbook.json`.
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
---------------------------------------------------------------------------------------------------------------------
+<hr>
 <div style="page-break-after: always;"></div>
 
 ## Known Issues
@@ -816,7 +845,7 @@ If your changes to the data file makes its format invalid, StudentConnect will d
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 2. **Clear Command**, if you use the clear command, but exit the application incorrectly using the red exit button instead of running the exit command, data will not be cleared. Kindly always use the exit command to leave the application.
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
---------------------------------------------------------------------------------------------------------------------
+<hr>
 <div style="page-break-after: always;"></div>
 
 ## Command Summary
@@ -845,7 +874,7 @@ If your changes to the data file makes its format invalid, StudentConnect will d
 | **Unmark**       | `unmark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `unmark gr/5 ti/1`                                                                                                                                                                             |
 
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
---------------------------------------------------------------------------------------------------------------------
+<hr>
 <div style="page-break-after: always;"></div>
 
 ## Appendix
@@ -859,7 +888,7 @@ The name field indicates the student's name.
 Ensure that the name is appropriately formatted with only letters and spaces, without exceeding the specified character limit below. Special characters and digits are not permitted.
 </div>
 
-- **Type:** Alphabetic
+- **Type:** Alphabetic.
 - **Character Restrictions:** Only alphabetical characters (A-Z, a-z) and spaces are allowed.
 - **Length:** Must not exceed 30 characters.
 - **Blank Fields:** The field should not be left blank.
@@ -1137,7 +1166,7 @@ Ensure the number is purely numeric without any alphabetic characters or special
 - **Uniqueness:** Each task number is unique. It should not duplicate the identifier of another task .
 
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
---------------------------------------------------------------------------------------------------------------------
+<hr>
 <div style="page-break-after: always;"></div>
 
 ## Glossary
@@ -1150,7 +1179,7 @@ This glossary is intended to provide definitions for terms that may be unfamilia
 
 - **Case-Insensitive**: <a id="glossary-case-insensitive"></a> Refers to the handling of text where uppercase and lowercase letters are treated as equivalent. For instance, in a case-insensitive search, searching for "Java" or "java" would yield the same results.
 
-- **Command Terminal**: <a id="glossary-command-terminal"></a> An interface in a computing environment where you can input text commands to perform specific tasks. Some examples include "Terminal" on MacOS and "Powershell" on Windows.
+- **Command Terminal**: <a id="glossary-command-terminal"></a> An interface in a computing environment where you can input text commands to perform specific tasks. Some examples include "Terminal" on macOS and "Powershell" on Windows.
 
 - **Double Degree**: <a id="glossary-double-degree"></a> An academic program where a student earns two distinct degrees simultaneously, usually in different fields.
 
