@@ -522,6 +522,8 @@ Deletes a group from the system, based on group number.
 #### Acceptable Values:
 * GROUP_NUMBER: Must be a non-zero unsigned integer.
 
+<div style="page-break-after: always;"></div>
+
 #### Expected Output (Success):
 * GUI: Specified group is no longer visible.
 * Message: `Group deleted successfully! Deleted Group: [GROUP_NUMBER]`
@@ -529,14 +531,6 @@ Deletes a group from the system, based on group number.
 ![result for 'deleteGroup gr/3'](images/deleteGroup.png)
 
 #### Expected Output (Failure):
-* Case: Group with specified number is not in the system.
-* Message: `Group deleted successfully! Deleted Group: [GROUP_NUMBER]`
-  
-![result for 'deleteGroup gr/3'](images/deleteGroup.png)
-
-<div style="page-break-after: always;"></div>
-
-#### Expected Output(Failure):
 * Case: Group with specified number is not in the system.<br>
   Message: `Group with the provided group number not found.`
 
@@ -583,6 +577,8 @@ Deletes a member from a specific group, indicating that they have left.
 #### Acceptable Values:
 * GROUP_NUMBER: Must be a non-zero unsigned integer.
 * EMAIL: Must be a valid NUS email registered in the system.
+
+
 
 #### Expected Output (Success):
 * GUI: Student details removed from specified group.
