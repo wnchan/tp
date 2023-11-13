@@ -10,13 +10,13 @@ title: Developer Guide
 ## **Acknowledgements**
 
 * {list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
-* This project is based on the AddressBook-Level3 project created by the [SE-EDU initiative](https://se-education.org).
+* This project is based on the AddressBook-Level3 project created by the [**SE-EDU initiative**](https://se-education.org).
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Setting up, getting started**
 
-Refer to the guide [_Setting up and getting started_](SettingUp.md).
+Refer to the guide [**_Setting up and getting started_**](SettingUp.md).
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -24,28 +24,30 @@ Refer to the guide [_Setting up and getting started_](SettingUp.md).
 
 <div markdown="span" class="alert alert-primary">
 
-:bulb: **Tip:** The `.puml` files used to create diagrams in this document `docs/diagrams` folder. Refer to the [_PlantUML Tutorial_ at se-edu/guides](https://se-education.org/guides/tutorials/plantUml.html) to learn how to create and edit diagrams.
+:bulb: **Tip:** The `.puml` files used to create diagrams in this document `docs/diagrams` folder. Refer to the 
+[_PlantUML Tutorial_ at se-edu/guides](https://se-education.org/guides/tutorials/plantUml.html) to learn how to create and edit diagrams.
 </div>
 
 ### Architecture
 
 <img src="images/ArchitectureDiagram.png" width="280" />
 
-The ***Architecture Diagram*** given above explains the high-level design of the App.
+The ***Architecture Diagram*** given above explains the high-level design of the app.
 
 Given below is a quick overview of main components and how they interact with each other.
 
 **Main components of the architecture**
 
-**`Main`** (consisting of classes [`Main`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/Main.java) and [`MainApp`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/MainApp.java)) is in charge of the app launch and shut down.
-* At app launch, it initializes the other components in the correct sequence, and connects them up with each other.
+**`Main`** (consisting of classes [`Main`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/Main.java) 
+and [`MainApp`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/MainApp.java)) is in charge of the app launch and shut down.
+* At app launch, it initialises the other components in the correct sequence, and connects them up with each other.
 * At shut down, it shuts down the other components and invokes cleanup methods where necessary.
 
 The bulk of the app's work is done by the following four components:
 
-* [**`UI`**](#ui-component): The UI of the App.
+* [**`UI`**](#ui-component): The UI of the app.
 * [**`Logic`**](#logic-component): The command executor.
-* [**`Model`**](#model-component): Holds the data of the App in memory.
+* [**`Model`**](#model-component): Holds the data of the app in memory.
 * [**`Storage`**](#storage-component): Reads data from, and writes data to, the hard disk.
 
 [**`Commons`**](#common-classes) represents a collection of classes used by multiple other components.
@@ -59,9 +61,11 @@ The *Sequence Diagram* below shows how the components interact with each other f
 Each of the four main components (also shown in the diagram above),
 
 * defines its *API* in an `interface` with the same name as the Component.
-* implements its functionality using a concrete `{Component Name}Manager` class (which follows the corresponding API `interface` mentioned in the previous point.
+* implements its functionality using a concrete `{Component Name}Manager` class (which follows the corresponding API `interface` mentioned in the previous point).
 
-For example, the `Logic` component defines its API in the `Logic.java` interface and implements its functionality using the `LogicManager.java` class which follows the `Logic` interface. Other components interact with a given component through its interface rather than the concrete class (reason: to prevent outside component's being coupled to the implementation of a component), as illustrated in the (partial) class diagram below.
+For example, the `Logic` component defines its API in the `Logic.java` interface and implements its functionality using the 
+`LogicManager.java` class which follows the `Logic` interface. Other components interact with a given component through its interface 
+rather than the concrete class (reason: to prevent outside component's being coupled to the implementation of a component), as illustrated in the (partial) class diagram below.
 
 <img src="images/ComponentManagers.png" width="300" />
 
@@ -73,9 +77,14 @@ The **API** of this component is specified in [`Ui.java`](https://github.com/se-
 
 ![Structure of the UI Component](images/UiClassDiagram.png)
 
-The UI consists of a `MainWindow` that is made up of different parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`, `StatusBarFooter`, `ConfirmationPopup` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which captures the commonalities between classes that represent parts of the visible GUI.
+The UI consists of a `MainWindow` that is made up of different parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`, 
+`StatusBarFooter`, `ConfirmationPopup` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which 
+captures the commonalities between classes that represent parts of the visible GUI.
 
-The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/AY2324S1-CS2103T-F12-2/tp/blob/master/src/main/java/seedu/address/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/AY2324S1-CS2103T-F12-2/tp/blob/master/src/main/resources/view/MainWindow.fxml)
+The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are 
+in the `src/main/resources/view` folder. For example, the layout of the 
+[`MainWindow`](https://github.com/AY2324S1-CS2103T-F12-2/tp/blob/master/src/main/java/seedu/address/ui/MainWindow.java) is 
+specified in [`MainWindow.fxml`](https://github.com/AY2324S1-CS2103T-F12-2/tp/blob/master/src/main/resources/view/MainWindow.fxml)
 
 The `UI` component,
 
@@ -96,12 +105,14 @@ The sequence diagram below illustrates the interactions within the `Logic` compo
 
 ![Interactions Inside the Logic Component for the `delete johnd@u.nus.edu` Command](images/DeleteSequenceDiagram.png)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `DeleteCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+<div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `DeleteCommandParser` 
+should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 </div>
 
 How the `Logic` component works:
 
-1. When `Logic` is called upon to execute a command, it is passed to an `AddressBookParser` object which in turn creates a parser that matches the command (e.g., `DeleteCommandParser`) and uses it to parse the command.
+1. When `Logic` is called upon to execute a command, it is passed to an `AddressBookParser` object which in turn creates 
+a parser that matches the command (e.g., `DeleteCommandParser`) and uses it to parse the command.
 2. This results in a `Command` object (more precisely, an object of one of its subclasses e.g., `DeleteCommand`) which is executed by the `LogicManager`.
 3. The command can communicate with the `Model` when it is executed (e.g. to delete a person).
 4. The result of the command execution is encapsulated as a `CommandResult` object which is returned back from `Logic`.
@@ -111,8 +122,11 @@ Here are the other classes in `Logic` (omitted from the class diagram above) tha
 <img src="images/ParserClasses.png" width="600"/>
 
 How the parsing works:
-* When called upon to parse a user command, the `AddressBookParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `AddressBookParser` returns back as a `Command` object.
-* All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
+* When called upon to parse a user command, the `AddressBookParser` class creates an `XYZCommandParser` (`XYZ` is a 
+placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse 
+the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `AddressBookParser` returns back as a `Command` object.
+* All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface 
+so that they can be treated similarly where possible e.g, during testing.
 
 ### Model component
 **API** : [`Model.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/model/Model.java)
@@ -121,19 +135,24 @@ How the parsing works:
   <div>Person Model Class Diagram</div>
 </div>
 
-<div style="text-align: center; border: 1px solid #000; padding: 10px; display: inline-block; margin: auto;">
+<div style="text-align: center; border: 1px solid #000; padding: 10px; display: inline-block; margin-bottom: 10px;">
   <img src="images/GroupModelClassDiagram.png" width="450" alt="Group Model Class Diagram" style="margin-bottom: 10px;"/>
   <div>Group Model Class Diagram</div>
 </div>
 
-
 The `Model` component,
 
-* stores the address book data i.e., all `Person` objects (which are contained in a `UniquePersonList` object), and all `Group` objects (which are contained in a `UniqueGroupList` object).
-* stores the currently 'selected' `Person` objects (e.g., results of a search query) as a separate _filtered_ list which is exposed to outsiders as an unmodifiable `ObservableList<Person>` that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.
-* stores the currently 'selected' `Group` objects (e.g., results of a search query) as a separate _filtered_ list which is exposed to outsiders as an unmodifiable `ObservableList<Group>` that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.
+* stores the address book data i.e., all `Person` objects (which are contained in a `UniquePersonList` object), and all 
+`Group` objects (which are contained in a `UniqueGroupList` object).
+* stores the currently 'selected' `Person` objects (e.g., results of a search query) as a separate _filtered_ list which 
+is exposed to outsiders as an unmodifiable `ObservableList<Person>` that can be 'observed' e.g. the UI can be bound to 
+this list so that the UI automatically updates when the data in the list change.
+* stores the currently 'selected' `Group` objects (e.g., results of a search query) as a separate _filtered_ list which 
+is exposed to outsiders as an unmodifiable `ObservableList<Group>` that can be 'observed' e.g. the UI can be bound to this 
+list so that the UI automatically updates when the data in the list change.
 * stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
-* does not depend on any of the other three components (as the `Model` represents data entities of the domain, they should make sense on their own without depending on other components)
+* does not depend on any of the other three components (as the `Model` represents data entities of the domain, 
+they should make sense on their own without depending on other components)
 
 
 ### Storage component
@@ -163,7 +182,7 @@ This section describes some noteworthy details on how certain features are imple
 
 #### Current Implementation
 
-In response to the evolving needs of StudentConnect, we have introduced several essential enhancements to user profiles. These enhancements include the addition of fields for Tutorial, Nationality, and Gender. While Nationality and Tutorial have been successfully implemented, work on the Gender field is ongoing.
+In response to the evolving needs of StudentConnect, we have introduced several essential enhancements to user profiles. These enhancements include the addition of fields for Tutorial, Nationality, and Gender.
 
 The Tutorial field is a crucial addition to the StudentConnect application, providing users with the capability to specify their tutorial groups, which are integral to their group formation needs. Here, we detail how the Tutorial field is implemented:
 
@@ -213,7 +232,7 @@ The process is initiated when the user inputs a command to list tasks associated
 
 3. **Command Execution**: `TasksCommand#execute()` is then called. It retrieves the specified group by number using `Model#getGroupWithNumber()`. If the group exists, it then retrieves the group's tasks using `Group#getTasks()`.
 
-4. **Task Initialization**: If no tasks are currently set, `TasksCommand` initializes a default set of tasks through `TaskInitializer.initializeTasks()` to ensure that each group has tasks pre-set, reflecting the course's structure.
+4. **Task Initialization**: If no tasks are currently set, `TasksCommand` initialises a default set of tasks through `TaskInitializer.initializeTasks()` to ensure that each group has tasks pre-set, reflecting the course's structure.
 
 5. **Result Generation**: Finally, the tasks are converted to a String format and included in the `CommandResult` which then displays the tasks in the feedback panel.
 
@@ -237,7 +256,7 @@ Additionally, we plan to develop a dedicated panel within the User Interface (UI
 
 The create group feature is implemented via the `CreateCommand` class and involves the following classes: `Group`, `UniqueGroupList`, `JsonAdaptedGroup`, `AddressBook`, `JsonSerializableAddressBook`.
 <br>
-`CreateCommand` implements the follwing operations:
+`CreateCommand` implements the following operations:
 * `CreateCommand#execute()` — Creates a new empty group using the group number generated from `generateGroupNumber`.
 * `CreateCommand#generateGroupNumber()` — Generates the next available group number.
 
@@ -258,91 +277,7 @@ Shown below is the sequence diagram for the given scenario. The `LogicManager`, 
 ![CreateCommand sequence diagram](images/CreateSequenceDiagram.png)
 
 <div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `CreateCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
-
-### \[Proposed\] Undo/redo feature
-
-#### Proposed Implementation
-
-The proposed undo/redo mechanism is facilitated by `VersionedAddressBook`. It extends `AddressBook` with an undo/redo history, stored internally as an `addressBookStateList` and `currentStatePointer`. Additionally, it implements the following operations:
-
-* `VersionedAddressBook#commit()` — Saves the current address book state in its history.
-* `VersionedAddressBook#undo()` — Restores the previous address book state from its history.
-* `VersionedAddressBook#redo()` — Restores a previously undone address book state from its history.
-
-These operations are exposed in the `Model` interface as `Model#commitAddressBook()`, `Model#undoAddressBook()` and `Model#redoAddressBook()` respectively.
-
-Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.
-
-Step 1. The user launches the application for the first time. The `VersionedAddressBook` will be initialized with the initial address book state, and the `currentStatePointer` pointing to that single address book state.
-
-![UndoRedoState0](images/UndoRedoState0.png)
-
-Step 2. The user executes `delete 5` command to delete the 5th person in the address book. The `delete` command calls `Model#commitAddressBook()`, causing the modified state of the address book after the `delete 5` command executes to be saved in the `addressBookStateList`, and the `currentStatePointer` is shifted to the newly inserted address book state.
-
-![UndoRedoState1](images/UndoRedoState1.png)
-
-Step 3. The user executes `add n/David …​` to add a new person. The `add` command also calls `Model#commitAddressBook()`, causing another modified address book state to be saved into the `addressBookStateList`.
-
-![UndoRedoState2](images/UndoRedoState2.png)
-
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If a command fails its execution, it will not call `Model#commitAddressBook()`, so the address book state will not be saved into the `addressBookStateList`.
-
 </div>
-
-Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoAddressBook()`, which will shift the `currentStatePointer` once to the left, pointing it to the previous address book state, and restores the address book to that state.
-
-![UndoRedoState3](images/UndoRedoState3.png)
-
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If the `currentStatePointer` is at index 0, pointing to the initial AddressBook state, then there are no previous AddressBook states to restore. The `undo` command uses `Model#canUndoAddressBook()` to check if this is the case. If so, it will return an error to the user rather
-than attempting to perform the undo.
-
-</div>
-
-The following sequence diagram shows how the undo operation works:
-
-![UndoSequenceDiagram](images/UndoSequenceDiagram.png)
-
-<div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `UndoCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
-
-</div>
-
-The `redo` command does the opposite — it calls `Model#redoAddressBook()`, which shifts the `currentStatePointer` once to the right, pointing to the previously undone state, and restores the address book to that state.
-
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If the `currentStatePointer` is at index `addressBookStateList.size() - 1`, pointing to the latest address book state, then there are no undone AddressBook states to restore. The `redo` command uses `Model#canRedoAddressBook()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
-
-</div>
-
-Step 5. The user then decides to execute the command `list`. Commands that do not modify the address book, such as `list`, will usually not call `Model#commitAddressBook()`, `Model#undoAddressBook()` or `Model#redoAddressBook()`. Thus, the `addressBookStateList` remains unchanged.
-
-![UndoRedoState4](images/UndoRedoState4.png)
-
-Step 6. The user executes `clear`, which calls `Model#commitAddressBook()`. Since the `currentStatePointer` is not pointing at the end of the `addressBookStateList`, all address book states after the `currentStatePointer` will be purged. Reason: It no longer makes sense to redo the `add n/David …​` command. This is the behavior that most modern desktop applications follow.
-
-![UndoRedoState5](images/UndoRedoState5.png)
-
-The following activity diagram summarizes what happens when a user executes a new command:
-
-<img src="images/CommitActivityDiagram.png" width="250" />
-
-#### Design considerations:
-
-**Aspect: How undo & redo executes:**
-
-* **Alternative 1 (current choice):** Saves the entire address book.
-  * Pros: Easy to implement.
-  * Cons: May have performance issues in terms of memory usage.
-
-* **Alternative 2:** Individual command knows how to undo/redo by
-  itself.
-  * Pros: Will use less memory (e.g. for `delete`, just save the person being deleted).
-  * Cons: We must ensure that the implementation of each individual command are correct.
-
-_{more aspects and alternatives to be added}_
-
-### \[Proposed\] Data archiving
-
-_{Explain here how the data archiving feature will be implemented}_
-
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -370,7 +305,6 @@ _{Explain here how the data archiving feature will be implemented}_
 * Prefer desktop apps over other types
 * Prefers typing to mouse interactions
 
-
 **Value proposition**: StudentConnect stores and organises students’ contact details, and project group.
 Students can easily search for the profiles of other students and connect with potential teammates.
 This streamlines the process of forming project teams. It also offers tools for tracking project
@@ -378,36 +312,31 @@ progress/deadlines, ensuring that the group stays on task. There is no other app
 CS2103T students.
 
 
-
 ### User stories
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-
-| Priority | As a …​            | I want to …​                                                       | So that I can…​                                   |
-|----------|--------------------|--------------------------------------------------------------------|---------------------------------------------------|
-| `* * *`  | student            | add my personal details to the system                              | get other students to learn more about me         |
-| `* * *`  | student            | view the rest of the students in the course                        | see my options for choosing teammates             |
-| `* * *`  | student            | see the other student’s name, major,tutorial slots, basic info etc | make informed decisions                           |
-| `* * *`  | student            | see the nationality and gender of other students                   | meet the criteria when forming a group            |
-| `* * *`  | student            | customise and update my profile details                            | ensure that my profile is up to date              |
-| `* * *`  | student            | view other students in the same tutorial group                     | communicate with them                             |
-| `* * *`  | student            | remove my personal details from the system                         | stop using the application                        |
-| `* * *`  | student            | create a group on the app                                          | form a group for the course                       |
-| `* * *`  | student            | join a group on the app                                            | form a group for the course                       |
-| `* *`    | student            | seek help and check requirements for cs2101/cs2103t groupings      | be more clear of the valid group formations       |
-| `* * `   | student            | be able to click the links of the social media to view them        | avoid wasting time typing links manually          |
-| `* * `   | student            | be able to leave a group on the app                                | join another group of my choice                   |
-| `* * `   | student            | be able to delete a group I created on the app                     | get rid of unnecessary groups on the system       |
-| `* * `   | student            | be able to view my courses' deadlines and tasks                    | keep track of my projects' deliverables           |
-| `* * `   | student            | be able to mark a task as complete                                 | prioritise other tasks                            |
-| `* * `   | student            | be able to unmark a task as incomplete                             | prioritise on completing it                       |
-| `* * `   | student            | be able to view my courses' deadlines and tasks                    | keep track of my projects' deliverables           |
-| `* * *`  | course coordinator | be able to remove all the data from the system                     | reuse the application for new batches of students |
-| `* * *`  | course coordinator | be asked to confirm if I want to clear all the data                | prevent accidentally clearing all the data        |
-| `* * *`  | user               | exit the app                                                       | close the app                                     |
-
-*{More to be added}*
+| Priority | As a …​            | I want to …​                                                         | So that I can…​                                   |
+|----------|--------------------|----------------------------------------------------------------------|---------------------------------------------------|
+| `* * *`  | student            | add my personal details to the system                                | get other students to learn more about me         |
+| `* * *`  | student            | view the rest of the students in the course                          | see my options for choosing teammates             |
+| `* * *`  | student            | see the other student’s name, major,tutorial slots, basic info, etc. | make informed decisions                           |
+| `* * *`  | student            | see the nationality and gender of other students                     | meet the criteria when forming a group            |
+| `* * *`  | student            | customise and update my profile details                              | ensure that my profile is up-to-date              |
+| `* * *`  | student            | view other students in the same tutorial group                       | communicate with them                             |
+| `* * *`  | student            | remove my personal details from the system                           | stop using the application                        |
+| `* * *`  | student            | create a group on the app                                            | form a group for the course                       |
+| `* * *`  | student            | join a group on the app                                              | form a group for the course                       |
+| `* *`    | student            | seek help and check requirements for CS2101/CS2103t groupings        | be more clear of the valid group formations       |
+| `* * `   | student            | be able to click the links of the social media to view them          | avoid wasting time typing links manually          |
+| `* * `   | student            | be able to leave a group on the app                                  | join another group of my choice                   |
+| `* * `   | student            | be able to delete a group I created on the app                       | get rid of unnecessary groups on the system       |
+| `* * `   | student            | be able to view my courses' deadlines and tasks                      | keep track of my projects' deliverables           |
+| `* * `   | student            | be able to mark a task as complete                                   | prioritise other tasks                            |
+| `* * `   | student            | be able to unmark a task as incomplete                               | prioritise on completing it                       |
+| `* * *`  | course coordinator | be able to remove all the data from the system                       | reuse the application for new batches of students |
+| `* * *`  | course coordinator | be asked to confirm if I want to clear all the data                  | prevent accidentally clearing all the data        |
+| `* * *`  | user               | exit the app                                                         | close the app                                     |
 
 ### Use cases
 
@@ -802,13 +731,14 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 ### Non-Functional Requirements
 
 1. Should work on any mainstream OS as long as it has Java `11` or above installed.
-2. Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
+2. Should be able to hold up to 1000 students without a noticeable sluggishness in performance for typical usage.
 3. A student with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
 
 ### Glossary
 
 * **Mainstream OS**: Windows, Linux, Unix, OS-X
-* **CS2103T**: NUS Software Engineering Course
+* **CS2101**: Effective Communication for Computing Professionals - An NUS course designed to equip computing professionals with essential communication skills, both in technical and non-technical contexts. It covers the creation of clear and comprehensible software documentation and effective communication strategies for diverse audiences.
+* **CS2103T**: Software Engineering - An NUS course focusing on the systematic and rigorous development of software systems. It covers essential concepts and analytical tools necessary for software engineering.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -817,7 +747,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 Given below are instructions to test the app manually.
 
 <div markdown="span" class="alert alert-info">:information_source: **Note:** These instructions only provide a starting point for testers to work on;
-testers are expected to do more *exploratory* testing.
+testers are expected to do more *exploratory* testing. Testers can refer to the [**User Guide**](https://ay2324s1-cs2103t-f12-2.github.io/tp/UserGuide.html)
+to check out more ways to test the app.
 
 </div>
 
@@ -852,29 +783,198 @@ testers are expected to do more *exploratory* testing.
     2. Expected: The `Exit` message is shown and the app closes.
         Exception: When using the `Exit` button to close the app, the `Exit` message is not shown.
 
-4. _{ more test cases …​ }_
+### General Commands
 
-### Deleting a student
+1. Viewing help and group requirements
 
-1. Deleting a student while all students are being shown
+   1. Test case: `help`.<br>
+       Expected: Opens help window which shows the help message, `Copy Url` button and group requirements message.
 
-   1. Prerequisites: List all students using the `list` command. Multiple students in the list.
+   2. Test case: `help X`.<br>
+       `X` is any input written after `help`.<br>
+       Expected: Similar to previous.
 
-   2. Test case: `delete alexyeoh@u.nus.edu`<br>
+2. Clearing all entries
+
+   1. Test case: `clear` and clicking `Yes`.<br>
+      Expected: Opens confirmation window and successfully clears all entries.
+   
+   2. Test case: `clear` and clicking `Cancel`.<br>
+      Expected: Opens confirmation window and entries are not cleared.
+
+   3. Test case: `clear X`.<br>
+      `X` is any input written after `clear`.<br>
+      Expected: Similar to test case (i).
+
+3. Exiting the program
+    
+    1. Similar to the shutting down case mentioned above.
+
+### Student Commands
+
+1. Adding a student
+    
+   1. Test case: `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I’m a Frontend Developer t/06 t/19 sm/https://www.linkedin.com/in/john-doe-123456789 nt/local g/m`.<br>
+      Expected: John doe added to student list.
+   
+   2. Test case: `add X`.<br>
+      `X` is any input that does not follow format: `n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION [t/TUTORIALS]… [sm/SOCIALMEDIA]… nt/NATIONALITY g/GENDER`.<br>
+      Note: Social media and tutorial are optional.<br>
+      Note: Please refer to the [**User Guide**](https://ay2324s1-cs2103t-f12-2.github.io/tp/UserGuide.html#adding-a-student--add) for information on the valid fields' values.<br>
+      Expected: Error details shown in the status message.  
+
+2. Editing a student
+
+   1. Test case: `edit johnd@u.nus.edu y/3 e/johndoe@u.nus.edu`.<br>
+      Expected: Student with above email has year changed to `3` and email changed to `johndoe@u.nus.edu`.
+   
+   2. Test case: `edit X`
+      `X` is any input that does not follow format: `EMAIL [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS]…​ [sm/SOCIALMEDIA]…​ [nt/NATIONALITY] [g/GENDER]`.<br>
+      Note: Fields in `[]` are optional.<br>
+      Expected: Error details shown in the status message.
+    
+3. Deleting a student
+
+   1. Test case: `delete alexyeoh@u.nus.edu`.<br>
       Expected: Student with above email deleted from the list. Details of the deleted student shown in the status message. Timestamp in the status bar is updated.
 
-   3. Test case: `delete 0`<br>
+   2. Test case: `delete 0`.<br>
       Expected: No student is deleted. Error details shown in the status message. Status bar remains the same.
 
-   4. Other incorrect delete commands to try: `delete`, `delete abc@gmail.com`, `delete 1`<br>
+4. Listing all students
+    
+   1. Test case: `list`.<br>
+      Expected: List students in StudentConnect.
+
+   2. Test case: `list X`.<br>
+      `X` is any input written after `list`.<br>
       Expected: Similar to previous.
 
-2. _{ more test cases …​ }_
+5. Finding a student by name
+    
+   1. Test case: `find John`<br>
+       Expected: List students with `john` in their name. If no students found, no students will be listed.
+    
+   2. Test case: `find john betsy`<br>
+      Expected: List students with `john` or `betsy` in their name. If no students found, no students will be listed.
+
+6. Filtering students by tutorial
+
+    1. Test case: `filter 10`.<br>
+       Expected: List students with `T10` as their chosen tutorial. If no students found, no students will be listed.
+
+    2. Test case: `filter 12 15`.<br>
+       Expected: List students with `T12` or `T15` as their chosen tutorial. If no students found, no students will be listed.
+
+    3. Test case: `filter 0` or `filter 23`.
+       Expected: Error details shown in status message as command only accepts tutorial groups from 01 to 22 inclusive.
+
+### Group Commands
+
+1. Creating a new group
+
+   1. Test case: `create t/10`.<br>
+      Expected: Create a new empty group with `T10` as its tutorial group. 
+   
+   2. Test case: `create t/0` or `create t/23`.
+      Expected: Error details shown in status message as command only accepts tutorial groups from 01 to 22 inclusive.
+
+2. Listing all groups
+
+   1. Test case: `listGroup`.<br>
+      Expected: List all groups in StudentConnect.
+
+   2. Test case: `listGroup X`.<br>
+      `X` is any input written after `listGroup`.<br>
+      Expected: Similar to previous.
+
+3. Deleting a group
+
+   1. Test case: `delete gr/1`.<br>
+      Expected: Group with above group number deleted from the group list. 
+
+   2. Test case: `delete 0`.<br>
+      Expected: No group is deleted. Error details shown in the status message.
+
+4. Joining a group
+    
+   1. Test case: `join e/johnd@u.nus.edu gr/1`.<br>
+      Expected: If there is lesser than 5 people in group 1, John Doe joins the group. Group list is displayed.
+    
+   2. Test case: `join e/johnd@u.nus.edu gr/2`.<br>
+      Expected: Since John Doe is already in a group (as mentioned in the previous test case), error details will be shown in the status message.
+
+5. Leaving a group
+    
+   1. Test case: `leave e/johnd@u.nus.edu gr/1`<br>
+      Expected: If John Doe is in the group 1, his details will be removed from the group.
+
+   2. Test case: `leave e/johnd@u.nus.edu gr/2`<br>
+      Expected: Since John Doe is not a member of group 2, error details will be shown in the status message.
+
+6. Finding group by group number
+
+   1. Test case: `findGroup 7`.<br>
+      Expected: Group `7` is listed. If the group exists, it will be listed.
+
+   2. Test case: `findGroup 1 3`.<br>
+      Expected: Group `1` and `3` listed. If the group exists, it will be listed.
+
+   3. Test case: `findGroup -1`.<br>
+      Expected: Error details will be shown in the status message as group number needs to be a non-zero unsigned integer.
+
+7. Filtering group by tutorial
+
+   1. Test case: `filterGroup 10`.<br>
+      Expected: List groups with `T10` as their tutorial slot. If no groups found, no groups will be listed.
+
+   2. Test case: `filterGroup 12 15`.<br>
+      Expected: List groups with `T12` or `T15` as their tutorial slot. If no groups found, no groups will be listed.
+
+   3. Test case: `filterGroup 0` or `filterGroup 23`.<br>
+      Expected: Error details shown in status message as command only accepts tutorial groups from 01 to 22 inclusive.
+
+8. Checking a group
+    
+   1. Test case: `checkGroup 4`<br>
+      Expected: Checks if group 4 fulfills requirements mentioned in the `help` window. Returns message of requirements that are and are not fulfilled.
+
+   2. Test case: `checkGroup a`
+      Expected: Error details shown in status message as command only accepts non-zero unsigned integers.
+
+9. Listing all tasks
+   
+   1. Test case: `tasks 5`.<br>
+       Expected: List all tasks of group 5.
+
+   2. Test case: `tasks a`.<br>
+      Expected: Error details shown in status message as command only accepts non-zero unsigned integers.
+
+10. Marking a task as done
+
+    1. Test case: `mark gr/1 ti/1`.<br>
+       Expected: If group 1 exists, marks task 1 as done. List tasks of the group 1 in the status message.
+   
+    2. Test case: `mark gr/1 ti/15`.<br>
+       Expected: Error details shown in status message as only 13 tasks are being initialised for all groups (mentioned in Point 4 of List Task Feature).
+
+11. Marking a task as not done
+
+    1. Test case: `mark gr/1 ti/1`.<br>
+       Expected: If group 1 exists, marks task 1 as not done. List tasks of the group 1 in the status message.
+
+    2. Test case: `mark gr/1 ti/14`.<br>
+       Expected: Error details shown in status message as only 13 tasks are being initialised for all groups (mentioned in Point 4 of List Task Feature).
 
 ### Saving data
 
-1. Dealing with missing/corrupted data files
+1. Students' data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
 
-   1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
+### Editing the data file
 
-2. _{ more test cases …​ }_
+1. Students' data are saved automatically as a JSON file `[JAR file location]/data/addressbook.json`. 
+    1. Advanced users are welcome to update data directly by editing that data file.
+
+<div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
+If your changes to the data file makes its format invalid, StudentConnect will discard all data and start with an empty data file at the next run. Hence, it is recommended to take a backup of the file before editing it.
+</div>
