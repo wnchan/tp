@@ -681,7 +681,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **Extensions:**
 * 1a. The specified group is not registered in the system.
   * 1a1. StudentConnect shows an error message.
-* 1a. The group number is invalid.
+* 1b. The group number is invalid.
   * 1b1. StudentConnect shows an error message.
 
   Use case ends.
