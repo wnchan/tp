@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.testutil.Assert.assertThrows;
 import static seedu.address.testutil.TypicalGroups.GROUP1;
 import static seedu.address.testutil.TypicalGroups.GROUP2;
+import static seedu.address.testutil.TypicalGroups.GROUP3;
+import static seedu.address.testutil.TypicalPersons.GEORGE;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -70,6 +72,13 @@ public class UniqueGroupListTest {
     @Test
     public void remove_nullPerson_throwsNullPointerException() {
         assertThrows(NullPointerException.class, () -> uniqueGroupList.remove((Person) null));
+    }
+
+    @Test
+    public void remove_validPerson_success() {
+        uniqueGroupList.add(GROUP3);
+        uniqueGroupList.remove(GEORGE);
+        assertFalse(GROUP3.hasMember(GEORGE));
     }
 
     @Test
