@@ -151,7 +151,7 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME m/MAJOR`, `m/MAJOR n/NAME` is also acceptable.
 
-* Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
+* <a href="#glossary-extraneous-parameters" style="text-decoration: underline; color: black;">Extraneous parameters</a> for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
   e.g. if the command specifies `list 123`, it will be interpreted as `list`.
 
 * Commands must be in lower case. <br> e.g. `list` is a valid command, but `LIST` is not.
@@ -956,7 +956,7 @@ This glossary is intended to provide definitions for terms that may be unfamilia
 
 - **Double Major**: <a id="glossary-double-major"></a> A type of academic degree where a student completes two sets of major requirements, although they receive just one degree.
 
-- **Extraneous Parameters**: These are additional or unnecessary parameters given in a command that do not affect its execution but are not required for the command to function properly.
+- **Extraneous Parameters**: <a id="glossary-extraneous-parameters"></a> These are additional or unnecessary parameters given in a command that do not affect its execution but are not required for the command to function properly.
 
 - **GUI (Graphical User Interface)**: A type of user interface that allows you to interact with electronic devices through graphical icons and visual indicators, as opposed to text-based interfaces, typed command labels, or text navigation.
 
