@@ -796,15 +796,8 @@ Students' data are saved automatically as a JSON file `[JAR file location]/data/
 If your changes to the data file makes its format invalid, StudentConnect will discard all data and start with an empty data file at the next run. Hence, it is recommended to take a backup of the file before editing it.
 </div>
 
---------------------------------------------------------------------------------------------------------------------
-
-### Archiving Data Files `[coming in v2.0]`
-
-_Details coming soon ..._
-
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
 --------------------------------------------------------------------------------------------------------------------
-
 <div style="page-break-after: always;"></div>
 
 ## FAQ
