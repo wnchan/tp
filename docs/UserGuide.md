@@ -410,7 +410,7 @@ Filters students by tutorial based on the given slots.
 * `filter 12 16` returns students in `T05 T12`, `T16 T22`.
 
 #### Expected Output (Success):
-* GUI: List of all student entries whose tutorial(s) match the slot(s) in the system.<br>
+* GUI: List of all student entries whose tutorial(s) match the slot(s) in the system.
   
 ![result for 'filter 04'](images/filter.png)
 
@@ -478,20 +478,18 @@ Creates a new empty group with the given tutorial number. The group number is au
 
 #### Expected Output (Success):
 * GUI: A new empty group, with a group number, is created.
-<<<<<<< HEAD
 * Message: `Group created successfully! Group number is [GROUP_NUMBER]`
   
 ![Sample result for create](images/create.png)
 
 #### Expected Output (Failure):
 * Case: Invalid command format, e.g. `create`, `create 02`, etc.
-=======
-* Message: `Group created successfully! Group number is [GROUP_NUMBER]`<br>
-  ![Sample result for create](images/create.png)
+* Message: `Group created successfully! Group number is [GROUP_NUMBER]`
+  
+![Sample result for create](images/create.png)
 
 #### Expected Output(Failure):
 * Case: Invalid command format, e.g. `create`, `create 02`, etc.<br>
->>>>>>> master
 Message: `Invalid command format!`<br>
   `create: Creates a new empty group.`<br>
   `Parameters: t/TUTORIAL Example: create t/02`<br>
@@ -508,7 +506,7 @@ Displays a list of all groups. For each group, the group number, and the names a
 
 #### Expected Output (Success):
 * GUI: A list of all groups that are in the system is shown.
-* Message: `Viewing all groups`<br>
+* Message: `Viewing all groups`
 
 ![Sample result for listGroup](images/listGroup.png)
 
@@ -532,20 +530,18 @@ Deletes a group from the system, based on group number.
 
 #### Expected Output (Success):
 * GUI: Specified group is no longer visible.
-<<<<<<< HEAD
 * Message: `Group deleted successfully! Deleted Group: [GROUP_NUMBER]`
   
 ![result for 'deleteGroup gr/3'](images/deleteGroup.png)
 
 #### Expected Output (Failure):
 * Case: Group with specified number is not in the system.
-=======
-* Message: `Group deleted successfully! Deleted Group: [GROUP_NUMBER]`<br>
-  ![result for 'deleteGroup gr/3'](images/deleteGroup.png)
+* Message: `Group deleted successfully! Deleted Group: [GROUP_NUMBER]`
+  
+![result for 'deleteGroup gr/3'](images/deleteGroup.png)
 
 #### Expected Output(Failure):
 * Case: Group with specified number is not in the system.<br>
->>>>>>> master
   Message: `Group with the provided group number not found.`
 
 <hr>
@@ -570,7 +566,7 @@ Message: `The provided student is already a member of the provided group.`
 * Case: Group has 5 members and is full.<br>
 Message: `Join failed as the group already has 5 members.`
 * Case: Student is found in another group already.<br>
-Message: `The provided student is already in another group.`<br>
+Message: `The provided student is already in another group.`
 
 ![Sample result for join](images/join.png)
 
@@ -594,12 +590,8 @@ Deletes a member from a specific group, indicating that they have left.
 
 #### Expected Output (Success):
 * GUI: Student details removed from specified group.
-<<<<<<< HEAD
 * Message: `Leave successful! NAME has left group 1!`
 
-=======
-* Message: `Leave successful! NAME has left group 1!`<br>
->>>>>>> master
 ![sample result for 'leave'](images/leave.png)
 
 #### Expected Output (Failure):
@@ -629,7 +621,7 @@ Finds group(s) with group number(s) that matches any of the given keywords.
 * `findGroup 7 15` returns Group `7`, Group `15`.
 
 #### Expected Output (Success):
-* GUI: List of all group entries whose group number(s) match the keyword(s) in the system.<br>
+* GUI: List of all group entries whose group number(s) match the keyword(s) in the system.
   
 ![sample result for 'findGroup'](images/findGroup.png)
 
@@ -657,16 +649,10 @@ Filters the groups by tutorial based on the given slot.
 #### Examples:
 * `filterGroup 03` returns groups that belong to `T03`.
 
-<<<<<<< HEAD
-#### Expected Output (Success):
+#### Expected Output(Success):
 * GUI: List of all group entries with the tutorial that match the slot in the system.
   
 ![sample result for 'filterGroup'](images/filterGroup.png)
-=======
-#### Expected Output(Success):
-* GUI: List of all group entries with the tutorial that match the slot in the system.<br>
-  ![sample result for 'filterGroup'](images/filterGroup.png)
->>>>>>> master
 
 #### Expected Output (Failure):
 * Case: Invalid command format is provided, e.g. `filterGroup`.<br>
@@ -695,7 +681,7 @@ Checks if a group fulfils the group requirements of the course.
 #### Expected Output (Success):
 * Case: Group fulfils the group requirements.<br>
 Message: `Group GROUP_NUMBER`<br>
-  `Group fulfils the diversity requirements of CS2103T.`<br>
+  `Group fulfils the diversity requirements of CS2103T.`
   
 ![sample result for 'checkGroup'](images/checkGroup.png)
 
@@ -744,14 +730,9 @@ Lists out all tasks for a specific group.
 
 #### Expected Output (Success):
 * GUI: List of all tasks for the specified group is displayed, the specified group and group members are shown.
-<<<<<<< HEAD
 * Message: `Here are the tasks for group [GROUP_NUMBER]: [list of tasks]`
   
 ![sample result for 'tasks'](images/tasks.png)
-=======
-* Message: `Here are the tasks for group [GROUP_NUMBER]: [list of tasks]`<br>
-  ![sample result for 'tasks'](images/tasks.png)
->>>>>>> master
 
 #### Expected Output (Failure):
 * Case: Invalid tasks command, e.g. `tasks gr/3`, `tasks t`, etc.<br>
@@ -782,14 +763,9 @@ Mark a task for a specified group as done.
 
 #### Expected Output (Success):
 * GUI: The task in the specified group is marked as done and task list is updated.
-<<<<<<< HEAD
 * Message: `Marked task number (ti) for group (gr) [and displays the updated task list]`
   
 ![sample result for 'mark'](images/mark.png)
-=======
-* Message: `Marked task number (ti) for group (gr) [and displays the updated task list]`<br>
-  ![sample result for 'mark'](images/mark.png)
->>>>>>> master
 
 #### Expected Output (Failure):
 * Case: Invalid mark command, e.g. `mark`, `mark t`, etc.<br>
@@ -823,14 +799,9 @@ Mark a task for a specified group as not done.
 
 #### Expected Output (Success):
 * GUI: The task in the specified group is marked as not done and task list is updated.
-<<<<<<< HEAD
 * Message: `Unmarked task number (ti) for group (gr) [and displays the updated task list]`
   
 ![sample result for 'unmark'](images/unmark.png)
-=======
-* Message: `Unmarked task number (ti) for group (gr) [and displays the updated task list]`<br>
-  ![sample result for 'unmark'](images/unmark.png)
->>>>>>> master
 
 #### Expected Output (Failure):
 * Case: Invalid unmark command, e.g. `unmark`, `unmark t`, etc.<br>
