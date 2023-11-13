@@ -34,7 +34,7 @@ Given below are my contributions to the project.
 * Added documentation for the feature `delete`, `clear`, including the usage of the pop-up, `leave`, `deleteGroup` and social media hyperlinks.
 * Creation of Table of Contents.
 * Reformatted UG according to general commands, person commands and group commands.
-* Wrote the Intoduction section and created the Appendix section.
+* Wrote the Introduction section and created the Appendix section.
 * Added page breaks for formatting and back to table of contents hyperlink at the end of pages.
 * Added relevant hyperlinks like download link for java 11 and warning messages.
 * Added hyperlinks of glossary terms.
