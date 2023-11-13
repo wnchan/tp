@@ -808,7 +808,7 @@ to check out more ways to test the app.
 
    3. Test case: `clear X`.<br>
       `X` is any input written after `clear`.<br>
-      Expected: Similar to test case (i).
+      Expected: Similar to test case 2.1.
 
 3. Exiting the program
     
@@ -840,7 +840,7 @@ to check out more ways to test the app.
 3. Deleting a student
 
    1. Test case: `delete alexyeoh@u.nus.edu`.<br>
-      Expected: Student with above email deleted from the list. Details of the deleted student shown in the status message. Timestamp in the status bar is updated.
+      Expected: Student with above email deleted from the list. Details of the deleted student shown in the status message. 
 
    2. Test case: `delete 0`.<br>
       Expected: No student is deleted. Error details shown in the status message. Status bar remains the same.
@@ -964,10 +964,10 @@ to check out more ways to test the app.
 
 11. Marking a task as not done
 
-    1. Test case: `mark gr/1 ti/1`.<br>
+    1. Test case: `unmark gr/1 ti/1`.<br>
        Expected: If group 1 exists, marks task 1 as not done. List tasks of the group 1 in the status message.
 
-    2. Test case: `mark gr/1 ti/14`.<br>
+    2. Test case: `unmark gr/1 ti/14`.<br>
        Expected: Error details shown in status message as only 13 tasks are being initialised for all groups (mentioned in Point 4 of List Task Feature).
 
 ### Saving data
