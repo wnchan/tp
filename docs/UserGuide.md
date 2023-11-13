@@ -108,9 +108,9 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 
 3. Copy the file to the folder you want to use as the _home folder_ for your StudentConnect.
 
-4. Open a command terminal, and use `cd` to change the current working directory into the folder you put the jar file in. Use the `java -jar studentconnect.jar` command to run the application.<br>
+4. Open a <a href="#glossary-command-terminal" style="text-decoration: underline; color: black;">command terminal</a>, and type `cd` to change the current working directory into the folder you put the jar file in. Use the `java -jar studentconnect.jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
-   ![Ui](images/Ui.png)
+      ![Ui](images/Ui.png)
 
 5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
@@ -950,7 +950,7 @@ This glossary is intended to provide definitions for terms that may be unfamilia
 
 - **Case-Sensitive**: Opposite of case-insensitive, this refers to situations where uppercase and lowercase letters are treated differently. For example, "Java" and "java" would be considered distinct.
 
-- **Command Terminal**: An interface in a computing environment where you can input text commands to perform specific tasks.
+- **Command Terminal**: <a id="glossary-command-terminal"></a> An interface in a computing environment where you can input text commands to perform specific tasks. Some examples include "Terminal" on MacOS and "Powershell" on Windows.
 
 - **Double Degree**: An academic program where a student earns two distinct degrees simultaneously, usually in different fields.
 
