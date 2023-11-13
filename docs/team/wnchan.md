@@ -14,20 +14,20 @@ Given below are my contributions to the project.
 
 ## Enhancements implemented
 * **Updated Feature**: Added the ability to `add` the student's personal details into the system.
-  * Highlights: This enhancement affects existing commands and commands to be added in the future.
+  * Highlights: This enhancement affects existing commands and commands to be added.
   * Added the different field classes and other classes associated with the feature too.
-  * Challenges: It was quite difficult dealing with the numerous errors that occurred while changing the classes associated with the add command.
+  * Challenges: Dealing with errors that occurred while changing the other classes associated.
 
 * **Updated Feature**: Helps the user to find the user guide if they need `help` and see requirements of CS2101/CS2103T groupings.
   * Highlights: Updated help window to be more useful for our app and target audience.
-  * Added test cases for the feature, updated UI of the help window and added relevant information.
+  * Added test cases, updated UI of the help window and added relevant information.
   * Challenges: Adjusting the layout was quite challenging as a beginner in FXML.
 
-* **New Feature**: Added the ability to `mark` a specified task in a specified group, using `mark gr/GROUP_NUMBER ti/TASK_INDEX`.
+* **New Feature**: Added the ability to `mark` a specified task in a specified group.
   * Highlights: This allows users to keep track of tasks and mark it as done.
   * Added test cases for the feature.
 
-* **New Feature**: Added the ability to `unmark` a specified task in a specified group, using `unmark gr/GROUP_NUMBER ti/TASK_INDEX`.
+* **New Feature**: Added the ability to `unmark` a specified task in a specified group.
   * Highlights: This allows users to keep track of tasks and mark it as not done.
   * Added test cases for the feature.
 
