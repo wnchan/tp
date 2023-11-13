@@ -20,7 +20,19 @@ checkstyle {
     toolVersion = '10.2'
 }
 
+run {
+    enableAssertions = true
+}
+
 test {
+    doFirst {
+        if (System.getProperty("os.name").equals("Linux")) {
+            // FX tests do not successfully run on Ubuntu Runner
+            exclude '**/ui/**'
+            // Excluded because ClearCommand uses FX as well
+            exclude '**/ClearCommandTest.class'
+        }
+    }
     useJUnitPlatform()
     finalizedBy jacocoTestReport
 }
