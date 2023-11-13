@@ -161,8 +161,8 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </div>
 
-<hr>
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
+<hr>
 
 <div style="page-break-after: always;"></div>
 
@@ -311,6 +311,8 @@ Shows a list of all students in the system.
 * Message: `Viewing all students`
   
 ![sample result for 'list'](images/list.png)
+
+<div style="page-break-after: always;"></div>
 
 #### Expected Output (Failure):
 * Message: `Error: Unable to retrieve student entries. Please try again.`
@@ -577,6 +579,8 @@ Deletes a member from a specific group, indicating that they have left.
 #### Acceptable Values:
 * GROUP_NUMBER: Must be a non-zero unsigned integer.
 * EMAIL: Must be a valid NUS email registered in the system.
+
+<div style="page-break-after: always;"></div>
 
 #### Expected Output (Success):
 * GUI: Student details removed from specified group.
