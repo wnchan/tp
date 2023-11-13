@@ -781,6 +781,8 @@ Message: `Invalid task index. Task not found.`
 
 <hr>
 
+<div style="page-break-after: always;"></div>
+
 ### Marking a Task as Not Done : `unmark`
 
 Mark a task for a specified group as not done.
