@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.testutil.Assert.assertThrows;
 import static seedu.address.testutil.TypicalGroups.GROUP1;
 import static seedu.address.testutil.TypicalGroups.GROUP2;
-import static seedu.address.testutil.TypicalPersons.DANIEL;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -18,7 +17,6 @@ import org.junit.jupiter.api.Test;
 import seedu.address.model.group.exceptions.DuplicateGroupException;
 import seedu.address.model.group.exceptions.GroupNotFoundException;
 import seedu.address.model.person.Person;
-import seedu.address.model.person.exceptions.PersonNotFoundException;
 
 public class UniqueGroupListTest {
 
