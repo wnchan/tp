@@ -736,7 +736,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 Given below are instructions to test the app manually.
 
 <div markdown="span" class="alert alert-info">:information_source: **Note:** These instructions only provide a starting point for testers to work on;
-testers are expected to do more *exploratory* testing.
+testers are expected to do more *exploratory* testing. Testers can refer to the [**User Guide**](https://ay2324s1-cs2103t-f12-2.github.io/tp/UserGuide.html)
+to check out more ways to test the app.
 
 </div>
 
@@ -771,20 +772,188 @@ testers are expected to do more *exploratory* testing.
     2. Expected: The `Exit` message is shown and the app closes.
         Exception: When using the `Exit` button to close the app, the `Exit` message is not shown.
 
-### Deleting a student
+### General Commands
 
-1. Deleting a student while all students are being shown
+1. Viewing help and group requirements
 
-   1. Prerequisites: List all students using the `list` command. Multiple students in the list.
+   1. Test case: `help`.<br>
+       Expected: Opens help window which shows the help message, `Copy Url` button and group requirements message.
 
-   2. Test case: `delete alexyeoh@u.nus.edu`<br>
+   2. Test case: `help X`.<br>
+       `X` is any input written after `help`.<br>
+       Expected: Similar to previous.
+
+2. Clearing all entries
+
+   1. Test case: `clear` and clicking `Yes`.<br>
+      Expected: Opens confirmation window and successfully clears all entries.
+   
+   2. Test case: `clear` and clicking `Cancel`.<br>
+      Expected: Opens confirmation window and entries are not cleared.
+
+   3. Test case: `clear X`.<br>
+      `X` is any input written after `clear`.<br>
+      Expected: Similar to test case (i).
+
+3. Exiting the program
+    
+    1. Similar to the shutting down case mentioned above.
+
+### Student Commands
+
+1. Adding a student
+    
+   1. Test case: `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I’m a Frontend Developer t/06 t/19 sm/https://www.linkedin.com/in/john-doe-123456789 nt/local g/m`.<br>
+      Expected: John doe added to student list.
+   
+   2. Test case: `add X`.<br>
+      `X` is any input that does not follow format: `n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION [t/TUTORIALS]… [sm/SOCIALMEDIA]… nt/NATIONALITY g/GENDER`.<br>
+      Note: Social media and tutorial are optional.<br>
+      Note: Please refer to the [**User Guide**](https://ay2324s1-cs2103t-f12-2.github.io/tp/UserGuide.html#adding-a-student--add) for information on the valid fields' values.<br>
+      Expected: Error details shown in the status message.  
+
+2. Editing a student
+
+   1. Test case: `edit johnd@u.nus.edu y/3 e/johndoe@u.nus.edu`.<br>
+      Expected: Student with above email has year changed to `3` and email changed to `johndoe@u.nus.edu`.
+   
+   2. Test case: `edit X`
+      `X` is any input that does not follow format: `EMAIL [n/NAME] [m/MAJOR] [y/YEAR] [e/EMAIL] [d/DESCRIPTION] [t/TUTORIALS]…​ [sm/SOCIALMEDIA]…​ [nt/NATIONALITY] [g/GENDER]`.<br>
+      Note: Fields in `[]` are optional.<br>
+      Expected: Error details shown in the status message.
+    
+3. Deleting a student
+
+   1. Test case: `delete alexyeoh@u.nus.edu`.<br>
       Expected: Student with above email deleted from the list. Details of the deleted student shown in the status message. Timestamp in the status bar is updated.
 
-   3. Test case: `delete 0`<br>
+   2. Test case: `delete 0`.<br>
       Expected: No student is deleted. Error details shown in the status message. Status bar remains the same.
 
-   4. Other incorrect delete commands to try: `delete`, `delete abc@gmail.com`, `delete 1`<br>
+4. Listing all students
+    
+   1. Test case: `list`.<br>
+      Expected: List students in StudentConnect.
+
+   2. Test case: `list X`.<br>
+      `X` is any input written after `list`.<br>
       Expected: Similar to previous.
+
+5. Finding a student by name
+    
+   1. Test case: `find John`<br>
+       Expected: List students with `john` in their name. If no students found, no students will be listed.
+    
+   2. Test case: `find john betsy`<br>
+      Expected: List students with `john` or `betsy` in their name. If no students found, no students will be listed.
+
+6. Filtering students by tutorial
+
+    1. Test case: `filter 10`.<br>
+       Expected: List students with `T10` as their chosen tutorial. If no students found, no students will be listed.
+
+    2. Test case: `filter 12 15`.<br>
+       Expected: List students with `T12` or `T15` as their chosen tutorial. If no students found, no students will be listed.
+
+    3. Test case: `filter 0` or `filter 23`.
+       Expected: Error details shown in status message as command only accepts tutorial groups from 01 to 22 inclusive.
+
+### Group Commands
+
+1. Creating a new group
+
+   1. Test case: `create t/10`.<br>
+      Expected: Create a new empty group with `T10` as its tutorial group. 
+   
+   2. Test case: `create t/0` or `create t/23`.
+      Expected: Error details shown in status message as command only accepts tutorial groups from 01 to 22 inclusive.
+
+2. Listing all groups
+
+   1. Test case: `listGroup`.<br>
+      Expected: List all groups in StudentConnect.
+
+   2. Test case: `listGroup X`.<br>
+      `X` is any input written after `listGroup`.<br>
+      Expected: Similar to previous.
+
+3. Deleting a group
+
+   1. Test case: `delete gr/1`.<br>
+      Expected: Group with above group number deleted from the group list. 
+
+   2. Test case: `delete 0`.<br>
+      Expected: No group is deleted. Error details shown in the status message.
+
+4. Joining a group
+    
+   1. Test case: `join e/johnd@u.nus.edu gr/1`.<br>
+      Expected: If there is lesser than 5 people in group 1, John Doe joins the group. Group list is displayed.
+    
+   2. Test case: `join e/johnd@u.nus.edu gr/2`.<br>
+      Expected: Since John Doe is already in a group (as mentioned in the previous test case), error details will be shown in the status message.
+
+5. Leaving a group
+    
+   1. Test case: `leave e/johnd@u.nus.edu gr/1`<br>
+      Expected: If John Doe is in the group 1, his details will be removed from the group.
+
+   2. Test case: `leave e/johnd@u.nus.edu gr/2`<br>
+      Expected: Since John Doe is not a member of group 2, error details will be shown in the status message.
+
+6. Finding group by group number
+
+   1. Test case: `findGroup 7`.<br>
+      Expected: Group `7` is listed. If the group exists, it will be listed.
+
+   2. Test case: `findGroup 1 3`.<br>
+      Expected: Group `1` and `3` listed. If the group exists, it will be listed.
+
+   3. Test case: `findGroup -1`.<br>
+      Expected: Error details will be shown in the status message as group number needs to be a non-zero unsigned integer.
+
+7. Filtering group by tutorial
+
+   1. Test case: `filterGroup 10`.<br>
+      Expected: List groups with `T10` as their tutorial slot. If no groups found, no groups will be listed.
+
+   2. Test case: `filterGroup 12 15`.<br>
+      Expected: List groups with `T12` or `T15` as their tutorial slot. If no groups found, no groups will be listed.
+
+   3. Test case: `filterGroup 0` or `filterGroup 23`.<br>
+      Expected: Error details shown in status message as command only accepts tutorial groups from 01 to 22 inclusive.
+
+8. Checking a group
+    
+   1. Test case: `checkGroup 4`<br>
+      Expected: Checks if group 4 fulfills requirements mentioned in the `help` window. Returns message of requirements that are and are not fulfilled.
+
+   2. Test case: `checkGroup a`
+      Expected: Error details shown in status message as command only accepts non-zero unsigned integers.
+
+9. Listing all tasks
+   
+   1. Test case: `tasks 5`.<br>
+       Expected: List all tasks of group 5.
+
+   2. Test case: `tasks a`.<br>
+      Expected: Error details shown in status message as command only accepts non-zero unsigned integers.
+
+10. Marking a task as done
+
+    1. Test case: `mark gr/1 ti/1`.<br>
+       Expected: If group 1 exists, marks task 1 as done. List tasks of the group 1 in the status message.
+   
+    2. Test case: `mark gr/1 ti/15`.<br>
+       Expected: Error details shown in status message as only 13 tasks are being initialised for all groups (mentioned in Point 4 of List Task Feature).
+
+11. Marking a task as not done
+
+    1. Test case: `mark gr/1 ti/1`.<br>
+       Expected: If group 1 exists, marks task 1 as not done. List tasks of the group 1 in the status message.
+
+    2. Test case: `mark gr/1 ti/14`.<br>
+       Expected: Error details shown in status message as only 13 tasks are being initialised for all groups (mentioned in Point 4 of List Task Feature).
 
 ### Saving data
 
