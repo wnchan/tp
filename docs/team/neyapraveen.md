@@ -69,3 +69,5 @@ Given below are my contributions to the project.
 ## Contributions beyond the project team
 * Brainstormed ideas for features and further iterations.
 * Ensured code quality, helped in adding javadocs.
+* Participated in load testing.
+* Helped in finding other group's bugs during PED.
