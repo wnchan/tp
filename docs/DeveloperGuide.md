@@ -496,7 +496,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Extensions:**
 
-* 2a. The given keyword(s) does not match any of the students’ names.
+* 1a. The given keyword(s) does not match any of the students’ names.
 
   Use case ends.
 
@@ -513,7 +513,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * 1a. The given tutorial slot(s) is invalid.
   * 1a1. StudentConnect shows an error message.
 
-* 2a. The given slot(s) does not match any of the students' tutorial slots.
+* 1b. The given slot(s) does not match any of the students' tutorial slots.
 
   Use case ends.
 
