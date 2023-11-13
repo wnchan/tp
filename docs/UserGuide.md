@@ -617,6 +617,8 @@ Finds group(s) with group number(s) that matches any of the given keywords.
   
 ![sample result for 'findGroup'](images/findGroup.png)
 
+<div style="page-break-after: always;"></div>
+
 #### Expected Output (Failure):
 * Case: Invalid command format is provided, e.g. `findGroup`.<br>
  Message: `Invalid command format!`<br>
