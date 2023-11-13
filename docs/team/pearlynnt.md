@@ -20,7 +20,7 @@ Given below are my contributions to the project.
 * **Find Students Feature**: Added the ability to find student(s) by name
   * What it does: This feature allows the user to find student(s) by name with any combination of partial keyword(s).
   * Justification: This feature helps users to find other students more quickly and easily.
-  * Highlights: Modified the code to check of each word in the students' name contains the keyword(s) instead of having to match the keyword(s).
+  * Highlights: Modified the code to check if each word in the students' name contains the keyword(s) instead of having to match the keyword(s).
 * **Filter Students Feature**: Added the ability to filter students by tutorial
   * What it does: This feature allows the user to filter students by tutorial with any combination of tutorial slot(s).
   * Justification: This feature helps users to search for other students who are also interested in attending or are assigned to the same tutorial slot.

@@ -214,6 +214,8 @@ Clears all entries from the system upon confirmation in the pop-up.
 * Case: Clear command fails.
 * Case: You press `cancel` on the confirmation pop-up.<br>
   GUI: All students' details remain on the student list.
+
+> <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
   
 ![result for cancelled 'clear' GUI](images/clearCancel.png)
 
@@ -228,6 +230,8 @@ Exits the program.
 #### Expected Output (Success):
 * GUI: Application window closes.
 * Message (before closing): `Thank you for using StudentConnect! Exiting the application now…`
+
+> <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
 
 ![Exit](images/exit.png)
 
