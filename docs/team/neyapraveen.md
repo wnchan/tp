@@ -50,15 +50,14 @@ Given below are my contributions to the project.
 
 ## Contributions to team-based tasks
 * Did equal share of tasks assigned.
+* Wrote intro.
+* Brainstormed ideas for features and further iterations.
 
 ## Review/ mentoring contributions
 * Reviewed teammates' PRs and gave suggestions when appropriate.
-* Helped with teammates' UI.
-* Helped in debugging.
+* Helped with teammates' UI and debugging.
 * Ensured code quality, helped in adding javadocs.
 
 ## Contributions beyond the project team
-* Brainstormed ideas for features and further iterations.
-* Participated in load testing.
-* Helped in finding other group's bugs during PED.
-* Helped peer in forum
+* Participated in load testing, helped in finding other group's bugs during PED.
+* Helped peer in forum.
