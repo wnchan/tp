@@ -10,7 +10,9 @@ title: User Guide
   <h1 style="margin-left: 20px; margin-top: 0px ; display: inline;">StudentConnect</h1>
 </div>
 
-<p>StudentConnect is a solution for hassle-free team formation for students to browse profiles and connect with others for the CS2103T and CS2101 group project.</p>
+<p>Welcome to the StudentConnect User Guide! This comprehensive manual is designed to assist you in navigating the features of StudentConnect, a hassle-free team formation solution for CS2103T and CS2101 students to browse profiles and connect for the team project.
+Whether you're new to the platform or looking to enhance your understanding, this guide is tailored to meet your needs.
+To ensure a seamless experience, we recommend referring to the <a href="#how-to-use-this-guide" style="color: blue;">How to Use This Guide</a> section before you get started. This section provides valuable insights on navigating the document, understanding icons and formatting, and optimizing your overall journey. </p>
 
 ## Table of Contents
 
@@ -57,7 +59,7 @@ title: User Guide
 
 ## How to Use This Guide
 
-This guide is designed to help you navigate the features of StudentConnect with ease. 
+This guide is designed to help you navigate the features of StudentConnect with ease.
 - To assist you in understanding and using this manual effectively, we've included a symbol table that outlines the icons and notations you'll encounter throughout the document.
 
 | Symbol               | Type        | Description                                                                                                                         |
@@ -95,38 +97,39 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 - The <a href="#appendix" style="color: blue;">appendix</a> section is included to detail all possible input values for fields that have specific constraints or require particular formats. This reference can help ensure that you input data correctly and understand the limitations of each field.
 - For a quick and compact overview of all the commands that StudentConnect offers, refer to the <a href="#command-summary" style="color: blue;">command summary</a>. This section servers as a handy reference for all possible actions you can perform within the application, laid out in an easily digestible format.
 
+> <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
 --------------------------------------------------------------------------------------------------------------------
 
 ## Quick Start
 
-1. Ensure you have Java `11` or above installed in your Computer.
+1. Ensure you have Java `11` or above installed in your Computer. If not, you can download Java `11` from <a href="https://www.oracle.com/java/technologies/downloads/#java11" style="color: blue;">here</a>.
 
-2. Download the latest `studentconnect.jar` from <a href="https://github.com/AY2324S1-CS2103T-F12-2/tp/releases" style="color: blue;">here</a>
+2. Download the latest `studentconnect.jar` from <a href="https://github.com/AY2324S1-CS2103T-F12-2/tp/releases" style="color: blue;">here</a>.
 
 3. Copy the file to the folder you want to use as the _home folder_ for your StudentConnect.
 
-4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar studentconnect.jar` command to run the application.<br>
+4. Open a command terminal, and use `cd` to change the current working directory into the folder you put the jar file in. Use the `java -jar studentconnect.jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/Ui.png)
 
 5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
-    * `list` : 
+    * `list` :
         * Lists all students in the StudentConnect system.
-    * `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time t/02 t/17 t/20 sm/https://www.linkedin.com/in/john-doe-123456789 nt/local g/m` : 
+    * `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time t/02 t/17 t/20 sm/https://www.linkedin.com/in/john-doe-123456789 nt/local g/m` :
         * Adds a student named `John Doe` and his details to the StudentConnect system.
-    * `delete EMAIL` : 
+    * `delete EMAIL` :
         * Deletes the student with the corresponding email.
-    * `clear` : 
+    * `create t/03` :
+         * Creates a new group assigned to tutorial 3.
+    * `clear` :
         * Deletes all data from the system (i.e. students, groups, and tasks).
-    * `exit` : 
+    * `exit` :
         * Exits the app.
-    * `create t/03` : 
-        * Creates a new group assigned to tutorial 3.
-
 6. Refer to the <a href="#features" style="color: blue;">Features</a> below for details of each command.
 
+> <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
@@ -136,7 +139,7 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 
 **:information_source: Notes about the command format:**<br>
 
-* Words in `UPPER_CASE` are the parameters to be supplied by the user.<br>
+* Words in `UPPER_CASE` are the parameters to be supplied by you.<br>
   e.g. in `add n/NAME`, `NAME` is a parameter which can be used as `add n/John Doe`.
 
 * Items in square brackets are optional.<br>
@@ -156,6 +159,7 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </div>
 
+> <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
 <hr>
 
 <div style="page-break-after: always;"></div>
@@ -163,7 +167,7 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 ## General Commands
 
 <div markdown="span" class="alert alert-primary">:exclamation: **Important:**
-StudentConnect provides a set of general commands to make it more convenient for users to navigate the app.
+StudentConnect provides a set of general commands to make it more convenient for you to navigate the app.
 </div>
 
 <hr>
@@ -220,6 +224,7 @@ Exits the program.
 #### Expected Output(Failure):
 * Message: `Error: Exiting the program failed.`
 
+> <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
 <hr>
 <div style="page-break-after: always;"></div>
 
@@ -434,6 +439,7 @@ Deletes a specific student and all personal details based on email.
   `Parameters: EMAIL`<br>
   `Example: delete alexyeoh@u.nus.edu`
 
+> <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
 <hr>
 <div style="page-break-after: always;"></div>
 
@@ -526,7 +532,7 @@ Message: `Student with the provided email not found.`
 Message: `Group with the provided group number not found.`
 * Case: Student has been added in the group already.<br>
 Message: `The provided student is already a member of the provided group.`
-* Case: Group has 5 members and is full.<br> 
+* Case: Group has 5 members and is full.<br>
 Message: `Join failed as the group already has 5 members.`
 * Case: Student is found in another group already.<br>
 Message: `The provided student is already in another group.`
@@ -561,7 +567,7 @@ Deletes a member from a specific group, indicating that they have left.
 Message: `Person with the provided email not found.`
 * Case: Group number not found in the system.<br>
 Message: `Group with the provided group number not found.`
-* Case: Student is not a member of the provided group.<br> 
+* Case: Student is not a member of the provided group.<br>
 Message: `The above student is not a member of the provided group.`
 
 <hr>
@@ -770,6 +776,7 @@ Message: `Task index must be a positive integer.`
 * Case: Invalid task index, e.g. task index greater than the number of tasks found from the list in `tasks` command.<br>
 Message: `Invalid task index. Task not found.`
 
+> <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
@@ -793,6 +800,7 @@ If your changes to the data file makes its format invalid, StudentConnect will d
 
 _Details coming soon ..._
 
+> <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
 --------------------------------------------------------------------------------------------------------------------
 
 <div style="page-break-after: always;"></div>
@@ -804,6 +812,7 @@ _Details coming soon ..._
 
 **Q**: Where is my data being saved? <br>
 **A**: It is saved in `[JAR file location]/data/addressbook.json`.
+> <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
@@ -811,7 +820,7 @@ _Details coming soon ..._
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 2. **Clear Command**, if you use the clear command, but exit the application incorrectly using the red exit button instead of running the exit command, data will not be cleared. Kindly always use the exit command to leave the application.
-
+> <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
@@ -840,6 +849,7 @@ _Details coming soon ..._
 | **Mark**         | `mark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `mark gr/2 ti/1`                                                                                                                                                                                 |
 | **Unmark**       | `unmark gr/GROUP_NUMBER ti/TASK_INDEX`<br> e.g., `unmark gr/5 ti/1`                                                                                                                                                                             |
 
+> <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
@@ -924,22 +934,23 @@ For now, we accept the following majors in National University of Singapore(NUS)
 | Urban Studies                             |
 | Visual Communications                     |
 
+> <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
 ## Glossary
 
-This glossary is intended to provide definitions for terms that may be unfamiliar to users. It is arranged in alphabetical order.
+This glossary is intended to provide definitions for terms that may be unfamiliar to you. It is arranged in alphabetical order.
 
-- **CS2101**: Effective Communication for Computing Professionals - A course designed to equip computing professionals with essential communication skills, both in technical and non-technical contexts. It covers the creation of clear and comprehensible software documentation and effective communication strategies for diverse audiences.
+- **CS2101**: Effective Communication for Computing Professionals - An NUS course designed to equip computing professionals with essential communication skills, both in technical and non-technical contexts. It covers the creation of clear and comprehensible software documentation and effective communication strategies for diverse audiences.
 
-- **CS2103T**: Software Engineering - A course focusing on the systematic and rigorous development of software systems. It covers essential concepts and analytical tools necessary for software engineering.
+- **CS2103T**: Software Engineering - An NUS course focusing on the systematic and rigorous development of software systems. It covers essential concepts and analytical tools necessary for software engineering.
 
 - **Case-Insensitive**: Refers to the handling of text where uppercase and lowercase letters are treated as equivalent. For instance, in a case-insensitive search, searching for "Java" or "java" would yield the same results.
 
 - **Case-Sensitive**: Opposite of case-insensitive, this refers to situations where uppercase and lowercase letters are treated differently. For example, "Java" and "java" would be considered distinct.
 
-- **Command Terminal**: An interface in a computing environment where the user can input text commands to perform specific tasks.
+- **Command Terminal**: An interface in a computing environment where you can input text commands to perform specific tasks.
 
 - **Double Degree**: An academic program where a student earns two distinct degrees simultaneously, usually in different fields.
 
@@ -947,12 +958,14 @@ This glossary is intended to provide definitions for terms that may be unfamilia
 
 - **Extraneous Parameters**: These are additional or unnecessary parameters given in a command that do not affect its execution but are not required for the command to function properly.
 
-- **GUI (Graphical User Interface)**: A type of user interface that allows users to interact with electronic devices through graphical icons and visual indicators, as opposed to text-based interfaces, typed command labels, or text navigation.
+- **GUI (Graphical User Interface)**: A type of user interface that allows you to interact with electronic devices through graphical icons and visual indicators, as opposed to text-based interfaces, typed command labels, or text navigation.
 
-- **Home Folder**: In computing, this is a personal directory assigned to a user in a file system, where they store personal files, settings, and configurations.
+- **Home Folder**: In computing, this is a personal directory assigned to you in a file system, where they store personal files, settings, and configurations.
 
 - **Issue (GitHub)**: A feature in GitHub used to track ideas, enhancements, tasks, or bugs for work on GitHub projects.
 
 - **Java 11**: A version of Java, a widely used programming language and computing platform. Java 11 includes various updates and features different from its predecessors.
 
 - **Major-Minor**: An academic program where a student completes a major (primary focus) and a minor (secondary concentration) in different subjects.
+
+> <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>

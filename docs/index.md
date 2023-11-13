@@ -7,7 +7,7 @@ title: StudentConnect
 
 ![Ui](images/Ui.png)
 
-**StudentConnect is a solution for hassle-free team formation for students to browse profiles and connect with others for the CS2103T and CS2101 group project.**<br> 
+**StudentConnect is a solution for hassle-free team formation for students to browse profiles and connect with others for the CS2103T and CS2101 group project.**<br>
 While it has a GUI, most of the user interactions happen using a CLI (Command Line Interface).
 
 * If you are interested in using StudentConnect, head over to the [_Quick Start_ section of the **User Guide**](https://ay2324s1-cs2103t-f12-2.github.io/tp/UserGuide.html#quick-start).
