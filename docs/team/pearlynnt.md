@@ -3,70 +3,57 @@ layout: page
 title: Pearlynn Toh's Project Portfolio Page
 ---
 
-# Project: StudentConnect
-
-# Overview
+### Overview
 StudentConnect is the solution for hassle-free team formation for CS2103T students to browse profiles and connect with others for group work.
 
-# Summary of Contributions
+### Summary of Contributions
 Given below are my contributions to the project.
 
-## Code contributed
+**Code contributed**
 * Link to my [RepoSense report](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=pearlynnt&breakdown=false&sort=groupTitle%20dsc&sortWithin=title&since=2023-09-22&timeframe=commit&mergegroup=&groupSelect=groupByRepos)
 
-## Enhancements implemented
+**Enhancements implemented**
 * **Edit Student Feature**: Added the ability to edit a student's personal details
   * What it does: This feature allows the user to edit a student's personal details in the system.
-  * Justification: This feature helps users to keep their personal details up-to-date. Details such as social media links or their preferred tutorial slots may change over time. This is important in ensuring that users remain contactable. This feature also allows users to correct any errors in their personal details. This is important in ensuring that users' personal details are accurate and complete.
+  * Justification: This feature helps users to keep their personal details up-to-date.
   * Highlights: Modified the code to allow the new student fields to be editable.
 * **Find Students Feature**: Added the ability to find student(s) by name
   * What it does: This feature allows the user to find student(s) by name with any combination of partial keyword(s).
-  * Justification: This feature helps users to find other students more quickly and easily. Without this feature, users would need to know the exact spelling of a student's name in order to find them. With this feature, users can enter any combination of partial keywords, such as the first few letters of the student's name, their middle name, or their last name. This can be especially helpful for users who are not sure of the exact spelling of a student's name, or for users who are trying to find a student who has a common name.
-  * Highlights: Modified the code to check of each word in the students' name contains the keyword(s) instead of having to match the keyword(s).
+  * Justification: This feature helps users to find other students more quickly and easily.
+  * Highlights: Modified the code to check if each word in the students' name contains the keyword(s) instead of having to match the keyword(s).
 * **Filter Students Feature**: Added the ability to filter students by tutorial
   * What it does: This feature allows the user to filter students by tutorial with any combination of tutorial slot(s).
-  * Justification: This feature helps users to search for other students who are also interested in attending or are assigned to the same tutorial slot. Without this feature, users would need to manually scroll through the list of students to search for students who have indicated the same tutorial. With this feature, users can enter any combination of valid tutorial slot(s) to retrieve the list of students in the tutorial slot(s) provided. This is important because it allows users to search for other students who are available during the same preferred tutorial slot.
-  * Highlights: A new Predicate class had to be written to support this feature. Invalid tutorial slot(s) provided by the user had to be handled gracefully so that the user can understand how to proceed to use the command correctly.
+  * Justification: This feature helps users to search for other students who are also interested in attending or are assigned to the same tutorial slot.
+  * Highlights: A new Predicate class had to be written to support this feature. Invalid tutorial slot(s) provided by the user had to be handled gracefully.
 * **Find Group Feature**: Added the ability to find a group by group number
   * What it does: This feature allows the user to find a project group by a group number.
-  * Justification: This feature helps users to find a specific group more quickly and easily. Without this feature, users would need to manually scroll through the list of groups to find the group that they are searching for. With this feature, users can simply enter a group number and the system will return a list of all the group members.
-  * Highlights: A new Predicate class had to be written to support this feature. Invalid group number provided by the user had to be handled gracefully so that the user can understand how to proceed to use the command correctly.
+  * Justification: This feature helps users to find a specific group more quickly and easily.
+  * Highlights: A new Predicate class had to be written to support this feature. Invalid group number provided by the user had to be handled gracefully.
 * **Filter Groups Feature**: Added the ability to filter groups by tutorial
   * What it does: This feature allows the user to filter groups by a tutorial slot.
-  * Justification: This feature helps users to search for groups that belong to a particular tutorial that they may prefer. Without this feature, users would need to manually scroll through the list of groups to search for groups that belong to a particular tutorial. With this feature, users can enter a tutorial slot to retrieve the list of groups that belong to the tutorial slot provided.
-  * Highlights: A new Predicate class had to be written to support this feature. Invalid tutorial slot provided by the user had to be handled gracefully so that the user can understand how to proceed to use the command correctly.
+  * Justification: This feature helps users to search for groups that belong to a particular tutorial that they may prefer.
+  * Highlights: A new Predicate class had to be written to support this feature. Invalid tutorial slot provided by the user had to be handled gracefully.
 * **Check Group Feature**: Added the ability to check if a group fulfils the diversity requirements of the course
   * What it does: This feature allows the user to check the composition of a group's members.
-  * Justification: This feature helps users to check if a group fulfils the diversity group formation requirements of the course with a single command. Without this feature, users would need to manually find the details of each member in the group to check if the group meets the diversity requirements. With this feature, users can enter a group number to easily check the composition of the group members. This helps to ensure that users have the opportunity to work with and learn from others from different backgrounds.
-  * Highlights: Different warning messages were written to inform users of what the group may fall short of in terms of group formation so that the user can ensure that the members are from diverse backgrounds. Extensive test cases and test data were written to rigorously test the different possible composition of the group members.
+  * Justification: This feature helps users to check if a group fulfils the diversity group formation requirements of the course with a single command.
+  * Highlights: Different warning messages were written to inform users of what the group may fall short of in terms of group formation. Extensive test cases and test data were written to rigorously test the different possible composition of the group members.
 
-## Contributions to the UG
-* Added the 'Edit Command' section.
-* Added the 'Find Command' section.
-* Added the 'Filter Command' section.
-* Added the 'Find Group Command' section.
-* Added the 'Filter Group Command' section.
-* Added the 'Check Command' section.
+**Contributions to the UG**
+* Added the 'Edit Command', 'Find Command', 'Filter Command', 'Find Group Command', 'Filter Group Command', 'Check Command' sections.
 * Ensured consistent formatting of the content in the User Guide.
 
-## Contributions to the DG
-* Added the 'Edit a Student' use case.
-* Added the 'Find a student' use case.
-* Added the 'Filter students' use case.
-* Added the 'Find a group' use case.
-* Added the 'Filter groups' use case.
-* Added the 'Check a group' use case.
+**Contributions to the DG**
+* Added the 'Edit a Student', 'Find a student', 'Filter students', 'Find a group', 'Filter groups', 'Check a group' use cases.
 * Updated the Storage Class Diagram using PlantUML.
 
-## Contributions to team-based tasks
-* **Project management**:
-  * Set up the team's Github Repository, and project documentation.
-  * Managed the milestones on Github.
-  * Led the team's project meetings
+**Contributions to team-based tasks**
+* Set up the team's Github Repository, and project documentation.
+* Managed the milestones on Github.
+* Led the team's project meetings.
 
-## Review/mentoring contributions
+**Review/mentoring contributions**
 * Reviewed the team's Github pull requests and gave comments where appropriate. (e.g., [#106](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/106), [#177](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/177), [#190](https://github.com/AY2324S1-CS2103T-F12-2/tp/pull/190))
 
-## Contributions beyond the project team
+**Contributions beyond the project team**
 * Tested another team's product and reported bugs during PE-D. ([list of issues](https://github.com/PearlynnT/ped/issues))
 * Participated in load testing.

@@ -8,7 +8,6 @@ title: Majedah's Project Portfolio Page
 StudentConnect is the solution for hassle-free team formation for CS2103T students to browse profiles and connect with others for group projects.
 
 # Summary of Contributions
-Given below are my contributions to StudentConnect.
 
 ## Code contributed
 * Link to my [RepoSense report](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=maj0-0&breakdown=false&sort=groupTitle%20dsc&sortWithin=title&since=2023-09-22&timeframe=commit&mergegroup=&groupSelect=groupByRepos).
@@ -23,16 +22,6 @@ Given below are my contributions to StudentConnect.
 * **Enhancement**: Updated UI for nationality and gender fields.
 * **Enhancement**: List Command
   * Updated the list students feature's success message to match StudentConnect context.
-
-## Contributions to testing
-* Implemented test cases for the `Tutorial` class.
-  * Updated test cases that involve the Person model to include tutorial.
-* Implemented test cases for the  `Nationality` and `Gender` classes.
-  * Updated test cases that involve the Person model to include nationality and gender.
-* Added gender and nationality to `TypicalPersons`.
-* Implemented test cases for tasks command and parser.
-* Included `TypicalTasks` to be used for testing
-
 
 ## Contributions to the UG
 * Under student commands and command summary, the 'list' portion.
@@ -52,11 +41,12 @@ Given below are my contributions to StudentConnect.
 
 ## Contributions to team-based tasks
 * Did equal share of tasks assigned.
-* Ensured JAR releases were ready when needed.
+* Filmed and edited the product demo.
+* Brainstormed and suggested new features during each milestone.
+* Ensured all team deliverables were met in time.
 
 ## Review / mentoring contributions
 * Reviewed teammates' PRs and gave suggestions when appropriate.
 
 ## Contributions beyond the project team
-* Brainstormed and suggested new features during each milestone.
-* Ensured all team deliverables were met in time.
+* Identified and assessed bugs in other teams' projects.
