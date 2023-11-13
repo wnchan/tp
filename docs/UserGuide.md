@@ -264,10 +264,6 @@ A student can have any number of social media links. Add multiple social media l
 * `add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I’m a Frontend Developer t/06 t/19 sm/https://www.linkedin.com/in/john-doe-123456789 nt/local g/m`
 * `add n/Betsy Crowe m/Computer Science y/2 e/betsycrowe@u.nus.edu d/I’m adept at Backend technologies t/05 nt/foreigner g/f`
 
-> <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
-
-<div style="page-break-after: always;"></div>
-
 #### Acceptable Values:
 * Name: Full names with alphabetical characters. Maximum 30 characters.
 * Major: Valid major names at NUS. View the <a href="#valid-majors" style="color: blue;">valid majors</a> list below for more information.
