@@ -10,7 +10,7 @@ title: User Guide
   <h1 style="margin-left: 20px; margin-top: 0px ; display: inline;">StudentConnect</h1>
 </div>
 
-<p>Welcome to the StudentConnect User Guide! This comprehensive manual is designed to assist you in navigating the features of StudentConnect, a hassle-free team formation solution for CS2103T and <a href="#glossary-cs2101" style="text-decoration: underline; color: black;">CS2101</a> students to browse profiles and connect for the team project.
+<p>Welcome to the StudentConnect User Guide! This comprehensive manual is designed to assist you in navigating the features of StudentConnect, a hassle-free team formation solution for <a href="#glossary-cs2103t" style="text-decoration: underline; color: black;">CS2103T</a> and <a href="#glossary-cs2101" style="text-decoration: underline; color: black;">CS2101</a> students to browse profiles and connect for the team project.
 Whether you're new to the platform or looking to enhance your understanding, this guide is tailored to meet your needs.
 To ensure a seamless experience, we recommend referring to the <a href="#how-to-use-this-guide" style="color: blue;">How to Use This Guide</a> section before you get started. This section provides valuable insights on navigating the document, understanding icons and formatting, and optimizing your overall journey. </p>
 
@@ -356,7 +356,7 @@ Finds student(s) whose name(s) contain any of the given keywords.
 
 #### Format: `find KEYWORD [MORE_KEYWORDS]…​`
 
-* The search is case-insensitive. e.g. `john` will match `John`.
+* The search is <a href="#glossary-cs2103t" style="text-decoration: underline; color: black;">case-insensitive</a>. e.g. `john` will match `John`.
 * The order of the keywords does not matter. e.g. `John Doe` will match `Doe John`.
 * Only the name is searched.
 * Partial words can be matched. e.g. `John` will match `Johnny`.
@@ -944,9 +944,9 @@ This glossary is intended to provide definitions for terms that may be unfamilia
 
 - **CS2101**: <a id="glossary-cs2101"></a> Effective Communication for Computing Professionals - An NUS course designed to equip computing professionals with essential communication skills, both in technical and non-technical contexts. It covers the creation of clear and comprehensible software documentation and effective communication strategies for diverse audiences.
 
-- **CS2103T**: Software Engineering - An NUS course focusing on the systematic and rigorous development of software systems. It covers essential concepts and analytical tools necessary for software engineering.
+- **CS2103T**: <a id="glossary-cs2103t"></a> Software Engineering - An NUS course focusing on the systematic and rigorous development of software systems. It covers essential concepts and analytical tools necessary for software engineering.
 
-- **Case-Insensitive**: Refers to the handling of text where uppercase and lowercase letters are treated as equivalent. For instance, in a case-insensitive search, searching for "Java" or "java" would yield the same results.
+- **Case-Insensitive**: <a id="glossary-case-insensitive"></a> Refers to the handling of text where uppercase and lowercase letters are treated as equivalent. For instance, in a case-insensitive search, searching for "Java" or "java" would yield the same results.
 
 - **Case-Sensitive**: Opposite of case-insensitive, this refers to situations where uppercase and lowercase letters are treated differently. For example, "Java" and "java" would be considered distinct.
 
