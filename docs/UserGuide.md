@@ -862,7 +862,7 @@ If your major is not in the list below, you can simply write `Others` as your ma
 </div>
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-If you have a double degree, double major or a major-minor, you are required to choose only one major. Please select any one of the majors listed below.
+If you have a <a href="#glossary-double-degree" style="text-decoration: underline; color: black;">double degree</a>, <a href="#glossary-double-major" style="text-decoration: underline; color: black;">double major</a> or a major-minor, you are required to choose only one major. Please select any one of the majors listed below.
 </div>
 
 For now, we accept the following majors in National University of Singapore(NUS):
@@ -954,7 +954,7 @@ This glossary is intended to provide definitions for terms that may be unfamilia
 
 - **Double Degree**: <a id="glossary-double-degree"></a> An academic program where a student earns two distinct degrees simultaneously, usually in different fields.
 
-- **Double Major**: A type of academic degree where a student completes two sets of major requirements, although they receive just one degree.
+- **Double Major**: <a id="glossary-double-major"></a> A type of academic degree where a student completes two sets of major requirements, although they receive just one degree.
 
 - **Extraneous Parameters**: These are additional or unnecessary parameters given in a command that do not affect its execution but are not required for the command to function properly.
 
