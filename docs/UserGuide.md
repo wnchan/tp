@@ -638,6 +638,8 @@ Filters the groups by tutorial based on the given slot.
 * Tutorials are only accepted as 2-digits, i.e. `3` is not a valid tutorial, but `03` is.
 * Only the tutorial is searched.
 
+<div style="page-break-after: always;"></div>
+
 #### Examples:
 * `filterGroup 03` returns groups that belong to `T03`.
 
