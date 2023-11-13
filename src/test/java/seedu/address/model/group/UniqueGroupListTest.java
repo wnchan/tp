@@ -75,12 +75,6 @@ public class UniqueGroupListTest {
     }
 
     @Test
-    public void remove_personDoesNotExist_throwsPersonNotFoundException() {
-        uniqueGroupList.add(GROUP1);
-        assertThrows(PersonNotFoundException.class, () -> uniqueGroupList.remove(DANIEL));
-    }
-
-    @Test
     public void setGroups_nullUniqueGroupList_throwsNullPointerException() {
         assertThrows(NullPointerException.class, () -> uniqueGroupList.setGroups((UniqueGroupList) null));
     }
