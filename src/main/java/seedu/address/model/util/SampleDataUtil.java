@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import seedu.address.model.AddressBook;
 import seedu.address.model.ReadOnlyAddressBook;
+import seedu.address.model.group.Group;
 import seedu.address.model.person.Description;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Gender;
@@ -57,10 +58,24 @@ public class SampleDataUtil {
         };
     }
 
+    public static Group[] getSampleGroups() {
+        Group sampleGroup1 = new Group(1, new Tutorial("01"));
+        sampleGroup1.addMember(getSamplePersons()[0]);
+
+        Group sampleGroup2 = new Group(2, new Tutorial("11"));
+        sampleGroup2.addMember(getSamplePersons()[3]);
+        sampleGroup2.addMember(getSamplePersons()[5]);
+
+        return new Group[]{ sampleGroup1, sampleGroup2 };
+    }
+
     public static ReadOnlyAddressBook getSampleAddressBook() {
         AddressBook sampleAb = new AddressBook();
         for (Person samplePerson : getSamplePersons()) {
             sampleAb.addPerson(samplePerson);
+        }
+        for (Group sampleGroup : getSampleGroups()) {
+            sampleAb.addGroup(sampleGroup);
         }
         return sampleAb;
     }

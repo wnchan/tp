@@ -7,7 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.testutil.Assert.assertThrows;
 import static seedu.address.testutil.TypicalGroups.GROUP1;
 import static seedu.address.testutil.TypicalGroups.GROUP2;
-import static seedu.address.testutil.TypicalPersons.DANIEL;
+import static seedu.address.testutil.TypicalGroups.GROUP3;
+import static seedu.address.testutil.TypicalPersons.GEORGE;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -18,7 +19,6 @@ import org.junit.jupiter.api.Test;
 import seedu.address.model.group.exceptions.DuplicateGroupException;
 import seedu.address.model.group.exceptions.GroupNotFoundException;
 import seedu.address.model.person.Person;
-import seedu.address.model.person.exceptions.PersonNotFoundException;
 
 public class UniqueGroupListTest {
 
@@ -75,9 +75,10 @@ public class UniqueGroupListTest {
     }
 
     @Test
-    public void remove_personDoesNotExist_throwsPersonNotFoundException() {
-        uniqueGroupList.add(GROUP1);
-        assertThrows(PersonNotFoundException.class, () -> uniqueGroupList.remove(DANIEL));
+    public void remove_validPerson_success() {
+        uniqueGroupList.add(GROUP3);
+        uniqueGroupList.remove(GEORGE);
+        assertFalse(GROUP3.hasMember(GEORGE));
     }
 
     @Test
