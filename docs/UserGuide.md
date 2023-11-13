@@ -734,12 +734,12 @@ Lists out all tasks for a specific group.
 
 #### Expected Output (Failure):
 * Case: Invalid tasks command, e.g. `tasks gr/3`, `tasks t`, etc.<br>
-  `Message: “Invalid command format!`<br>
+   Message: `Invalid command format!`<br>
   `tasks: Lists out all tasks for a specific group.`<br>
   `Parameters: GROUP_NUMBER`<br>
   `Example: tasks 3`
 * Case: Invalid group number as the group has not yet been created.<br>
-    * Message: `Group with the provided group number not found.`
+  Message: `Group with the provided group number not found.`
 
 <hr>
 
@@ -1054,8 +1054,8 @@ Descriptions that are blank or that exceed 150 characters are not accepted.
 </div>
 
 **Length Constraints:**
-    - **Minimum Length:** The description must not be blank.
-    - **Maximum Length:** The description should not exceed 150 characters.
+- **Minimum Length:** The description must not be blank.
+- **Maximum Length:** The description should not exceed 150 characters.
 
 **Examples of Valid Inputs:**
 - "Minoring in Mathematics"
@@ -1136,7 +1136,7 @@ The nationality field is case-insensitive, but can only contain values `local` o
 <hr>
 
 ### Valid Genders
-Nationality field is used to display the nationality of the student.
+Gender field is used to display the gender of the student.
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 The gender field is case-insensitive, but can only contain values `M` or `F`.
 </div>
@@ -1145,6 +1145,7 @@ The gender field is case-insensitive, but can only contain values `M` or `F`.
 |--------|
 | M      |
 | F      |
+
 <hr>
 
 ### Valid Group Numbers
@@ -1155,7 +1156,7 @@ Verify that the group number entered is for a group that exists in the system.<b
 Ensure the number is purely numeric without any alphabetic characters or special symbols.
 </div>
 
-- **Type:** Numeric
+- **Type:** Numeric.
 - **Reference Requirement:** The number must correspond to a group that has already been created within the system.
 - **Uniqueness:** Each group number is unique. It should not duplicate the identifier of another group.
 
