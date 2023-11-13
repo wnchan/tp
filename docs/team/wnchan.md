@@ -7,7 +7,6 @@ title: Wei Ning's Project Portfolio Page
 StudentConnect is the solution for hassle-free team formation for CS2101/CS2103T students to browse profiles and connect with others for group work.
 
 # Summary of Contributions
-Given below are my contributions to the project.
 
 ## Code contributed
 * Link to my [**RepoSense report**](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=&sort=groupTitle&sortWithin=title&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=true&checkedFileTypes=docs~functional-code~test-code&since=2023-09-22&chartGroupIndex=23&chartIndex=1)
