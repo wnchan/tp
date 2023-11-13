@@ -412,6 +412,8 @@ Filters students by tutorial based on the given slots.
   
 ![result for 'filter 04'](images/filter.png)
 
+<div style="page-break-after: always;"></div>
+
 #### Expected Output (Failure):
 * Case: Invalid command format, e.g. `filter`.<br>
  Message: `Invalid command format!`<br>
@@ -532,6 +534,8 @@ Deletes a group from the system, based on group number.
   
 ![result for 'deleteGroup gr/3'](images/deleteGroup.png)
 
+<div style="page-break-after: always;"></div>
+
 #### Expected Output(Failure):
 * Case: Group with specified number is not in the system.<br>
   Message: `Group with the provided group number not found.`
@@ -579,8 +583,6 @@ Deletes a member from a specific group, indicating that they have left.
 #### Acceptable Values:
 * GROUP_NUMBER: Must be a non-zero unsigned integer.
 * EMAIL: Must be a valid NUS email registered in the system.
-
-<div style="page-break-after: always;"></div>
 
 #### Expected Output (Success):
 * GUI: Student details removed from specified group.
