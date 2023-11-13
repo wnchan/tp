@@ -109,7 +109,7 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 3. Copy the file to the folder you want to use as the <a href="#glossary-home-folder" style="text-decoration: underline; color: black;">home folder</a> for your StudentConnect.
 
 4. Open a <a href="#glossary-command-terminal" style="text-decoration: underline; color: black;">command terminal</a>, and type `cd` to change the current working directory into the folder you put the jar file in. Use the `java -jar studentconnect.jar` command to run the application.<br>
-   A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
+   A <a href="#glossary-gui" style="text-decoration: underline; color: black;">GUI</a> similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
       ![Ui](images/Ui.png)
 
 5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
@@ -958,7 +958,7 @@ This glossary is intended to provide definitions for terms that may be unfamilia
 
 - **Extraneous Parameters**: <a id="glossary-extraneous-parameters"></a> These are additional or unnecessary parameters given in a command that do not affect its execution but are not required for the command to function properly.
 
-- **GUI (Graphical User Interface)**: A type of user interface that allows you to interact with electronic devices through graphical icons and visual indicators, as opposed to text-based interfaces, typed command labels, or text navigation.
+- **GUI (Graphical User Interface)**: <a id="glossary-gui"></a> A type of user interface that allows you to interact with electronic devices through graphical icons and visual indicators, as opposed to text-based interfaces, typed command labels, or text navigation.
 
 - **Home Folder**: <a id="glossary-home-folder"></a> In computing, this is a personal directory assigned to you in a file system, where they store personal files, settings, and configurations.
 
