@@ -71,7 +71,6 @@ public class UniqueGroupList implements Iterable<Group> {
         for (Group group : internalList) {
             if (group.hasMember(person)) {
                 group.removeMember(person);
-                break;
             }
         }
     }
