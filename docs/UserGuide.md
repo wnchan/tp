@@ -1128,7 +1128,7 @@ The nationality field is case-insensitive, but can only contain values `local` o
 <hr>
 
 ### Valid Genders
-Nationality field is used to display the nationality of the student.
+Gender field is used to display the gender of the student.
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 The gender field is case-insensitive, but can only contain values `M` or `F`.
 </div>
