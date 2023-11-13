@@ -739,6 +739,10 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * **Mainstream OS**: Windows, Linux, Unix, OS-X
 * **CS2101**: Effective Communication for Computing Professionals - An NUS course designed to equip computing professionals with essential communication skills, both in technical and non-technical contexts. It covers the creation of clear and comprehensible software documentation and effective communication strategies for diverse audiences.
 * **CS2103T**: Software Engineering - An NUS course focusing on the systematic and rigorous development of software systems. It covers essential concepts and analytical tools necessary for software engineering.
+* **Command Terminal**: An interface in a computing environment where you can input text commands to perform specific tasks. Some examples include "Terminal" on macOS and "Powershell" on Windows.
+* **GUI (Graphical User Interface)**: A type of user interface that allows you to interact with electronic devices through graphical icons and visual indicators, as opposed to text-based interfaces, typed command labels, or text navigation.
+* **Home Folder**: In computing, this is a personal directory assigned to you in a file system, where they store personal files, settings, and configurations.
+* **Java 11**: A version of Java, a widely used programming language and computing platform. Java 11 includes various updates and features different from its predecessors.
 
 --------------------------------------------------------------------------------------------------------------------
 
