@@ -10,9 +10,11 @@ title: User Guide
   <h1 style="margin-left: 20px; margin-top: 0px ; display: inline;">StudentConnect</h1>
 </div>
 
-<p>Welcome to the StudentConnect User Guide! This comprehensive manual is designed to assist you in navigating the features of StudentConnect, a hassle-free team formation solution for CS2103T and CS2101 students to browse profiles and connect for the team project.
+<p>Welcome to the StudentConnect User Guide! This comprehensive manual is designed to assist you in navigating the features of StudentConnect, a hassle-free team formation solution for <a href="#glossary-cs2103t" style="text-decoration: underline; color: black;">CS2103T</a> and <a href="#glossary-cs2101" style="text-decoration: underline; color: black;">CS2101</a> students to browse profiles and connect for the team project.
 Whether you're new to the platform or looking to enhance your understanding, this guide is tailored to meet your needs.
-To ensure a seamless experience, we recommend referring to the <a href="#how-to-use-this-guide" style="color: blue;">How to Use This Guide</a> section before you get started. This section provides valuable insights on navigating the document, understanding icons and formatting, and optimizing your overall journey. </p>
+To ensure a seamless experience, we recommend referring to the <a href="#how-to-use-this-guide" style="color: blue;">How to Use This Guide</a> section before you get started. This section provides valuable insights on navigating the document, understanding icons and formatting, and optimising your overall journey. </p>
+
+<div style="page-break-after: always;"></div>
 
 ## Table of Contents
 
@@ -47,12 +49,11 @@ To ensure a seamless experience, we recommend referring to the <a href="#how-to-
         11. <a href="#marking-a-task-as-not-done--unmark" style="color: blue;">Marking a Task as Not Done : `unmark`</a>
 4. <a href="#saving-the-data" style="color: blue;">Saving The Data</a>
 5. <a href="#editing-the-data-file" style="color: blue;">Editing The Data File</a>
-6. <a href="#archiving-data-files-coming-in-v20" style="color: blue;">Archiving Data Files [coming in v2.0]</a>
-7. <a href="#faq" style="color: blue;">FAQ</a>
-8. <a href="#known-issues" style="color: blue;">Known Issues</a>
-9. <a href="#command-summary" style="color: blue;">Command Summary</a>
-10. <a href="#appendix" style="color: blue;">Appendix</a>
-11. <a href="#glossary" style="color: blue;">Glossary</a>
+6. <a href="#faq" style="color: blue;">FAQ</a>
+7. <a href="#known-issues" style="color: blue;">Known Issues</a>
+8. <a href="#command-summary" style="color: blue;">Command Summary</a>
+9. <a href="#appendix" style="color: blue;">Appendix</a>
+10. <a href="#glossary" style="color: blue;">Glossary</a>
 
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
@@ -84,16 +85,16 @@ This guide is designed to help you navigate the features of StudentConnect with 
 2. **Feedback Box**: The feedback box is the area where the application communicates responses to your commands. It displays the correct command format if there is an input error, error messages when a command fails to execute, and the outcomes for commands like the `tasks` command.
 3. **Student List**: The student list panel displays a roster of all students and their associated details. Executing any student-related command will result in this panel being updated to show the relevant student list.
 4. **Group List**: Similar to the student list, the group list panel shows all existing groups along with their members and designated tutorials. Group-related commands will update this panel accordingly.
-5. **Menu Options**: The menu options provide quick access to general tasks within the application.
+5. **Menu Options**: The menu options provide quick access to general tasks within the application. Note that no messages are displayed in the feedback box when using the menu options.
 <div markdown="span" class="alert alert-primary">:exclamation: **Important:**
-To guarantee that all your changes and data are saved correctly, it is strongly advised to type the `exit` command into the Command Box
+To guarantee that all your changes and data are saved correctly, it is strongly advised to type the `exit` command into the Command Box,
 instead of selecting `exit` from the menu options or closing the application window directly.
 This practice helps prevent data loss and ensures a proper shutdown of the application.
 </div>
 
 - For convenient navigation throughout this UG, you can refer to the <a href="#table-of-contents" style="color: blue;">table of contents</a>.
-- Should you encounter any terminology within the guide that is unfamiliar, you can consult the <a href="#glossary" style="color: blue;">glossary</a> section below. It provides clear definitions and explanations to help you grasp the specialized language used throughout this guide.
-- For any inquiries, the <a href="#faq" style="color: blue;">faq</a> section is a good place to look for answers. In case your question is not addressed there, do not hesitate to submit an issue <a href="https://github.com/AY2324S1-CS2103T-F12-2/tp/issues" style="color: blue;">here</a> for further assistance.
+- Should you encounter any terminology within the guide that is unfamiliar, you can consult the <a href="#glossary" style="color: blue;">glossary</a> section below. It provides clear definitions and explanations to help you grasp the specialised language used throughout this guide.
+- For any inquiries, the <a href="#faq" style="color: blue;">faq</a> section is a good place to look for answers. In case your question is not addressed there, do not hesitate to submit an <a href="#glossary-issue" style="text-decoration: underline; color: black;">issue</a> <a href="https://github.com/AY2324S1-CS2103T-F12-2/tp/issues" style="color: blue;">here</a> for further assistance.
 - The <a href="#appendix" style="color: blue;">appendix</a> section is included to detail all possible input values for fields that have specific constraints or require particular formats. This reference can help ensure that you input data correctly and understand the limitations of each field.
 - For a quick and compact overview of all the commands that StudentConnect offers, refer to the <a href="#command-summary" style="color: blue;">command summary</a>. This section servers as a handy reference for all possible actions you can perform within the application, laid out in an easily digestible format.
 
@@ -106,11 +107,11 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 
 2. Download the latest `studentconnect.jar` from <a href="https://github.com/AY2324S1-CS2103T-F12-2/tp/releases" style="color: blue;">here</a>.
 
-3. Copy the file to the folder you want to use as the _home folder_ for your StudentConnect.
+3. Copy the file to the folder you want to use as the <a href="#glossary-home-folder" style="text-decoration: underline; color: black;">home folder</a> for your StudentConnect.
 
-4. Open a command terminal, and use `cd` to change the current working directory into the folder you put the jar file in. Use the `java -jar studentconnect.jar` command to run the application.<br>
-   A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
-   ![Ui](images/Ui.png)
+4. Open a <a href="#glossary-command-terminal" style="text-decoration: underline; color: black;">command terminal</a>, and type `cd` to change the current working directory into the folder you put the jar file in. Use the `java -jar studentconnect.jar` command to run the application.<br>
+   A <a href="#glossary-gui" style="text-decoration: underline; color: black;">GUI</a> similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
+      ![Ui](images/Ui.png)
 
 5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
@@ -151,7 +152,7 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME m/MAJOR`, `m/MAJOR n/NAME` is also acceptable.
 
-* Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
+* <a href="#glossary-extraneous-parameters" style="text-decoration: underline; color: black;">Extraneous parameters</a> for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
   e.g. if the command specifies `list 123`, it will be interpreted as `list`.
 
 * Commands must be in lower case. <br> e.g. `list` is a valid command, but `LIST` is not.
@@ -195,7 +196,7 @@ Clears all entries from the system upon confirmation in the pop-up.
 
 #### Format: `clear`
 * Confirmation Pop-up opened.
-* * Message: `Opened confirmation window. Please ensure you use the exit command when exiting StudentConnect for successful reset.`
+* Message: `Opened confirmation window. Please ensure you use the exit command when exiting StudentConnect for successful reset.`
 
 #### Expected Output(Success):
 * GUI: All students' details are removed from the student list.<br>
@@ -204,8 +205,8 @@ Clears all entries from the system upon confirmation in the pop-up.
 
 #### Expected Output(Failure or Cancellation):
 * Case: Clear command fails.
-* Case: You press `cancel` on the confirmation pop-up.
-  GUI: All students' details remain on the student list.
+* Case: You press `cancel` on the confirmation pop-up.<br>
+  GUI: All students' details remain on the student list.<br>
   ![result for cancelled 'clear' GUI](images/clearCancel.png)
 
 <hr>
@@ -285,7 +286,7 @@ Note:
 <div style="text-align: center;">Output with multiple social media links</div>
 
 #### Expected Output (Failure):
-* Case: Invalid command format, e.g. `add`, `add 1`, etc.
+* Case: Invalid command format, e.g. `add`, `add 1`, etc.<br>
 Message: `Invalid command format! add: Adds a student to StudentConnect.`<br>
   `Parameters: n/NAME m/MAJOR y/YEAR e/EMAIL d/DESCRIPTION [t/TUTORIALS]... [sm/SOCIAL_MEDIA_LINK]... nt/NATIONALITY g/GENDER`<br>
   `Example: add n/John Doe m/Computer Science y/2 e/johnd@u.nus.edu d/I love programming in my free time`<br>
@@ -356,7 +357,7 @@ Finds student(s) whose name(s) contain any of the given keywords.
 
 #### Format: `find KEYWORD [MORE_KEYWORDS]…​`
 
-* The search is case-insensitive. e.g. `john` will match `John`.
+* The search is <a href="#glossary-case-insensitive" style="text-decoration: underline; color: black;">case-insensitive</a>. e.g. `john` will match `John`.
 * The order of the keywords does not matter. e.g. `John Doe` will match `Doe John`.
 * Only the name is searched.
 * Partial words can be matched. e.g. `John` will match `Johnny`.
@@ -371,7 +372,7 @@ Finds student(s) whose name(s) contain any of the given keywords.
   ![result for 'find alex'](images/findAlexResult.png)
 
 #### Expected Output (Failure):
-* Case: Invalid command format, e.g. `find`.
+* Case: Invalid command format, e.g. `find`.<br>
 Message: `Invalid command format!`<br>
   `find: Finds all students whose names contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.`<br>
   `Parameters: KEYWORD [MORE_KEYWORDS]...`<br>
@@ -386,7 +387,7 @@ Filters students by tutorial based on the given slots.
 #### Format: `filter SLOT [MORE SLOTS]…​`
 
 * The slots must be 2-digit numbers between `01` and `22` inclusive.
-* Tutorials are only accepted as 2-digits, ie. `3` is not a valid tutorial, but `03` is.
+* Tutorials are only accepted as 2-digits, i.e. `3` is not a valid tutorial, but `03` is.
 * The order of the slots does not matter. e.g. `08 15` will match `15 08`.
 * Only the tutorial is searched.
 * Students matching at least one tutorial slot will be returned (i.e. `OR` search). e.g. `03 12` will return `03 16`, `04 12`.
@@ -400,12 +401,12 @@ Filters students by tutorial based on the given slots.
   ![result for 'filter 04'](images/filter.png)
 
 #### Expected Output (Failure):
-* Case: Invalid command format, e.g. `filter`.
+* Case: Invalid command format, e.g. `filter`.<br>
  Message: `Invalid command format!`<br>
   `filter: Filters all students whose tutorials match any of the specified slots (2-digit numbers between 01 and 22) and displays them as a list with index numbers.`<br>
   `Parameters: SLOT [MORE_SLOTS]...`<br>
   `Example: filter 08 15`
-* Case: Invalid slot(s) is provided, e.g. `filter 25`, `filter 0`, etc.
+* Case: Invalid slot(s) is provided, e.g. `filter 25`, `filter 0`, etc.<br>
  Message: `Tutorials should be 2-digit numbers between 01 and 22.`
 
 <hr>
@@ -431,9 +432,9 @@ Deletes a specific student and all personal details based on email.
   ![Delete feature](images/delete.png)
 
 #### Expected Output (Failure):
-* Case: Provided email not registered in system.
+* Case: Provided email not registered in system.<br>
   Message: `Student with the provided email not found.`
-* Case: Invalid command format e.g. `delete 02`.
+* Case: Invalid command format e.g. `delete 02`.<br>
   Message: `Invalid command format!`<br>
   `delete: Deletes the student identified by the email address.`<br>
   `Parameters: EMAIL`<br>
@@ -462,15 +463,15 @@ Creates a new empty group with the given tutorial number. The group number is au
 
 #### Expected Output(Success):
 * GUI: A new empty group, with a group number, is created.
-* Message: `Group created successfully! Group number is [GROUP_NUMBER]`
+* Message: `Group created successfully! Group number is [GROUP_NUMBER]`<br>
   ![Sample result for create](images/create.png)
 
 #### Expected Output(Failure):
-* Case: Invalid command format, e.g. `create`, `create 02`, etc.
+* Case: Invalid command format, e.g. `create`, `create 02`, etc.<br>
 Message: `Invalid command format!`<br>
   `create: Creates a new empty group.`<br>
   `Parameters: t/TUTORIAL Example: create t/02`<br>
-* Case: Invalid tutorial number is provided, e.g. `create t/0`, `create t/25`, etc.
+* Case: Invalid tutorial number is provided, e.g. `create t/0`, `create t/25`, etc.<br>
  Message: `Tutorials should be 2-digit numbers between 01 and 22.`
 
 <hr>
@@ -506,11 +507,11 @@ Deletes a group from the system, based on group number.
 
 #### Expected Output(Success):
 * GUI: Specified group is no longer visible.
-* Message: `Group deleted successfully! Deleted Group: [GROUP_NUMBER]`
+* Message: `Group deleted successfully! Deleted Group: [GROUP_NUMBER]`<br>
   ![result for 'deleteGroup gr/3'](images/deleteGroup.png)
 
 #### Expected Output(Failure):
-* Case: Group with specified number is not in the system.
+* Case: Group with specified number is not in the system.<br>
   Message: `Group with the provided group number not found.`
 
 <hr>
@@ -535,7 +536,7 @@ Message: `The provided student is already a member of the provided group.`
 * Case: Group has 5 members and is full.<br>
 Message: `Join failed as the group already has 5 members.`
 * Case: Student is found in another group already.<br>
-Message: `The provided student is already in another group.`
+Message: `The provided student is already in another group.`<br>
 
 ![Sample result for join](images/join.png)
 
@@ -559,7 +560,7 @@ Deletes a member from a specific group, indicating that they have left.
 
 #### Expected Output (Success):
 * GUI: Student details removed from specified group.
-* Message: `Leave successful! NAME has left group 1!`
+* Message: `Leave successful! NAME has left group 1!`<br>
 ![sample result for 'leave'](images/leave.png)
 
 #### Expected Output (Failure):
@@ -593,12 +594,12 @@ Finds group(s) with group number(s) that matches any of the given keywords.
   ![sample result for 'findGroup'](images/findGroup.png)
 
 #### Expected Output (Failure):
-* Case: Invalid command format is provided, e.g. `findGroup`.
+* Case: Invalid command format is provided, e.g. `findGroup`.<br>
  Message: `Invalid command format!`<br>
   `findGroup: Finds all groups whose number contain any of the specified keywords and displays them as a list with index numbers.`<br>
   `Parameters: KEYWORD [MORE_KEYWORDS]...`<br>
   `Example: findGroup 1 5 10`
-* Case: Invalid keyword(s) is provided, e.g. `findGroup a`, `findGroup 0`, etc.
+* Case: Invalid keyword(s) is provided, e.g. `findGroup a`, `findGroup 0`, etc.<br>
  Message: `Group number is not a non-zero unsigned integer.`
 
 <hr>
@@ -610,23 +611,23 @@ Filters the groups by tutorial based on the given slot.
 #### Format: `filterGroup SLOT`
 
 * The slot must be 2-digit numbers between `01` and `22` inclusive.
-* Tutorials are only accepted as 2-digits, ie. `3` is not a valid tutorial, but `03` is.
+* Tutorials are only accepted as 2-digits, i.e. `3` is not a valid tutorial, but `03` is.
 * Only the tutorial is searched.
 
 #### Examples:
 * `filterGroup 03` returns groups that belong to `T03`.
 
 #### Expected Output(Success):
-* GUI: List of all group entries with the tutorial that match the slot in the system.
+* GUI: List of all group entries with the tutorial that match the slot in the system.<br>
   ![sample result for 'filterGroup'](images/filterGroup.png)
 
 #### Expected Output (Failure):
-* Case: Invalid command format is provided, e.g. `filterGroup`.
+* Case: Invalid command format is provided, e.g. `filterGroup`.<br>
 Message: `Invalid command format!`<br>
   `filterGroup: Filters all groups that belong to the specified tutorial slot (2-digit numbers between 01 and 22) and displays them as a list with index numbers.`<br>
   `Parameters: SLOT`<br>
   `Example: filterGroup 01"`
-* Case: Invalid slot is provided, e.g. `filterGroup 0`, `filterGroup 25`, etc.
+* Case: Invalid slot is provided, e.g. `filterGroup 0`, `filterGroup 25`, etc.<br>
 Message: `Tutorials should be 2-digit numbers between 01 and 22.`
 
 <hr>
@@ -667,7 +668,7 @@ Message: `Not every group member's tutorial matches the group's tutorial.`<br>
 Message: `You can enter the help command for more information on group requirements.`<br>
 
 #### Expected Output (Failure):
-* Case: Invalid command format is provided, e.g. `checkGroup`.
+* Case: Invalid command format is provided, e.g. `checkGroup`.<br>
 Message: `Invalid command format!`<br>
   `checkGroup: Checks the group identified by its group number.`<br>
   `Parameters: GROUP_NUMBER"`<br>
@@ -694,7 +695,7 @@ Lists out all tasks for a specific group.
 
 #### Expected Output (Success):
 * GUI: List of all tasks for the specified group is displayed, the specified group and group members are shown.
-* Message: `Here are the tasks for group [GROUP_NUMBER]: [list of tasks]`
+* Message: `Here are the tasks for group [GROUP_NUMBER]: [list of tasks]`<br>
   ![sample result for 'tasks'](images/tasks.png)
 
 #### Expected Output (Failure):
@@ -703,7 +704,7 @@ Lists out all tasks for a specific group.
   `tasks: Lists out all tasks for a specific group.`<br>
   `Parameters: GROUP_NUMBER`<br>
   `Example: tasks 3`
-* Case: Invalid group number as the group has not yet been created.
+* Case: Invalid group number as the group has not yet been created.<br>
     * Message: `Group with the provided group number not found.`
 
 <hr>
@@ -726,7 +727,7 @@ Mark a task for a specified group as done.
 
 #### Expected Output (Success):
 * GUI: The task in the specified group is marked as done and task list is updated.
-* Message: `Marked task number (ti) for group (gr) [and displays the updated task list]`
+* Message: `Marked task number (ti) for group (gr) [and displays the updated task list]`<br>
   ![sample result for 'mark'](images/mark.png)
 
 #### Expected Output (Failure):
@@ -736,7 +737,7 @@ Message: `Invalid command format! mark: Mark task specified as done. Parameters:
 Message: `Group with the provided group number not found.`
 * Case: Invalid group number, e.g. zero or negative numbers.<br>
 Message: `Group number is not a non-zero unsigned integer.`
-* Case: Invalid task index, e.g zero or negative numbers.<br>
+* Case: Invalid task index, e.g. zero or negative numbers.<br>
 Message: `Task index must be a positive integer.`
 * Case: Invalid task index, e.g. task index greater than the number of tasks found from the list in `tasks` command.<br>
 Message: `Invalid task index. Task not found.`
@@ -761,7 +762,7 @@ Mark a task for a specified group as not done.
 
 #### Expected Output (Success):
 * GUI: The task in the specified group is marked as not done and task list is updated.
-* Message: `Unmarked task number (ti) for group (gr) [and displays the updated task list]`
+* Message: `Unmarked task number (ti) for group (gr) [and displays the updated task list]`<br>
   ![sample result for 'unmark'](images/unmark.png)
 
 #### Expected Output (Failure):
@@ -771,7 +772,7 @@ Mark a task for a specified group as not done.
 Message: `Group with the provided group number not found.`
 * Case: Invalid group number, e.g. zero or negative numbers.<br>
 Message: `Group number is not a non-zero unsigned integer.`
-* Case: Invalid task index, e.g zero or negative numbers.<br>
+* Case: Invalid task index, e.g. zero or negative numbers.<br>
 Message: `Task index must be a positive integer.`
 * Case: Invalid task index, e.g. task index greater than the number of tasks found from the list in `tasks` command.<br>
 Message: `Invalid task index. Task not found.`
@@ -794,21 +795,14 @@ Students' data are saved automatically as a JSON file `[JAR file location]/data/
 If your changes to the data file makes its format invalid, StudentConnect will discard all data and start with an empty data file at the next run. Hence, it is recommended to take a backup of the file before editing it.
 </div>
 
---------------------------------------------------------------------------------------------------------------------
-
-### Archiving Data Files `[coming in v2.0]`
-
-_Details coming soon ..._
-
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
 --------------------------------------------------------------------------------------------------------------------
-
 <div style="page-break-after: always;"></div>
 
 ## FAQ
 
 **Q**: How do I transfer my data to another Computer?<br>
-**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous StudentConnect home folder.
+**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous StudentConnect <a href="#glossary-home-folder" style="text-decoration: underline; color: black;">home folder</a>.
 
 **Q**: Where is my data being saved? <br>
 **A**: It is saved in `[JAR file location]/data/addressbook.json`.
@@ -854,15 +848,44 @@ _Details coming soon ..._
 <div style="page-break-after: always;"></div>
 
 ## Appendix
+This section includes details on the requirements of each field in the StudentConnect system.
+
+### Name Format
+The name field indicates the student's name.
+
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+Ensure that the name is appropriately formatted with only letters and spaces, without exceeding the specified character limit below. Special characters and digits are not permitted.
+</div>
+
+- **Type:** Alphabetic.
+- **Character Restrictions:** Only alphabetical characters (A-Z, a-z) and spaces are allowed.
+- **Length:** Must not exceed 30 characters.
+- **Blank Fields:** The field should not be left blank.
+
+**Examples of Valid Inputs:**
+- John Doe
+- Alice
+- La Niña
+- Élise DuPont
+
+**Examples of Invalid Inputs:**
+- John123 (Invalid due to numeric characters)
+- John_Doe (Invalid due to underscore)
+- [Blank Field] (Invalid as the field cannot be blank)
+- Elizabeth Alexandra Mary Windsor (Invalid as it exceeds 30 characters)
+
+<hr>
 
 ### Valid Majors
+The majors field indicates the major that the student is enrolled in.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 If your major is not in the list below, you can simply write `Others` as your major.
 </div>
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-If you have a double degree, double major or a major-minor, you are required to choose only one major. Please select any one of the majors listed below.
+If you have a <a href="#glossary-double-degree" style="text-decoration: underline; color: black;">double degree</a>, <a href="#glossary-double-major" style="text-decoration: underline; color: black;">double major</a> or a <a href="#glossary-major-minor" style="text-decoration: underline; color: black;">major-minor</a>, you are required to choose only one major. Please select any one of the majors listed below.
 </div>
 
 For now, we accept the following majors in National University of Singapore(NUS):
@@ -934,6 +957,184 @@ For now, we accept the following majors in National University of Singapore(NUS)
 | Urban Studies                             |
 | Visual Communications                     |
 
+<hr>
+
+### Valid Years
+The year field is used to represent the student's current year of study.
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+This field strictly requires a single-digit number. Ensure there are no leading zeros or non-numeric characters.
+</div>
+
+| Year |
+|------|
+| 1    |
+| 2    |
+| 3    |
+| 4    |
+| 5    |
+| 6    |
+
+
+<hr>
+
+### Email Formats
+The email field is used to represent the student's email, and is the unique identifier for each student.
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+Ensure the email address includes the specified domain and the local-part conforms to the outlined character restrictions and length below.
+</div>
+
+1. **Local-Part Format:**
+    - **Allowed Characters:** Alphanumeric characters (A-Z, a-z, 0-9) and special characters (+, _, ., -) only.
+    - **Character Limit:** Must not exceed 20 characters.
+    - **Positioning of Special Characters:** The local-part must not start or end with any of the special characters (+, _, ., -).
+    - **Structure:** It should be in the format of `local-part@u.nus.edu`.
+
+2. **Domain Name:**
+    - **Fixed Domain:** The domain name must be `u.nus.edu`.
+    - **Symbol:** The local-part and domain name should be separated by an '@' symbol.
+
+**Examples of Valid Inputs:**
+- johndoe@u.nus.edu
+- alice.bob@u.nus.edu
+- n_user123@u.nus.edu
+
+**Examples of Invalid Inputs:**
+- john@u.nus.edu (Invalid as it exceeds 20 characters in the local-part)
+- .johndoe@u.nus.edu (Invalid as the local-part starts with a special character)
+- johndoe@example.com (Invalid as the domain name is not 'u.nus.edu')
+- johndoe@u.nus (Invalid as the domain name is incomplete)
+
+<hr>
+
+### Description Formats
+The description field is to allow student's to put any fun facts or information they'd like to share.
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+Descriptions that are blank or that exceed 150 characters are not accepted.
+</div>
+
+**Length Constraints:**
+    - **Minimum Length:** The description must not be blank.
+    - **Maximum Length:** The description should not exceed 150 characters.
+
+**Examples of Valid Inputs:**
+- "Minoring in Mathematics"
+- "Backend Developer"
+- "In need of two more members!"
+
+<hr>
+
+### Valid Tutorials
+The tutorial field is used to represent tutorial slots students' are interested in or have been assigned. 
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+This field strictly requires a double-digit number. Ensure are no non-numeric characters.<br>
+</div>
+
+| Tutorial |
+|----------|
+| 01       |
+| 02       |
+| 03       |
+| 04       |
+| 05       |
+| 06       |
+| 07       |
+| 08       |
+| 09       |
+| 10       |
+| 11       |
+| 12       |
+| 13       |
+| 14       |
+| 15       |
+| 16       |
+| 17       |
+| 18       |
+| 19       |
+| 20       |
+| 21       |
+| 22       |
+
+<hr>
+
+### Valid Social Media Links
+The social media links field is used for entering URLs that direct to social media profiles or pages.
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+ Ensure that the social media links conform to the standard URL format, with the correct protocol and a valid domain name. The link should be fully functional and direct to the intended social media page.</div>
+
+- **Protocol Prefix:** Must begin with either "http://" or "https://".
+- **Domain Name:**
+    - **Allowed Characters:** Alphanumeric characters (A-Z, a-z, 0-9), dots (.), and hyphens (-).
+    - **Requirement:** The domain name must consist of one or more of the allowed characters.
+- **Structure:** The format should follow the standard URL structure, starting with the protocol prefix, followed by the domain name.
+
+**Examples of Valid Inputs:**
+- http://facebook.com/username
+- https://twitter.com/username
+- http://www.linkedin.com/in/username
+
+**Examples of Invalid Inputs:**
+- www.instagram.com/username (Invalid as it lacks the "http://" or "https://" prefix)
+- https://facebook_com/username (Invalid due to the use of an underscore in the domain name)
+- https:/twitter.com/username (Invalid due to incorrect protocol format)
+
+<hr>
+
+### Valid Nationalities
+Nationality field is used to display the nationality of the student.
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+The nationality field is case-insensitive, but can only contain values `local` or `foreigner`.
+</div>
+
+| Nationality |
+|-------------|
+| local       |
+| foreigner   |
+
+<hr>
+
+### Valid Genders
+Nationality field is used to display the nationality of the student.
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+The gender field is case-insensitive, but can only contain values `M` or `F`.
+</div>
+
+| Gender |
+|--------|
+| M      |
+| F      |
+<hr>
+
+### Valid Group Numbers
+The group number field is used to specify the numeric identifier of a group.
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+Verify that the group number entered is for a group that exists in the system.<br>
+Ensure the number is purely numeric without any alphabetic characters or special symbols.
+</div>
+
+- **Type:** Numeric
+- **Reference Requirement:** The number must correspond to a group that has already been created within the system.
+- **Uniqueness:** Each group number is unique. It should not duplicate the identifier of another group.
+
+<hr>
+
+### Valid Task Indexes
+The task index field is used to differentiate tasks.
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+Verify that the task index entered is for a task that exists for that group.<br>
+Ensure the number is purely numeric without any alphabetic characters or special symbols.
+</div>
+
+- **Type:** Numeric
+- **Reference Requirement:** The number must correspond to a task within the system.
+- **Uniqueness:** Each task number is unique. It should not duplicate the identifier of another task .
+
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
@@ -942,30 +1143,28 @@ For now, we accept the following majors in National University of Singapore(NUS)
 
 This glossary is intended to provide definitions for terms that may be unfamiliar to you. It is arranged in alphabetical order.
 
-- **CS2101**: Effective Communication for Computing Professionals - An NUS course designed to equip computing professionals with essential communication skills, both in technical and non-technical contexts. It covers the creation of clear and comprehensible software documentation and effective communication strategies for diverse audiences.
+- **CS2101**: <a id="glossary-cs2101"></a> Effective Communication for Computing Professionals - An NUS course designed to equip computing professionals with essential communication skills, both in technical and non-technical contexts. It covers the creation of clear and comprehensible software documentation and effective communication strategies for diverse audiences.
 
-- **CS2103T**: Software Engineering - An NUS course focusing on the systematic and rigorous development of software systems. It covers essential concepts and analytical tools necessary for software engineering.
+- **CS2103T**: <a id="glossary-cs2103t"></a> Software Engineering - An NUS course focusing on the systematic and rigorous development of software systems. It covers essential concepts and analytical tools necessary for software engineering.
 
-- **Case-Insensitive**: Refers to the handling of text where uppercase and lowercase letters are treated as equivalent. For instance, in a case-insensitive search, searching for "Java" or "java" would yield the same results.
+- **Case-Insensitive**: <a id="glossary-case-insensitive"></a> Refers to the handling of text where uppercase and lowercase letters are treated as equivalent. For instance, in a case-insensitive search, searching for "Java" or "java" would yield the same results.
 
-- **Case-Sensitive**: Opposite of case-insensitive, this refers to situations where uppercase and lowercase letters are treated differently. For example, "Java" and "java" would be considered distinct.
+- **Command Terminal**: <a id="glossary-command-terminal"></a> An interface in a computing environment where you can input text commands to perform specific tasks. Some examples include "Terminal" on macOS and "Powershell" on Windows.
 
-- **Command Terminal**: An interface in a computing environment where you can input text commands to perform specific tasks.
+- **Double Degree**: <a id="glossary-double-degree"></a> An academic program where a student earns two distinct degrees simultaneously, usually in different fields.
 
-- **Double Degree**: An academic program where a student earns two distinct degrees simultaneously, usually in different fields.
+- **Double Major**: <a id="glossary-double-major"></a> A type of academic degree where a student completes two sets of major requirements, although they receive just one degree.
 
-- **Double Major**: A type of academic degree where a student completes two sets of major requirements, although they receive just one degree.
+- **Major-Minor**: <a id="glossary-major-minor"></a> An academic program where a student completes a major (primary focus) and a minor (secondary concentration) in different subjects.
 
-- **Extraneous Parameters**: These are additional or unnecessary parameters given in a command that do not affect its execution but are not required for the command to function properly.
+- **Extraneous Parameters**: <a id="glossary-extraneous-parameters"></a> These are additional or unnecessary parameters given in a command that do not affect its execution but are not required for the command to function properly.
 
-- **GUI (Graphical User Interface)**: A type of user interface that allows you to interact with electronic devices through graphical icons and visual indicators, as opposed to text-based interfaces, typed command labels, or text navigation.
+- **GUI (Graphical User Interface)**: <a id="glossary-gui"></a> A type of user interface that allows you to interact with electronic devices through graphical icons and visual indicators, as opposed to text-based interfaces, typed command labels, or text navigation.
 
-- **Home Folder**: In computing, this is a personal directory assigned to you in a file system, where they store personal files, settings, and configurations.
+- **Home Folder**: <a id="glossary-home-folder"></a> In computing, this is a personal directory assigned to you in a file system, where they store personal files, settings, and configurations.
 
-- **Issue (GitHub)**: A feature in GitHub used to track ideas, enhancements, tasks, or bugs for work on GitHub projects.
+- **Issue (GitHub)**: <a id="glossary-issue"></a> A feature in GitHub used to track ideas, enhancements, tasks, or bugs for work on GitHub projects.
 
 - **Java 11**: A version of Java, a widely used programming language and computing platform. Java 11 includes various updates and features different from its predecessors.
-
-- **Major-Minor**: An academic program where a student completes a major (primary focus) and a minor (secondary concentration) in different subjects.
 
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>

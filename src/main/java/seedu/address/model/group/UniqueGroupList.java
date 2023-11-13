@@ -13,7 +13,6 @@ import javafx.collections.ObservableList;
 import seedu.address.model.group.exceptions.DuplicateGroupException;
 import seedu.address.model.group.exceptions.GroupNotFoundException;
 import seedu.address.model.person.Person;
-import seedu.address.model.person.exceptions.PersonNotFoundException;
 
 /**
  * A list of groups that enforces uniqueness between its elements and does not allow nulls.
@@ -72,8 +71,6 @@ public class UniqueGroupList implements Iterable<Group> {
         for (Group group : internalList) {
             if (group.hasMember(person)) {
                 group.removeMember(person);
-            } else {
-                throw new PersonNotFoundException();
             }
         }
     }
