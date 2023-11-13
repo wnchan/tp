@@ -213,7 +213,7 @@ Clears all entries from the system upon confirmation in the pop-up.
 #### Expected Output (Failure or Cancellation):
 * Case: Clear command fails.
 * Case: You press `cancel` on the confirmation pop-up.<br>
-  GUI: All students' details remain on the student list.<br>
+  GUI: All students' details remain on the student list.
   
 ![result for cancelled 'clear' GUI](images/clearCancel.png)
 
@@ -227,7 +227,7 @@ Exits the program.
 
 #### Expected Output (Success):
 * GUI: Application window closes.
-* Message (before closing): `Thank you for using StudentConnect! Exiting the application now…`<br>
+* Message (before closing): `Thank you for using StudentConnect! Exiting the application now…`
 
 ![Exit](images/exit.png)
 
@@ -281,7 +281,7 @@ A student can have any number of social media links. Add multiple social media l
 
 #### Expected Output (Success):
 * GUI: New student entry added in the main student list.
-* Message: `Details added successfully! New student added: (details of new student).`<br>
+* Message: `Details added successfully! New student added: (details of new student).`
 
 ![Add feature](images/add.png)
 
@@ -312,7 +312,7 @@ Shows a list of all students in the system.
 
 #### Expected Output (Success):
 * GUI: List of all student entries in the system.
-* Message: `Viewing all students`<br>
+* Message: `Viewing all students`
   
 ![sample result for 'list'](images/list.png)
 
@@ -351,7 +351,7 @@ A student can edit to have any number of social media links. Add multiple social
 
 #### Expected Output (Success):
 * GUI: Student details updated in the student list.
-* Message: `Details edited successfully! Edited Student: [Updated data]`<br>
+* Message: `Details edited successfully! Edited Student: [Updated data]`
   
 ![sample result for 'edit'](images/edit.png)
 
@@ -380,7 +380,7 @@ Finds student(s) whose name(s) contain any of the given keywords.
 * `find john betsy` returns `John Doe`, `Betsy Crowe`.<br>
 
 #### Expected Output (Success):
-* GUI: List of all student entries whose name(s) match the keyword(s) in the system.<br>
+* GUI: List of all student entries whose name(s) match the keyword(s) in the system.
   
 ![result for 'find alex'](images/findAlexResult.png)
 
