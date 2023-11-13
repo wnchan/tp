@@ -101,6 +101,7 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ## Quick Start
 
@@ -161,8 +162,8 @@ This practice helps prevent data loss and ensures a proper shutdown of the appli
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </div>
 
-> <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
 <hr>
+> <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
 
 <div style="page-break-after: always;"></div>
 
@@ -187,6 +188,8 @@ Provides a list of requirements for forming a group in CS2103T/CS2101.
 
 ![help message](images/helpMessage.png)
 
+> <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
+
 ![help window](images/help.png)
 
 <hr>
@@ -199,16 +202,21 @@ Clears all entries from the system upon confirmation in the pop-up.
 * Confirmation Pop-up opened.
 * * Message: `Opened confirmation window. Please ensure you use the exit command when exiting StudentConnect for successful reset.`
 
-#### Expected Output(Success):
+#### Expected Output (Success):
 * GUI: All students' details are removed from the student list.<br>
-  ![result for 'clear' pop-up](images/clearPopUp.png)
-  ![result for 'clear' GUI](images/clearUI.png)
 
-#### Expected Output(Failure or Cancellation):
+> <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
+
+![result for 'clear' pop-up](images/clearPopUp.png)
+
+![result for 'clear' GUI](images/clearUI.png)
+
+#### Expected Output (Failure or Cancellation):
 * Case: Clear command fails.
 * Case: You press `cancel` on the confirmation pop-up.
   GUI: All students' details remain on the student list.
-  ![result for cancelled 'clear' GUI](images/clearCancel.png)
+  
+![result for cancelled 'clear' GUI](images/clearCancel.png)
 
 <hr>
 
@@ -218,12 +226,13 @@ Exits the program.
 
 #### Format: `exit`
 
-#### Expected Output(Success):
+#### Expected Output (Success):
 * GUI: Application window closes.
 * Message (before closing): `Thank you for using StudentConnect! Exiting the application now…`<br>
+
 ![Exit](images/exit.png)
 
-#### Expected Output(Failure):
+#### Expected Output (Failure):
 * Message: `Error: Exiting the program failed.`
 
 > <a href="#table-of-contents" style="color: blue;">Back to Table of Contents</a>
@@ -274,6 +283,7 @@ A student can have any number of social media links. Add multiple social media l
 #### Expected Output (Success):
 * GUI: New student entry added in the main student list.
 * Message: `Details added successfully! New student added: (details of new student).`<br>
+
 ![Add feature](images/add.png)
 
 Note: 
@@ -304,7 +314,8 @@ Shows a list of all students in the system.
 #### Expected Output (Success):
 * GUI: List of all student entries in the system.
 * Message: `Viewing all students`<br>
-  ![sample result for 'list'](images/list.png)
+  
+![sample result for 'list'](images/list.png)
 
 #### Expected Output (Failure):
 * Message: `Error: Unable to retrieve student entries. Please try again.`
@@ -342,7 +353,8 @@ A student can edit to have any number of social media links. Add multiple social
 #### Expected Output (Success):
 * GUI: Student details updated in the student list.
 * Message: `Details edited successfully! Edited Student: [Updated data]`<br>
-  ![sample result for 'edit'](images/edit.png)
+  
+![sample result for 'edit'](images/edit.png)
 
 #### Expected Output (Failure):
 * Case: No fields provided for edit.<br>
@@ -370,7 +382,8 @@ Finds student(s) whose name(s) contain any of the given keywords.
 
 #### Expected Output (Success):
 * GUI: List of all student entries whose name(s) match the keyword(s) in the system.<br>
-  ![result for 'find alex'](images/findAlexResult.png)
+  
+![result for 'find alex'](images/findAlexResult.png)
 
 #### Expected Output (Failure):
 * Case: Invalid command format, e.g. `find`.
@@ -397,9 +410,10 @@ Filters students by tutorial based on the given slots.
 * `filter 10` returns students in `T10`, `T06 T10` and `T10 T18`.
 * `filter 12 16` returns students in `T05 T12`, `T16 T22`.
 
-#### Expected Output(Success):
+#### Expected Output (Success):
 * GUI: List of all student entries whose tutorial(s) match the slot(s) in the system.<br>
-  ![result for 'filter 04'](images/filter.png)
+  
+![result for 'filter 04'](images/filter.png)
 
 #### Expected Output (Failure):
 * Case: Invalid command format, e.g. `filter`.
@@ -427,10 +441,11 @@ Deletes a specific student and all personal details based on email.
 #### Acceptable Values:
 * EMAIL: a previously registered email address ending in `u.nus.edu`.
 
-#### Expected Output(Success):
+#### Expected Output (Success):
 * GUI: Student details removed from student list.
 * Message: `Student deleted successfully! [Deleted student's details]`
-  ![Delete feature](images/delete.png)
+  
+![Delete feature](images/delete.png)
 
 #### Expected Output (Failure):
 * Case: Provided email not registered in system.
@@ -462,12 +477,13 @@ Creates a new empty group with the given tutorial number. The group number is au
 
 #### Format: `create t/TUTORIAL`
 
-#### Expected Output(Success):
+#### Expected Output (Success):
 * GUI: A new empty group, with a group number, is created.
 * Message: `Group created successfully! Group number is [GROUP_NUMBER]`
-  ![Sample result for create](images/create.png)
+  
+![Sample result for create](images/create.png)
 
-#### Expected Output(Failure):
+#### Expected Output (Failure):
 * Case: Invalid command format, e.g. `create`, `create 02`, etc.
 Message: `Invalid command format!`<br>
   `create: Creates a new empty group.`<br>
@@ -483,12 +499,13 @@ Displays a list of all groups. For each group, the group number, and the names a
 
 #### Format: `listGroup`
 
-#### Expected Output(Success):
+#### Expected Output (Success):
 * GUI: A list of all groups that are in the system is shown.
 * Message: `Viewing all groups`<br>
+
 ![Sample result for listGroup](images/listGroup.png)
 
-#### Expected Output(Failure):
+#### Expected Output (Failure):
 * Message: `Error: Unable to retrieve group entries. Please try again.`
 
 <hr>
@@ -506,12 +523,13 @@ Deletes a group from the system, based on group number.
 #### Acceptable Values:
 * GROUP_NUMBER: Must be a non-zero unsigned integer.
 
-#### Expected Output(Success):
+#### Expected Output (Success):
 * GUI: Specified group is no longer visible.
 * Message: `Group deleted successfully! Deleted Group: [GROUP_NUMBER]`
-  ![result for 'deleteGroup gr/3'](images/deleteGroup.png)
+  
+![result for 'deleteGroup gr/3'](images/deleteGroup.png)
 
-#### Expected Output(Failure):
+#### Expected Output (Failure):
 * Case: Group with specified number is not in the system.
   Message: `Group with the provided group number not found.`
 
@@ -523,11 +541,11 @@ Adds a student to the specified group.
 
 #### Format: `join e/EMAIL gr/GROUP_NUMBER`
 
-#### Expected Output(Success):
+#### Expected Output (Success):
 * GUI: The student's name and email are displayed in the specified group's card.
 * Message: `Join successful! [NAME] has joined Group [GROUP_NUMBER]!`
 
-#### Expected Output(Failure):
+#### Expected Output (Failure):
 * Case: Email not found in the system.<br>
 Message: `Student with the provided email not found.`
 * Case: Group number not found in the system.<br>
@@ -562,6 +580,7 @@ Deletes a member from a specific group, indicating that they have left.
 #### Expected Output (Success):
 * GUI: Student details removed from specified group.
 * Message: `Leave successful! NAME has left group 1!`
+
 ![sample result for 'leave'](images/leave.png)
 
 #### Expected Output (Failure):
@@ -592,7 +611,8 @@ Finds group(s) with group number(s) that matches any of the given keywords.
 
 #### Expected Output (Success):
 * GUI: List of all group entries whose group number(s) match the keyword(s) in the system.<br>
-  ![sample result for 'findGroup'](images/findGroup.png)
+  
+![sample result for 'findGroup'](images/findGroup.png)
 
 #### Expected Output (Failure):
 * Case: Invalid command format is provided, e.g. `findGroup`.
@@ -618,9 +638,10 @@ Filters the groups by tutorial based on the given slot.
 #### Examples:
 * `filterGroup 03` returns groups that belong to `T03`.
 
-#### Expected Output(Success):
+#### Expected Output (Success):
 * GUI: List of all group entries with the tutorial that match the slot in the system.
-  ![sample result for 'filterGroup'](images/filterGroup.png)
+  
+![sample result for 'filterGroup'](images/filterGroup.png)
 
 #### Expected Output (Failure):
 * Case: Invalid command format is provided, e.g. `filterGroup`.
@@ -646,11 +667,13 @@ Checks if a group fulfils the group requirements of the course.
 #### Examples:
 * `checkGroup 4` checks the group with a group number `4` if it is created in the system.
 
-#### Expected Output(Success):
+#### Expected Output (Success):
 * Case: Group fulfils the group requirements.<br>
 Message: `Group GROUP_NUMBER`<br>
   `Group fulfils the diversity requirements of CS2103T.`<br>
-  ![sample result for 'checkGroup'](images/checkGroup.png)
+  
+![sample result for 'checkGroup'](images/checkGroup.png)
+
 * Case: Group has no members.<br>
 Message: `Group GROUP_NUMBER`<br>
   `Group does not have any members.`<br>
@@ -697,7 +720,8 @@ Lists out all tasks for a specific group.
 #### Expected Output (Success):
 * GUI: List of all tasks for the specified group is displayed, the specified group and group members are shown.
 * Message: `Here are the tasks for group [GROUP_NUMBER]: [list of tasks]`
-  ![sample result for 'tasks'](images/tasks.png)
+  
+![sample result for 'tasks'](images/tasks.png)
 
 #### Expected Output (Failure):
 * Case: Invalid tasks command, e.g. `tasks gr/3`, `tasks t`, etc.<br>
@@ -729,7 +753,8 @@ Mark a task for a specified group as done.
 #### Expected Output (Success):
 * GUI: The task in the specified group is marked as done and task list is updated.
 * Message: `Marked task number (ti) for group (gr) [and displays the updated task list]`
-  ![sample result for 'mark'](images/mark.png)
+  
+![sample result for 'mark'](images/mark.png)
 
 #### Expected Output (Failure):
 * Case: Invalid mark command, e.g. `mark`, `mark t`, etc.<br>
@@ -764,7 +789,8 @@ Mark a task for a specified group as not done.
 #### Expected Output (Success):
 * GUI: The task in the specified group is marked as not done and task list is updated.
 * Message: `Unmarked task number (ti) for group (gr) [and displays the updated task list]`
-  ![sample result for 'unmark'](images/unmark.png)
+  
+![sample result for 'unmark'](images/unmark.png)
 
 #### Expected Output (Failure):
 * Case: Invalid unmark command, e.g. `unmark`, `unmark t`, etc.<br>
