@@ -622,22 +622,22 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 2. Student provides the group number.
 3. StudentConnect retrieves the group by the given group number.
 4. If the group exists, StudentConnect displays the group in the group panel.
-5. StudentConnect displays the listed tasks along with a success message.
+5. StudentConnect displays the listed tasks along with a success message.<br>
    Use case ends.
 
 **Extensions:**
 
 * 2a. The student enters a non-existent group number.
-    * 2a1. StudentConnect shows an error message: "Group with the provided group number not found."
+    * 2a1. StudentConnect shows an error message: "Group with the provided group number not found."<br>
     Use case ends.
 
 * 2b. The student enters an invalid group number.
-    * 2a1. StudentConnect shows an error message: "Invalid command format!"
+    * 2b1. StudentConnect shows an error message: "Invalid command format!"<br>
     Use case ends.
 
 * 4a. The specified group exists but has no tasks initialised.
     * 4a1. StudentConnect initialises the tasks for the group.
-    * 4a2. StudentConnect displays the newly initialised tasks along with a success message.
+    * 4a2. StudentConnect displays the newly initialised tasks along with a success message.<br>
     Use case resumes at step 5.
 
 * 4b. Task initialisation fails due to a system error.
@@ -658,11 +658,11 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **Extensions:**
 
 * 2a. The specified group does not exist.
-    * 2a1. StudentConnect shows an error message: "Group with the provided group number not found."
+    * 2a1. StudentConnect shows an error message: "Group with the provided group number not found."<br>
     Use case ends.
 
 * 2b. The specified task index is invalid.
-    * 2b1. StudentConnect shows an error message: "Invalid task index. Task not found."
+    * 2b1. StudentConnect shows an error message: "Invalid task index. Task not found."<br>
     Use case ends.
 
 **Use Case: UC18 - Mark Task as Not Done**
@@ -679,11 +679,11 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **Extensions:**
 
 * 2a. The specified group does not exist.
-    * 2a1. StudentConnect shows an error message: "Group with the provided group number not found."
+    * 2a1. StudentConnect shows an error message: "Group with the provided group number not found."<br>
     Use case ends.
 
 * 2b. The specified task index is invalid.
-    * 2b1. StudentConnect shows an error message: "Invalid task index. Task not found."
+    * 2b1. StudentConnect shows an error message: "Invalid task index. Task not found."<br>
     Use case ends.
 
 **Use Case: UC19 - Get help**
