@@ -774,11 +774,11 @@ to check out more ways to test the app.
 
 3. Shutting down
 
-    1. Input command `Exit` into the CLI of the StudentConnect app.<br>
+    1. Input command `exit` into the CLI of the StudentConnect app.<br>
         Alternatively, click the `File` button, followed by the `Exit` button.
 
-    2. Expected: The `Exit` message is shown and the app closes.<br>
-        Exception: When using the `Exit` button to close the app, the `Exit` message is not shown.
+    2. Expected: The `exit` message is shown and the app closes.<br>
+        Exception: When using the `exit` button to close the app, the `exit` message is not shown.
 
 ### General Commands
 
