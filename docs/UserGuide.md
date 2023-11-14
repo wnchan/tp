@@ -69,6 +69,8 @@ This guide is designed to help you navigate the features of StudentConnect with 
 | :bulb:               | Tip         | Look for this symbol when you need helpful suggestions on using StudentConnect features more efficiently.                           |
 | :exclamation:        | Important   | This alerts you to critical information or functionality within StudentConnect that you should pay close attention to.              |
 
+<div style="page-break-after: always;"></div>
+
 - Throughout this guide, we've provided screenshots that illustrate the expected output for each command and feature. This visual aid is designed to enhance your understanding and ensure that you can confidently anticipate the results of your actions. Below is a detailed overview of the various interface components that you'll become familiar with.
 
 <div style="text-align: center; border: 1px solid #000; padding: 10px; display: inline-block; margin: auto;">
@@ -916,6 +918,7 @@ Ensure that the name is appropriately formatted with only letters and spaces, wi
 - Elizabeth Alexandra Mary Windsor (Invalid as it exceeds 30 characters)
 
 <hr>
+<div style="page-break-after: always;"></div>
 
 ### Valid Majors
 The majors field indicates the major that the student is enrolled in.
@@ -998,6 +1001,7 @@ For now, we accept the following majors in National University of Singapore(NUS)
 | Visual Communications                     |
 
 <hr>
+<div style="page-break-after: always;"></div>
 
 ### Valid Years
 The year field is used to represent the student's current year of study.
@@ -1065,6 +1069,7 @@ Descriptions that are blank or that exceed 150 characters are not accepted.
 - "In need of two more members!"
 
 <hr>
+<div style="page-break-after: always;"></div>
 
 ### Valid Tutorials
 The tutorial field is used to represent tutorial slots students' are interested in or have been assigned. 
