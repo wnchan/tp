@@ -484,7 +484,7 @@ Creates a new empty group with the given tutorial number. The group number is au
   
 ![Sample result for create](images/create.png)
 
-#### Expected Output(Failure):
+#### Expected Output (Failure):
 * Case: Invalid command format, e.g. `create`, `create 02`, etc.<br>
 Message: `Invalid command format!`<br>
   `create: Creates a new empty group.`<br>
