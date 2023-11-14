@@ -19,6 +19,8 @@ Refer to the guide [**_Setting up and getting started_**](SettingUp.md).
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
+
 ## **Design**
 
 <div markdown="span" class="alert alert-primary">
@@ -72,6 +74,7 @@ rather than the concrete class (reason: to prevent outside component's being cou
 
 The sections below give more details of each component.
 
+<div style="page-break-after: always;"></div>
 ### UI component
 
 The **API** of this component is specified in [`Ui.java`](https://github.com/AY2324S1-CS2103T-F12-2/tp/blob/master/src/main/java/seedu/address/ui/Ui.java)
@@ -94,6 +97,7 @@ The `UI` component,
 * keeps a reference to the `Logic` component, because the `UI` relies on the `Logic` to execute commands.
 * depends on some classes in the `Model` component, as it displays `Person` or `Group` object residing in the `Model`.
 
+<div style="page-break-after: always;"></div>
 ### Logic component
 
 **API** : [`Logic.java`](https://github.com/AY2324S1-CS2103T-F12-2/tp/blob/master/src/main/java/seedu/address/logic/Logic.java)
@@ -129,6 +133,7 @@ the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the
 * All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface 
 so that they can be treated similarly where possible e.g, during testing.
 
+<div style="page-break-after: always;"></div>
 ### Model component
 **API** : [`Model.java`](https://github.com/AY2324S1-CS2103T-F12-2/tp/blob/master/src/main/java/seedu/address/model/Model.java)
 <div style="text-align: center; border: 1px solid #000; padding: 10px; display: inline-block; margin: auto;">
@@ -155,7 +160,7 @@ list so that the UI automatically updates when the data in the list change.
 * does not depend on any of the other three components (as the `Model` represents data entities of the domain, 
 they should make sense on their own without depending on other components)
 
-
+<div style="page-break-after: always;"></div>
 ### Storage component
 
 **API** : [`Storage.java`](https://github.com/AY2324S1-CS2103T-F12-2/tp/blob/master/src/main/java/seedu/address/storage/Storage.java)
@@ -172,6 +177,7 @@ The `Storage` component,
 Classes used by multiple components are in the `seedu.addressbook.commons` package.
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ## **Implementation**
 
@@ -273,7 +279,7 @@ Shown below is the sequence diagram for the given scenario. The `LogicManager`, 
 </div>
 
 --------------------------------------------------------------------------------------------------------------------
-
+<div style="page-break-after: always;"></div>
 ## **Documentation, logging, testing, configuration, dev-ops**
 
 * [Documentation guide](Documentation.md)
@@ -727,6 +733,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 2. Should be able to hold up to 1000 students without a noticeable sluggishness in performance for typical usage.
 3. A student with above average typing speed for regular English text (i.e., not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
 
+<div style="page-break-after: always;"></div>
 ### Glossary
 
 * **Mainstream OS**: Windows, Linux, Unix, OS-X
@@ -739,6 +746,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
 ## **Appendix: Instructions for manual testing**
 
 Given below are instructions to test the app manually.
@@ -962,7 +970,8 @@ to check out more ways to test the app.
 
     2. Test case: `unmark gr/1 ti/14`.<br>
        Expected: Error details shown in status message as only 13 tasks are being initialised for all groups (mentioned in Point 4 of List Task Feature).
-
+       
+<div style="page-break-after: always;"></div>
 ### Saving data
 
 1. Students' data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
